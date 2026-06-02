@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.data.model.Team
 import com.techmomentum.wc2026.domain.usecase.GetAlbumUseCase
 import com.techmomentum.wc2026.domain.usecase.StickerSlot
+import com.techmomentum.wc2026.utils.GameConstants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -17,6 +18,8 @@ import javax.inject.Inject
 data class TeamAlbumUiState(
     val team: Team? = null,
     val slots: List<StickerSlot> = emptyList(),
+    val ownedCount: Int = 0,
+    val percent: Float = 0f,
     val loading: Boolean = true,
 )
 
@@ -33,7 +36,18 @@ class TeamAlbumViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val (team, slots) = getAlbumUseCase.getTeamAlbum(teamId)
-            _uiState.update { it.copy(team = team, slots = slots, loading = false) }
+            val ownedCount = slots.count { it.owned != null }
+            val total = slots.size.takeIf { it > 0 } ?: GameConstants.PLAYERS_PER_TEAM
+            val percent = ownedCount.toFloat() / total * 100f
+            _uiState.update {
+                it.copy(
+                    team = team,
+                    slots = slots,
+                    ownedCount = ownedCount,
+                    percent = percent,
+                    loading = false,
+                )
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.techmomentum.wc2026.data.model.Team
+import com.techmomentum.wc2026.ui.theme.parseTeamColor
 
 @Composable
 fun TeamEmblem(
@@ -32,8 +33,8 @@ fun TeamEmblem(
             contentScale = ContentScale.Crop,
         )
     } else {
-        val bg = parseColor(team.primaryColor, MaterialTheme.colorScheme.primary)
-        val fg = parseColor(team.secondaryColor, Color.White)
+        val bg = parseTeamColor(team.primaryColor, MaterialTheme.colorScheme.primary)
+        val fg = parseTeamColor(team.secondaryColor, Color.White)
         Box(
             modifier = modifier
                 .size(size)
@@ -50,8 +51,3 @@ fun TeamEmblem(
         }
     }
 }
-
-private fun parseColor(hex: String, fallback: Color): Color =
-    runCatching {
-        Color(android.graphics.Color.parseColor(hex))
-    }.getOrDefault(fallback)
