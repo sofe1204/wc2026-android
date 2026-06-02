@@ -1,0 +1,19 @@
+# Firebase SQL Connect service — matches Firebase Console provisioning
+# Project: wc-2026-3110f
+specVersion: v1beta
+
+serviceId: wc-2026-3110f-service
+location: us-east4
+
+schema:
+  source: ./schema
+  datasource:
+    postgresql:
+      database: wc-2026-3110f-database
+      cloudSql:
+        instanceId: wc-2026-3110f-instance
+        # COMPATIBLE: safe migrations while Cloud SQL is provisioning
+        schemaValidation: COMPATIBLE
+
+connectorDirs:
+  - ./connector/default

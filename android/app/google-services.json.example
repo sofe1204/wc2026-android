@@ -1,0 +1,24 @@
+{
+  "_comment": "Download the real file from Firebase Console → Project wc-2026-3110f → Project settings → Your apps → Android (com.techmomentum.wc2026) → google-services.json. Save as android/app/google-services.json",
+  "project_info": {
+    "project_number": "YOUR_PROJECT_NUMBER",
+    "project_id": "wc-2026-3110f",
+    "storage_bucket": "wc-2026-3110f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:YOUR_NUMBER:android:YOUR_APP_ID",
+        "android_client_info": {
+          "package_name": "com.techmomentum.wc2026"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "YOUR_API_KEY"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}

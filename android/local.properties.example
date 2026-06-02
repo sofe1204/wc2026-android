@@ -1,0 +1,7 @@
+# Copy to android/local.properties if Android Studio did not create it automatically.
+# Android Studio usually writes sdk.dir on first open.
+
+sdk.dir=/Users/YOUR_USER/Library/Android/sdk
+
+# Optional: route Firebase SDK to local emulators (also run: firebase emulators:start)
+# firebase.emulators=true

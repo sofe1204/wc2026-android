@@ -1,0 +1,44 @@
+# User progress — profiles, ownership, reward history
+
+type User @table(name: "users", key: ["uid"]) {
+  uid: String!
+  email: String!
+  displayName: String @col(name: "display_name")
+  unopenedPacks: Int! @col(name: "unopened_packs")
+  albumUniqueCount: Int! @col(name: "album_unique_count")
+  totalStickerCount: Int! @col(name: "total_sticker_count")
+  lastDailyPackClaimDate: String @col(name: "last_daily_pack_claim_date")
+  rewardedAdPackClaimDate: String @col(name: "rewarded_ad_pack_claim_date")
+  slotSpinsRemaining: Int! @col(name: "slot_spins_remaining")
+  slotSpinsDate: String @col(name: "slot_spins_date")
+  slotRewardDate: String @col(name: "slot_reward_date")
+  slotRewardPacksWonToday: Int! @col(name: "slot_reward_packs_won_today")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+}
+
+type UserSticker @table(name: "user_stickers", key: ["uid", "stickerId"]) {
+  uid: String!
+  stickerId: String! @col(name: "sticker_id")
+  playerId: String! @col(name: "player_id")
+  teamId: String! @col(name: "team_id")
+  count: Int!
+  firstCollectedAt: Timestamp! @default(expr: "request.time") @col(name: "first_collected_at")
+  lastCollectedAt: Timestamp! @default(expr: "request.time") @col(name: "last_collected_at")
+}
+
+type PackHistory @table(name: "pack_history", key: ["packId"]) {
+  packId: UUID! @default(expr: "uuidV4()") @col(name: "pack_id")
+  uid: String!
+  source: String!
+  stickerIdsJson: String! @col(name: "sticker_ids_json")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+}
+
+type SlotHistory @table(name: "slot_history", key: ["spinId"]) {
+  spinId: UUID! @default(expr: "uuidV4()") @col(name: "spin_id")
+  uid: String!
+  gridJson: String! @col(name: "grid_json")
+  isWin: Boolean! @col(name: "is_win")
+  rewardGranted: Boolean! @col(name: "reward_granted")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+}

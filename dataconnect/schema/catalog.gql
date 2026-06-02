@@ -1,0 +1,44 @@
+# Catalog tables — teams, players, stickers
+
+type Team @table(name: "teams", key: ["teamId"]) {
+  teamId: String! @col(name: "team_id")
+  countryName: String! @col(name: "country_name")
+  group: String!
+  teamCode: String! @col(name: "team_code")
+  flagEmoji: String @col(name: "flag_emoji")
+  customEmblemUrl: String @col(name: "custom_emblem_url")
+  primaryColor: String @col(name: "primary_color")
+  secondaryColor: String @col(name: "secondary_color")
+  isActive: Boolean! @col(name: "is_active")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+  updatedAt: Timestamp! @default(expr: "request.time") @col(name: "updated_at")
+}
+
+type Player @table(name: "players", key: ["playerId"]) {
+  playerId: String! @col(name: "player_id")
+  teamId: String! @col(name: "team_id")
+  countryName: String! @col(name: "country_name")
+  group: String!
+  shirtNumber: Int! @col(name: "shirt_number")
+  playerName: String! @col(name: "player_name")
+  position: String!
+  rarity: String!
+  animeStickerPrompt: String @col(name: "anime_sticker_prompt")
+  imageUrl: String @col(name: "image_url")
+  isActive: Boolean! @col(name: "is_active")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+  updatedAt: Timestamp! @default(expr: "request.time") @col(name: "updated_at")
+}
+
+type Sticker @table(name: "stickers", key: ["stickerId"]) {
+  stickerId: String! @col(name: "sticker_id")
+  stickerNumber: Int! @col(name: "sticker_number")
+  playerId: String! @col(name: "player_id")
+  teamId: String! @col(name: "team_id")
+  countryName: String! @col(name: "country_name")
+  group: String!
+  rarity: String!
+  imageUrl: String @col(name: "image_url")
+  isActive: Boolean! @col(name: "is_active")
+  createdAt: Timestamp! @default(expr: "request.time") @col(name: "created_at")
+}

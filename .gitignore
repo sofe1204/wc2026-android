@@ -1,0 +1,26 @@
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.iml
+.idea/
+
+# Firebase
+functions/node_modules/
+functions/lib/
+functions/.npm-cache/
+.npm-cache/
+.firebase/
+dataconnect/.dataconnect/
+
+firebase-debug.log
+
+# OS
+.DS_Store
+
+# Cursor / debug
+.cursor/
+
+# Secrets — never commit real keys
+android/app/google-services.json

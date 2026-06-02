@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    match /teams/{teamId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /players/{playerId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /stickers/{stickerId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.uid == uid
+        && request.resource.data.albumUniqueCount == 0
+        && request.resource.data.totalStickerCount == 0
+        && request.resource.data.unopenedPacks == 2
+        && request.resource.data.slotSpinsRemaining == 15
+        && request.resource.data.slotRewardPacksWonToday == 0;
+      allow update: if isOwner(uid)
+        && request.resource.data.unopenedPacks == resource.data.unopenedPacks
+        && request.resource.data.albumUniqueCount == resource.data.albumUniqueCount
+        && request.resource.data.totalStickerCount == resource.data.totalStickerCount
+        && request.resource.data.slotSpinsRemaining == resource.data.slotSpinsRemaining
+        && request.resource.data.lastDailyPackClaimDate == resource.data.lastDailyPackClaimDate
+        && request.resource.data.rewardedAdPackClaimDate == resource.data.rewardedAdPackClaimDate
+        && request.resource.data.slotSpinsDate == resource.data.slotSpinsDate
+        && request.resource.data.slotRewardDate == resource.data.slotRewardDate
+        && request.resource.data.slotRewardPacksWonToday == resource.data.slotRewardPacksWonToday;
+      allow delete: if false;
+    }
+
+    match /user_stickers/{uid}/items/{stickerId} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    match /pack_history/{packId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+
+    match /slot_history/{spinId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+  }
+}

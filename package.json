@@ -1,0 +1,10 @@
+{
+  "name": "world-cup-2026",
+  "private": true,
+  "scripts": {
+    "sync": "python3 scripts/sync_project.py",
+    "sync:seed": "python3 scripts/generate_seed_data.py && python3 scripts/sync_project.py",
+    "functions:build": "npm --prefix functions run build",
+    "functions:deploy": "bash scripts/deploy_functions.sh"
+  }
+}

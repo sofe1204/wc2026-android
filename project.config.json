@@ -1,0 +1,46 @@
+{
+  "name": "World Cup 2026 Sticker Album",
+  "firebase": {
+    "projectId": "wc-2026-3110f",
+    "projectNumber": "424696015515",
+    "gcpPublicProjectId": "project-424696015515",
+    "androidPackage": "com.techmomentum.wc2026",
+    "functionsRegion": "us-central1",
+    "storageBucket": "wc-2026-3110f.firebasestorage.app",
+    "googleSignIn": {
+      "enabled": true,
+      "publicFacingProjectName": "project-424696015515"
+    }
+  },
+  "dataConnect": {
+    "serviceId": "wc-2026-3110f-service",
+    "location": "us-east4",
+    "instanceId": "wc-2026-3110f-instance",
+    "database": "wc-2026-3110f-database",
+    "kotlinPackage": "com.techmomentum.wc2026.dataconnect.generated",
+    "kotlinOutputDir": "android/app/src/main/java/com/techmomentum/wc2026/dataconnect/generated"
+  },
+  "game": {
+    "stickersPerPack": 5,
+    "signupFreePacks": 2,
+    "dailyFreePacks": 2,
+    "dailyRewardedPackLimit": 1,
+    "dailyFreeSlotSpins": 15,
+    "rewardedSlotSpins": 5,
+    "dailySlotPackRewardCap": 5,
+    "totalTeams": 48,
+    "playersPerTeam": 15,
+    "totalStickers": 720
+  },
+  "emulators": {
+    "auth": 9099,
+    "functions": 5001,
+    "firestore": 8080,
+    "storage": 9199,
+    "dataconnect": 9399
+  },
+  "seed": {
+    "android": "android/app/src/main/assets/seed",
+    "functions": "functions/seed"
+  }
+}

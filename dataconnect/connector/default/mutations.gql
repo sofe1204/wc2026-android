@@ -1,0 +1,18 @@
+# User profile bootstrap
+# Note: Pack open, daily rewards, and slot wins remain in Cloud Functions (server-authoritative).
+
+mutation EnsureUserProfile($email: String!, $displayName: String) @auth(level: USER) {
+  user_upsert(
+    key: { uid_expr: "auth.uid" }
+    data: {
+      uid_expr: "auth.uid"
+      email: $email
+      displayName: $displayName
+      unopenedPacks: 2
+      albumUniqueCount: 0
+      totalStickerCount: 0
+      slotSpinsRemaining: 15
+      slotRewardPacksWonToday: 0
+    }
+  )
+}

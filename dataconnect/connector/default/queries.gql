@@ -1,0 +1,67 @@
+# Read-only catalog and user queries
+
+query ListTeams @auth(level: PUBLIC) {
+  teams(where: { isActive: { eq: true } }, orderBy: [{ group: ASC }, { countryName: ASC }]) {
+    teamId
+    countryName
+    group
+    teamCode
+    flagEmoji
+    customEmblemUrl
+    primaryColor
+    secondaryColor
+  }
+}
+
+query ListPlayersByTeam($teamId: String!) @auth(level: PUBLIC) {
+  players(where: { teamId: { eq: $teamId }, isActive: { eq: true } }, orderBy: { shirtNumber: ASC }) {
+    playerId
+    teamId
+    shirtNumber
+    playerName
+    position
+    rarity
+    imageUrl
+  }
+}
+
+query ListStickersByTeam($teamId: String!) @auth(level: PUBLIC) {
+  stickers(where: { teamId: { eq: $teamId }, isActive: { eq: true } }, orderBy: { stickerNumber: ASC }) {
+    stickerId
+    stickerNumber
+    playerId
+    teamId
+    countryName
+    group
+    rarity
+    imageUrl
+  }
+}
+
+query GetUserProfile @auth(level: USER) {
+  user(key: { uid_expr: "auth.uid" }) {
+    uid
+    email
+    displayName
+    unopenedPacks
+    albumUniqueCount
+    totalStickerCount
+    lastDailyPackClaimDate
+    rewardedAdPackClaimDate
+    slotSpinsRemaining
+    slotSpinsDate
+    slotRewardDate
+    slotRewardPacksWonToday
+  }
+}
+
+query ListUserStickers @auth(level: USER) {
+  userStickers(where: { uid: { eq_expr: "auth.uid" } }) {
+    stickerId
+    playerId
+    teamId
+    count
+    firstCollectedAt
+    lastCollectedAt
+  }
+}

@@ -1,0 +1,56 @@
+package com.techmomentum.wc2026.ui.home
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.techmomentum.wc2026.data.repository.RewardsRepository
+import com.techmomentum.wc2026.domain.usecase.HomeState
+import com.techmomentum.wc2026.domain.usecase.ObserveHomeStateUseCase
+import com.techmomentum.wc2026.utils.DateUtils
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+data class HomeUiState(
+    val homeState: HomeState = HomeState(),
+    val loading: Boolean = false,
+    val message: String? = null,
+)
+
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    observeHomeState: ObserveHomeStateUseCase,
+    private val rewardsRepository: RewardsRepository,
+) : ViewModel() {
+    val homeState: StateFlow<HomeState> = observeHomeState(DateUtils.todayUtc())
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), HomeState())
+
+    private val _uiState = MutableStateFlow(HomeUiState())
+    val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
+
+    fun claimDailyPacks() = launchReward { rewardsRepository.claimDailyPacks() }
+    fun claimRewardedAdPack() = launchReward { rewardsRepository.claimRewardedAdPack() }
+
+    fun clearMessage() = _uiState.update { it.copy(message = null) }
+
+    private fun launchReward(block: suspend () -> com.techmomentum.wc2026.data.model.CallableResult) {
+        viewModelScope.launch {
+            _uiState.update { it.copy(loading = true, message = null) }
+            runCatching { block() }.fold(
+                onSuccess = { result ->
+                    _uiState.update {
+                        it.copy(loading = false, message = result.message.ifBlank { "Done!" })
+                    }
+                },
+                onFailure = { e ->
+                    _uiState.update { it.copy(loading = false, message = e.message) }
+                },
+            )
+        }
+    }
+}

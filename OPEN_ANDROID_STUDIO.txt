@@ -1,0 +1,7 @@
+Open this folder in Android Studio:
+
+  WC app/android/
+
+Not the parent "WC app" folder.
+
+Quick start: android/ANDROID_STUDIO.md
