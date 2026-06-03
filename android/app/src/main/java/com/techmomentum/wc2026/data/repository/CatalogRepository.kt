@@ -10,6 +10,7 @@ import com.techmomentum.wc2026.data.remote.toSticker
 import com.techmomentum.wc2026.data.remote.toTeam
 import com.techmomentum.wc2026.data.seed.SeedJsonParser
 import com.techmomentum.wc2026.data.session.AppSession
+import com.techmomentum.wc2026.utils.GameConstants
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -27,7 +28,7 @@ class CatalogRepository @Inject constructor(
 
     suspend fun getTeams(): List<Team> {
         teamsCache?.let { return it }
-        val teams = resolveCatalog(
+        val teams = resolveTeams(
             sqlLoad = { sqlConnectCatalog.loadTeams() },
             firestoreLoad = { loadFromFirestoreTeams() },
             seedLoad = { seedJsonParser.loadTeams() },
@@ -38,7 +39,7 @@ class CatalogRepository @Inject constructor(
 
     suspend fun getPlayers(): List<Player> {
         playersCache?.let { return it }
-        val players = resolveCatalog(
+        val players = resolvePlayers(
             sqlLoad = { sqlConnectCatalog.loadPlayers() },
             firestoreLoad = { loadFromFirestorePlayers() },
             seedLoad = { seedJsonParser.loadPlayers() },
@@ -49,7 +50,7 @@ class CatalogRepository @Inject constructor(
 
     suspend fun getStickers(): List<Sticker> {
         stickersCache?.let { return it }
-        val stickers = resolveCatalog(
+        val stickers = resolveStickers(
             sqlLoad = { sqlConnectCatalog.loadStickers() },
             firestoreLoad = { loadFromFirestoreStickers() },
             seedLoad = { seedJsonParser.loadStickers() },
@@ -71,18 +72,57 @@ class CatalogRepository @Inject constructor(
     suspend fun getPlayer(playerId: String): Player? = getPlayers().firstOrNull { it.playerId == playerId }
 
     /**
-     * Priority: SQL Connect (Kotlin SDK) → Firestore → local seed JSON (guest/offline).
+     * Priority: SQL Connect (Kotlin SDK) → Firestore → bundled seed JSON.
+     * Guest mode always uses bundled seed. Signed-in users fall back to seed when
+     * Firestore is empty or still has a partial/old catalog (packs still need a full
+     * Firestore seed via [scripts/seed_firestore.mjs]).
      */
+    private suspend fun resolveTeams(
+        sqlLoad: suspend () -> List<Team>,
+        firestoreLoad: suspend () -> Result<List<Team>>,
+        seedLoad: suspend () -> List<Team>,
+    ): List<Team> = resolveCatalog(
+        minCount = GameConstants.TOTAL_TEAMS,
+        sqlLoad = sqlLoad,
+        firestoreLoad = firestoreLoad,
+        seedLoad = seedLoad,
+    )
+
+    private suspend fun resolvePlayers(
+        sqlLoad: suspend () -> List<Player>,
+        firestoreLoad: suspend () -> Result<List<Player>>,
+        seedLoad: suspend () -> List<Player>,
+    ): List<Player> = resolveCatalog(
+        minCount = GameConstants.TOTAL_TEAMS * GameConstants.PLAYERS_PER_TEAM,
+        sqlLoad = sqlLoad,
+        firestoreLoad = firestoreLoad,
+        seedLoad = seedLoad,
+    )
+
+    private suspend fun resolveStickers(
+        sqlLoad: suspend () -> List<Sticker>,
+        firestoreLoad: suspend () -> Result<List<Sticker>>,
+        seedLoad: suspend () -> List<Sticker>,
+    ): List<Sticker> = resolveCatalog(
+        minCount = GameConstants.TOTAL_STICKERS,
+        sqlLoad = sqlLoad,
+        firestoreLoad = firestoreLoad,
+        seedLoad = seedLoad,
+    )
+
     private suspend fun <T> resolveCatalog(
+        minCount: Int,
         sqlLoad: suspend () -> List<T>,
         firestoreLoad: suspend () -> Result<List<T>>,
         seedLoad: suspend () -> List<T>,
     ): List<T> {
         if (appSession.isActive()) return seedLoad()
         if (sqlConnectCatalog.isAvailable()) {
-            runCatching { sqlLoad() }.getOrNull()?.takeIf { it.isNotEmpty() }?.let { return it }
+            runCatching { sqlLoad() }.getOrNull()?.takeIf { it.size >= minCount }?.let { return it }
         }
-        return firestoreLoad().getOrElse { seedLoad() }
+        val fromFirestore = firestoreLoad().getOrNull()?.takeIf { it.size >= minCount }
+        if (fromFirestore != null) return fromFirestore
+        return seedLoad()
     }
 
     private suspend fun loadFromFirestoreTeams(): Result<List<Team>> = runCatching {

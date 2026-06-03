@@ -138,14 +138,31 @@ The app uses:
 
 See [`dataconnect/README.md`](dataconnect/README.md). App flag `USE_SQL_CONNECT` is `false` until you generate the SDK and deploy.
 
-### 3. Admin seeding
+### 3. Signed-in users (required once per Firebase project)
 
-Set Firebase Auth custom claim `admin: true` on your user, then use **Profile → Seed Firestore** (debug) or call `seedTeams` / `seedPlayers` / `seedStickers`.
+Guest mode uses bundled seed JSON. **Email/Google accounts** need deployed rules, functions, and the catalog in **Firestore** (pack opening reads `stickers` from the cloud).
 
-Regenerate seed JSON:
+From the repo root (after `firebase login` and a service account or `gcloud auth application-default login`):
 
 ```bash
-python3 scripts/generate_seed_data.py
+npm run setup:auth-users
+# or step by step:
+npm run functions:deploy
+npm run seed:firestore
+```
+
+Optional admin (in-app **Profile → Seed Firestore** in debug builds):
+
+```bash
+npm run admin:claim -- your@email.com
+```
+
+Then sign **out and back in** on the device so the ID token picks up the admin claim.
+
+Regenerate seed JSON before re-seeding:
+
+```bash
+npm run data:full && npm run sync && npm run seed:firestore
 ```
 
 ### 4. Build from terminal

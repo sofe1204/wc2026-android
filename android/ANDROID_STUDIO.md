@@ -57,9 +57,10 @@ On the auth screen tap **Continue as Guest (offline demo)**.
 1. Replace [`app/google-services.json`](app/google-services.json) from Firebase Console (project `wc-2026-3110f`).
 2. Enable **Email/Password** in Firebase Authentication.
 3. **Create Firestore:** Firebase Console → **Build** → **Firestore Database** → **Create database** (same project `wc-2026-3110f`). Without this, logcat shows `NOT_FOUND: The database (default) does not exist` and profile setup fails after sign-in.
-4. Deploy functions + rules (see root [`README.md`](../README.md)): `./scripts/deploy_functions.sh`
-5. Sign up / sign in in the app.
-6. **Settings** shows Firebase connection status.
+4. Deploy functions + rules: `npm run functions:deploy` (from repo root).
+5. **Seed Firestore catalog** (required for packs/slots for signed-in users): set `GOOGLE_APPLICATION_CREDENTIALS` to a service account JSON, then `npm run seed:firestore`. Or run the full script: `npm run setup:auth-users`.
+6. Sign up / sign in in the app (not Guest). Sign out/in after changing admin claims.
+7. **Settings** shows Firebase connection status.
 
 **Emulators:** set `firebase.emulators=true` in `local.properties`, run `firebase emulators:start` from repo root.
 
