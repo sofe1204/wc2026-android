@@ -19,7 +19,7 @@ Canonical squad lists and per-player attribute numbers are maintained as CSV, th
 python scripts/generate_seed_data.py          # uses squads.csv when present
 python scripts/export_player_data_templates.py # refresh CSV from seed
 # edit data/player_ratings.csv
-python scripts/enrich_player_ratings.py
+python scripts/enrich_player_ratings.py   # merges CSV; uses rarity-based fallback for SoFIFA gaps
 python scripts/validate_player_ratings.py --strict
 python scripts/sync_project.py
 ```

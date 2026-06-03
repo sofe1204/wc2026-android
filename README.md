@@ -80,6 +80,12 @@ npm run import:official-squads
 
 # Regenerate squads.csv + Android/Functions seed JSON
 npm run generate:seed
+
+# Restore OVR + stat graphs (SoFIFA + fallback for unmatched names)
+npm run populate:ratings
+npm run fill:ratings-empty
+python3 scripts/enrich_player_ratings.py
+
 ./scripts/sync_project.sh
 ```
 

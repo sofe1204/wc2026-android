@@ -94,6 +94,38 @@ def ratings_complete(position: str, ratings: dict[str, int]) -> bool:
     return all(ratings.get(k, 0) > 0 for k in keys)
 
 
+def _clamp_stat(value: int) -> int:
+    return max(1, min(99, value))
+
+
+def fallback_ratings(position: str, rarity: str, shirt: int) -> dict[str, int]:
+    """Deterministic placeholder stats when SoFIFA has no match (UI still shows graphs)."""
+    base = {"legendary": 88, "epic": 82, "rare": 76, "common": 71}.get(rarity.lower(), 72)
+    deltas = [(shirt * 3 + i * 7) % 9 - 4 for i in range(6)]
+    out = empty_ratings()
+    out["overall"] = base
+    if position == "Goalkeeper":
+        keys = ("diving", "handling", "kicking", "reflexes", "speed", "positioning")
+        for i, key in enumerate(keys):
+            out[key] = _clamp_stat(base + deltas[i])
+    else:
+        keys = ("pace", "shooting", "passing", "dribbling", "defending", "physical")
+        for i, key in enumerate(keys):
+            out[key] = _clamp_stat(base + deltas[i])
+    return out
+
+
+def ratings_to_csv_row(player_id: str, ratings: dict[str, int], club_name: str = "", club_league: str = "") -> dict[str, str]:
+    row: dict[str, str] = {
+        "player_id": player_id,
+        "club_name": club_name,
+        "club_league": club_league,
+    }
+    for key in empty_ratings():
+        row[key] = str(ratings.get(key, 0))
+    return row
+
+
 def load_squads_csv(path: Path = SQUADS_CSV) -> dict[str, list[tuple[int, str, str, str]]] | None:
     if not path.exists():
         return None
