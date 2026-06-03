@@ -1,19 +1,19 @@
 team_id,shirt_number,player_name,position,rarity
-algeria,1,Algeria GK 1,Goalkeeper,rare
-algeria,2,Algeria DF 2,Defender,common
-algeria,3,Algeria DF 3,Defender,common
-algeria,4,Algeria DF 4,Defender,rare
-algeria,5,Algeria DF 5,Defender,common
-algeria,6,Algeria MF 6,Midfielder,common
-algeria,7,Algeria MF 7,Midfielder,epic
-algeria,8,Algeria MF 8,Midfielder,rare
-algeria,9,Algeria FW 9,Midfielder,common
-algeria,10,Algeria Star 10,Forward,legendary
-algeria,11,Algeria FW 11,Forward,epic
-algeria,12,Algeria FW 12,Forward,rare
-algeria,13,Algeria MF 13,Forward,common
-algeria,14,Algeria DF 14,Midfielder,common
-algeria,15,Algeria GK 15,Goalkeeper,common
+algeria,1,Raïs M'Bohli,Goalkeeper,rare
+algeria,2,Youcef Atal,Defender,rare
+algeria,3,Ramy Bensebaini,Defender,epic
+algeria,4,Ismaël Bennacer,Midfielder,epic
+algeria,5,Aïssa Mandi,Defender,rare
+algeria,6,Riyad Mahrez,Forward,legendary
+algeria,7,Youcef Belaïli,Midfielder,rare
+algeria,8,Adam Ounas,Midfielder,common
+algeria,9,Baghdad Bounedjah,Forward,rare
+algeria,10,Islam Slimani,Forward,epic
+algeria,11,Farès Chaïbi,Midfielder,rare
+algeria,12,Haris Belkebla,Midfielder,common
+algeria,13,Ramiz Zerrouki,Midfielder,common
+algeria,14,Jaouad Zaid,Defender,common
+algeria,15,Anthony Mandrea,Goalkeeper,common
 argentina,1,Emiliano Martínez,Goalkeeper,epic
 argentina,2,Nahuel Molina,Defender,rare
 argentina,3,Nicolás Otamendi,Defender,rare
@@ -29,36 +29,36 @@ argentina,12,Giovani Lo Celso,Midfielder,common
 argentina,13,Cristian Romero,Defender,rare
 argentina,14,Exequiel Palacios,Midfielder,common
 argentina,15,Gerónimo Rulli,Goalkeeper,common
-australia,1,Australia GK 1,Goalkeeper,rare
-australia,2,Australia DF 2,Defender,common
-australia,3,Australia DF 3,Defender,common
-australia,4,Australia DF 4,Defender,rare
-australia,5,Australia DF 5,Defender,common
-australia,6,Australia MF 6,Midfielder,common
-australia,7,Australia MF 7,Midfielder,epic
-australia,8,Australia MF 8,Midfielder,rare
-australia,9,Australia FW 9,Midfielder,common
-australia,10,Australia Star 10,Forward,legendary
-australia,11,Australia FW 11,Forward,epic
-australia,12,Australia FW 12,Forward,rare
-australia,13,Australia MF 13,Forward,common
-australia,14,Australia DF 14,Midfielder,common
-australia,15,Australia GK 15,Goalkeeper,common
-austria,1,Austria GK 1,Goalkeeper,rare
-austria,2,Austria DF 2,Defender,common
-austria,3,Austria DF 3,Defender,common
-austria,4,Austria DF 4,Defender,rare
-austria,5,Austria DF 5,Defender,common
-austria,6,Austria MF 6,Midfielder,common
-austria,7,Austria MF 7,Midfielder,epic
-austria,8,Austria MF 8,Midfielder,rare
-austria,9,Austria FW 9,Midfielder,common
-austria,10,Austria Star 10,Forward,legendary
-austria,11,Austria FW 11,Forward,epic
-austria,12,Austria FW 12,Forward,rare
-austria,13,Austria MF 13,Forward,common
-austria,14,Austria DF 14,Midfielder,common
-austria,15,Austria GK 15,Goalkeeper,common
+australia,1,Mathew Ryan,Goalkeeper,epic
+australia,2,Fran Karačić,Defender,common
+australia,3,Harry Souttar,Defender,rare
+australia,4,Jackson Irvine,Midfielder,epic
+australia,5,Bailey Wright,Defender,common
+australia,6,Mathew Leckie,Forward,rare
+australia,7,Riley McGree,Midfielder,common
+australia,8,Ajdin Hrustić,Midfielder,rare
+australia,9,Mitchell Duke,Forward,rare
+australia,10,Craig Goodwin,Forward,epic
+australia,11,Garang Kuol,Forward,common
+australia,12,Aziz Behich,Defender,common
+australia,13,Keanu Baccus,Midfielder,common
+australia,14,Kusini Yengi,Forward,common
+australia,15,Lawrence Thomas,Goalkeeper,common
+austria,1,Patrick Pentz,Goalkeeper,rare
+austria,2,David Alaba,Defender,legendary
+austria,3,Kevin Wimmer,Defender,common
+austria,4,Marcel Sabitzer,Midfielder,epic
+austria,5,Philipp Lienhart,Defender,rare
+austria,6,Konrad Laimer,Midfielder,epic
+austria,7,Marko Arnautović,Forward,legendary
+austria,8,Christoph Baumgartner,Midfielder,rare
+austria,9,Michael Gregoritsch,Forward,rare
+austria,10,Maximilian Wöber,Defender,rare
+austria,11,Romano Schmid,Midfielder,common
+austria,12,Stefan Posch,Defender,rare
+austria,13,Flavius Daniliuc,Defender,common
+austria,14,Alexander Prass,Midfielder,common
+austria,15,Heinz Lindner,Goalkeeper,common
 belgium,1,Thibaut Courtois,Goalkeeper,legendary
 belgium,2,Thomas Meunier,Defender,common
 belgium,3,Arthur Theate,Defender,rare
@@ -74,21 +74,21 @@ belgium,12,Timothy Castagne,Defender,common
 belgium,13,Charles De Ketelaere,Midfielder,rare
 belgium,14,Dodi Lukebakio,Forward,common
 belgium,15,Koen Casteels,Goalkeeper,rare
-bosnia_herzegovina,1,Bosnia and Herzegovina GK 1,Goalkeeper,rare
-bosnia_herzegovina,2,Bosnia and Herzegovina DF 2,Defender,common
-bosnia_herzegovina,3,Bosnia and Herzegovina DF 3,Defender,common
-bosnia_herzegovina,4,Bosnia and Herzegovina DF 4,Defender,rare
-bosnia_herzegovina,5,Bosnia and Herzegovina DF 5,Defender,common
-bosnia_herzegovina,6,Bosnia and Herzegovina MF 6,Midfielder,common
-bosnia_herzegovina,7,Bosnia and Herzegovina MF 7,Midfielder,epic
-bosnia_herzegovina,8,Bosnia and Herzegovina MF 8,Midfielder,rare
-bosnia_herzegovina,9,Bosnia and Herzegovina FW 9,Midfielder,common
-bosnia_herzegovina,10,Bosnia and Herzegovina Star 10,Forward,legendary
-bosnia_herzegovina,11,Bosnia and Herzegovina FW 11,Forward,epic
-bosnia_herzegovina,12,Bosnia and Herzegovina FW 12,Forward,rare
-bosnia_herzegovina,13,Bosnia and Herzegovina MF 13,Forward,common
-bosnia_herzegovina,14,Bosnia and Herzegovina DF 14,Midfielder,common
-bosnia_herzegovina,15,Bosnia and Herzegovina GK 15,Goalkeeper,common
+bosnia_herzegovina,1,Asmir Begović,Goalkeeper,rare
+bosnia_herzegovina,2,Sead Kolašinac,Defender,epic
+bosnia_herzegovina,3,Ermin Bičakčić,Defender,common
+bosnia_herzegovina,4,Miralem Pjanić,Midfielder,legendary
+bosnia_herzegovina,5,Stojan Vukanović,Defender,common
+bosnia_herzegovina,6,Gojko Cimirot,Midfielder,rare
+bosnia_herzegovina,7,Edin Džeko,Forward,legendary
+bosnia_herzegovina,8,Amar Kadić,Midfielder,common
+bosnia_herzegovina,9,Miroslav Stevanović,Forward,rare
+bosnia_herzegovina,10,Marko Arnautović,Forward,epic
+bosnia_herzegovina,11,Elvis Mešić,Midfielder,common
+bosnia_herzegovina,12,Benjamin Tahirović,Midfielder,rare
+bosnia_herzegovina,13,Anel Ahmedhodžić,Defender,rare
+bosnia_herzegovina,14,Adrian Leon Bagić,Defender,common
+bosnia_herzegovina,15,Ibrahim Šehić,Goalkeeper,common
 brazil,1,Alisson,Goalkeeper,epic
 brazil,2,Danilo,Defender,rare
 brazil,3,Marquinhos,Defender,epic
@@ -119,21 +119,21 @@ canada,12,Ismaël Koné,Midfielder,rare
 canada,13,Mark-Anthony Kaye,Midfielder,common
 canada,14,Lucas Cavallini,Forward,common
 canada,15,Maxime Crépeau,Goalkeeper,common
-cape_verde,1,Cape Verde GK 1,Goalkeeper,rare
-cape_verde,2,Cape Verde DF 2,Defender,common
-cape_verde,3,Cape Verde DF 3,Defender,common
-cape_verde,4,Cape Verde DF 4,Defender,rare
-cape_verde,5,Cape Verde DF 5,Defender,common
-cape_verde,6,Cape Verde MF 6,Midfielder,common
-cape_verde,7,Cape Verde MF 7,Midfielder,epic
-cape_verde,8,Cape Verde MF 8,Midfielder,rare
-cape_verde,9,Cape Verde FW 9,Midfielder,common
-cape_verde,10,Cape Verde Star 10,Forward,legendary
-cape_verde,11,Cape Verde FW 11,Forward,epic
-cape_verde,12,Cape Verde FW 12,Forward,rare
-cape_verde,13,Cape Verde MF 13,Forward,common
-cape_verde,14,Cape Verde DF 14,Midfielder,common
-cape_verde,15,Cape Verde GK 15,Goalkeeper,common
+cape_verde,1,Vozinha,Goalkeeper,rare
+cape_verde,2,Dylan Tavares,Defender,common
+cape_verde,3,Jójó,Defender,rare
+cape_verde,4,Marco Tavares,Midfielder,epic
+cape_verde,5,Roberto Lopes,Defender,rare
+cape_verde,6,Ryan Mendes,Forward,epic
+cape_verde,7,Jâson,Forward,rare
+cape_verde,8,Patrick Andrade,Midfielder,common
+cape_verde,9,Bébé,Forward,legendary
+cape_verde,10,Gilson Tavares,Forward,epic
+cape_verde,11,Jamiro Monteiro,Midfielder,rare
+cape_verde,12,Diney,Defender,common
+cape_verde,13,Garry Rodrigues,Forward,rare
+cape_verde,14,Platini,Forward,common
+cape_verde,15,Kelvin Pires,Goalkeeper,common
 colombia,1,David Ospina,Goalkeeper,epic
 colombia,2,Santiago Arias,Defender,common
 colombia,3,Davinson Sánchez,Defender,epic
@@ -164,81 +164,81 @@ croatia,12,Mislav Oršić,Forward,common
 croatia,13,Nikola Vlašić,Midfielder,rare
 croatia,14,Ivan Perišić,Forward,epic
 croatia,15,Ivica Ivusić,Goalkeeper,common
-curacao,1,Curaçao GK 1,Goalkeeper,rare
-curacao,2,Curaçao DF 2,Defender,common
-curacao,3,Curaçao DF 3,Defender,common
-curacao,4,Curaçao DF 4,Defender,rare
-curacao,5,Curaçao DF 5,Defender,common
-curacao,6,Curaçao MF 6,Midfielder,common
-curacao,7,Curaçao MF 7,Midfielder,epic
-curacao,8,Curaçao MF 8,Midfielder,rare
-curacao,9,Curaçao FW 9,Midfielder,common
-curacao,10,Curaçao Star 10,Forward,legendary
-curacao,11,Curaçao FW 11,Forward,epic
-curacao,12,Curaçao FW 12,Forward,rare
-curacao,13,Curaçao MF 13,Forward,common
-curacao,14,Curaçao DF 14,Midfielder,common
-curacao,15,Curaçao GK 15,Goalkeeper,common
-czechia,1,Czechia GK 1,Goalkeeper,rare
-czechia,2,Czechia DF 2,Defender,common
-czechia,3,Czechia DF 3,Defender,common
-czechia,4,Czechia DF 4,Defender,rare
-czechia,5,Czechia DF 5,Defender,common
-czechia,6,Czechia MF 6,Midfielder,common
-czechia,7,Czechia MF 7,Midfielder,epic
-czechia,8,Czechia MF 8,Midfielder,rare
-czechia,9,Czechia FW 9,Midfielder,common
-czechia,10,Czechia Star 10,Forward,legendary
-czechia,11,Czechia FW 11,Forward,epic
-czechia,12,Czechia FW 12,Forward,rare
-czechia,13,Czechia MF 13,Forward,common
-czechia,14,Czechia DF 14,Midfielder,common
-czechia,15,Czechia GK 15,Goalkeeper,common
-dr_congo,1,DR Congo GK 1,Goalkeeper,rare
-dr_congo,2,DR Congo DF 2,Defender,common
-dr_congo,3,DR Congo DF 3,Defender,common
-dr_congo,4,DR Congo DF 4,Defender,rare
-dr_congo,5,DR Congo DF 5,Defender,common
-dr_congo,6,DR Congo MF 6,Midfielder,common
-dr_congo,7,DR Congo MF 7,Midfielder,epic
-dr_congo,8,DR Congo MF 8,Midfielder,rare
-dr_congo,9,DR Congo FW 9,Midfielder,common
-dr_congo,10,DR Congo Star 10,Forward,legendary
-dr_congo,11,DR Congo FW 11,Forward,epic
-dr_congo,12,DR Congo FW 12,Forward,rare
-dr_congo,13,DR Congo MF 13,Forward,common
-dr_congo,14,DR Congo DF 14,Midfielder,common
-dr_congo,15,DR Congo GK 15,Goalkeeper,common
-ecuador,1,Ecuador GK 1,Goalkeeper,rare
-ecuador,2,Ecuador DF 2,Defender,common
-ecuador,3,Ecuador DF 3,Defender,common
-ecuador,4,Ecuador DF 4,Defender,rare
-ecuador,5,Ecuador DF 5,Defender,common
-ecuador,6,Ecuador MF 6,Midfielder,common
-ecuador,7,Ecuador MF 7,Midfielder,epic
-ecuador,8,Ecuador MF 8,Midfielder,rare
-ecuador,9,Ecuador FW 9,Midfielder,common
-ecuador,10,Ecuador Star 10,Forward,legendary
-ecuador,11,Ecuador FW 11,Forward,epic
-ecuador,12,Ecuador FW 12,Forward,rare
-ecuador,13,Ecuador MF 13,Forward,common
-ecuador,14,Ecuador DF 14,Midfielder,common
-ecuador,15,Ecuador GK 15,Goalkeeper,common
-egypt,1,Egypt GK 1,Goalkeeper,rare
-egypt,2,Egypt DF 2,Defender,common
-egypt,3,Egypt DF 3,Defender,common
-egypt,4,Egypt DF 4,Defender,rare
-egypt,5,Egypt DF 5,Defender,common
-egypt,6,Egypt MF 6,Midfielder,common
-egypt,7,Egypt MF 7,Midfielder,epic
-egypt,8,Egypt MF 8,Midfielder,rare
-egypt,9,Egypt FW 9,Midfielder,common
-egypt,10,Egypt Star 10,Forward,legendary
-egypt,11,Egypt FW 11,Forward,epic
-egypt,12,Egypt FW 12,Forward,rare
-egypt,13,Egypt MF 13,Forward,common
-egypt,14,Egypt DF 14,Midfielder,common
-egypt,15,Egypt GK 15,Goalkeeper,common
+curacao,1,Eloy Room,Goalkeeper,rare
+curacao,2,Cuco Martina,Defender,epic
+curacao,3,Juriën Gaari,Defender,common
+curacao,4,Leandro Bacuna,Midfielder,epic
+curacao,5,Sherel Floranus,Defender,rare
+curacao,6,Roly Bonevacia,Midfielder,common
+curacao,7,Elson Hooi,Forward,rare
+curacao,8,Gino Jelvardi,Midfielder,common
+curacao,9,Jarchinio Antonia,Forward,rare
+curacao,10,Brandley Kuwas,Forward,epic
+curacao,11,Rangelo Janga,Forward,legendary
+curacao,12,Tyrick Mitchell,Defender,common
+curacao,13,Shanon Carmelia,Forward,common
+curacao,14,Juninho Bacuna,Midfielder,rare
+curacao,15,Trevor Doornbusch,Goalkeeper,common
+czechia,1,Tomáš Vaclík,Goalkeeper,rare
+czechia,2,Vladimír Coufal,Defender,common
+czechia,3,Ondřej Kúdela,Defender,rare
+czechia,4,Tomáš Souček,Midfielder,epic
+czechia,5,David Jurásek,Defender,common
+czechia,6,Antonín Barák,Midfielder,rare
+czechia,7,Patrik Schick,Forward,legendary
+czechia,8,Alex Král,Midfielder,common
+czechia,9,Jan Kuchta,Forward,rare
+czechia,10,Michal Sadílek,Midfielder,epic
+czechia,11,Adam Hložek,Forward,rare
+czechia,12,Lukáš Provod,Midfielder,common
+czechia,13,Ladislav Krejčí,Defender,common
+czechia,14,Tomáš Holeš,Midfielder,common
+czechia,15,Jiří Pavlenka,Goalkeeper,common
+dr_congo,1,Joël Kiassumbua,Goalkeeper,rare
+dr_congo,2,Chancel Mbemba,Defender,epic
+dr_congo,3,Christian Luyindama,Defender,rare
+dr_congo,4,Edo Kayembe,Midfielder,epic
+dr_congo,5,Marcel Tisserand,Defender,common
+dr_congo,6,Cédric Bakambu,Forward,legendary
+dr_congo,7,Théo Bongonda,Forward,rare
+dr_congo,8,Gaël Kakuta,Midfielder,epic
+dr_congo,9,Fiston Mayele,Forward,rare
+dr_congo,10,Yoane Wissa,Forward,epic
+dr_congo,11,Aaron Tchombani,Midfielder,common
+dr_congo,12,Arthur Masuaku,Defender,rare
+dr_congo,13,Paul-José Mpoku,Midfielder,common
+dr_congo,14,Chadrac Akolo,Forward,common
+dr_congo,15,Brady Fleury,Goalkeeper,common
+ecuador,1,Hernán Galíndez,Goalkeeper,rare
+ecuador,2,Angelo Preciado,Defender,common
+ecuador,3,Piero Hincapié,Defender,epic
+ecuador,4,Moisés Caicedo,Midfielder,legendary
+ecuador,5,Felix Torres,Defender,rare
+ecuador,6,Enner Valencia,Forward,legendary
+ecuador,7,Carlos Gruezo,Midfielder,rare
+ecuador,8,Jeremy Sarmiento,Midfielder,common
+ecuador,9,Jordy Caicedo,Forward,rare
+ecuador,10,Gonzalo Plata,Forward,epic
+ecuador,11,Michael Estrada,Forward,common
+ecuador,12,Pervis Estupiñán,Defender,epic
+ecuador,13,Kendry Páez,Midfielder,rare
+ecuador,14,Alan Franco,Midfielder,common
+ecuador,15,Alexander Domínguez,Goalkeeper,common
+egypt,1,Mohamed El Shenawy,Goalkeeper,epic
+egypt,2,Mohamed Hany,Defender,common
+egypt,3,Mohamed Abdelmonem,Defender,rare
+egypt,4,Mohamed Elneny,Midfielder,epic
+egypt,5,Ahmed Hegazi,Defender,rare
+egypt,6,Mohamed Salah,Forward,legendary
+egypt,7,Omar Marmoush,Forward,epic
+egypt,8,Trézéguet,Forward,rare
+egypt,9,Mostafa Mohamed,Forward,rare
+egypt,10,Emam Ashour,Midfielder,common
+egypt,11,Marwan Hamdy,Forward,common
+egypt,12,Ahmed Sayed Zizo,Midfielder,rare
+egypt,13,Hamdy Fathy,Midfielder,common
+egypt,14,Ayman Ashraf,Defender,common
+egypt,15,Mohamed Abou Gabal,Goalkeeper,common
 england,1,Jordan Pickford,Goalkeeper,epic
 england,2,Kyle Walker,Defender,rare
 england,3,John Stones,Defender,epic
@@ -284,81 +284,81 @@ germany,12,David Raum,Defender,common
 germany,13,Thomas Müller,Forward,epic
 germany,14,Nico Schlotterbeck,Defender,common
 germany,15,Marc-André ter Stegen,Goalkeeper,rare
-ghana,1,Ghana GK 1,Goalkeeper,rare
-ghana,2,Ghana DF 2,Defender,common
-ghana,3,Ghana DF 3,Defender,common
-ghana,4,Ghana DF 4,Defender,rare
-ghana,5,Ghana DF 5,Defender,common
-ghana,6,Ghana MF 6,Midfielder,common
-ghana,7,Ghana MF 7,Midfielder,epic
-ghana,8,Ghana MF 8,Midfielder,rare
-ghana,9,Ghana FW 9,Midfielder,common
-ghana,10,Ghana Star 10,Forward,legendary
-ghana,11,Ghana FW 11,Forward,epic
-ghana,12,Ghana FW 12,Forward,rare
-ghana,13,Ghana MF 13,Forward,common
-ghana,14,Ghana DF 14,Midfielder,common
-ghana,15,Ghana GK 15,Goalkeeper,common
-haiti,1,Haiti GK 1,Goalkeeper,rare
-haiti,2,Haiti DF 2,Defender,common
-haiti,3,Haiti DF 3,Defender,common
-haiti,4,Haiti DF 4,Defender,rare
-haiti,5,Haiti DF 5,Defender,common
-haiti,6,Haiti MF 6,Midfielder,common
-haiti,7,Haiti MF 7,Midfielder,epic
-haiti,8,Haiti MF 8,Midfielder,rare
-haiti,9,Haiti FW 9,Midfielder,common
-haiti,10,Haiti Star 10,Forward,legendary
-haiti,11,Haiti FW 11,Forward,epic
-haiti,12,Haiti FW 12,Forward,rare
-haiti,13,Haiti MF 13,Forward,common
-haiti,14,Haiti DF 14,Midfielder,common
-haiti,15,Haiti GK 15,Goalkeeper,common
-iran,1,Iran GK 1,Goalkeeper,rare
-iran,2,Iran DF 2,Defender,common
-iran,3,Iran DF 3,Defender,common
-iran,4,Iran DF 4,Defender,rare
-iran,5,Iran DF 5,Defender,common
-iran,6,Iran MF 6,Midfielder,common
-iran,7,Iran MF 7,Midfielder,epic
-iran,8,Iran MF 8,Midfielder,rare
-iran,9,Iran FW 9,Midfielder,common
-iran,10,Iran Star 10,Forward,legendary
-iran,11,Iran FW 11,Forward,epic
-iran,12,Iran FW 12,Forward,rare
-iran,13,Iran MF 13,Forward,common
-iran,14,Iran DF 14,Midfielder,common
-iran,15,Iran GK 15,Goalkeeper,common
-iraq,1,Iraq GK 1,Goalkeeper,rare
-iraq,2,Iraq DF 2,Defender,common
-iraq,3,Iraq DF 3,Defender,common
-iraq,4,Iraq DF 4,Defender,rare
-iraq,5,Iraq DF 5,Defender,common
-iraq,6,Iraq MF 6,Midfielder,common
-iraq,7,Iraq MF 7,Midfielder,epic
-iraq,8,Iraq MF 8,Midfielder,rare
-iraq,9,Iraq FW 9,Midfielder,common
-iraq,10,Iraq Star 10,Forward,legendary
-iraq,11,Iraq FW 11,Forward,epic
-iraq,12,Iraq FW 12,Forward,rare
-iraq,13,Iraq MF 13,Forward,common
-iraq,14,Iraq DF 14,Midfielder,common
-iraq,15,Iraq GK 15,Goalkeeper,common
-ivory_coast,1,Ivory Coast GK 1,Goalkeeper,rare
-ivory_coast,2,Ivory Coast DF 2,Defender,common
-ivory_coast,3,Ivory Coast DF 3,Defender,common
-ivory_coast,4,Ivory Coast DF 4,Defender,rare
-ivory_coast,5,Ivory Coast DF 5,Defender,common
-ivory_coast,6,Ivory Coast MF 6,Midfielder,common
-ivory_coast,7,Ivory Coast MF 7,Midfielder,epic
-ivory_coast,8,Ivory Coast MF 8,Midfielder,rare
-ivory_coast,9,Ivory Coast FW 9,Midfielder,common
-ivory_coast,10,Ivory Coast Star 10,Forward,legendary
-ivory_coast,11,Ivory Coast FW 11,Forward,epic
-ivory_coast,12,Ivory Coast FW 12,Forward,rare
-ivory_coast,13,Ivory Coast MF 13,Forward,common
-ivory_coast,14,Ivory Coast DF 14,Midfielder,common
-ivory_coast,15,Ivory Coast GK 15,Goalkeeper,common
+ghana,1,Lawrence Ati-Zigi,Goalkeeper,rare
+ghana,2,Gideon Mensah,Defender,common
+ghana,3,Daniel Amartey,Defender,rare
+ghana,4,Thomas Partey,Midfielder,legendary
+ghana,5,Alexander Djiku,Defender,epic
+ghana,6,Mohammed Kudus,Midfielder,epic
+ghana,7,Jordan Ayew,Forward,rare
+ghana,8,André Ayew,Forward,legendary
+ghana,9,Inaki Williams,Forward,epic
+ghana,10,Antoine Semenyo,Forward,rare
+ghana,11,Kamaldeen Sulemana,Forward,rare
+ghana,12,Salis Abdul Samed,Midfielder,common
+ghana,13,Ernest Nuamah,Forward,common
+ghana,14,Alidu Seidu,Defender,common
+ghana,15,Richard Ofori,Goalkeeper,common
+haiti,1,Johny Placide,Goalkeeper,rare
+haiti,2,Derrick Etienne,Defender,common
+haiti,3,Mechack Jérôme,Defender,rare
+haiti,4,Zachary Brault-Guillard,Defender,common
+haiti,5,Ricardo Adé,Defender,rare
+haiti,6,Derrick Etienne Jr,Midfielder,epic
+haiti,7,Mondy Prunier,Forward,rare
+haiti,8,Bryan Alceus,Midfielder,common
+haiti,9,Danley Jean Plooij,Forward,common
+haiti,10,Duckens Nazon,Forward,epic
+haiti,11,Frantzdy Pierrot,Forward,legendary
+haiti,12,Carnejy Antoine,Forward,rare
+haiti,13,Steeven Sabbat,Midfielder,common
+haiti,14,Martin Experience,Defender,common
+haiti,15,Josué Duverger,Goalkeeper,common
+iran,1,Alireza Beiranvand,Goalkeeper,rare
+iran,2,Hossein Kanaani,Defender,common
+iran,3,Rouzbeh Cheshmi,Defender,rare
+iran,4,Saeid Ezatolahi,Midfielder,epic
+iran,5,Milad Mohammadi,Defender,rare
+iran,6,Mehdi Taremi,Forward,legendary
+iran,7,Alireza Jahanbakhsh,Forward,epic
+iran,8,Saman Ghoddos,Midfielder,common
+iran,9,Mehdi Ghayedi,Forward,rare
+iran,10,Sardar Azmoun,Forward,legendary
+iran,11,Omid Noorafkan,Midfielder,common
+iran,12,Ehsan Hajsafi,Defender,rare
+iran,13,Karim Ansarifard,Forward,rare
+iran,14,Vahid Amiri,Midfielder,common
+iran,15,Hossein Hosseini,Goalkeeper,common
+iraq,1,Jalal Hassan,Goalkeeper,rare
+iraq,2,Ali Adnan,Defender,epic
+iraq,3,Ayman Mokhtar,Defender,common
+iraq,4,Zidane Iqbal,Midfielder,epic
+iraq,5,Hussein Ali,Defender,rare
+iraq,6,Amjad Attwan,Midfielder,common
+iraq,7,Aymen Hussein,Forward,legendary
+iraq,8,Mohammed Ali Ahmed,Midfielder,rare
+iraq,9,Mohanad Ali,Forward,epic
+iraq,10,Zaid Abdullah,Midfielder,common
+iraq,11,Bashar Resan,Midfielder,rare
+iraq,12,Saad Rashid,Midfielder,common
+iraq,13,Ali Faez,Defender,common
+iraq,14,Ahmed Yasin,Midfielder,common
+iraq,15,Hussein Hassan,Goalkeeper,common
+ivory_coast,1,Badra Ali Sangaré,Goalkeeper,rare
+ivory_coast,2,Serge Aurier,Defender,epic
+ivory_coast,3,Eric Bailly,Defender,rare
+ivory_coast,4,Franck Kessié,Midfielder,legendary
+ivory_coast,5,Wilfried Zaha,Forward,epic
+ivory_coast,6,Sébastien Haller,Forward,epic
+ivory_coast,7,Nicolas Pépé,Forward,legendary
+ivory_coast,8,Ibrahim Sangaré,Midfielder,rare
+ivory_coast,9,Jean-Philippe Krasso,Forward,rare
+ivory_coast,10,Simon Adingra,Forward,epic
+ivory_coast,11,Christian Atsu,Midfielder,common
+ivory_coast,12,Ghislain Konan,Defender,common
+ivory_coast,13,Max-Alain Gradel,Forward,rare
+ivory_coast,14,Jean-Daniel Akpa Akpro,Midfielder,common
+ivory_coast,15,Yahia Fofana,Goalkeeper,common
 japan,1,Daniel Schmidt,Goalkeeper,common
 japan,2,Hiroki Ito,Defender,rare
 japan,3,Shogo Taniguchi,Defender,common
@@ -373,22 +373,22 @@ japan,11,Junya Ito,Forward,epic
 japan,12,Daizen Maeda,Forward,common
 japan,13,Reo Hatate,Midfielder,common
 japan,14,Ao Tanaka,Midfielder,rare
-japan,15,Gonda Shuichi,Goalkeeper,common
-jordan,1,Jordan GK 1,Goalkeeper,rare
-jordan,2,Jordan DF 2,Defender,common
-jordan,3,Jordan DF 3,Defender,common
-jordan,4,Jordan DF 4,Defender,rare
-jordan,5,Jordan DF 5,Defender,common
-jordan,6,Jordan MF 6,Midfielder,common
-jordan,7,Jordan MF 7,Midfielder,epic
-jordan,8,Jordan MF 8,Midfielder,rare
-jordan,9,Jordan FW 9,Midfielder,common
-jordan,10,Jordan Star 10,Forward,legendary
-jordan,11,Jordan FW 11,Forward,epic
-jordan,12,Jordan FW 12,Forward,rare
-jordan,13,Jordan MF 13,Forward,common
-jordan,14,Jordan DF 14,Midfielder,common
-jordan,15,Jordan GK 15,Goalkeeper,common
+japan,15,Shuichi Gonda,Goalkeeper,common
+jordan,1,Yazid Abulaila,Goalkeeper,rare
+jordan,2,Yazan Al-Naimat,Defender,common
+jordan,3,Tareq Shoman,Defender,rare
+jordan,4,Rajaei Ayed,Midfielder,epic
+jordan,5,Ihsan Haddad,Defender,rare
+jordan,6,Mousa Al-Taamari,Forward,legendary
+jordan,7,Ali Olwan,Forward,epic
+jordan,8,Mahmoud Al-Mardi,Midfielder,common
+jordan,9,Yaseen Al-Bakhit,Forward,rare
+jordan,10,Nizar Al-Rashdan,Midfielder,common
+jordan,11,Ehab Al-Hanbali,Defender,common
+jordan,12,Anas Ahmed,Midfielder,rare
+jordan,13,Abdallah Nasoub,Forward,common
+jordan,14,Baha Abdel-Rahman,Midfielder,common
+jordan,15,Ahmad Nawfal,Goalkeeper,common
 mexico,1,Guillermo Ochoa,Goalkeeper,rare
 mexico,2,Jorge Sánchez,Defender,common
 mexico,3,César Montes,Defender,rare
@@ -419,7 +419,7 @@ morocco,12,Selim Amallah,Midfielder,common
 morocco,13,Yahya Attiat-Allah,Defender,common
 morocco,14,Zakaria Aboukhlal,Forward,common
 morocco,15,Munir El Kajoui,Goalkeeper,common
-netherlands,1,Virgil van Dijk,Defender,legendary
+netherlands,1,Bart Verbruggen,Goalkeeper,rare
 netherlands,2,Denzel Dumfries,Defender,epic
 netherlands,3,Matthijs de Ligt,Defender,epic
 netherlands,4,Frenkie de Jong,Midfielder,legendary
@@ -434,66 +434,66 @@ netherlands,12,Jeremie Frimpong,Defender,rare
 netherlands,13,Daley Blind,Defender,common
 netherlands,14,Georginio Wijnaldum,Midfielder,rare
 netherlands,15,Mark Flekken,Goalkeeper,common
-new_zealand,1,New Zealand GK 1,Goalkeeper,rare
-new_zealand,2,New Zealand DF 2,Defender,common
-new_zealand,3,New Zealand DF 3,Defender,common
-new_zealand,4,New Zealand DF 4,Defender,rare
-new_zealand,5,New Zealand DF 5,Defender,common
-new_zealand,6,New Zealand MF 6,Midfielder,common
-new_zealand,7,New Zealand MF 7,Midfielder,epic
-new_zealand,8,New Zealand MF 8,Midfielder,rare
-new_zealand,9,New Zealand FW 9,Midfielder,common
-new_zealand,10,New Zealand Star 10,Forward,legendary
-new_zealand,11,New Zealand FW 11,Forward,epic
-new_zealand,12,New Zealand FW 12,Forward,rare
-new_zealand,13,New Zealand MF 13,Forward,common
-new_zealand,14,New Zealand DF 14,Midfielder,common
-new_zealand,15,New Zealand GK 15,Goalkeeper,common
-norway,1,Norway GK 1,Goalkeeper,rare
-norway,2,Norway DF 2,Defender,common
-norway,3,Norway DF 3,Defender,common
-norway,4,Norway DF 4,Defender,rare
-norway,5,Norway DF 5,Defender,common
-norway,6,Norway MF 6,Midfielder,common
-norway,7,Norway MF 7,Midfielder,epic
-norway,8,Norway MF 8,Midfielder,rare
-norway,9,Norway FW 9,Midfielder,common
-norway,10,Norway Star 10,Forward,legendary
-norway,11,Norway FW 11,Forward,epic
-norway,12,Norway FW 12,Forward,rare
-norway,13,Norway MF 13,Forward,common
-norway,14,Norway DF 14,Midfielder,common
-norway,15,Norway GK 15,Goalkeeper,common
-panama,1,Panama GK 1,Goalkeeper,rare
-panama,2,Panama DF 2,Defender,common
-panama,3,Panama DF 3,Defender,common
-panama,4,Panama DF 4,Defender,rare
-panama,5,Panama DF 5,Defender,common
-panama,6,Panama MF 6,Midfielder,common
-panama,7,Panama MF 7,Midfielder,epic
-panama,8,Panama MF 8,Midfielder,rare
-panama,9,Panama FW 9,Midfielder,common
-panama,10,Panama Star 10,Forward,legendary
-panama,11,Panama FW 11,Forward,epic
-panama,12,Panama FW 12,Forward,rare
-panama,13,Panama MF 13,Forward,common
-panama,14,Panama DF 14,Midfielder,common
-panama,15,Panama GK 15,Goalkeeper,common
-paraguay,1,Paraguay GK 1,Goalkeeper,rare
-paraguay,2,Paraguay DF 2,Defender,common
-paraguay,3,Paraguay DF 3,Defender,common
-paraguay,4,Paraguay DF 4,Defender,rare
-paraguay,5,Paraguay DF 5,Defender,common
-paraguay,6,Paraguay MF 6,Midfielder,common
-paraguay,7,Paraguay MF 7,Midfielder,epic
-paraguay,8,Paraguay MF 8,Midfielder,rare
-paraguay,9,Paraguay FW 9,Midfielder,common
-paraguay,10,Paraguay Star 10,Forward,legendary
-paraguay,11,Paraguay FW 11,Forward,epic
-paraguay,12,Paraguay FW 12,Forward,rare
-paraguay,13,Paraguay MF 13,Forward,common
-paraguay,14,Paraguay DF 14,Midfielder,common
-paraguay,15,Paraguay GK 15,Goalkeeper,common
+new_zealand,1,Oliver Sail,Goalkeeper,rare
+new_zealand,2,Liberato Cacace,Defender,epic
+new_zealand,3,Bill Tuiloma,Defender,common
+new_zealand,4,Joe Bell,Midfielder,rare
+new_zealand,5,Nando Pijanker,Defender,common
+new_zealand,6,Ryan Thomas,Midfielder,epic
+new_zealand,7,Marco Rojas,Midfielder,legendary
+new_zealand,8,Marko Stamenić,Midfielder,common
+new_zealand,9,Chris Wood,Forward,legendary
+new_zealand,10,Ben Waine,Forward,rare
+new_zealand,11,Elijah Just,Midfielder,common
+new_zealand,12,Kosta Barbarouses,Forward,epic
+new_zealand,13,Alex Greive,Forward,common
+new_zealand,14,Michael Boxall,Defender,rare
+new_zealand,15,Max Crocombe,Goalkeeper,common
+norway,1,Bernd Leno,Goalkeeper,epic
+norway,2,Julian Ryerson,Defender,rare
+norway,3,Stefan Strandberg,Defender,common
+norway,4,Martin Ødegaard,Midfielder,legendary
+norway,5,Kristoffer Ajer,Defender,rare
+norway,6,Sander Berge,Midfielder,epic
+norway,7,Erling Haaland,Forward,legendary
+norway,8,Joshua King,Forward,rare
+norway,9,Alexander Sørloth,Forward,epic
+norway,10,Antoine Semenyo,Forward,rare
+norway,11,Aron Dønnum,Midfielder,common
+norway,12,Felix Myhre,Midfielder,common
+norway,13,Patrick Berg,Midfielder,rare
+norway,14,Leo Østigård,Defender,common
+norway,15,André Hansen,Goalkeeper,common
+panama,1,Jaime Penedo,Goalkeeper,rare
+panama,2,Michael Murillo,Defender,epic
+panama,3,Fidel Escobar,Defender,common
+panama,4,Aníbal Godoy,Midfielder,epic
+panama,5,Román Torres,Defender,rare
+panama,6,Adalberto Carrasquilla,Midfielder,rare
+panama,7,José Fajardo,Forward,common
+panama,8,Alberto Quintero,Midfielder,rare
+panama,9,Gabriel Torres,Forward,epic
+panama,10,Luis Mejía,Goalkeeper,common
+panama,11,Rolando Blackburn,Forward,legendary
+panama,12,César Blackman,Midfielder,common
+panama,13,Ismael Díaz,Forward,rare
+panama,14,Harold Cummings,Defender,common
+panama,15,Orlando Mosquera,Goalkeeper,common
+paraguay,1,Anthony Silva,Goalkeeper,rare
+paraguay,2,Robert Rojas,Defender,common
+paraguay,3,Gustavo Gómez,Defender,epic
+paraguay,4,Miguel Almirón,Midfielder,legendary
+paraguay,5,Júnior Alonso,Defender,rare
+paraguay,6,Mathías Rojas,Midfielder,rare
+paraguay,7,Antonio Sanabria,Forward,epic
+paraguay,8,Diego Gómez,Midfielder,common
+paraguay,9,Gabriel Avalos,Forward,rare
+paraguay,10,Óscar Romero,Midfielder,epic
+paraguay,11,Ángel Romero,Forward,rare
+paraguay,12,Blas Riveros,Defender,common
+paraguay,13,Iván Ramírez,Defender,common
+paraguay,14,Matías Rojas,Midfielder,common
+paraguay,15,Santiago Rojas,Goalkeeper,common
 portugal,1,Diogo Costa,Goalkeeper,epic
 portugal,2,João Cancelo,Defender,epic
 portugal,3,Rúben Dias,Defender,epic
@@ -509,51 +509,51 @@ portugal,12,Nuno Mendes,Defender,rare
 portugal,13,Vitinha,Midfielder,common
 portugal,14,Otávio,Midfielder,common
 portugal,15,José Sá,Goalkeeper,common
-qatar,1,Qatar GK 1,Goalkeeper,rare
-qatar,2,Qatar DF 2,Defender,common
-qatar,3,Qatar DF 3,Defender,common
-qatar,4,Qatar DF 4,Defender,rare
-qatar,5,Qatar DF 5,Defender,common
-qatar,6,Qatar MF 6,Midfielder,common
-qatar,7,Qatar MF 7,Midfielder,epic
-qatar,8,Qatar MF 8,Midfielder,rare
-qatar,9,Qatar FW 9,Midfielder,common
-qatar,10,Qatar Star 10,Forward,legendary
-qatar,11,Qatar FW 11,Forward,epic
-qatar,12,Qatar FW 12,Forward,rare
-qatar,13,Qatar MF 13,Forward,common
-qatar,14,Qatar DF 14,Midfielder,common
-qatar,15,Qatar GK 15,Goalkeeper,common
-saudi_arabia,1,Saudi Arabia GK 1,Goalkeeper,rare
-saudi_arabia,2,Saudi Arabia DF 2,Defender,common
-saudi_arabia,3,Saudi Arabia DF 3,Defender,common
-saudi_arabia,4,Saudi Arabia DF 4,Defender,rare
-saudi_arabia,5,Saudi Arabia DF 5,Defender,common
-saudi_arabia,6,Saudi Arabia MF 6,Midfielder,common
-saudi_arabia,7,Saudi Arabia MF 7,Midfielder,epic
-saudi_arabia,8,Saudi Arabia MF 8,Midfielder,rare
-saudi_arabia,9,Saudi Arabia FW 9,Midfielder,common
-saudi_arabia,10,Saudi Arabia Star 10,Forward,legendary
-saudi_arabia,11,Saudi Arabia FW 11,Forward,epic
-saudi_arabia,12,Saudi Arabia FW 12,Forward,rare
-saudi_arabia,13,Saudi Arabia MF 13,Forward,common
-saudi_arabia,14,Saudi Arabia DF 14,Midfielder,common
-saudi_arabia,15,Saudi Arabia GK 15,Goalkeeper,common
-scotland,1,Scotland GK 1,Goalkeeper,rare
-scotland,2,Scotland DF 2,Defender,common
-scotland,3,Scotland DF 3,Defender,common
-scotland,4,Scotland DF 4,Defender,rare
-scotland,5,Scotland DF 5,Defender,common
-scotland,6,Scotland MF 6,Midfielder,common
-scotland,7,Scotland MF 7,Midfielder,epic
-scotland,8,Scotland MF 8,Midfielder,rare
-scotland,9,Scotland FW 9,Midfielder,common
-scotland,10,Scotland Star 10,Forward,legendary
-scotland,11,Scotland FW 11,Forward,epic
-scotland,12,Scotland FW 12,Forward,rare
-scotland,13,Scotland MF 13,Forward,common
-scotland,14,Scotland DF 14,Midfielder,common
-scotland,15,Scotland GK 15,Goalkeeper,common
+qatar,1,Saad Al Sheeb,Goalkeeper,rare
+qatar,2,Ró-Ró,Defender,common
+qatar,3,Abdelkarim Hassan,Defender,rare
+qatar,4,Hassan Al Haydos,Midfielder,epic
+qatar,5,Boualem Khoukhi,Defender,rare
+qatar,6,Akram Afif,Forward,legendary
+qatar,7,Almoez Ali,Forward,epic
+qatar,8,Karim Boudiaf,Midfielder,common
+qatar,9,Mohammed Muntari,Forward,rare
+qatar,10,Tarek Salman,Defender,common
+qatar,11,Abdulaziz Hatem,Midfielder,rare
+qatar,12,Yousuf Abdurisag,Forward,common
+qatar,13,Homam Ahmed,Defender,common
+qatar,14,Jassem Abdulsallan,Midfielder,common
+qatar,15,Mishal Barsham,Goalkeeper,common
+saudi_arabia,1,Mohamed Al-Owais,Goalkeeper,rare
+saudi_arabia,2,Sultan Al-Ghannam,Defender,common
+saudi_arabia,3,Ali Al-Bulaihi,Defender,epic
+saudi_arabia,4,Salem Al-Dawsari,Midfielder,legendary
+saudi_arabia,5,Mohammed Al-Breik,Defender,rare
+saudi_arabia,6,Sami Al-Najei,Midfielder,common
+saudi_arabia,7,Saleh Al-Shehri,Forward,epic
+saudi_arabia,8,Firas Al-Buraikan,Forward,rare
+saudi_arabia,9,Abdullah Al-Hamdan,Forward,common
+saudi_arabia,10,Hassan Tambakti,Defender,common
+saudi_arabia,11,Fahad Al-Muwallad,Forward,rare
+saudi_arabia,12,Yasir Al-Shahrani,Defender,common
+saudi_arabia,13,Abdulellah Al-Malki,Midfielder,rare
+saudi_arabia,14,Yahya Al-Shehri,Midfielder,common
+saudi_arabia,15,Nawaf Al-Abed,Forward,common
+scotland,1,Angus Gunn,Goalkeeper,rare
+scotland,2,Kieran Tierney,Defender,epic
+scotland,3,Grant Hanley,Defender,common
+scotland,4,Scott McTominay,Midfielder,epic
+scotland,5,John Souttar,Defender,rare
+scotland,6,Andy Robertson,Defender,legendary
+scotland,7,John McGinn,Midfielder,epic
+scotland,8,Callum McGregor,Midfielder,rare
+scotland,9,Che Adams,Forward,rare
+scotland,10,Lyndon Dykes,Forward,common
+scotland,11,Ryan Christie,Midfielder,rare
+scotland,12,Lewis Morgan,Forward,common
+scotland,13,Billy Gilmour,Midfielder,rare
+scotland,14,Jack Hendry,Defender,common
+scotland,15,Zander Clark,Goalkeeper,common
 senegal,1,Édouard Mendy,Goalkeeper,epic
 senegal,2,Youssouf Sabaly,Defender,common
 senegal,3,Kalidou Koulibaly,Defender,legendary
@@ -569,36 +569,36 @@ senegal,12,Formose Mendy,Defender,common
 senegal,13,Nicolas Jackson,Forward,epic
 senegal,14,Pathé Ciss,Midfielder,common
 senegal,15,Seny Dieng,Goalkeeper,common
-south_africa,1,South Africa GK 1,Goalkeeper,rare
-south_africa,2,South Africa DF 2,Defender,common
-south_africa,3,South Africa DF 3,Defender,common
-south_africa,4,South Africa DF 4,Defender,rare
-south_africa,5,South Africa DF 5,Defender,common
-south_africa,6,South Africa MF 6,Midfielder,common
-south_africa,7,South Africa MF 7,Midfielder,epic
-south_africa,8,South Africa MF 8,Midfielder,rare
-south_africa,9,South Africa FW 9,Midfielder,common
-south_africa,10,South Africa Star 10,Forward,legendary
-south_africa,11,South Africa FW 11,Forward,epic
-south_africa,12,South Africa FW 12,Forward,rare
-south_africa,13,South Africa MF 13,Forward,common
-south_africa,14,South Africa DF 14,Midfielder,common
-south_africa,15,South Africa GK 15,Goalkeeper,common
-south_korea,1,South Korea GK 1,Goalkeeper,rare
-south_korea,2,South Korea DF 2,Defender,common
-south_korea,3,South Korea DF 3,Defender,common
-south_korea,4,South Korea DF 4,Defender,rare
-south_korea,5,South Korea DF 5,Defender,common
-south_korea,6,South Korea MF 6,Midfielder,common
-south_korea,7,South Korea MF 7,Midfielder,epic
-south_korea,8,South Korea MF 8,Midfielder,rare
-south_korea,9,South Korea FW 9,Midfielder,common
-south_korea,10,South Korea Star 10,Forward,legendary
-south_korea,11,South Korea FW 11,Forward,epic
-south_korea,12,South Korea FW 12,Forward,rare
-south_korea,13,South Korea MF 13,Forward,common
-south_korea,14,South Korea DF 14,Midfielder,common
-south_korea,15,South Korea GK 15,Goalkeeper,common
+south_africa,1,Ronwen Williams,Goalkeeper,rare
+south_africa,2,Khuliso Khumalo,Defender,common
+south_africa,3,Grant Kekana,Defender,common
+south_africa,4,Themba Zwane,Midfielder,epic
+south_africa,5,Mothobi Mvala,Defender,rare
+south_africa,6,Sphephelo Sithole,Midfielder,common
+south_africa,7,Percy Tau,Forward,epic
+south_africa,8,Teboho Mokoena,Midfielder,rare
+south_africa,9,Evidence Makgopa,Forward,common
+south_africa,10,Lyle Foster,Forward,legendary
+south_africa,11,Zakhele Lepasa,Forward,rare
+south_africa,12,Thapelo Maseko,Forward,common
+south_africa,13,Tebogo Moerane,Midfielder,common
+south_africa,14,Mosa Lebusa,Defender,common
+south_africa,15,Veli Mothwa,Goalkeeper,common
+south_korea,1,Kim Seung-gyu,Goalkeeper,rare
+south_korea,2,Kim Min-jae,Defender,legendary
+south_korea,3,Kim Young-gwon,Defender,rare
+south_korea,4,Jung Woo-young,Midfielder,epic
+south_korea,5,Kim Jin-su,Defender,common
+south_korea,6,Son Heung-min,Forward,legendary
+south_korea,7,Lee Kang-in,Midfielder,epic
+south_korea,8,Hwang Hee-chan,Forward,rare
+south_korea,9,Cho Gue-sung,Forward,rare
+south_korea,10,Hwang Ui-jo,Forward,epic
+south_korea,11,Jeong Woo-yeong,Midfielder,rare
+south_korea,12,Hong Hyun-seok,Midfielder,common
+south_korea,13,Lee Jae-sung,Midfielder,common
+south_korea,14,Kim Tae-hwan,Defender,common
+south_korea,15,Jo Hyeon-woo,Goalkeeper,common
 spain,1,Unai Simón,Goalkeeper,epic
 spain,2,Dani Carvajal,Defender,epic
 spain,3,Aymeric Laporte,Defender,rare
@@ -614,66 +614,66 @@ spain,12,Nico Williams,Forward,epic
 spain,13,Mikel Oyarzabal,Forward,rare
 spain,14,Fabián Ruiz,Midfielder,common
 spain,15,David Raya,Goalkeeper,rare
-sweden,1,Sweden GK 1,Goalkeeper,rare
-sweden,2,Sweden DF 2,Defender,common
-sweden,3,Sweden DF 3,Defender,common
-sweden,4,Sweden DF 4,Defender,rare
-sweden,5,Sweden DF 5,Defender,common
-sweden,6,Sweden MF 6,Midfielder,common
-sweden,7,Sweden MF 7,Midfielder,epic
-sweden,8,Sweden MF 8,Midfielder,rare
-sweden,9,Sweden FW 9,Midfielder,common
-sweden,10,Sweden Star 10,Forward,legendary
-sweden,11,Sweden FW 11,Forward,epic
-sweden,12,Sweden FW 12,Forward,rare
-sweden,13,Sweden MF 13,Forward,common
-sweden,14,Sweden DF 14,Midfielder,common
-sweden,15,Sweden GK 15,Goalkeeper,common
-switzerland,1,Switzerland GK 1,Goalkeeper,rare
-switzerland,2,Switzerland DF 2,Defender,common
-switzerland,3,Switzerland DF 3,Defender,common
-switzerland,4,Switzerland DF 4,Defender,rare
-switzerland,5,Switzerland DF 5,Defender,common
-switzerland,6,Switzerland MF 6,Midfielder,common
-switzerland,7,Switzerland MF 7,Midfielder,epic
-switzerland,8,Switzerland MF 8,Midfielder,rare
-switzerland,9,Switzerland FW 9,Midfielder,common
-switzerland,10,Switzerland Star 10,Forward,legendary
-switzerland,11,Switzerland FW 11,Forward,epic
-switzerland,12,Switzerland FW 12,Forward,rare
-switzerland,13,Switzerland MF 13,Forward,common
-switzerland,14,Switzerland DF 14,Midfielder,common
-switzerland,15,Switzerland GK 15,Goalkeeper,common
-tunisia,1,Tunisia GK 1,Goalkeeper,rare
-tunisia,2,Tunisia DF 2,Defender,common
-tunisia,3,Tunisia DF 3,Defender,common
-tunisia,4,Tunisia DF 4,Defender,rare
-tunisia,5,Tunisia DF 5,Defender,common
-tunisia,6,Tunisia MF 6,Midfielder,common
-tunisia,7,Tunisia MF 7,Midfielder,epic
-tunisia,8,Tunisia MF 8,Midfielder,rare
-tunisia,9,Tunisia FW 9,Midfielder,common
-tunisia,10,Tunisia Star 10,Forward,legendary
-tunisia,11,Tunisia FW 11,Forward,epic
-tunisia,12,Tunisia FW 12,Forward,rare
-tunisia,13,Tunisia MF 13,Forward,common
-tunisia,14,Tunisia DF 14,Midfielder,common
-tunisia,15,Tunisia GK 15,Goalkeeper,common
-turkiye,1,Türkiye GK 1,Goalkeeper,rare
-turkiye,2,Türkiye DF 2,Defender,common
-turkiye,3,Türkiye DF 3,Defender,common
-turkiye,4,Türkiye DF 4,Defender,rare
-turkiye,5,Türkiye DF 5,Defender,common
-turkiye,6,Türkiye MF 6,Midfielder,common
-turkiye,7,Türkiye MF 7,Midfielder,epic
-turkiye,8,Türkiye MF 8,Midfielder,rare
-turkiye,9,Türkiye FW 9,Midfielder,common
-turkiye,10,Türkiye Star 10,Forward,legendary
-turkiye,11,Türkiye FW 11,Forward,epic
-turkiye,12,Türkiye FW 12,Forward,rare
-turkiye,13,Türkiye MF 13,Forward,common
-turkiye,14,Türkiye DF 14,Midfielder,common
-turkiye,15,Türkiye GK 15,Goalkeeper,common
+sweden,1,Robin Olsen,Goalkeeper,rare
+sweden,2,Victor Lindelöf,Defender,epic
+sweden,3,Pontus Jansson,Defender,rare
+sweden,4,Emil Forsberg,Midfielder,epic
+sweden,5,Filip Helander,Defender,common
+sweden,6,Dejan Kulusevski,Midfielder,legendary
+sweden,7,Alexander Isak,Forward,legendary
+sweden,8,Mattias Svanberg,Midfielder,rare
+sweden,9,Viktor Gyökeres,Forward,epic
+sweden,10,Marcus Berg,Forward,rare
+sweden,11,Jesper Karlsson,Forward,rare
+sweden,12,Ludwig Augustinsson,Defender,common
+sweden,13,Kristoffer Olsson,Midfielder,common
+sweden,14,Emil Holm,Defender,common
+sweden,15,Karl-Johan Johnsson,Goalkeeper,common
+switzerland,1,Yann Sommer,Goalkeeper,epic
+switzerland,2,Manuel Akanji,Defender,epic
+switzerland,3,Nico Elvedi,Defender,rare
+switzerland,4,Granit Xhaka,Midfielder,legendary
+switzerland,5,Fabian Schär,Defender,rare
+switzerland,6,Xherdan Shaqiri,Midfielder,epic
+switzerland,7,Breel Embolo,Forward,epic
+switzerland,8,Ruben Vargas,Forward,rare
+switzerland,9,Dan Ndoye,Forward,rare
+switzerland,10,Michel Rieder,Midfielder,common
+switzerland,11,Steven Zuber,Midfielder,rare
+switzerland,12,Silvan Widmer,Defender,common
+switzerland,13,Denis Zakaria,Midfielder,rare
+switzerland,14,Zeki Amdouni,Forward,common
+switzerland,15,Gregor Kobel,Goalkeeper,rare
+tunisia,1,Aymen Dahmen,Goalkeeper,rare
+tunisia,2,Wajdi Kechrida,Defender,common
+tunisia,3,Yassine Meriah,Defender,rare
+tunisia,4,Ellyes Skhiri,Midfielder,epic
+tunisia,5,Montassar Talbi,Defender,rare
+tunisia,6,Aïssa Laïdouni,Midfielder,common
+tunisia,7,Youssef Msakni,Forward,epic
+tunisia,8,Hamza Rafia,Midfielder,common
+tunisia,9,Issam Jebali,Forward,rare
+tunisia,10,Wahbi Khazri,Forward,legendary
+tunisia,11,Hamza Lahmar,Forward,common
+tunisia,12,Ali Maaloul,Defender,rare
+tunisia,13,Naim Sliti,Forward,rare
+tunisia,14,Ghailene Chaalali,Midfielder,common
+tunisia,15,Bechir Ben Said,Goalkeeper,common
+turkiye,1,Uğurcan Çakır,Goalkeeper,rare
+turkiye,2,Zeki Çelik,Defender,rare
+turkiye,3,Merih Demiral,Defender,epic
+turkiye,4,Hakan Çalhanoğlu,Midfielder,legendary
+turkiye,5,Çağlar Söyüncü,Defender,rare
+turkiye,6,Arda Güler,Midfielder,epic
+turkiye,7,Cengiz Ünder,Forward,rare
+turkiye,8,İrfan Can Kahveci,Midfielder,rare
+turkiye,9,Kenan Yıldız,Forward,epic
+turkiye,10,Burak Yılmaz,Forward,legendary
+turkiye,11,Kerem Aktürkoğlu,Forward,rare
+turkiye,12,Ferdi Kadıoğlu,Defender,common
+turkiye,13,Orkun Kökçü,Midfielder,rare
+turkiye,14,Abdülkerim Bardakcı,Defender,common
+turkiye,15,Altay Bayındır,Goalkeeper,common
 united_states,1,Matt Turner,Goalkeeper,rare
 united_states,2,Sergiño Dest,Defender,rare
 united_states,3,Walker Zimmerman,Defender,common
@@ -698,24 +698,24 @@ uruguay,6,Rodrigo Bentancur,Midfielder,epic
 uruguay,7,Darwin Núñez,Forward,epic
 uruguay,8,Giorgian Arrascaeta,Midfielder,epic
 uruguay,9,Luis Suárez,Forward,legendary
-uruguay,10,Giorgian de Arrascaeta,Midfielder,rare
-uruguay,11,Facundo Pellistri,Forward,common
-uruguay,12,Ronald Araújo,Defender,epic
-uruguay,13,Nicolás de la Cruz,Midfielder,rare
-uruguay,14,Brian Rodríguez,Forward,common
+uruguay,10,Facundo Pellistri,Forward,common
+uruguay,11,Ronald Araújo,Defender,epic
+uruguay,12,Nicolás de la Cruz,Midfielder,rare
+uruguay,13,Brian Rodríguez,Forward,common
+uruguay,14,Manuel Ugarte,Midfielder,rare
 uruguay,15,Fernando Muslera,Goalkeeper,rare
-uzbekistan,1,Uzbekistan GK 1,Goalkeeper,rare
-uzbekistan,2,Uzbekistan DF 2,Defender,common
-uzbekistan,3,Uzbekistan DF 3,Defender,common
-uzbekistan,4,Uzbekistan DF 4,Defender,rare
-uzbekistan,5,Uzbekistan DF 5,Defender,common
-uzbekistan,6,Uzbekistan MF 6,Midfielder,common
-uzbekistan,7,Uzbekistan MF 7,Midfielder,epic
-uzbekistan,8,Uzbekistan MF 8,Midfielder,rare
-uzbekistan,9,Uzbekistan FW 9,Midfielder,common
-uzbekistan,10,Uzbekistan Star 10,Forward,legendary
-uzbekistan,11,Uzbekistan FW 11,Forward,epic
-uzbekistan,12,Uzbekistan FW 12,Forward,rare
-uzbekistan,13,Uzbekistan MF 13,Forward,common
-uzbekistan,14,Uzbekistan DF 14,Midfielder,common
-uzbekistan,15,Uzbekistan GK 15,Goalkeeper,common
+uzbekistan,1,Utkir Yusupov,Goalkeeper,rare
+uzbekistan,2,Akramjon Komilov,Defender,common
+uzbekistan,3,Egor Krimets,Defender,rare
+uzbekistan,4,Jasurbek Jurayev,Midfielder,epic
+uzbekistan,5,Azizbek Turgunboev,Defender,rare
+uzbekistan,6,Otabek Shukurov,Midfielder,common
+uzbekistan,7,Eldor Shomurodov,Forward,legendary
+uzbekistan,8,Jaloliddin Masharipov,Midfielder,epic
+uzbekistan,9,Igor Sergeev,Forward,rare
+uzbekistan,10,Khozhimat Erkinov,Midfielder,common
+uzbekistan,11,Abbosbek Fayzullaev,Midfielder,rare
+uzbekistan,12,Sanjar Tulyakov,Defender,common
+uzbekistan,13,Odil Khamrobekov,Defender,rare
+uzbekistan,14,Abdulla Abdullaev,Midfielder,common
+uzbekistan,15,Khamza Alakbarov,Goalkeeper,common

@@ -104,16 +104,19 @@ function main() {
       }
       const ratings = ratingsFromRow(row);
       const complete = ratingsComplete(p.position, ratings);
-      if (strict && !complete) {
-        console.error(`Incomplete ratings for ${p.playerId}`);
-        exitCode = 1;
+      if (!complete) {
+        if (strict) {
+          console.error(`Incomplete ratings for ${p.playerId}`);
+          exitCode = 1;
+        }
+        return p;
       }
       return {
         ...p,
         clubName: row.club_name?.trim() ?? "",
         clubLeague: row.club_league?.trim() ?? "",
         ratings,
-        ratingsComplete: complete,
+        ratingsComplete: true,
       };
     });
     const completeCount = enriched.filter((p) => p.ratingsComplete).length;

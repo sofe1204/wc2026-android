@@ -1,6 +1,9 @@
 /**
  * Shared helpers for SoFIFA CSV parsing and face-stat computation.
  */
+import fs from "fs";
+import path from "path";
+
 export const SOFIFA_URL =
   "https://github.com/SolideSpoke/sofifa-web-scraper/raw/main/output/player-data-full.csv";
 
@@ -33,6 +36,129 @@ export const COUNTRY_ALIASES = {
   "bosnia and herzegovina": ["bosnia and herzegovina", "bosnia herzegovina"],
   "cape verde": ["cape verde", "cape verde islands"],
 };
+
+/** Reject wrong homonym matches when a star's SoFIFA OVR is far below expected. */
+export const TOKEN_ALIASES = {
+  vinicius: ["vini"],
+  vini: ["vinicius"],
+  neymar: ["neymar jr"],
+  mbappe: ["kylian"],
+  kylian: ["mbappe"],
+  messi: ["lionel"],
+  lionel: ["messi"],
+  cristiano: ["cristiano ronaldo"],
+  ronaldo: ["cristiano"],
+  hector: ["moreno"],
+  moreno: ["hector"],
+  edson: ["alvarez"],
+  alvarez: ["edson"],
+};
+
+export const MIN_OVR_HINT = {
+  vinicius: 84,
+  neymar: 85,
+  messi: 86,
+  ronaldo: 85,
+  mbappe: 88,
+  haaland: 88,
+  bellingham: 84,
+  rodrygo: 80,
+  marquinhos: 84,
+  casemiro: 82,
+  raphinha: 80,
+  guardado: 70,
+  dzeko: 78,
+  jimenez: 75,
+};
+
+const TOP_LEAGUE_HINTS = [
+  "premier league",
+  "la liga",
+  "serie a",
+  "bundesliga",
+  "ligue 1",
+  "eredivisie",
+  "primeira liga",
+];
+
+const RATING_STAT_KEYS = [
+  "overall",
+  "pace",
+  "shooting",
+  "passing",
+  "dribbling",
+  "defending",
+  "physical",
+  "diving",
+  "handling",
+  "kicking",
+  "reflexes",
+  "speed",
+  "positioning",
+];
+
+export function ratingsFromCsvRow(row) {
+  const out = {};
+  for (const k of RATING_STAT_KEYS) out[k] = parseInt(row[k], 10) || 0;
+  return out;
+}
+
+export function ratingsCompleteForPosition(position, ratings) {
+  if (ratings.overall <= 0) return false;
+  if (position === "Goalkeeper") {
+    return ["diving", "handling", "kicking", "reflexes", "speed", "positioning"].every(
+      (k) => ratings[k] > 0,
+    );
+  }
+  return ["pace", "shooting", "passing", "dribbling", "defending", "physical"].every(
+    (k) => ratings[k] > 0,
+  );
+}
+
+export function ratingRowComplete(row, position) {
+  return ratingsCompleteForPosition(position, ratingsFromCsvRow(row));
+}
+
+export function loadRatingsCsv(filePath) {
+  if (!fs.existsSync(filePath)) return new Map();
+  const text = fs.readFileSync(filePath, "utf8");
+  const byId = new Map();
+  for (const row of parseCsv(text)) {
+    const id = row.player_id?.trim();
+    if (id) byId.set(id, row);
+  }
+  return byId;
+}
+
+export function writeRatingsCsv(filePath, rows) {
+  const lines = [RATINGS_CSV_COLUMNS.join(",")];
+  for (const r of rows) {
+    lines.push(RATINGS_CSV_COLUMNS.map((c) => escapeCsv(r[c])).join(","));
+  }
+  const dir = path.dirname(filePath);
+  if (dir) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(filePath, lines.join("\n") + "\n", "utf8");
+}
+
+/** Merge override into base without overwriting non-empty fields. */
+export function mergeOverrideEmptyOnly(base, override) {
+  const out = { ...base };
+  for (const col of RATINGS_CSV_COLUMNS) {
+    if (col === "player_id") continue;
+    const existing = String(out[col] ?? "").trim();
+    const incoming = override[col];
+    if (existing !== "" && existing !== "0") continue;
+    if (incoming !== undefined && incoming !== null && String(incoming).trim() !== "") {
+      out[col] = incoming;
+    }
+  }
+  return out;
+}
+
+function leagueBonus(row) {
+  const league = normalize(row.club_league_name || "");
+  return TOP_LEAGUE_HINTS.some((h) => league.includes(h)) ? 4 : 0;
+}
 
 export const WEAK_SOFIFA_COUNTRIES = new Set([
   "",
@@ -177,9 +303,34 @@ export function countryMatches(seedCountry, sofifaCountry) {
   return aliases.some((x) => b.includes(x) || x.includes(b));
 }
 
+const NAME_SUFFIXES = new Set(["jr", "junior", "ii", "iii", "sr", "senior"]);
+
 export function lastNameOf(name) {
   const parts = normalize(name).split(" ").filter(Boolean);
-  return parts.length ? parts[parts.length - 1] : "";
+  const core =
+    parts.length > 1 && NAME_SUFFIXES.has(parts[parts.length - 1]) ? parts.slice(0, -1) : parts;
+  return core.length ? core[core.length - 1] : "";
+}
+
+export function significantTokens(name) {
+  return normalize(name)
+    .split(" ")
+    .filter((t) => t.length > 1 && !NAME_SUFFIXES.has(t));
+}
+
+function tokenInBlob(token, blob) {
+  if (blob.includes(` ${token} `) || blob.endsWith(` ${token}`)) return true;
+  for (const alt of TOKEN_ALIASES[token] ?? []) {
+    if (blob.includes(` ${alt} `) || blob.endsWith(` ${alt}`)) return true;
+  }
+  return false;
+}
+
+export function allTokensMatch(seedName, row) {
+  const tokens = significantTokens(seedName);
+  if (!tokens.length) return false;
+  const blob = ` ${normalize(`${row.name} ${row.full_name}`)} `;
+  return tokens.every((t) => tokenInBlob(t, blob));
 }
 
 export function nameScore(seedName, row) {
@@ -189,9 +340,10 @@ export function nameScore(seedName, row) {
   for (const c of candidates) {
     if (c === n) return 100;
     if (c.includes(n) || n.includes(c)) best = Math.max(best, 82);
-    const seedParts = n.split(" ").filter(Boolean);
-    const last = seedParts[seedParts.length - 1];
-    const first = seedParts[0];
+    if (allTokensMatch(seedName, row)) best = Math.max(best, 93);
+    const seedParts = significantTokens(seedName);
+    const last = seedParts[seedParts.length - 1] ?? "";
+    const first = seedParts[0] ?? "";
     const cParts = c.split(" ").filter(Boolean);
     if (last.length > 2 && cParts.includes(last)) best = Math.max(best, 74);
     if (first.length > 2 && last.length > 2 && cParts.includes(first) && cParts.includes(last)) {
@@ -199,6 +351,24 @@ export function nameScore(seedName, row) {
     }
     if (first.length > 2 && last.length > 2 && c.endsWith(` ${last}`) && c.includes(` ${first}`)) {
       best = Math.max(best, 96);
+    }
+    if (first.length > 2 && cParts.includes(first) && seedParts.length === 1) {
+      best = Math.max(best, 88);
+    }
+    if (normalize(row.name) === "vini jr" && seedParts.includes("vinicius")) {
+      best = Math.max(best, 100);
+    }
+    if (normalize(row.name) === "neymar jr" && seedParts.includes("neymar")) {
+      best = Math.max(best, 100);
+    }
+    if (normalize(row.name) === "k mbappe" && seedParts.includes("mbappe")) {
+      best = Math.max(best, 100);
+    }
+    if (c === "lionel messi" && seedParts.includes("messi")) {
+      best = Math.max(best, 100);
+    }
+    if (normalize(row.name) === "cristiano ronaldo" && seedParts.includes("cristiano")) {
+      best = Math.max(best, 100);
     }
   }
   return best;
@@ -285,6 +455,10 @@ export function scoreCandidate(player, row, { requireCountry }) {
   if (!positionCompatible(player, row)) return 0;
   const ns = nameScore(player.playerName, row);
   if (ns < 55) return 0;
+  for (const token of significantTokens(player.playerName)) {
+    const min = MIN_OVR_HINT[token];
+    if (min && ovr(row) > 0 && ovr(row) < min) return 0;
+  }
 
   const country = countryMatches(player.countryName, row.country_name);
   if (requireCountry) {
@@ -294,13 +468,38 @@ export function scoreCandidate(player, row, { requireCountry }) {
     if (ns < 88) return 0;
     const last = lastNameOf(player.playerName);
     const full = normalize(row.full_name || row.name);
-    if (!full.split(" ").includes(last)) return 0;
+    if (!full.split(" ").includes(last) && !allTokensMatch(player.playerName, row)) return 0;
   }
 
   const isGk = player.position === "Goalkeeper";
   if (isGk && ns < 70) return 0;
 
-  return ns + versionScore(row) * 8 + (val(row, "overall_rating", "overall") > 0 ? 3 : 0);
+  return (
+    ns + versionScore(row) * 8 + leagueBonus(row) + (val(row, "overall_rating", "overall") > 0 ? 3 : 0)
+  );
+}
+
+function ovr(row) {
+  return val(row, "overall_rating", "overall");
+}
+
+function pickBest(player, pool, requireCountry, minScore) {
+  let best = null;
+  let bestScore = 0;
+  for (const row of pool) {
+    const s = scoreCandidate(player, row, { requireCountry });
+    const better =
+      s > bestScore ||
+      (s >= bestScore - 3 &&
+        best &&
+        ovr(row) > ovr(best) &&
+        nameScore(player.playerName, row) >= 88);
+    if (better) {
+      bestScore = Math.max(bestScore, s);
+      best = row;
+    }
+  }
+  return bestScore >= minScore ? best : null;
 }
 
 export function findBestMatch(player, index) {
@@ -308,25 +507,27 @@ export function findBestMatch(player, index) {
   const pool =
     last.length >= 3 && index.byLastName.has(last) ? index.byLastName.get(last) : index.all;
 
+  let hit = pickBest(player, pool, true, 63);
+  if (hit) return hit;
+
+  hit = pickBest(player, pool, false, 88);
+  if (hit) return hit;
+
   let best = null;
   let bestScore = 0;
-  for (const row of pool) {
-    const s = scoreCandidate(player, row, { requireCountry: true });
-    if (s > bestScore) {
-      bestScore = s;
+  for (const row of index.all) {
+    if (!positionCompatible(player, row)) continue;
+    if (!allTokensMatch(player.playerName, row)) continue;
+    const country = countryMatches(player.countryName, row.country_name);
+    if (country === false) continue;
+    const ns = nameScore(player.playerName, row);
+    const s = ns + versionScore(row) * 8 + 5;
+    const better =
+      s > bestScore || (s >= bestScore - 3 && best && ovr(row) > ovr(best));
+    if (better) {
+      bestScore = Math.max(bestScore, s);
       best = row;
     }
   }
-  if (best && bestScore >= 63) return best;
-
-  best = null;
-  bestScore = 0;
-  for (const row of pool) {
-    const s = scoreCandidate(player, row, { requireCountry: false });
-    if (s > bestScore) {
-      bestScore = s;
-      best = row;
-    }
-  }
-  return bestScore >= 91 ? best : null;
+  return bestScore >= 90 ? best : null;
 }

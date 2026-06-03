@@ -1,0 +1,2627 @@
+{
+  "mexico_guillermo_ochoa": {
+    "overall": 78,
+    "clubName": "Salernitana",
+    "clubLeague": "Serie A"
+  },
+  "mexico_jorge_sanchez": {
+    "overall": 74,
+    "clubName": "Porto",
+    "clubLeague": "Primeira Liga"
+  },
+  "mexico_cesar_montes": {
+    "overall": 77,
+    "clubName": "Almería",
+    "clubLeague": "La Liga"
+  },
+  "mexico_edson_alvarez": {
+    "overall": 81,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "mexico_raul_jimenez": {
+    "overall": 75,
+    "clubName": "Fulham",
+    "clubLeague": "Premier League"
+  },
+  "mexico_carlos_rodriguez": {
+    "overall": 66,
+    "clubName": "Odisha FC",
+    "clubLeague": "Super League"
+  },
+  "mexico_henry_martin": {
+    "overall": 79,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "mexico_uriel_antuna": {
+    "overall": 76,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "mexico_orbelin_pineda": {
+    "overall": 76,
+    "clubName": "AEK Athens",
+    "clubLeague": "Super League"
+  },
+  "mexico_luis_chavez": {
+    "overall": 79,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "mexico_santiago_gimenez": {
+    "overall": 79,
+    "clubName": "Feyenoord",
+    "clubLeague": "Eredivisie"
+  },
+  "south_africa_lyle_foster": {
+    "overall": 71,
+    "clubName": "Burnley",
+    "clubLeague": "Premier League"
+  },
+  "south_korea_kim_seung_gyu": {
+    "overall": 73,
+    "clubName": "Al Shabab",
+    "clubLeague": "Pro League"
+  },
+  "south_korea_kim_min_jae": {
+    "overall": 84,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "south_korea_kim_young_gwon": {
+    "overall": 73,
+    "clubName": "Ulsan",
+    "clubLeague": "K League 1"
+  },
+  "south_korea_jung_woo_young": {
+    "overall": 70,
+    "clubName": "Al Khaleej",
+    "clubLeague": "Pro League"
+  },
+  "south_korea_kim_jin_su": {
+    "overall": 70,
+    "clubName": "Jeonbuk Motors",
+    "clubLeague": "K League 1"
+  },
+  "south_korea_son_heung_min": {
+    "overall": 87,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "south_korea_lee_kang_in": {
+    "overall": 79,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "south_korea_hwang_hee_chan": {
+    "overall": 78,
+    "clubName": "Wolverhampton Wanderers",
+    "clubLeague": "Premier League"
+  },
+  "south_korea_cho_gue_sung": {
+    "overall": 71,
+    "clubName": "Midtjylland",
+    "clubLeague": "Superliga"
+  },
+  "south_korea_hwang_ui_jo": {
+    "overall": 72,
+    "clubName": "Alanyaspor",
+    "clubLeague": "Süper Lig"
+  },
+  "south_korea_jeong_woo_yeong": {
+    "overall": 72,
+    "clubName": "VfB Stuttgart",
+    "clubLeague": "Bundesliga"
+  },
+  "south_korea_hong_hyun_seok": {
+    "overall": 75,
+    "clubName": "Gent",
+    "clubLeague": "Pro League"
+  },
+  "south_korea_lee_jae_sung": {
+    "overall": 76,
+    "clubName": "FSV Mainz 05",
+    "clubLeague": "Bundesliga"
+  },
+  "south_korea_kim_tae_hwan": {
+    "overall": 65,
+    "clubName": "Jeonbuk Motors",
+    "clubLeague": "K League 1"
+  },
+  "south_korea_jo_hyeon_woo": {
+    "overall": 74,
+    "clubName": "Ulsan",
+    "clubLeague": "K League 1"
+  },
+  "czechia_tomas_vaclik": {
+    "overall": 73,
+    "clubName": "Albacete",
+    "clubLeague": "La Liga 2"
+  },
+  "czechia_vladimir_coufal": {
+    "overall": 78,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "czechia_tomas_soucek": {
+    "overall": 79,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "czechia_david_jurasek": {
+    "overall": 73,
+    "clubName": "TSG Hoffenheim",
+    "clubLeague": "Bundesliga"
+  },
+  "czechia_antonin_barak": {
+    "overall": 78,
+    "clubName": "Fiorentina",
+    "clubLeague": "Serie A"
+  },
+  "czechia_patrik_schick": {
+    "overall": 82,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "czechia_alex_kral": {
+    "overall": 75,
+    "clubName": "FC Union Berlin",
+    "clubLeague": "Bundesliga"
+  },
+  "czechia_michal_sadilek": {
+    "overall": 76,
+    "clubName": "FC Twente",
+    "clubLeague": "Eredivisie"
+  },
+  "czechia_adam_hlozek": {
+    "overall": 76,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "czechia_lukas_provod": {
+    "overall": 73,
+    "clubName": "Slavia Praha",
+    "clubLeague": "First League"
+  },
+  "czechia_ladislav_krejci": {
+    "overall": 77,
+    "clubName": "Sparta Praha",
+    "clubLeague": "First League"
+  },
+  "czechia_tomas_holes": {
+    "overall": 76,
+    "clubName": "Slavia Praha",
+    "clubLeague": "First League"
+  },
+  "czechia_jiri_pavlenka": {
+    "overall": 75,
+    "clubName": "Werder Bremen",
+    "clubLeague": "Bundesliga"
+  },
+  "canada_alphonso_davies": {
+    "overall": 82,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "canada_steven_vitoria": {
+    "overall": 70,
+    "clubName": "Chaves",
+    "clubLeague": "Primeira Liga"
+  },
+  "canada_sam_adekugbe": {
+    "overall": 69,
+    "clubName": "Vancouver Whitecaps",
+    "clubLeague": "Major League Soccer"
+  },
+  "canada_alistair_johnston": {
+    "overall": 75,
+    "clubName": "Celtic",
+    "clubLeague": "Premiership"
+  },
+  "canada_stephen_eustaquio": {
+    "overall": 77,
+    "clubName": "Porto",
+    "clubLeague": "Primeira Liga"
+  },
+  "canada_tajon_buchanan": {
+    "overall": 72,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "canada_jonathan_david": {
+    "overall": 80,
+    "clubName": "LOSC Lille",
+    "clubLeague": "Ligue 1"
+  },
+  "canada_cyle_larin": {
+    "overall": 75,
+    "clubName": "Mallorca",
+    "clubLeague": "La Liga"
+  },
+  "canada_junior_hoilett": {
+    "overall": 70,
+    "clubName": "Aberdeen",
+    "clubLeague": "Premiership"
+  },
+  "canada_liam_millar": {
+    "overall": 72,
+    "clubName": "Preston North End",
+    "clubLeague": "Championship"
+  },
+  "canada_ismael_kone": {
+    "overall": 71,
+    "clubName": "Watford",
+    "clubLeague": "Championship"
+  },
+  "canada_mark_anthony_kaye": {
+    "overall": 68,
+    "clubName": "New England",
+    "clubLeague": "Major League Soccer"
+  },
+  "canada_maxime_crepeau": {
+    "overall": 73,
+    "clubName": "Portland Timbers",
+    "clubLeague": "Major League Soccer"
+  },
+  "switzerland_yann_sommer": {
+    "overall": 86,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "switzerland_manuel_akanji": {
+    "overall": 83,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "switzerland_nico_elvedi": {
+    "overall": 76,
+    "clubName": "Borussia Mönchengladbach",
+    "clubLeague": "Bundesliga"
+  },
+  "switzerland_granit_xhaka": {
+    "overall": 84,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "switzerland_fabian_schar": {
+    "overall": 82,
+    "clubName": "Newcastle United",
+    "clubLeague": "Premier League"
+  },
+  "switzerland_xherdan_shaqiri": {
+    "overall": 73,
+    "clubName": "Chicago Fire",
+    "clubLeague": "Major League Soccer"
+  },
+  "switzerland_breel_embolo": {
+    "overall": 77,
+    "clubName": "Monaco",
+    "clubLeague": "Ligue 1"
+  },
+  "switzerland_ruben_vargas": {
+    "overall": 74,
+    "clubName": "FC Augsburg",
+    "clubLeague": "Bundesliga"
+  },
+  "switzerland_dan_ndoye": {
+    "overall": 73,
+    "clubName": "Bologna",
+    "clubLeague": "Serie A"
+  },
+  "switzerland_steven_zuber": {
+    "overall": 76,
+    "clubName": "AEK Athens",
+    "clubLeague": "Super League"
+  },
+  "switzerland_silvan_widmer": {
+    "overall": 75,
+    "clubName": "FSV Mainz 05",
+    "clubLeague": "Bundesliga"
+  },
+  "switzerland_denis_zakaria": {
+    "overall": 79,
+    "clubName": "Monaco",
+    "clubLeague": "Ligue 1"
+  },
+  "switzerland_zeki_amdouni": {
+    "overall": 73,
+    "clubName": "Burnley",
+    "clubLeague": "Premier League"
+  },
+  "switzerland_gregor_kobel": {
+    "overall": 87,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "qatar_ro_ro": {
+    "overall": 67,
+    "clubName": "Hansa Rostock",
+    "clubLeague": "2. Bundesliga"
+  },
+  "qatar_hassan_al_haydos": {
+    "overall": 70,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_boualem_khoukhi": {
+    "overall": 70,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_akram_afif": {
+    "overall": 77,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_almoez_ali": {
+    "overall": 71,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_karim_boudiaf": {
+    "overall": 71,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_mohammed_muntari": {
+    "overall": 66,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_tarek_salman": {
+    "overall": 66,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_abdulaziz_hatem": {
+    "overall": 70,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "qatar_homam_ahmed": {
+    "overall": 68,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "bosnia_herzegovina_asmir_begovic": {
+    "overall": 71,
+    "clubName": "Queens Park Rangers",
+    "clubLeague": "Championship"
+  },
+  "bosnia_herzegovina_sead_kolasinac": {
+    "overall": 79,
+    "clubName": "Atalanta",
+    "clubLeague": "Serie A"
+  },
+  "bosnia_herzegovina_ermin_bicakcic": {
+    "overall": 71,
+    "clubName": "Eintracht Braunschweig",
+    "clubLeague": "2. Bundesliga"
+  },
+  "bosnia_herzegovina_gojko_cimirot": {
+    "overall": 70,
+    "clubName": "Al Fayha",
+    "clubLeague": "Pro League"
+  },
+  "bosnia_herzegovina_edin_dzeko": {
+    "overall": 83,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "bosnia_herzegovina_miroslav_stevanovic": {
+    "overall": 76,
+    "clubName": "Servette",
+    "clubLeague": "Super League"
+  },
+  "bosnia_herzegovina_marko_arnautovic": {
+    "overall": 80,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "bosnia_herzegovina_benjamin_tahirovic": {
+    "overall": 70,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "bosnia_herzegovina_anel_ahmedhodzic": {
+    "overall": 74,
+    "clubName": "Sheffield United",
+    "clubLeague": "Premier League"
+  },
+  "bosnia_herzegovina_ibrahim_sehic": {
+    "overall": 73,
+    "clubName": "Al Khaleej",
+    "clubLeague": "Pro League"
+  },
+  "brazil_alisson": {
+    "overall": 89,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "brazil_danilo": {
+    "overall": 81,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "brazil_marquinhos": {
+    "overall": 87,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "brazil_casemiro": {
+    "overall": 85,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "brazil_fabinho": {
+    "overall": 83,
+    "clubName": "Al Ittihad",
+    "clubLeague": "Pro League"
+  },
+  "brazil_bruno_guimaraes": {
+    "overall": 84,
+    "clubName": "Newcastle United",
+    "clubLeague": "Premier League"
+  },
+  "brazil_vinicius_junior": {
+    "overall": 89,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "brazil_rodrygo": {
+    "overall": 85,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "brazil_richarlison": {
+    "overall": 81,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "brazil_neymar": {
+    "overall": 88,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "brazil_raphinha": {
+    "overall": 84,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "brazil_alex_sandro": {
+    "overall": 77,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "brazil_bremer": {
+    "overall": 85,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "brazil_ederson": {
+    "overall": 88,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "morocco_yassine_bounou": {
+    "overall": 85,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "morocco_achraf_hakimi": {
+    "overall": 84,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "morocco_nayef_aguerd": {
+    "overall": 79,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "morocco_sofyan_amrabat": {
+    "overall": 79,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "morocco_romain_saiss": {
+    "overall": 78,
+    "clubName": "Al Shabab",
+    "clubLeague": "Pro League"
+  },
+  "morocco_hakim_ziyech": {
+    "overall": 80,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "morocco_youssef_en_nesyri": {
+    "overall": 82,
+    "clubName": "Sevilla",
+    "clubLeague": "La Liga"
+  },
+  "morocco_azzedine_ounahi": {
+    "overall": 75,
+    "clubName": "Olympique de Marseille",
+    "clubLeague": "Ligue 1"
+  },
+  "morocco_abde_ezzalzouli": {
+    "overall": 74,
+    "clubName": "Real Betis",
+    "clubLeague": "La Liga"
+  },
+  "morocco_brahim_diaz": {
+    "overall": 82,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "morocco_selim_amallah": {
+    "overall": 73,
+    "clubName": "Valencia",
+    "clubLeague": "La Liga"
+  },
+  "morocco_yahya_attiat_allah": {
+    "overall": 73,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "morocco_zakaria_aboukhlal": {
+    "overall": 75,
+    "clubName": "Toulouse",
+    "clubLeague": "Ligue 1"
+  },
+  "morocco_munir_el_kajoui": {
+    "overall": 75,
+    "clubName": "Al Wahda",
+    "clubLeague": "Pro League"
+  },
+  "scotland_angus_gunn": {
+    "overall": 74,
+    "clubName": "Norwich City",
+    "clubLeague": "Championship"
+  },
+  "scotland_kieran_tierney": {
+    "overall": 80,
+    "clubName": "Real Sociedad",
+    "clubLeague": "La Liga"
+  },
+  "scotland_grant_hanley": {
+    "overall": 73,
+    "clubName": "Norwich City",
+    "clubLeague": "Championship"
+  },
+  "scotland_scott_mctominay": {
+    "overall": 78,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "scotland_john_souttar": {
+    "overall": 74,
+    "clubName": "Rangers",
+    "clubLeague": "Premiership"
+  },
+  "scotland_andy_robertson": {
+    "overall": 86,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "scotland_john_mcginn": {
+    "overall": 81,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "scotland_callum_mcgregor": {
+    "overall": 79,
+    "clubName": "Celtic",
+    "clubLeague": "Premiership"
+  },
+  "scotland_che_adams": {
+    "overall": 75,
+    "clubName": "Southampton",
+    "clubLeague": "Championship"
+  },
+  "scotland_lyndon_dykes": {
+    "overall": 69,
+    "clubName": "Queens Park Rangers",
+    "clubLeague": "Championship"
+  },
+  "scotland_ryan_christie": {
+    "overall": 74,
+    "clubName": "AFC Bournemouth",
+    "clubLeague": "Premier League"
+  },
+  "scotland_lewis_morgan": {
+    "overall": 75,
+    "clubName": "New York RB",
+    "clubLeague": "Major League Soccer"
+  },
+  "scotland_billy_gilmour": {
+    "overall": 74,
+    "clubName": "Brighton & Hove Albion",
+    "clubLeague": "Premier League"
+  },
+  "scotland_jack_hendry": {
+    "overall": 75,
+    "clubName": "Al Ettifaq",
+    "clubLeague": "Pro League"
+  },
+  "scotland_zander_clark": {
+    "overall": 72,
+    "clubName": "Hearts",
+    "clubLeague": "Premiership"
+  },
+  "haiti_johny_placide": {
+    "overall": 67,
+    "clubName": "Bastia",
+    "clubLeague": "Ligue 2"
+  },
+  "haiti_derrick_etienne": {
+    "overall": 67,
+    "clubName": "Toronto",
+    "clubLeague": "Major League Soccer"
+  },
+  "haiti_ricardo_ade": {
+    "overall": 73,
+    "clubName": "LDU Quito",
+    "clubLeague": "Liga Pro"
+  },
+  "haiti_derrick_etienne_jr": {
+    "overall": 67,
+    "clubName": "Toronto",
+    "clubLeague": "Major League Soccer"
+  },
+  "haiti_duckens_nazon": {
+    "overall": 68,
+    "clubName": "Kayserispor",
+    "clubLeague": "Süper Lig"
+  },
+  "united_states_matt_turner": {
+    "overall": 76,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "united_states_sergino_dest": {
+    "overall": 78,
+    "clubName": "PSV",
+    "clubLeague": "Eredivisie"
+  },
+  "united_states_walker_zimmerman": {
+    "overall": 75,
+    "clubName": "Nashville SC",
+    "clubLeague": "Major League Soccer"
+  },
+  "united_states_tyler_adams": {
+    "overall": 77,
+    "clubName": "AFC Bournemouth",
+    "clubLeague": "Premier League"
+  },
+  "united_states_antonee_robinson": {
+    "overall": 78,
+    "clubName": "Fulham",
+    "clubLeague": "Premier League"
+  },
+  "united_states_yunus_musah": {
+    "overall": 75,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "united_states_giovanni_reyna": {
+    "overall": 78,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "united_states_weston_mckennie": {
+    "overall": 78,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "united_states_christian_pulisic": {
+    "overall": 82,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "united_states_gio_reyna": {
+    "overall": 78,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "united_states_timothy_weah": {
+    "overall": 74,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "united_states_folarin_balogun": {
+    "overall": 78,
+    "clubName": "Monaco",
+    "clubLeague": "Ligue 1"
+  },
+  "united_states_ricardo_pepi": {
+    "overall": 73,
+    "clubName": "PSV",
+    "clubLeague": "Eredivisie"
+  },
+  "united_states_brenden_aaronson": {
+    "overall": 73,
+    "clubName": "FC Union Berlin",
+    "clubLeague": "Bundesliga"
+  },
+  "united_states_ethan_horvath": {
+    "overall": 72,
+    "clubName": "Cardiff City",
+    "clubLeague": "Championship"
+  },
+  "paraguay_miguel_almiron": {
+    "overall": 79,
+    "clubName": "Newcastle United",
+    "clubLeague": "Premier League"
+  },
+  "paraguay_junior_alonso": {
+    "overall": 78,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "paraguay_antonio_sanabria": {
+    "overall": 78,
+    "clubName": "Torino",
+    "clubLeague": "Serie A"
+  },
+  "paraguay_diego_gomez": {
+    "overall": 68,
+    "clubName": "Inter Miami",
+    "clubLeague": "Major League Soccer"
+  },
+  "paraguay_gabriel_avalos": {
+    "overall": 74,
+    "clubName": "Independiente",
+    "clubLeague": "Liga Profesional de Fútbol"
+  },
+  "paraguay_oscar_romero": {
+    "overall": 55,
+    "clubName": "Sportivo Ameliano",
+    "clubLeague": "Primera División"
+  },
+  "paraguay_blas_riveros": {
+    "overall": 67,
+    "clubName": "Talleres Córdoba",
+    "clubLeague": "Liga Profesional de Fútbol"
+  },
+  "paraguay_ivan_ramirez": {
+    "overall": 69,
+    "clubName": "Libertad",
+    "clubLeague": "Primera División"
+  },
+  "paraguay_matias_rojas": {
+    "overall": 75,
+    "clubName": "Inter Miami",
+    "clubLeague": "Major League Soccer"
+  },
+  "paraguay_santiago_rojas": {
+    "overall": 70,
+    "clubName": "Atlético Nacional",
+    "clubLeague": "Categoría Primera A"
+  },
+  "australia_mathew_ryan": {
+    "overall": 78,
+    "clubName": "AZ Alkmaar",
+    "clubLeague": "Eredivisie"
+  },
+  "australia_harry_souttar": {
+    "overall": 71,
+    "clubName": "Leicester City",
+    "clubLeague": "Championship"
+  },
+  "australia_jackson_irvine": {
+    "overall": 74,
+    "clubName": "St. Pauli",
+    "clubLeague": "2. Bundesliga"
+  },
+  "australia_mathew_leckie": {
+    "overall": 74,
+    "clubName": "Melbourne City",
+    "clubLeague": "A-League Men"
+  },
+  "australia_riley_mcgree": {
+    "overall": 73,
+    "clubName": "Middlesbrough",
+    "clubLeague": "Championship"
+  },
+  "australia_ajdin_hrustic": {
+    "overall": 70,
+    "clubName": "Heracles Almelo",
+    "clubLeague": "Eredivisie"
+  },
+  "australia_craig_goodwin": {
+    "overall": 76,
+    "clubName": "Al Wahda",
+    "clubLeague": "Pro League"
+  },
+  "australia_garang_kuol": {
+    "overall": 65,
+    "clubName": "FC Volendam",
+    "clubLeague": "Eredivisie"
+  },
+  "australia_aziz_behich": {
+    "overall": 68,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "australia_keanu_baccus": {
+    "overall": 68,
+    "clubName": "St. Mirren",
+    "clubLeague": "Premiership"
+  },
+  "australia_kusini_yengi": {
+    "overall": 65,
+    "clubName": "Portsmouth",
+    "clubLeague": "League One"
+  },
+  "australia_lawrence_thomas": {
+    "overall": 69,
+    "clubName": "Western Sydney Wanderers",
+    "clubLeague": "A-League Men"
+  },
+  "turkiye_ugurcan_cak_r": {
+    "overall": 77,
+    "clubName": "Trabzonspor",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_zeki_celik": {
+    "overall": 76,
+    "clubName": "Roma",
+    "clubLeague": "Serie A"
+  },
+  "turkiye_merih_demiral": {
+    "overall": 77,
+    "clubName": "Al Ahli Jeddah",
+    "clubLeague": "Pro League"
+  },
+  "turkiye_hakan_calhanoglu": {
+    "overall": 86,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "turkiye_caglar_soyuncu": {
+    "overall": 77,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_arda_guler": {
+    "overall": 77,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "turkiye_cengiz_under": {
+    "overall": 77,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_irfan_can_kahveci": {
+    "overall": 78,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_kenan_y_ld_z": {
+    "overall": 66,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "turkiye_burak_y_lmaz": {
+    "overall": 63,
+    "clubName": "Hatayspor",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_kerem_akturkoglu": {
+    "overall": 76,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_ferdi_kad_oglu": {
+    "overall": 78,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_orkun_kokcu": {
+    "overall": 82,
+    "clubName": "Benfica",
+    "clubLeague": "Primeira Liga"
+  },
+  "turkiye_abdulkerim_bardakc": {
+    "overall": 80,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "turkiye_altay_bay_nd_r": {
+    "overall": 76,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "germany_manuel_neuer": {
+    "overall": 87,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_joshua_kimmich": {
+    "overall": 87,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_antonio_rudiger": {
+    "overall": 86,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "germany_ilkay_gundogan": {
+    "overall": 86,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "germany_jonathan_tah": {
+    "overall": 84,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_jamal_musiala": {
+    "overall": 86,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_kai_havertz": {
+    "overall": 82,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "germany_leon_goretzka": {
+    "overall": 85,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_niclas_fullkrug": {
+    "overall": 81,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_florian_wirtz": {
+    "overall": 87,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_leroy_sane": {
+    "overall": 86,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_david_raum": {
+    "overall": 80,
+    "clubName": "RB Leipzig",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_thomas_muller": {
+    "overall": 82,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_nico_schlotterbeck": {
+    "overall": 84,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "germany_marc_andre_ter_stegen": {
+    "overall": 89,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "ecuador_hernan_galindez": {
+    "overall": 74,
+    "clubName": "Huracán",
+    "clubLeague": "Liga Profesional de Fútbol"
+  },
+  "ecuador_angelo_preciado": {
+    "overall": 74,
+    "clubName": "Sparta Praha",
+    "clubLeague": "First League"
+  },
+  "ecuador_piero_hincapie": {
+    "overall": 79,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "ecuador_moises_caicedo": {
+    "overall": 80,
+    "clubName": "Chelsea",
+    "clubLeague": "Premier League"
+  },
+  "ecuador_carlos_gruezo": {
+    "overall": 72,
+    "clubName": "San Jose Earthquakes",
+    "clubLeague": "Major League Soccer"
+  },
+  "ecuador_jeremy_sarmiento": {
+    "overall": 69,
+    "clubName": "Ipswich Town",
+    "clubLeague": "Championship"
+  },
+  "ecuador_michael_estrada": {
+    "overall": 70,
+    "clubName": "LDU Quito",
+    "clubLeague": "Liga Pro"
+  },
+  "ecuador_pervis_estupinan": {
+    "overall": 81,
+    "clubName": "Brighton & Hove Albion",
+    "clubLeague": "Premier League"
+  },
+  "ecuador_kendry_paez": {
+    "overall": 71,
+    "clubName": "Independiente del Valle",
+    "clubLeague": "Liga Pro"
+  },
+  "ecuador_alexander_dominguez": {
+    "overall": 75,
+    "clubName": "LDU Quito",
+    "clubLeague": "Liga Pro"
+  },
+  "ivory_coast_serge_aurier": {
+    "overall": 77,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "ivory_coast_eric_bailly": {
+    "overall": 76,
+    "clubName": "Villarreal",
+    "clubLeague": "La Liga"
+  },
+  "ivory_coast_franck_kessie": {
+    "overall": 82,
+    "clubName": "Al Ahli Jeddah",
+    "clubLeague": "Pro League"
+  },
+  "ivory_coast_wilfried_zaha": {
+    "overall": 81,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "ivory_coast_sebastien_haller": {
+    "overall": 81,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "ivory_coast_nicolas_pepe": {
+    "overall": 78,
+    "clubName": "Trabzonspor",
+    "clubLeague": "Süper Lig"
+  },
+  "ivory_coast_ibrahim_sangare": {
+    "overall": 80,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "ivory_coast_simon_adingra": {
+    "overall": 75,
+    "clubName": "Brighton & Hove Albion",
+    "clubLeague": "Premier League"
+  },
+  "ivory_coast_ghislain_konan": {
+    "overall": 77,
+    "clubName": "Al Fayha",
+    "clubLeague": "Pro League"
+  },
+  "ivory_coast_max_alain_gradel": {
+    "overall": 72,
+    "clubName": "Gaziantep F.K.",
+    "clubLeague": "Süper Lig"
+  },
+  "ivory_coast_jean_daniel_akpa_akpro": {
+    "overall": 73,
+    "clubName": "Monza",
+    "clubLeague": "Serie A"
+  },
+  "ivory_coast_yahia_fofana": {
+    "overall": 71,
+    "clubName": "Angers SCO",
+    "clubLeague": "Ligue 2"
+  },
+  "curacao_eloy_room": {
+    "overall": 70,
+    "clubName": "Vitesse",
+    "clubLeague": "Eredivisie"
+  },
+  "curacao_jurien_gaari": {
+    "overall": 66,
+    "clubName": "RKC Waalwijk",
+    "clubLeague": "Eredivisie"
+  },
+  "curacao_sherel_floranus": {
+    "overall": 67,
+    "clubName": "Almere City",
+    "clubLeague": "Eredivisie"
+  },
+  "curacao_roly_bonevacia": {
+    "overall": 67,
+    "clubName": "Melbourne Victory",
+    "clubLeague": "A-League Men"
+  },
+  "curacao_tyrick_mitchell": {
+    "overall": 77,
+    "clubName": "Crystal Palace",
+    "clubLeague": "Premier League"
+  },
+  "curacao_juninho_bacuna": {
+    "overall": 70,
+    "clubName": "Birmingham City",
+    "clubLeague": "Championship"
+  },
+  "netherlands_bart_verbruggen": {
+    "overall": 75,
+    "clubName": "Brighton & Hove Albion",
+    "clubLeague": "Premier League"
+  },
+  "netherlands_denzel_dumfries": {
+    "overall": 81,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "netherlands_matthijs_de_ligt": {
+    "overall": 84,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "netherlands_frenkie_de_jong": {
+    "overall": 87,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "netherlands_nathan_ake": {
+    "overall": 82,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "netherlands_steven_bergwijn": {
+    "overall": 78,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "netherlands_memphis_depay": {
+    "overall": 83,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "netherlands_cody_gakpo": {
+    "overall": 82,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "netherlands_brian_brobbey": {
+    "overall": 78,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "netherlands_wout_weghorst": {
+    "overall": 77,
+    "clubName": "TSG Hoffenheim",
+    "clubLeague": "Bundesliga"
+  },
+  "netherlands_steven_berghuis": {
+    "overall": 81,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "netherlands_jeremie_frimpong": {
+    "overall": 84,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "netherlands_daley_blind": {
+    "overall": 79,
+    "clubName": "Girona",
+    "clubLeague": "La Liga"
+  },
+  "netherlands_georginio_wijnaldum": {
+    "overall": 79,
+    "clubName": "Al Ettifaq",
+    "clubLeague": "Pro League"
+  },
+  "netherlands_mark_flekken": {
+    "overall": 80,
+    "clubName": "Brentford",
+    "clubLeague": "Premier League"
+  },
+  "japan_daniel_schmidt": {
+    "overall": 71,
+    "clubName": "Gent",
+    "clubLeague": "Pro League"
+  },
+  "japan_hiroki_ito": {
+    "overall": 78,
+    "clubName": "VfB Stuttgart",
+    "clubLeague": "Bundesliga"
+  },
+  "japan_wataru_endo": {
+    "overall": 80,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "japan_takehiro_tomiyasu": {
+    "overall": 78,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "japan_kaoru_mitoma": {
+    "overall": 81,
+    "clubName": "Brighton & Hove Albion",
+    "clubLeague": "Premier League"
+  },
+  "japan_takumi_minamino": {
+    "overall": 79,
+    "clubName": "Monaco",
+    "clubLeague": "Ligue 1"
+  },
+  "japan_ritsu_doan": {
+    "overall": 77,
+    "clubName": "SC Freiburg",
+    "clubLeague": "Bundesliga"
+  },
+  "japan_ayase_ueda": {
+    "overall": 73,
+    "clubName": "Feyenoord",
+    "clubLeague": "Eredivisie"
+  },
+  "japan_takuma_asano": {
+    "overall": 75,
+    "clubName": "VfL Bochum 1848",
+    "clubLeague": "Bundesliga"
+  },
+  "japan_junya_ito": {
+    "overall": 78,
+    "clubName": "Stade de Reims",
+    "clubLeague": "Ligue 1"
+  },
+  "japan_daizen_maeda": {
+    "overall": 74,
+    "clubName": "Celtic",
+    "clubLeague": "Premiership"
+  },
+  "japan_reo_hatate": {
+    "overall": 76,
+    "clubName": "Celtic",
+    "clubLeague": "Premiership"
+  },
+  "japan_ao_tanaka": {
+    "overall": 73,
+    "clubName": "Fortuna Düsseldorf",
+    "clubLeague": "2. Bundesliga"
+  },
+  "tunisia_aymen_dahmen": {
+    "overall": 68,
+    "clubName": "Al Hazem",
+    "clubLeague": "Pro League"
+  },
+  "tunisia_ellyes_skhiri": {
+    "overall": 81,
+    "clubName": "Eintracht Frankfurt",
+    "clubLeague": "Bundesliga"
+  },
+  "tunisia_montassar_talbi": {
+    "overall": 74,
+    "clubName": "Lorient",
+    "clubLeague": "Ligue 1"
+  },
+  "tunisia_aissa_laidouni": {
+    "overall": 76,
+    "clubName": "FC Union Berlin",
+    "clubLeague": "Bundesliga"
+  },
+  "tunisia_hamza_rafia": {
+    "overall": 67,
+    "clubName": "Lecce",
+    "clubLeague": "Serie A"
+  },
+  "tunisia_wahbi_khazri": {
+    "overall": 73,
+    "clubName": "Montpellier",
+    "clubLeague": "Ligue 1"
+  },
+  "sweden_robin_olsen": {
+    "overall": 75,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "sweden_victor_lindelof": {
+    "overall": 79,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "sweden_pontus_jansson": {
+    "overall": 73,
+    "clubName": "Malmö FF",
+    "clubLeague": "Allsvenskan"
+  },
+  "sweden_emil_forsberg": {
+    "overall": 79,
+    "clubName": "New York RB",
+    "clubLeague": "Major League Soccer"
+  },
+  "sweden_filip_helander": {
+    "overall": 70,
+    "clubName": "OB",
+    "clubLeague": "Superliga"
+  },
+  "sweden_dejan_kulusevski": {
+    "overall": 82,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "sweden_alexander_isak": {
+    "overall": 83,
+    "clubName": "Newcastle United",
+    "clubLeague": "Premier League"
+  },
+  "sweden_mattias_svanberg": {
+    "overall": 77,
+    "clubName": "VfL Wolfsburg",
+    "clubLeague": "Bundesliga"
+  },
+  "sweden_viktor_gyokeres": {
+    "overall": 82,
+    "clubName": "Sporting CP",
+    "clubLeague": "Primeira Liga"
+  },
+  "sweden_jesper_karlsson": {
+    "overall": 76,
+    "clubName": "Bologna",
+    "clubLeague": "Serie A"
+  },
+  "sweden_ludwig_augustinsson": {
+    "overall": 75,
+    "clubName": "Anderlecht",
+    "clubLeague": "Pro League"
+  },
+  "sweden_kristoffer_olsson": {
+    "overall": 75,
+    "clubName": "Midtjylland",
+    "clubLeague": "Superliga"
+  },
+  "sweden_emil_holm": {
+    "overall": 73,
+    "clubName": "Atalanta",
+    "clubLeague": "Serie A"
+  },
+  "sweden_karl_johan_johnsson": {
+    "overall": 67,
+    "clubName": "Bordeaux",
+    "clubLeague": "Ligue 2"
+  },
+  "belgium_thibaut_courtois": {
+    "overall": 90,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "belgium_thomas_meunier": {
+    "overall": 76,
+    "clubName": "Trabzonspor",
+    "clubLeague": "Süper Lig"
+  },
+  "belgium_arthur_theate": {
+    "overall": 77,
+    "clubName": "Rennes",
+    "clubLeague": "Ligue 1"
+  },
+  "belgium_youri_tielemans": {
+    "overall": 81,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "belgium_jan_vertonghen": {
+    "overall": 79,
+    "clubName": "Anderlecht",
+    "clubLeague": "Pro League"
+  },
+  "belgium_axel_witsel": {
+    "overall": 80,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "belgium_jeremy_doku": {
+    "overall": 79,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "belgium_romelu_lukaku": {
+    "overall": 84,
+    "clubName": "Roma",
+    "clubLeague": "Serie A"
+  },
+  "belgium_lois_openda": {
+    "overall": 84,
+    "clubName": "RB Leipzig",
+    "clubLeague": "Bundesliga"
+  },
+  "belgium_kevin_de_bruyne": {
+    "overall": 91,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "belgium_amadou_onana": {
+    "overall": 77,
+    "clubName": "Everton",
+    "clubLeague": "Premier League"
+  },
+  "belgium_timothy_castagne": {
+    "overall": 76,
+    "clubName": "Fulham",
+    "clubLeague": "Premier League"
+  },
+  "belgium_charles_de_ketelaere": {
+    "overall": 78,
+    "clubName": "Atalanta",
+    "clubLeague": "Serie A"
+  },
+  "belgium_dodi_lukebakio": {
+    "overall": 79,
+    "clubName": "Sevilla",
+    "clubLeague": "La Liga"
+  },
+  "belgium_koen_casteels": {
+    "overall": 83,
+    "clubName": "VfL Wolfsburg",
+    "clubLeague": "Bundesliga"
+  },
+  "iran_milad_mohammadi": {
+    "overall": 72,
+    "clubName": "Adana Demirspor",
+    "clubLeague": "Süper Lig"
+  },
+  "iran_mehdi_taremi": {
+    "overall": 81,
+    "clubName": "Porto",
+    "clubLeague": "Primeira Liga"
+  },
+  "iran_alireza_jahanbakhsh": {
+    "overall": 73,
+    "clubName": "Feyenoord",
+    "clubLeague": "Eredivisie"
+  },
+  "iran_saman_ghoddos": {
+    "overall": 67,
+    "clubName": "Brentford",
+    "clubLeague": "Premier League"
+  },
+  "iran_sardar_azmoun": {
+    "overall": 79,
+    "clubName": "Roma",
+    "clubLeague": "Serie A"
+  },
+  "iran_ehsan_hajsafi": {
+    "overall": 72,
+    "clubName": "AEK Athens",
+    "clubLeague": "Super League"
+  },
+  "egypt_mohamed_elneny": {
+    "overall": 75,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "egypt_ahmed_hegazi": {
+    "overall": 76,
+    "clubName": "Al Ittihad",
+    "clubLeague": "Pro League"
+  },
+  "egypt_mohamed_salah": {
+    "overall": 89,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "egypt_omar_marmoush": {
+    "overall": 78,
+    "clubName": "Eintracht Frankfurt",
+    "clubLeague": "Bundesliga"
+  },
+  "egypt_trezeguet": {
+    "overall": 75,
+    "clubName": "Trabzonspor",
+    "clubLeague": "Süper Lig"
+  },
+  "egypt_mostafa_mohamed": {
+    "overall": 75,
+    "clubName": "Nantes",
+    "clubLeague": "Ligue 1"
+  },
+  "new_zealand_oliver_sail": {
+    "overall": 68,
+    "clubName": "Perth Glory",
+    "clubLeague": "A-League Men"
+  },
+  "new_zealand_liberato_cacace": {
+    "overall": 71,
+    "clubName": "Empoli",
+    "clubLeague": "Serie A"
+  },
+  "new_zealand_bill_tuiloma": {
+    "overall": 66,
+    "clubName": "Charlotte",
+    "clubLeague": "Major League Soccer"
+  },
+  "new_zealand_joe_bell": {
+    "overall": 67,
+    "clubName": "Viking",
+    "clubLeague": "Eliteserien"
+  },
+  "new_zealand_ryan_thomas": {
+    "overall": 67,
+    "clubName": "PEC Zwolle",
+    "clubLeague": "Eredivisie"
+  },
+  "new_zealand_marco_rojas": {
+    "overall": 68,
+    "clubName": "Brisbane Roar",
+    "clubLeague": "A-League Men"
+  },
+  "new_zealand_marko_stamenic": {
+    "overall": 71,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "new_zealand_chris_wood": {
+    "overall": 75,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "new_zealand_ben_waine": {
+    "overall": 64,
+    "clubName": "Plymouth Argyle",
+    "clubLeague": "Championship"
+  },
+  "new_zealand_elijah_just": {
+    "overall": 65,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "new_zealand_kosta_barbarouses": {
+    "overall": 67,
+    "clubName": "Wellington Phoenix",
+    "clubLeague": "A-League Men"
+  },
+  "new_zealand_alex_greive": {
+    "overall": 63,
+    "clubName": "",
+    "clubLeague": ""
+  },
+  "new_zealand_michael_boxall": {
+    "overall": 69,
+    "clubName": "Minnesota United",
+    "clubLeague": "Major League Soccer"
+  },
+  "new_zealand_max_crocombe": {
+    "overall": 65,
+    "clubName": "Burton Albion",
+    "clubLeague": "League One"
+  },
+  "spain_unai_simon": {
+    "overall": 85,
+    "clubName": "Athletic Club",
+    "clubLeague": "La Liga"
+  },
+  "spain_dani_carvajal": {
+    "overall": 84,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "spain_aymeric_laporte": {
+    "overall": 83,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "spain_rodri": {
+    "overall": 90,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "spain_pau_torres": {
+    "overall": 82,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "spain_gavi": {
+    "overall": 83,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "spain_alvaro_morata": {
+    "overall": 84,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "spain_pedri": {
+    "overall": 86,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "spain_joselu": {
+    "overall": 82,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "spain_ferran_torres": {
+    "overall": 83,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "spain_nico_williams": {
+    "overall": 82,
+    "clubName": "Athletic Club",
+    "clubLeague": "La Liga"
+  },
+  "spain_mikel_oyarzabal": {
+    "overall": 83,
+    "clubName": "Real Sociedad",
+    "clubLeague": "La Liga"
+  },
+  "spain_fabian_ruiz": {
+    "overall": 80,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "spain_david_raya": {
+    "overall": 82,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "uruguay_jose_gimenez": {
+    "overall": 83,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "uruguay_federico_valverde": {
+    "overall": 88,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "uruguay_rodrigo_bentancur": {
+    "overall": 82,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "uruguay_darwin_nunez": {
+    "overall": 83,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "uruguay_luis_suarez": {
+    "overall": 84,
+    "clubName": "Inter Miami",
+    "clubLeague": "Major League Soccer"
+  },
+  "uruguay_facundo_pellistri": {
+    "overall": 71,
+    "clubName": "Granada",
+    "clubLeague": "La Liga"
+  },
+  "uruguay_ronald_araujo": {
+    "overall": 86,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "uruguay_manuel_ugarte": {
+    "overall": 81,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "uruguay_fernando_muslera": {
+    "overall": 80,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "saudi_arabia_sultan_al_ghannam": {
+    "overall": 73,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_ali_al_bulaihi": {
+    "overall": 74,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_salem_al_dawsari": {
+    "overall": 79,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_sami_al_najei": {
+    "overall": 67,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_saleh_al_shehri": {
+    "overall": 68,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_firas_al_buraikan": {
+    "overall": 73,
+    "clubName": "Al Ahli Jeddah",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_abdullah_al_hamdan": {
+    "overall": 61,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_hassan_tambakti": {
+    "overall": 73,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "saudi_arabia_fahad_al_muwallad": {
+    "overall": 63,
+    "clubName": "Al Shabab",
+    "clubLeague": "Pro League"
+  },
+  "cape_verde_dylan_tavares": {
+    "overall": 66,
+    "clubName": "Bastia",
+    "clubLeague": "Ligue 2"
+  },
+  "cape_verde_roberto_lopes": {
+    "overall": 67,
+    "clubName": "Shamrock Rovers",
+    "clubLeague": "Premier Division"
+  },
+  "cape_verde_ryan_mendes": {
+    "overall": 71,
+    "clubName": "Fatih Karagümrük",
+    "clubLeague": "Süper Lig"
+  },
+  "cape_verde_jason": {
+    "overall": 72,
+    "clubName": "Arouca",
+    "clubLeague": "Primeira Liga"
+  },
+  "cape_verde_bebe": {
+    "overall": 74,
+    "clubName": "Rayo Vallecano",
+    "clubLeague": "La Liga"
+  },
+  "cape_verde_jamiro_monteiro": {
+    "overall": 73,
+    "clubName": "Gaziantep F.K.",
+    "clubLeague": "Süper Lig"
+  },
+  "cape_verde_garry_rodrigues": {
+    "overall": 72,
+    "clubName": "Ankaragücü",
+    "clubLeague": "Süper Lig"
+  },
+  "france_mike_maignan": {
+    "overall": 87,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "france_jules_kounde": {
+    "overall": 85,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "france_dayot_upamecano": {
+    "overall": 83,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "france_aurelien_tchouameni": {
+    "overall": 84,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "france_william_saliba": {
+    "overall": 85,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "france_n_golo_kante": {
+    "overall": 85,
+    "clubName": "Al Ittihad",
+    "clubLeague": "Pro League"
+  },
+  "france_antoine_griezmann": {
+    "overall": 88,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "france_adrien_rabiot": {
+    "overall": 84,
+    "clubName": "Juventus",
+    "clubLeague": "Serie A"
+  },
+  "france_olivier_giroud": {
+    "overall": 83,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "france_kylian_mbappe": {
+    "overall": 91,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "france_ousmane_dembele": {
+    "overall": 86,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "france_theo_hernandez": {
+    "overall": 85,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "france_kingsley_coman": {
+    "overall": 85,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "france_warren_zaire_emery": {
+    "overall": 80,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "france_alphonse_areola": {
+    "overall": 80,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "senegal_edouard_mendy": {
+    "overall": 81,
+    "clubName": "Al Ahli Jeddah",
+    "clubLeague": "Pro League"
+  },
+  "senegal_youssouf_sabaly": {
+    "overall": 77,
+    "clubName": "Real Betis",
+    "clubLeague": "La Liga"
+  },
+  "senegal_kalidou_koulibaly": {
+    "overall": 84,
+    "clubName": "Al Hilal",
+    "clubLeague": "Pro League"
+  },
+  "senegal_idrissa_gueye": {
+    "overall": 76,
+    "clubName": "Everton",
+    "clubLeague": "Premier League"
+  },
+  "senegal_sadio_mane": {
+    "overall": 85,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "senegal_ismaila_sarr": {
+    "overall": 76,
+    "clubName": "Olympique de Marseille",
+    "clubLeague": "Ligue 1"
+  },
+  "senegal_cheikhou_kouyate": {
+    "overall": 74,
+    "clubName": "Nottingham Forest",
+    "clubLeague": "Premier League"
+  },
+  "senegal_boulaye_dia": {
+    "overall": 80,
+    "clubName": "Salernitana",
+    "clubLeague": "Serie A"
+  },
+  "senegal_pape_matar_sarr": {
+    "overall": 78,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "senegal_formose_mendy": {
+    "overall": 71,
+    "clubName": "Lorient",
+    "clubLeague": "Ligue 1"
+  },
+  "senegal_nicolas_jackson": {
+    "overall": 78,
+    "clubName": "Chelsea",
+    "clubLeague": "Premier League"
+  },
+  "senegal_pathe_ciss": {
+    "overall": 74,
+    "clubName": "Rayo Vallecano",
+    "clubLeague": "La Liga"
+  },
+  "senegal_seny_dieng": {
+    "overall": 71,
+    "clubName": "Middlesbrough",
+    "clubLeague": "Championship"
+  },
+  "norway_bernd_leno": {
+    "overall": 82,
+    "clubName": "Fulham",
+    "clubLeague": "Premier League"
+  },
+  "norway_julian_ryerson": {
+    "overall": 78,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "norway_stefan_strandberg": {
+    "overall": 70,
+    "clubName": "Vålerenga",
+    "clubLeague": "Eliteserien"
+  },
+  "norway_martin_degaard": {
+    "overall": 88,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "norway_kristoffer_ajer": {
+    "overall": 76,
+    "clubName": "Brentford",
+    "clubLeague": "Premier League"
+  },
+  "norway_sander_berge": {
+    "overall": 75,
+    "clubName": "Burnley",
+    "clubLeague": "Premier League"
+  },
+  "norway_erling_haaland": {
+    "overall": 91,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "norway_joshua_king": {
+    "overall": 75,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "norway_alexander_s_rloth": {
+    "overall": 79,
+    "clubName": "Villarreal",
+    "clubLeague": "La Liga"
+  },
+  "norway_aron_d_nnum": {
+    "overall": 71,
+    "clubName": "Toulouse",
+    "clubLeague": "Ligue 1"
+  },
+  "norway_felix_myhre": {
+    "overall": 66,
+    "clubName": "Brann",
+    "clubLeague": "Eliteserien"
+  },
+  "norway_patrick_berg": {
+    "overall": 76,
+    "clubName": "Bodø / Glimt",
+    "clubLeague": "Eliteserien"
+  },
+  "norway_leo_stigard": {
+    "overall": 73,
+    "clubName": "Napoli",
+    "clubLeague": "Serie A"
+  },
+  "norway_andre_hansen": {
+    "overall": 70,
+    "clubName": "Odd",
+    "clubLeague": "Eliteserien"
+  },
+  "iraq_zidane_iqbal": {
+    "overall": 63,
+    "clubName": "FC Utrecht",
+    "clubLeague": "Eredivisie"
+  },
+  "iraq_hussein_ali": {
+    "overall": 62,
+    "clubName": "SC Heerenveen",
+    "clubLeague": "Eredivisie"
+  },
+  "argentina_emiliano_martinez": {
+    "overall": 86,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "argentina_nahuel_molina": {
+    "overall": 82,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "argentina_nicolas_otamendi": {
+    "overall": 82,
+    "clubName": "Benfica",
+    "clubLeague": "Primeira Liga"
+  },
+  "argentina_enzo_fernandez": {
+    "overall": 82,
+    "clubName": "Chelsea",
+    "clubLeague": "Premier League"
+  },
+  "argentina_leandro_paredes": {
+    "overall": 78,
+    "clubName": "Roma",
+    "clubLeague": "Serie A"
+  },
+  "argentina_rodrigo_de_paul": {
+    "overall": 84,
+    "clubName": "Atlético Madrid",
+    "clubLeague": "La Liga"
+  },
+  "argentina_angel_di_maria": {
+    "overall": 84,
+    "clubName": "Benfica",
+    "clubLeague": "Primeira Liga"
+  },
+  "argentina_alexis_mac_allister": {
+    "overall": 84,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "argentina_julian_alvarez": {
+    "overall": 83,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "argentina_lionel_messi": {
+    "overall": 90,
+    "clubName": "Inter Miami",
+    "clubLeague": "Major League Soccer"
+  },
+  "argentina_lautaro_martinez": {
+    "overall": 88,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "argentina_giovani_lo_celso": {
+    "overall": 80,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "argentina_cristian_romero": {
+    "overall": 83,
+    "clubName": "Tottenham Hotspur",
+    "clubLeague": "Premier League"
+  },
+  "argentina_exequiel_palacios": {
+    "overall": 82,
+    "clubName": "Bayer 04 Leverkusen",
+    "clubLeague": "Bundesliga"
+  },
+  "argentina_geronimo_rulli": {
+    "overall": 80,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "austria_patrick_pentz": {
+    "overall": 72,
+    "clubName": "Brøndby",
+    "clubLeague": "Superliga"
+  },
+  "austria_david_alaba": {
+    "overall": 85,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "austria_marcel_sabitzer": {
+    "overall": 82,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_philipp_lienhart": {
+    "overall": 79,
+    "clubName": "SC Freiburg",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_konrad_laimer": {
+    "overall": 83,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_marko_arnautovic": {
+    "overall": 80,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "austria_christoph_baumgartner": {
+    "overall": 79,
+    "clubName": "RB Leipzig",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_michael_gregoritsch": {
+    "overall": 78,
+    "clubName": "SC Freiburg",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_maximilian_wober": {
+    "overall": 77,
+    "clubName": "Borussia Mönchengladbach",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_romano_schmid": {
+    "overall": 74,
+    "clubName": "Werder Bremen",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_stefan_posch": {
+    "overall": 78,
+    "clubName": "Bologna",
+    "clubLeague": "Serie A"
+  },
+  "austria_flavius_daniliuc": {
+    "overall": 73,
+    "clubName": "Salzburg",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_alexander_prass": {
+    "overall": 74,
+    "clubName": "Sturm Graz",
+    "clubLeague": "Bundesliga"
+  },
+  "austria_heinz_lindner": {
+    "overall": 73,
+    "clubName": "Union Saint-Gilloise",
+    "clubLeague": "Pro League"
+  },
+  "algeria_youcef_atal": {
+    "overall": 73,
+    "clubName": "Adana Demirspor",
+    "clubLeague": "Süper Lig"
+  },
+  "algeria_ramy_bensebaini": {
+    "overall": 78,
+    "clubName": "Borussia Dortmund",
+    "clubLeague": "Bundesliga"
+  },
+  "algeria_ismael_bennacer": {
+    "overall": 84,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "algeria_aissa_mandi": {
+    "overall": 76,
+    "clubName": "Villarreal",
+    "clubLeague": "La Liga"
+  },
+  "algeria_riyad_mahrez": {
+    "overall": 86,
+    "clubName": "Al Ahli Jeddah",
+    "clubLeague": "Pro League"
+  },
+  "algeria_adam_ounas": {
+    "overall": 73,
+    "clubName": "LOSC Lille",
+    "clubLeague": "Ligue 1"
+  },
+  "algeria_islam_slimani": {
+    "overall": 73,
+    "clubName": "Mechelen",
+    "clubLeague": "Pro League"
+  },
+  "algeria_fares_chaibi": {
+    "overall": 76,
+    "clubName": "Eintracht Frankfurt",
+    "clubLeague": "Bundesliga"
+  },
+  "algeria_ramiz_zerrouki": {
+    "overall": 75,
+    "clubName": "Feyenoord",
+    "clubLeague": "Eredivisie"
+  },
+  "algeria_anthony_mandrea": {
+    "overall": 70,
+    "clubName": "Caen",
+    "clubLeague": "Ligue 2"
+  },
+  "portugal_diogo_costa": {
+    "overall": 83,
+    "clubName": "Porto",
+    "clubLeague": "Primeira Liga"
+  },
+  "portugal_joao_cancelo": {
+    "overall": 86,
+    "clubName": "FC Barcelona",
+    "clubLeague": "La Liga"
+  },
+  "portugal_ruben_dias": {
+    "overall": 89,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "portugal_bruno_fernandes": {
+    "overall": 87,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "portugal_pepe": {
+    "overall": 81,
+    "clubName": "Porto",
+    "clubLeague": "Primeira Liga"
+  },
+  "portugal_joao_palhinha": {
+    "overall": 84,
+    "clubName": "Fulham",
+    "clubLeague": "Premier League"
+  },
+  "portugal_cristiano_ronaldo": {
+    "overall": 86,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "portugal_bernardo_silva": {
+    "overall": 88,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "portugal_goncalo_ramos": {
+    "overall": 79,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "portugal_pedro_neto": {
+    "overall": 79,
+    "clubName": "Wolverhampton Wanderers",
+    "clubLeague": "Premier League"
+  },
+  "portugal_rafael_leao": {
+    "overall": 86,
+    "clubName": "Milan",
+    "clubLeague": "Serie A"
+  },
+  "portugal_nuno_mendes": {
+    "overall": 82,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "portugal_vitinha": {
+    "overall": 83,
+    "clubName": "Paris Saint Germain",
+    "clubLeague": "Ligue 1"
+  },
+  "portugal_otavio": {
+    "overall": 82,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "portugal_jose_sa": {
+    "overall": 79,
+    "clubName": "Wolverhampton Wanderers",
+    "clubLeague": "Premier League"
+  },
+  "colombia_david_ospina": {
+    "overall": 79,
+    "clubName": "Atlético Nacional",
+    "clubLeague": "Categoría Primera A"
+  },
+  "colombia_davinson_sanchez": {
+    "overall": 78,
+    "clubName": "Galatasaray",
+    "clubLeague": "Süper Lig"
+  },
+  "colombia_yerry_mina": {
+    "overall": 76,
+    "clubName": "Cagliari",
+    "clubLeague": "Serie A"
+  },
+  "colombia_luis_diaz": {
+    "overall": 84,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "colombia_jefferson_lerma": {
+    "overall": 78,
+    "clubName": "Crystal Palace",
+    "clubLeague": "Premier League"
+  },
+  "colombia_radamel_falcao": {
+    "overall": 74,
+    "clubName": "Rayo Vallecano",
+    "clubLeague": "La Liga"
+  },
+  "colombia_juan_cuadrado": {
+    "overall": 79,
+    "clubName": "Inter",
+    "clubLeague": "Serie A"
+  },
+  "colombia_luis_sinisterra": {
+    "overall": 78,
+    "clubName": "AFC Bournemouth",
+    "clubLeague": "Premier League"
+  },
+  "colombia_jhon_arias": {
+    "overall": 69,
+    "clubName": "Atlético Nacional",
+    "clubLeague": "Categoría Primera A"
+  },
+  "uzbekistan_azizbek_turgunboev": {
+    "overall": 65,
+    "clubName": "Sivasspor",
+    "clubLeague": "Süper Lig"
+  },
+  "uzbekistan_otabek_shukurov": {
+    "overall": 69,
+    "clubName": "Kayserispor",
+    "clubLeague": "Süper Lig"
+  },
+  "uzbekistan_eldor_shomurodov": {
+    "overall": 72,
+    "clubName": "Cagliari",
+    "clubLeague": "Serie A"
+  },
+  "dr_congo_chancel_mbemba": {
+    "overall": 79,
+    "clubName": "Olympique de Marseille",
+    "clubLeague": "Ligue 1"
+  },
+  "dr_congo_edo_kayembe": {
+    "overall": 71,
+    "clubName": "Watford",
+    "clubLeague": "Championship"
+  },
+  "dr_congo_marcel_tisserand": {
+    "overall": 73,
+    "clubName": "Abha",
+    "clubLeague": "Pro League"
+  },
+  "dr_congo_cedric_bakambu": {
+    "overall": 75,
+    "clubName": "Real Betis",
+    "clubLeague": "La Liga"
+  },
+  "dr_congo_gael_kakuta": {
+    "overall": 74,
+    "clubName": "Amiens SC",
+    "clubLeague": "Ligue 2"
+  },
+  "dr_congo_yoane_wissa": {
+    "overall": 77,
+    "clubName": "Brentford",
+    "clubLeague": "Premier League"
+  },
+  "dr_congo_paul_jose_mpoku": {
+    "overall": 70,
+    "clubName": "Incheon United",
+    "clubLeague": "K League 1"
+  },
+  "dr_congo_chadrac_akolo": {
+    "overall": 72,
+    "clubName": "St. Gallen",
+    "clubLeague": "Super League"
+  },
+  "england_jordan_pickford": {
+    "overall": 82,
+    "clubName": "Everton",
+    "clubLeague": "Premier League"
+  },
+  "england_kyle_walker": {
+    "overall": 84,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "england_john_stones": {
+    "overall": 85,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "england_declan_rice": {
+    "overall": 87,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "england_harry_maguire": {
+    "overall": 80,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "england_trent_alexander_arnold": {
+    "overall": 86,
+    "clubName": "Liverpool",
+    "clubLeague": "Premier League"
+  },
+  "england_bukayo_saka": {
+    "overall": 86,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "england_jude_bellingham": {
+    "overall": 88,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "england_harry_kane": {
+    "overall": 90,
+    "clubName": "FC Bayern München",
+    "clubLeague": "Bundesliga"
+  },
+  "england_phil_foden": {
+    "overall": 87,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "england_jack_grealish": {
+    "overall": 85,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "england_marcus_rashford": {
+    "overall": 82,
+    "clubName": "Manchester United",
+    "clubLeague": "Premier League"
+  },
+  "england_conor_gallagher": {
+    "overall": 79,
+    "clubName": "Chelsea",
+    "clubLeague": "Premier League"
+  },
+  "england_ezri_konsa": {
+    "overall": 80,
+    "clubName": "Aston Villa",
+    "clubLeague": "Premier League"
+  },
+  "england_aaron_ramsdale": {
+    "overall": 82,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "croatia_dominik_livakovic": {
+    "overall": 82,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "croatia_josip_sutalo": {
+    "overall": 78,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "croatia_josko_gvardiol": {
+    "overall": 82,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "croatia_marcelo_brozovic": {
+    "overall": 83,
+    "clubName": "Al Nassr",
+    "clubLeague": "Pro League"
+  },
+  "croatia_borna_sosa": {
+    "overall": 77,
+    "clubName": "Ajax",
+    "clubLeague": "Eredivisie"
+  },
+  "croatia_luka_modric": {
+    "overall": 86,
+    "clubName": "Real Madrid",
+    "clubLeague": "La Liga"
+  },
+  "croatia_bruno_petkovic": {
+    "overall": 77,
+    "clubName": "Dinamo Zagreb",
+    "clubLeague": "Hrvatska nogometna liga"
+  },
+  "croatia_mateo_kovacic": {
+    "overall": 82,
+    "clubName": "Manchester City",
+    "clubLeague": "Premier League"
+  },
+  "croatia_andrej_kramaric": {
+    "overall": 81,
+    "clubName": "TSG Hoffenheim",
+    "clubLeague": "Bundesliga"
+  },
+  "croatia_luka_sucic": {
+    "overall": 74,
+    "clubName": "Salzburg",
+    "clubLeague": "Bundesliga"
+  },
+  "croatia_marko_livaja": {
+    "overall": 75,
+    "clubName": "Hajduk Split",
+    "clubLeague": "Hrvatska nogometna liga"
+  },
+  "croatia_mislav_orsic": {
+    "overall": 74,
+    "clubName": "Trabzonspor",
+    "clubLeague": "Süper Lig"
+  },
+  "croatia_nikola_vlasic": {
+    "overall": 79,
+    "clubName": "Torino",
+    "clubLeague": "Serie A"
+  },
+  "croatia_ivan_perisic": {
+    "overall": 77,
+    "clubName": "Hajduk Split",
+    "clubLeague": "Hrvatska nogometna liga"
+  },
+  "panama_michael_murillo": {
+    "overall": 73,
+    "clubName": "Olympique de Marseille",
+    "clubLeague": "Ligue 1"
+  },
+  "panama_anibal_godoy": {
+    "overall": 70,
+    "clubName": "Nashville SC",
+    "clubLeague": "Major League Soccer"
+  },
+  "panama_adalberto_carrasquilla": {
+    "overall": 71,
+    "clubName": "Houston Dynamo",
+    "clubLeague": "Major League Soccer"
+  },
+  "panama_jose_fajardo": {
+    "overall": 70,
+    "clubName": "Universidad Católica",
+    "clubLeague": "Liga Pro"
+  },
+  "panama_luis_mejia": {
+    "overall": 70,
+    "clubName": "Nacional",
+    "clubLeague": "Primera División"
+  },
+  "panama_ismael_diaz": {
+    "overall": 74,
+    "clubName": "Universidad Católica",
+    "clubLeague": "Liga Pro"
+  },
+  "ghana_lawrence_ati_zigi": {
+    "overall": 74,
+    "clubName": "St. Gallen",
+    "clubLeague": "Super League"
+  },
+  "ghana_gideon_mensah": {
+    "overall": 70,
+    "clubName": "Auxerre",
+    "clubLeague": "Ligue 2"
+  },
+  "ghana_daniel_amartey": {
+    "overall": 71,
+    "clubName": "Beşiktaş",
+    "clubLeague": "Süper Lig"
+  },
+  "ghana_thomas_partey": {
+    "overall": 84,
+    "clubName": "Arsenal",
+    "clubLeague": "Premier League"
+  },
+  "ghana_alexander_djiku": {
+    "overall": 77,
+    "clubName": "Fenerbahçe",
+    "clubLeague": "Süper Lig"
+  },
+  "ghana_mohammed_kudus": {
+    "overall": 81,
+    "clubName": "West Ham United",
+    "clubLeague": "Premier League"
+  },
+  "ghana_jordan_ayew": {
+    "overall": 75,
+    "clubName": "Crystal Palace",
+    "clubLeague": "Premier League"
+  },
+  "ghana_andre_ayew": {
+    "overall": 72,
+    "clubName": "Le Havre",
+    "clubLeague": "Ligue 1"
+  },
+  "ghana_inaki_williams": {
+    "overall": 82,
+    "clubName": "Athletic Club",
+    "clubLeague": "La Liga"
+  },
+  "ghana_antoine_semenyo": {
+    "overall": 74,
+    "clubName": "AFC Bournemouth",
+    "clubLeague": "Premier League"
+  },
+  "ghana_kamaldeen_sulemana": {
+    "overall": 72,
+    "clubName": "Southampton",
+    "clubLeague": "Championship"
+  },
+  "ghana_salis_abdul_samed": {
+    "overall": 76,
+    "clubName": "Lens",
+    "clubLeague": "Ligue 1"
+  },
+  "ghana_ernest_nuamah": {
+    "overall": 74,
+    "clubName": "Olympique Lyonnais",
+    "clubLeague": "Ligue 1"
+  },
+  "ghana_alidu_seidu": {
+    "overall": 73,
+    "clubName": "Rennes",
+    "clubLeague": "Ligue 1"
+  }
+}

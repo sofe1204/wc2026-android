@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
  * Auto-fill data/player_ratings.csv from SoFIFA open-data CSV, then optional overrides.
+ * Default: --fill-only preserves existing complete rows in player_ratings.csv.
  *
  *   node scripts/populate_player_ratings.mjs
- *   node scripts/populate_player_ratings.mjs --enrich   # also merge into players_seed.json
+ *   node scripts/populate_player_ratings.mjs --enrich
+ *   node scripts/populate_player_ratings.mjs --force   # destructive full rebuild
  */
 import fs from "fs";
 import path from "path";
@@ -16,10 +18,13 @@ import {
   val,
   rowToRating,
   emptyRatingRow,
-  escapeCsv,
   buildSofifaIndex,
   findBestMatch,
   isPlaceholderPlayer,
+  loadRatingsCsv,
+  ratingRowComplete,
+  writeRatingsCsv,
+  mergeOverrideEmptyOnly,
 } from "./player_ratings_lib.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -29,6 +34,9 @@ const RATINGS_CSV = path.join(ROOT, "data", "player_ratings.csv");
 const OVERRIDES_PATH = path.join(ROOT, "data", "ratings_overrides.json");
 
 const runEnrich = process.argv.includes("--enrich");
+const forceRebuild = process.argv.includes("--force");
+const fillOnly = !forceRebuild;
+const backup = process.argv.includes("--backup");
 
 function loadOverrides() {
   if (!fs.existsSync(OVERRIDES_PATH)) return new Map();
@@ -40,17 +48,15 @@ function loadOverrides() {
   return map;
 }
 
-function applyOverride(base, override) {
-  const out = { ...base };
-  for (const col of RATINGS_CSV_COLUMNS) {
-    if (col === "player_id") continue;
-    const v = override[col];
-    if (v !== undefined && v !== null && String(v).trim() !== "") out[col] = v;
-  }
-  return out;
-}
-
 async function main() {
+  if (backup && fs.existsSync(RATINGS_CSV)) {
+    const bak = `${RATINGS_CSV}.${Date.now()}.bak`;
+    fs.copyFileSync(RATINGS_CSV, bak);
+    console.log(`Backed up ${path.relative(ROOT, RATINGS_CSV)} → ${path.relative(ROOT, bak)}`);
+  }
+
+  const existingById = fillOnly ? loadRatingsCsv(RATINGS_CSV) : new Map();
+
   console.log("Downloading SoFIFA dataset …");
   const res = await fetch(SOFIFA_URL);
   if (!res.ok) throw new Error(`Download failed: ${res.status}`);
@@ -62,6 +68,7 @@ async function main() {
   const overrides = loadOverrides();
 
   let matched = 0;
+  let preserved = 0;
   let overridden = 0;
   let skippedPlaceholder = 0;
   const outRows = [];
@@ -74,32 +81,39 @@ async function main() {
       continue;
     }
 
+    const existing = existingById.get(player.playerId);
+    if (fillOnly && existing && ratingRowComplete(existing, player.position)) {
+      outRows.push(existing);
+      preserved++;
+      continue;
+    }
+
     const hit = findBestMatch(player, index);
     let row =
       hit && val(hit, "overall_rating", "overall") > 0
         ? rowToRating(player, hit)
-        : emptyRatingRow(player.playerId);
+        : existing
+          ? { ...existing, player_id: player.playerId }
+          : emptyRatingRow(player.playerId);
     if (hit && val(hit, "overall_rating", "overall") > 0) matched++;
 
     if (overrides.has(player.playerId)) {
-      row = applyOverride(row, overrides.get(player.playerId));
-      overridden++;
+      const beforeComplete = ratingRowComplete(row, player.position);
+      row = mergeOverrideEmptyOnly(row, overrides.get(player.playerId));
+      if (!beforeComplete && ratingRowComplete(row, player.position)) overridden++;
     }
 
     outRows.push(row);
-    if (!row.overall || parseInt(row.overall, 10) <= 0) unmatched.push(player.playerId);
+    if (!ratingRowComplete(row, player.position)) unmatched.push(player.playerId);
   }
 
-  const lines = [RATINGS_CSV_COLUMNS.join(",")];
-  for (const r of outRows) {
-    lines.push(RATINGS_CSV_COLUMNS.map((c) => escapeCsv(r[c])).join(","));
-  }
-  fs.mkdirSync(path.dirname(RATINGS_CSV), { recursive: true });
-  fs.writeFileSync(RATINGS_CSV, lines.join("\n") + "\n", "utf8");
+  writeRatingsCsv(RATINGS_CSV, outRows);
 
   const named = players.length - skippedPlaceholder;
-  console.log(`Matched ${matched}/${named} named players (${skippedPlaceholder} placeholders skipped)`);
-  if (overridden) console.log(`Applied ${overridden} override(s) from data/ratings_overrides.json`);
+  console.log(
+    `Matched ${matched} new, preserved ${preserved} existing (${fillOnly ? "fill-only" : "force rebuild"})`,
+  );
+  if (overridden) console.log(`Overrides filled ${overridden} previously incomplete row(s)`);
   console.log(`Wrote ${path.relative(ROOT, RATINGS_CSV)}`);
   if (unmatched.length) {
     console.log(`Still empty (${unmatched.length}): ${unmatched.slice(0, 12).join(", ")}…`);

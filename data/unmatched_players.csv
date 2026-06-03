@@ -1,0 +1,140 @@
+player_id,player_name,country,position,team_id,shirt_number,reason
+mexico_andres_guardado,Andrés Guardado,Mexico,Midfielder,mexico,6,incomplete_csv
+mexico_rodolfo_cota,Rodolfo Cota,Mexico,Goalkeeper,mexico,15,incomplete_csv
+south_africa_ronwen_williams,Ronwen Williams,South Africa,Goalkeeper,south_africa,1,incomplete_csv
+south_africa_khuliso_khumalo,Khuliso Khumalo,South Africa,Defender,south_africa,2,incomplete_csv
+south_africa_grant_kekana,Grant Kekana,South Africa,Defender,south_africa,3,incomplete_csv
+south_africa_themba_zwane,Themba Zwane,South Africa,Midfielder,south_africa,4,incomplete_csv
+south_africa_mothobi_mvala,Mothobi Mvala,South Africa,Defender,south_africa,5,incomplete_csv
+south_africa_percy_tau,Percy Tau,South Africa,Forward,south_africa,7,incomplete_csv
+south_africa_teboho_mokoena,Teboho Mokoena,South Africa,Midfielder,south_africa,8,incomplete_csv
+south_africa_evidence_makgopa,Evidence Makgopa,South Africa,Forward,south_africa,9,incomplete_csv
+south_africa_zakhele_lepasa,Zakhele Lepasa,South Africa,Forward,south_africa,11,incomplete_csv
+south_africa_thapelo_maseko,Thapelo Maseko,South Africa,Forward,south_africa,12,incomplete_csv
+south_africa_tebogo_moerane,Tebogo Moerane,South Africa,Midfielder,south_africa,13,incomplete_csv
+south_africa_mosa_lebusa,Mosa Lebusa,South Africa,Defender,south_africa,14,incomplete_csv
+south_africa_veli_mothwa,Veli Mothwa,South Africa,Goalkeeper,south_africa,15,incomplete_csv
+czechia_ondrej_kudela,Ondřej Kúdela,Czechia,Defender,czechia,3,incomplete_csv
+czechia_jan_kuchta,Jan Kuchta,Czechia,Forward,czechia,9,incomplete_csv
+canada_milan_borjan,Milan Borjan,Canada,Goalkeeper,canada,1,incomplete_csv
+canada_lucas_cavallini,Lucas Cavallini,Canada,Forward,canada,14,incomplete_csv
+qatar_saad_al_sheeb,Saad Al Sheeb,Qatar,Goalkeeper,qatar,1,incomplete_csv
+qatar_jassem_abdulsallan,Jassem Abdulsallan,Qatar,Midfielder,qatar,14,incomplete_csv
+qatar_mishal_barsham,Mishal Barsham,Qatar,Goalkeeper,qatar,15,incomplete_csv
+bosnia_herzegovina_miralem_pjanic,Miralem Pjanić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,4,incomplete_csv
+bosnia_herzegovina_stojan_vukanovic,Stojan Vukanović,Bosnia and Herzegovina,Defender,bosnia_herzegovina,5,incomplete_csv
+bosnia_herzegovina_amar_kadic,Amar Kadić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,8,incomplete_csv
+bosnia_herzegovina_elvis_mesic,Elvis Mešić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,11,incomplete_csv
+bosnia_herzegovina_adrian_leon_bagic,Adrian Leon Bagić,Bosnia and Herzegovina,Defender,bosnia_herzegovina,14,incomplete_csv
+brazil_endrick,Endrick,Brazil,Forward,brazil,14,incomplete_csv
+morocco_sofiane_boufal,Sofiane Boufal,Morocco,Forward,morocco,10,incomplete_csv
+haiti_zachary_brault_guillard,Zachary Brault-Guillard,Haiti,Defender,haiti,4,incomplete_csv
+haiti_mondy_prunier,Mondy Prunier,Haiti,Forward,haiti,7,incomplete_csv
+haiti_bryan_alceus,Bryan Alceus,Haiti,Midfielder,haiti,8,incomplete_csv
+haiti_danley_jean_plooij,Danley Jean Plooij,Haiti,Forward,haiti,9,incomplete_csv
+haiti_carnejy_antoine,Carnejy Antoine,Haiti,Forward,haiti,12,incomplete_csv
+haiti_steeven_sabbat,Steeven Sabbat,Haiti,Midfielder,haiti,13,incomplete_csv
+haiti_martin_experience,Martin Experience,Haiti,Defender,haiti,14,incomplete_csv
+haiti_josue_duverger,Josué Duverger,Haiti,Goalkeeper,haiti,15,incomplete_csv
+australia_fran_karacic,Fran Karačić,Australia,Defender,australia,2,incomplete_csv
+ivory_coast_badra_ali_sangare,Badra Ali Sangaré,Ivory Coast,Goalkeeper,ivory_coast,1,incomplete_csv
+ivory_coast_jean_philippe_krasso,Jean-Philippe Krasso,Ivory Coast,Forward,ivory_coast,9,incomplete_csv
+ivory_coast_christian_atsu,Christian Atsu,Ivory Coast,Midfielder,ivory_coast,11,incomplete_csv
+curacao_cuco_martina,Cuco Martina,Curaçao,Defender,curacao,2,incomplete_csv
+curacao_elson_hooi,Elson Hooi,Curaçao,Forward,curacao,7,incomplete_csv
+curacao_gino_jelvardi,Gino Jelvardi,Curaçao,Midfielder,curacao,8,incomplete_csv
+curacao_jarchinio_antonia,Jarchinio Antonia,Curaçao,Forward,curacao,9,incomplete_csv
+curacao_brandley_kuwas,Brandley Kuwas,Curaçao,Forward,curacao,10,incomplete_csv
+curacao_rangelo_janga,Rangelo Janga,Curaçao,Forward,curacao,11,incomplete_csv
+curacao_shanon_carmelia,Shanon Carmelia,Curaçao,Forward,curacao,13,incomplete_csv
+curacao_trevor_doornbusch,Trevor Doornbusch,Curaçao,Goalkeeper,curacao,15,incomplete_csv
+japan_shogo_taniguchi,Shogo Taniguchi,Japan,Defender,japan,3,incomplete_csv
+japan_shuichi_gonda,Shuichi Gonda,Japan,Goalkeeper,japan,15,incomplete_csv
+tunisia_wajdi_kechrida,Wajdi Kechrida,Tunisia,Defender,tunisia,2,incomplete_csv
+tunisia_yassine_meriah,Yassine Meriah,Tunisia,Defender,tunisia,3,incomplete_csv
+tunisia_youssef_msakni,Youssef Msakni,Tunisia,Forward,tunisia,7,incomplete_csv
+tunisia_issam_jebali,Issam Jebali,Tunisia,Forward,tunisia,9,incomplete_csv
+tunisia_hamza_lahmar,Hamza Lahmar,Tunisia,Forward,tunisia,11,incomplete_csv
+tunisia_ali_maaloul,Ali Maaloul,Tunisia,Defender,tunisia,12,incomplete_csv
+tunisia_naim_sliti,Naim Sliti,Tunisia,Forward,tunisia,13,incomplete_csv
+tunisia_ghailene_chaalali,Ghailene Chaalali,Tunisia,Midfielder,tunisia,14,incomplete_csv
+tunisia_bechir_ben_said,Bechir Ben Said,Tunisia,Goalkeeper,tunisia,15,incomplete_csv
+iran_alireza_beiranvand,Alireza Beiranvand,Iran,Goalkeeper,iran,1,incomplete_csv
+iran_hossein_kanaani,Hossein Kanaani,Iran,Defender,iran,2,incomplete_csv
+iran_rouzbeh_cheshmi,Rouzbeh Cheshmi,Iran,Defender,iran,3,incomplete_csv
+iran_saeid_ezatolahi,Saeid Ezatolahi,Iran,Midfielder,iran,4,incomplete_csv
+iran_mehdi_ghayedi,Mehdi Ghayedi,Iran,Forward,iran,9,incomplete_csv
+iran_omid_noorafkan,Omid Noorafkan,Iran,Midfielder,iran,11,incomplete_csv
+iran_karim_ansarifard,Karim Ansarifard,Iran,Forward,iran,13,incomplete_csv
+iran_hossein_hosseini,Hossein Hosseini,Iran,Goalkeeper,iran,15,incomplete_csv
+egypt_mohamed_el_shenawy,Mohamed El Shenawy,Egypt,Goalkeeper,egypt,1,incomplete_csv
+egypt_mohamed_hany,Mohamed Hany,Egypt,Defender,egypt,2,incomplete_csv
+egypt_mohamed_abdelmonem,Mohamed Abdelmonem,Egypt,Defender,egypt,3,incomplete_csv
+egypt_emam_ashour,Emam Ashour,Egypt,Midfielder,egypt,10,incomplete_csv
+egypt_marwan_hamdy,Marwan Hamdy,Egypt,Forward,egypt,11,incomplete_csv
+egypt_ahmed_sayed_zizo,Ahmed Sayed Zizo,Egypt,Midfielder,egypt,12,incomplete_csv
+egypt_hamdy_fathy,Hamdy Fathy,Egypt,Midfielder,egypt,13,incomplete_csv
+egypt_mohamed_abou_gabal,Mohamed Abou Gabal,Egypt,Goalkeeper,egypt,15,incomplete_csv
+new_zealand_nando_pijanker,Nando Pijanker,New Zealand,Defender,new_zealand,5,incomplete_csv
+spain_lamine_yamal,Lamine Yamal,Spain,Forward,spain,10,incomplete_csv
+uruguay_sergio_rochet,Sergio Rochet,Uruguay,Goalkeeper,uruguay,1,incomplete_csv
+uruguay_diego_godin,Diego Godín,Uruguay,Defender,uruguay,3,incomplete_csv
+uruguay_giorgian_arrascaeta,Giorgian Arrascaeta,Uruguay,Midfielder,uruguay,8,incomplete_csv
+saudi_arabia_mohammed_al_breik,Mohammed Al-Breik,Saudi Arabia,Defender,saudi_arabia,5,incomplete_csv
+saudi_arabia_nawaf_al_abed,Nawaf Al-Abed,Saudi Arabia,Forward,saudi_arabia,15,incomplete_csv
+cape_verde_vozinha,Vozinha,Cape Verde,Goalkeeper,cape_verde,1,incomplete_csv
+cape_verde_jojo,Jójó,Cape Verde,Defender,cape_verde,3,incomplete_csv
+cape_verde_diney,Diney,Cape Verde,Defender,cape_verde,12,incomplete_csv
+cape_verde_platini,Platini,Cape Verde,Forward,cape_verde,14,incomplete_csv
+senegal_mame_boussuf_lo,Mame Boussuf Lô,Senegal,Forward,senegal,10,incomplete_csv
+norway_antoine_semenyo,Antoine Semenyo,Norway,Forward,norway,10,incomplete_csv
+iraq_jalal_hassan,Jalal Hassan,Iraq,Goalkeeper,iraq,1,incomplete_csv
+iraq_ali_adnan,Ali Adnan,Iraq,Defender,iraq,2,incomplete_csv
+iraq_ayman_mokhtar,Ayman Mokhtar,Iraq,Defender,iraq,3,incomplete_csv
+iraq_amjad_attwan,Amjad Attwan,Iraq,Midfielder,iraq,6,incomplete_csv
+iraq_bashar_resan,Bashar Resan,Iraq,Midfielder,iraq,11,incomplete_csv
+iraq_ali_faez,Ali Faez,Iraq,Defender,iraq,13,incomplete_csv
+iraq_ahmed_yasin,Ahmed Yasin,Iraq,Midfielder,iraq,14,incomplete_csv
+iraq_hussein_hassan,Hussein Hassan,Iraq,Goalkeeper,iraq,15,incomplete_csv
+algeria_rais_m_bohli,Raïs M'Bohli,Algeria,Goalkeeper,algeria,1,incomplete_csv
+algeria_youcef_belaili,Youcef Belaïli,Algeria,Midfielder,algeria,7,incomplete_csv
+algeria_baghdad_bounedjah,Baghdad Bounedjah,Algeria,Forward,algeria,9,incomplete_csv
+algeria_haris_belkebla,Haris Belkebla,Algeria,Midfielder,algeria,12,incomplete_csv
+algeria_jaouad_zaid,Jaouad Zaid,Algeria,Defender,algeria,14,incomplete_csv
+jordan_yazid_abulaila,Yazid Abulaila,Jordan,Goalkeeper,jordan,1,incomplete_csv
+jordan_yazan_al_naimat,Yazan Al-Naimat,Jordan,Defender,jordan,2,incomplete_csv
+jordan_tareq_shoman,Tareq Shoman,Jordan,Defender,jordan,3,incomplete_csv
+jordan_rajaei_ayed,Rajaei Ayed,Jordan,Midfielder,jordan,4,incomplete_csv
+jordan_ihsan_haddad,Ihsan Haddad,Jordan,Defender,jordan,5,incomplete_csv
+jordan_mousa_al_taamari,Mousa Al-Taamari,Jordan,Forward,jordan,6,incomplete_csv
+jordan_ali_olwan,Ali Olwan,Jordan,Forward,jordan,7,incomplete_csv
+jordan_mahmoud_al_mardi,Mahmoud Al-Mardi,Jordan,Midfielder,jordan,8,incomplete_csv
+jordan_yaseen_al_bakhit,Yaseen Al-Bakhit,Jordan,Forward,jordan,9,incomplete_csv
+jordan_nizar_al_rashdan,Nizar Al-Rashdan,Jordan,Midfielder,jordan,10,incomplete_csv
+jordan_ehab_al_hanbali,Ehab Al-Hanbali,Jordan,Defender,jordan,11,incomplete_csv
+jordan_abdallah_nasoub,Abdallah Nasoub,Jordan,Forward,jordan,13,incomplete_csv
+jordan_ahmad_nawfal,Ahmad Nawfal,Jordan,Goalkeeper,jordan,15,incomplete_csv
+uzbekistan_utkir_yusupov,Utkir Yusupov,Uzbekistan,Goalkeeper,uzbekistan,1,incomplete_csv
+uzbekistan_akramjon_komilov,Akramjon Komilov,Uzbekistan,Defender,uzbekistan,2,incomplete_csv
+uzbekistan_egor_krimets,Egor Krimets,Uzbekistan,Defender,uzbekistan,3,incomplete_csv
+uzbekistan_jasurbek_jurayev,Jasurbek Jurayev,Uzbekistan,Midfielder,uzbekistan,4,incomplete_csv
+uzbekistan_jaloliddin_masharipov,Jaloliddin Masharipov,Uzbekistan,Midfielder,uzbekistan,8,incomplete_csv
+uzbekistan_igor_sergeev,Igor Sergeev,Uzbekistan,Forward,uzbekistan,9,incomplete_csv
+uzbekistan_khozhimat_erkinov,Khozhimat Erkinov,Uzbekistan,Midfielder,uzbekistan,10,incomplete_csv
+uzbekistan_abbosbek_fayzullaev,Abbosbek Fayzullaev,Uzbekistan,Midfielder,uzbekistan,11,incomplete_csv
+uzbekistan_sanjar_tulyakov,Sanjar Tulyakov,Uzbekistan,Defender,uzbekistan,12,incomplete_csv
+uzbekistan_odil_khamrobekov,Odil Khamrobekov,Uzbekistan,Defender,uzbekistan,13,incomplete_csv
+uzbekistan_abdulla_abdullaev,Abdulla Abdullaev,Uzbekistan,Midfielder,uzbekistan,14,incomplete_csv
+uzbekistan_khamza_alakbarov,Khamza Alakbarov,Uzbekistan,Goalkeeper,uzbekistan,15,incomplete_csv
+dr_congo_joel_kiassumbua,Joël Kiassumbua,DR Congo,Goalkeeper,dr_congo,1,incomplete_csv
+dr_congo_christian_luyindama,Christian Luyindama,DR Congo,Defender,dr_congo,3,incomplete_csv
+dr_congo_theo_bongonda,Théo Bongonda,DR Congo,Forward,dr_congo,7,incomplete_csv
+dr_congo_fiston_mayele,Fiston Mayele,DR Congo,Forward,dr_congo,9,incomplete_csv
+dr_congo_aaron_tchombani,Aaron Tchombani,DR Congo,Midfielder,dr_congo,11,incomplete_csv
+dr_congo_arthur_masuaku,Arthur Masuaku,DR Congo,Defender,dr_congo,12,incomplete_csv
+dr_congo_brady_fleury,Brady Fleury,DR Congo,Goalkeeper,dr_congo,15,incomplete_csv
+croatia_ivica_ivusic,Ivica Ivusić,Croatia,Goalkeeper,croatia,15,incomplete_csv
+panama_jaime_penedo,Jaime Penedo,Panama,Goalkeeper,panama,1,incomplete_csv
+panama_rolando_blackburn,Rolando Blackburn,Panama,Forward,panama,11,incomplete_csv
+panama_cesar_blackman,César Blackman,Panama,Midfielder,panama,12,incomplete_csv
+ghana_richard_ofori,Richard Ofori,Ghana,Goalkeeper,ghana,15,incomplete_csv

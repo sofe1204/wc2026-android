@@ -25,7 +25,16 @@ python scripts/sync_project.py
 **Node** (Windows / no Python):
 
 ```bash
-# Auto-fill from SoFIFA open-data CSV + merge into seed:
+# Full pipeline: real squads → seed JSON → SoFIFA ratings:
+npm run data:full
+
+# Or step by step:
+npm run generate:seed
+npm run populate:ratings
+```
+
+```bash
+# Ratings only (after squads/seed already correct):
 node scripts/populate_player_ratings.mjs --enrich
 
 # Or manual / template workflow:
@@ -35,9 +44,38 @@ node scripts/enrich_player_ratings.mjs
 node scripts/enrich_player_ratings.mjs --strict
 ```
 
-Optional manual patches for players missing from SoFIFA: `data/ratings_overrides.json` (keyed by `player_id`).
+### Non-destructive ratings completion
 
-After changing `squads.csv`, run `generate_seed_data.py` (Python) so `player_id` values stay aligned with `{team_id}_{slugified_name}`.
+`populate_player_ratings.mjs` defaults to **fill-only**: rows that are already complete in `player_ratings.csv` are copied unchanged. Use `--force` for a full rebuild (destructive). `enrich_player_ratings.mjs` only updates seed players when the CSV row is complete; incomplete CSV rows leave existing seed ratings intact.
+
+```bash
+# Baseline before changes
+node scripts/verify_ratings_no_regression.mjs --snapshot
+
+# Layer 1: matcher + preserve populate
+npm run populate:ratings
+
+# Review gaps
+npm run export:unmatched
+
+# Layer 2: SoFIFA overrides for priority IDs → populate again
+npm run build:overrides
+npm run populate:ratings
+
+# Layer 3: strict last-name backfill for empty CSV rows
+npm run fill:ratings-empty
+node scripts/enrich_player_ratings.mjs
+
+# Must pass (no lost complete ratings / OVR changes)
+node scripts/verify_ratings_no_regression.mjs
+
+# Or run the full chain (after --snapshot):
+npm run ratings:complete
+```
+
+Optional SoFIFA-derived patches: `data/ratings_overrides.json` (merged into empty fields only during populate).
+
+After changing squads, run `npm run generate:seed` (Node) or `python scripts/generate_seed_data.py` so `player_id` values stay aligned with `{team_id}_{slugified_name}`.
 
 ## `squads.csv` columns
 

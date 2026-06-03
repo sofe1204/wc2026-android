@@ -1,135 +1,135 @@
 player_id,club_name,club_league,overall,pace,shooting,passing,dribbling,defending,physical,diving,handling,kicking,reflexes,speed,positioning
 mexico_guillermo_ochoa,Salernitana,Serie A,78,0,0,0,0,0,0,78,71,70,79,50,79
-mexico_jorge_s_nchez,Porto,Primeira Liga,74,84,51,64,76,68,79,0,0,0,0,0,0
-mexico_c_sar_montes,Almería,La Liga,77,58,45,63,64,78,81,0,0,0,0,0,0
-mexico_edson_lvarez,West Ham United,Premier League,81,68,58,66,69,82,86,0,0,0,0,0,0
-mexico_h_ctor_moreno,,,,,,,,,,,,,,,
-mexico_andr_s_guardado,,,,,,,,,,,,,,,
-mexico_ra_l_jim_nez,Fulham,Premier League,75,67,75,75,71,47,79,0,0,0,0,0,0
-mexico_carlos_rodr_guez,,,,,,,,,,,,,,,
-mexico_henry_mart_n,,,79,76,66,74,77,27,79,0,0,0,0,0,0
-mexico_alexis_vega,,,,,,,,,,,,,,,
+mexico_jorge_sanchez,Porto,Primeira Liga,74,84,51,64,76,68,79,0,0,0,0,0,0
+mexico_cesar_montes,Almería,La Liga,77,58,45,63,64,78,81,0,0,0,0,0,0
+mexico_edson_alvarez,West Ham United,Premier League,81,68,58,66,69,82,86,0,0,0,0,0,0
+mexico_hector_moreno,Villarreal,La Liga,83,77,83,77,79,52,75,0,0,0,0,0,0
+mexico_andres_guardado,,,,,,,,,,,,,,,
+mexico_raul_jimenez,Fulham,Premier League,75,67,75,75,71,47,79,0,0,0,0,0,0
+mexico_carlos_rodriguez,Odisha FC,Super League,66,50,41,49,55,66,71,0,0,0,0,0,0
+mexico_henry_martin,,,79,76,66,74,77,27,79,0,0,0,0,0,0
+mexico_alexis_vega,Seattle Sounders,Major League Soccer,75,82,72,67,77,53,76,0,0,0,0,0,0
 mexico_uriel_antuna,,,76,80,59,69,69,28,57,0,0,0,0,0,0
-mexico_orbel_n_pineda,AEK Athens,Super League,76,81,74,72,82,64,70,0,0,0,0,0,0
-mexico_luis_ch_vez,,,79,73,77,72,77,38,70,0,0,0,0,0,0
-mexico_santiago_gim_nez,Feyenoord,Eredivisie,79,76,79,71,75,49,80,0,0,0,0,0,0
+mexico_orbelin_pineda,AEK Athens,Super League,76,81,74,72,82,64,70,0,0,0,0,0,0
+mexico_luis_chavez,,,79,73,77,72,77,38,70,0,0,0,0,0,0
+mexico_santiago_gimenez,Feyenoord,Eredivisie,79,76,79,71,75,49,80,0,0,0,0,0,0
 mexico_rodolfo_cota,,,,,,,,,,,,,,,
-south_africa_south_africa_gk_1,,,,,,,,,,,,,,,
-south_africa_south_africa_df_2,,,,,,,,,,,,,,,
-south_africa_south_africa_df_3,,,,,,,,,,,,,,,
-south_africa_south_africa_df_4,,,,,,,,,,,,,,,
-south_africa_south_africa_df_5,,,,,,,,,,,,,,,
-south_africa_south_africa_mf_6,,,,,,,,,,,,,,,
-south_africa_south_africa_mf_7,,,,,,,,,,,,,,,
-south_africa_south_africa_mf_8,,,,,,,,,,,,,,,
-south_africa_south_africa_fw_9,,,,,,,,,,,,,,,
-south_africa_south_africa_star_10,,,,,,,,,,,,,,,
-south_africa_south_africa_fw_11,,,,,,,,,,,,,,,
-south_africa_south_africa_fw_12,,,,,,,,,,,,,,,
-south_africa_south_africa_mf_13,,,,,,,,,,,,,,,
-south_africa_south_africa_df_14,,,,,,,,,,,,,,,
-south_africa_south_africa_gk_15,,,,,,,,,,,,,,,
-south_korea_south_korea_gk_1,,,,,,,,,,,,,,,
-south_korea_south_korea_df_2,,,,,,,,,,,,,,,
-south_korea_south_korea_df_3,,,,,,,,,,,,,,,
-south_korea_south_korea_df_4,,,,,,,,,,,,,,,
-south_korea_south_korea_df_5,,,,,,,,,,,,,,,
-south_korea_south_korea_mf_6,,,,,,,,,,,,,,,
-south_korea_south_korea_mf_7,,,,,,,,,,,,,,,
-south_korea_south_korea_mf_8,,,,,,,,,,,,,,,
-south_korea_south_korea_fw_9,,,,,,,,,,,,,,,
-south_korea_south_korea_star_10,,,,,,,,,,,,,,,
-south_korea_south_korea_fw_11,,,,,,,,,,,,,,,
-south_korea_south_korea_fw_12,,,,,,,,,,,,,,,
-south_korea_south_korea_mf_13,,,,,,,,,,,,,,,
-south_korea_south_korea_df_14,,,,,,,,,,,,,,,
-south_korea_south_korea_gk_15,,,,,,,,,,,,,,,
-czechia_czechia_gk_1,,,,,,,,,,,,,,,
-czechia_czechia_df_2,,,,,,,,,,,,,,,
-czechia_czechia_df_3,,,,,,,,,,,,,,,
-czechia_czechia_df_4,,,,,,,,,,,,,,,
-czechia_czechia_df_5,,,,,,,,,,,,,,,
-czechia_czechia_mf_6,,,,,,,,,,,,,,,
-czechia_czechia_mf_7,,,,,,,,,,,,,,,
-czechia_czechia_mf_8,,,,,,,,,,,,,,,
-czechia_czechia_fw_9,,,,,,,,,,,,,,,
-czechia_czechia_star_10,,,,,,,,,,,,,,,
-czechia_czechia_fw_11,,,,,,,,,,,,,,,
-czechia_czechia_fw_12,,,,,,,,,,,,,,,
-czechia_czechia_mf_13,,,,,,,,,,,,,,,
-czechia_czechia_df_14,,,,,,,,,,,,,,,
-czechia_czechia_gk_15,,,,,,,,,,,,,,,
+south_africa_ronwen_williams,,,,,,,,,,,,,,,
+south_africa_khuliso_khumalo,,,,,,,,,,,,,,,
+south_africa_grant_kekana,,,,,,,,,,,,,,,
+south_africa_themba_zwane,,,,,,,,,,,,,,,
+south_africa_mothobi_mvala,,,,,,,,,,,,,,,
+south_africa_sphephelo_sithole,Gillingham,League Two,55,83,53,46,57,39,64,0,0,0,0,0,0
+south_africa_percy_tau,,,,,,,,,,,,,,,
+south_africa_teboho_mokoena,,,,,,,,,,,,,,,
+south_africa_evidence_makgopa,,,,,,,,,,,,,,,
+south_africa_lyle_foster,Burnley,Premier League,71,81,70,59,68,42,73,0,0,0,0,0,0
+south_africa_zakhele_lepasa,,,,,,,,,,,,,,,
+south_africa_thapelo_maseko,,,,,,,,,,,,,,,
+south_africa_tebogo_moerane,,,,,,,,,,,,,,,
+south_africa_mosa_lebusa,,,,,,,,,,,,,,,
+south_africa_veli_mothwa,,,,,,,,,,,,,,,
+south_korea_kim_seung_gyu,Al Shabab,Pro League,73,0,0,0,0,0,0,75,65,70,76,36,71
+south_korea_kim_min_jae,FC Bayern München,Bundesliga,84,80,37,53,64,85,83,0,0,0,0,0,0
+south_korea_kim_young_gwon,Ulsan,K League 1,73,68,47,62,58,71,77,0,0,0,0,0,0
+south_korea_jung_woo_young,Al Khaleej,Pro League,70,58,57,66,59,64,74,0,0,0,0,0,0
+south_korea_kim_jin_su,Jeonbuk Motors,K League 1,70,83,51,64,73,63,71,0,0,0,0,0,0
+south_korea_son_heung_min,Tottenham Hotspur,Premier League,87,87,87,82,81,46,73,0,0,0,0,0,0
+south_korea_lee_kang_in,Paris Saint Germain,Ligue 1,79,75,75,80,84,51,69,0,0,0,0,0,0
+south_korea_hwang_hee_chan,Wolverhampton Wanderers,Premier League,78,84,77,69,79,40,75,0,0,0,0,0,0
+south_korea_cho_gue_sung,Midtjylland,Superliga,71,78,69,51,69,36,80,0,0,0,0,0,0
+south_korea_hwang_ui_jo,Alanyaspor,Süper Lig,72,77,73,66,71,45,72,0,0,0,0,0,0
+south_korea_jeong_woo_yeong,VfB Stuttgart,Bundesliga,72,77,62,64,82,41,64,0,0,0,0,0,0
+south_korea_hong_hyun_seok,Gent,Pro League,75,72,72,72,79,62,68,0,0,0,0,0,0
+south_korea_lee_jae_sung,FSV Mainz 05,Bundesliga,76,66,73,73,82,60,66,0,0,0,0,0,0
+south_korea_kim_tae_hwan,Jeonbuk Motors,K League 1,65,81,53,58,67,58,74,0,0,0,0,0,0
+south_korea_jo_hyeon_woo,Ulsan,K League 1,74,0,0,0,0,0,0,77,71,62,78,51,70
+czechia_tomas_vaclik,Albacete,La Liga 2,73,0,0,0,0,0,0,74,71,68,76,40,72
+czechia_vladimir_coufal,West Ham United,Premier League,78,66,61,74,72,76,80,0,0,0,0,0,0
+czechia_ondrej_kudela,,,,,,,,,,,,,,,
+czechia_tomas_soucek,West Ham United,Premier League,79,55,70,70,61,80,83,0,0,0,0,0,0
+czechia_david_jurasek,TSG Hoffenheim,Bundesliga,73,85,64,69,73,66,77,0,0,0,0,0,0
+czechia_antonin_barak,Fiorentina,Serie A,78,73,77,78,76,65,75,0,0,0,0,0,0
+czechia_patrik_schick,Bayer 04 Leverkusen,Bundesliga,82,76,81,72,79,44,77,0,0,0,0,0,0
+czechia_alex_kral,FC Union Berlin,Bundesliga,75,69,70,70,76,73,80,0,0,0,0,0,0
+czechia_jan_kuchta,,,,,,,,,,,,,,,
+czechia_michal_sadilek,FC Twente,Eredivisie,76,57,65,74,75,71,78,0,0,0,0,0,0
+czechia_adam_hlozek,Bayer 04 Leverkusen,Bundesliga,76,75,76,71,75,38,77,0,0,0,0,0,0
+czechia_lukas_provod,Slavia Praha,First League,73,72,73,74,73,66,79,0,0,0,0,0,0
+czechia_ladislav_krejci,Sparta Praha,First League,77,67,66,65,66,76,86,0,0,0,0,0,0
+czechia_tomas_holes,Slavia Praha,First League,76,74,69,69,74,76,81,0,0,0,0,0,0
+czechia_jiri_pavlenka,Werder Bremen,Bundesliga,75,0,0,0,0,0,0,75,72,62,82,36,69
 canada_milan_borjan,,,,,,,,,,,,,,,
 canada_alphonso_davies,FC Bayern München,Bundesliga,82,96,67,77,85,71,78,0,0,0,0,0,0
-canada_steven_vit_ria,Chaves,Primeira Liga,70,35,50,55,42,69,69,0,0,0,0,0,0
+canada_steven_vitoria,Chaves,Primeira Liga,70,35,50,55,42,69,69,0,0,0,0,0,0
 canada_sam_adekugbe,Vancouver Whitecaps,Major League Soccer,69,87,49,60,75,59,76,0,0,0,0,0,0
 canada_alistair_johnston,Celtic,Premiership,75,79,56,72,71,70,81,0,0,0,0,0,0
-canada_stephen_eust_quio,Porto,Primeira Liga,77,68,66,75,73,69,76,0,0,0,0,0,0
+canada_stephen_eustaquio,Porto,Primeira Liga,77,68,66,75,73,69,76,0,0,0,0,0,0
 canada_tajon_buchanan,Inter,Serie A,72,92,62,62,74,65,76,0,0,0,0,0,0
 canada_jonathan_david,LOSC Lille,Ligue 1,80,82,79,69,76,38,76,0,0,0,0,0,0
 canada_cyle_larin,Mallorca,La Liga,75,71,73,64,63,35,77,0,0,0,0,0,0
 canada_junior_hoilett,Aberdeen,Premiership,70,78,68,70,76,58,66,0,0,0,0,0,0
 canada_liam_millar,Preston North End,Championship,72,86,65,64,78,52,63,0,0,0,0,0,0
-canada_isma_l_kon,Watford,Championship,71,78,62,69,67,59,68,0,0,0,0,0,0
+canada_ismael_kone,Watford,Championship,71,78,62,69,67,59,68,0,0,0,0,0,0
 canada_mark_anthony_kaye,New England,Major League Soccer,68,70,54,63,60,68,73,0,0,0,0,0,0
 canada_lucas_cavallini,,,,,,,,,,,,,,,
-canada_maxime_cr_peau,Portland Timbers,Major League Soccer,73,0,0,0,0,0,0,74,71,70,75,49,71
-switzerland_switzerland_gk_1,,,,,,,,,,,,,,,
-switzerland_switzerland_df_2,,,,,,,,,,,,,,,
-switzerland_switzerland_df_3,,,,,,,,,,,,,,,
-switzerland_switzerland_df_4,,,,,,,,,,,,,,,
-switzerland_switzerland_df_5,,,,,,,,,,,,,,,
-switzerland_switzerland_mf_6,,,,,,,,,,,,,,,
-switzerland_switzerland_mf_7,,,,,,,,,,,,,,,
-switzerland_switzerland_mf_8,,,,,,,,,,,,,,,
-switzerland_switzerland_fw_9,,,,,,,,,,,,,,,
-switzerland_switzerland_star_10,,,,,,,,,,,,,,,
-switzerland_switzerland_fw_11,,,,,,,,,,,,,,,
-switzerland_switzerland_fw_12,,,,,,,,,,,,,,,
-switzerland_switzerland_mf_13,,,,,,,,,,,,,,,
-switzerland_switzerland_df_14,,,,,,,,,,,,,,,
-switzerland_switzerland_gk_15,,,,,,,,,,,,,,,
-qatar_qatar_gk_1,,,,,,,,,,,,,,,
-qatar_qatar_df_2,,,,,,,,,,,,,,,
-qatar_qatar_df_3,,,,,,,,,,,,,,,
-qatar_qatar_df_4,,,,,,,,,,,,,,,
-qatar_qatar_df_5,,,,,,,,,,,,,,,
-qatar_qatar_mf_6,,,,,,,,,,,,,,,
-qatar_qatar_mf_7,,,,,,,,,,,,,,,
-qatar_qatar_mf_8,,,,,,,,,,,,,,,
-qatar_qatar_fw_9,,,,,,,,,,,,,,,
-qatar_qatar_star_10,,,,,,,,,,,,,,,
-qatar_qatar_fw_11,,,,,,,,,,,,,,,
-qatar_qatar_fw_12,,,,,,,,,,,,,,,
-qatar_qatar_mf_13,,,,,,,,,,,,,,,
-qatar_qatar_df_14,,,,,,,,,,,,,,,
-qatar_qatar_gk_15,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_gk_1,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_df_2,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_df_3,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_df_4,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_df_5,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_mf_6,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_mf_7,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_mf_8,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_fw_9,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_star_10,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_fw_11,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_fw_12,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_mf_13,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_df_14,,,,,,,,,,,,,,,
-bosnia_herzegovina_bosnia_and_herzegovina_gk_15,,,,,,,,,,,,,,,
+canada_maxime_crepeau,Portland Timbers,Major League Soccer,73,0,0,0,0,0,0,74,71,70,75,49,71
+switzerland_yann_sommer,Inter,Serie A,86,0,0,0,0,0,0,81,82,83,90,51,85
+switzerland_manuel_akanji,Manchester City,Premier League,83,79,48,67,71,83,81,0,0,0,0,0,0
+switzerland_nico_elvedi,Borussia Mönchengladbach,Bundesliga,76,69,42,60,62,76,77,0,0,0,0,0,0
+switzerland_granit_xhaka,Bayer 04 Leverkusen,Bundesliga,84,49,72,81,67,74,81,0,0,0,0,0,0
+switzerland_fabian_schar,Newcastle United,Premier League,82,54,67,74,68,83,79,0,0,0,0,0,0
+switzerland_xherdan_shaqiri,Chicago Fire,Major League Soccer,73,68,75,77,77,41,60,0,0,0,0,0,0
+switzerland_breel_embolo,Monaco,Ligue 1,77,78,78,70,71,54,80,0,0,0,0,0,0
+switzerland_ruben_vargas,FC Augsburg,Bundesliga,74,84,69,67,84,55,66,0,0,0,0,0,0
+switzerland_dan_ndoye,Bologna,Serie A,73,85,66,64,75,49,68,0,0,0,0,0,0
+switzerland_michel_rieder,Rennes,Ligue 1,74,75,65,71,80,49,63,0,0,0,0,0,0
+switzerland_steven_zuber,AEK Athens,Super League,76,77,74,74,74,65,76,0,0,0,0,0,0
+switzerland_silvan_widmer,FSV Mainz 05,Bundesliga,75,77,63,71,72,69,79,0,0,0,0,0,0
+switzerland_denis_zakaria,Monaco,Ligue 1,79,80,62,71,71,77,83,0,0,0,0,0,0
+switzerland_zeki_amdouni,Burnley,Premier League,73,72,73,67,74,49,70,0,0,0,0,0,0
+switzerland_gregor_kobel,Borussia Dortmund,Bundesliga,87,0,0,0,0,0,0,86,84,73,89,45,86
+qatar_saad_al_sheeb,,,65,0,0,0,0,0,0,65,63,63,0,52,0
+qatar_ro_ro,Hansa Rostock,2. Bundesliga,67,63,38,48,48,68,75,0,0,0,0,0,0
+qatar_abdelkarim_hassan,Alanyaspor,Süper Lig,70,56,73,55,62,35,77,0,0,0,0,0,0
+qatar_hassan_al_haydos,,,70,70,62,67,70,26,52,0,0,0,0,0,0
+qatar_boualem_khoukhi,,,70,56,69,62,66,34,66,0,0,0,0,0,0
+qatar_akram_afif,,,77,76,65,72,72,30,58,0,0,0,0,0,0
+qatar_almoez_ali,,,71,63,55,64,64,29,67,0,0,0,0,0,0
+qatar_karim_boudiaf,,,71,66,66,66,57,34,67,0,0,0,0,0,0
+qatar_mohammed_muntari,,,66,55,51,58,55,26,66,0,0,0,0,0,0
+qatar_tarek_salman,,,66,64,60,64,65,32,55,0,0,0,0,0,0
+qatar_abdulaziz_hatem,,,70,68,65,66,62,36,67,0,0,0,0,0,0
+qatar_yousuf_abdurisag,,,64,72,48,58,65,26,52,0,0,0,0,0,0
+qatar_homam_ahmed,,,68,60,61,60,60,36,59,0,0,0,0,0,0
+qatar_jassem_abdulsallan,,,,,,,,,,,,,,,
+qatar_mishal_barsham,,,68,0,0,0,0,0,0,55,68,69,0,61,0
+bosnia_herzegovina_asmir_begovic,Queens Park Rangers,Championship,71,0,0,0,0,0,0,72,70,65,68,31,73
+bosnia_herzegovina_sead_kolasinac,Atalanta,Serie A,79,69,63,67,63,77,83,0,0,0,0,0,0
+bosnia_herzegovina_ermin_bicakcic,Eintracht Braunschweig,2. Bundesliga,71,35,41,46,50,72,68,0,0,0,0,0,0
+bosnia_herzegovina_miralem_pjanic,,,,,,,,,,,,,,,
+bosnia_herzegovina_stojan_vukanovic,,,,,,,,,,,,,,,
+bosnia_herzegovina_gojko_cimirot,Al Fayha,Pro League,70,59,61,65,69,66,70,0,0,0,0,0,0
+bosnia_herzegovina_edin_dzeko,Fenerbahçe,Süper Lig,83,57,84,72,69,46,74,0,0,0,0,0,0
+bosnia_herzegovina_amar_kadic,,,,,,,,,,,,,,,
+bosnia_herzegovina_miroslav_stevanovic,Servette,Super League,76,78,70,74,75,43,71,0,0,0,0,0,0
+bosnia_herzegovina_marko_arnautovic,Inter,Serie A,80,74,79,78,77,50,81,0,0,0,0,0,0
+bosnia_herzegovina_elvis_mesic,,,,,,,,,,,,,,,
+bosnia_herzegovina_benjamin_tahirovic,Ajax,Eredivisie,70,55,43,61,63,64,69,0,0,0,0,0,0
+bosnia_herzegovina_anel_ahmedhodzic,Sheffield United,Premier League,74,77,39,57,61,74,79,0,0,0,0,0,0
+bosnia_herzegovina_adrian_leon_bagic,,,,,,,,,,,,,,,
+bosnia_herzegovina_ibrahim_sehic,Al Khaleej,Pro League,73,0,0,0,0,0,0,70,72,63,73,33,76
 brazil_alisson,Liverpool,Premier League,89,0,0,0,0,0,0,86,85,85,89,55,90
 brazil_danilo,Juventus,Serie A,81,77,70,73,70,82,80,0,0,0,0,0,0
-brazil_marquinhos,,,,,,,,,,,,,,,
-brazil_casemiro,,,,,,,,,,,,,,,
-brazil_fabinho,,,,,,,,,,,,,,,
-brazil_bruno_guimar_es,Newcastle United,Premier League,84,71,74,81,83,78,82,0,0,0,0,0,0
-brazil_vin_cius_j_nior,,,,,,,,,,,,,,,
+brazil_marquinhos,Paris Saint Germain,Ligue 1,87,79,55,74,71,89,83,0,0,0,0,0,0
+brazil_casemiro,Manchester United,Premier League,85,58,75,77,67,84,85,0,0,0,0,0,0
+brazil_fabinho,Al Ittihad,Pro League,83,59,66,78,71,81,81,0,0,0,0,0,0
+brazil_bruno_guimaraes,Newcastle United,Premier League,84,71,74,81,83,78,82,0,0,0,0,0,0
+brazil_vinicius_junior,Real Madrid,La Liga,89,95,81,80,90,31,70,0,0,0,0,0,0
 brazil_rodrygo,Real Madrid,La Liga,85,89,78,79,86,39,68,0,0,0,0,0,0
 brazil_richarlison,Tottenham Hotspur,Premier League,81,78,80,72,78,58,82,0,0,0,0,0,0
 brazil_neymar,Al Hilal,Pro League,88,84,82,85,91,40,65,0,0,0,0,0,0
-brazil_raphinha,,,,,,,,,,,,,,,
+brazil_raphinha,FC Barcelona,La Liga,84,91,79,79,85,53,78,0,0,0,0,0,0
 brazil_alex_sandro,Juventus,Serie A,77,73,68,74,76,76,79,0,0,0,0,0,0
 brazil_bremer,Juventus,Serie A,85,82,50,54,65,86,85,0,0,0,0,0,0
 brazil_endrick,,,,,,,,,,,,,,,
@@ -138,49 +138,49 @@ morocco_yassine_bounou,Al Hilal,Pro League,85,0,0,0,0,0,0,82,83,79,87,38,84
 morocco_achraf_hakimi,Paris Saint Germain,Ligue 1,84,91,77,79,80,74,81,0,0,0,0,0,0
 morocco_nayef_aguerd,West Ham United,Premier League,79,73,51,63,60,80,77,0,0,0,0,0,0
 morocco_sofyan_amrabat,Manchester United,Premier League,79,66,71,74,74,72,80,0,0,0,0,0,0
-morocco_romain_sa_ss,Al Shabab,Pro League,78,59,57,69,64,77,81,0,0,0,0,0,0
+morocco_romain_saiss,Al Shabab,Pro League,78,59,57,69,64,77,81,0,0,0,0,0,0
 morocco_hakim_ziyech,Galatasaray,Süper Lig,80,74,77,84,80,49,62,0,0,0,0,0,0
 morocco_youssef_en_nesyri,Sevilla,La Liga,82,81,81,61,66,43,82,0,0,0,0,0,0
 morocco_azzedine_ounahi,Olympique de Marseille,Ligue 1,75,64,64,72,76,61,67,0,0,0,0,0,0
 morocco_abde_ezzalzouli,Real Betis,La Liga,74,84,68,67,80,30,53,0,0,0,0,0,0
 morocco_sofiane_boufal,,,,,,,,,,,,,,,
-morocco_brahim_d_az,,,,,,,,,,,,,,,
+morocco_brahim_diaz,Real Madrid,La Liga,82,85,73,78,87,29,57,0,0,0,0,0,0
 morocco_selim_amallah,Valencia,La Liga,73,67,73,73,69,62,75,0,0,0,0,0,0
 morocco_yahya_attiat_allah,,,73,69,68,66,72,35,60,0,0,0,0,0,0
 morocco_zakaria_aboukhlal,Toulouse,Ligue 1,75,85,69,69,77,45,76,0,0,0,0,0,0
 morocco_munir_el_kajoui,Al Wahda,Pro League,75,0,0,0,0,0,0,74,73,68,76,48,75
-scotland_scotland_gk_1,,,,,,,,,,,,,,,
-scotland_scotland_df_2,,,,,,,,,,,,,,,
-scotland_scotland_df_3,,,,,,,,,,,,,,,
-scotland_scotland_df_4,,,,,,,,,,,,,,,
-scotland_scotland_df_5,,,,,,,,,,,,,,,
-scotland_scotland_mf_6,,,,,,,,,,,,,,,
-scotland_scotland_mf_7,,,,,,,,,,,,,,,
-scotland_scotland_mf_8,,,,,,,,,,,,,,,
-scotland_scotland_fw_9,,,,,,,,,,,,,,,
-scotland_scotland_star_10,,,,,,,,,,,,,,,
-scotland_scotland_fw_11,,,,,,,,,,,,,,,
-scotland_scotland_fw_12,,,,,,,,,,,,,,,
-scotland_scotland_mf_13,,,,,,,,,,,,,,,
-scotland_scotland_df_14,,,,,,,,,,,,,,,
-scotland_scotland_gk_15,,,,,,,,,,,,,,,
-haiti_haiti_gk_1,,,,,,,,,,,,,,,
-haiti_haiti_df_2,,,,,,,,,,,,,,,
-haiti_haiti_df_3,,,,,,,,,,,,,,,
-haiti_haiti_df_4,,,,,,,,,,,,,,,
-haiti_haiti_df_5,,,,,,,,,,,,,,,
-haiti_haiti_mf_6,,,,,,,,,,,,,,,
-haiti_haiti_mf_7,,,,,,,,,,,,,,,
-haiti_haiti_mf_8,,,,,,,,,,,,,,,
-haiti_haiti_fw_9,,,,,,,,,,,,,,,
-haiti_haiti_star_10,,,,,,,,,,,,,,,
-haiti_haiti_fw_11,,,,,,,,,,,,,,,
-haiti_haiti_fw_12,,,,,,,,,,,,,,,
-haiti_haiti_mf_13,,,,,,,,,,,,,,,
-haiti_haiti_df_14,,,,,,,,,,,,,,,
-haiti_haiti_gk_15,,,,,,,,,,,,,,,
+scotland_angus_gunn,Norwich City,Championship,74,0,0,0,0,0,0,75,71,72,76,49,71
+scotland_kieran_tierney,Real Sociedad,La Liga,80,80,62,75,77,74,77,0,0,0,0,0,0
+scotland_grant_hanley,Norwich City,Championship,73,53,31,45,48,74,77,0,0,0,0,0,0
+scotland_scott_mctominay,Manchester United,Premier League,78,57,81,68,64,76,84,0,0,0,0,0,0
+scotland_john_souttar,Rangers,Premiership,74,73,44,63,69,74,76,0,0,0,0,0,0
+scotland_andy_robertson,Liverpool,Premier League,86,80,62,82,78,79,81,0,0,0,0,0,0
+scotland_john_mcginn,Aston Villa,Premier League,81,69,77,78,81,72,84,0,0,0,0,0,0
+scotland_callum_mcgregor,Celtic,Premiership,79,80,74,76,82,68,79,0,0,0,0,0,0
+scotland_che_adams,Southampton,Championship,75,79,76,61,75,44,77,0,0,0,0,0,0
+scotland_lyndon_dykes,Queens Park Rangers,Championship,69,67,67,50,65,38,83,0,0,0,0,0,0
+scotland_ryan_christie,AFC Bournemouth,Premier League,74,77,68,74,77,66,77,0,0,0,0,0,0
+scotland_lewis_morgan,New York RB,Major League Soccer,75,82,71,70,77,59,70,0,0,0,0,0,0
+scotland_billy_gilmour,Brighton & Hove Albion,Premier League,74,61,60,72,76,65,63,0,0,0,0,0,0
+scotland_jack_hendry,Al Ettifaq,Pro League,75,78,54,61,66,73,85,0,0,0,0,0,0
+scotland_zander_clark,Hearts,Premiership,72,0,0,0,0,0,0,73,68,70,77,31,72
+haiti_johny_placide,Bastia,Ligue 2,67,0,0,0,0,0,0,63,65,69,66,55,67
+haiti_derrick_etienne,Toronto,Major League Soccer,67,81,61,62,72,38,65,0,0,0,0,0,0
+haiti_mechack_jerome,Bolton Wanderers,League One,62,43,65,51,58,46,67,0,0,0,0,0,0
+haiti_zachary_brault_guillard,,,,,,,,,,,,,,,
+haiti_ricardo_ade,LDU Quito,Liga Pro,73,72,38,55,64,73,78,0,0,0,0,0,0
+haiti_derrick_etienne_jr,Toronto,Major League Soccer,67,81,61,62,72,38,65,0,0,0,0,0,0
+haiti_mondy_prunier,,,,,,,,,,,,,,,
+haiti_bryan_alceus,,,,,,,,,,,,,,,
+haiti_danley_jean_plooij,,,,,,,,,,,,,,,
+haiti_duckens_nazon,Kayserispor,Süper Lig,68,76,66,51,69,30,61,0,0,0,0,0,0
+haiti_frantzdy_pierrot,Drogheda United,Premier Division,58,62,57,45,53,31,63,0,0,0,0,0,0
+haiti_carnejy_antoine,,,,,,,,,,,,,,,
+haiti_steeven_sabbat,,,,,,,,,,,,,,,
+haiti_martin_experience,,,,,,,,,,,,,,,
+haiti_josue_duverger,,,,,,,,,,,,,,,
 united_states_matt_turner,Nottingham Forest,Premier League,76,0,0,0,0,0,0,76,74,67,76,40,78
-united_states_sergi_o_dest,PSV,Eredivisie,78,85,61,75,83,69,72,0,0,0,0,0,0
+united_states_sergino_dest,PSV,Eredivisie,78,85,61,75,83,69,72,0,0,0,0,0,0
 united_states_walker_zimmerman,Nashville SC,Major League Soccer,75,55,49,51,53,74,84,0,0,0,0,0,0
 united_states_tyler_adams,AFC Bournemouth,Premier League,77,79,49,65,76,74,79,0,0,0,0,0,0
 united_states_antonee_robinson,Fulham,Premier League,78,88,50,69,76,70,79,0,0,0,0,0,0
@@ -194,116 +194,116 @@ united_states_folarin_balogun,Monaco,Ligue 1,78,85,78,61,77,31,71,0,0,0,0,0,0
 united_states_ricardo_pepi,PSV,Eredivisie,73,71,72,56,68,44,70,0,0,0,0,0,0
 united_states_brenden_aaronson,FC Union Berlin,Bundesliga,73,78,66,68,80,51,62,0,0,0,0,0,0
 united_states_ethan_horvath,Cardiff City,Championship,72,0,0,0,0,0,0,78,66,63,76,49,64
-paraguay_paraguay_gk_1,,,,,,,,,,,,,,,
-paraguay_paraguay_df_2,,,,,,,,,,,,,,,
-paraguay_paraguay_df_3,,,,,,,,,,,,,,,
-paraguay_paraguay_df_4,,,,,,,,,,,,,,,
-paraguay_paraguay_df_5,,,,,,,,,,,,,,,
-paraguay_paraguay_mf_6,,,,,,,,,,,,,,,
-paraguay_paraguay_mf_7,,,,,,,,,,,,,,,
-paraguay_paraguay_mf_8,,,,,,,,,,,,,,,
-paraguay_paraguay_fw_9,,,,,,,,,,,,,,,
-paraguay_paraguay_star_10,,,,,,,,,,,,,,,
-paraguay_paraguay_fw_11,,,,,,,,,,,,,,,
-paraguay_paraguay_fw_12,,,,,,,,,,,,,,,
-paraguay_paraguay_mf_13,,,,,,,,,,,,,,,
-paraguay_paraguay_df_14,,,,,,,,,,,,,,,
-paraguay_paraguay_gk_15,,,,,,,,,,,,,,,
-australia_australia_gk_1,,,,,,,,,,,,,,,
-australia_australia_df_2,,,,,,,,,,,,,,,
-australia_australia_df_3,,,,,,,,,,,,,,,
-australia_australia_df_4,,,,,,,,,,,,,,,
-australia_australia_df_5,,,,,,,,,,,,,,,
-australia_australia_mf_6,,,,,,,,,,,,,,,
-australia_australia_mf_7,,,,,,,,,,,,,,,
-australia_australia_mf_8,,,,,,,,,,,,,,,
-australia_australia_fw_9,,,,,,,,,,,,,,,
-australia_australia_star_10,,,,,,,,,,,,,,,
-australia_australia_fw_11,,,,,,,,,,,,,,,
-australia_australia_fw_12,,,,,,,,,,,,,,,
-australia_australia_mf_13,,,,,,,,,,,,,,,
-australia_australia_df_14,,,,,,,,,,,,,,,
-australia_australia_gk_15,,,,,,,,,,,,,,,
-turkiye_t_rkiye_gk_1,,,,,,,,,,,,,,,
-turkiye_t_rkiye_df_2,,,,,,,,,,,,,,,
-turkiye_t_rkiye_df_3,,,,,,,,,,,,,,,
-turkiye_t_rkiye_df_4,,,,,,,,,,,,,,,
-turkiye_t_rkiye_df_5,,,,,,,,,,,,,,,
-turkiye_t_rkiye_mf_6,,,,,,,,,,,,,,,
-turkiye_t_rkiye_mf_7,,,,,,,,,,,,,,,
-turkiye_t_rkiye_mf_8,,,,,,,,,,,,,,,
-turkiye_t_rkiye_fw_9,,,,,,,,,,,,,,,
-turkiye_t_rkiye_star_10,,,,,,,,,,,,,,,
-turkiye_t_rkiye_fw_11,,,,,,,,,,,,,,,
-turkiye_t_rkiye_fw_12,,,,,,,,,,,,,,,
-turkiye_t_rkiye_mf_13,,,,,,,,,,,,,,,
-turkiye_t_rkiye_df_14,,,,,,,,,,,,,,,
-turkiye_t_rkiye_gk_15,,,,,,,,,,,,,,,
+paraguay_anthony_silva,Real Betis,La Liga,81,0,0,0,0,0,0,82,76,77,84,31,81
+paraguay_robert_rojas,Inter Miami,Major League Soccer,75,76,76,76,74,57,60,0,0,0,0,0,0
+paraguay_gustavo_gomez,Liverpool,Premier League,80,81,34,69,69,79,80,0,0,0,0,0,0
+paraguay_miguel_almiron,Newcastle United,Premier League,79,88,76,74,79,53,68,0,0,0,0,0,0
+paraguay_junior_alonso,FC Barcelona,La Liga,78,51,76,80,69,79,75,0,0,0,0,0,0
+paraguay_mathias_rojas,Inter Miami,Major League Soccer,75,76,76,76,74,57,60,0,0,0,0,0,0
+paraguay_antonio_sanabria,Torino,Serie A,78,78,75,68,81,39,63,0,0,0,0,0,0
+paraguay_diego_gomez,Inter Miami,Major League Soccer,68,75,62,63,68,59,71,0,0,0,0,0,0
+paraguay_gabriel_avalos,Independiente,Liga Profesional de Fútbol,74,70,72,60,72,51,81,0,0,0,0,0,0
+paraguay_oscar_romero,Sportivo Ameliano,Primera División,55,61,47,54,62,39,47,0,0,0,0,0,0
+paraguay_angel_romero,Estudiantes,Liga Profesional de Fútbol,74,77,29,47,63,73,82,0,0,0,0,0,0
+paraguay_blas_riveros,Talleres Córdoba,Liga Profesional de Fútbol,67,77,41,59,75,58,65,0,0,0,0,0,0
+paraguay_ivan_ramirez,Libertad,Primera División,69,71,46,60,65,65,71,0,0,0,0,0,0
+paraguay_matias_rojas,Inter Miami,Major League Soccer,75,76,76,76,74,57,60,0,0,0,0,0,0
+paraguay_santiago_rojas,Atlético Nacional,Categoría Primera A,70,0,0,0,0,0,0,71,68,70,70,25,69
+australia_mathew_ryan,AZ Alkmaar,Eredivisie,78,0,0,0,0,0,0,76,78,81,80,52,77
+australia_fran_karacic,,,,,,,,,,,,,,,
+australia_harry_souttar,Leicester City,Championship,71,47,27,47,49,71,74,0,0,0,0,0,0
+australia_jackson_irvine,St. Pauli,2. Bundesliga,74,71,68,69,65,73,81,0,0,0,0,0,0
+australia_bailey_wright,Coventry City,Championship,73,81,70,53,63,37,78,0,0,0,0,0,0
+australia_mathew_leckie,Melbourne City,A-League Men,74,81,69,68,77,64,81,0,0,0,0,0,0
+australia_riley_mcgree,Middlesbrough,Championship,73,79,67,68,76,60,73,0,0,0,0,0,0
+australia_ajdin_hrustic,Heracles Almelo,Eredivisie,70,68,70,74,73,54,63,0,0,0,0,0,0
+australia_mitchell_duke,CF Montréal,Major League Soccer,67,68,57,68,76,45,55,0,0,0,0,0,0
+australia_craig_goodwin,Al Wahda,Pro League,76,84,73,74,76,59,77,0,0,0,0,0,0
+australia_garang_kuol,FC Volendam,Eredivisie,65,91,55,56,70,28,43,0,0,0,0,0,0
+australia_aziz_behich,Al Nassr,Pro League,68,77,60,66,75,61,71,0,0,0,0,0,0
+australia_keanu_baccus,St. Mirren,Premiership,68,77,55,60,74,67,73,0,0,0,0,0,0
+australia_kusini_yengi,Portsmouth,League One,65,81,61,54,72,34,76,0,0,0,0,0,0
+australia_lawrence_thomas,Western Sydney Wanderers,A-League Men,69,0,0,0,0,0,0,70,67,69,69,37,68
+turkiye_ugurcan_cak_r,Trabzonspor,Süper Lig,77,0,0,0,0,0,0,78,76,74,73,55,80
+turkiye_zeki_celik,Roma,Serie A,76,75,61,70,69,72,79,0,0,0,0,0,0
+turkiye_merih_demiral,Al Ahli Jeddah,Pro League,77,71,40,47,61,79,80,0,0,0,0,0,0
+turkiye_hakan_calhanoglu,Inter,Serie A,86,69,79,86,84,67,71,0,0,0,0,0,0
+turkiye_caglar_soyuncu,Fenerbahçe,Süper Lig,77,68,48,55,61,75,78,0,0,0,0,0,0
+turkiye_arda_guler,Real Madrid,La Liga,77,72,70,81,83,49,51,0,0,0,0,0,0
+turkiye_cengiz_under,Fenerbahçe,Süper Lig,77,78,75,78,80,42,54,0,0,0,0,0,0
+turkiye_irfan_can_kahveci,Fenerbahçe,Süper Lig,78,74,76,79,81,56,65,0,0,0,0,0,0
+turkiye_kenan_y_ld_z,Juventus,Serie A,66,75,57,65,73,31,62,0,0,0,0,0,0
+turkiye_burak_y_lmaz,Hatayspor,Süper Lig,63,62,31,39,49,64,65,0,0,0,0,0,0
+turkiye_kerem_akturkoglu,Galatasaray,Süper Lig,76,85,71,71,80,40,60,0,0,0,0,0,0
+turkiye_ferdi_kad_oglu,Fenerbahçe,Süper Lig,78,88,67,72,86,70,72,0,0,0,0,0,0
+turkiye_orkun_kokcu,Benfica,Primeira Liga,82,72,77,83,80,63,78,0,0,0,0,0,0
+turkiye_abdulkerim_bardakc,Galatasaray,Süper Lig,80,61,48,70,67,81,84,0,0,0,0,0,0
+turkiye_altay_bay_nd_r,Manchester United,Premier League,76,0,0,0,0,0,0,78,73,72,79,31,76
 germany_manuel_neuer,FC Bayern München,Bundesliga,87,0,0,0,0,0,0,84,85,90,84,49,88
 germany_joshua_kimmich,FC Bayern München,Bundesliga,87,71,76,88,84,79,81,0,0,0,0,0,0
-germany_antonio_r_diger,Real Madrid,La Liga,86,81,56,68,60,84,86,0,0,0,0,0,0
-germany_i_lkay_g_ndo_an,FC Barcelona,La Liga,86,63,80,84,83,67,71,0,0,0,0,0,0
+germany_antonio_rudiger,Real Madrid,La Liga,86,81,56,68,60,84,86,0,0,0,0,0,0
+germany_ilkay_gundogan,FC Barcelona,La Liga,86,63,80,84,83,67,71,0,0,0,0,0,0
 germany_jonathan_tah,Bayer 04 Leverkusen,Bundesliga,84,67,37,56,54,84,84,0,0,0,0,0,0
 germany_jamal_musiala,FC Bayern München,Bundesliga,86,85,76,75,92,61,64,0,0,0,0,0,0
 germany_kai_havertz,Arsenal,Premier League,82,78,80,80,78,54,72,0,0,0,0,0,0
 germany_leon_goretzka,FC Bayern München,Bundesliga,85,78,81,80,79,80,87,0,0,0,0,0,0
-germany_niclas_f_llkrug,Borussia Dortmund,Bundesliga,81,62,82,70,70,51,80,0,0,0,0,0,0
+germany_niclas_fullkrug,Borussia Dortmund,Bundesliga,81,62,82,70,70,51,80,0,0,0,0,0,0
 germany_florian_wirtz,Bayer 04 Leverkusen,Bundesliga,87,81,77,86,88,48,65,0,0,0,0,0,0
-germany_leroy_san,FC Bayern München,Bundesliga,86,91,83,80,86,42,69,0,0,0,0,0,0
+germany_leroy_sane,FC Bayern München,Bundesliga,86,91,83,80,86,42,69,0,0,0,0,0,0
 germany_david_raum,RB Leipzig,Bundesliga,80,88,60,80,78,70,78,0,0,0,0,0,0
-germany_thomas_m_ller,FC Bayern München,Bundesliga,82,57,83,83,74,57,70,0,0,0,0,0,0
+germany_thomas_muller,FC Bayern München,Bundesliga,82,57,83,83,74,57,70,0,0,0,0,0,0
 germany_nico_schlotterbeck,Borussia Dortmund,Bundesliga,84,78,60,66,69,85,84,0,0,0,0,0,0
-germany_marc_andr_ter_stegen,FC Barcelona,La Liga,89,0,0,0,0,0,0,86,85,89,91,48,86
-ecuador_ecuador_gk_1,,,,,,,,,,,,,,,
-ecuador_ecuador_df_2,,,,,,,,,,,,,,,
-ecuador_ecuador_df_3,,,,,,,,,,,,,,,
-ecuador_ecuador_df_4,,,,,,,,,,,,,,,
-ecuador_ecuador_df_5,,,,,,,,,,,,,,,
-ecuador_ecuador_mf_6,,,,,,,,,,,,,,,
-ecuador_ecuador_mf_7,,,,,,,,,,,,,,,
-ecuador_ecuador_mf_8,,,,,,,,,,,,,,,
-ecuador_ecuador_fw_9,,,,,,,,,,,,,,,
-ecuador_ecuador_star_10,,,,,,,,,,,,,,,
-ecuador_ecuador_fw_11,,,,,,,,,,,,,,,
-ecuador_ecuador_fw_12,,,,,,,,,,,,,,,
-ecuador_ecuador_mf_13,,,,,,,,,,,,,,,
-ecuador_ecuador_df_14,,,,,,,,,,,,,,,
-ecuador_ecuador_gk_15,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_gk_1,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_df_2,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_df_3,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_df_4,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_df_5,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_mf_6,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_mf_7,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_mf_8,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_fw_9,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_star_10,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_fw_11,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_fw_12,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_mf_13,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_df_14,,,,,,,,,,,,,,,
-ivory_coast_ivory_coast_gk_15,,,,,,,,,,,,,,,
-curacao_cura_ao_gk_1,,,,,,,,,,,,,,,
-curacao_cura_ao_df_2,,,,,,,,,,,,,,,
-curacao_cura_ao_df_3,,,,,,,,,,,,,,,
-curacao_cura_ao_df_4,,,,,,,,,,,,,,,
-curacao_cura_ao_df_5,,,,,,,,,,,,,,,
-curacao_cura_ao_mf_6,,,,,,,,,,,,,,,
-curacao_cura_ao_mf_7,,,,,,,,,,,,,,,
-curacao_cura_ao_mf_8,,,,,,,,,,,,,,,
-curacao_cura_ao_fw_9,,,,,,,,,,,,,,,
-curacao_cura_ao_star_10,,,,,,,,,,,,,,,
-curacao_cura_ao_fw_11,,,,,,,,,,,,,,,
-curacao_cura_ao_fw_12,,,,,,,,,,,,,,,
-curacao_cura_ao_mf_13,,,,,,,,,,,,,,,
-curacao_cura_ao_df_14,,,,,,,,,,,,,,,
-curacao_cura_ao_gk_15,,,,,,,,,,,,,,,
-netherlands_virgil_van_dijk,Liverpool,Premier League,89,77,58,69,64,89,85,0,0,0,0,0,0
+germany_marc_andre_ter_stegen,FC Barcelona,La Liga,89,0,0,0,0,0,0,86,85,89,91,48,86
+ecuador_hernan_galindez,Huracán,Liga Profesional de Fútbol,74,0,0,0,0,0,0,74,73,70,74,32,76
+ecuador_angelo_preciado,Sparta Praha,First League,74,83,62,65,73,64,72,0,0,0,0,0,0
+ecuador_piero_hincapie,Bayer 04 Leverkusen,Bundesliga,79,82,42,63,72,80,80,0,0,0,0,0,0
+ecuador_moises_caicedo,Chelsea,Premier League,80,74,63,71,76,74,76,0,0,0,0,0,0
+ecuador_felix_torres,Sevilla,La Liga,79,68,71,80,81,61,54,0,0,0,0,0,0
+ecuador_enner_valencia,Cobresal,Primera Division,72,65,68,71,76,27,54,0,0,0,0,0,0
+ecuador_carlos_gruezo,San Jose Earthquakes,Major League Soccer,72,59,47,58,73,66,74,0,0,0,0,0,0
+ecuador_jeremy_sarmiento,Ipswich Town,Championship,69,79,63,65,74,40,60,0,0,0,0,0,0
+ecuador_jordy_caicedo,Chelsea,Premier League,80,74,63,71,76,74,76,0,0,0,0,0,0
+ecuador_gonzalo_plata,Independiente Medellín,Categoría Primera A,72,85,66,63,77,45,73,0,0,0,0,0,0
+ecuador_michael_estrada,LDU Quito,Liga Pro,70,76,63,46,64,33,76,0,0,0,0,0,0
+ecuador_pervis_estupinan,Brighton & Hove Albion,Premier League,81,79,54,70,77,77,78,0,0,0,0,0,0
+ecuador_kendry_paez,Independiente del Valle,Liga Pro,71,79,64,69,75,41,54,0,0,0,0,0,0
+ecuador_alan_franco,Porto,Primeira Liga,73,74,67,71,73,42,64,0,0,0,0,0,0
+ecuador_alexander_dominguez,LDU Quito,Liga Pro,75,0,0,0,0,0,0,76,72,71,77,35,75
+ivory_coast_badra_ali_sangare,,,,,,,,,,,,,,,
+ivory_coast_serge_aurier,Galatasaray,Süper Lig,77,70,64,74,72,77,77,0,0,0,0,0,0
+ivory_coast_eric_bailly,Villarreal,La Liga,76,68,45,57,63,76,72,0,0,0,0,0,0
+ivory_coast_franck_kessie,Al Ahli Jeddah,Pro League,82,79,75,72,77,78,87,0,0,0,0,0,0
+ivory_coast_wilfried_zaha,Galatasaray,Süper Lig,81,86,77,73,83,39,75,0,0,0,0,0,0
+ivory_coast_sebastien_haller,Borussia Dortmund,Bundesliga,81,63,81,60,70,60,77,0,0,0,0,0,0
+ivory_coast_nicolas_pepe,Trabzonspor,Süper Lig,78,87,75,74,82,39,63,0,0,0,0,0,0
+ivory_coast_ibrahim_sangare,Nottingham Forest,Premier League,80,67,66,72,73,77,82,0,0,0,0,0,0
+ivory_coast_jean_philippe_krasso,,,,,,,,,,,,,,,
+ivory_coast_simon_adingra,Brighton & Hove Albion,Premier League,75,88,70,67,81,30,54,0,0,0,0,0,0
+ivory_coast_christian_atsu,,,,,,,,,,,,,,,
+ivory_coast_ghislain_konan,Al Fayha,Pro League,77,81,57,71,77,70,74,0,0,0,0,0,0
+ivory_coast_max_alain_gradel,Gaziantep F.K.,Süper Lig,72,71,72,71,75,43,60,0,0,0,0,0,0
+ivory_coast_jean_daniel_akpa_akpro,Monza,Serie A,73,74,70,70,76,71,79,0,0,0,0,0,0
+ivory_coast_yahia_fofana,Angers SCO,Ligue 2,71,0,0,0,0,0,0,72,68,68,74,42,69
+curacao_eloy_room,Vitesse,Eredivisie,70,0,0,0,0,0,0,73,68,66,71,45,66
+curacao_cuco_martina,,,,,,,,,,,,,,,
+curacao_jurien_gaari,RKC Waalwijk,Eredivisie,66,80,44,47,63,63,75,0,0,0,0,0,0
+curacao_leandro_bacuna,Birmingham City,Championship,70,74,68,70,73,64,78,0,0,0,0,0,0
+curacao_sherel_floranus,Almere City,Eredivisie,67,87,48,58,71,62,77,0,0,0,0,0,0
+curacao_roly_bonevacia,Melbourne Victory,A-League Men,67,72,64,65,72,59,74,0,0,0,0,0,0
+curacao_elson_hooi,,,,,,,,,,,,,,,
+curacao_gino_jelvardi,,,,,,,,,,,,,,,
+curacao_jarchinio_antonia,,,,,,,,,,,,,,,
+curacao_brandley_kuwas,,,,,,,,,,,,,,,
+curacao_rangelo_janga,,,,,,,,,,,,,,,
+curacao_tyrick_mitchell,Crystal Palace,Premier League,77,76,42,62,74,73,71,0,0,0,0,0,0
+curacao_shanon_carmelia,,,,,,,,,,,,,,,
+curacao_juninho_bacuna,Birmingham City,Championship,70,74,68,70,73,64,78,0,0,0,0,0,0
+curacao_trevor_doornbusch,,,,,,,,,,,,,,,
+netherlands_bart_verbruggen,Brighton & Hove Albion,Premier League,75,0,0,0,0,0,0,77,71,73,80,56,68
 netherlands_denzel_dumfries,Inter,Serie A,81,82,61,70,69,79,90,0,0,0,0,0,0
 netherlands_matthijs_de_ligt,FC Bayern München,Bundesliga,84,61,60,60,63,85,85,0,0,0,0,0,0
 netherlands_frenkie_de_jong,FC Barcelona,La Liga,87,82,71,86,86,75,80,0,0,0,0,0,0
-netherlands_nathan_ak,Manchester City,Premier League,82,77,54,70,72,84,79,0,0,0,0,0,0
+netherlands_nathan_ake,Manchester City,Premier League,82,77,54,70,72,84,79,0,0,0,0,0,0
 netherlands_steven_bergwijn,Ajax,Eredivisie,78,81,77,74,83,44,69,0,0,0,0,0,0
 netherlands_memphis_depay,Atlético Madrid,La Liga,83,81,81,81,82,35,80,0,0,0,0,0,0
 netherlands_cody_gakpo,Liverpool,Premier League,82,85,81,78,81,48,75,0,0,0,0,0,0
@@ -328,37 +328,37 @@ japan_junya_ito,Stade de Reims,Ligue 1,78,88,71,72,80,54,70,0,0,0,0,0,0
 japan_daizen_maeda,Celtic,Premiership,74,93,72,63,80,62,80,0,0,0,0,0,0
 japan_reo_hatate,Celtic,Premiership,76,72,77,72,82,61,68,0,0,0,0,0,0
 japan_ao_tanaka,Fortuna Düsseldorf,2. Bundesliga,73,71,66,68,75,67,70,0,0,0,0,0,0
-japan_gonda_shuichi,,,,,,,,,,,,,,,
-tunisia_tunisia_gk_1,,,,,,,,,,,,,,,
-tunisia_tunisia_df_2,,,,,,,,,,,,,,,
-tunisia_tunisia_df_3,,,,,,,,,,,,,,,
-tunisia_tunisia_df_4,,,,,,,,,,,,,,,
-tunisia_tunisia_df_5,,,,,,,,,,,,,,,
-tunisia_tunisia_mf_6,,,,,,,,,,,,,,,
-tunisia_tunisia_mf_7,,,,,,,,,,,,,,,
-tunisia_tunisia_mf_8,,,,,,,,,,,,,,,
-tunisia_tunisia_fw_9,,,,,,,,,,,,,,,
-tunisia_tunisia_star_10,,,,,,,,,,,,,,,
-tunisia_tunisia_fw_11,,,,,,,,,,,,,,,
-tunisia_tunisia_fw_12,,,,,,,,,,,,,,,
-tunisia_tunisia_mf_13,,,,,,,,,,,,,,,
-tunisia_tunisia_df_14,,,,,,,,,,,,,,,
-tunisia_tunisia_gk_15,,,,,,,,,,,,,,,
-sweden_sweden_gk_1,,,,,,,,,,,,,,,
-sweden_sweden_df_2,,,,,,,,,,,,,,,
-sweden_sweden_df_3,,,,,,,,,,,,,,,
-sweden_sweden_df_4,,,,,,,,,,,,,,,
-sweden_sweden_df_5,,,,,,,,,,,,,,,
-sweden_sweden_mf_6,,,,,,,,,,,,,,,
-sweden_sweden_mf_7,,,,,,,,,,,,,,,
-sweden_sweden_mf_8,,,,,,,,,,,,,,,
-sweden_sweden_fw_9,,,,,,,,,,,,,,,
-sweden_sweden_star_10,,,,,,,,,,,,,,,
-sweden_sweden_fw_11,,,,,,,,,,,,,,,
-sweden_sweden_fw_12,,,,,,,,,,,,,,,
-sweden_sweden_mf_13,,,,,,,,,,,,,,,
-sweden_sweden_df_14,,,,,,,,,,,,,,,
-sweden_sweden_gk_15,,,,,,,,,,,,,,,
+japan_shuichi_gonda,,,,,,,,,,,,,,,
+tunisia_aymen_dahmen,Al Hazem,Pro League,68,0,0,0,0,0,0,67,70,68,68,27,67
+tunisia_wajdi_kechrida,,,,,,,,,,,,,,,
+tunisia_yassine_meriah,,,,,,,,,,,,,,,
+tunisia_ellyes_skhiri,Eintracht Frankfurt,Bundesliga,81,63,72,74,73,77,78,0,0,0,0,0,0
+tunisia_montassar_talbi,Lorient,Ligue 1,74,59,31,37,61,75,75,0,0,0,0,0,0
+tunisia_aissa_laidouni,FC Union Berlin,Bundesliga,76,71,57,65,74,65,78,0,0,0,0,0,0
+tunisia_youssef_msakni,,,,,,,,,,,,,,,
+tunisia_hamza_rafia,Lecce,Serie A,67,66,67,68,77,29,65,0,0,0,0,0,0
+tunisia_issam_jebali,,,,,,,,,,,,,,,
+tunisia_wahbi_khazri,Montpellier,Ligue 1,73,66,75,74,75,41,70,0,0,0,0,0,0
+tunisia_hamza_lahmar,,,,,,,,,,,,,,,
+tunisia_ali_maaloul,,,,,,,,,,,,,,,
+tunisia_naim_sliti,,,,,,,,,,,,,,,
+tunisia_ghailene_chaalali,,,,,,,,,,,,,,,
+tunisia_bechir_ben_said,,,,,,,,,,,,,,,
+sweden_robin_olsen,Aston Villa,Premier League,75,0,0,0,0,0,0,75,72,74,75,36,75
+sweden_victor_lindelof,Manchester United,Premier League,79,59,51,73,67,79,74,0,0,0,0,0,0
+sweden_pontus_jansson,Malmö FF,Allsvenskan,73,50,45,50,51,72,78,0,0,0,0,0,0
+sweden_emil_forsberg,New York RB,Major League Soccer,79,65,72,80,80,36,61,0,0,0,0,0,0
+sweden_filip_helander,OB,Superliga,70,37,30,44,51,72,71,0,0,0,0,0,0
+sweden_dejan_kulusevski,Tottenham Hotspur,Premier League,82,76,79,82,80,57,78,0,0,0,0,0,0
+sweden_alexander_isak,Newcastle United,Premier League,83,84,82,70,82,44,75,0,0,0,0,0,0
+sweden_mattias_svanberg,VfL Wolfsburg,Bundesliga,77,76,68,74,75,56,70,0,0,0,0,0,0
+sweden_viktor_gyokeres,Sporting CP,Primeira Liga,82,87,80,66,78,41,90,0,0,0,0,0,0
+sweden_marcus_berg,FSV Mainz 05,Bundesliga,74,66,38,59,62,75,75,0,0,0,0,0,0
+sweden_jesper_karlsson,Bologna,Serie A,76,80,75,72,82,37,62,0,0,0,0,0,0
+sweden_ludwig_augustinsson,Anderlecht,Pro League,75,66,62,75,70,72,71,0,0,0,0,0,0
+sweden_kristoffer_olsson,Midtjylland,Superliga,75,69,64,73,77,65,68,0,0,0,0,0,0
+sweden_emil_holm,Atalanta,Serie A,73,85,62,62,64,66,84,0,0,0,0,0,0
+sweden_karl_johan_johnsson,Bordeaux,Ligue 2,67,0,0,0,0,0,0,68,67,67,67,41,68
 belgium_thibaut_courtois,Real Madrid,La Liga,90,0,0,0,0,0,0,85,89,76,93,47,90
 belgium_thomas_meunier,Trabzonspor,Süper Lig,76,68,75,75,64,76,82,0,0,0,0,0,0
 belgium_arthur_theate,Rennes,Ligue 1,77,70,40,51,57,77,80,0,0,0,0,0,0
@@ -367,298 +367,298 @@ belgium_jan_vertonghen,Anderlecht,Pro League,79,60,61,71,62,81,79,0,0,0,0,0,0
 belgium_axel_witsel,Atlético Madrid,La Liga,80,35,65,75,71,82,74,0,0,0,0,0,0
 belgium_jeremy_doku,Manchester City,Premier League,79,91,68,69,87,28,66,0,0,0,0,0,0
 belgium_romelu_lukaku,Roma,Serie A,84,79,83,74,68,46,81,0,0,0,0,0,0
-belgium_lo_s_openda,RB Leipzig,Bundesliga,84,94,81,68,83,38,82,0,0,0,0,0,0
+belgium_lois_openda,RB Leipzig,Bundesliga,84,94,81,68,83,38,82,0,0,0,0,0,0
 belgium_kevin_de_bruyne,Manchester City,Premier League,91,74,88,94,83,61,78,0,0,0,0,0,0
 belgium_amadou_onana,Everton,Premier League,77,72,61,70,65,75,79,0,0,0,0,0,0
 belgium_timothy_castagne,Fulham,Premier League,76,73,58,70,71,72,74,0,0,0,0,0,0
 belgium_charles_de_ketelaere,Atalanta,Serie A,78,72,77,77,77,58,72,0,0,0,0,0,0
 belgium_dodi_lukebakio,Sevilla,La Liga,79,84,77,70,79,35,59,0,0,0,0,0,0
 belgium_koen_casteels,VfL Wolfsburg,Bundesliga,83,0,0,0,0,0,0,83,80,76,85,45,84
-iran_iran_gk_1,,,,,,,,,,,,,,,
-iran_iran_df_2,,,,,,,,,,,,,,,
-iran_iran_df_3,,,,,,,,,,,,,,,
-iran_iran_df_4,,,,,,,,,,,,,,,
-iran_iran_df_5,,,,,,,,,,,,,,,
-iran_iran_mf_6,,,,,,,,,,,,,,,
-iran_iran_mf_7,,,,,,,,,,,,,,,
-iran_iran_mf_8,,,,,,,,,,,,,,,
-iran_iran_fw_9,,,,,,,,,,,,,,,
-iran_iran_star_10,,,,,,,,,,,,,,,
-iran_iran_fw_11,,,,,,,,,,,,,,,
-iran_iran_fw_12,,,,,,,,,,,,,,,
-iran_iran_mf_13,,,,,,,,,,,,,,,
-iran_iran_df_14,,,,,,,,,,,,,,,
-iran_iran_gk_15,,,,,,,,,,,,,,,
-egypt_egypt_gk_1,,,,,,,,,,,,,,,
-egypt_egypt_df_2,,,,,,,,,,,,,,,
-egypt_egypt_df_3,,,,,,,,,,,,,,,
-egypt_egypt_df_4,,,,,,,,,,,,,,,
-egypt_egypt_df_5,,,,,,,,,,,,,,,
-egypt_egypt_mf_6,,,,,,,,,,,,,,,
-egypt_egypt_mf_7,,,,,,,,,,,,,,,
-egypt_egypt_mf_8,,,,,,,,,,,,,,,
-egypt_egypt_fw_9,,,,,,,,,,,,,,,
-egypt_egypt_star_10,,,,,,,,,,,,,,,
-egypt_egypt_fw_11,,,,,,,,,,,,,,,
-egypt_egypt_fw_12,,,,,,,,,,,,,,,
-egypt_egypt_mf_13,,,,,,,,,,,,,,,
-egypt_egypt_df_14,,,,,,,,,,,,,,,
-egypt_egypt_gk_15,,,,,,,,,,,,,,,
-new_zealand_new_zealand_gk_1,,,,,,,,,,,,,,,
-new_zealand_new_zealand_df_2,,,,,,,,,,,,,,,
-new_zealand_new_zealand_df_3,,,,,,,,,,,,,,,
-new_zealand_new_zealand_df_4,,,,,,,,,,,,,,,
-new_zealand_new_zealand_df_5,,,,,,,,,,,,,,,
-new_zealand_new_zealand_mf_6,,,,,,,,,,,,,,,
-new_zealand_new_zealand_mf_7,,,,,,,,,,,,,,,
-new_zealand_new_zealand_mf_8,,,,,,,,,,,,,,,
-new_zealand_new_zealand_fw_9,,,,,,,,,,,,,,,
-new_zealand_new_zealand_star_10,,,,,,,,,,,,,,,
-new_zealand_new_zealand_fw_11,,,,,,,,,,,,,,,
-new_zealand_new_zealand_fw_12,,,,,,,,,,,,,,,
-new_zealand_new_zealand_mf_13,,,,,,,,,,,,,,,
-new_zealand_new_zealand_df_14,,,,,,,,,,,,,,,
-new_zealand_new_zealand_gk_15,,,,,,,,,,,,,,,
-spain_unai_sim_n,Athletic Club,La Liga,85,0,0,0,0,0,0,85,81,76,86,49,85
+iran_alireza_beiranvand,,,,,,,,,,,,,,,
+iran_hossein_kanaani,,,,,,,,,,,,,,,
+iran_rouzbeh_cheshmi,,,,,,,,,,,,,,,
+iran_saeid_ezatolahi,,,,,,,,,,,,,,,
+iran_milad_mohammadi,Adana Demirspor,Süper Lig,72,83,60,67,72,67,71,0,0,0,0,0,0
+iran_mehdi_taremi,Porto,Primeira Liga,81,78,79,75,76,45,72,0,0,0,0,0,0
+iran_alireza_jahanbakhsh,Feyenoord,Eredivisie,73,72,76,69,75,50,77,0,0,0,0,0,0
+iran_saman_ghoddos,Brentford,Premier League,67,59,71,67,69,58,66,0,0,0,0,0,0
+iran_mehdi_ghayedi,,,,,,,,,,,,,,,
+iran_sardar_azmoun,Roma,Serie A,79,82,77,72,77,47,74,0,0,0,0,0,0
+iran_omid_noorafkan,,,,,,,,,,,,,,,
+iran_ehsan_hajsafi,AEK Athens,Super League,72,71,65,72,73,69,75,0,0,0,0,0,0
+iran_karim_ansarifard,,,,,,,,,,,,,,,
+iran_vahid_amiri,FSV Mainz 05,Bundesliga,77,69,73,78,81,51,69,0,0,0,0,0,0
+iran_hossein_hosseini,,,,,,,,,,,,,,,
+egypt_mohamed_el_shenawy,,,,,,,,,,,,,,,
+egypt_mohamed_hany,,,,,,,,,,,,,,,
+egypt_mohamed_abdelmonem,,,,,,,,,,,,,,,
+egypt_mohamed_elneny,Arsenal,Premier League,75,52,61,71,67,70,69,0,0,0,0,0,0
+egypt_ahmed_hegazi,Al Ittihad,Pro League,76,46,25,47,49,77,78,0,0,0,0,0,0
+egypt_mohamed_salah,Liverpool,Premier League,89,89,87,82,89,45,77,0,0,0,0,0,0
+egypt_omar_marmoush,Eintracht Frankfurt,Bundesliga,78,86,77,62,83,36,72,0,0,0,0,0,0
+egypt_trezeguet,Trabzonspor,Süper Lig,75,78,71,70,77,38,66,0,0,0,0,0,0
+egypt_mostafa_mohamed,Nantes,Ligue 1,75,74,74,58,68,43,79,0,0,0,0,0,0
+egypt_emam_ashour,,,,,,,,,,,,,,,
+egypt_marwan_hamdy,,,,,,,,,,,,,,,
+egypt_ahmed_sayed_zizo,,,,,,,,,,,,,,,
+egypt_hamdy_fathy,,,,,,,,,,,,,,,
+egypt_ayman_ashraf,Al Taawon,Pro League,59,73,50,55,68,37,50,0,0,0,0,0,0
+egypt_mohamed_abou_gabal,,,,,,,,,,,,,,,
+new_zealand_oliver_sail,Perth Glory,A-League Men,68,0,0,0,0,0,0,75,69,50,69,49,61
+new_zealand_liberato_cacace,Empoli,Serie A,71,75,60,65,71,65,77,0,0,0,0,0,0
+new_zealand_bill_tuiloma,Charlotte,Major League Soccer,66,62,54,60,59,65,72,0,0,0,0,0,0
+new_zealand_joe_bell,Viking,Eliteserien,67,64,62,66,68,62,76,0,0,0,0,0,0
+new_zealand_nando_pijanker,,,,,,,,,,,,,,,
+new_zealand_ryan_thomas,PEC Zwolle,Eredivisie,67,69,60,68,72,52,63,0,0,0,0,0,0
+new_zealand_marco_rojas,Brisbane Roar,A-League Men,68,76,66,64,77,48,46,0,0,0,0,0,0
+new_zealand_marko_stamenic,,,71,70,66,69,67,37,68,0,0,0,0,0,0
+new_zealand_chris_wood,Nottingham Forest,Premier League,75,54,75,59,61,46,77,0,0,0,0,0,0
+new_zealand_ben_waine,Plymouth Argyle,Championship,64,82,63,56,67,45,76,0,0,0,0,0,0
+new_zealand_elijah_just,,,65,72,55,62,70,30,55,0,0,0,0,0,0
+new_zealand_kosta_barbarouses,Wellington Phoenix,A-League Men,67,79,67,60,71,38,74,0,0,0,0,0,0
+new_zealand_alex_greive,,,63,63,49,60,65,21,55,0,0,0,0,0,0
+new_zealand_michael_boxall,Minnesota United,Major League Soccer,69,54,48,57,53,67,75,0,0,0,0,0,0
+new_zealand_max_crocombe,Burton Albion,League One,65,0,0,0,0,0,0,65,64,62,65,48,63
+spain_unai_simon,Athletic Club,La Liga,85,0,0,0,0,0,0,85,81,76,86,49,85
 spain_dani_carvajal,Real Madrid,La Liga,84,82,61,78,81,77,82,0,0,0,0,0,0
 spain_aymeric_laporte,Al Nassr,Pro League,83,56,51,70,63,84,76,0,0,0,0,0,0
 spain_rodri,Manchester City,Premier League,90,64,80,84,77,85,85,0,0,0,0,0,0
 spain_pau_torres,Aston Villa,Premier League,82,72,43,72,65,84,80,0,0,0,0,0,0
 spain_gavi,FC Barcelona,La Liga,83,76,65,78,87,63,72,0,0,0,0,0,0
-spain_lvaro_morata,Atlético Madrid,La Liga,84,82,83,73,75,40,81,0,0,0,0,0,0
+spain_alvaro_morata,Atlético Madrid,La Liga,84,82,83,73,75,40,81,0,0,0,0,0,0
 spain_pedri,FC Barcelona,La Liga,86,79,69,82,88,65,74,0,0,0,0,0,0
 spain_joselu,Real Madrid,La Liga,82,64,82,68,64,41,77,0,0,0,0,0,0
 spain_lamine_yamal,,,,,,,,,,,,,,,
 spain_ferran_torres,FC Barcelona,La Liga,83,84,80,78,83,41,70,0,0,0,0,0,0
 spain_nico_williams,Athletic Club,La Liga,82,94,73,74,87,39,69,0,0,0,0,0,0
 spain_mikel_oyarzabal,Real Sociedad,La Liga,83,77,81,79,81,44,65,0,0,0,0,0,0
-spain_fabi_n_ruiz,Paris Saint Germain,Ligue 1,80,55,75,78,74,73,72,0,0,0,0,0,0
+spain_fabian_ruiz,Paris Saint Germain,Ligue 1,80,55,75,78,74,73,72,0,0,0,0,0,0
 spain_david_raya,Arsenal,Premier League,82,0,0,0,0,0,0,82,81,86,82,55,81
 uruguay_sergio_rochet,,,,,,,,,,,,,,,
-uruguay_jos_gim_nez,Atlético Madrid,La Liga,83,71,43,54,59,85,83,0,0,0,0,0,0
-uruguay_diego_god_n,,,,,,,,,,,,,,,
+uruguay_jose_gimenez,Atlético Madrid,La Liga,83,71,43,54,59,85,83,0,0,0,0,0,0
+uruguay_diego_godin,,,,,,,,,,,,,,,
 uruguay_federico_valverde,Real Madrid,La Liga,88,88,83,83,79,77,84,0,0,0,0,0,0
-uruguay_mat_as_vi_a,,,,,,,,,,,,,,,
+uruguay_matias_vina,Al Hazem,Pro League,74,74,74,73,72,54,72,0,0,0,0,0,0
 uruguay_rodrigo_bentancur,Tottenham Hotspur,Premier League,82,70,70,80,79,76,76,0,0,0,0,0,0
-uruguay_darwin_n_ez,Liverpool,Premier League,83,90,82,73,76,51,88,0,0,0,0,0,0
+uruguay_darwin_nunez,Liverpool,Premier League,83,90,82,73,76,51,88,0,0,0,0,0,0
 uruguay_giorgian_arrascaeta,,,,,,,,,,,,,,,
-uruguay_luis_su_rez,Inter Miami,Major League Soccer,84,65,87,78,74,48,75,0,0,0,0,0,0
-uruguay_giorgian_de_arrascaeta,,,,,,,,,,,,,,,
+uruguay_luis_suarez,Inter Miami,Major League Soccer,84,65,87,78,74,48,75,0,0,0,0,0,0
 uruguay_facundo_pellistri,Granada,La Liga,71,80,63,66,80,40,67,0,0,0,0,0,0
-uruguay_ronald_ara_jo,FC Barcelona,La Liga,86,81,51,61,59,86,85,0,0,0,0,0,0
-uruguay_nicol_s_de_la_cruz,,,,,,,,,,,,,,,
-uruguay_brian_rodr_guez,,,,,,,,,,,,,,,
+uruguay_ronald_araujo,FC Barcelona,La Liga,86,81,51,61,59,86,85,0,0,0,0,0,0
+uruguay_nicolas_de_la_cruz,Osasuna,La Liga,75,73,39,61,63,72,74,0,0,0,0,0,0
+uruguay_brian_rodriguez,Mallorca,La Liga,78,84,70,74,72,62,70,0,0,0,0,0,0
+uruguay_manuel_ugarte,Paris Saint Germain,Ligue 1,81,72,63,72,74,74,81,0,0,0,0,0,0
 uruguay_fernando_muslera,Galatasaray,Süper Lig,80,0,0,0,0,0,0,78,81,72,78,36,83
-saudi_arabia_saudi_arabia_gk_1,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_df_2,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_df_3,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_df_4,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_df_5,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_mf_6,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_mf_7,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_mf_8,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_fw_9,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_star_10,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_fw_11,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_fw_12,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_mf_13,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_df_14,,,,,,,,,,,,,,,
-saudi_arabia_saudi_arabia_gk_15,,,,,,,,,,,,,,,
-cape_verde_cape_verde_gk_1,,,,,,,,,,,,,,,
-cape_verde_cape_verde_df_2,,,,,,,,,,,,,,,
-cape_verde_cape_verde_df_3,,,,,,,,,,,,,,,
-cape_verde_cape_verde_df_4,,,,,,,,,,,,,,,
-cape_verde_cape_verde_df_5,,,,,,,,,,,,,,,
-cape_verde_cape_verde_mf_6,,,,,,,,,,,,,,,
-cape_verde_cape_verde_mf_7,,,,,,,,,,,,,,,
-cape_verde_cape_verde_mf_8,,,,,,,,,,,,,,,
-cape_verde_cape_verde_fw_9,,,,,,,,,,,,,,,
-cape_verde_cape_verde_star_10,,,,,,,,,,,,,,,
-cape_verde_cape_verde_fw_11,,,,,,,,,,,,,,,
-cape_verde_cape_verde_fw_12,,,,,,,,,,,,,,,
-cape_verde_cape_verde_mf_13,,,,,,,,,,,,,,,
-cape_verde_cape_verde_df_14,,,,,,,,,,,,,,,
-cape_verde_cape_verde_gk_15,,,,,,,,,,,,,,,
+saudi_arabia_mohamed_al_owais,Al Hilal,Pro League,69,0,0,0,0,0,0,77,62,60,71,52,64
+saudi_arabia_sultan_al_ghannam,Al Nassr,Pro League,73,81,62,73,77,62,69,0,0,0,0,0,0
+saudi_arabia_ali_al_bulaihi,Al Hilal,Pro League,74,53,35,39,48,73,86,0,0,0,0,0,0
+saudi_arabia_salem_al_dawsari,Al Hilal,Pro League,79,85,75,70,84,51,79,0,0,0,0,0,0
+saudi_arabia_mohammed_al_breik,,,,,,,,,,,,,,,
+saudi_arabia_sami_al_najei,Al Nassr,Pro League,67,68,64,64,69,57,64,0,0,0,0,0,0
+saudi_arabia_saleh_al_shehri,Al Hilal,Pro League,68,66,66,50,59,37,71,0,0,0,0,0,0
+saudi_arabia_firas_al_buraikan,Al Ahli Jeddah,Pro League,73,76,70,50,67,39,73,0,0,0,0,0,0
+saudi_arabia_abdullah_al_hamdan,Al Hilal,Pro League,61,71,59,56,60,38,65,0,0,0,0,0,0
+saudi_arabia_hassan_tambakti,Al Hilal,Pro League,73,83,34,57,64,72,74,0,0,0,0,0,0
+saudi_arabia_fahad_al_muwallad,Al Shabab,Pro League,63,84,63,57,63,43,64,0,0,0,0,0,0
+saudi_arabia_yasir_al_shahrani,Al Hilal,Pro League,69,76,59,64,74,63,63,0,0,0,0,0,0
+saudi_arabia_abdulellah_al_malki,Al Hilal,Pro League,66,64,57,61,65,63,66,0,0,0,0,0,0
+saudi_arabia_yahya_al_shehri,Al Hilal,Pro League,68,66,66,50,59,37,71,0,0,0,0,0,0
+saudi_arabia_nawaf_al_abed,,,,,,,,,,,,,,,
+cape_verde_vozinha,,,,,,,,,,,,,,,
+cape_verde_dylan_tavares,Bastia,Ligue 2,66,74,41,53,66,60,65,0,0,0,0,0,0
+cape_verde_jojo,,,,,,,,,,,,,,,
+cape_verde_marco_tavares,Nottingham Forest,Premier League,75,84,66,70,70,68,79,0,0,0,0,0,0
+cape_verde_roberto_lopes,Shamrock Rovers,Premier Division,67,54,32,44,48,67,75,0,0,0,0,0,0
+cape_verde_ryan_mendes,Fatih Karagümrük,Süper Lig,71,75,62,68,76,30,54,0,0,0,0,0,0
+cape_verde_jason,Arouca,Primeira Liga,72,71,73,71,75,49,66,0,0,0,0,0,0
+cape_verde_patrick_andrade,Seattle Sounders,Major League Soccer,74,66,34,47,53,72,84,0,0,0,0,0,0
+cape_verde_bebe,Rayo Vallecano,La Liga,74,82,77,70,69,42,82,0,0,0,0,0,0
+cape_verde_gilson_tavares,Nottingham Forest,Premier League,75,84,66,70,70,68,79,0,0,0,0,0,0
+cape_verde_jamiro_monteiro,Gaziantep F.K.,Süper Lig,73,75,60,71,79,56,74,0,0,0,0,0,0
+cape_verde_diney,,,,,,,,,,,,,,,
+cape_verde_garry_rodrigues,Ankaragücü,Süper Lig,72,82,70,68,76,46,67,0,0,0,0,0,0
+cape_verde_platini,,,,,,,,,,,,,,,
+cape_verde_kelvin_pires,Flamengo,Série A,80,0,0,0,0,0,0,81,75,78,79,41,81
 france_mike_maignan,Milan,Serie A,87,0,0,0,0,0,0,85,82,87,89,52,85
-france_jules_kound,FC Barcelona,La Liga,85,84,43,65,74,84,82,0,0,0,0,0,0
+france_jules_kounde,FC Barcelona,La Liga,85,84,43,65,74,84,82,0,0,0,0,0,0
 france_dayot_upamecano,FC Bayern München,Bundesliga,83,82,45,59,69,82,84,0,0,0,0,0,0
-france_aur_lien_tchouam_ni,Real Madrid,La Liga,84,73,68,79,75,80,83,0,0,0,0,0,0
+france_aurelien_tchouameni,Real Madrid,La Liga,84,73,68,79,75,80,83,0,0,0,0,0,0
 france_william_saliba,Arsenal,Premier League,85,82,39,67,66,83,83,0,0,0,0,0,0
-france_n_golo_kant,Al Ittihad,Pro League,85,69,66,70,82,79,77,0,0,0,0,0,0
+france_n_golo_kante,Al Ittihad,Pro League,85,69,66,70,82,79,77,0,0,0,0,0,0
 france_antoine_griezmann,Atlético Madrid,La Liga,88,81,88,87,88,64,79,0,0,0,0,0,0
 france_adrien_rabiot,Juventus,Serie A,84,81,78,79,76,81,86,0,0,0,0,0,0
 france_olivier_giroud,Milan,Serie A,83,47,85,73,67,46,78,0,0,0,0,0,0
-france_kylian_mbapp,Paris Saint Germain,Ligue 1,91,97,89,80,90,41,79,0,0,0,0,0,0
-france_ousmane_demb_l,Paris Saint Germain,Ligue 1,86,94,78,81,88,37,60,0,0,0,0,0,0
-france_theo_hern_ndez,Milan,Serie A,85,93,77,76,79,77,86,0,0,0,0,0,0
+france_kylian_mbappe,Paris Saint Germain,Ligue 1,91,97,89,80,90,41,79,0,0,0,0,0,0
+france_ousmane_dembele,Paris Saint Germain,Ligue 1,86,94,78,81,88,37,60,0,0,0,0,0,0
+france_theo_hernandez,Milan,Serie A,85,93,77,76,79,77,86,0,0,0,0,0,0
 france_kingsley_coman,FC Bayern München,Bundesliga,85,89,78,80,88,35,63,0,0,0,0,0,0
-france_warren_za_re_emery,Paris Saint Germain,Ligue 1,80,79,67,75,79,73,79,0,0,0,0,0,0
+france_warren_zaire_emery,Paris Saint Germain,Ligue 1,80,79,67,75,79,73,79,0,0,0,0,0,0
 france_alphonse_areola,West Ham United,Premier League,80,0,0,0,0,0,0,82,77,74,83,55,79
-senegal_douard_mendy,Al Ahli Jeddah,Pro League,81,0,0,0,0,0,0,78,79,75,83,35,79
+senegal_edouard_mendy,Al Ahli Jeddah,Pro League,81,0,0,0,0,0,0,78,79,75,83,35,79
 senegal_youssouf_sabaly,Real Betis,La Liga,77,78,57,64,75,71,72,0,0,0,0,0,0
 senegal_kalidou_koulibaly,Al Hilal,Pro League,84,76,49,62,55,84,83,0,0,0,0,0,0
 senegal_idrissa_gueye,Everton,Premier League,76,61,56,64,74,76,71,0,0,0,0,0,0
-senegal_abdou_diallo,,,,,,,,,,,,,,,
-senegal_sadio_man,Al Nassr,Pro League,85,83,81,78,86,50,77,0,0,0,0,0,0
-senegal_isma_la_sarr,Olympique de Marseille,Ligue 1,76,91,77,68,78,27,68,0,0,0,0,0,0
-senegal_cheikhou_kouyat,Nottingham Forest,Premier League,74,57,63,59,62,74,78,0,0,0,0,0,0
+senegal_abdou_diallo,Al Shabab,Pro League,76,70,76,57,71,32,74,0,0,0,0,0,0
+senegal_sadio_mane,Al Nassr,Pro League,85,83,81,78,86,50,77,0,0,0,0,0,0
+senegal_ismaila_sarr,Olympique de Marseille,Ligue 1,76,91,77,68,78,27,68,0,0,0,0,0,0
+senegal_cheikhou_kouyate,Nottingham Forest,Premier League,74,57,63,59,62,74,78,0,0,0,0,0,0
 senegal_boulaye_dia,Salernitana,Serie A,80,83,78,59,75,34,77,0,0,0,0,0,0
-senegal_mame_boussuf_l,,,,,,,,,,,,,,,
+senegal_mame_boussuf_lo,,,,,,,,,,,,,,,
 senegal_pape_matar_sarr,Tottenham Hotspur,Premier League,78,70,66,74,76,71,76,0,0,0,0,0,0
 senegal_formose_mendy,Lorient,Ligue 1,71,74,37,54,59,70,75,0,0,0,0,0,0
 senegal_nicolas_jackson,Chelsea,Premier League,78,83,77,60,77,47,74,0,0,0,0,0,0
-senegal_path_ciss,Rayo Vallecano,La Liga,74,62,55,57,61,72,84,0,0,0,0,0,0
+senegal_pathe_ciss,Rayo Vallecano,La Liga,74,62,55,57,61,72,84,0,0,0,0,0,0
 senegal_seny_dieng,Middlesbrough,Championship,71,0,0,0,0,0,0,70,67,69,74,40,67
-norway_norway_gk_1,,,,,,,,,,,,,,,
-norway_norway_df_2,,,,,,,,,,,,,,,
-norway_norway_df_3,,,,,,,,,,,,,,,
-norway_norway_df_4,,,,,,,,,,,,,,,
-norway_norway_df_5,,,,,,,,,,,,,,,
-norway_norway_mf_6,,,,,,,,,,,,,,,
-norway_norway_mf_7,,,,,,,,,,,,,,,
-norway_norway_mf_8,,,,,,,,,,,,,,,
-norway_norway_fw_9,,,,,,,,,,,,,,,
-norway_norway_star_10,,,,,,,,,,,,,,,
-norway_norway_fw_11,,,,,,,,,,,,,,,
-norway_norway_fw_12,,,,,,,,,,,,,,,
-norway_norway_mf_13,,,,,,,,,,,,,,,
-norway_norway_df_14,,,,,,,,,,,,,,,
-norway_norway_gk_15,,,,,,,,,,,,,,,
-iraq_iraq_gk_1,,,,,,,,,,,,,,,
-iraq_iraq_df_2,,,,,,,,,,,,,,,
-iraq_iraq_df_3,,,,,,,,,,,,,,,
-iraq_iraq_df_4,,,,,,,,,,,,,,,
-iraq_iraq_df_5,,,,,,,,,,,,,,,
-iraq_iraq_mf_6,,,,,,,,,,,,,,,
-iraq_iraq_mf_7,,,,,,,,,,,,,,,
-iraq_iraq_mf_8,,,,,,,,,,,,,,,
-iraq_iraq_fw_9,,,,,,,,,,,,,,,
-iraq_iraq_star_10,,,,,,,,,,,,,,,
-iraq_iraq_fw_11,,,,,,,,,,,,,,,
-iraq_iraq_fw_12,,,,,,,,,,,,,,,
-iraq_iraq_mf_13,,,,,,,,,,,,,,,
-iraq_iraq_df_14,,,,,,,,,,,,,,,
-iraq_iraq_gk_15,,,,,,,,,,,,,,,
-argentina_emiliano_mart_nez,Aston Villa,Premier League,86,0,0,0,0,0,0,84,82,83,85,58,85
+norway_bernd_leno,Fulham,Premier League,82,0,0,0,0,0,0,83,79,76,85,54,82
+norway_julian_ryerson,Borussia Dortmund,Bundesliga,78,75,61,68,77,73,81,0,0,0,0,0,0
+norway_stefan_strandberg,Vålerenga,Eliteserien,70,50,42,50,54,70,75,0,0,0,0,0,0
+norway_martin_degaard,Arsenal,Premier League,88,73,82,88,87,62,69,0,0,0,0,0,0
+norway_kristoffer_ajer,Brentford,Premier League,76,67,54,62,65,75,78,0,0,0,0,0,0
+norway_sander_berge,Burnley,Premier League,75,62,64,73,66,75,83,0,0,0,0,0,0
+norway_erling_haaland,Manchester City,Premier League,91,88,92,68,78,49,87,0,0,0,0,0,0
+norway_joshua_king,Fenerbahçe,Süper Lig,75,81,75,70,76,42,75,0,0,0,0,0,0
+norway_alexander_s_rloth,Villarreal,La Liga,79,79,76,69,67,41,85,0,0,0,0,0,0
+norway_antoine_semenyo,,,,,,,,,,,,,,,
+norway_aron_d_nnum,Toulouse,Ligue 1,71,82,62,66,79,49,72,0,0,0,0,0,0
+norway_felix_myhre,Brann,Eliteserien,66,72,55,64,71,59,69,0,0,0,0,0,0
+norway_patrick_berg,Bodø / Glimt,Eliteserien,76,73,64,74,73,67,77,0,0,0,0,0,0
+norway_leo_stigard,Napoli,Serie A,73,68,37,49,62,71,81,0,0,0,0,0,0
+norway_andre_hansen,Odd,Eliteserien,70,0,0,0,0,0,0,71,69,70,71,33,70
+iraq_jalal_hassan,,,,,,,,,,,,,,,
+iraq_ali_adnan,,,,,,,,,,,,,,,
+iraq_ayman_mokhtar,,,,,,,,,,,,,,,
+iraq_zidane_iqbal,FC Utrecht,Eredivisie,63,68,58,62,75,50,56,0,0,0,0,0,0
+iraq_hussein_ali,SC Heerenveen,Eredivisie,62,73,36,47,63,56,61,0,0,0,0,0,0
+iraq_amjad_attwan,,,,,,,,,,,,,,,
+iraq_aymen_hussein,Hertha BSC,2. Bundesliga,68,69,59,67,76,61,69,0,0,0,0,0,0
+iraq_mohammed_ali_ahmed,,,68,60,61,60,60,36,59,0,0,0,0,0,0
+iraq_mohanad_ali,,,71,63,55,64,64,29,67,0,0,0,0,0,0
+iraq_zaid_abdullah,Al Tai,Pro League,62,66,32,52,64,56,62,0,0,0,0,0,0
+iraq_bashar_resan,,,,,,,,,,,,,,,
+iraq_saad_rashid,Vizela,Primeira Liga,67,69,66,69,72,51,60,0,0,0,0,0,0
+iraq_ali_faez,,,,,,,,,,,,,,,
+iraq_ahmed_yasin,,,,,,,,,,,,,,,
+iraq_hussein_hassan,,,,,,,,,,,,,,,
+argentina_emiliano_martinez,Aston Villa,Premier League,86,0,0,0,0,0,0,84,82,83,85,58,85
 argentina_nahuel_molina,Atlético Madrid,La Liga,82,85,69,75,79,75,74,0,0,0,0,0,0
-argentina_nicol_s_otamendi,Benfica,Primeira Liga,82,64,57,62,58,82,87,0,0,0,0,0,0
-argentina_enzo_fern_ndez,Chelsea,Premier League,82,73,76,82,79,71,78,0,0,0,0,0,0
+argentina_nicolas_otamendi,Benfica,Primeira Liga,82,64,57,62,58,82,87,0,0,0,0,0,0
+argentina_enzo_fernandez,Chelsea,Premier League,82,73,76,82,79,71,78,0,0,0,0,0,0
 argentina_leandro_paredes,Roma,Serie A,78,62,68,83,76,70,77,0,0,0,0,0,0
 argentina_rodrigo_de_paul,Atlético Madrid,La Liga,84,78,77,84,81,72,83,0,0,0,0,0,0
-argentina_ngel_di_mar_a,Benfica,Primeira Liga,84,76,81,87,86,50,68,0,0,0,0,0,0
+argentina_angel_di_maria,Benfica,Primeira Liga,84,76,81,87,86,50,68,0,0,0,0,0,0
 argentina_alexis_mac_allister,Liverpool,Premier League,84,70,79,83,84,73,76,0,0,0,0,0,0
-argentina_juli_n_lvarez,Manchester City,Premier League,83,83,82,79,86,58,80,0,0,0,0,0,0
+argentina_julian_alvarez,Manchester City,Premier League,83,83,82,79,86,58,80,0,0,0,0,0,0
 argentina_lionel_messi,Inter Miami,Major League Soccer,90,81,88,90,94,35,63,0,0,0,0,0,0
-argentina_lautaro_mart_nez,Inter,Serie A,88,80,87,73,88,54,87,0,0,0,0,0,0
+argentina_lautaro_martinez,Inter,Serie A,88,80,87,73,88,54,87,0,0,0,0,0,0
 argentina_giovani_lo_celso,Tottenham Hotspur,Premier League,80,71,75,82,82,67,74,0,0,0,0,0,0
 argentina_cristian_romero,Tottenham Hotspur,Premier League,83,71,46,57,65,84,83,0,0,0,0,0,0
 argentina_exequiel_palacios,Bayer 04 Leverkusen,Bundesliga,82,64,74,78,80,79,77,0,0,0,0,0,0
-argentina_ger_nimo_rulli,Ajax,Eredivisie,80,0,0,0,0,0,0,79,77,80,81,54,81
-austria_austria_gk_1,,,,,,,,,,,,,,,
-austria_austria_df_2,,,,,,,,,,,,,,,
-austria_austria_df_3,,,,,,,,,,,,,,,
-austria_austria_df_4,,,,,,,,,,,,,,,
-austria_austria_df_5,,,,,,,,,,,,,,,
-austria_austria_mf_6,,,,,,,,,,,,,,,
-austria_austria_mf_7,,,,,,,,,,,,,,,
-austria_austria_mf_8,,,,,,,,,,,,,,,
-austria_austria_fw_9,,,,,,,,,,,,,,,
-austria_austria_star_10,,,,,,,,,,,,,,,
-austria_austria_fw_11,,,,,,,,,,,,,,,
-austria_austria_fw_12,,,,,,,,,,,,,,,
-austria_austria_mf_13,,,,,,,,,,,,,,,
-austria_austria_df_14,,,,,,,,,,,,,,,
-austria_austria_gk_15,,,,,,,,,,,,,,,
-algeria_algeria_gk_1,,,,,,,,,,,,,,,
-algeria_algeria_df_2,,,,,,,,,,,,,,,
-algeria_algeria_df_3,,,,,,,,,,,,,,,
-algeria_algeria_df_4,,,,,,,,,,,,,,,
-algeria_algeria_df_5,,,,,,,,,,,,,,,
-algeria_algeria_mf_6,,,,,,,,,,,,,,,
-algeria_algeria_mf_7,,,,,,,,,,,,,,,
-algeria_algeria_mf_8,,,,,,,,,,,,,,,
-algeria_algeria_fw_9,,,,,,,,,,,,,,,
-algeria_algeria_star_10,,,,,,,,,,,,,,,
-algeria_algeria_fw_11,,,,,,,,,,,,,,,
-algeria_algeria_fw_12,,,,,,,,,,,,,,,
-algeria_algeria_mf_13,,,,,,,,,,,,,,,
-algeria_algeria_df_14,,,,,,,,,,,,,,,
-algeria_algeria_gk_15,,,,,,,,,,,,,,,
-jordan_jordan_gk_1,,,,,,,,,,,,,,,
-jordan_jordan_df_2,,,,,,,,,,,,,,,
-jordan_jordan_df_3,,,,,,,,,,,,,,,
-jordan_jordan_df_4,,,,,,,,,,,,,,,
-jordan_jordan_df_5,,,,,,,,,,,,,,,
-jordan_jordan_mf_6,,,,,,,,,,,,,,,
-jordan_jordan_mf_7,,,,,,,,,,,,,,,
-jordan_jordan_mf_8,,,,,,,,,,,,,,,
-jordan_jordan_fw_9,,,,,,,,,,,,,,,
-jordan_jordan_star_10,,,,,,,,,,,,,,,
-jordan_jordan_fw_11,,,,,,,,,,,,,,,
-jordan_jordan_fw_12,,,,,,,,,,,,,,,
-jordan_jordan_mf_13,,,,,,,,,,,,,,,
-jordan_jordan_df_14,,,,,,,,,,,,,,,
-jordan_jordan_gk_15,,,,,,,,,,,,,,,
+argentina_geronimo_rulli,Ajax,Eredivisie,80,0,0,0,0,0,0,79,77,80,81,54,81
+austria_patrick_pentz,Brøndby,Superliga,72,0,0,0,0,0,0,72,69,70,73,54,71
+austria_david_alaba,Real Madrid,La Liga,85,79,72,81,79,83,79,0,0,0,0,0,0
+austria_kevin_wimmer,VfL Wolfsburg,Bundesliga,77,83,69,70,82,47,69,0,0,0,0,0,0
+austria_marcel_sabitzer,Borussia Dortmund,Bundesliga,82,75,82,80,80,70,77,0,0,0,0,0,0
+austria_philipp_lienhart,SC Freiburg,Bundesliga,79,69,29,53,64,81,77,0,0,0,0,0,0
+austria_konrad_laimer,FC Bayern München,Bundesliga,83,80,69,77,77,78,82,0,0,0,0,0,0
+austria_marko_arnautovic,Inter,Serie A,80,74,79,78,77,50,81,0,0,0,0,0,0
+austria_christoph_baumgartner,RB Leipzig,Bundesliga,79,76,74,73,81,52,64,0,0,0,0,0,0
+austria_michael_gregoritsch,SC Freiburg,Bundesliga,78,59,80,70,63,50,75,0,0,0,0,0,0
+austria_maximilian_wober,Borussia Mönchengladbach,Bundesliga,77,65,52,66,62,78,79,0,0,0,0,0,0
+austria_romano_schmid,Werder Bremen,Bundesliga,74,75,64,70,83,45,55,0,0,0,0,0,0
+austria_stefan_posch,Bologna,Serie A,78,77,58,67,60,80,77,0,0,0,0,0,0
+austria_flavius_daniliuc,Salzburg,Bundesliga,73,53,43,60,55,74,74,0,0,0,0,0,0
+austria_alexander_prass,Sturm Graz,Bundesliga,74,73,67,73,76,66,75,0,0,0,0,0,0
+austria_heinz_lindner,Union Saint-Gilloise,Pro League,73,0,0,0,0,0,0,74,71,67,74,42,75
+algeria_rais_m_bohli,,,,,,,,,,,,,,,
+algeria_youcef_atal,Adana Demirspor,Süper Lig,73,87,67,70,78,67,69,0,0,0,0,0,0
+algeria_ramy_bensebaini,Borussia Dortmund,Bundesliga,78,76,66,69,72,79,79,0,0,0,0,0,0
+algeria_ismael_bennacer,Milan,Serie A,84,80,73,80,87,76,80,0,0,0,0,0,0
+algeria_aissa_mandi,Villarreal,La Liga,76,61,51,71,67,78,74,0,0,0,0,0,0
+algeria_riyad_mahrez,Al Ahli Jeddah,Pro League,86,79,81,82,90,39,63,0,0,0,0,0,0
+algeria_youcef_belaili,,,,,,,,,,,,,,,
+algeria_adam_ounas,LOSC Lille,Ligue 1,73,81,66,70,83,45,64,0,0,0,0,0,0
+algeria_baghdad_bounedjah,,,,,,,,,,,,,,,
+algeria_islam_slimani,Mechelen,Pro League,73,38,76,72,62,48,79,0,0,0,0,0,0
+algeria_fares_chaibi,Eintracht Frankfurt,Bundesliga,76,73,66,76,70,67,73,0,0,0,0,0,0
+algeria_haris_belkebla,,,,,,,,,,,,,,,
+algeria_ramiz_zerrouki,Feyenoord,Eredivisie,75,68,67,71,74,65,79,0,0,0,0,0,0
+algeria_jaouad_zaid,,,,,,,,,,,,,,,
+algeria_anthony_mandrea,Caen,Ligue 2,70,0,0,0,0,0,0,71,64,63,74,45,71
+jordan_yazid_abulaila,,,,,,,,,,,,,,,
+jordan_yazan_al_naimat,,,,,,,,,,,,,,,
+jordan_tareq_shoman,,,,,,,,,,,,,,,
+jordan_rajaei_ayed,,,,,,,,,,,,,,,
+jordan_ihsan_haddad,,,,,,,,,,,,,,,
+jordan_mousa_al_taamari,,,,,,,,,,,,,,,
+jordan_ali_olwan,,,,,,,,,,,,,,,
+jordan_mahmoud_al_mardi,,,,,,,,,,,,,,,
+jordan_yaseen_al_bakhit,,,,,,,,,,,,,,,
+jordan_nizar_al_rashdan,,,,,,,,,,,,,,,
+jordan_ehab_al_hanbali,,,,,,,,,,,,,,,
+jordan_anas_ahmed,,,68,60,61,60,60,36,59,0,0,0,0,0,0
+jordan_abdallah_nasoub,,,,,,,,,,,,,,,
+jordan_baha_abdel_rahman,PAOK,Super League,72,75,59,67,68,68,74,0,0,0,0,0,0
+jordan_ahmad_nawfal,,,,,,,,,,,,,,,
 portugal_diogo_costa,Porto,Primeira Liga,83,0,0,0,0,0,0,82,77,80,86,36,82
-portugal_jo_o_cancelo,FC Barcelona,La Liga,86,82,74,85,82,78,77,0,0,0,0,0,0
-portugal_r_ben_dias,Manchester City,Premier League,89,62,40,62,64,89,86,0,0,0,0,0,0
+portugal_joao_cancelo,FC Barcelona,La Liga,86,82,74,85,82,78,77,0,0,0,0,0,0
+portugal_ruben_dias,Manchester City,Premier League,89,62,40,62,64,89,86,0,0,0,0,0,0
 portugal_bruno_fernandes,Manchester United,Premier League,87,71,85,88,80,65,78,0,0,0,0,0,0
 portugal_pepe,Porto,Primeira Liga,81,75,46,57,57,82,88,0,0,0,0,0,0
-portugal_jo_o_palhinha,Fulham,Premier League,84,65,68,71,70,85,90,0,0,0,0,0,0
+portugal_joao_palhinha,Fulham,Premier League,84,65,68,71,70,85,90,0,0,0,0,0,0
 portugal_cristiano_ronaldo,Al Nassr,Pro League,86,77,87,77,75,42,78,0,0,0,0,0,0
 portugal_bernardo_silva,Manchester City,Premier League,88,73,80,86,93,65,73,0,0,0,0,0,0
-portugal_gon_alo_ramos,Paris Saint Germain,Ligue 1,79,78,78,64,77,51,83,0,0,0,0,0,0
+portugal_goncalo_ramos,Paris Saint Germain,Ligue 1,79,78,78,64,77,51,83,0,0,0,0,0,0
 portugal_pedro_neto,Wolverhampton Wanderers,Premier League,79,88,74,71,84,30,65,0,0,0,0,0,0
-portugal_rafael_le_o,Milan,Serie A,86,94,78,80,87,35,78,0,0,0,0,0,0
+portugal_rafael_leao,Milan,Serie A,86,94,78,80,87,35,78,0,0,0,0,0,0
 portugal_nuno_mendes,Paris Saint Germain,Ligue 1,82,89,64,75,81,76,78,0,0,0,0,0,0
 portugal_vitinha,Paris Saint Germain,Ligue 1,83,72,75,80,88,65,70,0,0,0,0,0,0
-portugal_ot_vio,Al Nassr,Pro League,82,79,72,81,85,66,78,0,0,0,0,0,0
-portugal_jos_s,Wolverhampton Wanderers,Premier League,79,0,0,0,0,0,0,80,75,70,81,53,78
+portugal_otavio,Al Nassr,Pro League,82,79,72,81,85,66,78,0,0,0,0,0,0
+portugal_jose_sa,Wolverhampton Wanderers,Premier League,79,0,0,0,0,0,0,80,75,70,81,53,78
 colombia_david_ospina,Atlético Nacional,Categoría Primera A,79,0,0,0,0,0,0,81,75,79,82,53,80
-colombia_santiago_arias,,,,,,,,,,,,,,,
-colombia_davinson_s_nchez,Galatasaray,Süper Lig,78,72,44,50,62,78,79,0,0,0,0,0,0
-colombia_wilmar_barrios,,,,,,,,,,,,,,,
+colombia_santiago_arias,Millonarios,Categoría Primera A,70,75,47,61,62,67,78,0,0,0,0,0,0
+colombia_davinson_sanchez,Galatasaray,Süper Lig,78,72,44,50,62,78,79,0,0,0,0,0,0
+colombia_wilmar_barrios,Atlético Madrid,La Liga,76,76,66,68,72,64,65,0,0,0,0,0,0
 colombia_yerry_mina,Cagliari,Serie A,76,39,48,53,46,78,75,0,0,0,0,0,0
-colombia_james_rodr_guez,,,,,,,,,,,,,,,
-colombia_luis_d_az,Liverpool,Premier League,84,91,80,76,85,44,77,0,0,0,0,0,0
+colombia_james_rodriguez,Mallorca,La Liga,78,84,70,74,72,62,70,0,0,0,0,0,0
+colombia_luis_diaz,Liverpool,Premier League,84,91,80,76,85,44,77,0,0,0,0,0,0
 colombia_jefferson_lerma,Crystal Palace,Premier League,78,73,71,69,74,75,82,0,0,0,0,0,0
 colombia_radamel_falcao,Rayo Vallecano,La Liga,74,48,77,66,73,44,67,0,0,0,0,0,0
 colombia_juan_cuadrado,Inter,Serie A,79,85,75,79,84,74,71,0,0,0,0,0,0
 colombia_luis_sinisterra,AFC Bournemouth,Premier League,78,90,73,69,87,55,65,0,0,0,0,0,0
-colombia_jhon_arias,,,,,,,,,,,,,,,
-colombia_john_lucum,,,,,,,,,,,,,,,
-colombia_sebasti_n_villa,,,,,,,,,,,,,,,
-colombia_camilo_vargas,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_gk_1,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_df_2,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_df_3,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_df_4,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_df_5,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_mf_6,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_mf_7,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_mf_8,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_fw_9,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_star_10,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_fw_11,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_fw_12,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_mf_13,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_df_14,,,,,,,,,,,,,,,
-uzbekistan_uzbekistan_gk_15,,,,,,,,,,,,,,,
-dr_congo_dr_congo_gk_1,,,,,,,,,,,,,,,
-dr_congo_dr_congo_df_2,,,,,,,,,,,,,,,
-dr_congo_dr_congo_df_3,,,,,,,,,,,,,,,
-dr_congo_dr_congo_df_4,,,,,,,,,,,,,,,
-dr_congo_dr_congo_df_5,,,,,,,,,,,,,,,
-dr_congo_dr_congo_mf_6,,,,,,,,,,,,,,,
-dr_congo_dr_congo_mf_7,,,,,,,,,,,,,,,
-dr_congo_dr_congo_mf_8,,,,,,,,,,,,,,,
-dr_congo_dr_congo_fw_9,,,,,,,,,,,,,,,
-dr_congo_dr_congo_star_10,,,,,,,,,,,,,,,
-dr_congo_dr_congo_fw_11,,,,,,,,,,,,,,,
-dr_congo_dr_congo_fw_12,,,,,,,,,,,,,,,
-dr_congo_dr_congo_mf_13,,,,,,,,,,,,,,,
-dr_congo_dr_congo_df_14,,,,,,,,,,,,,,,
-dr_congo_dr_congo_gk_15,,,,,,,,,,,,,,,
+colombia_jhon_arias,Atlético Nacional,Categoría Primera A,69,63,44,58,67,66,72,0,0,0,0,0,0
+colombia_john_lucumi,Bologna,Serie A,75,68,29,56,63,75,78,0,0,0,0,0,0
+colombia_sebastian_villa,Girona,La Liga,74,74,64,74,81,54,54,0,0,0,0,0,0
+colombia_camilo_vargas,Deportivo Garcilaso,Primera Division,66,0,0,0,0,0,0,62,69,64,65,44,66
+uzbekistan_utkir_yusupov,,,,,,,,,,,,,,,
+uzbekistan_akramjon_komilov,,,,,,,,,,,,,,,
+uzbekistan_egor_krimets,,,,,,,,,,,,,,,
+uzbekistan_jasurbek_jurayev,,,,,,,,,,,,,,,
+uzbekistan_azizbek_turgunboev,Sivasspor,Süper Lig,65,74,63,56,71,34,59,0,0,0,0,0,0
+uzbekistan_otabek_shukurov,Kayserispor,Süper Lig,69,70,65,67,68,65,74,0,0,0,0,0,0
+uzbekistan_eldor_shomurodov,Cagliari,Serie A,72,79,71,64,74,44,71,0,0,0,0,0,0
+uzbekistan_jaloliddin_masharipov,,,,,,,,,,,,,,,
+uzbekistan_igor_sergeev,,,,,,,,,,,,,,,
+uzbekistan_khozhimat_erkinov,,,,,,,,,,,,,,,
+uzbekistan_abbosbek_fayzullaev,,,,,,,,,,,,,,,
+uzbekistan_sanjar_tulyakov,,,,,,,,,,,,,,,
+uzbekistan_odil_khamrobekov,,,,,,,,,,,,,,,
+uzbekistan_abdulla_abdullaev,,,,,,,,,,,,,,,
+uzbekistan_khamza_alakbarov,,,,,,,,,,,,,,,
+dr_congo_joel_kiassumbua,,,,,,,,,,,,,,,
+dr_congo_chancel_mbemba,Olympique de Marseille,Ligue 1,79,73,55,62,66,80,82,0,0,0,0,0,0
+dr_congo_christian_luyindama,,,,,,,,,,,,,,,
+dr_congo_edo_kayembe,Watford,Championship,71,72,62,65,67,65,77,0,0,0,0,0,0
+dr_congo_marcel_tisserand,Abha,Pro League,73,73,59,68,67,71,81,0,0,0,0,0,0
+dr_congo_cedric_bakambu,Real Betis,La Liga,75,81,75,65,72,39,64,0,0,0,0,0,0
+dr_congo_theo_bongonda,,,,,,,,,,,,,,,
+dr_congo_gael_kakuta,Amiens SC,Ligue 2,74,71,72,72,80,41,62,0,0,0,0,0,0
+dr_congo_fiston_mayele,,,,,,,,,,,,,,,
+dr_congo_yoane_wissa,Brentford,Premier League,77,85,77,66,78,33,73,0,0,0,0,0,0
+dr_congo_aaron_tchombani,,,,,,,,,,,,,,,
+dr_congo_arthur_masuaku,,,,,,,,,,,,,,,
+dr_congo_paul_jose_mpoku,Incheon United,K League 1,70,72,72,73,71,46,67,0,0,0,0,0,0
+dr_congo_chadrac_akolo,St. Gallen,Super League,72,89,70,63,82,33,70,0,0,0,0,0,0
+dr_congo_brady_fleury,,,,,,,,,,,,,,,
 england_jordan_pickford,Everton,Premier League,82,0,0,0,0,0,0,83,77,87,87,50,80
 england_kyle_walker,Manchester City,Premier League,84,90,66,77,74,79,83,0,0,0,0,0,0
 england_john_stones,Manchester City,Premier League,85,73,51,72,72,85,79,0,0,0,0,0,0
@@ -674,48 +674,48 @@ england_marcus_rashford,Manchester United,Premier League,82,90,81,76,79,39,68,0,
 england_conor_gallagher,Chelsea,Premier League,79,75,73,74,74,69,80,0,0,0,0,0,0
 england_ezri_konsa,Aston Villa,Premier League,80,78,42,67,72,81,80,0,0,0,0,0,0
 england_aaron_ramsdale,Arsenal,Premier League,82,0,0,0,0,0,0,82,79,85,84,49,79
-croatia_dominik_livakovi,Fenerbahçe,Süper Lig,82,0,0,0,0,0,0,80,76,71,89,56,80
-croatia_josip_utalo,Ajax,Eredivisie,78,82,32,57,65,77,78,0,0,0,0,0,0
-croatia_jo_ko_gvardiol,Manchester City,Premier League,82,81,65,72,76,82,85,0,0,0,0,0,0
-croatia_marcelo_brozovi,Al Nassr,Pro League,83,67,73,80,81,79,80,0,0,0,0,0,0
+croatia_dominik_livakovic,Fenerbahçe,Süper Lig,82,0,0,0,0,0,0,80,76,71,89,56,80
+croatia_josip_sutalo,Ajax,Eredivisie,78,82,32,57,65,77,78,0,0,0,0,0,0
+croatia_josko_gvardiol,Manchester City,Premier League,82,81,65,72,76,82,85,0,0,0,0,0,0
+croatia_marcelo_brozovic,Al Nassr,Pro League,83,67,73,80,81,79,80,0,0,0,0,0,0
 croatia_borna_sosa,Ajax,Eredivisie,77,74,58,79,74,69,72,0,0,0,0,0,0
-croatia_luka_modri,Real Madrid,La Liga,86,73,77,88,90,68,66,0,0,0,0,0,0
-croatia_bruno_petkovi,Dinamo Zagreb,Hrvatska nogometna liga,77,72,73,76,71,48,74,0,0,0,0,0,0
-croatia_mateo_kova_i,Manchester City,Premier League,82,70,73,81,86,65,70,0,0,0,0,0,0
-croatia_andrej_kramari,TSG Hoffenheim,Bundesliga,81,72,80,76,83,38,75,0,0,0,0,0,0
+croatia_luka_modric,Real Madrid,La Liga,86,73,77,88,90,68,66,0,0,0,0,0,0
+croatia_bruno_petkovic,Dinamo Zagreb,Hrvatska nogometna liga,77,72,73,76,71,48,74,0,0,0,0,0,0
+croatia_mateo_kovacic,Manchester City,Premier League,82,70,73,81,86,65,70,0,0,0,0,0,0
+croatia_andrej_kramaric,TSG Hoffenheim,Bundesliga,81,72,80,76,83,38,75,0,0,0,0,0,0
 croatia_luka_sucic,Salzburg,Bundesliga,74,76,73,74,73,47,66,0,0,0,0,0,0
 croatia_marko_livaja,Hajduk Split,Hrvatska nogometna liga,75,73,74,69,75,43,79,0,0,0,0,0,0
-croatia_mislav_or_i,Trabzonspor,Süper Lig,74,78,80,73,77,58,61,0,0,0,0,0,0
-croatia_nikola_vla_i,Torino,Serie A,79,78,76,75,83,55,75,0,0,0,0,0,0
-croatia_ivan_peri_i,Hajduk Split,Hrvatska nogometna liga,77,71,78,79,74,71,75,0,0,0,0,0,0
-croatia_ivica_ivusi,,,73,0,0,0,0,0,0,72,70,73,0,65,0
-panama_panama_gk_1,,,,,,,,,,,,,,,
-panama_panama_df_2,,,,,,,,,,,,,,,
-panama_panama_df_3,,,,,,,,,,,,,,,
-panama_panama_df_4,,,,,,,,,,,,,,,
-panama_panama_df_5,,,,,,,,,,,,,,,
-panama_panama_mf_6,,,,,,,,,,,,,,,
-panama_panama_mf_7,,,,,,,,,,,,,,,
-panama_panama_mf_8,,,,,,,,,,,,,,,
-panama_panama_fw_9,,,,,,,,,,,,,,,
-panama_panama_star_10,,,,,,,,,,,,,,,
-panama_panama_fw_11,,,,,,,,,,,,,,,
-panama_panama_fw_12,,,,,,,,,,,,,,,
-panama_panama_mf_13,,,,,,,,,,,,,,,
-panama_panama_df_14,,,,,,,,,,,,,,,
-panama_panama_gk_15,,,,,,,,,,,,,,,
-ghana_ghana_gk_1,,,,,,,,,,,,,,,
-ghana_ghana_df_2,,,,,,,,,,,,,,,
-ghana_ghana_df_3,,,,,,,,,,,,,,,
-ghana_ghana_df_4,,,,,,,,,,,,,,,
-ghana_ghana_df_5,,,,,,,,,,,,,,,
-ghana_ghana_mf_6,,,,,,,,,,,,,,,
-ghana_ghana_mf_7,,,,,,,,,,,,,,,
-ghana_ghana_mf_8,,,,,,,,,,,,,,,
-ghana_ghana_fw_9,,,,,,,,,,,,,,,
-ghana_ghana_star_10,,,,,,,,,,,,,,,
-ghana_ghana_fw_11,,,,,,,,,,,,,,,
-ghana_ghana_fw_12,,,,,,,,,,,,,,,
-ghana_ghana_mf_13,,,,,,,,,,,,,,,
-ghana_ghana_df_14,,,,,,,,,,,,,,,
-ghana_ghana_gk_15,,,,,,,,,,,,,,,
+croatia_mislav_orsic,Trabzonspor,Süper Lig,74,78,80,73,77,58,61,0,0,0,0,0,0
+croatia_nikola_vlasic,Torino,Serie A,79,78,76,75,83,55,75,0,0,0,0,0,0
+croatia_ivan_perisic,Hajduk Split,Hrvatska nogometna liga,77,71,78,79,74,71,75,0,0,0,0,0,0
+croatia_ivica_ivusic,,,73,0,0,0,0,0,0,72,70,73,0,65,0
+panama_jaime_penedo,,,,,,,,,,,,,,,
+panama_michael_murillo,Olympique de Marseille,Ligue 1,73,82,56,67,71,69,75,0,0,0,0,0,0
+panama_fidel_escobar,Houston Dynamo,Major League Soccer,68,71,45,55,68,67,68,0,0,0,0,0,0
+panama_anibal_godoy,Nashville SC,Major League Soccer,70,43,53,62,64,61,73,0,0,0,0,0,0
+panama_roman_torres,Sevilla,La Liga,79,68,71,80,81,61,54,0,0,0,0,0,0
+panama_adalberto_carrasquilla,Houston Dynamo,Major League Soccer,71,74,63,65,81,57,70,0,0,0,0,0,0
+panama_jose_fajardo,Universidad Católica,Liga Pro,70,67,69,57,67,40,69,0,0,0,0,0,0
+panama_alberto_quintero,Racing Club,Liga Profesional de Fútbol,77,64,77,80,84,40,56,0,0,0,0,0,0
+panama_gabriel_torres,Sevilla,La Liga,79,68,71,80,81,61,54,0,0,0,0,0,0
+panama_luis_mejia,Nacional,Primera División,70,0,0,0,0,0,0,69,72,68,72,52,65
+panama_rolando_blackburn,,,,,,,,,,,,,,,
+panama_cesar_blackman,,,,,,,,,,,,,,,
+panama_ismael_diaz,Universidad Católica,Liga Pro,74,88,68,61,74,36,76,0,0,0,0,0,0
+panama_harold_cummings,ATK Mohun Bagan,Super League,70,71,70,57,69,40,65,0,0,0,0,0,0
+panama_orlando_mosquera,Alianza,Categoría Primera A,66,0,0,0,0,0,0,60,69,67,67,14,63
+ghana_lawrence_ati_zigi,St. Gallen,Super League,74,0,0,0,0,0,0,75,69,65,77,39,74
+ghana_gideon_mensah,Auxerre,Ligue 2,70,76,59,63,73,65,71,0,0,0,0,0,0
+ghana_daniel_amartey,Beşiktaş,Süper Lig,71,60,58,59,65,71,72,0,0,0,0,0,0
+ghana_thomas_partey,Arsenal,Premier League,84,67,71,79,70,78,81,0,0,0,0,0,0
+ghana_alexander_djiku,Fenerbahçe,Süper Lig,77,73,46,65,66,76,81,0,0,0,0,0,0
+ghana_mohammed_kudus,West Ham United,Premier League,81,90,77,72,87,57,74,0,0,0,0,0,0
+ghana_jordan_ayew,Crystal Palace,Premier League,75,74,72,69,78,59,76,0,0,0,0,0,0
+ghana_andre_ayew,Le Havre,Ligue 1,72,60,73,73,73,60,68,0,0,0,0,0,0
+ghana_inaki_williams,Athletic Club,La Liga,82,94,81,73,76,52,86,0,0,0,0,0,0
+ghana_antoine_semenyo,AFC Bournemouth,Premier League,74,84,69,66,74,36,73,0,0,0,0,0,0
+ghana_kamaldeen_sulemana,Southampton,Championship,72,93,65,66,82,31,61,0,0,0,0,0,0
+ghana_salis_abdul_samed,Lens,Ligue 1,76,62,48,63,69,72,80,0,0,0,0,0,0
+ghana_ernest_nuamah,Olympique Lyonnais,Ligue 1,74,85,66,63,83,28,60,0,0,0,0,0,0
+ghana_alidu_seidu,Rennes,Ligue 1,73,60,40,59,67,74,68,0,0,0,0,0,0
+ghana_richard_ofori,,,71,0,0,0,0,0,0,77,66,73,0,60,0
