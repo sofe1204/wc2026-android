@@ -112,8 +112,10 @@ def load_squads_csv(path: Path = SQUADS_CSV) -> dict[str, list[tuple[int, str, s
                 raise ValueError(f"Invalid rarity {rarity!r} for {team_id} #{shirt}")
             squads.setdefault(team_id, []).append((shirt, name, position, rarity))
     for team_id, squad in squads.items():
-        if len(squad) != 15:
-            raise ValueError(f"squads.csv: team {team_id} has {len(squad)} players, expected 15")
+        if len(squad) not in (25, 26):
+            raise ValueError(
+                f"squads.csv: team {team_id} has {len(squad)} players, expected 25–26"
+            )
     return squads
 
 

@@ -10,8 +10,7 @@ import org.junit.Test
 import java.io.File
 
 /**
- * Validates seed JSON structure: 48 teams, 720 players, 768 stickers (incl. crests).
- * TODO: Verify final 2026 squads before tournament.
+ * Validates seed JSON: 48 teams, official FIFA squads (25–26 players each), 1296 stickers (crest + players).
  */
 class SeedValidationTest {
     private val seedDir = File("src/main/assets/seed")
@@ -23,13 +22,13 @@ class SeedValidationTest {
     }
 
     @Test
-    fun playersCountIs720() {
-        assertEquals(720, readArray("players_seed.json").size)
+    fun playersCountIs1248() {
+        assertEquals(1248, readArray("players_seed.json").size)
     }
 
     @Test
-    fun stickersCountIs768() {
-        assertEquals(768, readArray("stickers_seed.json").size)
+    fun stickersCountIs1296() {
+        assertEquals(1296, readArray("stickers_seed.json").size)
     }
 
     @Test
@@ -49,12 +48,14 @@ class SeedValidationTest {
     }
 
     @Test
-    fun eachTeamHas15Players() {
+    fun eachTeamHas25Or26Players() {
         val byTeam = readArray("players_seed.json")
             .groupingBy { it.jsonObject["teamId"]!!.jsonPrimitive.content }
             .eachCount()
         assertEquals(48, byTeam.size)
-        byTeam.values.forEach { assertEquals(15, it) }
+        byTeam.values.forEach { count ->
+            assertTrue("Expected 25–26 players per team, got $count", count in 25..26)
+        }
     }
 
     @Test

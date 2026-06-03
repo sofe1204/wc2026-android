@@ -1,0 +1,78 @@
+{
+  "source": "official_draw",
+  "tournament": "2026 FIFA World Cup",
+  "groups": {
+    "A": [
+      "mexico",
+      "south_africa",
+      "south_korea",
+      "czechia"
+    ],
+    "B": [
+      "canada",
+      "switzerland",
+      "qatar",
+      "bosnia_herzegovina"
+    ],
+    "C": [
+      "brazil",
+      "morocco",
+      "scotland",
+      "haiti"
+    ],
+    "D": [
+      "united_states",
+      "paraguay",
+      "australia",
+      "turkiye"
+    ],
+    "E": [
+      "germany",
+      "ecuador",
+      "ivory_coast",
+      "curacao"
+    ],
+    "F": [
+      "netherlands",
+      "japan",
+      "tunisia",
+      "sweden"
+    ],
+    "G": [
+      "belgium",
+      "iran",
+      "egypt",
+      "new_zealand"
+    ],
+    "H": [
+      "spain",
+      "uruguay",
+      "saudi_arabia",
+      "cape_verde"
+    ],
+    "I": [
+      "france",
+      "senegal",
+      "norway",
+      "iraq"
+    ],
+    "J": [
+      "argentina",
+      "austria",
+      "algeria",
+      "jordan"
+    ],
+    "K": [
+      "portugal",
+      "colombia",
+      "uzbekistan",
+      "dr_congo"
+    ],
+    "L": [
+      "england",
+      "croatia",
+      "panama",
+      "ghana"
+    ]
+  }
+}

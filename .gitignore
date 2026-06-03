@@ -22,5 +22,8 @@ firebase-debug.log
 # Cursor / debug
 .cursor/
 
+# Large Wikipedia API cache (regenerate via import:official-squads)
+data/wikipedia_squads_raw.json
+
 # Secrets — never commit real keys
 android/app/google-services.json

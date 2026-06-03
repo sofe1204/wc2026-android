@@ -9,8 +9,8 @@ object GameConstants {
     const val DAILY_FREE_SLOT_SPINS = 15
     const val REWARDED_SLOT_SPINS = 5
     const val DAILY_SLOT_PACK_REWARD_CAP = 5
-    const val TOTAL_STICKERS = 768
-    const val PLAYERS_PER_TEAM = 15
+    const val TOTAL_STICKERS = 1296
+    const val PLAYERS_PER_TEAM = 26
     /** Players plus one collectible team crest sticker per squad. */
     const val STICKERS_PER_TEAM = PLAYERS_PER_TEAM + 1
     const val TOTAL_TEAMS = 48

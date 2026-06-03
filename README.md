@@ -1,7 +1,7 @@
 # wc2026-android — World Cup 2026 Sticker Album
 
 Anime-style digital sticker album for the 2026 FIFA World Cup (USA, Canada, Mexico).  
-**48 teams × 15 players = 720 collectible stickers.**
+**48 teams × 26 players (official FIFA squads) = 1,248 collectible stickers** (+ 48 team crests).
 
 | | |
 |---|---|
@@ -69,6 +69,19 @@ Complete these in [Firebase Console](https://console.firebase.google.com/project
 
 Deploys Firestore rules, indexes, and Cloud Functions to `wc-2026-3110f`.  
 **Do not** paste `deploy_functions.sh` into the Firestore Rules editor — use [`firestore.rules`](firestore.rules) or let the CLI deploy it.
+
+## Official squads (FIFA WC 2026)
+
+Seed data comes from **`data/official_squads_2026.json`** (48 teams, 26 players each, 1,248 total).
+
+```bash
+# Optional: re-fetch from Wikipedia
+npm run import:official-squads
+
+# Regenerate squads.csv + Android/Functions seed JSON
+npm run generate:seed
+./scripts/sync_project.sh
+```
 
 ## Sync (after pull)
 
@@ -174,7 +187,7 @@ cd android
 ## TODO — before production
 
 - [ ] Legal/licensing review for “World Cup 2026” branding
-- [ ] Verify 720 player names against final 2026 rosters
+- [ ] Re-run `npm run import:official-squads` if FIFA squads change mid-tournament
 - [ ] Sticker images + Storage URLs
 - [ ] AdMob SSV + production ad unit IDs
 

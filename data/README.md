@@ -6,7 +6,9 @@ Canonical squad lists and per-player attribute numbers are maintained as CSV, th
 
 | File | Purpose |
 |------|---------|
-| `squads.csv` | 48 teams × 15 players — overrides inline squads in `generate_seed_data.py` when present |
+| `official_squads_2026.json` | Canonical FIFA WC 2026 squads (from Wikipedia / FIFA lists) |
+| `fifa_teams_2026.json` | Official group draw (groups A–L) |
+| `squads.csv` | Generated from official squads when you run `generate_seed_data.py` |
 | `player_ratings.csv` | Club + overall + six outfield or six goalkeeper attributes per `player_id` |
 
 ## Pipeline

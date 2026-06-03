@@ -26,7 +26,8 @@ This will:
 | Change | Action |
 |--------|--------|
 | Edit `project.config.json` | `./scripts/sync_project.sh` then rebuild Android + Functions |
-| Regenerate squads / stickers | `python3 scripts/generate_seed_data.py` then `./scripts/sync_project.sh` |
+| Regenerate squads / stickers | `python3 scripts/generate_seed_data.py` (or `npm run generate:seed`) then `./scripts/sync_project.sh` |
+| Refresh official FIFA squads | `npm run import:official-squads` then `npm run generate:seed` |
 | New Firebase app / package | Update `project.config.json` + `google-services.json`, then sync |
 | Before opening Android Studio | `./scripts/prepare_android_studio.sh` (includes build) |
 

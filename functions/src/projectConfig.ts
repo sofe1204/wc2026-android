@@ -18,9 +18,8 @@ export const DAILY_FREE_SLOT_SPINS = 15;
 export const REWARDED_SLOT_SPINS = 5;
 export const DAILY_SLOT_PACK_REWARD_CAP = 5;
 export const TOTAL_TEAMS = 48;
-export const PLAYERS_PER_TEAM = 15;
-export const TOTAL_STICKERS = 768;
-export const STICKERS_PER_TEAM = 16;
+export const PLAYERS_PER_TEAM = 26;
+export const TOTAL_STICKERS = 1296;
 
 export const EMULATOR_PORTS = {
   auth: 9099,

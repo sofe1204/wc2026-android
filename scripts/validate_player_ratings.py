@@ -16,7 +16,7 @@ from player_data_lib import ratings_complete  # noqa: E402
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--strict", action="store_true", help="Fail unless all 720 players have complete ratings")
+    parser.add_argument("--strict", action="store_true", help="Fail unless all players have complete ratings")
     args = parser.parse_args()
 
     if not PLAYERS_PATH.exists():
