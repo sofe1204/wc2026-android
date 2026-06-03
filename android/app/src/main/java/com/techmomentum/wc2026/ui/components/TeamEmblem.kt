@@ -33,8 +33,17 @@ fun TeamEmblem(
             contentScale = ContentScale.Crop,
         )
     } else {
-        val bg = parseTeamColor(team.primaryColor, MaterialTheme.colorScheme.primary)
-        val fg = parseTeamColor(team.secondaryColor, Color.White)
+        val showingFlag = team.flagEmoji.isNotBlank()
+        val bg = if (showingFlag) {
+            Color.White
+        } else {
+            parseTeamColor(team.primaryColor, MaterialTheme.colorScheme.primary)
+        }
+        val fg = if (showingFlag) {
+            Color.Unspecified
+        } else {
+            parseTeamColor(team.secondaryColor, Color.White)
+        }
         Box(
             modifier = modifier
                 .size(size)
@@ -43,9 +52,9 @@ fun TeamEmblem(
             contentAlignment = Alignment.Center,
         ) {
             Text(
-                text = team.teamCode.ifBlank { team.flagEmoji },
+                text = team.flagEmoji.ifBlank { team.teamCode },
                 color = fg,
-                fontSize = (size.value * 0.28f).sp,
+                fontSize = if (showingFlag) (size.value * 0.52f).sp else (size.value * 0.28f).sp,
                 style = MaterialTheme.typography.labelLarge,
             )
         }

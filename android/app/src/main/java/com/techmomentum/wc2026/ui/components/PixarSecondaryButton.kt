@@ -1,0 +1,79 @@
+package com.techmomentum.wc2026.ui.components
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
+
+@Composable
+fun PixarSecondaryButton(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    loading: Boolean = false,
+    accentBorder: Boolean = false,
+) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val shape = RoundedCornerShape(16.dp)
+
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .shadow(
+                elevation = if (enabled) 2.dp else 0.dp,
+                shape = shape,
+            )
+            .clip(shape)
+            .background(AlbumPageStyle.filterUnselectedFill)
+            .border(
+                width = if (accentBorder) 2.dp else 1.5.dp,
+                color = if (accentBorder) {
+                    AlbumPageStyle.filterSelectedEnd.copy(alpha = if (enabled) 0.85f else 0.4f)
+                } else {
+                    AlbumPageStyle.filterUnselectedBorder.copy(alpha = if (enabled) 1f else 0.5f)
+                },
+                shape = shape,
+            )
+            .clickable(
+                enabled = enabled && !loading,
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = onClick,
+            )
+            .padding(horizontal = 16.dp, vertical = 13.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        if (loading) {
+            CircularProgressIndicator(
+                modifier = Modifier.size(20.dp),
+                color = AlbumPageStyle.headerAccent,
+                strokeWidth = 2.dp,
+            )
+        } else {
+            Text(
+                text = text,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold,
+                color = AlbumPageStyle.bottomNavUnselectedLabel.copy(alpha = if (enabled) 1f else 0.45f),
+            )
+        }
+    }
+}

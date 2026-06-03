@@ -2,6 +2,7 @@ package com.techmomentum.wc2026.data.seed
 
 import android.content.Context
 import com.techmomentum.wc2026.data.model.Player
+import com.techmomentum.wc2026.data.model.PlayerRatings
 import com.techmomentum.wc2026.data.model.Rarity
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.Team
@@ -26,6 +27,23 @@ private data class TeamSeedDto(
 )
 
 @Serializable
+private data class PlayerRatingsSeedDto(
+    @SerialName("overall") val overall: Int = 0,
+    @SerialName("pace") val pace: Int = 0,
+    @SerialName("shooting") val shooting: Int = 0,
+    @SerialName("passing") val passing: Int = 0,
+    @SerialName("dribbling") val dribbling: Int = 0,
+    @SerialName("defending") val defending: Int = 0,
+    @SerialName("physical") val physical: Int = 0,
+    @SerialName("diving") val diving: Int = 0,
+    @SerialName("handling") val handling: Int = 0,
+    @SerialName("kicking") val kicking: Int = 0,
+    @SerialName("reflexes") val reflexes: Int = 0,
+    @SerialName("speed") val speed: Int = 0,
+    @SerialName("positioning") val positioning: Int = 0,
+)
+
+@Serializable
 private data class PlayerSeedDto(
     @SerialName("playerId") val playerId: String,
     @SerialName("teamId") val teamId: String,
@@ -37,6 +55,10 @@ private data class PlayerSeedDto(
     @SerialName("rarity") val rarity: String,
     @SerialName("animeStickerPrompt") val animeStickerPrompt: String = "",
     @SerialName("imageUrl") val imageUrl: String = "",
+    @SerialName("clubName") val clubName: String = "",
+    @SerialName("clubLeague") val clubLeague: String = "",
+    @SerialName("ratings") val ratings: PlayerRatingsSeedDto = PlayerRatingsSeedDto(),
+    @SerialName("ratingsComplete") val ratingsComplete: Boolean = false,
     @SerialName("isActive") val isActive: Boolean = true,
 )
 
@@ -90,6 +112,24 @@ class SeedJsonParser @Inject constructor(
                 rarity = Rarity.from(dto.rarity),
                 animeStickerPrompt = dto.animeStickerPrompt,
                 imageUrl = dto.imageUrl,
+                clubName = dto.clubName,
+                clubLeague = dto.clubLeague,
+                ratings = PlayerRatings(
+                    overall = dto.ratings.overall,
+                    pace = dto.ratings.pace,
+                    shooting = dto.ratings.shooting,
+                    passing = dto.ratings.passing,
+                    dribbling = dto.ratings.dribbling,
+                    defending = dto.ratings.defending,
+                    physical = dto.ratings.physical,
+                    diving = dto.ratings.diving,
+                    handling = dto.ratings.handling,
+                    kicking = dto.ratings.kicking,
+                    reflexes = dto.ratings.reflexes,
+                    speed = dto.ratings.speed,
+                    positioning = dto.ratings.positioning,
+                ),
+                ratingsComplete = dto.ratingsComplete,
                 isActive = dto.isActive,
             )
         }

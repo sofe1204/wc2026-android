@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 """Generate teams_seed.json, players_seed.json, stickers_seed.json for World Cup 2026."""
 import json
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 _CONFIG = json.loads((ROOT / "project.config.json").read_text(encoding="utf-8"))
 OUTPUT = ROOT / _CONFIG["seed"]["android"]
 FUNCTIONS_SEED = ROOT / _CONFIG["seed"]["functions"]
+
+from player_data_lib import (  # noqa: E402
+    SQUADS_CSV,
+    empty_ratings,
+    load_squads_csv,
+    player_id_for,
+    slugify,
+)
 
 # TODO: Verify final 2026 squads before tournament — player lists are best-effort placeholders.
 TEAMS = [
@@ -395,13 +402,25 @@ EXTRA_SQUADS = {
 }
 
 
-def slugify(name: str) -> str:
-    s = name.lower()
-    s = re.sub(r"[^a-z0-9]+", "_", s)
-    return s.strip("_")
+_CACHED_SQUADS_CSV: dict[str, list] | None = None
+
+
+def _squads_from_csv() -> dict[str, list] | None:
+    global _CACHED_SQUADS_CSV
+    if _CACHED_SQUADS_CSV is None:
+        _CACHED_SQUADS_CSV = load_squads_csv()
+    return _CACHED_SQUADS_CSV
 
 
 def get_squad(team_id: str, country: str) -> list:
+    csv_squads = _squads_from_csv()
+    if csv_squads is not None:
+        if team_id not in csv_squads:
+            raise ValueError(
+                f"squads.csv is missing team {team_id!r}. "
+                f"Expected 48 teams with 15 players each."
+            )
+        return csv_squads[team_id]
     if team_id in SQUADS:
         return SQUADS[team_id]
     if team_id in EXTRA_SQUADS:
@@ -446,9 +465,21 @@ def main():
             "secondaryColor": secondary,
             "isActive": True,
         })
+        stickers_out.append({
+            "stickerId": f"{code}-000",
+            "stickerNumber": 0,
+            "playerId": "",
+            "teamId": team_id,
+            "countryName": country,
+            "group": group,
+            "rarity": "epic",
+            "imageUrl": "",
+            "isActive": True,
+        })
         squad = get_squad(team_id, country)
         for shirt, pname, pos, rarity in squad:
-            player_id = f"{team_id}_{slugify(pname)}"
+            player_id = player_id_for(team_id, pname)
+            ratings = empty_ratings()
             players_out.append({
                 "playerId": player_id,
                 "teamId": team_id,
@@ -460,6 +491,10 @@ def main():
                 "rarity": rarity,
                 "animeStickerPrompt": anime_prompt(pname, country, shirt, pos),
                 "imageUrl": "",
+                "clubName": "",
+                "clubLeague": "",
+                "ratings": ratings,
+                "ratingsComplete": False,
                 "isActive": True,
             })
             sticker_id = f"{code}-{shirt:03d}"
@@ -477,7 +512,7 @@ def main():
 
     assert len(teams_out) == 48
     assert len(players_out) == 720
-    assert len(stickers_out) == 720
+    assert len(stickers_out) == 768
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     FUNCTIONS_SEED.mkdir(parents=True, exist_ok=True)
@@ -487,7 +522,10 @@ def main():
         (path / "players_seed.json").write_text(json.dumps(players_out, indent=2, ensure_ascii=False))
         (path / "stickers_seed.json").write_text(json.dumps(stickers_out, indent=2, ensure_ascii=False))
 
-    print(f"Generated {len(teams_out)} teams, {len(players_out)} players, {len(stickers_out)} stickers")
+    csv_note = f" (squads from {SQUADS_CSV.relative_to(ROOT)})" if SQUADS_CSV.exists() else ""
+    print(f"Generated {len(teams_out)} teams, {len(players_out)} players, {len(stickers_out)} stickers{csv_note}")
+    if not SQUADS_CSV.exists():
+        print("Tip: add data/squads.csv for canonical squads — run scripts/export_player_data_templates.py")
 
 
 if __name__ == "__main__":

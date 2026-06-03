@@ -16,7 +16,7 @@ import javax.inject.Inject
 data class TeamAlbumProgress(
     val team: Team,
     val ownedCount: Int = 0,
-    val total: Int = GameConstants.PLAYERS_PER_TEAM,
+    val total: Int = GameConstants.STICKERS_PER_TEAM,
     val percent: Float = 0f,
 )
 
@@ -57,7 +57,7 @@ class GetAlbumUseCase @Inject constructor(
                     TeamAlbumProgress(
                         team = team,
                         ownedCount = ownedCount,
-                        percent = ownedCount.toFloat() / GameConstants.PLAYERS_PER_TEAM * 100f,
+                        percent = ownedCount.toFloat() / GameConstants.STICKERS_PER_TEAM * 100f,
                     )
                 }
                 val byGroup = progress.groupBy { it.team.group }.toSortedMap()
@@ -74,7 +74,7 @@ class GetAlbumUseCase @Inject constructor(
         }
     }
 
-    suspend fun getTeamAlbum(teamId: String): Pair<Team?, List<StickerSlot>> {
+    suspend fun getTeamAlbum(teamId: String): Pair<Team?, TeamAlbumSlots> {
         val team = catalogRepository.getTeam(teamId)
         val stickers = catalogRepository.getStickers().filter { it.teamId == teamId }
         val players = catalogRepository.getPlayers()
@@ -86,6 +86,6 @@ class GetAlbumUseCase @Inject constructor(
                 owned = owned[sticker.stickerId],
             )
         }
-        return team to slots
+        return team to slots.partitionByEmblem()
     }
 }

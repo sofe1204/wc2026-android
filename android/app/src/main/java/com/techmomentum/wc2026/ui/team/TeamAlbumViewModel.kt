@@ -17,11 +17,24 @@ import javax.inject.Inject
 
 data class TeamAlbumUiState(
     val team: Team? = null,
-    val slots: List<StickerSlot> = emptyList(),
+    val crestSlot: StickerSlot? = null,
+    val playerSlots: List<StickerSlot> = emptyList(),
     val ownedCount: Int = 0,
     val percent: Float = 0f,
     val loading: Boolean = true,
-)
+) {
+    val total: Int
+        get() {
+            val count = (if (crestSlot != null) 1 else 0) + playerSlots.size
+            return count.takeIf { it > 0 } ?: GameConstants.STICKERS_PER_TEAM
+        }
+
+    val allSlots: List<StickerSlot>
+        get() = buildList {
+            crestSlot?.let { add(it) }
+            addAll(playerSlots)
+        }
+}
 
 @HiltViewModel
 class TeamAlbumViewModel @Inject constructor(
@@ -36,13 +49,14 @@ class TeamAlbumViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val (team, slots) = getAlbumUseCase.getTeamAlbum(teamId)
-            val ownedCount = slots.count { it.owned != null }
-            val total = slots.size.takeIf { it > 0 } ?: GameConstants.PLAYERS_PER_TEAM
+            val ownedCount = slots.allSlots.count { it.owned != null }
+            val total = slots.allSlots.size.takeIf { it > 0 } ?: GameConstants.STICKERS_PER_TEAM
             val percent = ownedCount.toFloat() / total * 100f
             _uiState.update {
                 it.copy(
                     team = team,
-                    slots = slots,
+                    crestSlot = slots.crestSlot,
+                    playerSlots = slots.playerSlots,
                     ownedCount = ownedCount,
                     percent = percent,
                     loading = false,

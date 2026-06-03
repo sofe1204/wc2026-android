@@ -30,7 +30,8 @@
     "dailySlotPackRewardCap": 5,
     "totalTeams": 48,
     "playersPerTeam": 15,
-    "totalStickers": 720
+    "stickersPerTeam": 16,
+    "totalStickers": 768
   },
   "emulators": {
     "auth": 9099,

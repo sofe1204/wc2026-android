@@ -9,6 +9,10 @@ object CountryAlbumLayout {
     // Aspect ratio (width / height) of the sticker art area; < 1 means a tall, portrait pocket.
     const val SLOT_ASPECT_RATIO = 0.82f
 
+    /** Wide crest slot above the player grid. */
+    const val CREST_SLOT_ASPECT_RATIO = 1.65f
+    const val crestSlotWidthFraction = 0.72f
+
     val pagePadding = 16.dp
     val gridSpacing = 14.dp
     val pageCornerRadius = 30.dp

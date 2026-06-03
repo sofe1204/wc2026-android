@@ -10,7 +10,7 @@ import org.junit.Test
 import java.io.File
 
 /**
- * Validates seed JSON structure: 48 teams, 720 players, 720 stickers.
+ * Validates seed JSON structure: 48 teams, 720 players, 768 stickers (incl. crests).
  * TODO: Verify final 2026 squads before tournament.
  */
 class SeedValidationTest {
@@ -28,8 +28,18 @@ class SeedValidationTest {
     }
 
     @Test
-    fun stickersCountIs720() {
-        assertEquals(720, readArray("stickers_seed.json").size)
+    fun stickersCountIs768() {
+        assertEquals(768, readArray("stickers_seed.json").size)
+    }
+
+    @Test
+    fun eachTeamHasOneEmblemSticker() {
+        val emblems = readArray("stickers_seed.json").filter {
+            val obj = it.jsonObject
+            obj["stickerNumber"]!!.jsonPrimitive.content == "0" &&
+                obj["playerId"]!!.jsonPrimitive.content.isEmpty()
+        }
+        assertEquals(48, emblems.size)
     }
 
     @Test
@@ -45,6 +55,22 @@ class SeedValidationTest {
             .eachCount()
         assertEquals(48, byTeam.size)
         byTeam.values.forEach { assertEquals(15, it) }
+    }
+
+    @Test
+    fun playersHaveRatingsObject() {
+        readArray("players_seed.json").forEach { element ->
+            val obj = element.jsonObject
+            assertTrue(
+                "Missing ratings for ${obj["playerId"]!!.jsonPrimitive.content}",
+                obj.containsKey("ratings"),
+            )
+            val ratings = obj["ratings"]!!.jsonObject
+            assertTrue(ratings.containsKey("overall"))
+            assertTrue(obj.containsKey("ratingsComplete"))
+            assertTrue(obj.containsKey("clubName"))
+            assertTrue(obj.containsKey("clubLeague"))
+        }
     }
 
     private fun readArray(name: String) =

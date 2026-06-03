@@ -2,7 +2,6 @@ package com.techmomentum.wc2026.ui.team
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -34,7 +32,7 @@ import androidx.compose.ui.unit.sp
 import com.techmomentum.wc2026.data.model.Rarity
 import com.techmomentum.wc2026.data.model.Team
 import com.techmomentum.wc2026.domain.usecase.StickerSlot
-import com.techmomentum.wc2026.ui.components.TeamEmblem
+import com.techmomentum.wc2026.ui.components.TeamFlagBadge
 import com.techmomentum.wc2026.ui.components.rarityColor
 import com.techmomentum.wc2026.ui.theme.TeamPalette
 import com.techmomentum.wc2026.ui.theme.darken
@@ -56,7 +54,7 @@ fun CountryAlbumHero(
     val palette = teamPalette(team)
     val progress = (percent / 100f).coerceIn(0f, 1f)
     val subtitle = when {
-        ownedCount == 0 -> "Collect the full squad!"
+        ownedCount == 0 -> "Collect the crest and full squad!"
         ownedCount >= total -> "Squad complete!"
         else -> "${total - ownedCount} stickers to go"
     }
@@ -99,45 +97,24 @@ fun CountryAlbumHero(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
-            // Emblem with soft glow + white ring.
-            Box(
-                modifier = Modifier
-                    .size(CountryAlbumLayout.bannerEmblemSize + 12.dp)
-                    .shadow(
-                        elevation = 10.dp,
-                        shape = CircleShape,
-                        ambientColor = palette.accent.copy(alpha = 0.6f),
-                        spotColor = palette.accentVivid.copy(alpha = 0.6f),
-                    )
-                    .clip(CircleShape)
-                    .background(
-                        Brush.radialGradient(
-                            listOf(Color.White.copy(alpha = 0.45f), Color.White.copy(alpha = 0.12f)),
-                        ),
-                    )
-                    .border(3.dp, Color.White.copy(alpha = 0.95f), CircleShape)
-                    .padding(5.dp),
-                contentAlignment = Alignment.Center,
-            ) {
-                TeamEmblem(team = team, size = CountryAlbumLayout.bannerEmblemSize)
-            }
+            TeamFlagBadge(
+                team = team,
+                palette = palette,
+                size = CountryAlbumLayout.bannerEmblemSize,
+            )
 
             Column(
                 modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.spacedBy(5.dp),
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(team.flagEmoji, fontSize = 22.sp)
-                    Text(
-                        text = team.countryName,
-                        modifier = Modifier.padding(start = 6.dp),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Black,
-                        color = palette.onGradient,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
+                Text(
+                    text = team.countryName,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Black,
+                    color = palette.onGradient,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
