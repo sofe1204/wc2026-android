@@ -88,7 +88,7 @@ After changing squads, run `npm run generate:seed` (Node) or `python scripts/gen
 
 ## `player_ratings.csv` columns
 
-`player_id`, `club_name`, `club_league`, `overall`, `pace`, `shooting`, `passing`, `dribbling`, `defending`, `physical`, `diving`, `handling`, `kicking`, `reflexes`, `speed`, `positioning`
+`player_id`, `club_name`, `club_league`, `club_logo_url`, `overall`, `pace`, `shooting`, `passing`, `dribbling`, `defending`, `physical`, `diving`, `handling`, `kicking`, `reflexes`, `speed`, `positioning`
 
 - **Goalkeepers:** fill `diving` … `positioning`; outfield columns may be `0`.  
 - **Outfield:** fill `pace` … `physical`; goalkeeper columns may be `0`.  

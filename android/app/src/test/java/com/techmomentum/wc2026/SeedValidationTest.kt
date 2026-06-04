@@ -71,6 +71,7 @@ class SeedValidationTest {
             assertTrue(obj.containsKey("ratingsComplete"))
             assertTrue(obj.containsKey("clubName"))
             assertTrue(obj.containsKey("clubLeague"))
+            assertTrue(obj.containsKey("clubLogoUrl"))
         }
     }
 

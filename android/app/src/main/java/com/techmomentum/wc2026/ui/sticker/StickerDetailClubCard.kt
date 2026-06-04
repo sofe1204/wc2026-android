@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Shield
@@ -20,9 +21,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.techmomentum.wc2026.data.model.Player
 import com.techmomentum.wc2026.ui.theme.TeamPalette
 import com.techmomentum.wc2026.ui.theme.darken
@@ -35,6 +38,7 @@ fun StickerDetailClubCard(
 ) {
     val club = player.clubName.trim()
     val league = player.clubLeague.trim()
+    val logoUrl = player.clubLogoUrl.trim()
     if (club.isEmpty() && league.isEmpty()) return
 
     Box(
@@ -63,6 +67,7 @@ fun StickerDetailClubCard(
             ) {
                 Box(
                     modifier = Modifier
+                        .size(48.dp)
                         .clip(RoundedCornerShape(12.dp))
                         .background(
                             Brush.linearGradient(
@@ -71,14 +76,26 @@ fun StickerDetailClubCard(
                                     palette.accentVivid.copy(alpha = 0.12f),
                                 ),
                             ),
-                        )
-                        .padding(8.dp),
+                        ),
+                    contentAlignment = Alignment.Center,
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Shield,
-                        contentDescription = null,
-                        tint = palette.primary.darken(0.15f),
-                    )
+                    if (logoUrl.isNotBlank()) {
+                        AsyncImage(
+                            model = logoUrl,
+                            contentDescription = club.ifBlank { "Club logo" },
+                            modifier = Modifier
+                                .size(40.dp)
+                                .padding(4.dp),
+                            contentScale = ContentScale.Fit,
+                        )
+                    } else {
+                        Icon(
+                            imageVector = Icons.Outlined.Shield,
+                            contentDescription = null,
+                            tint = palette.primary.darken(0.15f),
+                            modifier = Modifier.padding(8.dp),
+                        )
+                    }
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                     if (club.isNotEmpty()) {

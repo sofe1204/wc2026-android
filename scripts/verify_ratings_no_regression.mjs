@@ -23,6 +23,7 @@ function loadSnapshot() {
       overall: p.ratings?.overall ?? 0,
       clubName: p.clubName ?? "",
       clubLeague: p.clubLeague ?? "",
+      clubLogoUrl: p.clubLogoUrl ?? "",
     };
   }
   return snap;

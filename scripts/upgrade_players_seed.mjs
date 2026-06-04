@@ -50,6 +50,7 @@ function upgradePlayer(p) {
     ...p,
     clubName: p.clubName ?? "",
     clubLeague: p.clubLeague ?? "",
+    clubLogoUrl: p.clubLogoUrl ?? "",
     ratings: { ...EMPTY_RATINGS, ...(p.ratings ?? {}) },
     ratingsComplete: p.ratingsComplete ?? false,
   };
@@ -77,6 +78,7 @@ function main() {
     player_id: p.playerId,
     club_name: p.clubName ?? "",
     club_league: p.clubLeague ?? "",
+    club_logo_url: p.clubLogoUrl ?? "",
     overall: p.ratings?.overall || "",
     pace: p.ratings?.pace || "",
     shooting: p.ratings?.shooting || "",
@@ -99,6 +101,7 @@ function main() {
       "player_id",
       "club_name",
       "club_league",
+      "club_logo_url",
       "overall",
       "pace",
       "shooting",

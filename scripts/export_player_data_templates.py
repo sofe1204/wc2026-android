@@ -39,6 +39,7 @@ def export_from_players(players: list[dict]) -> None:
             "player_id": p["playerId"],
             "club_name": p.get("clubName", ""),
             "club_league": p.get("clubLeague", ""),
+            "club_logo_url": p.get("clubLogoUrl", ""),
             "overall": ratings.get("overall", ""),
             "pace": ratings.get("pace", ""),
             "shooting": ratings.get("shooting", ""),

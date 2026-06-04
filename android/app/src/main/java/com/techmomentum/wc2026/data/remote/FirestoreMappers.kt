@@ -52,6 +52,7 @@ fun DocumentSnapshot.toPlayer(): Player {
         imageUrl = getString("imageUrl") ?: "",
         clubName = getString("clubName") ?: "",
         clubLeague = getString("clubLeague") ?: "",
+        clubLogoUrl = getString("clubLogoUrl") ?: "",
         ratings = ratings,
         ratingsComplete = getBoolean("ratingsComplete") ?: false,
         isActive = getBoolean("isActive") ?: true,

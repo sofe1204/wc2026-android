@@ -90,6 +90,19 @@ function main() {
     byId.set(id, row);
   }
 
+  const logoByClub = new Map();
+  for (const row of byId.values()) {
+    const name = row.club_name?.trim();
+    const logo = row.club_logo_url?.trim();
+    if (name && logo) logoByClub.set(name, logo);
+  }
+  for (const row of byId.values()) {
+    const name = row.club_name?.trim();
+    if (!name || row.club_logo_url?.trim()) continue;
+    const logo = logoByClub.get(name);
+    if (logo) row.club_logo_url = logo;
+  }
+
   let exitCode = 0;
   for (const playersPath of PLAYERS_PATHS) {
     const players = JSON.parse(fs.readFileSync(playersPath, "utf8"));
@@ -115,6 +128,7 @@ function main() {
         ...p,
         clubName: row.club_name?.trim() ?? "",
         clubLeague: row.club_league?.trim() ?? "",
+        clubLogoUrl: row.club_logo_url?.trim() ?? "",
         ratings,
         ratingsComplete: true,
       };

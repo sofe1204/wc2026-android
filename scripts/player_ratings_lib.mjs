@@ -11,6 +11,7 @@ export const RATINGS_CSV_COLUMNS = [
   "player_id",
   "club_name",
   "club_league",
+  "club_logo_url",
   "overall",
   "pace",
   "shooting",
@@ -130,10 +131,15 @@ export function loadRatingsCsv(filePath) {
   return byId;
 }
 
+export function normalizeRatingRow(row) {
+  return Object.fromEntries(RATINGS_CSV_COLUMNS.map((c) => [c, String(row?.[c] ?? "").trim()]));
+}
+
 export function writeRatingsCsv(filePath, rows) {
   const lines = [RATINGS_CSV_COLUMNS.join(",")];
   for (const r of rows) {
-    lines.push(RATINGS_CSV_COLUMNS.map((c) => escapeCsv(r[c])).join(","));
+    const normalized = normalizeRatingRow(r);
+    lines.push(RATINGS_CSV_COLUMNS.map((c) => escapeCsv(normalized[c])).join(","));
   }
   const dir = path.dirname(filePath);
   if (dir) fs.mkdirSync(dir, { recursive: true });
@@ -389,12 +395,14 @@ export function rowToRating(player, sofifa) {
   const overall = val(sofifa, "overall_rating", "overall");
   const club = sofifa.club_name?.trim() ?? "";
   const league = sofifa.club_league_name?.trim() ?? "";
+  const clubLogo = sofifa.club_logo?.trim() ?? "";
   if (player.position === "Goalkeeper") {
     const gk = goalkeeperFace(sofifa);
     return {
       player_id: player.playerId,
       club_name: club,
       club_league: league,
+      club_logo_url: clubLogo,
       overall,
       pace: 0,
       shooting: 0,
@@ -415,6 +423,7 @@ export function rowToRating(player, sofifa) {
     player_id: player.playerId,
     club_name: club,
     club_league: league,
+    club_logo_url: clubLogo,
     overall,
     pace: out.pace,
     shooting: out.shooting,

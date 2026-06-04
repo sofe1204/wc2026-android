@@ -53,6 +53,7 @@ def enrich_players(
 
         club_name = row.get("club_name", "").strip() if row else ""
         club_league = row.get("club_league", "").strip() if row else ""
+        club_logo_url = row.get("club_logo_url", "").strip() if row else ""
         ratings = ratings_from_row(row) if row else empty_ratings()
         complete = ratings_complete(position, ratings) if row else False
 
@@ -60,7 +61,7 @@ def enrich_players(
             ratings = fallback_ratings(position, rarity, shirt)
             complete = True
             fallback_count += 1
-            ratings_by_id[pid] = ratings_to_csv_row(pid, ratings, club_name, club_league)
+            ratings_by_id[pid] = ratings_to_csv_row(pid, ratings, club_name, club_league, club_logo_url)
         elif row is None and strict:
             errors.append(f"Missing ratings row for player_id={pid}")
             enriched.append(player)
@@ -74,6 +75,7 @@ def enrich_players(
             **player,
             "clubName": club_name,
             "clubLeague": club_league,
+            "clubLogoUrl": club_logo_url,
             "ratings": ratings,
             "ratingsComplete": complete,
         }
@@ -103,6 +105,16 @@ def main() -> int:
         return 1
 
     ratings_by_id = load_ratings_csv()
+    logo_by_club: dict[str, str] = {}
+    for row in ratings_by_id.values():
+        name = row.get("club_name", "").strip()
+        logo = row.get("club_logo_url", "").strip()
+        if name and logo:
+            logo_by_club[name] = logo
+    for row in ratings_by_id.values():
+        name = row.get("club_name", "").strip()
+        if name and not row.get("club_logo_url", "").strip() and name in logo_by_club:
+            row["club_logo_url"] = logo_by_club[name]
     if not ratings_by_id:
         print(f"No rows in {RATINGS_CSV.relative_to(ROOT)}", file=sys.stderr)
         return 1

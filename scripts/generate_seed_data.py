@@ -81,6 +81,7 @@ def main():
                 "imageUrl": "",
                 "clubName": "",
                 "clubLeague": "",
+                "clubLogoUrl": "",
                 "ratings": empty_ratings(),
                 "ratingsComplete": False,
                 "isActive": True,

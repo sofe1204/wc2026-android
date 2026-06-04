@@ -82,13 +82,18 @@ async function main() {
     }
 
     const existing = existingById.get(player.playerId);
+    const hit = findBestMatch(player, index);
     if (fillOnly && existing && ratingRowComplete(existing, player.position)) {
-      outRows.push(existing);
+      let row = existing;
+      if (!(row.club_logo_url || "").trim()) {
+        const logo = hit?.club_logo?.trim() ?? "";
+        if (logo) row = { ...row, club_logo_url: logo };
+      }
+      outRows.push(row);
       preserved++;
       continue;
     }
 
-    const hit = findBestMatch(player, index);
     let row =
       hit && val(hit, "overall_rating", "overall") > 0
         ? rowToRating(player, hit)

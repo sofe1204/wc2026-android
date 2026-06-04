@@ -18,6 +18,7 @@ RATINGS_CSV_COLUMNS = [
     "player_id",
     "club_name",
     "club_league",
+    "club_logo_url",
     "overall",
     "pace",
     "shooting",
@@ -115,11 +116,18 @@ def fallback_ratings(position: str, rarity: str, shirt: int) -> dict[str, int]:
     return out
 
 
-def ratings_to_csv_row(player_id: str, ratings: dict[str, int], club_name: str = "", club_league: str = "") -> dict[str, str]:
+def ratings_to_csv_row(
+    player_id: str,
+    ratings: dict[str, int],
+    club_name: str = "",
+    club_league: str = "",
+    club_logo_url: str = "",
+) -> dict[str, str]:
     row: dict[str, str] = {
         "player_id": player_id,
         "club_name": club_name,
         "club_league": club_league,
+        "club_logo_url": club_logo_url,
     }
     for key in empty_ratings():
         row[key] = str(ratings.get(key, 0))
@@ -157,7 +165,8 @@ def load_ratings_csv(path: Path = RATINGS_CSV) -> dict[str, dict[str, str]]:
     by_id: dict[str, dict[str, str]] = {}
     with path.open(encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
-        missing = set(RATINGS_CSV_COLUMNS) - set(reader.fieldnames or [])
+        fieldnames = reader.fieldnames or []
+        missing = set(RATINGS_CSV_COLUMNS) - set(fieldnames)
         if missing:
             raise ValueError(f"player_ratings.csv missing columns: {sorted(missing)}")
         for row in reader:

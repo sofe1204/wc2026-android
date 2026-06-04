@@ -57,6 +57,7 @@ private data class PlayerSeedDto(
     @SerialName("imageUrl") val imageUrl: String = "",
     @SerialName("clubName") val clubName: String = "",
     @SerialName("clubLeague") val clubLeague: String = "",
+    @SerialName("clubLogoUrl") val clubLogoUrl: String = "",
     @SerialName("ratings") val ratings: PlayerRatingsSeedDto = PlayerRatingsSeedDto(),
     @SerialName("ratingsComplete") val ratingsComplete: Boolean = false,
     @SerialName("isActive") val isActive: Boolean = true,
@@ -114,6 +115,7 @@ class SeedJsonParser @Inject constructor(
                 imageUrl = dto.imageUrl,
                 clubName = dto.clubName,
                 clubLeague = dto.clubLeague,
+                clubLogoUrl = dto.clubLogoUrl,
                 ratings = PlayerRatings(
                     overall = dto.ratings.overall,
                     pace = dto.ratings.pace,

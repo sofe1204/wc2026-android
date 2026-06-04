@@ -13,6 +13,7 @@ data class Player(
     val imageUrl: String = "",
     val clubName: String = "",
     val clubLeague: String = "",
+    val clubLogoUrl: String = "",
     val ratings: PlayerRatings = PlayerRatings(),
     val ratingsComplete: Boolean = false,
     val isActive: Boolean = true,
