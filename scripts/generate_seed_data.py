@@ -20,11 +20,13 @@ from official_squads_lib import (  # noqa: E402
 from player_data_lib import empty_ratings, player_id_for  # noqa: E402
 
 
-def anime_prompt(player_name: str, country: str, shirt: int, position: str) -> str:
+def sticker_prompt(player_name: str, country: str) -> str:
+    """Pixar-style album prompt; only player name and country vary."""
     return (
-        f"Anime-style collectible football sticker portrait of {player_name} as an inspired stylized character, "
-        f"not copied from a photo, wearing a generic {country}-inspired football shirt number {shirt}, "
-        f"{position} identity, confident expression, stadium lights, vibrant card border, clean line art."
+        f"{player_name} as a stylized Pixar-style sticker album portrait, head and upper torso only, "
+        f"wearing {country} football jersey, friendly confident expression, detailed hair and looks, "
+        f"subtle blurred football stadium and green pitch background, collectible sticker look, 3:4 vertical, "
+        f"inspired stylized character not copied from a photo, no text, no watermark"
     )
 
 
@@ -75,7 +77,7 @@ def main():
                 "playerName": pname,
                 "position": pos,
                 "rarity": rarity,
-                "animeStickerPrompt": anime_prompt(pname, country, shirt, pos),
+                "animeStickerPrompt": sticker_prompt(pname, country),
                 "imageUrl": "",
                 "clubName": "",
                 "clubLeague": "",

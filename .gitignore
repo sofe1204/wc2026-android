@@ -26,4 +26,9 @@ firebase-debug.log
 data/wikipedia_squads_raw.json
 
 # Secrets — never commit real keys
+.env
 android/app/google-services.json
+
+# Sticker image generation artifacts
+data/sticker_images_progress.json
+data/generated_stickers/

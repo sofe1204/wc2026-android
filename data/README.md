@@ -95,3 +95,21 @@ After changing squads, run `npm run generate:seed` (Node) or `python scripts/gen
 - `player_id` must match seed (`{team_id}_{slugified_name}`).
 
 `ratingsComplete` in JSON is set automatically when overall and the correct six attributes for that position are all &gt; 0.
+
+## Sticker images (fal.ai / Imagen 4)
+
+**Full go-live steps:** [`docs/GO_LIVE.md`](../docs/GO_LIVE.md)
+
+```bash
+npm run go-live:check              # preflight
+npm run go-live:images:pilot       # 5 test images
+npm run go-live:images             # all players
+npm run go-live:images:emblems     # 48 crests
+npm run go-live:publish            # Firestore for signed-in users
+```
+
+Default model: **Imagen 4** (`fal-ai/imagen4/preview`), 3:4, ~$0.04/image (~$60 budget for full album).
+
+Player prompts use only **player name** + **country**. Refresh without wiping ratings: `npm run update:sticker-prompts`.
+
+Progress: `data/sticker_images_progress.json` (gitignored).

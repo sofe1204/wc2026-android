@@ -165,6 +165,16 @@ Regenerate seed JSON before re-seeding:
 npm run data:full && npm run sync && npm run seed:firestore
 ```
 
+### Sticker images + go live
+
+Pixar-style stickers via **fal Imagen 4**, Storage upload, Firestore publish. See **[`docs/GO_LIVE.md`](docs/GO_LIVE.md)**.
+
+```bash
+npm run go-live:check
+npm run go-live:images:pilot && npm run go-live:images && npm run go-live:images:emblems
+npm run go-live:publish
+```
+
 ### 4. Build from terminal
 
 ```bash
