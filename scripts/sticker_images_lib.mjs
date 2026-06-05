@@ -5,12 +5,33 @@ import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 
-/** Default: Imagen 4 preview (~$0.04/image, 3:4). Override with FAL_MODEL in .env. */
+/** T2I fallback (~$0.04/image). Kontext edit used when STICKER_MASTER_IMAGE_URL is set. */
 export const DEFAULT_FAL_MODEL = "fal-ai/imagen4/preview";
+export const DEFAULT_KONTEXT_MODEL = "fal-ai/flux-pro/kontext";
 export const IMAGEN4_COST_PER_IMAGE = 0.04;
 
+export function isGoalkeeper(position) {
+  return String(position || "").toLowerCase() === "goalkeeper";
+}
+
+export function getMasterImageUrl(position) {
+  const gk = process.env.STICKER_MASTER_GK_IMAGE_URL?.trim();
+  const outfield = process.env.STICKER_MASTER_IMAGE_URL?.trim();
+  if (isGoalkeeper(position) && gk) return gk;
+  return outfield || null;
+}
+
+export function usesKontextEdit() {
+  return Boolean(
+    process.env.STICKER_MASTER_IMAGE_URL?.trim() ||
+      process.env.STICKER_MASTER_GK_IMAGE_URL?.trim()
+  );
+}
+
 export function getFalModel() {
-  return (process.env.FAL_MODEL || DEFAULT_FAL_MODEL).trim();
+  if (process.env.FAL_MODEL?.trim()) return process.env.FAL_MODEL.trim();
+  if (usesKontextEdit()) return DEFAULT_KONTEXT_MODEL;
+  return DEFAULT_FAL_MODEL;
 }
 
 export function falRunUrl(model = getFalModel()) {
@@ -21,14 +42,58 @@ function isImagenModel(model) {
   return model.includes("imagen");
 }
 
-/** Pixar-style album prompt; only player name and country vary. */
-export function stickerPrompt(playerName, countryName) {
+function isKontextModel(model) {
+  return model.includes("kontext");
+}
+
+const STYLE_CORE =
+  "centered head and upper torso portrait, front-facing, neutral slight smile, " +
+  "Pixar-inspired stylized 3D illustration, soft even studio lighting, " +
+  "green football pitch background with white penalty-box lines, rectangular white sticker border, " +
+  "glossy reflection on right, peeled sticker corner bottom-right, 3:4 vertical";
+
+/** Jersey line — outfield vs goalkeeper. */
+export function kitInstructions(countryName, position) {
+  if (isGoalkeeper(position)) {
+    return (
+      `Jersey: ${countryName} national team goalkeeper kit, long-sleeve goalkeeper shirt, ` +
+      `goalkeeper gloves visible, correct ${countryName} national team crest on chest, ` +
+      `clearly a goalkeeper kit not an outfield shirt`
+    );
+  }
   return (
-    `${playerName} as a stylized Pixar-style sticker album portrait, head and upper torso only, ` +
-    `wearing ${countryName} football jersey, friendly confident expression, detailed hair and looks, ` +
-    `subtle blurred football stadium and green pitch background, collectible sticker look, 3:4 vertical, ` +
-    `inspired stylized character not copied from a photo, no text, no watermark`
+    `Jersey: ${countryName} national team outfield home kit, short-sleeve shirt, ` +
+    `correct ${countryName} national team crest on left chest, not a goalkeeper kit`
   );
+}
+
+/** Text-to-image prompt; name, country, and kit type (GK vs outfield) vary. */
+export function stickerPrompt(playerName, countryName, position = "Midfielder") {
+  return (
+    `${playerName} as a stylized Pixar-style sticker album portrait. ${STYLE_CORE}. ` +
+    `${kitInstructions(countryName, position)}. ` +
+    `Stylized inspired character not copied from a photo. No text, no watermark.`
+  );
+}
+
+/** Kontext edit prompt — requires STICKER_MASTER_IMAGE_URL reference. */
+export function kontextEditPrompt(playerName, countryName, position = "Midfielder") {
+  return (
+    `Use the reference image as the exact composition template. ` +
+    `Keep identical framing, crop, sticker border, peeled corner, green pitch background, ` +
+    `white lines, lighting, and Pixar stylized 3D style. Do not change camera angle or layout. ` +
+    `Replace only the player with ${playerName}. ${kitInstructions(countryName, position)}. ` +
+    `Do not reuse the reference jersey badge or colors; use the correct ${countryName} national crest. ` +
+    `Front-facing portrait, neutral slight smile. No text, no watermark.`
+  );
+}
+
+/** Pick T2I or Kontext edit prompt from player seed row + .env masters. */
+export function promptForPlayer(player) {
+  if (getMasterImageUrl(player.position)) {
+    return kontextEditPrompt(player.playerName, player.countryName, player.position);
+  }
+  return stickerPrompt(player.playerName, player.countryName, player.position);
 }
 
 export function loadEnvFile(root) {
@@ -51,7 +116,7 @@ export function loadEnvFile(root) {
   }
 }
 
-/** Seed JSON already contains the full prompt; pass through unchanged. */
+/** @deprecated Use promptForPlayer(player). Kept for dry-run on stored prompts. */
 export function buildPlayerPrompt(animeStickerPrompt) {
   return animeStickerPrompt;
 }
@@ -131,7 +196,24 @@ export async function fetchImageBuffer(url) {
  */
 function buildFalRequestBody(model, prompt, opts = {}) {
   let body;
-  if (isImagenModel(model)) {
+  if (isKontextModel(model)) {
+    const imageUrl = opts.masterUrl?.trim();
+    if (!imageUrl) {
+      throw new Error(
+        "Kontext model requires STICKER_MASTER_IMAGE_URL (and optional STICKER_MASTER_GK_IMAGE_URL)"
+      );
+    }
+    body = {
+      prompt,
+      image_url: imageUrl,
+      aspect_ratio: "3:4",
+      output_format: "jpeg",
+      num_images: 1,
+      guidance_scale: 3.5,
+      enhance_prompt: false,
+      safety_tolerance: "2",
+    };
+  } else if (isImagenModel(model)) {
     body = {
       prompt,
       aspect_ratio: "3:4",
@@ -163,7 +245,7 @@ export async function generateWithFal(prompt, opts = {}) {
     throw new Error("FAL_KEY is not set. Add it to .env or export FAL_KEY=...");
   }
 
-  const model = getFalModel();
+  const model = opts.model || getFalModel();
   const url = falRunUrl(model);
   const body = buildFalRequestBody(model, prompt, opts);
 

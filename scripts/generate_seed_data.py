@@ -20,13 +20,31 @@ from official_squads_lib import (  # noqa: E402
 from player_data_lib import empty_ratings, player_id_for  # noqa: E402
 
 
-def sticker_prompt(player_name: str, country: str) -> str:
-    """Pixar-style album prompt; only player name and country vary."""
+def _kit_instructions(country: str, position: str) -> str:
+    if position == "Goalkeeper":
+        return (
+            f"Jersey: {country} national team goalkeeper kit, long-sleeve goalkeeper shirt, "
+            f"goalkeeper gloves visible, correct {country} national team crest on chest, "
+            f"clearly a goalkeeper kit not an outfield shirt"
+        )
     return (
-        f"{player_name} as a stylized Pixar-style sticker album portrait, head and upper torso only, "
-        f"wearing {country} football jersey, friendly confident expression, detailed hair and looks, "
-        f"subtle blurred football stadium and green pitch background, collectible sticker look, 3:4 vertical, "
-        f"inspired stylized character not copied from a photo, no text, no watermark"
+        f"Jersey: {country} national team outfield home kit, short-sleeve shirt, "
+        f"correct {country} national team crest on left chest, not a goalkeeper kit"
+    )
+
+
+def sticker_prompt(player_name: str, country: str, position: str) -> str:
+    """Pixar-style album prompt; name, country, and kit type vary."""
+    style = (
+        "centered head and upper torso portrait, front-facing, neutral slight smile, "
+        "Pixar-inspired stylized 3D illustration, soft even studio lighting, "
+        "green football pitch background with white penalty-box lines, rectangular white sticker border, "
+        "glossy reflection on right, peeled sticker corner bottom-right, 3:4 vertical"
+    )
+    return (
+        f"{player_name} as a stylized Pixar-style sticker album portrait. {style}. "
+        f"{_kit_instructions(country, position)}. "
+        f"Stylized inspired character not copied from a photo. No text, no watermark."
     )
 
 
@@ -77,7 +95,7 @@ def main():
                 "playerName": pname,
                 "position": pos,
                 "rarity": rarity,
-                "animeStickerPrompt": sticker_prompt(pname, country),
+                "animeStickerPrompt": sticker_prompt(pname, country, pos),
                 "imageUrl": "",
                 "clubName": "",
                 "clubLeague": "",

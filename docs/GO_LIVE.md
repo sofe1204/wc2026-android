@@ -27,7 +27,9 @@ One-time production setup so **signed-in users** see stickers from Firestore and
 
 ## Tomorrow — generate all images
 
-Default model: **Imagen 4** (`fal-ai/imagen4/preview`), **3:4**, ~**$0.04/image** (~**$52** for 1,296 stickers).
+**Recommended:** upload a master outfield sticker (+ optional GK master) to Storage, set `STICKER_MASTER_IMAGE_URL` in `.env` → script uses **FLUX Kontext edit** for consistent album layout. Goalkeepers get a **goalkeeper kit** prompt; outfield get **short-sleeve kit** + correct country crest.
+
+Without master URLs: falls back to **Imagen 4** text-to-image (~**$0.04/image**, less consistent).
 
 ### Step 1 — Pilot (5 images)
 

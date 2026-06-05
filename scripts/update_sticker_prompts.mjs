@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Refresh animeStickerPrompt on existing players_seed.json (keeps ratings, imageUrl, etc.).
- * Only playerName and countryName are substituted into the Pixar-style template.
+ * playerName, countryName, and position (goalkeeper vs outfield kit) go into the template.
  */
 import fs from "fs";
 import path from "path";
@@ -20,7 +20,7 @@ for (const dir of seedDirs) {
   const file = path.join(dir, "players_seed.json");
   const players = readJson(file);
   for (const p of players) {
-    const next = stickerPrompt(p.playerName, p.countryName);
+    const next = stickerPrompt(p.playerName, p.countryName, p.position);
     if (p.animeStickerPrompt !== next) {
       p.animeStickerPrompt = next;
       updated++;

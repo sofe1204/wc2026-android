@@ -22,10 +22,13 @@ import path from "path";
 import { fileURLToPath } from "url";
 import {
   buildEmblemPrompt,
-  buildPlayerPrompt,
   fetchImageBuffer,
   generateWithFal,
   getFalModel,
+  getMasterImageUrl,
+  isGoalkeeper,
+  promptForPlayer,
+  usesKontextEdit,
   initFirebaseAdmin,
   loadEnvFile,
   parseArgs,
@@ -84,7 +87,8 @@ async function main() {
   }
 
   if (!args.dryRun) {
-    console.log(`fal model: ${getFalModel()} (aspect 3:4)\n`);
+    const mode = usesKontextEdit() ? "Kontext edit (master reference)" : "text-to-image";
+    console.log(`fal model: ${getFalModel()} | ${mode} | aspect 3:4\n`);
   }
 
   const baseSeed = projectConfig.seed.functions;
@@ -125,19 +129,23 @@ async function main() {
     if (args.playerId) queue = queue.filter((p) => p.playerId === args.playerId);
     if (args.limit != null) queue = queue.slice(0, args.limit);
 
-    console.log(`Players to generate: ${queue.length}`);
+    const gkCount = queue.filter((p) => isGoalkeeper(p.position)).length;
+    console.log(`Players to generate: ${queue.length} (${gkCount} goalkeepers)`);
     if (args.dryRun) {
       for (const p of queue.slice(0, 5)) {
-        console.log(`  [dry-run] ${p.playerId}: ${buildPlayerPrompt(p.animeStickerPrompt).slice(0, 120)}…`);
+        const tag = isGoalkeeper(p.position) ? "GK" : "outfield";
+        console.log(`  [dry-run] ${p.playerId} (${tag}): ${promptForPlayer(p).slice(0, 120)}…`);
       }
       if (queue.length > 5) console.log(`  … and ${queue.length - 5} more`);
     } else {
       await runPool(queue, args.concurrency, async (player) => {
         const id = player.playerId;
         try {
-          const prompt = buildPlayerPrompt(player.animeStickerPrompt);
+          const prompt = promptForPlayer(player);
+          player.animeStickerPrompt = prompt;
           const { imageUrl: falUrl, seed } = await generateWithFal(prompt, {
             seed: globalSeed,
+            masterUrl: getMasterImageUrl(player.position),
           });
           let publicUrl = falUrl;
           if (!args.skipUpload) {
