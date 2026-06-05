@@ -82,7 +82,8 @@ def clean_name(raw: str) -> str:
     s = re.sub(r"\{\{[^}]+\}\}", "", raw)
     s = re.sub(r"<[^>]+>", "", s)
     s = re.sub(r"\[\[([^|\]]+)\|([^\]]+)\]\]", r"\2", s)
-    s = re.sub(r"\[\[([^\]]+)\]\]", r"\1", s)
+    s = re.sub(r"\[\[([^\]|]+?)(?:\s*\([^)]*\))?\]\]", r"\1", s)
+    s = re.sub(r"\[\[([^\]|]+?)(?:\s*\([^)]*\))?", r"\1", s)
     s = re.sub(r"'''", "", s).strip()
     return s
 
@@ -90,6 +91,31 @@ def clean_name(raw: str) -> str:
 def parse_pos(cell: str) -> str:
     m = re.search(r"\b(GK|DF|MF|FW)\b", cell)
     return POS_MAP.get(m.group(1) if m else "MF", "Midfielder")
+
+
+def parse_nat_fs_fields(line: str) -> dict[str, str] | None:
+    if "nat fs" not in line or "player" not in line:
+        return None
+    fields: dict[str, str] = {}
+    for m in re.finditer(r"\|([^|=]+)=([^|{}]+)", line):
+        fields[m.group(1).strip().lower()] = m.group(2).strip()
+    if "no" not in fields or "name" not in fields:
+        return None
+    return fields
+
+
+def player_entry_from_fields(fields: dict[str, str], *, club: str = "", club_nat: str = "") -> dict:
+    shirt = int(fields["no"])
+    pos = parse_pos(fields.get("pos", "MF"))
+    name = clean_name(fields["name"])
+    entry: dict = {"shirt": shirt, "name": name, "position": pos}
+    wiki_club = clean_name(fields.get("club", club))
+    wiki_nat = fields.get("clubnat", club_nat).strip()
+    if wiki_club:
+        entry["club"] = wiki_club
+    if wiki_nat:
+        entry["club_nat"] = wiki_nat
+    return entry
 
 
 def parse_player_templates(wt: str) -> dict[str, list[dict]]:
@@ -105,16 +131,11 @@ def parse_player_templates(wt: str) -> dict[str, list[dict]]:
             continue
         if not current:
             continue
-        pm = re.search(
-            r"\{\{nat fs [^}]*player\|no=(\d+)\|pos=([A-Z]{2})\|[^|]*\|name=([^|}|]+)",
-            line,
-        )
-        if pm:
-            shirt = int(pm.group(1))
-            pos = parse_pos(pm.group(2))
-            name = clean_name(pm.group(3))
+        fields = parse_nat_fs_fields(line)
+        if fields:
+            name = clean_name(fields["name"])
             if name:
-                squads[current].append({"shirt": shirt, "name": name, "position": pos})
+                squads[current].append(player_entry_from_fields(fields))
             continue
         if line.strip().startswith("|") and not line.strip().startswith("|-") and "Player" not in line:
             cells = [c.strip() for c in line.split("|")[1:-1]]
@@ -122,8 +143,12 @@ def parse_player_templates(wt: str) -> dict[str, list[dict]]:
                 shirt = int(cells[0])
                 pos = parse_pos(cells[1])
                 name = clean_name(cells[2])
+                club = clean_name(cells[6]) if len(cells) >= 7 else ""
                 if name and not name.startswith("{{"):
-                    squads[current].append({"shirt": shirt, "name": name, "position": pos})
+                    entry = {"shirt": shirt, "name": name, "position": pos}
+                    if club:
+                        entry["club"] = club
+                    squads[current].append(entry)
     return squads
 
 

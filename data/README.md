@@ -10,6 +10,7 @@ Canonical squad lists and per-player attribute numbers are maintained as CSV, th
 | `fifa_teams_2026.json` | Official group draw (groups A–L) |
 | `squads.csv` | Generated from official squads when you run `generate_seed_data.py` |
 | `player_ratings.csv` | Club + overall + six outfield or six goalkeeper attributes per `player_id` |
+| `official_squads_2026.json` | **Club names** from [Wikipedia FIFA squads](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads) (tournament source) |
 
 ## Pipeline
 
@@ -78,6 +79,16 @@ npm run ratings:complete
 Optional SoFIFA-derived patches: `data/ratings_overrides.json` (merged into empty fields only during populate).
 
 After changing squads, run `npm run generate:seed` (Node) or `python scripts/generate_seed_data.py` so `player_id` values stay aligned with `{team_id}_{slugified_name}`.
+
+### Club names (current clubs)
+
+**`club_name`** comes from Wikipedia FIFA 2026 squad pages (not stale SoFIFA player rows). League + logo are matched from SoFIFA by club name.
+
+```bash
+npm run import:official-squads   # refresh squads + clubs from Wikipedia
+npm run sync:clubs               # update CSV + players_seed.json
+npm run go-live:publish          # if signed-in users use Firestore
+```
 
 ## `squads.csv` columns
 

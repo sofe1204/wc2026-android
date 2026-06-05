@@ -4,6 +4,7 @@
   "scripts": {
     "generate:seed": "python3 scripts/generate_seed_data.py",
     "import:official-squads": "python3 scripts/import_official_wc2026_squads.py",
+    "sync:clubs": "node scripts/sync_player_clubs.mjs",
     "populate:ratings": "node scripts/populate_player_ratings.mjs --enrich",
     "export:unmatched": "node scripts/export_unmatched_players.mjs",
     "build:overrides": "node scripts/build_ratings_overrides.mjs",

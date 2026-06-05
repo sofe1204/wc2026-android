@@ -3,6 +3,7 @@
  */
 import fs from "fs";
 import path from "path";
+import { playerIdFor } from "./seed_lib.mjs";
 
 export const SOFIFA_URL =
   "https://github.com/SolideSpoke/sofifa-web-scraper/raw/main/output/player-data-full.csv";
@@ -447,6 +448,100 @@ export function emptyRatingRow(playerId) {
 export function escapeCsv(v) {
   const s = String(v ?? "");
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+export function normalizeClubName(name) {
+  return (name ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\b(fc|cf|sc|ac|bk|sk|sv|vfb|vfl|rb|cd|ud|sd|ca|rc|afc)\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** club normalized name → { league, logo } from SoFIFA rows */
+export function buildSofifaClubIndex(sofifaRows) {
+  const byNorm = new Map();
+  for (const row of sofifaRows) {
+    const club = row.club_name?.trim();
+    if (!club) continue;
+    const norm = normalizeClubName(club);
+    if (!norm || byNorm.has(norm)) continue;
+    byNorm.set(norm, {
+      league: row.club_league_name?.trim() ?? "",
+      logo: row.club_logo?.trim() ?? "",
+    });
+  }
+  return byNorm;
+}
+
+export function lookupClubMeta(clubName, clubIndex) {
+  const norm = normalizeClubName(clubName);
+  if (!norm) return null;
+  if (clubIndex.has(norm)) return clubIndex.get(norm);
+
+  let best = null;
+  let bestLen = 0;
+  for (const [key, meta] of clubIndex) {
+    if (norm.includes(key) || key.includes(norm)) {
+      const len = Math.min(norm.length, key.length);
+      if (len > bestLen) {
+        bestLen = len;
+        best = meta;
+      }
+    }
+  }
+  return best;
+}
+
+function sanitizeClubName(club) {
+  return (club ?? "")
+    .replace(/\[\[/g, "")
+    .replace(/\]\]/g, "")
+    .replace(/\s*\([^)]*\)\s*$/, "")
+    .trim();
+}
+
+export function loadOfficialClubIndexes(root) {
+  const p = path.join(root, "data", "official_squads_2026.json");
+  const byPlayerId = new Map();
+  const byTeamShirt = new Map();
+  if (!fs.existsSync(p)) return { byPlayerId, byTeamShirt };
+  const data = JSON.parse(fs.readFileSync(p, "utf8"));
+  for (const [teamId, squad] of Object.entries(data.teams ?? {})) {
+    for (const entry of squad) {
+      const club = sanitizeClubName(entry.club?.trim());
+      if (!club) continue;
+      const info = { club, clubNat: entry.club_nat?.trim() ?? "" };
+      byPlayerId.set(playerIdFor(teamId, entry.name), info);
+      byTeamShirt.set(`${teamId}_${entry.shirt}`, info);
+    }
+  }
+  return { byPlayerId, byTeamShirt };
+}
+
+export function loadOfficialClubsMap(root) {
+  return loadOfficialClubIndexes(root).byPlayerId;
+}
+
+export function officialClubFor(player, indexes) {
+  const byShirt = indexes.byTeamShirt.get(`${player.teamId}_${player.shirtNumber}`);
+  if (byShirt) return byShirt;
+  return indexes.byPlayerId.get(player.playerId) ?? null;
+}
+
+/** Wikipedia club overrides SoFIFA; league/logo resolved from SoFIFA club index. */
+export function applyOfficialClub(row, player, officialIndexes, clubIndex) {
+  const official = officialClubFor(player, officialIndexes);
+  if (!official?.club) return row;
+  const next = { ...row, club_name: official.club };
+  const meta = lookupClubMeta(official.club, clubIndex);
+  if (meta?.league) next.club_league = meta.league;
+  if (meta?.logo && !next.club_logo_url?.trim()) next.club_logo_url = meta.logo;
+  return next;
 }
 
 export function buildSofifaIndex(sofifaRows) {

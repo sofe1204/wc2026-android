@@ -18,8 +18,11 @@ import {
   val,
   rowToRating,
   emptyRatingRow,
+  applyOfficialClub,
+  buildSofifaClubIndex,
   buildSofifaIndex,
   findBestMatch,
+  loadOfficialClubIndexes,
   isPlaceholderPlayer,
   loadRatingsCsv,
   ratingRowComplete,
@@ -65,6 +68,8 @@ async function main() {
 
   const players = JSON.parse(fs.readFileSync(PLAYERS_PATH, "utf8"));
   const index = buildSofifaIndex(sofifaRows);
+  const clubIndex = buildSofifaClubIndex(sofifaRows);
+  const officialIndexes = loadOfficialClubIndexes(ROOT);
   const overrides = loadOverrides();
 
   let matched = 0;
@@ -89,6 +94,7 @@ async function main() {
         const logo = hit?.club_logo?.trim() ?? "";
         if (logo) row = { ...row, club_logo_url: logo };
       }
+      row = applyOfficialClub(row, player, officialIndexes, clubIndex);
       outRows.push(row);
       preserved++;
       continue;
@@ -107,6 +113,8 @@ async function main() {
       row = mergeOverrideEmptyOnly(row, overrides.get(player.playerId));
       if (!beforeComplete && ratingRowComplete(row, player.position)) overridden++;
     }
+
+    row = applyOfficialClub(row, player, officialIndexes, clubIndex);
 
     outRows.push(row);
     if (!ratingRowComplete(row, player.position)) unmatched.push(player.playerId);
