@@ -67,10 +67,8 @@ class CloudFunctionsClient @Inject constructor(
 
     suspend fun spinSlotMachine(): SlotResult {
         val data = invoke("spinSlotMachine")
-        @Suppress("UNCHECKED_CAST")
-        val gridRaw = data["grid"] as? List<List<String>> ?: emptyList()
         return SlotResult(
-            grid = gridRaw,
+            grid = parseSlotGrid(data),
             isWin = data["isWin"] as? Boolean ?: false,
             rewardGranted = data["rewardGranted"] as? Boolean ?: false,
             spinsRemaining = (data["spinsRemaining"] as? Number)?.toInt() ?: 0,
@@ -86,6 +84,34 @@ class CloudFunctionsClient @Inject constructor(
     suspend fun seedTeams(): CallableResult = call("seedTeams")
     suspend fun seedPlayers(): CallableResult = call("seedPlayers")
     suspend fun seedStickers(): CallableResult = call("seedStickers")
+
+    /**
+     * Prefer flat [symbolIds] (Firestore-safe) over nested [grid] from callable responses.
+     * Firebase Android can deserialize nested lists inconsistently; a flat 9-pack is reliable.
+     */
+    private fun parseSlotGrid(data: Map<String, Any?>): List<List<String>> {
+        val flat = (data["symbolIds"] as? List<*>)?.mapNotNull { it?.toString()?.trim()?.takeIf { s -> s.isNotEmpty() } }
+        if (flat != null && flat.size >= 9) {
+            return listOf(
+                flat.subList(0, 3),
+                flat.subList(3, 6),
+                flat.subList(6, 9),
+            )
+        }
+        val nested = data["grid"] as? List<*>
+        if (nested != null) {
+            val rows = nested.mapNotNull { row ->
+                (row as? List<*>)?.map { cell -> cell?.toString()?.trim().orEmpty() }
+            }
+            if (rows.isNotEmpty()) {
+                return List(3) { rowIndex ->
+                    val row = rows.getOrNull(rowIndex).orEmpty()
+                    List(3) { colIndex -> row.getOrNull(colIndex).orEmpty() }
+                }
+            }
+        }
+        return emptyList()
+    }
 
     @Suppress("UNCHECKED_CAST")
     private fun parseLeaderboardRows(raw: Any?): List<LeaderboardEntry> {

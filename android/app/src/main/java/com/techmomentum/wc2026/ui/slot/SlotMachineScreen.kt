@@ -66,7 +66,9 @@ fun SlotMachineScreen(
 ) {
     val state by viewModel.uiState.collectAsState()
     val activity = LocalContext.current as Activity
-    val slotBitmaps = remember(viewModel) { { url: String -> viewModel.slotBitmap(url) } }
+    val slotBitmaps = remember(viewModel, state.imageRefreshGeneration) {
+        { url: String -> viewModel.slotBitmap(url) }
+    }
     val haptic = LocalHapticFeedback.current
 
     LaunchedEffect(state.isWin, state.spinPhase) {

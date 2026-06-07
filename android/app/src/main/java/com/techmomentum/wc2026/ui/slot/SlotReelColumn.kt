@@ -169,6 +169,12 @@ private fun ColumnReelEngine(
         }
     }
 
+    LaunchedEffect(stopRequested, spinGeneration) {
+        if (stopRequested && spinGeneration > 0) {
+            hasSettled = false
+        }
+    }
+
     LaunchedEffect(stopRequested, spinGeneration, columnSlots, symbolPool) {
         if (!stopRequested || symbolPool.isEmpty()) return@LaunchedEffect
 
@@ -377,6 +383,7 @@ private fun SlotSymbolFace(
 ) {
     val context = LocalContext.current
     val pinnedBitmap = LocalSlotBitmaps.current(symbol.imageUrl)
+        ?.takeIf { it.width > 0 && it.height > 0 }
     val faceShape = RoundedCornerShape(10.dp)
     val defaultBorder = Brush.linearGradient(
         listOf(
@@ -438,6 +445,7 @@ private fun SlotSymbolFace(
                 SubcomposeAsyncImage(
                     model = ImageRequest.Builder(context)
                         .data(symbol.imageUrl)
+                        .allowHardware(false)
                         .memoryCacheKey(symbol.imageUrl)
                         .diskCacheKey(symbol.imageUrl)
                         .crossfade(false)
@@ -445,10 +453,11 @@ private fun SlotSymbolFace(
                     contentDescription = symbol.label,
                     modifier = imageModifier,
                     contentScale = ContentScale.Crop,
-                    // Never leave an empty cell: show the player's name while loading or on error.
                     loading = { SlotSymbolPlaceholder(label = symbol.label) },
                     error = { SlotSymbolPlaceholder(label = symbol.label) },
-                    success = { SubcomposeAsyncImageContent() },
+                    success = {
+                        SubcomposeAsyncImageContent(modifier = Modifier.fillMaxSize())
+                    },
                 )
             }
             else -> {
@@ -476,9 +485,10 @@ private fun SlotSymbolPlaceholder(label: String?) {
             )
         } else {
             Text(
-                text = "⚽",
-                fontSize = 22.sp,
-                color = Color.White.copy(alpha = 0.4f),
+                text = "?",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White.copy(alpha = 0.9f),
             )
         }
     }
@@ -512,7 +522,7 @@ private fun landingFinals(
 private fun fallbackSymbol(columnIndex: Int, row: Int): SlotSymbol =
     SlotSymbol(
         symbolId = "missing_${columnIndex}_$row",
-        label = "Player",
+        label = "?",
     )
 
 private fun buildLandingSequence(pool: List<SlotSymbol>, finals: List<SlotSymbol>): List<SlotSymbol> {

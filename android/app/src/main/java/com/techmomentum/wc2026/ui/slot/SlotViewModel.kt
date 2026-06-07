@@ -47,6 +47,8 @@ data class SlotUiState(
     val message: String? = null,
     val slotSpinAdAvailable: Boolean = true,
     val slotSpinAdCooldownMinutes: Int = 0,
+    /** Bumped when pinned reel images finish loading so cells recompose. */
+    val imageRefreshGeneration: Int = 0,
 ) {
     val isAnimating: Boolean get() = spinPhase != SlotSpinPhase.Idle
 }
@@ -76,6 +78,7 @@ class SlotViewModel @Inject constructor(
             // a fast no-op when already warmed.
             _uiState.update { it.copy(symbolsReady = true) }
             slotSymbolsWarmup.warmIfNeeded()
+            _uiState.update { it.copy(imageRefreshGeneration = it.imageRefreshGeneration + 1) }
             rewardedAdManager.load()
         }
         viewModelScope.launch {
@@ -178,6 +181,7 @@ class SlotViewModel @Inject constructor(
         }
 
         delay(SLOT_REEL_LAND_DURATION_MS.toLong())
+        slotSymbolsWarmup.warmIfNeeded()
 
         // Derive the highlight from the SAME resolved grid that is shown on screen
         // (by symbolId), so the pulsing line always matches the pictures the user sees.
@@ -197,6 +201,7 @@ class SlotViewModel @Inject constructor(
                 packsWonToday = result.packsWonToday,
                 isWin = result.isWin,
                 winningCells = winning,
+                imageRefreshGeneration = it.imageRefreshGeneration + 1,
                 hapticsEnabled = appPreferences.hapticsEnabled,
                 message = result.message.ifBlank {
                     when {
@@ -221,8 +226,8 @@ class SlotViewModel @Inject constructor(
     private suspend fun ensureSymbols() {
         if (symbolsById.isEmpty()) {
             loadSymbols()
-            slotSymbolsWarmup.warmIfNeeded()
         }
+        slotSymbolsWarmup.warmIfNeeded()
     }
 
     private fun showPreviewGrid() {
@@ -241,7 +246,7 @@ class SlotViewModel @Inject constructor(
 
     fun slotBitmap(url: String): ImageBitmap? = slotSymbolsWarmup.bitmapFor(url)
 
-    private fun resolveSymbol(id: String): SlotSymbol? = symbolsById[id]
+    private fun resolveSymbol(id: String): SlotSymbol? = symbolsById[id.trim()]
 
     private fun resolveSymbolOrFallback(id: String, row: Int, col: Int): SlotSymbol {
         resolveSymbol(id)?.let { return it }
@@ -252,7 +257,7 @@ class SlotViewModel @Inject constructor(
         // and the win check / highlight remain faithful to what was scored.
         return SlotSymbol(
             symbolId = id.ifBlank { "unknown_${col}_$row" },
-            label = "",
+            label = "?",
         )
     }
 
