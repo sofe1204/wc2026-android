@@ -47,45 +47,9 @@ fun SettingsScreen(
                 SettingRow("Notifications", state.notificationsEnabled) { viewModel.setNotifications(it) }
             }
             Text(
-                "Firebase connection",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(top = 16.dp),
-            )
-            Card(modifier = Modifier.padding(vertical = 8.dp)) {
-                Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Text(state.firebaseSummary, style = MaterialTheme.typography.bodyMedium)
-                    if (state.firebaseProjectId.isNotBlank()) {
-                        Text(
-                            "Project: ${state.firebaseProjectId}",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                    Text(
-                        if (state.useFirebaseEmulators) {
-                            "⚠ Local Firebase emulators (10.0.2.2) — run firebase emulators:start"
-                        } else {
-                            "✓ Production Firebase (google servers)"
-                        },
-                        style = MaterialTheme.typography.bodySmall,
-                        color = if (state.useFirebaseEmulators) {
-                            MaterialTheme.colorScheme.error
-                        } else {
-                            MaterialTheme.colorScheme.primary
-                        },
-                    )
-                    if (state.isGuest) {
-                        Text(
-                            "Guest mode uses Firebase catalog; sign in to save progress and rewards in the cloud.",
-                            style = MaterialTheme.typography.bodySmall,
-                        )
-                    }
-                }
-            }
-            Text(
                 "Legal",
                 style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(top = 16.dp),
             )
             Card(modifier = Modifier.padding(vertical = 8.dp)) {
                 Column(modifier = Modifier.padding(16.dp)) {

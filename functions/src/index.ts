@@ -21,7 +21,7 @@ import {
   grantRewardedAdStickers,
   openPackForUser,
   pickRandomSlotSymbolIds,
-  resetDailySlotIfNeeded,
+  computeDailySlotReset,
   swapDuplicatesForPack,
 } from "./helpers";
 import {
@@ -128,65 +128,75 @@ export const spinSlotMachine = onCall(async (request) => {
   const uid = requireAuth(request);
   const userRef = await getUserRef(uid);
 
-  return db.runTransaction(async (tx) => {
-    const snap = await tx.get(userRef);
-    if (!snap.exists) throw new HttpsError("not-found", "User not found.");
-    let data = snap.data()!;
-    data = await resetDailySlotIfNeeded(tx, userRef, data);
+  const flatIds = await pickRandomSlotSymbolIds(9);
+  const grid = [
+    [flatIds[0], flatIds[1], flatIds[2]],
+    [flatIds[3], flatIds[4], flatIds[5]],
+    [flatIds[6], flatIds[7], flatIds[8]],
+  ];
+  const isWin = checkSlotWin(grid);
 
-    const spins = data.slotSpinsRemaining ?? 0;
-    if (spins <= 0) {
-      throw new HttpsError("failed-precondition", "No slot spins remaining.");
-    }
+  try {
+    return await db.runTransaction(async (tx) => {
+      const snap = await tx.get(userRef);
+      if (!snap.exists) throw new HttpsError("not-found", "User not found.");
+      const data = computeDailySlotReset(snap.data()!);
 
-    const flatIds = await pickRandomSlotSymbolIds(9);
-    const grid = [
-      [flatIds[0], flatIds[1], flatIds[2]],
-      [flatIds[3], flatIds[4], flatIds[5]],
-      [flatIds[6], flatIds[7], flatIds[8]],
-    ];
-    const isWin = checkSlotWin(grid);
-    let rewardGranted = false;
-    let packsWonToday = data.slotRewardPacksWonToday ?? 0;
-    let unopenedPacks = data.unopenedPacks ?? 0;
-    let message = isWin ? "" : "No match — try again!";
-
-    if (isWin) {
-      if (packsWonToday < DAILY_SLOT_PACK_REWARD_CAP) {
-        rewardGranted = true;
-        packsWonToday += 1;
-        unopenedPacks += 1;
-        message = "You won a sticker pack!";
-      } else {
-        message = "Daily slot reward limit reached.";
+      const spins = data.slotSpinsRemaining ?? 0;
+      if (spins <= 0) {
+        throw new HttpsError("failed-precondition", "No slot spins remaining.");
       }
-    }
 
-    tx.update(userRef, {
-      slotSpinsRemaining: spins - 1,
-      slotRewardPacksWonToday: packsWonToday,
-      unopenedPacks,
+      let rewardGranted = false;
+      let packsWonToday = data.slotRewardPacksWonToday ?? 0;
+      let unopenedPacks = data.unopenedPacks ?? 0;
+      let message = isWin ? "" : "No match — try again!";
+
+      if (isWin) {
+        if (packsWonToday < DAILY_SLOT_PACK_REWARD_CAP) {
+          rewardGranted = true;
+          packsWonToday += 1;
+          unopenedPacks += 1;
+          message = "You won a sticker pack!";
+        } else {
+          message = "Daily slot reward limit reached.";
+        }
+      }
+
+      const spinsRemaining = spins - 1;
+      tx.update(userRef, {
+        slotSpinsRemaining: spinsRemaining,
+        slotSpinsDate: data.slotSpinsDate,
+        slotRewardPacksWonToday: packsWonToday,
+        slotRewardDate: data.slotRewardDate,
+        unopenedPacks,
+      });
+
+      const spinRef = db.collection("slot_history").doc();
+      tx.set(spinRef, {
+        uid,
+        symbolIds: flatIds,
+        isWin,
+        rewardGranted,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+
+      return {
+        success: true,
+        grid,
+        isWin,
+        rewardGranted,
+        spinsRemaining,
+        packsWonToday,
+        message,
+      };
     });
-
-    const spinRef = db.collection("slot_history").doc();
-    tx.set(spinRef, {
-      uid,
-      grid,
-      isWin,
-      rewardGranted,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
-
-    return {
-      success: true,
-      grid,
-      isWin,
-      rewardGranted,
-      spinsRemaining: spins - 1,
-      packsWonToday,
-      message,
-    };
-  });
+  } catch (e: unknown) {
+    if (e instanceof HttpsError) throw e;
+    const msg = e instanceof Error ? e.message : "Slot spin failed.";
+    console.error("spinSlotMachine error:", e);
+    throw new HttpsError("internal", msg);
+  }
 });
 
 export const redeemSwapDeck = onCall(async (request) => {

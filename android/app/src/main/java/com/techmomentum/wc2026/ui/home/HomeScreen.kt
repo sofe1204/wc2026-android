@@ -2,6 +2,7 @@ package com.techmomentum.wc2026.ui.home
 
 import android.app.Activity
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -21,17 +24,17 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.data.remote.RewardedAdManager
 import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
 import com.techmomentum.wc2026.ui.album.AlbumPageFrame
-import com.techmomentum.wc2026.ui.components.AlbumProgressBar
-import com.techmomentum.wc2026.ui.components.PackCard
 import com.techmomentum.wc2026.ui.components.PixarCelebrationChip
 import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
+import com.techmomentum.wc2026.ui.theme.darken
 import com.techmomentum.wc2026.utils.GameConstants
 
 @Composable
@@ -46,8 +49,12 @@ fun HomeScreen(
     val ui by viewModel.uiState.collectAsState()
     val profile = home.profile
     val context = LocalContext.current
-    val welcomeName = "Welcome, ${profile?.displayName?.ifBlank { profile.email } ?: "Collector"}"
-    val subtitle = if (isGuest) "Guest · Sticker Album" else "Sticker Album"
+    val displayName = profile?.firstName?.takeIf { it.isNotBlank() }
+        ?: profile?.displayName?.takeIf { it.isNotBlank() }
+        ?: profile?.username?.takeIf { it.isNotBlank() }?.let { "@$it" }
+        ?: "Collector"
+    val welcomeName = "Hey, $displayName 👋"
+    val subtitle = if (isGuest) "Guest album" else "Sticker album"
     val unopenedPacks = profile?.unopenedPacks ?: 0
 
     Scaffold(containerColor = Color.Transparent) { padding ->
@@ -69,7 +76,7 @@ fun HomeScreen(
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
                         .padding(14.dp),
-                    verticalArrangement = Arrangement.spacedBy(14.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     HomeOverviewHeader(
                         welcomeName = welcomeName,
@@ -77,28 +84,14 @@ fun HomeScreen(
                         onSettings = onSettings,
                     )
 
-                    PackCard(
-                        count = unopenedPacks,
-                        modifier = Modifier.fillMaxWidth(),
+                    HomeDashboardCard(
+                        unopenedPacks = unopenedPacks,
+                        albumPercent = home.albumPercent,
+                        uniqueCount = profile?.albumUniqueCount ?: 0,
+                        totalCollected = profile?.totalStickerCount ?: 0,
+                        slotSpins = profile?.slotSpinsRemaining ?: 0,
+                        totalStickers = GameConstants.TOTAL_STICKERS,
                     )
-
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .shadow(4.dp, RoundedCornerShape(18.dp))
-                            .clip(RoundedCornerShape(18.dp))
-                            .background(Brush.verticalGradient(AlbumPageStyle.pageFrameGradient))
-                            .padding(14.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
-                        AlbumProgressBar(
-                            label = "Album progress",
-                            progress = home.albumPercent,
-                            detail = "${profile?.albumUniqueCount ?: 0} / ${GameConstants.TOTAL_STICKERS} unique",
-                            fillBrush = AlbumPageStyle.overallProgressFill,
-                            trackColor = AlbumPageStyle.filterUnselectedBorder,
-                        )
-                    }
 
                     HomeRewardsCard(
                         loginPackAvailable = home.loginPackAvailable,
@@ -113,15 +106,12 @@ fun HomeScreen(
                         PixarCelebrationChip(message = message)
                     }
 
-                    PixarPrimaryButton(
-                        text = "Open Sticker Pack",
-                        onClick = onOpenPack,
-                        enabled = unopenedPacks > 0 && !ui.loading,
-                    )
-
-                    PixarSecondaryButton(
-                        text = "Watch Ad for ${GameConstants.REWARDED_AD_STICKERS} Stickers",
-                        onClick = {
+                    HomeActionsCard(
+                        unopenedPacks = unopenedPacks,
+                        loading = ui.loading,
+                        adAvailable = home.adStickerAvailable,
+                        onOpenPack = onOpenPack,
+                        onWatchAd = {
                             val activity = context as? Activity
                             if (activity != null && rewardedAdManager != null) {
                                 rewardedAdManager.show(
@@ -133,12 +123,63 @@ fun HomeScreen(
                                 viewModel.claimRewardedAdStickers()
                             }
                         },
-                        enabled = !ui.loading && home.adStickerAvailable,
-                        loading = ui.loading && home.adStickerAvailable,
-                        accentBorder = true,
                     )
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun HomeActionsCard(
+    unopenedPacks: Int,
+    loading: Boolean,
+    adAvailable: Boolean,
+    onOpenPack: () -> Unit,
+    onWatchAd: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val shape = RoundedCornerShape(22.dp)
+
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .shadow(
+                elevation = 4.dp,
+                shape = shape,
+                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.12f),
+            )
+            .clip(shape)
+            .background(Brush.verticalGradient(AlbumPageStyle.pageFrameGradient))
+            .border(1.dp, AlbumPageStyle.filterUnselectedBorder, shape)
+            .padding(18.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        Text(
+            text = "Quick actions",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Black,
+            color = AlbumPageStyle.headerAccent.darken(0.1f),
+        )
+        PixarPrimaryButton(
+            text = if (unopenedPacks > 0) {
+                "Open sticker pack ($unopenedPacks)"
+            } else {
+                "No packs to open"
+            },
+            onClick = onOpenPack,
+            enabled = unopenedPacks > 0 && !loading,
+        )
+        PixarSecondaryButton(
+            text = if (adAvailable) {
+                "Watch ad · +${GameConstants.REWARDED_AD_STICKERS} stickers"
+            } else {
+                "Ad reward on cooldown"
+            },
+            onClick = onWatchAd,
+            enabled = !loading && adAvailable,
+            loading = loading && adAvailable,
+            accentBorder = adAvailable,
+        )
     }
 }

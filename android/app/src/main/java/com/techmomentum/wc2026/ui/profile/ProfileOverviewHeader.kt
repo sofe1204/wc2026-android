@@ -24,14 +24,12 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 
 @Composable
 fun ProfileOverviewHeader(
     subtitle: String,
-    displayName: String,
     onSettings: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -56,10 +54,10 @@ fun ProfileOverviewHeader(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(32.dp)
+                .height(28.dp)
                 .background(
                     Brush.verticalGradient(
-                        listOf(Color.White.copy(alpha = 0.18f), Color.Transparent),
+                        listOf(Color.White.copy(alpha = 0.2f), Color.Transparent),
                     ),
                 ),
         )
@@ -67,18 +65,19 @@ fun ProfileOverviewHeader(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 18.dp, end = 8.dp, top = 14.dp, bottom = 16.dp),
-            verticalAlignment = Alignment.Top,
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(4.dp),
-            ) {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(
-                    text = subtitle,
-                    style = MaterialTheme.typography.labelMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = Color.White.copy(alpha = 0.88f),
+                    text = subtitle.uppercase(),
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(20.dp))
+                        .background(Color.White.copy(alpha = 0.18f))
+                        .padding(horizontal = 10.dp, vertical = 4.dp),
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White.copy(alpha = 0.95f),
                 )
                 Text(
                     text = "Profile",
@@ -86,20 +85,10 @@ fun ProfileOverviewHeader(
                     fontWeight = FontWeight.Black,
                     color = Color.White,
                 )
-                Text(
-                    text = displayName,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White.copy(alpha = 0.95f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(top = 2.dp),
-                )
             }
             IconButton(
                 onClick = onSettings,
                 modifier = Modifier
-                    .padding(top = 2.dp)
                     .clip(CircleShape)
                     .background(Color.White.copy(alpha = 0.22f)),
             ) {

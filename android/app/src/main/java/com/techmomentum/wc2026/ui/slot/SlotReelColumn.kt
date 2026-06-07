@@ -77,24 +77,30 @@ fun SlotReelColumn(
     modifier: Modifier = Modifier,
     winningRows: Set<Int> = emptySet(),
 ) {
-    val columnShape = RoundedCornerShape(12.dp)
+    val columnShape = RoundedCornerShape(14.dp)
     val frameBrush = Brush.linearGradient(
         listOf(
-            CardGold.copy(alpha = 0.95f),
-            Color.White.copy(alpha = 0.85f),
-            CardGold.copy(alpha = 0.75f),
+            Color(0xFFB8860B),
+            CardGold,
+            Color.White.copy(alpha = 0.9f),
+            CardGold,
+            Color(0xFF8B6914),
         ),
     )
 
     BoxWithConstraints(
         modifier = modifier
             .clip(columnShape)
-            .border(2.dp, frameBrush, columnShape)
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFF2C3E50), Color(0xFF1A2530)),
+                    listOf(Color(0xFF1A2530), Color(0xFF0F1720)),
                 ),
-            ),
+            )
+            .border(2.5.dp, frameBrush, columnShape)
+            .padding(3.dp)
+            .clip(RoundedCornerShape(11.dp))
+            .background(Color(0xFF0A1018))
+            .border(1.dp, Color.Black.copy(alpha = 0.55f), RoundedCornerShape(11.dp)),
     ) {
         val cellHeight: Dp = maxWidth
         val cellHeightPx = with(LocalDensity.current) { cellHeight.toPx() }
@@ -234,9 +240,19 @@ private fun ColumnReelEngine(
                 modifier = Modifier
                     .align(Alignment.TopStart)
                     .fillMaxWidth()
-                    .height(1.dp)
-                    .offset(y = cellHeight * (dividerIndex + 1))
-                    .background(CardGold.copy(alpha = 0.22f)),
+                    .height(2.dp)
+                    .offset(y = cellHeight * (dividerIndex + 1) - 1.dp)
+                    .background(
+                        Brush.horizontalGradient(
+                            listOf(
+                                Color.Transparent,
+                                CardGold.copy(alpha = 0.45f),
+                                Color.White.copy(alpha = 0.35f),
+                                CardGold.copy(alpha = 0.45f),
+                                Color.Transparent,
+                            ),
+                        ),
+                    ),
             )
         }
     }
@@ -361,34 +377,53 @@ private fun SlotSymbolFace(
 ) {
     val context = LocalContext.current
     val pinnedBitmap = LocalSlotBitmaps.current(symbol.imageUrl)
-    val faceShape = RoundedCornerShape(8.dp)
+    val faceShape = RoundedCornerShape(10.dp)
+    val defaultBorder = Brush.linearGradient(
+        listOf(
+            Color.White.copy(alpha = 0.18f),
+            CardGold.copy(alpha = 0.42f),
+            Color(0xFF8B6914).copy(alpha = 0.55f),
+        ),
+    )
 
     Box(
         modifier = modifier
-            .padding(3.dp)
+            .padding(horizontal = 4.dp, vertical = 3.dp)
             .clip(faceShape)
+            .background(
+                Brush.verticalGradient(
+                    listOf(Color(0xFF3D5266), Color(0xFF1E2A36)),
+                ),
+            )
             .then(
                 if (highlight) {
                     Modifier.border(
-                        width = 2.5.dp,
-                        brush = Brush.linearGradient(listOf(CardGold, Color.White, CardGold)),
+                        width = 3.dp,
+                        brush = Brush.linearGradient(
+                            listOf(
+                                Color(0xFFFFF8DC),
+                                CardGold,
+                                Color.White,
+                                CardGold,
+                            ),
+                        ),
                         shape = faceShape,
                     )
                 } else {
-                    Modifier
+                    Modifier.border(width = 1.25.dp, brush = defaultBorder, shape = faceShape)
                 },
             )
-            .background(
-                Brush.verticalGradient(
-                    listOf(Color(0xFF3D5266), Color(0xFF2A3848)),
-                ),
-            ),
+            .padding(2.dp),
         contentAlignment = Alignment.Center,
     ) {
         val imageModifier = Modifier
             .fillMaxSize()
-            .padding(2.dp)
-            .clip(RoundedCornerShape(6.dp))
+            .clip(RoundedCornerShape(8.dp))
+            .border(
+                width = 0.5.dp,
+                color = Color.Black.copy(alpha = 0.35f),
+                shape = RoundedCornerShape(8.dp),
+            )
 
         when {
             pinnedBitmap != null -> {

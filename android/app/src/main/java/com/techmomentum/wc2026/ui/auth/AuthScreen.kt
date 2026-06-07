@@ -18,6 +18,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -28,6 +31,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
 import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
+import com.techmomentum.wc2026.ui.navigation.Routes
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 
 @Composable
@@ -37,13 +41,21 @@ fun AuthScreen(
     viewModel: AuthViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    var showWelcome by remember { mutableStateOf(false) }
+    var pendingRoute by remember { mutableStateOf<String?>(null) }
+    var welcomeSignUp by remember { mutableStateOf(false) }
+    var welcomeGuest by remember { mutableStateOf(false) }
+
     val googleLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult(),
     ) { result -> viewModel.onGoogleSignInResult(result.data) }
 
     LaunchedEffect(state.success, state.destinationRoute) {
-        if (state.success) {
-            onAuthenticated(state.destinationRoute ?: com.techmomentum.wc2026.ui.navigation.Routes.HOME)
+        if (state.success && !showWelcome) {
+            pendingRoute = state.destinationRoute ?: Routes.HOME
+            welcomeSignUp = state.isSignUp
+            welcomeGuest = state.loginWelcomeGuest
+            showWelcome = true
         }
     }
 
@@ -123,6 +135,25 @@ fun AuthScreen(
                         "Email or Google saves album progress in the cloud. Guest uses Firebase catalog with local progress.",
                     )
                 }
+            }
+
+            if (showWelcome) {
+                LoginWelcomeOverlay(
+                    title = when {
+                        welcomeGuest -> "Guest mode!"
+                        welcomeSignUp -> "Welcome, collector!"
+                        else -> "Welcome back!"
+                    },
+                    subtitle = when {
+                        welcomeGuest -> "Your album adventure starts now."
+                        welcomeSignUp -> "Verify your email, then start collecting."
+                        else -> "Your sticker album is ready."
+                    },
+                    onFinished = {
+                        showWelcome = false
+                        pendingRoute?.let(onAuthenticated)
+                    },
+                )
             }
         }
     }

@@ -98,6 +98,12 @@ private fun AlbumCollectionContent(
             AlbumOverviewHeader(totalOwned = totalOwned)
         }
         item {
+            AlbumSearchBar(
+                query = filter.searchQuery,
+                onQueryChange = viewModel::setSearchQuery,
+            )
+        }
+        item {
             AlbumFilterRow(
                 groups = groups,
                 filter = filter,
@@ -114,7 +120,20 @@ private fun AlbumCollectionContent(
             // Data still loading — don't flash the empty-filter message.
         } else if (!hasVisibleTeams) {
             item(key = "empty_filter") {
-                AlbumEmptyFilterState()
+                AlbumEmptyFilterState(
+                    isSearchActive = filter.searchQuery.isNotBlank(),
+                )
+            }
+        } else if (filter.searchQuery.isNotBlank()) {
+            val searchResults = album.groups.values
+                .flatten()
+                .filter { it.matchesFilter(filter) }
+                .sortedBy { it.team.countryName }
+            items(searchResults, key = { it.team.teamId }) { progress ->
+                AlbumTeamCard(
+                    progress = progress,
+                    onClick = { onTeamClick(progress.team.teamId) },
+                )
             }
         } else {
             album.groups.forEach { (group, teams) ->
@@ -136,11 +155,21 @@ private fun AlbumCollectionContent(
     }
 }
 
-private fun TeamAlbumProgress.matchesFilter(filter: AlbumFilter): Boolean = when {
-    filter.ownedOnly == true -> ownedCount > 0
-    filter.missingOnly == true -> ownedCount < total
-    filter.group != null -> team.group == filter.group
-    else -> true
+private fun TeamAlbumProgress.matchesFilter(filter: AlbumFilter): Boolean {
+    val passesCollectionFilter = when {
+        filter.ownedOnly == true -> ownedCount > 0
+        filter.missingOnly == true -> ownedCount < total
+        filter.group != null -> team.group == filter.group
+        else -> true
+    }
+    if (!passesCollectionFilter) return false
+
+    val query = filter.searchQuery.trim()
+    if (query.isEmpty()) return true
+
+    return team.countryName.contains(query, ignoreCase = true) ||
+        team.teamCode.contains(query, ignoreCase = true) ||
+        team.group.contains(query, ignoreCase = true)
 }
 
 @Composable

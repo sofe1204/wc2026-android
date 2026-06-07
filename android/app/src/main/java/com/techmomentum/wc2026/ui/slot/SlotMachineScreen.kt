@@ -13,8 +13,12 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
@@ -175,148 +179,248 @@ fun SlotMachineScreen(
     }
 }
 
+private fun slotGoldFrameBrush(): Brush = Brush.linearGradient(
+    listOf(
+        Color(0xFFB8860B),
+        CardGold,
+        Color.White.copy(alpha = 0.95f),
+        CardGold,
+        Color(0xFFC9A227),
+    ),
+)
+
+@Composable
+private fun SlotMarqueeStrip(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+            .background(
+                Brush.horizontalGradient(
+                    listOf(
+                        AlbumPageStyle.headerAccent.darken(0.15f),
+                        AlbumPageStyle.headerAccentVivid,
+                        AlbumPageStyle.headerAccent.darken(0.15f),
+                    ),
+                ),
+            )
+            .border(
+                width = 1.dp,
+                brush = slotGoldFrameBrush(),
+                shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+            )
+            .padding(vertical = 7.dp, horizontal = 10.dp),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        repeat(9) { index ->
+            Box(
+                modifier = Modifier
+                    .size(if (index == 4) 10.dp else 7.dp)
+                    .clip(CircleShape)
+                    .background(
+                        if (index % 2 == 0) CardGold else Color(0xFFFFF3B0),
+                    )
+                    .border(
+                        width = 1.dp,
+                        color = Color.White.copy(alpha = if (index == 4) 0.7f else 0.35f),
+                        shape = CircleShape,
+                    ),
+            )
+        }
+    }
+}
+
+@Composable
+private fun SlotReelDivider(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .width(4.dp)
+            .fillMaxHeight()
+            .clip(RoundedCornerShape(2.dp))
+            .background(
+                Brush.verticalGradient(
+                    listOf(
+                        Color(0xFF8B6914),
+                        CardGold,
+                        Color.White.copy(alpha = 0.85f),
+                        CardGold,
+                        Color(0xFF8B6914),
+                    ),
+                ),
+            )
+            .border(
+                width = 0.5.dp,
+                color = Color.Black.copy(alpha = 0.35f),
+                shape = RoundedCornerShape(2.dp),
+            ),
+    )
+}
+
 @Composable
 private fun SlotMachineCabinet(
     state: SlotUiState,
     modifier: Modifier = Modifier,
 ) {
-    val cabinetShape = RoundedCornerShape(22.dp)
-    val goldFrame = Brush.linearGradient(
-        listOf(
-            CardGold,
-            Color.White.copy(alpha = 0.9f),
-            CardGold.copy(alpha = 0.85f),
-        ),
-    )
+    val cabinetShape = RoundedCornerShape(24.dp)
+    val windowShape = RoundedCornerShape(18.dp)
 
     Box(
         modifier = modifier
+            .aspectRatio(1.08f)
             .collectibleShadow(
-                color = CardGold.copy(alpha = 0.65f),
-                elevation = 14.dp,
+                color = CardGold.copy(alpha = 0.55f),
+                elevation = 18.dp,
                 shape = cabinetShape,
             )
             .clip(cabinetShape)
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFF243447), Color(0xFF141C28)),
+                    listOf(Color(0xFF2A3D52), Color(0xFF121A24)),
                 ),
             )
-            .border(3.dp, goldFrame, cabinetShape)
-            .padding(14.dp),
+            .border(4.dp, slotGoldFrameBrush(), cabinetShape)
+            .padding(3.dp)
+            .border(1.5.dp, Color.Black.copy(alpha = 0.45f), cabinetShape)
+            .padding(10.dp),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .background(
-                    Brush.verticalGradient(
-                        listOf(Color(0xFF1E2D3D), Color(0xFF121A24)),
-                    ),
+        Column(modifier = Modifier.fillMaxWidth()) {
+            SlotMarqueeStrip()
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp)
+                    .clip(windowShape)
+                    .background(
+                        Brush.verticalGradient(
+                            listOf(Color(0xFF0A1018), Color(0xFF151F2B), Color(0xFF0A1018)),
+                        ),
+                    )
+                    .border(2.dp, slotGoldFrameBrush(), windowShape)
+                    .padding(2.dp)
+                    .border(1.dp, Color.Black.copy(alpha = 0.5f), windowShape)
+                    .padding(8.dp),
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(3.dp)
+                        .clip(RoundedCornerShape(2.dp))
+                        .background(
+                            Brush.horizontalGradient(
+                                listOf(
+                                    Color.Transparent,
+                                    Color.White.copy(alpha = 0.22f),
+                                    Color.Transparent,
+                                ),
+                            ),
+                        ),
                 )
-                .border(
-                    width = 1.5.dp,
-                    color = CardGold.copy(alpha = 0.35f),
-                    shape = RoundedCornerShape(16.dp),
-                )
-                .padding(10.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            val sourceGrid = when (state.spinPhase) {
-                SlotSpinPhase.Settling -> state.targetGrid
-                else -> state.grid
-            }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 6.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    val sourceGrid = when (state.spinPhase) {
+                        SlotSpinPhase.Settling -> state.targetGrid
+                        else -> state.grid
+                    }
 
-            repeat(3) { columnIndex ->
-                key(columnIndex) {
-                val isColumnSpinning = SlotViewModel.isColumnSpinning(
-                    phase = state.spinPhase,
-                    settledColumnCount = state.settledColumnCount,
-                    column = columnIndex,
-                )
-                val stopRequested = SlotViewModel.isColumnStopRequested(
-                    phase = state.spinPhase,
-                    settledColumnCount = state.settledColumnCount,
-                    column = columnIndex,
-                )
-                val columnSymbols = SlotViewModel.columnSymbols(sourceGrid, columnIndex)
-                val winningRows = if (state.spinPhase == SlotSpinPhase.Idle && state.isWin) {
-                    state.winningCells.filter { it.second == columnIndex }.map { it.first }.toSet()
-                } else {
-                    emptySet()
-                }
+                    repeat(3) { columnIndex ->
+                        key(columnIndex) {
+                            if (columnIndex > 0) {
+                                SlotReelDivider(modifier = Modifier.padding(horizontal = 3.dp))
+                            }
+                            val isColumnSpinning = SlotViewModel.isColumnSpinning(
+                                phase = state.spinPhase,
+                                settledColumnCount = state.settledColumnCount,
+                                column = columnIndex,
+                            )
+                            val stopRequested = SlotViewModel.isColumnStopRequested(
+                                phase = state.spinPhase,
+                                settledColumnCount = state.settledColumnCount,
+                                column = columnIndex,
+                            )
+                            val columnSymbols = SlotViewModel.columnSymbols(sourceGrid, columnIndex)
+                            val winningRows = if (state.spinPhase == SlotSpinPhase.Idle && state.isWin) {
+                                state.winningCells
+                                    .filter { it.second == columnIndex }
+                                    .map { it.first }
+                                    .toSet()
+                            } else {
+                                emptySet()
+                            }
 
-                SlotReelColumn(
-                    columnIndex = columnIndex,
-                    finalSymbols = columnSymbols,
-                    isColumnSpinning = isColumnSpinning,
-                    stopRequested = stopRequested,
-                    symbolPool = state.symbolPool,
-                    spinGeneration = state.spinGeneration,
-                    winningRows = winningRows,
-                    modifier = Modifier.weight(1f),
-                )
+                            SlotReelColumn(
+                                columnIndex = columnIndex,
+                                finalSymbols = columnSymbols,
+                                isColumnSpinning = isColumnSpinning,
+                                stopRequested = stopRequested,
+                                symbolPool = state.symbolPool,
+                                spinGeneration = state.spinGeneration,
+                                winningRows = winningRows,
+                                modifier = Modifier.weight(1f),
+                            )
+                        }
+                    }
                 }
             }
         }
-        GlossOverlay(cornerRadius = 22.dp, intensity = 0.12f)
+        GlossOverlay(cornerRadius = 24.dp, intensity = 0.14f)
     }
 }
 
 @Composable
 private fun SlotCabinetPlaceholder(modifier: Modifier = Modifier) {
-    val cabinetShape = RoundedCornerShape(22.dp)
-    val goldFrame = Brush.linearGradient(
-        listOf(
-            CardGold,
-            Color.White.copy(alpha = 0.9f),
-            CardGold.copy(alpha = 0.85f),
-        ),
-    )
+    val cabinetShape = RoundedCornerShape(24.dp)
+    val windowShape = RoundedCornerShape(18.dp)
 
     Box(
         modifier = modifier
-            .aspectRatio(1.15f)
+            .aspectRatio(1.08f)
             .clip(cabinetShape)
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFF243447), Color(0xFF141C28)),
+                    listOf(Color(0xFF2A3D52), Color(0xFF121A24)),
                 ),
             )
-            .border(3.dp, goldFrame, cabinetShape)
-            .padding(14.dp),
+            .border(4.dp, slotGoldFrameBrush(), cabinetShape)
+            .padding(13.dp),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .clip(RoundedCornerShape(16.dp))
-                .background(
-                    Brush.verticalGradient(
-                        listOf(Color(0xFF1E2D3D), Color(0xFF121A24)),
-                    ),
-                )
-                .border(
-                    width = 1.5.dp,
-                    color = CardGold.copy(alpha = 0.35f),
-                    shape = RoundedCornerShape(16.dp),
-                )
-                .padding(10.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            repeat(3) {
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxHeight(),
-                ) {
-                    repeat(3) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxWidth()
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF2A3848).copy(alpha = 0.55f)),
-                        )
+        Column(modifier = Modifier.fillMaxWidth()) {
+            SlotMarqueeStrip()
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp)
+                    .clip(windowShape)
+                    .background(Color(0xFF151F2B))
+                    .border(2.dp, slotGoldFrameBrush(), windowShape)
+                    .padding(8.dp),
+            ) {
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    repeat(3) { index ->
+                        if (index > 0) {
+                            SlotReelDivider(modifier = Modifier.padding(horizontal = 3.dp))
+                        }
+                        Column(modifier = Modifier.weight(1f)) {
+                            repeat(3) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .aspectRatio(1f)
+                                        .padding(vertical = 2.dp)
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(Color(0xFF2A3848).copy(alpha = 0.65f))
+                                        .border(
+                                            width = 1.dp,
+                                            color = CardGold.copy(alpha = 0.25f),
+                                            shape = RoundedCornerShape(10.dp),
+                                        ),
+                                )
+                            }
+                        }
                     }
                 }
             }

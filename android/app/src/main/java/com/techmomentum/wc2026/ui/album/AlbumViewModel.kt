@@ -17,6 +17,7 @@ data class AlbumFilter(
     val group: String? = null,
     val ownedOnly: Boolean? = null,
     val missingOnly: Boolean? = null,
+    val searchQuery: String = "",
 )
 
 @HiltViewModel
@@ -32,4 +33,5 @@ class AlbumViewModel @Inject constructor(
     fun setGroupFilter(group: String?) = _filter.update { it.copy(group = group) }
     fun setOwnedFilter(owned: Boolean?) = _filter.update { it.copy(ownedOnly = owned, missingOnly = null) }
     fun setMissingFilter() = _filter.update { it.copy(missingOnly = true, ownedOnly = null) }
+    fun setSearchQuery(query: String) = _filter.update { it.copy(searchQuery = query) }
 }

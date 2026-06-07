@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.techmomentum.wc2026.data.model.UserProfile
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
-import com.techmomentum.wc2026.ui.theme.AnimePink
 import com.techmomentum.wc2026.ui.theme.CardGold
 import com.techmomentum.wc2026.ui.theme.darken
 
@@ -37,36 +36,42 @@ fun ProfileIdentityCard(
     isGuest: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    val shape = RoundedCornerShape(20.dp)
+    val shape = RoundedCornerShape(22.dp)
     val fullName = profile?.let {
         listOf(it.firstName, it.lastName).filter { part -> part.isNotBlank() }.joinToString(" ")
     }.orEmpty().ifBlank { profile?.displayName.orEmpty() }
     val username = profile?.username.orEmpty()
     val initials = profileInitials(fullName.ifBlank { username })
+    val frameBrush = Brush.linearGradient(
+        listOf(
+            CardGold.copy(alpha = 0.7f),
+            AlbumPageStyle.headerAccent.copy(alpha = 0.45f),
+            CardGold.copy(alpha = 0.55f),
+        ),
+    )
 
-    Row(
+    Column(
         modifier = modifier
             .fillMaxWidth()
             .shadow(
-                elevation = 6.dp,
+                elevation = 8.dp,
                 shape = shape,
-                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.2f),
+                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.25f),
             )
             .clip(shape)
             .background(Brush.verticalGradient(AlbumPageStyle.pageFrameGradient))
-            .border(
-                width = 1.5.dp,
-                brush = Brush.horizontalGradient(listOf(AnimePink.copy(alpha = 0.5f), CardGold.copy(alpha = 0.5f))),
-                shape = shape,
-            )
-            .padding(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(14.dp),
-        verticalAlignment = Alignment.CenterVertically,
+            .border(width = 2.dp, brush = frameBrush, shape = shape)
+            .padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Box(
             modifier = Modifier
-                .size(56.dp)
-                .shadow(4.dp, CircleShape, ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.3f))
+                .size(76.dp)
+                .shadow(6.dp, CircleShape, ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.35f))
+                .clip(CircleShape)
+                .border(3.dp, frameBrush, CircleShape)
+                .padding(3.dp)
                 .clip(CircleShape)
                 .background(
                     Brush.verticalGradient(
@@ -80,19 +85,20 @@ fun ProfileIdentityCard(
         ) {
             Text(
                 text = if (isGuest) "🧑" else initials,
-                fontSize = if (isGuest) 26.sp else 20.sp,
+                fontSize = if (isGuest) 32.sp else 26.sp,
                 fontWeight = FontWeight.Black,
                 color = Color.White,
             )
         }
+
         Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(6.dp),
         ) {
             if (username.isNotBlank()) {
                 Text(
                     text = "@$username",
-                    style = MaterialTheme.typography.titleLarge,
+                    style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Black,
                     color = AlbumPageStyle.headerAccent.darken(0.1f),
                     maxLines = 1,
@@ -109,32 +115,49 @@ fun ProfileIdentityCard(
                     overflow = TextOverflow.Ellipsis,
                 )
             }
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
             if (profile?.countryName?.isNotBlank() == true) {
-                Text(
-                    text = profile.countryName,
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = AlbumPageStyle.bottomNavUnselectedIcon,
+                ProfileMetaChip(
+                    text = "${countryFlagEmoji(profile.countryCode)} ${profile.countryName}",
                 )
             }
-            Text(
-                text = email,
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = FontWeight.Medium,
-                color = AlbumPageStyle.bottomNavUnselectedIcon,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-            if (isGuest) {
-                Text(
-                    text = "Guest — album progress stored on device only.",
-                    style = MaterialTheme.typography.labelSmall,
-                    fontWeight = FontWeight.Medium,
-                    color = AlbumPageStyle.bottomNavUnselectedLabel.copy(alpha = 0.75f),
-                )
+            if (email.isNotBlank()) {
+                ProfileMetaChip(text = email)
             }
         }
+
+        if (isGuest) {
+            Text(
+                text = "Guest mode — progress saved on this device only.",
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Medium,
+                color = AlbumPageStyle.bottomNavUnselectedIcon,
+            )
+        }
     }
+}
+
+@Composable
+private fun ProfileMetaChip(text: String) {
+    Text(
+        text = text,
+        modifier = Modifier
+            .clip(RoundedCornerShape(20.dp))
+            .background(AlbumPageStyle.filterUnselectedFill)
+            .border(1.dp, AlbumPageStyle.filterUnselectedBorder, RoundedCornerShape(20.dp))
+            .padding(horizontal = 12.dp, vertical = 6.dp),
+        style = MaterialTheme.typography.labelMedium,
+        fontWeight = FontWeight.SemiBold,
+        color = AlbumPageStyle.bottomNavUnselectedLabel,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+    )
 }
 
 private fun profileInitials(name: String): String {
@@ -144,4 +167,12 @@ private fun profileInitials(name: String): String {
         parts.size == 1 -> parts[0].take(2).uppercase()
         else -> "${parts[0].first()}${parts[1].first()}".uppercase()
     }
+}
+
+private fun countryFlagEmoji(code: String): String {
+    if (code.length != 2) return "🌍"
+    val upper = code.uppercase()
+    val first = Character.codePointAt(upper, 0) - 0x41 + 0x1F1E6
+    val second = Character.codePointAt(upper, 1) - 0x41 + 0x1F1E6
+    return String(Character.toChars(first)) + String(Character.toChars(second))
 }

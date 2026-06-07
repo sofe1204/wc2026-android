@@ -22,6 +22,7 @@ import com.techmomentum.wc2026.ui.theme.darken
 @Composable
 fun AlbumEmptyFilterState(
     modifier: Modifier = Modifier,
+    isSearchActive: Boolean = false,
 ) {
     Column(
         modifier = modifier
@@ -44,7 +45,7 @@ fun AlbumEmptyFilterState(
             style = MaterialTheme.typography.headlineMedium,
         )
         Text(
-            text = "No teams match this filter",
+            text = if (isSearchActive) "No nations found" else "No teams match this filter",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
             color = AlbumPageStyle.headerAccent.darken(0.15f),
@@ -52,7 +53,11 @@ fun AlbumEmptyFilterState(
             modifier = Modifier.padding(top = 8.dp),
         )
         Text(
-            text = "Try All, another group, or a different collection filter.",
+            text = if (isSearchActive) {
+                "Try a different spelling or clear the search."
+            } else {
+                "Try All, another group, or a different collection filter."
+            },
             style = MaterialTheme.typography.bodyMedium,
             color = AlbumPageStyle.headerAccent.darken(0.15f).copy(alpha = 0.75f),
             textAlign = TextAlign.Center,

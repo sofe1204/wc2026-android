@@ -92,14 +92,27 @@ export async function grantStickers(
   stickerIds: string[]
 ): Promise<{ newUnique: number; totalAdded: number }> {
   const userStickersRef = db().collection("user_stickers").doc(uid).collection("items");
+  const reads = await Promise.all(
+    stickerIds.map(async (stickerId) => {
+      const itemRef = userStickersRef.doc(stickerId);
+      const stickerRef = db().collection("stickers").doc(stickerId);
+      const [itemSnap, stickerSnap] = await Promise.all([
+        tx.get(itemRef),
+        tx.get(stickerRef),
+      ]);
+      return {
+        stickerId,
+        itemRef,
+        itemSnap,
+        stickerData: stickerSnap.data() || {},
+      };
+    })
+  );
+
   let newUnique = 0;
   let totalAdded = 0;
-  for (const stickerId of stickerIds) {
-    const itemRef = userStickersRef.doc(stickerId);
-    const itemSnap = await tx.get(itemRef);
-    const stickerSnap = await tx.get(db().collection("stickers").doc(stickerId));
-    const stickerData = stickerSnap.data() || {};
-    const now = admin.firestore.FieldValue.serverTimestamp();
+  const now = admin.firestore.FieldValue.serverTimestamp();
+  for (const { stickerId, itemRef, itemSnap, stickerData } of reads) {
     if (itemSnap.exists) {
       tx.update(itemRef, {
         count: (itemSnap.data()?.count || 0) + 1,
@@ -121,11 +134,10 @@ export async function grantStickers(
   return { newUnique, totalAdded };
 }
 
-export async function resetDailySlotIfNeeded(
-  tx: FirebaseFirestore.Transaction,
-  userRef: FirebaseFirestore.DocumentReference,
+/** Resets daily slot counters in memory only — caller must persist in a single tx.update. */
+export function computeDailySlotReset(
   data: FirebaseFirestore.DocumentData
-): Promise<FirebaseFirestore.DocumentData> {
+): FirebaseFirestore.DocumentData {
   const today = todayUtc();
   let updated = { ...data };
   if (data.slotSpinsDate !== today) {
@@ -141,17 +153,6 @@ export async function resetDailySlotIfNeeded(
       slotRewardPacksWonToday: 0,
       slotRewardDate: today,
     };
-  }
-  if (
-    updated.slotSpinsRemaining !== data.slotSpinsRemaining ||
-    updated.slotRewardPacksWonToday !== data.slotRewardPacksWonToday
-  ) {
-    tx.update(userRef, {
-      slotSpinsRemaining: updated.slotSpinsRemaining,
-      slotSpinsDate: updated.slotSpinsDate,
-      slotRewardPacksWonToday: updated.slotRewardPacksWonToday,
-      slotRewardDate: updated.slotRewardDate,
-    });
   }
   return updated;
 }
@@ -343,26 +344,41 @@ export async function swapDuplicatesForPack(uid: string): Promise<{
     if (!userSnap.exists) throw new Error("User profile not found.");
     const userData = userSnap.data()!;
 
+    const itemSnaps = await Promise.all(sorted.map((item) => tx.get(item.ref)));
+
     let remaining = SWAP_DUPLICATES_FOR_PACK;
-    for (const item of sorted) {
+    const itemWrites: Array<
+      | { ref: FirebaseFirestore.DocumentReference; delete: true }
+      | { ref: FirebaseFirestore.DocumentReference; newCount: number }
+    > = [];
+    for (let i = 0; i < sorted.length; i++) {
       if (remaining <= 0) break;
-      const itemSnap = await tx.get(item.ref);
+      const itemSnap = itemSnaps[i];
       if (!itemSnap.exists) continue;
       const count = itemSnap.data()?.count || 0;
       const dupes = duplicateCount(count);
       if (dupes <= 0) continue;
       const take = Math.min(dupes, remaining);
       const newCount = count - take;
+      const ref = sorted[i].ref;
       if (newCount <= 0) {
-        tx.delete(item.ref);
+        itemWrites.push({ ref, delete: true });
       } else {
-        tx.update(item.ref, { count: newCount });
+        itemWrites.push({ ref, newCount });
       }
       remaining -= take;
     }
 
     if (remaining > 0) {
       throw new Error("Could not consume enough duplicates.");
+    }
+
+    for (const write of itemWrites) {
+      if ("delete" in write) {
+        tx.delete(write.ref);
+      } else {
+        tx.update(write.ref, { count: write.newCount });
+      }
     }
 
     const packs = (userData.unopenedPacks || 0) + 1;
@@ -397,6 +413,12 @@ export async function openPackForUser(uid: string): Promise<{
   unopenedPacks: number;
 }> {
   const userRef = await getUserRef(uid);
+  const stickerIds: string[] = [];
+  for (let i = 0; i < STICKERS_PER_PACK; i++) {
+    const rarity = rollRarity();
+    const id = await pickStickerByRarity(rarity);
+    if (id) stickerIds.push(id);
+  }
   return db().runTransaction(async (tx) => {
     const userSnap = await tx.get(userRef);
     if (!userSnap.exists) {
@@ -406,12 +428,6 @@ export async function openPackForUser(uid: string): Promise<{
     const packs = data.unopenedPacks || 0;
     if (packs <= 0) {
       throw new Error("No unopened packs available.");
-    }
-    const stickerIds: string[] = [];
-    for (let i = 0; i < STICKERS_PER_PACK; i++) {
-      const rarity = rollRarity();
-      const id = await pickStickerByRarity(rarity);
-      if (id) stickerIds.push(id);
     }
     const { newUnique, totalAdded } = await grantStickers(tx, uid, stickerIds);
     const albumUniqueCount = (data.albumUniqueCount || 0) + newUnique;

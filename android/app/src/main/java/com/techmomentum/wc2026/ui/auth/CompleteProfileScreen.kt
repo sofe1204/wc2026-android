@@ -16,6 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -27,6 +30,7 @@ import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.CountryPickerField
 import com.techmomentum.wc2026.ui.components.PixarOutlinedTextField
 import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
+import com.techmomentum.wc2026.ui.navigation.Routes
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 
 @Composable
@@ -35,9 +39,13 @@ fun CompleteProfileScreen(
     viewModel: CompleteProfileViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    var showWelcome by remember { mutableStateOf(false) }
 
     LaunchedEffect(state.destinationRoute) {
-        state.destinationRoute?.let(onContinue)
+        when (state.destinationRoute) {
+            Routes.HOME -> showWelcome = true
+            else -> state.destinationRoute?.let(onContinue)
+        }
     }
 
     Scaffold(containerColor = Color.Transparent) { padding ->
@@ -103,6 +111,14 @@ fun CompleteProfileScreen(
                         loading = state.loading,
                     )
                 }
+            }
+
+            if (showWelcome) {
+                LoginWelcomeOverlay(
+                    title = "You're all set!",
+                    subtitle = "Time to fill your World Cup 2026 album.",
+                    onFinished = { onContinue(Routes.HOME) },
+                )
             }
         }
     }

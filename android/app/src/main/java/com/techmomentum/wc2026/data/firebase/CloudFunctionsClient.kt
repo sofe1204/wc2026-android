@@ -115,6 +115,7 @@ class CloudFunctionsClient @Inject constructor(
 
     private suspend fun invoke(name: String, payload: Map<String, Any?> = emptyMap()): Map<String, Any?> {
         requireSignedIn()
+        refreshAuthToken()
         connectionRepository.refreshConfigState()
         return try {
             @Suppress("UNCHECKED_CAST")
@@ -128,11 +129,22 @@ class CloudFunctionsClient @Inject constructor(
         if (auth.currentUser == null) throw FirebaseNotSignedInException()
     }
 
+    private suspend fun refreshAuthToken() {
+        auth.currentUser?.getIdToken(true)?.await()
+    }
+
     private fun mapFunctionsError(e: FirebaseFunctionsException): Exception {
-        val detail = e.message?.takeIf { it.isNotBlank() } ?: e.code.name
+        val detail = userFacingDetail(e)
         return when (e.code) {
             FirebaseFunctionsException.Code.UNAUTHENTICATED ->
-                IllegalStateException("Not signed in. Sign in again to continue.")
+                FunctionsUnauthenticatedException(
+                    if (auth.currentUser != null) {
+                        "Cloud rewards could not verify your session. Retrying profile setup."
+                    } else {
+                        "Not signed in. Sign in again to continue."
+                    },
+                    e,
+                )
             FirebaseFunctionsException.Code.PERMISSION_DENIED ->
                 IllegalStateException("Permission denied: $detail")
             FirebaseFunctionsException.Code.NOT_FOUND ->
@@ -147,7 +159,37 @@ class CloudFunctionsClient @Inject constructor(
                 IllegalStateException(detail)
             FirebaseFunctionsException.Code.UNAVAILABLE ->
                 IllegalStateException("Firebase unavailable. Check network or emulators: $detail")
+            FirebaseFunctionsException.Code.INTERNAL ->
+                IllegalStateException(detail)
+            FirebaseFunctionsException.Code.DEADLINE_EXCEEDED ->
+                IllegalStateException(detail)
+            FirebaseFunctionsException.Code.UNKNOWN ->
+                IllegalStateException(detail)
             else -> IllegalStateException(detail)
         }
     }
+
+    private fun userFacingDetail(e: FirebaseFunctionsException): String {
+        val serverMessage = e.message?.takeIf { it.isNotBlank() }
+        if (serverMessage != null && !isRawErrorCode(serverMessage)) {
+            return serverMessage
+        }
+        return when (e.code) {
+            FirebaseFunctionsException.Code.INTERNAL ->
+                "Something went wrong on the server. Please try again."
+            FirebaseFunctionsException.Code.DEADLINE_EXCEEDED ->
+                "Request timed out. Check your connection and try again."
+            FirebaseFunctionsException.Code.UNAVAILABLE ->
+                "Firebase is temporarily unavailable. Try again in a moment."
+            FirebaseFunctionsException.Code.UNKNOWN ->
+                "Could not reach the server. Check your connection and try again."
+            else -> serverMessage ?: "Something went wrong. Please try again."
+        }
+    }
+
+    private fun isRawErrorCode(message: String): Boolean =
+        message.equals("INTERNAL", ignoreCase = true) ||
+            message.equals("UNKNOWN", ignoreCase = true) ||
+            message.equals("UNAVAILABLE", ignoreCase = true) ||
+            message.equals("DEADLINE_EXCEEDED", ignoreCase = true)
 }

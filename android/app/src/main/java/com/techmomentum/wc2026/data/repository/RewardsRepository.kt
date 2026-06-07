@@ -5,6 +5,7 @@ import com.techmomentum.wc2026.data.demo.DemoRewardsEngine
 import com.techmomentum.wc2026.data.firebase.CloudFunctionsClient
 import com.techmomentum.wc2026.data.firebase.FirestoreUserBootstrap
 import com.techmomentum.wc2026.data.firebase.FunctionsNotDeployedException
+import com.techmomentum.wc2026.data.firebase.FunctionsUnauthenticatedException
 import com.techmomentum.wc2026.data.model.CallableResult
 import com.techmomentum.wc2026.data.model.PackOpenResult
 import com.techmomentum.wc2026.data.model.SlotResult
@@ -97,11 +98,14 @@ class RewardsRepository @Inject constructor(
     private fun shouldUseFirestoreBootstrap(e: Exception): Boolean {
         if (e is FunctionsNotDeployedException) return true
         if (e.cause is FunctionsNotDeployedException) return true
+        if (e is FunctionsUnauthenticatedException) return true
+        if (e.cause is FunctionsUnauthenticatedException) return true
         val functions = e as? FirebaseFunctionsException
         if (functions?.code == FirebaseFunctionsException.Code.NOT_FOUND) return true
+        if (functions?.code == FirebaseFunctionsException.Code.UNAUTHENTICATED) return true
         val msg = (e.message ?: "") + (e.cause?.message ?: "")
         return msg.contains("NOT_FOUND", ignoreCase = true) ||
             msg.contains("Cloud Functions not deployed", ignoreCase = true) ||
-            msg.contains("NOT_FOUND", ignoreCase = true)
+            msg.contains("UNAUTHENTICATED", ignoreCase = true)
     }
 }

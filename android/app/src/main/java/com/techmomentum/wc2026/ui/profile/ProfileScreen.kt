@@ -1,6 +1,7 @@
 package com.techmomentum.wc2026.ui.profile
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -8,14 +9,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.BuildConfig
@@ -25,6 +32,7 @@ import com.techmomentum.wc2026.ui.components.PixarCelebrationChip
 import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
+import com.techmomentum.wc2026.ui.theme.darken
 
 @Composable
 fun ProfileScreen(
@@ -36,10 +44,6 @@ fun ProfileScreen(
     val ui by viewModel.uiState.collectAsState()
     val profile by viewModel.profile.collectAsState()
     val subtitle = if (isGuest) "Guest account" else "Collector account"
-    val headerName = profile?.username?.takeIf { it.isNotBlank() }?.let { "@$it" }
-        ?: profile?.let { listOf(it.firstName, it.lastName).filter { n -> n.isNotBlank() }.joinToString(" ") }
-            ?.takeIf { it.isNotBlank() }
-        ?: viewModel.displayName.ifBlank { "Collector" }
 
     Scaffold(containerColor = Color.Transparent) { padding ->
         Box(
@@ -60,11 +64,10 @@ fun ProfileScreen(
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
                         .padding(14.dp),
-                    verticalArrangement = Arrangement.spacedBy(14.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     ProfileOverviewHeader(
                         subtitle = subtitle,
-                        displayName = headerName,
                         onSettings = onSettings,
                     )
 
@@ -82,29 +85,69 @@ fun ProfileScreen(
                         PixarCelebrationChip(message = message)
                     }
 
-                    PixarSecondaryButton(
-                        text = "App settings",
-                        onClick = onSettings,
-                    )
-
-                    PixarPrimaryButton(
-                        text = "Sign out",
-                        onClick = {
+                    ProfileActionsCard(
+                        onSettings = onSettings,
+                        onSignOut = {
                             viewModel.signOut()
                             onSignedOut()
                         },
+                        showAdminSeed = BuildConfig.DEBUG && !isGuest,
+                        onSeedFirestore = viewModel::seedFirestore,
+                        seeding = ui.seeding,
                     )
-
-                    if (BuildConfig.DEBUG && !isGuest) {
-                        PixarSecondaryButton(
-                            text = "Seed Firestore (admin)",
-                            onClick = viewModel::seedFirestore,
-                            enabled = !ui.seeding,
-                            loading = ui.seeding,
-                        )
-                    }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun ProfileActionsCard(
+    onSettings: () -> Unit,
+    onSignOut: () -> Unit,
+    showAdminSeed: Boolean,
+    onSeedFirestore: () -> Unit,
+    seeding: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    val shape = RoundedCornerShape(22.dp)
+
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .shadow(
+                elevation = 4.dp,
+                shape = shape,
+                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.15f),
+            )
+            .clip(shape)
+            .background(Brush.verticalGradient(AlbumPageStyle.pageFrameGradient))
+            .border(1.dp, AlbumPageStyle.filterUnselectedBorder, shape)
+            .padding(18.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        Text(
+            text = "Account",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Black,
+            color = AlbumPageStyle.headerAccent.darken(0.1f),
+        )
+        PixarSecondaryButton(
+            text = "App settings",
+            onClick = onSettings,
+            accentBorder = true,
+        )
+        PixarSecondaryButton(
+            text = "Sign out",
+            onClick = onSignOut,
+        )
+        if (showAdminSeed) {
+            PixarPrimaryButton(
+                text = "Seed Firestore (admin)",
+                onClick = onSeedFirestore,
+                enabled = !seeding,
+                loading = seeding,
+            )
         }
     }
 }
