@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Uruguay,uruguay,URU,Group H,1,uruguay_sergio_rochet,Sergio Rochet,Goalkeeper,uruguay_sergio_rochet.jpg
+Uruguay,uruguay,URU,Group H,2,uruguay_jose_maria_gimenez,José María Giménez,Defender,uruguay_jose_maria_gimenez.jpg
+Uruguay,uruguay,URU,Group H,3,uruguay_sebastian_caceres,Sebastián Cáceres,Defender,uruguay_sebastian_caceres.jpg
+Uruguay,uruguay,URU,Group H,4,uruguay_ronald_araujo,Ronald Araújo,Defender,uruguay_ronald_araujo.jpg
+Uruguay,uruguay,URU,Group H,5,uruguay_manuel_ugarte,Manuel Ugarte,Midfielder,uruguay_manuel_ugarte.jpg
+Uruguay,uruguay,URU,Group H,6,uruguay_rodrigo_bentancur,Rodrigo Bentancur,Midfielder,uruguay_rodrigo_bentancur.jpg
+Uruguay,uruguay,URU,Group H,7,uruguay_nicolas_de_la_cruz,Nicolás de la Cruz,Midfielder,uruguay_nicolas_de_la_cruz.jpg
+Uruguay,uruguay,URU,Group H,8,uruguay_federico_valverde,Federico Valverde,Midfielder,uruguay_federico_valverde.jpg
+Uruguay,uruguay,URU,Group H,9,uruguay_darwin_nunez,Darwin Núñez,Forward,uruguay_darwin_nunez.jpg
+Uruguay,uruguay,URU,Group H,10,uruguay_giorgian_de_arrascaeta,Giorgian de Arrascaeta,Midfielder,uruguay_giorgian_de_arrascaeta.jpg
+Uruguay,uruguay,URU,Group H,11,uruguay_facundo_pellistri,Facundo Pellistri,Forward,uruguay_facundo_pellistri.jpg
+Uruguay,uruguay,URU,Group H,12,uruguay_santiago_mele,Santiago Mele,Goalkeeper,uruguay_santiago_mele.jpg
+Uruguay,uruguay,URU,Group H,13,uruguay_guillermo_varela,Guillermo Varela,Defender,uruguay_guillermo_varela.jpg
+Uruguay,uruguay,URU,Group H,14,uruguay_agustin_canobbio,Agustín Canobbio,Midfielder,uruguay_agustin_canobbio.jpg
+Uruguay,uruguay,URU,Group H,15,uruguay_emiliano_martinez,Emiliano Martínez,Midfielder,uruguay_emiliano_martinez.jpg
+Uruguay,uruguay,URU,Group H,16,uruguay_mathias_olivera,Mathías Olivera,Defender,uruguay_mathias_olivera.jpg
+Uruguay,uruguay,URU,Group H,17,uruguay_matias_vina,Matías Viña,Defender,uruguay_matias_vina.jpg
+Uruguay,uruguay,URU,Group H,18,uruguay_brian_rodriguez,Brian Rodríguez,Forward,uruguay_brian_rodriguez.jpg
+Uruguay,uruguay,URU,Group H,19,uruguay_rodrigo_aguirre,Rodrigo Aguirre,Forward,uruguay_rodrigo_aguirre.jpg
+Uruguay,uruguay,URU,Group H,20,uruguay_maximiliano_araujo,Maximiliano Araújo,Midfielder,uruguay_maximiliano_araujo.jpg
+Uruguay,uruguay,URU,Group H,21,uruguay_federico_vinas,Federico Viñas,Forward,uruguay_federico_vinas.jpg
+Uruguay,uruguay,URU,Group H,22,uruguay_joaquin_piquerez,Joaquín Piquerez,Midfielder,uruguay_joaquin_piquerez.jpg
+Uruguay,uruguay,URU,Group H,23,uruguay_fernando_muslera,Fernando Muslera,Goalkeeper,uruguay_fernando_muslera.jpg
+Uruguay,uruguay,URU,Group H,24,uruguay_santiago_bueno,Santiago Bueno,Defender,uruguay_santiago_bueno.jpg
+Uruguay,uruguay,URU,Group H,25,uruguay_juan_manuel_sanabria,Juan Manuel Sanabria,Midfielder,uruguay_juan_manuel_sanabria.jpg
+Uruguay,uruguay,URU,Group H,26,uruguay_rodrigo_zalazar,Rodrigo Zalazar,Midfielder,uruguay_rodrigo_zalazar.jpg

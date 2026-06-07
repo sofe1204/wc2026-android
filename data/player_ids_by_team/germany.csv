@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Germany,germany,GER,Group E,1,germany_manuel_neuer,Manuel Neuer,Goalkeeper,germany_manuel_neuer.jpg
+Germany,germany,GER,Group E,2,germany_antonio_rudiger,Antonio Rüdiger,Defender,germany_antonio_rudiger.jpg
+Germany,germany,GER,Group E,3,germany_waldemar_anton,Waldemar Anton,Defender,germany_waldemar_anton.jpg
+Germany,germany,GER,Group E,4,germany_jonathan_tah,Jonathan Tah,Defender,germany_jonathan_tah.jpg
+Germany,germany,GER,Group E,5,germany_aleksandar_pavlovic,Aleksandar Pavlović,Midfielder,germany_aleksandar_pavlovic.jpg
+Germany,germany,GER,Group E,6,germany_joshua_kimmich,Joshua Kimmich,Defender,germany_joshua_kimmich.jpg
+Germany,germany,GER,Group E,7,germany_kai_havertz,Kai Havertz,Forward,germany_kai_havertz.jpg
+Germany,germany,GER,Group E,8,germany_leon_goretzka,Leon Goretzka,Midfielder,germany_leon_goretzka.jpg
+Germany,germany,GER,Group E,9,germany_jamie_leweling,Jamie Leweling,Midfielder,germany_jamie_leweling.jpg
+Germany,germany,GER,Group E,10,germany_jamal_musiala,Jamal Musiala,Midfielder,germany_jamal_musiala.jpg
+Germany,germany,GER,Group E,11,germany_nick_woltemade,Nick Woltemade,Forward,germany_nick_woltemade.jpg
+Germany,germany,GER,Group E,12,germany_oliver_baumann,Oliver Baumann,Goalkeeper,germany_oliver_baumann.jpg
+Germany,germany,GER,Group E,13,germany_pascal_gro,Pascal Groß,Midfielder,germany_pascal_gro.jpg
+Germany,germany,GER,Group E,14,germany_maximilian_beier,Maximilian Beier,Forward,germany_maximilian_beier.jpg
+Germany,germany,GER,Group E,15,germany_nico_schlotterbeck,Nico Schlotterbeck,Defender,germany_nico_schlotterbeck.jpg
+Germany,germany,GER,Group E,16,germany_angelo_stiller,Angelo Stiller,Midfielder,germany_angelo_stiller.jpg
+Germany,germany,GER,Group E,17,germany_florian_wirtz,Florian Wirtz,Midfielder,germany_florian_wirtz.jpg
+Germany,germany,GER,Group E,18,germany_nathaniel_brown,Nathaniel Brown,Defender,germany_nathaniel_brown.jpg
+Germany,germany,GER,Group E,19,germany_leroy_sane,Leroy Sané,Midfielder,germany_leroy_sane.jpg
+Germany,germany,GER,Group E,20,germany_nadiem_amiri,Nadiem Amiri,Midfielder,germany_nadiem_amiri.jpg
+Germany,germany,GER,Group E,21,germany_alexander_nubel,Alexander Nübel,Goalkeeper,germany_alexander_nubel.jpg
+Germany,germany,GER,Group E,22,germany_david_raum,David Raum,Defender,germany_david_raum.jpg
+Germany,germany,GER,Group E,23,germany_felix_nmecha,Felix Nmecha,Midfielder,germany_felix_nmecha.jpg
+Germany,germany,GER,Group E,24,germany_malick_thiaw,Malick Thiaw,Defender,germany_malick_thiaw.jpg
+Germany,germany,GER,Group E,25,germany_lennart_karl,Lennart Karl,Midfielder,germany_lennart_karl.jpg
+Germany,germany,GER,Group E,26,germany_deniz_undav,Deniz Undav,Forward,germany_deniz_undav.jpg

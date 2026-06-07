@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Portugal,portugal,POR,Group K,1,portugal_diogo_costa,Diogo Costa,Goalkeeper,portugal_diogo_costa.jpg
+Portugal,portugal,POR,Group K,2,portugal_nelson_semedo,Nélson Semedo,Defender,portugal_nelson_semedo.jpg
+Portugal,portugal,POR,Group K,3,portugal_ruben_dias,Rúben Dias,Defender,portugal_ruben_dias.jpg
+Portugal,portugal,POR,Group K,4,portugal_tomas_araujo,Tomás Araújo,Defender,portugal_tomas_araujo.jpg
+Portugal,portugal,POR,Group K,5,portugal_diogo_dalot,Diogo Dalot,Defender,portugal_diogo_dalot.jpg
+Portugal,portugal,POR,Group K,6,portugal_matheus_nunes,Matheus Nunes,Midfielder,portugal_matheus_nunes.jpg
+Portugal,portugal,POR,Group K,7,portugal_cristiano_ronaldo,Cristiano Ronaldo,Forward,portugal_cristiano_ronaldo.jpg
+Portugal,portugal,POR,Group K,8,portugal_bruno_fernandes,Bruno Fernandes,Midfielder,portugal_bruno_fernandes.jpg
+Portugal,portugal,POR,Group K,9,portugal_goncalo_ramos,Gonçalo Ramos,Forward,portugal_goncalo_ramos.jpg
+Portugal,portugal,POR,Group K,10,portugal_bernardo_silva,Bernardo Silva,Midfielder,portugal_bernardo_silva.jpg
+Portugal,portugal,POR,Group K,11,portugal_joao_felix,João Félix,Forward,portugal_joao_felix.jpg
+Portugal,portugal,POR,Group K,12,portugal_jose_sa,José Sá,Goalkeeper,portugal_jose_sa.jpg
+Portugal,portugal,POR,Group K,13,portugal_renato_veiga,Renato Veiga,Defender,portugal_renato_veiga.jpg
+Portugal,portugal,POR,Group K,14,portugal_goncalo_inacio,Gonçalo Inácio,Defender,portugal_goncalo_inacio.jpg
+Portugal,portugal,POR,Group K,15,portugal_joao_neves,João Neves,Midfielder,portugal_joao_neves.jpg
+Portugal,portugal,POR,Group K,16,portugal_francisco_trincao,Francisco Trincão,Forward,portugal_francisco_trincao.jpg
+Portugal,portugal,POR,Group K,17,portugal_rafael_leao,Rafael Leão,Forward,portugal_rafael_leao.jpg
+Portugal,portugal,POR,Group K,18,portugal_pedro_neto,Pedro Neto,Forward,portugal_pedro_neto.jpg
+Portugal,portugal,POR,Group K,19,portugal_goncalo_guedes,Gonçalo Guedes,Forward,portugal_goncalo_guedes.jpg
+Portugal,portugal,POR,Group K,20,portugal_joao_cancelo,João Cancelo,Defender,portugal_joao_cancelo.jpg
+Portugal,portugal,POR,Group K,21,portugal_ruben_neves,Rúben Neves,Midfielder,portugal_ruben_neves.jpg
+Portugal,portugal,POR,Group K,22,portugal_rui_silva,Rui Silva,Goalkeeper,portugal_rui_silva.jpg
+Portugal,portugal,POR,Group K,23,portugal_vitinha,Vitinha,Midfielder,portugal_vitinha.jpg
+Portugal,portugal,POR,Group K,24,portugal_samu_costa,Samú Costa,Defender,portugal_samu_costa.jpg
+Portugal,portugal,POR,Group K,25,portugal_nuno_mendes,Nuno Mendes,Defender,portugal_nuno_mendes.jpg
+Portugal,portugal,POR,Group K,26,portugal_francisco_conceicao,Francisco Conceição,Forward,portugal_francisco_conceicao.jpg

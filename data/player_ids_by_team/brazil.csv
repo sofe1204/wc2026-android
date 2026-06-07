@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Brazil,brazil,BRA,Group C,1,brazil_alisson,Alisson,Goalkeeper,brazil_alisson.jpg
+Brazil,brazil,BRA,Group C,2,brazil_wesley,Wesley,Defender,brazil_wesley.jpg
+Brazil,brazil,BRA,Group C,3,brazil_gabriel_magalhaes,Gabriel Magalhães,Defender,brazil_gabriel_magalhaes.jpg
+Brazil,brazil,BRA,Group C,4,brazil_marquinhos,Marquinhos,Defender,brazil_marquinhos.jpg
+Brazil,brazil,BRA,Group C,5,brazil_casemiro,Casemiro,Midfielder,brazil_casemiro.jpg
+Brazil,brazil,BRA,Group C,6,brazil_alex_sandro,Alex Sandro,Defender,brazil_alex_sandro.jpg
+Brazil,brazil,BRA,Group C,7,brazil_vinicius_junior,Vinícius Júnior,Forward,brazil_vinicius_junior.jpg
+Brazil,brazil,BRA,Group C,8,brazil_bruno_guimaraes,Bruno Guimarães,Midfielder,brazil_bruno_guimaraes.jpg
+Brazil,brazil,BRA,Group C,9,brazil_matheus_cunha,Matheus Cunha,Forward,brazil_matheus_cunha.jpg
+Brazil,brazil,BRA,Group C,10,brazil_neymar,Neymar,Forward,brazil_neymar.jpg
+Brazil,brazil,BRA,Group C,11,brazil_raphinha,Raphinha,Forward,brazil_raphinha.jpg
+Brazil,brazil,BRA,Group C,12,brazil_weverton,Weverton,Goalkeeper,brazil_weverton.jpg
+Brazil,brazil,BRA,Group C,13,brazil_danilo_luiz,Danilo Luiz,Defender,brazil_danilo_luiz.jpg
+Brazil,brazil,BRA,Group C,14,brazil_bremer,Bremer,Defender,brazil_bremer.jpg
+Brazil,brazil,BRA,Group C,15,brazil_leo_pereira,Léo Pereira,Defender,brazil_leo_pereira.jpg
+Brazil,brazil,BRA,Group C,16,brazil_douglas_santos,Douglas Santos,Defender,brazil_douglas_santos.jpg
+Brazil,brazil,BRA,Group C,17,brazil_fabinho,Fabinho,Midfielder,brazil_fabinho.jpg
+Brazil,brazil,BRA,Group C,18,brazil_danilo_santos,Danilo Santos,Midfielder,brazil_danilo_santos.jpg
+Brazil,brazil,BRA,Group C,19,brazil_endrick,Endrick,Forward,brazil_endrick.jpg
+Brazil,brazil,BRA,Group C,20,brazil_lucas_paqueta,Lucas Paquetá,Midfielder,brazil_lucas_paqueta.jpg
+Brazil,brazil,BRA,Group C,21,brazil_luiz_henrique,Luiz Henrique,Forward,brazil_luiz_henrique.jpg
+Brazil,brazil,BRA,Group C,22,brazil_gabriel_martinelli,Gabriel Martinelli,Forward,brazil_gabriel_martinelli.jpg
+Brazil,brazil,BRA,Group C,23,brazil_ederson,Ederson,Goalkeeper,brazil_ederson.jpg
+Brazil,brazil,BRA,Group C,24,brazil_roger_ibanez,Roger Ibañez,Defender,brazil_roger_ibanez.jpg
+Brazil,brazil,BRA,Group C,25,brazil_igor_thiago,Igor Thiago,Forward,brazil_igor_thiago.jpg
+Brazil,brazil,BRA,Group C,26,brazil_rayan,Rayan,Forward,brazil_rayan.jpg

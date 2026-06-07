@@ -72,6 +72,7 @@ fun DocumentSnapshot.toSlotSymbol(): SlotSymbol = SlotSymbol(
     type = getString("type") ?: "player",
     imageUrl = getString("imageUrl") ?: "",
     isActive = getBoolean("isActive") ?: true,
+    documentId = id,
 )
 
 fun DocumentSnapshot.toSticker(): Sticker = Sticker(

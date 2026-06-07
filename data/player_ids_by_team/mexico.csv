@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Mexico,mexico,MEX,Group A,1,mexico_raul_rangel,Raúl Rangel,Goalkeeper,mexico_raul_rangel.jpg
+Mexico,mexico,MEX,Group A,2,mexico_jorge_sanchez,Jorge Sánchez,Defender,mexico_jorge_sanchez.jpg
+Mexico,mexico,MEX,Group A,3,mexico_cesar_montes,César Montes,Defender,mexico_cesar_montes.jpg
+Mexico,mexico,MEX,Group A,4,mexico_edson_alvarez,Edson Álvarez,Defender,mexico_edson_alvarez.jpg
+Mexico,mexico,MEX,Group A,5,mexico_johan_vasquez,Johan Vásquez,Defender,mexico_johan_vasquez.jpg
+Mexico,mexico,MEX,Group A,6,mexico_erik_lira,Érik Lira,Midfielder,mexico_erik_lira.jpg
+Mexico,mexico,MEX,Group A,7,mexico_luis_romo,Luis Romo,Midfielder,mexico_luis_romo.jpg
+Mexico,mexico,MEX,Group A,8,mexico_alvaro_fidalgo,Álvaro Fidalgo,Midfielder,mexico_alvaro_fidalgo.jpg
+Mexico,mexico,MEX,Group A,9,mexico_raul_jimenez,Raúl Jiménez,Forward,mexico_raul_jimenez.jpg
+Mexico,mexico,MEX,Group A,10,mexico_alexis_vega,Alexis Vega,Forward,mexico_alexis_vega.jpg
+Mexico,mexico,MEX,Group A,11,mexico_santiago_gimenez,Santiago Giménez,Forward,mexico_santiago_gimenez.jpg
+Mexico,mexico,MEX,Group A,12,mexico_carlos_acevedo,Carlos Acevedo,Goalkeeper,mexico_carlos_acevedo.jpg
+Mexico,mexico,MEX,Group A,13,mexico_guillermo_ochoa,Guillermo Ochoa,Goalkeeper,mexico_guillermo_ochoa.jpg
+Mexico,mexico,MEX,Group A,14,mexico_armando_gonzalez,Armando González,Forward,mexico_armando_gonzalez.jpg
+Mexico,mexico,MEX,Group A,15,mexico_israel_reyes,Israel Reyes,Defender,mexico_israel_reyes.jpg
+Mexico,mexico,MEX,Group A,16,mexico_julian_quinones,Julián Quiñones,Forward,mexico_julian_quinones.jpg
+Mexico,mexico,MEX,Group A,17,mexico_orbelin_pineda,Orbelín Pineda,Midfielder,mexico_orbelin_pineda.jpg
+Mexico,mexico,MEX,Group A,18,mexico_obed_vargas,Obed Vargas,Midfielder,mexico_obed_vargas.jpg
+Mexico,mexico,MEX,Group A,19,mexico_gilberto_mora,Gilberto Mora,Midfielder,mexico_gilberto_mora.jpg
+Mexico,mexico,MEX,Group A,20,mexico_mateo_chavez,Mateo Chávez,Defender,mexico_mateo_chavez.jpg
+Mexico,mexico,MEX,Group A,21,mexico_cesar_huerta,César Huerta,Forward,mexico_cesar_huerta.jpg
+Mexico,mexico,MEX,Group A,22,mexico_guillermo_martinez,Guillermo Martínez,Forward,mexico_guillermo_martinez.jpg
+Mexico,mexico,MEX,Group A,23,mexico_jesus_gallardo,Jesús Gallardo,Defender,mexico_jesus_gallardo.jpg
+Mexico,mexico,MEX,Group A,24,mexico_luis_chavez,Luis Chávez,Midfielder,mexico_luis_chavez.jpg
+Mexico,mexico,MEX,Group A,25,mexico_roberto_alvarado,Roberto Alvarado,Forward,mexico_roberto_alvarado.jpg
+Mexico,mexico,MEX,Group A,26,mexico_brian_gutierrez,Brian Gutiérrez,Midfielder,mexico_brian_gutierrez.jpg

@@ -229,19 +229,18 @@ class DemoRewardsEngine @Inject constructor(
     }
 
     private fun checkWin(grid: List<List<String>>): Boolean {
-        val diagonals = listOf(
+        val lines = listOf(
+            listOf(grid[0][0], grid[0][1], grid[0][2]),
+            listOf(grid[1][0], grid[1][1], grid[1][2]),
+            listOf(grid[2][0], grid[2][1], grid[2][2]),
             listOf(grid[0][0], grid[1][1], grid[2][2]),
             listOf(grid[0][2], grid[1][1], grid[2][0]),
         )
-        return diagonals.any { lineWins(it) }
+        return lines.any { lineWins(it) }
     }
 
     private fun lineWins(line: List<String>): Boolean {
         if (line.any { it.isBlank() }) return false
-        val trophy = GameConstants.TROPHY_SYMBOL_ID
-        val nonWild = line.filter { it != trophy }
-        if (nonWild.isEmpty()) return true
-        val target = nonWild.first()
-        return nonWild.all { it == target } && line.all { it == target || it == trophy }
+        return line[0] == line[1] && line[1] == line[2]
     }
 }

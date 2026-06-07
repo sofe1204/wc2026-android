@@ -1,0 +1,1249 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Mexico,mexico,MEX,Group A,1,mexico_raul_rangel,Raúl Rangel,Goalkeeper,mexico_raul_rangel.jpg
+Mexico,mexico,MEX,Group A,2,mexico_jorge_sanchez,Jorge Sánchez,Defender,mexico_jorge_sanchez.jpg
+Mexico,mexico,MEX,Group A,3,mexico_cesar_montes,César Montes,Defender,mexico_cesar_montes.jpg
+Mexico,mexico,MEX,Group A,4,mexico_edson_alvarez,Edson Álvarez,Defender,mexico_edson_alvarez.jpg
+Mexico,mexico,MEX,Group A,5,mexico_johan_vasquez,Johan Vásquez,Defender,mexico_johan_vasquez.jpg
+Mexico,mexico,MEX,Group A,6,mexico_erik_lira,Érik Lira,Midfielder,mexico_erik_lira.jpg
+Mexico,mexico,MEX,Group A,7,mexico_luis_romo,Luis Romo,Midfielder,mexico_luis_romo.jpg
+Mexico,mexico,MEX,Group A,8,mexico_alvaro_fidalgo,Álvaro Fidalgo,Midfielder,mexico_alvaro_fidalgo.jpg
+Mexico,mexico,MEX,Group A,9,mexico_raul_jimenez,Raúl Jiménez,Forward,mexico_raul_jimenez.jpg
+Mexico,mexico,MEX,Group A,10,mexico_alexis_vega,Alexis Vega,Forward,mexico_alexis_vega.jpg
+Mexico,mexico,MEX,Group A,11,mexico_santiago_gimenez,Santiago Giménez,Forward,mexico_santiago_gimenez.jpg
+Mexico,mexico,MEX,Group A,12,mexico_carlos_acevedo,Carlos Acevedo,Goalkeeper,mexico_carlos_acevedo.jpg
+Mexico,mexico,MEX,Group A,13,mexico_guillermo_ochoa,Guillermo Ochoa,Goalkeeper,mexico_guillermo_ochoa.jpg
+Mexico,mexico,MEX,Group A,14,mexico_armando_gonzalez,Armando González,Forward,mexico_armando_gonzalez.jpg
+Mexico,mexico,MEX,Group A,15,mexico_israel_reyes,Israel Reyes,Defender,mexico_israel_reyes.jpg
+Mexico,mexico,MEX,Group A,16,mexico_julian_quinones,Julián Quiñones,Forward,mexico_julian_quinones.jpg
+Mexico,mexico,MEX,Group A,17,mexico_orbelin_pineda,Orbelín Pineda,Midfielder,mexico_orbelin_pineda.jpg
+Mexico,mexico,MEX,Group A,18,mexico_obed_vargas,Obed Vargas,Midfielder,mexico_obed_vargas.jpg
+Mexico,mexico,MEX,Group A,19,mexico_gilberto_mora,Gilberto Mora,Midfielder,mexico_gilberto_mora.jpg
+Mexico,mexico,MEX,Group A,20,mexico_mateo_chavez,Mateo Chávez,Defender,mexico_mateo_chavez.jpg
+Mexico,mexico,MEX,Group A,21,mexico_cesar_huerta,César Huerta,Forward,mexico_cesar_huerta.jpg
+Mexico,mexico,MEX,Group A,22,mexico_guillermo_martinez,Guillermo Martínez,Forward,mexico_guillermo_martinez.jpg
+Mexico,mexico,MEX,Group A,23,mexico_jesus_gallardo,Jesús Gallardo,Defender,mexico_jesus_gallardo.jpg
+Mexico,mexico,MEX,Group A,24,mexico_luis_chavez,Luis Chávez,Midfielder,mexico_luis_chavez.jpg
+Mexico,mexico,MEX,Group A,25,mexico_roberto_alvarado,Roberto Alvarado,Forward,mexico_roberto_alvarado.jpg
+Mexico,mexico,MEX,Group A,26,mexico_brian_gutierrez,Brian Gutiérrez,Midfielder,mexico_brian_gutierrez.jpg
+South Africa,south_africa,RSA,Group A,1,south_africa_ronwen_williams,Ronwen Williams,Goalkeeper,south_africa_ronwen_williams.jpg
+South Africa,south_africa,RSA,Group A,2,south_africa_thabang_matuludi,Thabang Matuludi,Defender,south_africa_thabang_matuludi.jpg
+South Africa,south_africa,RSA,Group A,3,south_africa_khulumani_ndamane,Khulumani Ndamane,Defender,south_africa_khulumani_ndamane.jpg
+South Africa,south_africa,RSA,Group A,4,south_africa_teboho_mokoena,Teboho Mokoena,Midfielder,south_africa_teboho_mokoena.jpg
+South Africa,south_africa,RSA,Group A,5,south_africa_thalente_mbatha,Thalente Mbatha,Midfielder,south_africa_thalente_mbatha.jpg
+South Africa,south_africa,RSA,Group A,6,south_africa_aubrey_modiba,Aubrey Modiba,Defender,south_africa_aubrey_modiba.jpg
+South Africa,south_africa,RSA,Group A,7,south_africa_oswin_appollis,Oswin Appollis,Forward,south_africa_oswin_appollis.jpg
+South Africa,south_africa,RSA,Group A,8,south_africa_tshepang_moremi,Tshepang Moremi,Forward,south_africa_tshepang_moremi.jpg
+South Africa,south_africa,RSA,Group A,9,south_africa_lyle_foster,Lyle Foster,Forward,south_africa_lyle_foster.jpg
+South Africa,south_africa,RSA,Group A,10,south_africa_relebohile_mofokeng,Relebohile Mofokeng,Forward,south_africa_relebohile_mofokeng.jpg
+South Africa,south_africa,RSA,Group A,11,south_africa_themba_zwane,Themba Zwane,Midfielder,south_africa_themba_zwane.jpg
+South Africa,south_africa,RSA,Group A,12,south_africa_thapelo_maseko,Thapelo Maseko,Forward,south_africa_thapelo_maseko.jpg
+South Africa,south_africa,RSA,Group A,13,south_africa_sphephelo_sithole,Sphephelo Sithole,Midfielder,south_africa_sphephelo_sithole.jpg
+South Africa,south_africa,RSA,Group A,14,south_africa_mbekezeli_mbokazi,Mbekezeli Mbokazi,Defender,south_africa_mbekezeli_mbokazi.jpg
+South Africa,south_africa,RSA,Group A,15,south_africa_iqraam_rayners,Iqraam Rayners,Forward,south_africa_iqraam_rayners.jpg
+South Africa,south_africa,RSA,Group A,16,south_africa_sipho_chaine,Sipho Chaine,Goalkeeper,south_africa_sipho_chaine.jpg
+South Africa,south_africa,RSA,Group A,17,south_africa_evidence_makgopa,Evidence Makgopa,Forward,south_africa_evidence_makgopa.jpg
+South Africa,south_africa,RSA,Group A,18,south_africa_samukele_kabini,Samukele Kabini,Defender,south_africa_samukele_kabini.jpg
+South Africa,south_africa,RSA,Group A,19,south_africa_nkosinathi_sibisi,Nkosinathi Sibisi,Defender,south_africa_nkosinathi_sibisi.jpg
+South Africa,south_africa,RSA,Group A,20,south_africa_khuliso_mudau,Khuliso Mudau,Defender,south_africa_khuliso_mudau.jpg
+South Africa,south_africa,RSA,Group A,21,south_africa_ime_okon,Ime Okon,Defender,south_africa_ime_okon.jpg
+South Africa,south_africa,RSA,Group A,22,south_africa_ricardo_goss,Ricardo Goss,Goalkeeper,south_africa_ricardo_goss.jpg
+South Africa,south_africa,RSA,Group A,23,south_africa_jayden_adams,Jayden Adams,Midfielder,south_africa_jayden_adams.jpg
+South Africa,south_africa,RSA,Group A,24,south_africa_olwethu_makhanya,Olwethu Makhanya,Defender,south_africa_olwethu_makhanya.jpg
+South Africa,south_africa,RSA,Group A,25,south_africa_kamogelo_sebelebele,Kamogelo Sebelebele,Forward,south_africa_kamogelo_sebelebele.jpg
+South Africa,south_africa,RSA,Group A,26,south_africa_bradley_cross,Bradley Cross,Defender,south_africa_bradley_cross.jpg
+South Korea,south_korea,KOR,Group A,1,south_korea_kim_seung_gyu,Kim Seung-gyu,Goalkeeper,south_korea_kim_seung_gyu.jpg
+South Korea,south_korea,KOR,Group A,2,south_korea_lee_han_beom,Lee Han-beom,Defender,south_korea_lee_han_beom.jpg
+South Korea,south_korea,KOR,Group A,3,south_korea_lee_gi_hyuk,Lee Gi-hyuk,Midfielder,south_korea_lee_gi_hyuk.jpg
+South Korea,south_korea,KOR,Group A,4,south_korea_kim_min_jae,Kim Min-jae,Defender,south_korea_kim_min_jae.jpg
+South Korea,south_korea,KOR,Group A,5,south_korea_kim_tae_hyeon,Kim Tae-hyeon,Defender,south_korea_kim_tae_hyeon.jpg
+South Korea,south_korea,KOR,Group A,6,south_korea_hwang_in_beom,Hwang In-beom,Midfielder,south_korea_hwang_in_beom.jpg
+South Korea,south_korea,KOR,Group A,7,south_korea_son_heung_min,Son Heung-min,Forward,south_korea_son_heung_min.jpg
+South Korea,south_korea,KOR,Group A,8,south_korea_paik_seung_ho,Paik Seung-ho,Midfielder,south_korea_paik_seung_ho.jpg
+South Korea,south_korea,KOR,Group A,9,south_korea_cho_gue_sung,Cho Gue-sung,Forward,south_korea_cho_gue_sung.jpg
+South Korea,south_korea,KOR,Group A,10,south_korea_lee_jae_sung,Lee Jae-sung,Midfielder,south_korea_lee_jae_sung.jpg
+South Korea,south_korea,KOR,Group A,11,south_korea_hwang_hee_chan,Hwang Hee-chan,Midfielder,south_korea_hwang_hee_chan.jpg
+South Korea,south_korea,KOR,Group A,12,south_korea_song_bum_keun,Song Bum-keun,Goalkeeper,south_korea_song_bum_keun.jpg
+South Korea,south_korea,KOR,Group A,13,south_korea_lee_tae_seok,Lee Tae-seok,Defender,south_korea_lee_tae_seok.jpg
+South Korea,south_korea,KOR,Group A,14,south_korea_cho_wi_je,Cho Wi-je,Defender,south_korea_cho_wi_je.jpg
+South Korea,south_korea,KOR,Group A,15,south_korea_kim_moon_hwan,Kim Moon-hwan,Defender,south_korea_kim_moon_hwan.jpg
+South Korea,south_korea,KOR,Group A,16,south_korea_park_jin_seob,Park Jin-seob,Defender,south_korea_park_jin_seob.jpg
+South Korea,south_korea,KOR,Group A,17,south_korea_bae_jun_ho,Bae Jun-ho,Midfielder,south_korea_bae_jun_ho.jpg
+South Korea,south_korea,KOR,Group A,18,south_korea_oh_hyeon_gyu,Oh Hyeon-gyu,Forward,south_korea_oh_hyeon_gyu.jpg
+South Korea,south_korea,KOR,Group A,19,south_korea_lee_kang_in,Lee Kang-in,Midfielder,south_korea_lee_kang_in.jpg
+South Korea,south_korea,KOR,Group A,20,south_korea_yang_hyun_jun,Yang Hyun-jun,Midfielder,south_korea_yang_hyun_jun.jpg
+South Korea,south_korea,KOR,Group A,21,south_korea_jo_hyeon_woo,Jo Hyeon-woo,Goalkeeper,south_korea_jo_hyeon_woo.jpg
+South Korea,south_korea,KOR,Group A,22,south_korea_seol_young_woo,Seol Young-woo,Defender,south_korea_seol_young_woo.jpg
+South Korea,south_korea,KOR,Group A,23,south_korea_jens_castrop,Jens Castrop,Defender,south_korea_jens_castrop.jpg
+South Korea,south_korea,KOR,Group A,24,south_korea_kim_jin_gyu,Kim Jin-gyu,Midfielder,south_korea_kim_jin_gyu.jpg
+South Korea,south_korea,KOR,Group A,25,south_korea_eom_ji_sung,Eom Ji-sung,Midfielder,south_korea_eom_ji_sung.jpg
+South Korea,south_korea,KOR,Group A,26,south_korea_lee_dong_gyeong,Lee Dong-gyeong,Midfielder,south_korea_lee_dong_gyeong.jpg
+Czechia,czechia,CZE,Group A,1,czechia_matej_kovar,Matěj Kovář,Goalkeeper,czechia_matej_kovar.jpg
+Czechia,czechia,CZE,Group A,2,czechia_david_zima,David Zima,Defender,czechia_david_zima.jpg
+Czechia,czechia,CZE,Group A,3,czechia_tomas_holes,Tomáš Holeš,Defender,czechia_tomas_holes.jpg
+Czechia,czechia,CZE,Group A,4,czechia_robin_hranac,Robin Hranáč,Defender,czechia_robin_hranac.jpg
+Czechia,czechia,CZE,Group A,5,czechia_vladimir_coufal,Vladimír Coufal,Defender,czechia_vladimir_coufal.jpg
+Czechia,czechia,CZE,Group A,6,czechia_stepan_chaloupek,Štěpán Chaloupek,Defender,czechia_stepan_chaloupek.jpg
+Czechia,czechia,CZE,Group A,7,czechia_ladislav_krejci,Ladislav Krejčí,Defender,czechia_ladislav_krejci.jpg
+Czechia,czechia,CZE,Group A,8,czechia_vladimir_darida,Vladimír Darida,Midfielder,czechia_vladimir_darida.jpg
+Czechia,czechia,CZE,Group A,9,czechia_adam_hlozek,Adam Hložek,Forward,czechia_adam_hlozek.jpg
+Czechia,czechia,CZE,Group A,10,czechia_patrik_schick,Patrik Schick,Forward,czechia_patrik_schick.jpg
+Czechia,czechia,CZE,Group A,11,czechia_jan_kuchta,Jan Kuchta,Forward,czechia_jan_kuchta.jpg
+Czechia,czechia,CZE,Group A,12,czechia_lukas_cerv,Lukáš Červ,Midfielder,czechia_lukas_cerv.jpg
+Czechia,czechia,CZE,Group A,13,czechia_mojmir_chytil,Mojmír Chytil,Forward,czechia_mojmir_chytil.jpg
+Czechia,czechia,CZE,Group A,14,czechia_david_jurasek,David Jurásek,Defender,czechia_david_jurasek.jpg
+Czechia,czechia,CZE,Group A,15,czechia_pavel_sulc,Pavel Šulc,Forward,czechia_pavel_sulc.jpg
+Czechia,czechia,CZE,Group A,16,czechia_jindrich_stanek,Jindřich Staněk,Goalkeeper,czechia_jindrich_stanek.jpg
+Czechia,czechia,CZE,Group A,17,czechia_lukas_provod,Lukáš Provod,Midfielder,czechia_lukas_provod.jpg
+Czechia,czechia,CZE,Group A,18,czechia_michal_sadilek,Michal Sadílek,Midfielder,czechia_michal_sadilek.jpg
+Czechia,czechia,CZE,Group A,19,czechia_tomas_chory,Tomáš Chorý,Forward,czechia_tomas_chory.jpg
+Czechia,czechia,CZE,Group A,20,czechia_jaroslav_zeleny,Jaroslav Zelený,Defender,czechia_jaroslav_zeleny.jpg
+Czechia,czechia,CZE,Group A,21,czechia_david_doudera,David Douděra,Defender,czechia_david_doudera.jpg
+Czechia,czechia,CZE,Group A,22,czechia_tomas_soucek,Tomáš Souček,Midfielder,czechia_tomas_soucek.jpg
+Czechia,czechia,CZE,Group A,23,czechia_lukas_hornicek,Lukáš Horníček,Goalkeeper,czechia_lukas_hornicek.jpg
+Czechia,czechia,CZE,Group A,24,czechia_alexandr_sojka,Alexandr Sojka,Midfielder,czechia_alexandr_sojka.jpg
+Czechia,czechia,CZE,Group A,25,czechia_hugo_sochurek,Hugo Sochůrek,Midfielder,czechia_hugo_sochurek.jpg
+Czechia,czechia,CZE,Group A,26,czechia_denis_visinsky,Denis Višinský,Forward,czechia_denis_visinsky.jpg
+Canada,canada,CAN,Group B,1,canada_dayne_st_clair,Dayne St. Clair,Goalkeeper,canada_dayne_st_clair.jpg
+Canada,canada,CAN,Group B,2,canada_alistair_johnston,Alistair Johnston,Defender,canada_alistair_johnston.jpg
+Canada,canada,CAN,Group B,3,canada_alfie_jones,Alfie Jones,Defender,canada_alfie_jones.jpg
+Canada,canada,CAN,Group B,4,canada_luc_de_fougerolles,Luc de Fougerolles,Defender,canada_luc_de_fougerolles.jpg
+Canada,canada,CAN,Group B,5,canada_joel_waterman,Joel Waterman,Defender,canada_joel_waterman.jpg
+Canada,canada,CAN,Group B,6,canada_mathieu_choiniere,Mathieu Choinière,Midfielder,canada_mathieu_choiniere.jpg
+Canada,canada,CAN,Group B,7,canada_stephen_eustaquio,Stephen Eustáquio,Midfielder,canada_stephen_eustaquio.jpg
+Canada,canada,CAN,Group B,8,canada_ismael_kone,Ismaël Koné,Midfielder,canada_ismael_kone.jpg
+Canada,canada,CAN,Group B,9,canada_cyle_larin,Cyle Larin,Forward,canada_cyle_larin.jpg
+Canada,canada,CAN,Group B,10,canada_jonathan_david,Jonathan David,Forward,canada_jonathan_david.jpg
+Canada,canada,CAN,Group B,11,canada_liam_millar,Liam Millar,Midfielder,canada_liam_millar.jpg
+Canada,canada,CAN,Group B,12,canada_tani_oluwaseyi,Tani Oluwaseyi,Forward,canada_tani_oluwaseyi.jpg
+Canada,canada,CAN,Group B,13,canada_derek_cornelius,Derek Cornelius,Defender,canada_derek_cornelius.jpg
+Canada,canada,CAN,Group B,14,canada_jacob_shaffelburg,Jacob Shaffelburg,Midfielder,canada_jacob_shaffelburg.jpg
+Canada,canada,CAN,Group B,15,canada_moise_bombito,Moïse Bombito,Defender,canada_moise_bombito.jpg
+Canada,canada,CAN,Group B,16,canada_maxime_crepeau,Maxime Crépeau,Goalkeeper,canada_maxime_crepeau.jpg
+Canada,canada,CAN,Group B,17,canada_tajon_buchanan,Tajon Buchanan,Forward,canada_tajon_buchanan.jpg
+Canada,canada,CAN,Group B,18,canada_owen_goodman,Owen Goodman,Goalkeeper,canada_owen_goodman.jpg
+Canada,canada,CAN,Group B,19,canada_alphonso_davies,Alphonso Davies,Defender,canada_alphonso_davies.jpg
+Canada,canada,CAN,Group B,20,canada_ali_ahmed,Ali Ahmed,Forward,canada_ali_ahmed.jpg
+Canada,canada,CAN,Group B,21,canada_jonathan_osorio,Jonathan Osorio,Midfielder,canada_jonathan_osorio.jpg
+Canada,canada,CAN,Group B,22,canada_richie_laryea,Richie Laryea,Defender,canada_richie_laryea.jpg
+Canada,canada,CAN,Group B,23,canada_niko_sigur,Niko Sigur,Defender,canada_niko_sigur.jpg
+Canada,canada,CAN,Group B,24,canada_promise_david,Promise David,Forward,canada_promise_david.jpg
+Canada,canada,CAN,Group B,25,canada_nathan_saliba,Nathan Saliba,Midfielder,canada_nathan_saliba.jpg
+Canada,canada,CAN,Group B,26,canada_marcelo_flores,Marcelo Flores,Midfielder,canada_marcelo_flores.jpg
+Switzerland,switzerland,SUI,Group B,1,switzerland_gregor_kobel,Gregor Kobel,Goalkeeper,switzerland_gregor_kobel.jpg
+Switzerland,switzerland,SUI,Group B,2,switzerland_miro_muheim,Miro Muheim,Defender,switzerland_miro_muheim.jpg
+Switzerland,switzerland,SUI,Group B,3,switzerland_silvan_widmer,Silvan Widmer,Defender,switzerland_silvan_widmer.jpg
+Switzerland,switzerland,SUI,Group B,4,switzerland_nico_elvedi,Nico Elvedi,Defender,switzerland_nico_elvedi.jpg
+Switzerland,switzerland,SUI,Group B,5,switzerland_manuel_akanji,Manuel Akanji,Defender,switzerland_manuel_akanji.jpg
+Switzerland,switzerland,SUI,Group B,6,switzerland_denis_zakaria,Denis Zakaria,Midfielder,switzerland_denis_zakaria.jpg
+Switzerland,switzerland,SUI,Group B,7,switzerland_breel_embolo,Breel Embolo,Forward,switzerland_breel_embolo.jpg
+Switzerland,switzerland,SUI,Group B,8,switzerland_remo_freuler,Remo Freuler,Midfielder,switzerland_remo_freuler.jpg
+Switzerland,switzerland,SUI,Group B,9,switzerland_johan_manzambi,Johan Manzambi,Midfielder,switzerland_johan_manzambi.jpg
+Switzerland,switzerland,SUI,Group B,10,switzerland_granit_xhaka,Granit Xhaka,Midfielder,switzerland_granit_xhaka.jpg
+Switzerland,switzerland,SUI,Group B,11,switzerland_dan_ndoye,Dan Ndoye,Forward,switzerland_dan_ndoye.jpg
+Switzerland,switzerland,SUI,Group B,12,switzerland_yvon_mvogo,Yvon Mvogo,Goalkeeper,switzerland_yvon_mvogo.jpg
+Switzerland,switzerland,SUI,Group B,13,switzerland_ricardo_rodriguez,Ricardo Rodriguez,Defender,switzerland_ricardo_rodriguez.jpg
+Switzerland,switzerland,SUI,Group B,14,switzerland_ardon_jashari,Ardon Jashari,Midfielder,switzerland_ardon_jashari.jpg
+Switzerland,switzerland,SUI,Group B,15,switzerland_djibril_sow,Djibril Sow,Midfielder,switzerland_djibril_sow.jpg
+Switzerland,switzerland,SUI,Group B,16,switzerland_christian_fassnacht,Christian Fassnacht,Forward,switzerland_christian_fassnacht.jpg
+Switzerland,switzerland,SUI,Group B,17,switzerland_ruben_vargas,Rubén Vargas,Forward,switzerland_ruben_vargas.jpg
+Switzerland,switzerland,SUI,Group B,18,switzerland_eray_comert,Eray Cömert,Defender,switzerland_eray_comert.jpg
+Switzerland,switzerland,SUI,Group B,19,switzerland_noah_okafor,Noah Okafor,Forward,switzerland_noah_okafor.jpg
+Switzerland,switzerland,SUI,Group B,20,switzerland_michel_aebischer,Michel Aebischer,Midfielder,switzerland_michel_aebischer.jpg
+Switzerland,switzerland,SUI,Group B,21,switzerland_marvin_keller,Marvin Keller,Goalkeeper,switzerland_marvin_keller.jpg
+Switzerland,switzerland,SUI,Group B,22,switzerland_fabian_rieder,Fabian Rieder,Midfielder,switzerland_fabian_rieder.jpg
+Switzerland,switzerland,SUI,Group B,23,switzerland_zeki_amdouni,Zeki Amdouni,Forward,switzerland_zeki_amdouni.jpg
+Switzerland,switzerland,SUI,Group B,24,switzerland_aurele_amenda,Aurèle Amenda,Defender,switzerland_aurele_amenda.jpg
+Switzerland,switzerland,SUI,Group B,25,switzerland_luca_jaquez,Luca Jaquez,Defender,switzerland_luca_jaquez.jpg
+Switzerland,switzerland,SUI,Group B,26,switzerland_cedric_itten,Cedric Itten,Forward,switzerland_cedric_itten.jpg
+Qatar,qatar,QAT,Group B,1,qatar_mahmud_abunada,Mahmud Abunada,Goalkeeper,qatar_mahmud_abunada.jpg
+Qatar,qatar,QAT,Group B,2,qatar_pedro_miguel,Pedro Miguel,Defender,qatar_pedro_miguel.jpg
+Qatar,qatar,QAT,Group B,3,qatar_lucas_mendes,Lucas Mendes,Defender,qatar_lucas_mendes.jpg
+Qatar,qatar,QAT,Group B,4,qatar_issa_laye,Issa Laye,Defender,qatar_issa_laye.jpg
+Qatar,qatar,QAT,Group B,5,qatar_jassem_gaber,Jassem Gaber,Defender,qatar_jassem_gaber.jpg
+Qatar,qatar,QAT,Group B,6,qatar_abdulaziz_hatem,Abdulaziz Hatem,Midfielder,qatar_abdulaziz_hatem.jpg
+Qatar,qatar,QAT,Group B,7,qatar_ahmed_alaaeldin,Ahmed Alaaeldin,Forward,qatar_ahmed_alaaeldin.jpg
+Qatar,qatar,QAT,Group B,8,qatar_edmilson_junior,Edmilson Junior,Forward,qatar_edmilson_junior.jpg
+Qatar,qatar,QAT,Group B,9,qatar_mohammed_muntari,Mohammed Muntari,Forward,qatar_mohammed_muntari.jpg
+Qatar,qatar,QAT,Group B,10,qatar_hassan_al_haydos,Hassan Al-Haydos,Forward,qatar_hassan_al_haydos.jpg
+Qatar,qatar,QAT,Group B,11,qatar_akram_afif,Akram Afif,Forward,qatar_akram_afif.jpg
+Qatar,qatar,QAT,Group B,12,qatar_karim_boudiaf,Karim Boudiaf,Midfielder,qatar_karim_boudiaf.jpg
+Qatar,qatar,QAT,Group B,13,qatar_ayoub_al_oui,Ayoub Al-Oui,Defender,qatar_ayoub_al_oui.jpg
+Qatar,qatar,QAT,Group B,14,qatar_homam_ahmed,Homam Ahmed,Defender,qatar_homam_ahmed.jpg
+Qatar,qatar,QAT,Group B,15,qatar_yusuf_abdurisag,Yusuf Abdurisag,Forward,qatar_yusuf_abdurisag.jpg
+Qatar,qatar,QAT,Group B,16,qatar_boualem_khoukhi,Boualem Khoukhi,Defender,qatar_boualem_khoukhi.jpg
+Qatar,qatar,QAT,Group B,17,qatar_ahmed_al_ganehi,Ahmed Al-Ganehi,Midfielder,qatar_ahmed_al_ganehi.jpg
+Qatar,qatar,QAT,Group B,18,qatar_sultan_al_brake,Sultan Al-Brake,Defender,qatar_sultan_al_brake.jpg
+Qatar,qatar,QAT,Group B,19,qatar_almoez_ali,Almoez Ali,Forward,qatar_almoez_ali.jpg
+Qatar,qatar,QAT,Group B,20,qatar_ahmed_fathy,Ahmed Fathy,Midfielder,qatar_ahmed_fathy.jpg
+Qatar,qatar,QAT,Group B,21,qatar_salah_zakaria,Salah Zakaria,Goalkeeper,qatar_salah_zakaria.jpg
+Qatar,qatar,QAT,Group B,22,qatar_meshaal_barsham,Meshaal Barsham,Goalkeeper,qatar_meshaal_barsham.jpg
+Qatar,qatar,QAT,Group B,23,qatar_assim_madibo,Assim Madibo,Midfielder,qatar_assim_madibo.jpg
+Qatar,qatar,QAT,Group B,24,qatar_tahsin_jamshid,Tahsin Jamshid,Forward,qatar_tahsin_jamshid.jpg
+Qatar,qatar,QAT,Group B,25,qatar_al_hashmi_al_hussain,Al-Hashmi Al-Hussain,Defender,qatar_al_hashmi_al_hussain.jpg
+Qatar,qatar,QAT,Group B,26,qatar_mohamed_manai,Mohamed Manai,Forward,qatar_mohamed_manai.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,1,bosnia_herzegovina_nikola_vasilj,Nikola Vasilj,Goalkeeper,bosnia_herzegovina_nikola_vasilj.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,2,bosnia_herzegovina_nihad_mujakic,Nihad Mujakić,Defender,bosnia_herzegovina_nihad_mujakic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,3,bosnia_herzegovina_dennis_hadzikadunic,Dennis Hadžikadunić,Defender,bosnia_herzegovina_dennis_hadzikadunic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,4,bosnia_herzegovina_tarik_muharemovic,Tarik Muharemović,Defender,bosnia_herzegovina_tarik_muharemovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,5,bosnia_herzegovina_sead_kolasinac,Sead Kolašinac,Defender,bosnia_herzegovina_sead_kolasinac.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,6,bosnia_herzegovina_benjamin_tahirovic,Benjamin Tahirović,Midfielder,bosnia_herzegovina_benjamin_tahirovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,7,bosnia_herzegovina_amar_dedic,Amar Dedić,Defender,bosnia_herzegovina_amar_dedic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,8,bosnia_herzegovina_armin_gigovic,Armin Gigović,Midfielder,bosnia_herzegovina_armin_gigovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,9,bosnia_herzegovina_samed_bazdar,Samed Baždar,Forward,bosnia_herzegovina_samed_bazdar.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,10,bosnia_herzegovina_ermedin_demirovic,Ermedin Demirović,Forward,bosnia_herzegovina_ermedin_demirovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,11,bosnia_herzegovina_edin_dzeko,Edin Džeko,Forward,bosnia_herzegovina_edin_dzeko.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,12,bosnia_herzegovina_mladen_jurkas,Mladen Jurkas,Goalkeeper,bosnia_herzegovina_mladen_jurkas.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,13,bosnia_herzegovina_ivan_basic,Ivan Bašić,Midfielder,bosnia_herzegovina_ivan_basic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,14,bosnia_herzegovina_ivan_sunjic,Ivan Šunjić,Midfielder,bosnia_herzegovina_ivan_sunjic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,15,bosnia_herzegovina_amar_memic,Amar Memić,Midfielder,bosnia_herzegovina_amar_memic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,16,bosnia_herzegovina_amir_hadziahmetovic,Amir Hadžiahmetović,Midfielder,bosnia_herzegovina_amir_hadziahmetovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,17,bosnia_herzegovina_dzenis_burnic,Dženis Burnić,Midfielder,bosnia_herzegovina_dzenis_burnic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,18,bosnia_herzegovina_nikola_katic,Nikola Katić,Defender,bosnia_herzegovina_nikola_katic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,19,bosnia_herzegovina_kerim_alajbegovic,Kerim Alajbegović,Forward,bosnia_herzegovina_kerim_alajbegovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,20,bosnia_herzegovina_esmir_bajraktarevic,Esmir Bajraktarević,Forward,bosnia_herzegovina_esmir_bajraktarevic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,21,bosnia_herzegovina_stjepan_radeljic,Stjepan Radeljić,Defender,bosnia_herzegovina_stjepan_radeljic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,22,bosnia_herzegovina_martin_zlomislic,Martin Zlomislić,Goalkeeper,bosnia_herzegovina_martin_zlomislic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,23,bosnia_herzegovina_haris_tabakovic,Haris Tabaković,Forward,bosnia_herzegovina_haris_tabakovic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,24,bosnia_herzegovina_nidal_celik,Nidal Čelik,Defender,bosnia_herzegovina_nidal_celik.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,25,bosnia_herzegovina_jovo_lukic,Jovo Lukić,Forward,bosnia_herzegovina_jovo_lukic.jpg
+Bosnia and Herzegovina,bosnia_herzegovina,BIH,Group B,26,bosnia_herzegovina_ermin_mahmic,Ermin Mahmić,Midfielder,bosnia_herzegovina_ermin_mahmic.jpg
+Brazil,brazil,BRA,Group C,1,brazil_alisson,Alisson,Goalkeeper,brazil_alisson.jpg
+Brazil,brazil,BRA,Group C,2,brazil_wesley,Wesley,Defender,brazil_wesley.jpg
+Brazil,brazil,BRA,Group C,3,brazil_gabriel_magalhaes,Gabriel Magalhães,Defender,brazil_gabriel_magalhaes.jpg
+Brazil,brazil,BRA,Group C,4,brazil_marquinhos,Marquinhos,Defender,brazil_marquinhos.jpg
+Brazil,brazil,BRA,Group C,5,brazil_casemiro,Casemiro,Midfielder,brazil_casemiro.jpg
+Brazil,brazil,BRA,Group C,6,brazil_alex_sandro,Alex Sandro,Defender,brazil_alex_sandro.jpg
+Brazil,brazil,BRA,Group C,7,brazil_vinicius_junior,Vinícius Júnior,Forward,brazil_vinicius_junior.jpg
+Brazil,brazil,BRA,Group C,8,brazil_bruno_guimaraes,Bruno Guimarães,Midfielder,brazil_bruno_guimaraes.jpg
+Brazil,brazil,BRA,Group C,9,brazil_matheus_cunha,Matheus Cunha,Forward,brazil_matheus_cunha.jpg
+Brazil,brazil,BRA,Group C,10,brazil_neymar,Neymar,Forward,brazil_neymar.jpg
+Brazil,brazil,BRA,Group C,11,brazil_raphinha,Raphinha,Forward,brazil_raphinha.jpg
+Brazil,brazil,BRA,Group C,12,brazil_weverton,Weverton,Goalkeeper,brazil_weverton.jpg
+Brazil,brazil,BRA,Group C,13,brazil_danilo_luiz,Danilo Luiz,Defender,brazil_danilo_luiz.jpg
+Brazil,brazil,BRA,Group C,14,brazil_bremer,Bremer,Defender,brazil_bremer.jpg
+Brazil,brazil,BRA,Group C,15,brazil_leo_pereira,Léo Pereira,Defender,brazil_leo_pereira.jpg
+Brazil,brazil,BRA,Group C,16,brazil_douglas_santos,Douglas Santos,Defender,brazil_douglas_santos.jpg
+Brazil,brazil,BRA,Group C,17,brazil_fabinho,Fabinho,Midfielder,brazil_fabinho.jpg
+Brazil,brazil,BRA,Group C,18,brazil_danilo_santos,Danilo Santos,Midfielder,brazil_danilo_santos.jpg
+Brazil,brazil,BRA,Group C,19,brazil_endrick,Endrick,Forward,brazil_endrick.jpg
+Brazil,brazil,BRA,Group C,20,brazil_lucas_paqueta,Lucas Paquetá,Midfielder,brazil_lucas_paqueta.jpg
+Brazil,brazil,BRA,Group C,21,brazil_luiz_henrique,Luiz Henrique,Forward,brazil_luiz_henrique.jpg
+Brazil,brazil,BRA,Group C,22,brazil_gabriel_martinelli,Gabriel Martinelli,Forward,brazil_gabriel_martinelli.jpg
+Brazil,brazil,BRA,Group C,23,brazil_ederson,Ederson,Goalkeeper,brazil_ederson.jpg
+Brazil,brazil,BRA,Group C,24,brazil_roger_ibanez,Roger Ibañez,Defender,brazil_roger_ibanez.jpg
+Brazil,brazil,BRA,Group C,25,brazil_igor_thiago,Igor Thiago,Forward,brazil_igor_thiago.jpg
+Brazil,brazil,BRA,Group C,26,brazil_rayan,Rayan,Forward,brazil_rayan.jpg
+Morocco,morocco,MAR,Group C,1,morocco_yassine_bounou,Yassine Bounou,Goalkeeper,morocco_yassine_bounou.jpg
+Morocco,morocco,MAR,Group C,2,morocco_achraf_hakimi,Achraf Hakimi,Defender,morocco_achraf_hakimi.jpg
+Morocco,morocco,MAR,Group C,3,morocco_noussair_mazraoui,Noussair Mazraoui,Defender,morocco_noussair_mazraoui.jpg
+Morocco,morocco,MAR,Group C,4,morocco_sofyan_amrabat,Sofyan Amrabat,Midfielder,morocco_sofyan_amrabat.jpg
+Morocco,morocco,MAR,Group C,5,morocco_nayef_aguerd,Nayef Aguerd,Defender,morocco_nayef_aguerd.jpg
+Morocco,morocco,MAR,Group C,6,morocco_ayyoub_bouaddi,Ayyoub Bouaddi,Midfielder,morocco_ayyoub_bouaddi.jpg
+Morocco,morocco,MAR,Group C,7,morocco_chemsdine_talbi,Chemsdine Talbi,Midfielder,morocco_chemsdine_talbi.jpg
+Morocco,morocco,MAR,Group C,8,morocco_azzedine_ounahi,Azzedine Ounahi,Midfielder,morocco_azzedine_ounahi.jpg
+Morocco,morocco,MAR,Group C,9,morocco_soufiane_rahimi,Soufiane Rahimi,Forward,morocco_soufiane_rahimi.jpg
+Morocco,morocco,MAR,Group C,10,morocco_brahim_diaz,Brahim Díaz,Forward,morocco_brahim_diaz.jpg
+Morocco,morocco,MAR,Group C,11,morocco_ismael_saibari,Ismael Saibari,Midfielder,morocco_ismael_saibari.jpg
+Morocco,morocco,MAR,Group C,12,morocco_munir_mohamedi,Munir Mohamedi,Goalkeeper,morocco_munir_mohamedi.jpg
+Morocco,morocco,MAR,Group C,13,morocco_zakaria_el_ouahdi,Zakaria El Ouahdi,Defender,morocco_zakaria_el_ouahdi.jpg
+Morocco,morocco,MAR,Group C,14,morocco_issa_diop,Issa Diop,Defender,morocco_issa_diop.jpg
+Morocco,morocco,MAR,Group C,15,morocco_samir_el_mourabet,Samir El Mourabet,Midfielder,morocco_samir_el_mourabet.jpg
+Morocco,morocco,MAR,Group C,16,morocco_gessime_yassine,Gessime Yassine,Midfielder,morocco_gessime_yassine.jpg
+Morocco,morocco,MAR,Group C,17,morocco_abde_ezzalzouli,Abde Ezzalzouli,Forward,morocco_abde_ezzalzouli.jpg
+Morocco,morocco,MAR,Group C,18,morocco_chadi_riad,Chadi Riad,Defender,morocco_chadi_riad.jpg
+Morocco,morocco,MAR,Group C,19,morocco_youssef_belammari,Youssef Belammari,Defender,morocco_youssef_belammari.jpg
+Morocco,morocco,MAR,Group C,20,morocco_ayoub_el_kaabi,Ayoub El Kaabi,Forward,morocco_ayoub_el_kaabi.jpg
+Morocco,morocco,MAR,Group C,21,morocco_ayoube_amaimouni,Ayoube Amaimouni,Forward,morocco_ayoube_amaimouni.jpg
+Morocco,morocco,MAR,Group C,22,morocco_ahmed_reda_tagnaouti,Ahmed Reda Tagnaouti,Goalkeeper,morocco_ahmed_reda_tagnaouti.jpg
+Morocco,morocco,MAR,Group C,23,morocco_bilal_el_khannouss,Bilal El Khannouss,Midfielder,morocco_bilal_el_khannouss.jpg
+Morocco,morocco,MAR,Group C,24,morocco_neil_el_aynaoui,Neil El Aynaoui,Midfielder,morocco_neil_el_aynaoui.jpg
+Morocco,morocco,MAR,Group C,25,morocco_redouane_halhal,Redouane Halhal,Defender,morocco_redouane_halhal.jpg
+Morocco,morocco,MAR,Group C,26,morocco_anass_salah_eddine,Anass Salah-Eddine,Defender,morocco_anass_salah_eddine.jpg
+Scotland,scotland,SCO,Group C,1,scotland_angus_gunn,Angus Gunn,Goalkeeper,scotland_angus_gunn.jpg
+Scotland,scotland,SCO,Group C,2,scotland_aaron_hickey,Aaron Hickey,Defender,scotland_aaron_hickey.jpg
+Scotland,scotland,SCO,Group C,3,scotland_andy_robertson,Andy Robertson,Defender,scotland_andy_robertson.jpg
+Scotland,scotland,SCO,Group C,4,scotland_scott_mctominay,Scott McTominay,Midfielder,scotland_scott_mctominay.jpg
+Scotland,scotland,SCO,Group C,5,scotland_grant_hanley,Grant Hanley,Defender,scotland_grant_hanley.jpg
+Scotland,scotland,SCO,Group C,6,scotland_kieran_tierney,Kieran Tierney,Defender,scotland_kieran_tierney.jpg
+Scotland,scotland,SCO,Group C,7,scotland_john_mcginn,John McGinn,Midfielder,scotland_john_mcginn.jpg
+Scotland,scotland,SCO,Group C,8,scotland_tyler_fletcher,Tyler Fletcher,Midfielder,scotland_tyler_fletcher.jpg
+Scotland,scotland,SCO,Group C,9,scotland_lyndon_dykes,Lyndon Dykes,Forward,scotland_lyndon_dykes.jpg
+Scotland,scotland,SCO,Group C,10,scotland_che_adams,Ché Adams,Forward,scotland_che_adams.jpg
+Scotland,scotland,SCO,Group C,11,scotland_ryan_christie,Ryan Christie,Midfielder,scotland_ryan_christie.jpg
+Scotland,scotland,SCO,Group C,12,scotland_liam_kelly,Liam Kelly,Goalkeeper,scotland_liam_kelly.jpg
+Scotland,scotland,SCO,Group C,13,scotland_jack_hendry,Jack Hendry,Defender,scotland_jack_hendry.jpg
+Scotland,scotland,SCO,Group C,14,scotland_ross_stewart,Ross Stewart,Forward,scotland_ross_stewart.jpg
+Scotland,scotland,SCO,Group C,15,scotland_john_souttar,John Souttar,Defender,scotland_john_souttar.jpg
+Scotland,scotland,SCO,Group C,16,scotland_dominic_hyam,Dominic Hyam,Defender,scotland_dominic_hyam.jpg
+Scotland,scotland,SCO,Group C,17,scotland_ben_gannon_doak,Ben Gannon-Doak,Forward,scotland_ben_gannon_doak.jpg
+Scotland,scotland,SCO,Group C,18,scotland_george_hirst,George Hirst,Forward,scotland_george_hirst.jpg
+Scotland,scotland,SCO,Group C,19,scotland_lewis_ferguson,Lewis Ferguson,Midfielder,scotland_lewis_ferguson.jpg
+Scotland,scotland,SCO,Group C,20,scotland_lawrence_shankland,Lawrence Shankland,Forward,scotland_lawrence_shankland.jpg
+Scotland,scotland,SCO,Group C,21,scotland_craig_gordon,Craig Gordon,Goalkeeper,scotland_craig_gordon.jpg
+Scotland,scotland,SCO,Group C,22,scotland_nathan_patterson,Nathan Patterson,Defender,scotland_nathan_patterson.jpg
+Scotland,scotland,SCO,Group C,23,scotland_kenny_mclean,Kenny McLean,Midfielder,scotland_kenny_mclean.jpg
+Scotland,scotland,SCO,Group C,24,scotland_anthony_ralston,Anthony Ralston,Defender,scotland_anthony_ralston.jpg
+Scotland,scotland,SCO,Group C,25,scotland_findlay_curtis,Findlay Curtis,Forward,scotland_findlay_curtis.jpg
+Scotland,scotland,SCO,Group C,26,scotland_scott_mckenna,Scott McKenna,Defender,scotland_scott_mckenna.jpg
+Haiti,haiti,HAI,Group C,1,haiti_johny_placide,Johny Placide,Goalkeeper,haiti_johny_placide.jpg
+Haiti,haiti,HAI,Group C,2,haiti_carlens_arcus,Carlens Arcus,Defender,haiti_carlens_arcus.jpg
+Haiti,haiti,HAI,Group C,3,haiti_keeto_thermoncy,Keeto Thermoncy,Defender,haiti_keeto_thermoncy.jpg
+Haiti,haiti,HAI,Group C,4,haiti_ricardo_ade,Ricardo Adé,Defender,haiti_ricardo_ade.jpg
+Haiti,haiti,HAI,Group C,5,haiti_hannes_delcroix,Hannes Delcroix,Defender,haiti_hannes_delcroix.jpg
+Haiti,haiti,HAI,Group C,6,haiti_carl_sainte,Carl Sainté,Midfielder,haiti_carl_sainte.jpg
+Haiti,haiti,HAI,Group C,7,haiti_derrick_etienne_jr,Derrick Etienne Jr.,Forward,haiti_derrick_etienne_jr.jpg
+Haiti,haiti,HAI,Group C,8,haiti_martin_experience,Martin Expérience,Defender,haiti_martin_experience.jpg
+Haiti,haiti,HAI,Group C,9,haiti_duckens_nazon,Duckens Nazon,Forward,haiti_duckens_nazon.jpg
+Haiti,haiti,HAI,Group C,10,haiti_jean_ricner_bellegarde,Jean-Ricner Bellegarde,Midfielder,haiti_jean_ricner_bellegarde.jpg
+Haiti,haiti,HAI,Group C,11,haiti_louicius_deedson,Louicius Deedson,Forward,haiti_louicius_deedson.jpg
+Haiti,haiti,HAI,Group C,12,haiti_alexandre_pierre,Alexandre Pierre,Goalkeeper,haiti_alexandre_pierre.jpg
+Haiti,haiti,HAI,Group C,13,haiti_duke_lacroix,Duke Lacroix,Defender,haiti_duke_lacroix.jpg
+Haiti,haiti,HAI,Group C,14,haiti_leverton_pierre,Leverton Pierre,Midfielder,haiti_leverton_pierre.jpg
+Haiti,haiti,HAI,Group C,15,haiti_ruben_providence,Ruben Providence,Forward,haiti_ruben_providence.jpg
+Haiti,haiti,HAI,Group C,16,haiti_lenny_joseph,Lenny Joseph,Forward,haiti_lenny_joseph.jpg
+Haiti,haiti,HAI,Group C,17,haiti_danley_jean_jacques,Danley Jean Jacques,Midfielder,haiti_danley_jean_jacques.jpg
+Haiti,haiti,HAI,Group C,18,haiti_wilson_isidor,Wilson Isidor,Forward,haiti_wilson_isidor.jpg
+Haiti,haiti,HAI,Group C,19,haiti_yassin_fortune,Yassin Fortuné,Forward,haiti_yassin_fortune.jpg
+Haiti,haiti,HAI,Group C,20,haiti_frantzdy_pierrot,Frantzdy Pierrot,Forward,haiti_frantzdy_pierrot.jpg
+Haiti,haiti,HAI,Group C,21,haiti_josue_casimir,Josué Casimir,Forward,haiti_josue_casimir.jpg
+Haiti,haiti,HAI,Group C,22,haiti_jean_kevin_duverne,Jean-Kévin Duverne,Defender,haiti_jean_kevin_duverne.jpg
+Haiti,haiti,HAI,Group C,23,haiti_josue_duverger,Josué Duverger,Goalkeeper,haiti_josue_duverger.jpg
+Haiti,haiti,HAI,Group C,24,haiti_wilguens_paugain,Wilguens Paugain,Defender,haiti_wilguens_paugain.jpg
+Haiti,haiti,HAI,Group C,25,haiti_dominique_simon,Dominique Simon,Midfielder,haiti_dominique_simon.jpg
+Haiti,haiti,HAI,Group C,26,haiti_woodensky_pierre,Woodensky Pierre,Midfielder,haiti_woodensky_pierre.jpg
+United States,united_states,USA,Group D,1,united_states_matt_turner,Matt Turner,Goalkeeper,united_states_matt_turner.jpg
+United States,united_states,USA,Group D,2,united_states_sergino_dest,Sergiño Dest,Defender,united_states_sergino_dest.jpg
+United States,united_states,USA,Group D,3,united_states_chris_richards,Chris Richards,Defender,united_states_chris_richards.jpg
+United States,united_states,USA,Group D,4,united_states_tyler_adams,Tyler Adams,Midfielder,united_states_tyler_adams.jpg
+United States,united_states,USA,Group D,5,united_states_antonee_robinson,Antonee Robinson,Defender,united_states_antonee_robinson.jpg
+United States,united_states,USA,Group D,6,united_states_auston_trusty,Auston Trusty,Defender,united_states_auston_trusty.jpg
+United States,united_states,USA,Group D,7,united_states_giovanni_reyna,Giovanni Reyna,Midfielder,united_states_giovanni_reyna.jpg
+United States,united_states,USA,Group D,8,united_states_weston_mckennie,Weston McKennie,Midfielder,united_states_weston_mckennie.jpg
+United States,united_states,USA,Group D,9,united_states_ricardo_pepi,Ricardo Pepi,Forward,united_states_ricardo_pepi.jpg
+United States,united_states,USA,Group D,10,united_states_christian_pulisic,Christian Pulisic,Forward,united_states_christian_pulisic.jpg
+United States,united_states,USA,Group D,11,united_states_brenden_aaronson,Brenden Aaronson,Forward,united_states_brenden_aaronson.jpg
+United States,united_states,USA,Group D,12,united_states_miles_robinson,Miles Robinson,Defender,united_states_miles_robinson.jpg
+United States,united_states,USA,Group D,13,united_states_tim_ream,Tim Ream,Defender,united_states_tim_ream.jpg
+United States,united_states,USA,Group D,14,united_states_sebastian_berhalter,Sebastian Berhalter,Midfielder,united_states_sebastian_berhalter.jpg
+United States,united_states,USA,Group D,15,united_states_cristian_roldan,Cristian Roldan,Midfielder,united_states_cristian_roldan.jpg
+United States,united_states,USA,Group D,16,united_states_alex_freeman,Alex Freeman,Defender,united_states_alex_freeman.jpg
+United States,united_states,USA,Group D,17,united_states_malik_tillman,Malik Tillman,Midfielder,united_states_malik_tillman.jpg
+United States,united_states,USA,Group D,18,united_states_maximilian_arfsten,Maximilian Arfsten,Defender,united_states_maximilian_arfsten.jpg
+United States,united_states,USA,Group D,19,united_states_haji_wright,Haji Wright,Forward,united_states_haji_wright.jpg
+United States,united_states,USA,Group D,20,united_states_folarin_balogun,Folarin Balogun,Forward,united_states_folarin_balogun.jpg
+United States,united_states,USA,Group D,21,united_states_timothy_weah,Timothy Weah,Forward,united_states_timothy_weah.jpg
+United States,united_states,USA,Group D,22,united_states_mark_mckenzie,Mark McKenzie,Defender,united_states_mark_mckenzie.jpg
+United States,united_states,USA,Group D,23,united_states_joe_scally,Joe Scally,Defender,united_states_joe_scally.jpg
+United States,united_states,USA,Group D,24,united_states_matt_freese,Matt Freese,Goalkeeper,united_states_matt_freese.jpg
+United States,united_states,USA,Group D,25,united_states_chris_brady,Chris Brady,Goalkeeper,united_states_chris_brady.jpg
+United States,united_states,USA,Group D,26,united_states_alejandro_zendejas,Alejandro Zendejas,Forward,united_states_alejandro_zendejas.jpg
+Paraguay,paraguay,PAR,Group D,1,paraguay_gatito_fernandez,Gatito Fernández,Goalkeeper,paraguay_gatito_fernandez.jpg
+Paraguay,paraguay,PAR,Group D,2,paraguay_gustavo_velazquez,Gustavo Velázquez,Defender,paraguay_gustavo_velazquez.jpg
+Paraguay,paraguay,PAR,Group D,3,paraguay_omar_alderete,Omar Alderete,Defender,paraguay_omar_alderete.jpg
+Paraguay,paraguay,PAR,Group D,4,paraguay_juan_jose_caceres,Juan José Cáceres,Defender,paraguay_juan_jose_caceres.jpg
+Paraguay,paraguay,PAR,Group D,5,paraguay_fabian_balbuena,Fabián Balbuena,Defender,paraguay_fabian_balbuena.jpg
+Paraguay,paraguay,PAR,Group D,6,paraguay_junior_alonso,Júnior Alonso,Defender,paraguay_junior_alonso.jpg
+Paraguay,paraguay,PAR,Group D,7,paraguay_ramon_sosa,Ramón Sosa,Midfielder,paraguay_ramon_sosa.jpg
+Paraguay,paraguay,PAR,Group D,8,paraguay_diego_gomez,Diego Gómez,Midfielder,paraguay_diego_gomez.jpg
+Paraguay,paraguay,PAR,Group D,9,paraguay_antonio_sanabria,Antonio Sanabria,Forward,paraguay_antonio_sanabria.jpg
+Paraguay,paraguay,PAR,Group D,10,paraguay_miguel_almiron,Miguel Almirón,Midfielder,paraguay_miguel_almiron.jpg
+Paraguay,paraguay,PAR,Group D,11,paraguay_mauricio,Maurício,Midfielder,paraguay_mauricio.jpg
+Paraguay,paraguay,PAR,Group D,12,paraguay_orlando_gill,Orlando Gill,Goalkeeper,paraguay_orlando_gill.jpg
+Paraguay,paraguay,PAR,Group D,13,paraguay_jose_canale,José Canale,Defender,paraguay_jose_canale.jpg
+Paraguay,paraguay,PAR,Group D,14,paraguay_andres_cubas,Andrés Cubas,Midfielder,paraguay_andres_cubas.jpg
+Paraguay,paraguay,PAR,Group D,15,paraguay_gustavo_gomez,Gustavo Gómez,Defender,paraguay_gustavo_gomez.jpg
+Paraguay,paraguay,PAR,Group D,16,paraguay_damian_bobadilla,Damián Bobadilla,Midfielder,paraguay_damian_bobadilla.jpg
+Paraguay,paraguay,PAR,Group D,17,paraguay_kaku,Kaku,Forward,paraguay_kaku.jpg
+Paraguay,paraguay,PAR,Group D,18,paraguay_alex_arce,Álex Arce,Forward,paraguay_alex_arce.jpg
+Paraguay,paraguay,PAR,Group D,19,paraguay_julio_enciso,Julio Enciso,Forward,paraguay_julio_enciso.jpg
+Paraguay,paraguay,PAR,Group D,20,paraguay_braian_ojeda,Braian Ojeda,Midfielder,paraguay_braian_ojeda.jpg
+Paraguay,paraguay,PAR,Group D,21,paraguay_gabriel_avalos,Gabriel Ávalos,Forward,paraguay_gabriel_avalos.jpg
+Paraguay,paraguay,PAR,Group D,22,paraguay_gaston_olveira,Gastón Olveira,Goalkeeper,paraguay_gaston_olveira.jpg
+Paraguay,paraguay,PAR,Group D,23,paraguay_matias_galarza,Matías Galarza,Midfielder,paraguay_matias_galarza.jpg
+Paraguay,paraguay,PAR,Group D,24,paraguay_gustavo_caballero,Gustavo Caballero,Midfielder,paraguay_gustavo_caballero.jpg
+Paraguay,paraguay,PAR,Group D,25,paraguay_isidro_pitta,Isidro Pitta,Forward,paraguay_isidro_pitta.jpg
+Paraguay,paraguay,PAR,Group D,26,paraguay_alexandro_maidana,Alexandro Maidana,Defender,paraguay_alexandro_maidana.jpg
+Australia,australia,AUS,Group D,1,australia_mathew_ryan,Mathew Ryan,Goalkeeper,australia_mathew_ryan.jpg
+Australia,australia,AUS,Group D,2,australia_milos_degenek,Miloš Degenek,Defender,australia_milos_degenek.jpg
+Australia,australia,AUS,Group D,3,australia_alessandro_circati,Alessandro Circati,Defender,australia_alessandro_circati.jpg
+Australia,australia,AUS,Group D,4,australia_jacob_italiano,Jacob Italiano,Defender,australia_jacob_italiano.jpg
+Australia,australia,AUS,Group D,5,australia_jordan_bos,Jordan Bos,Defender,australia_jordan_bos.jpg
+Australia,australia,AUS,Group D,6,australia_jason_geria,Jason Geria,Defender,australia_jason_geria.jpg
+Australia,australia,AUS,Group D,7,australia_mathew_leckie,Mathew Leckie,Forward,australia_mathew_leckie.jpg
+Australia,australia,AUS,Group D,8,australia_connor_metcalfe,Connor Metcalfe,Midfielder,australia_connor_metcalfe.jpg
+Australia,australia,AUS,Group D,9,australia_mohamed_toure,Mohamed Touré,Forward,australia_mohamed_toure.jpg
+Australia,australia,AUS,Group D,10,australia_ajdin_hrustic,Ajdin Hrustic,Forward,australia_ajdin_hrustic.jpg
+Australia,australia,AUS,Group D,11,australia_awer_mabil,Awer Mabil,Forward,australia_awer_mabil.jpg
+Australia,australia,AUS,Group D,12,australia_paul_izzo,Paul Izzo,Goalkeeper,australia_paul_izzo.jpg
+Australia,australia,AUS,Group D,13,australia_aiden_o_neill,Aiden O'Neill,Midfielder,australia_aiden_o_neill.jpg
+Australia,australia,AUS,Group D,14,australia_cammy_devlin,Cammy Devlin,Midfielder,australia_cammy_devlin.jpg
+Australia,australia,AUS,Group D,15,australia_kai_trewin,Kai Trewin,Defender,australia_kai_trewin.jpg
+Australia,australia,AUS,Group D,16,australia_aziz_behich,Aziz Behich,Defender,australia_aziz_behich.jpg
+Australia,australia,AUS,Group D,17,australia_nestory_irankunda,Nestory Irankunda,Forward,australia_nestory_irankunda.jpg
+Australia,australia,AUS,Group D,18,australia_patrick_beach,Patrick Beach,Goalkeeper,australia_patrick_beach.jpg
+Australia,australia,AUS,Group D,19,australia_harry_souttar,Harry Souttar,Defender,australia_harry_souttar.jpg
+Australia,australia,AUS,Group D,20,australia_cristian_volpato,Cristian Volpato,Forward,australia_cristian_volpato.jpg
+Australia,australia,AUS,Group D,21,australia_cameron_burgess,Cameron Burgess,Defender,australia_cameron_burgess.jpg
+Australia,australia,AUS,Group D,22,australia_jackson_irvine,Jackson Irvine,Midfielder,australia_jackson_irvine.jpg
+Australia,australia,AUS,Group D,23,australia_nishan_velupillay,Nishan Velupillay,Forward,australia_nishan_velupillay.jpg
+Australia,australia,AUS,Group D,24,australia_paul_okon_engstler,Paul Okon-Engstler,Midfielder,australia_paul_okon_engstler.jpg
+Australia,australia,AUS,Group D,25,australia_lucas_herrington,Lucas Herrington,Defender,australia_lucas_herrington.jpg
+Australia,australia,AUS,Group D,26,australia_tete_yengi,Tete Yengi,Forward,australia_tete_yengi.jpg
+Türkiye,turkiye,TUR,Group D,1,turkiye_mert_gunok,Mert Günok,Goalkeeper,turkiye_mert_gunok.jpg
+Türkiye,turkiye,TUR,Group D,2,turkiye_zeki_celik,Zeki Çelik,Defender,turkiye_zeki_celik.jpg
+Türkiye,turkiye,TUR,Group D,3,turkiye_merih_demiral,Merih Demiral,Defender,turkiye_merih_demiral.jpg
+Türkiye,turkiye,TUR,Group D,4,turkiye_caglar_soyuncu,Çağlar Söyüncü,Defender,turkiye_caglar_soyuncu.jpg
+Türkiye,turkiye,TUR,Group D,5,turkiye_salih_ozcan,Salih Özcan,Midfielder,turkiye_salih_ozcan.jpg
+Türkiye,turkiye,TUR,Group D,6,turkiye_orkun_kokcu,Orkun Kökçü,Midfielder,turkiye_orkun_kokcu.jpg
+Türkiye,turkiye,TUR,Group D,7,turkiye_kerem_akturkoglu,Kerem Aktürkoğlu,Forward,turkiye_kerem_akturkoglu.jpg
+Türkiye,turkiye,TUR,Group D,8,turkiye_arda_guler,Arda Güler,Forward,turkiye_arda_guler.jpg
+Türkiye,turkiye,TUR,Group D,9,turkiye_deniz_gul,Deniz Gül,Forward,turkiye_deniz_gul.jpg
+Türkiye,turkiye,TUR,Group D,10,turkiye_hakan_calhanoglu,Hakan Çalhanoğlu,Midfielder,turkiye_hakan_calhanoglu.jpg
+Türkiye,turkiye,TUR,Group D,11,turkiye_kenan_yldz,Kenan Yıldız,Forward,turkiye_kenan_yldz.jpg
+Türkiye,turkiye,TUR,Group D,12,turkiye_altay_bayndr,Altay Bayındır,Goalkeeper,turkiye_altay_bayndr.jpg
+Türkiye,turkiye,TUR,Group D,13,turkiye_eren_elmal,Eren Elmalı,Defender,turkiye_eren_elmal.jpg
+Türkiye,turkiye,TUR,Group D,14,turkiye_abdulkerim_bardakc,Abdülkerim Bardakcı,Defender,turkiye_abdulkerim_bardakc.jpg
+Türkiye,turkiye,TUR,Group D,15,turkiye_ozan_kabak,Ozan Kabak,Defender,turkiye_ozan_kabak.jpg
+Türkiye,turkiye,TUR,Group D,16,turkiye_ismail_yuksek,İsmail Yüksek,Midfielder,turkiye_ismail_yuksek.jpg
+Türkiye,turkiye,TUR,Group D,17,turkiye_irfan_can_kahveci,İrfan Can Kahveci,Forward,turkiye_irfan_can_kahveci.jpg
+Türkiye,turkiye,TUR,Group D,18,turkiye_mert_muldur,Mert Müldür,Defender,turkiye_mert_muldur.jpg
+Türkiye,turkiye,TUR,Group D,19,turkiye_yunus_akgun,Yunus Akgün,Forward,turkiye_yunus_akgun.jpg
+Türkiye,turkiye,TUR,Group D,20,turkiye_ferdi_kadoglu,Ferdi Kadıoğlu,Defender,turkiye_ferdi_kadoglu.jpg
+Türkiye,turkiye,TUR,Group D,21,turkiye_bars_alper_ylmaz,Barış Alper Yılmaz,Forward,turkiye_bars_alper_ylmaz.jpg
+Türkiye,turkiye,TUR,Group D,22,turkiye_kaan_ayhan,Kaan Ayhan,Midfielder,turkiye_kaan_ayhan.jpg
+Türkiye,turkiye,TUR,Group D,23,turkiye_ugurcan_cakr,Uğurcan Çakır,Goalkeeper,turkiye_ugurcan_cakr.jpg
+Türkiye,turkiye,TUR,Group D,24,turkiye_oguz_aydn,Oğuz Aydın,Forward,turkiye_oguz_aydn.jpg
+Türkiye,turkiye,TUR,Group D,25,turkiye_samet_akaydin,Samet Akaydin,Defender,turkiye_samet_akaydin.jpg
+Türkiye,turkiye,TUR,Group D,26,turkiye_can_uzun,Can Uzun,Forward,turkiye_can_uzun.jpg
+Germany,germany,GER,Group E,1,germany_manuel_neuer,Manuel Neuer,Goalkeeper,germany_manuel_neuer.jpg
+Germany,germany,GER,Group E,2,germany_antonio_rudiger,Antonio Rüdiger,Defender,germany_antonio_rudiger.jpg
+Germany,germany,GER,Group E,3,germany_waldemar_anton,Waldemar Anton,Defender,germany_waldemar_anton.jpg
+Germany,germany,GER,Group E,4,germany_jonathan_tah,Jonathan Tah,Defender,germany_jonathan_tah.jpg
+Germany,germany,GER,Group E,5,germany_aleksandar_pavlovic,Aleksandar Pavlović,Midfielder,germany_aleksandar_pavlovic.jpg
+Germany,germany,GER,Group E,6,germany_joshua_kimmich,Joshua Kimmich,Defender,germany_joshua_kimmich.jpg
+Germany,germany,GER,Group E,7,germany_kai_havertz,Kai Havertz,Forward,germany_kai_havertz.jpg
+Germany,germany,GER,Group E,8,germany_leon_goretzka,Leon Goretzka,Midfielder,germany_leon_goretzka.jpg
+Germany,germany,GER,Group E,9,germany_jamie_leweling,Jamie Leweling,Midfielder,germany_jamie_leweling.jpg
+Germany,germany,GER,Group E,10,germany_jamal_musiala,Jamal Musiala,Midfielder,germany_jamal_musiala.jpg
+Germany,germany,GER,Group E,11,germany_nick_woltemade,Nick Woltemade,Forward,germany_nick_woltemade.jpg
+Germany,germany,GER,Group E,12,germany_oliver_baumann,Oliver Baumann,Goalkeeper,germany_oliver_baumann.jpg
+Germany,germany,GER,Group E,13,germany_pascal_gro,Pascal Groß,Midfielder,germany_pascal_gro.jpg
+Germany,germany,GER,Group E,14,germany_maximilian_beier,Maximilian Beier,Forward,germany_maximilian_beier.jpg
+Germany,germany,GER,Group E,15,germany_nico_schlotterbeck,Nico Schlotterbeck,Defender,germany_nico_schlotterbeck.jpg
+Germany,germany,GER,Group E,16,germany_angelo_stiller,Angelo Stiller,Midfielder,germany_angelo_stiller.jpg
+Germany,germany,GER,Group E,17,germany_florian_wirtz,Florian Wirtz,Midfielder,germany_florian_wirtz.jpg
+Germany,germany,GER,Group E,18,germany_nathaniel_brown,Nathaniel Brown,Defender,germany_nathaniel_brown.jpg
+Germany,germany,GER,Group E,19,germany_leroy_sane,Leroy Sané,Midfielder,germany_leroy_sane.jpg
+Germany,germany,GER,Group E,20,germany_nadiem_amiri,Nadiem Amiri,Midfielder,germany_nadiem_amiri.jpg
+Germany,germany,GER,Group E,21,germany_alexander_nubel,Alexander Nübel,Goalkeeper,germany_alexander_nubel.jpg
+Germany,germany,GER,Group E,22,germany_david_raum,David Raum,Defender,germany_david_raum.jpg
+Germany,germany,GER,Group E,23,germany_felix_nmecha,Felix Nmecha,Midfielder,germany_felix_nmecha.jpg
+Germany,germany,GER,Group E,24,germany_malick_thiaw,Malick Thiaw,Defender,germany_malick_thiaw.jpg
+Germany,germany,GER,Group E,25,germany_lennart_karl,Lennart Karl,Midfielder,germany_lennart_karl.jpg
+Germany,germany,GER,Group E,26,germany_deniz_undav,Deniz Undav,Forward,germany_deniz_undav.jpg
+Ecuador,ecuador,ECU,Group E,1,ecuador_hernan_galindez,Hernán Galíndez,Goalkeeper,ecuador_hernan_galindez.jpg
+Ecuador,ecuador,ECU,Group E,2,ecuador_felix_torres,Félix Torres,Defender,ecuador_felix_torres.jpg
+Ecuador,ecuador,ECU,Group E,3,ecuador_piero_hincapie,Piero Hincapié,Defender,ecuador_piero_hincapie.jpg
+Ecuador,ecuador,ECU,Group E,4,ecuador_joel_ordonez,Joel Ordóñez,Defender,ecuador_joel_ordonez.jpg
+Ecuador,ecuador,ECU,Group E,5,ecuador_jordy_alcivar,Jordy Alcívar,Midfielder,ecuador_jordy_alcivar.jpg
+Ecuador,ecuador,ECU,Group E,6,ecuador_willian_pacho,Willian Pacho,Defender,ecuador_willian_pacho.jpg
+Ecuador,ecuador,ECU,Group E,7,ecuador_pervis_estupinan,Pervis Estupiñán,Defender,ecuador_pervis_estupinan.jpg
+Ecuador,ecuador,ECU,Group E,8,ecuador_anthony_valencia,Anthony Valencia,Midfielder,ecuador_anthony_valencia.jpg
+Ecuador,ecuador,ECU,Group E,9,ecuador_john_yeboah,John Yeboah,Forward,ecuador_john_yeboah.jpg
+Ecuador,ecuador,ECU,Group E,10,ecuador_kendry_paez,Kendry Páez,Midfielder,ecuador_kendry_paez.jpg
+Ecuador,ecuador,ECU,Group E,11,ecuador_kevin_rodriguez,Kevin Rodríguez,Forward,ecuador_kevin_rodriguez.jpg
+Ecuador,ecuador,ECU,Group E,12,ecuador_moises_ramirez,Moisés Ramírez,Goalkeeper,ecuador_moises_ramirez.jpg
+Ecuador,ecuador,ECU,Group E,13,ecuador_enner_valencia,Enner Valencia,Forward,ecuador_enner_valencia.jpg
+Ecuador,ecuador,ECU,Group E,14,ecuador_alan_minda,Alan Minda,Midfielder,ecuador_alan_minda.jpg
+Ecuador,ecuador,ECU,Group E,15,ecuador_pedro_vite,Pedro Vite,Midfielder,ecuador_pedro_vite.jpg
+Ecuador,ecuador,ECU,Group E,16,ecuador_jordy_caicedo,Jordy Caicedo,Forward,ecuador_jordy_caicedo.jpg
+Ecuador,ecuador,ECU,Group E,17,ecuador_angelo_preciado,Ángelo Preciado,Defender,ecuador_angelo_preciado.jpg
+Ecuador,ecuador,ECU,Group E,18,ecuador_denil_castillo,Denil Castillo,Midfielder,ecuador_denil_castillo.jpg
+Ecuador,ecuador,ECU,Group E,19,ecuador_gonzalo_plata,Gonzalo Plata,Forward,ecuador_gonzalo_plata.jpg
+Ecuador,ecuador,ECU,Group E,20,ecuador_nilson_angulo,Nilson Angulo,Forward,ecuador_nilson_angulo.jpg
+Ecuador,ecuador,ECU,Group E,21,ecuador_alan_franco,Alan Franco,Midfielder,ecuador_alan_franco.jpg
+Ecuador,ecuador,ECU,Group E,22,ecuador_gonzalo_valle,Gonzalo Valle,Goalkeeper,ecuador_gonzalo_valle.jpg
+Ecuador,ecuador,ECU,Group E,23,ecuador_moises_caicedo,Moisés Caicedo,Midfielder,ecuador_moises_caicedo.jpg
+Ecuador,ecuador,ECU,Group E,24,ecuador_jeremy_arevalo,Jeremy Arévalo,Forward,ecuador_jeremy_arevalo.jpg
+Ecuador,ecuador,ECU,Group E,25,ecuador_jackson_porozo,Jackson Porozo,Defender,ecuador_jackson_porozo.jpg
+Ecuador,ecuador,ECU,Group E,26,ecuador_yaimar_medina,Yaimar Medina,Defender,ecuador_yaimar_medina.jpg
+Ivory Coast,ivory_coast,CIV,Group E,1,ivory_coast_yahia_fofana,Yahia Fofana,Goalkeeper,ivory_coast_yahia_fofana.jpg
+Ivory Coast,ivory_coast,CIV,Group E,2,ivory_coast_ousmane_diomande,Ousmane Diomande,Defender,ivory_coast_ousmane_diomande.jpg
+Ivory Coast,ivory_coast,CIV,Group E,3,ivory_coast_ghislain_konan,Ghislain Konan,Defender,ivory_coast_ghislain_konan.jpg
+Ivory Coast,ivory_coast,CIV,Group E,4,ivory_coast_jean_michael_seri,Jean Michaël Seri,Midfielder,ivory_coast_jean_michael_seri.jpg
+Ivory Coast,ivory_coast,CIV,Group E,5,ivory_coast_wilfried_singo,Wilfried Singo,Defender,ivory_coast_wilfried_singo.jpg
+Ivory Coast,ivory_coast,CIV,Group E,6,ivory_coast_seko_fofana,Seko Fofana,Midfielder,ivory_coast_seko_fofana.jpg
+Ivory Coast,ivory_coast,CIV,Group E,7,ivory_coast_odilon_kossounou,Odilon Kossounou,Defender,ivory_coast_odilon_kossounou.jpg
+Ivory Coast,ivory_coast,CIV,Group E,8,ivory_coast_franck_kessie,Franck Kessié,Midfielder,ivory_coast_franck_kessie.jpg
+Ivory Coast,ivory_coast,CIV,Group E,9,ivory_coast_ange_yoan_bonny,Ange-Yoan Bonny,Forward,ivory_coast_ange_yoan_bonny.jpg
+Ivory Coast,ivory_coast,CIV,Group E,10,ivory_coast_simon_adingra,Simon Adingra,Forward,ivory_coast_simon_adingra.jpg
+Ivory Coast,ivory_coast,CIV,Group E,11,ivory_coast_yan_diomande,Yan Diomande,Forward,ivory_coast_yan_diomande.jpg
+Ivory Coast,ivory_coast,CIV,Group E,12,ivory_coast_elye_wahi,Elye Wahi,Forward,ivory_coast_elye_wahi.jpg
+Ivory Coast,ivory_coast,CIV,Group E,13,ivory_coast_christopher_operi,Christopher Opéri,Defender,ivory_coast_christopher_operi.jpg
+Ivory Coast,ivory_coast,CIV,Group E,14,ivory_coast_oumar_diakite,Oumar Diakité,Forward,ivory_coast_oumar_diakite.jpg
+Ivory Coast,ivory_coast,CIV,Group E,15,ivory_coast_amad_diallo,Amad Diallo,Forward,ivory_coast_amad_diallo.jpg
+Ivory Coast,ivory_coast,CIV,Group E,16,ivory_coast_mohamed_kone,Mohamed Koné,Goalkeeper,ivory_coast_mohamed_kone.jpg
+Ivory Coast,ivory_coast,CIV,Group E,17,ivory_coast_guela_doue,Guéla Doué,Defender,ivory_coast_guela_doue.jpg
+Ivory Coast,ivory_coast,CIV,Group E,18,ivory_coast_ibrahim_sangare,Ibrahim Sangaré,Midfielder,ivory_coast_ibrahim_sangare.jpg
+Ivory Coast,ivory_coast,CIV,Group E,19,ivory_coast_nicolas_pepe,Nicolas Pépé,Forward,ivory_coast_nicolas_pepe.jpg
+Ivory Coast,ivory_coast,CIV,Group E,20,ivory_coast_emmanuel_agbadou,Emmanuel Agbadou,Defender,ivory_coast_emmanuel_agbadou.jpg
+Ivory Coast,ivory_coast,CIV,Group E,21,ivory_coast_evan_ndicka,Evan Ndicka,Defender,ivory_coast_evan_ndicka.jpg
+Ivory Coast,ivory_coast,CIV,Group E,22,ivory_coast_evann_guessand,Evann Guessand,Forward,ivory_coast_evann_guessand.jpg
+Ivory Coast,ivory_coast,CIV,Group E,23,ivory_coast_alban_lafont,Alban Lafont,Goalkeeper,ivory_coast_alban_lafont.jpg
+Ivory Coast,ivory_coast,CIV,Group E,24,ivory_coast_bazoumana_toure,Bazoumana Touré,Forward,ivory_coast_bazoumana_toure.jpg
+Ivory Coast,ivory_coast,CIV,Group E,25,ivory_coast_parfait_guiagon,Parfait Guiagon,Midfielder,ivory_coast_parfait_guiagon.jpg
+Ivory Coast,ivory_coast,CIV,Group E,26,ivory_coast_christ_inao_oulai,Christ Inao Oulaï,Midfielder,ivory_coast_christ_inao_oulai.jpg
+Curaçao,curacao,CUW,Group E,1,curacao_eloy_room,Eloy Room,Goalkeeper,curacao_eloy_room.jpg
+Curaçao,curacao,CUW,Group E,2,curacao_shurandy_sambo,Shurandy Sambo,Defender,curacao_shurandy_sambo.jpg
+Curaçao,curacao,CUW,Group E,3,curacao_jurien_gaari,Juriën Gaari,Defender,curacao_jurien_gaari.jpg
+Curaçao,curacao,CUW,Group E,4,curacao_roshon_van_eijma,Roshon van Eijma,Defender,curacao_roshon_van_eijma.jpg
+Curaçao,curacao,CUW,Group E,5,curacao_sherel_floranus,Sherel Floranus,Defender,curacao_sherel_floranus.jpg
+Curaçao,curacao,CUW,Group E,6,curacao_godfried_roemeratoe,Godfried Roemeratoe,Midfielder,curacao_godfried_roemeratoe.jpg
+Curaçao,curacao,CUW,Group E,7,curacao_juninho_bacuna,Juninho Bacuna,Midfielder,curacao_juninho_bacuna.jpg
+Curaçao,curacao,CUW,Group E,8,curacao_livano_comenencia,Livano Comenencia,Midfielder,curacao_livano_comenencia.jpg
+Curaçao,curacao,CUW,Group E,9,curacao_jurgen_locadia,Jürgen Locadia,Forward,curacao_jurgen_locadia.jpg
+Curaçao,curacao,CUW,Group E,10,curacao_leandro_bacuna,Leandro Bacuna,Midfielder,curacao_leandro_bacuna.jpg
+Curaçao,curacao,CUW,Group E,11,curacao_jeremy_antonisse,Jeremy Antonisse,Forward,curacao_jeremy_antonisse.jpg
+Curaçao,curacao,CUW,Group E,12,curacao_sontje_hansen,Sontje Hansen,Forward,curacao_sontje_hansen.jpg
+Curaçao,curacao,CUW,Group E,13,curacao_tyrese_noslin,Tyrese Noslin,Forward,curacao_tyrese_noslin.jpg
+Curaçao,curacao,CUW,Group E,14,curacao_kenji_gorre,Kenji Gorré,Forward,curacao_kenji_gorre.jpg
+Curaçao,curacao,CUW,Group E,15,curacao_ar_jany_martha,Ar'jany Martha,Midfielder,curacao_ar_jany_martha.jpg
+Curaçao,curacao,CUW,Group E,16,curacao_jearl_margaritha,Jearl Margaritha,Forward,curacao_jearl_margaritha.jpg
+Curaçao,curacao,CUW,Group E,17,curacao_brandley_kuwas,Brandley Kuwas,Forward,curacao_brandley_kuwas.jpg
+Curaçao,curacao,CUW,Group E,18,curacao_armando_obispo,Armando Obispo,Defender,curacao_armando_obispo.jpg
+Curaçao,curacao,CUW,Group E,19,curacao_gervane_kastaneer,Gervane Kastaneer,Forward,curacao_gervane_kastaneer.jpg
+Curaçao,curacao,CUW,Group E,20,curacao_joshua_brenet,Joshua Brenet,Defender,curacao_joshua_brenet.jpg
+Curaçao,curacao,CUW,Group E,21,curacao_tahith_chong,Tahith Chong,Midfielder,curacao_tahith_chong.jpg
+Curaçao,curacao,CUW,Group E,22,curacao_kevin_felida,Kevin Felida,Midfielder,curacao_kevin_felida.jpg
+Curaçao,curacao,CUW,Group E,23,curacao_riechedly_bazoer,Riechedly Bazoer,Defender,curacao_riechedly_bazoer.jpg
+Curaçao,curacao,CUW,Group E,24,curacao_deveron_fonville,Deveron Fonville,Defender,curacao_deveron_fonville.jpg
+Curaçao,curacao,CUW,Group E,25,curacao_tyrick_bodak,Tyrick Bodak,Goalkeeper,curacao_tyrick_bodak.jpg
+Curaçao,curacao,CUW,Group E,26,curacao_trevor_doornbusch,Trevor Doornbusch,Goalkeeper,curacao_trevor_doornbusch.jpg
+Netherlands,netherlands,NED,Group F,1,netherlands_bart_verbruggen,Bart Verbruggen,Goalkeeper,netherlands_bart_verbruggen.jpg
+Netherlands,netherlands,NED,Group F,2,netherlands_jurrien_timber,Jurriën Timber,Defender,netherlands_jurrien_timber.jpg
+Netherlands,netherlands,NED,Group F,3,netherlands_marten_de_roon,Marten de Roon,Midfielder,netherlands_marten_de_roon.jpg
+Netherlands,netherlands,NED,Group F,4,netherlands_virgil_van_dijk,Virgil van Dijk,Defender,netherlands_virgil_van_dijk.jpg
+Netherlands,netherlands,NED,Group F,5,netherlands_nathan_ake,Nathan Aké,Defender,netherlands_nathan_ake.jpg
+Netherlands,netherlands,NED,Group F,6,netherlands_jan_paul_van_hecke,Jan Paul van Hecke,Defender,netherlands_jan_paul_van_hecke.jpg
+Netherlands,netherlands,NED,Group F,7,netherlands_justin_kluivert,Justin Kluivert,Midfielder,netherlands_justin_kluivert.jpg
+Netherlands,netherlands,NED,Group F,8,netherlands_ryan_gravenberch,Ryan Gravenberch,Midfielder,netherlands_ryan_gravenberch.jpg
+Netherlands,netherlands,NED,Group F,9,netherlands_wout_weghorst,Wout Weghorst,Forward,netherlands_wout_weghorst.jpg
+Netherlands,netherlands,NED,Group F,10,netherlands_memphis_depay,Memphis Depay,Forward,netherlands_memphis_depay.jpg
+Netherlands,netherlands,NED,Group F,11,netherlands_cody_gakpo,Cody Gakpo,Forward,netherlands_cody_gakpo.jpg
+Netherlands,netherlands,NED,Group F,12,netherlands_mats_wieffer,Mats Wieffer,Defender,netherlands_mats_wieffer.jpg
+Netherlands,netherlands,NED,Group F,13,netherlands_robin_roefs,Robin Roefs,Goalkeeper,netherlands_robin_roefs.jpg
+Netherlands,netherlands,NED,Group F,14,netherlands_tijjani_reijnders,Tijjani Reijnders,Midfielder,netherlands_tijjani_reijnders.jpg
+Netherlands,netherlands,NED,Group F,15,netherlands_micky_van_de_ven,Micky van de Ven,Defender,netherlands_micky_van_de_ven.jpg
+Netherlands,netherlands,NED,Group F,16,netherlands_guus_til,Guus Til,Midfielder,netherlands_guus_til.jpg
+Netherlands,netherlands,NED,Group F,17,netherlands_noa_lang,Noa Lang,Forward,netherlands_noa_lang.jpg
+Netherlands,netherlands,NED,Group F,18,netherlands_donyell_malen,Donyell Malen,Forward,netherlands_donyell_malen.jpg
+Netherlands,netherlands,NED,Group F,19,netherlands_brian_brobbey,Brian Brobbey,Forward,netherlands_brian_brobbey.jpg
+Netherlands,netherlands,NED,Group F,20,netherlands_teun_koopmeiners,Teun Koopmeiners,Midfielder,netherlands_teun_koopmeiners.jpg
+Netherlands,netherlands,NED,Group F,21,netherlands_frenkie_de_jong,Frenkie de Jong,Midfielder,netherlands_frenkie_de_jong.jpg
+Netherlands,netherlands,NED,Group F,22,netherlands_denzel_dumfries,Denzel Dumfries,Defender,netherlands_denzel_dumfries.jpg
+Netherlands,netherlands,NED,Group F,23,netherlands_mark_flekken,Mark Flekken,Goalkeeper,netherlands_mark_flekken.jpg
+Netherlands,netherlands,NED,Group F,24,netherlands_crysencio_summerville,Crysencio Summerville,Forward,netherlands_crysencio_summerville.jpg
+Netherlands,netherlands,NED,Group F,25,netherlands_jorrel_hato,Jorrel Hato,Defender,netherlands_jorrel_hato.jpg
+Netherlands,netherlands,NED,Group F,26,netherlands_quinten_timber,Quinten Timber,Midfielder,netherlands_quinten_timber.jpg
+Japan,japan,JPN,Group F,1,japan_zion_suzuki,Zion Suzuki,Goalkeeper,japan_zion_suzuki.jpg
+Japan,japan,JPN,Group F,2,japan_yukinari_sugawara,Yukinari Sugawara,Defender,japan_yukinari_sugawara.jpg
+Japan,japan,JPN,Group F,3,japan_shogo_taniguchi,Shōgo Taniguchi,Defender,japan_shogo_taniguchi.jpg
+Japan,japan,JPN,Group F,4,japan_ko_itakura,Kō Itakura,Defender,japan_ko_itakura.jpg
+Japan,japan,JPN,Group F,5,japan_yuto_nagatomo,Yūto Nagatomo,Defender,japan_yuto_nagatomo.jpg
+Japan,japan,JPN,Group F,6,japan_wataru_endo,Wataru Endo,Midfielder,japan_wataru_endo.jpg
+Japan,japan,JPN,Group F,7,japan_ao_tanaka,Ao Tanaka,Midfielder,japan_ao_tanaka.jpg
+Japan,japan,JPN,Group F,8,japan_takefusa_kubo,Takefusa Kubo,Midfielder,japan_takefusa_kubo.jpg
+Japan,japan,JPN,Group F,9,japan_keisuke_goto,Keisuke Gotō,Forward,japan_keisuke_goto.jpg
+Japan,japan,JPN,Group F,10,japan_ritsu_doan,Ritsu Dōan,Midfielder,japan_ritsu_doan.jpg
+Japan,japan,JPN,Group F,11,japan_daizen_maeda,Daizen Maeda,Midfielder,japan_daizen_maeda.jpg
+Japan,japan,JPN,Group F,12,japan_keisuke_osako,Keisuke Ōsako,Goalkeeper,japan_keisuke_osako.jpg
+Japan,japan,JPN,Group F,13,japan_keito_nakamura,Keito Nakamura,Midfielder,japan_keito_nakamura.jpg
+Japan,japan,JPN,Group F,14,japan_junya_ito,Junya Itō,Midfielder,japan_junya_ito.jpg
+Japan,japan,JPN,Group F,15,japan_daichi_kamada,Daichi Kamada,Midfielder,japan_daichi_kamada.jpg
+Japan,japan,JPN,Group F,16,japan_tsuyoshi_watanabe,Tsuyoshi Watanabe,Defender,japan_tsuyoshi_watanabe.jpg
+Japan,japan,JPN,Group F,17,japan_yuito_suzuki,Yuito Suzuki,Midfielder,japan_yuito_suzuki.jpg
+Japan,japan,JPN,Group F,18,japan_ayase_ueda,Ayase Ueda,Forward,japan_ayase_ueda.jpg
+Japan,japan,JPN,Group F,19,japan_koki_ogawa,Kōki Ogawa,Forward,japan_koki_ogawa.jpg
+Japan,japan,JPN,Group F,20,japan_ayumu_seko,Ayumu Seko,Defender,japan_ayumu_seko.jpg
+Japan,japan,JPN,Group F,21,japan_hiroki_ito,Hiroki Itō,Defender,japan_hiroki_ito.jpg
+Japan,japan,JPN,Group F,22,japan_takehiro_tomiyasu,Takehiro Tomiyasu,Defender,japan_takehiro_tomiyasu.jpg
+Japan,japan,JPN,Group F,23,japan_tomoki_hayakawa,Tomoki Hayakawa,Goalkeeper,japan_tomoki_hayakawa.jpg
+Japan,japan,JPN,Group F,24,japan_kaishu_sano,Kaishū Sano,Midfielder,japan_kaishu_sano.jpg
+Japan,japan,JPN,Group F,25,japan_junnosuke_suzuki,Junnosuke Suzuki,Defender,japan_junnosuke_suzuki.jpg
+Japan,japan,JPN,Group F,26,japan_kento_shiogai,Kento Shiogai,Forward,japan_kento_shiogai.jpg
+Tunisia,tunisia,TUN,Group F,1,tunisia_mouhib_chamakh,Mouhib Chamakh,Goalkeeper,tunisia_mouhib_chamakh.jpg
+Tunisia,tunisia,TUN,Group F,2,tunisia_ali_abdi,Ali Abdi,Defender,tunisia_ali_abdi.jpg
+Tunisia,tunisia,TUN,Group F,3,tunisia_montassar_talbi,Montassar Talbi,Defender,tunisia_montassar_talbi.jpg
+Tunisia,tunisia,TUN,Group F,4,tunisia_omar_rekik,Omar Rekik,Defender,tunisia_omar_rekik.jpg
+Tunisia,tunisia,TUN,Group F,5,tunisia_adem_arous,Adem Arous,Defender,tunisia_adem_arous.jpg
+Tunisia,tunisia,TUN,Group F,6,tunisia_dylan_bronn,Dylan Bronn,Defender,tunisia_dylan_bronn.jpg
+Tunisia,tunisia,TUN,Group F,7,tunisia_elias_achouri,Elias Achouri,Forward,tunisia_elias_achouri.jpg
+Tunisia,tunisia,TUN,Group F,8,tunisia_elias_saad,Elias Saad,Forward,tunisia_elias_saad.jpg
+Tunisia,tunisia,TUN,Group F,9,tunisia_hazem_mastouri,Hazem Mastouri,Forward,tunisia_hazem_mastouri.jpg
+Tunisia,tunisia,TUN,Group F,10,tunisia_hannibal_mejbri,Hannibal Mejbri,Midfielder,tunisia_hannibal_mejbri.jpg
+Tunisia,tunisia,TUN,Group F,11,tunisia_ismael_gharbi,Ismaël Gharbi,Midfielder,tunisia_ismael_gharbi.jpg
+Tunisia,tunisia,TUN,Group F,12,tunisia_mortadha_ben_ouanes,Mortadha Ben Ouanes,Defender,tunisia_mortadha_ben_ouanes.jpg
+Tunisia,tunisia,TUN,Group F,13,tunisia_rani_khedira,Rani Khedira,Midfielder,tunisia_rani_khedira.jpg
+Tunisia,tunisia,TUN,Group F,14,tunisia_khalil_ayari,Khalil Ayari,Midfielder,tunisia_khalil_ayari.jpg
+Tunisia,tunisia,TUN,Group F,15,tunisia_hadj_mahmoud,Hadj Mahmoud,Midfielder,tunisia_hadj_mahmoud.jpg
+Tunisia,tunisia,TUN,Group F,16,tunisia_aymen_dahmen,Aymen Dahmen,Goalkeeper,tunisia_aymen_dahmen.jpg
+Tunisia,tunisia,TUN,Group F,17,tunisia_ellyes_skhiri,Ellyes Skhiri,Midfielder,tunisia_ellyes_skhiri.jpg
+Tunisia,tunisia,TUN,Group F,18,tunisia_rayan_elloumi,Rayan Elloumi,Forward,tunisia_rayan_elloumi.jpg
+Tunisia,tunisia,TUN,Group F,19,tunisia_firas_chaouat,Firas Chaouat,Forward,tunisia_firas_chaouat.jpg
+Tunisia,tunisia,TUN,Group F,20,tunisia_yan_valery,Yan Valery,Defender,tunisia_yan_valery.jpg
+Tunisia,tunisia,TUN,Group F,21,tunisia_mohamed_amine_ben_hamida,Mohamed Amine Ben Hamida,Defender,tunisia_mohamed_amine_ben_hamida.jpg
+Tunisia,tunisia,TUN,Group F,22,tunisia_sabri_ben_hessen,Sabri Ben Hessen,Goalkeeper,tunisia_sabri_ben_hessen.jpg
+Tunisia,tunisia,TUN,Group F,23,tunisia_moutaz_neffati,Moutaz Neffati,Defender,tunisia_moutaz_neffati.jpg
+Tunisia,tunisia,TUN,Group F,24,tunisia_raed_chikhaoui,Raed Chikhaoui,Defender,tunisia_raed_chikhaoui.jpg
+Tunisia,tunisia,TUN,Group F,25,tunisia_anis_ben_slimane,Anis Ben Slimane,Midfielder,tunisia_anis_ben_slimane.jpg
+Tunisia,tunisia,TUN,Group F,26,tunisia_sebastian_tounekti,Sebastian Tounekti,Midfielder,tunisia_sebastian_tounekti.jpg
+Sweden,sweden,SWE,Group F,1,sweden_jacob_widell_zetterstrom,Jacob Widell Zetterström,Goalkeeper,sweden_jacob_widell_zetterstrom.jpg
+Sweden,sweden,SWE,Group F,2,sweden_gustaf_lagerbielke,Gustaf Lagerbielke,Defender,sweden_gustaf_lagerbielke.jpg
+Sweden,sweden,SWE,Group F,3,sweden_victor_lindelof,Victor Lindelöf,Defender,sweden_victor_lindelof.jpg
+Sweden,sweden,SWE,Group F,4,sweden_isak_hien,Isak Hien,Defender,sweden_isak_hien.jpg
+Sweden,sweden,SWE,Group F,5,sweden_gabriel_gudmundsson,Gabriel Gudmundsson,Defender,sweden_gabriel_gudmundsson.jpg
+Sweden,sweden,SWE,Group F,6,sweden_herman_johansson,Herman Johansson,Defender,sweden_herman_johansson.jpg
+Sweden,sweden,SWE,Group F,7,sweden_lucas_bergvall,Lucas Bergvall,Midfielder,sweden_lucas_bergvall.jpg
+Sweden,sweden,SWE,Group F,8,sweden_daniel_svensson,Daniel Svensson,Defender,sweden_daniel_svensson.jpg
+Sweden,sweden,SWE,Group F,9,sweden_alexander_isak,Alexander Isak,Forward,sweden_alexander_isak.jpg
+Sweden,sweden,SWE,Group F,10,sweden_benjamin_nygren,Benjamin Nygren,Midfielder,sweden_benjamin_nygren.jpg
+Sweden,sweden,SWE,Group F,11,sweden_anthony_elanga,Anthony Elanga,Forward,sweden_anthony_elanga.jpg
+Sweden,sweden,SWE,Group F,12,sweden_viktor_johansson,Viktor Johansson,Goalkeeper,sweden_viktor_johansson.jpg
+Sweden,sweden,SWE,Group F,13,sweden_ken_sema,Ken Sema,Midfielder,sweden_ken_sema.jpg
+Sweden,sweden,SWE,Group F,14,sweden_hjalmar_ekdal,Hjalmar Ekdal,Defender,sweden_hjalmar_ekdal.jpg
+Sweden,sweden,SWE,Group F,15,sweden_carl_starfelt,Carl Starfelt,Defender,sweden_carl_starfelt.jpg
+Sweden,sweden,SWE,Group F,16,sweden_jesper_karlstrom,Jesper Karlström,Midfielder,sweden_jesper_karlstrom.jpg
+Sweden,sweden,SWE,Group F,17,sweden_viktor_gyokeres,Viktor Gyökeres,Forward,sweden_viktor_gyokeres.jpg
+Sweden,sweden,SWE,Group F,18,sweden_yasin_ayari,Yasin Ayari,Midfielder,sweden_yasin_ayari.jpg
+Sweden,sweden,SWE,Group F,19,sweden_mattias_svanberg,Mattias Svanberg,Midfielder,sweden_mattias_svanberg.jpg
+Sweden,sweden,SWE,Group F,20,sweden_eric_smith,Eric Smith,Defender,sweden_eric_smith.jpg
+Sweden,sweden,SWE,Group F,21,sweden_alexander_bernhardsson,Alexander Bernhardsson,Defender,sweden_alexander_bernhardsson.jpg
+Sweden,sweden,SWE,Group F,22,sweden_besfort_zeneli,Besfort Zeneli,Midfielder,sweden_besfort_zeneli.jpg
+Sweden,sweden,SWE,Group F,23,sweden_kristoffer_nordfeldt,Kristoffer Nordfeldt,Goalkeeper,sweden_kristoffer_nordfeldt.jpg
+Sweden,sweden,SWE,Group F,24,sweden_elliot_stroud,Elliot Stroud,Defender,sweden_elliot_stroud.jpg
+Sweden,sweden,SWE,Group F,25,sweden_gustaf_nilsson,Gustaf Nilsson,Forward,sweden_gustaf_nilsson.jpg
+Sweden,sweden,SWE,Group F,26,sweden_taha_ali,Taha Ali,Forward,sweden_taha_ali.jpg
+Belgium,belgium,BEL,Group G,1,belgium_thibaut_courtois,Thibaut Courtois,Goalkeeper,belgium_thibaut_courtois.jpg
+Belgium,belgium,BEL,Group G,2,belgium_zeno_debast,Zeno Debast,Defender,belgium_zeno_debast.jpg
+Belgium,belgium,BEL,Group G,3,belgium_arthur_theate,Arthur Theate,Defender,belgium_arthur_theate.jpg
+Belgium,belgium,BEL,Group G,4,belgium_brandon_mechele,Brandon Mechele,Defender,belgium_brandon_mechele.jpg
+Belgium,belgium,BEL,Group G,5,belgium_maxim_de_cuyper,Maxim De Cuyper,Defender,belgium_maxim_de_cuyper.jpg
+Belgium,belgium,BEL,Group G,6,belgium_axel_witsel,Axel Witsel,Midfielder,belgium_axel_witsel.jpg
+Belgium,belgium,BEL,Group G,7,belgium_kevin_de_bruyne,Kevin De Bruyne,Midfielder,belgium_kevin_de_bruyne.jpg
+Belgium,belgium,BEL,Group G,8,belgium_youri_tielemans,Youri Tielemans,Midfielder,belgium_youri_tielemans.jpg
+Belgium,belgium,BEL,Group G,9,belgium_romelu_lukaku,Romelu Lukaku,Forward,belgium_romelu_lukaku.jpg
+Belgium,belgium,BEL,Group G,10,belgium_leandro_trossard,Leandro Trossard,Forward,belgium_leandro_trossard.jpg
+Belgium,belgium,BEL,Group G,11,belgium_jeremy_doku,Jérémy Doku,Forward,belgium_jeremy_doku.jpg
+Belgium,belgium,BEL,Group G,12,belgium_senne_lammens,Senne Lammens,Goalkeeper,belgium_senne_lammens.jpg
+Belgium,belgium,BEL,Group G,13,belgium_mike_penders,Mike Penders,Goalkeeper,belgium_mike_penders.jpg
+Belgium,belgium,BEL,Group G,14,belgium_dodi_lukebakio,Dodi Lukébakio,Forward,belgium_dodi_lukebakio.jpg
+Belgium,belgium,BEL,Group G,15,belgium_thomas_meunier,Thomas Meunier,Defender,belgium_thomas_meunier.jpg
+Belgium,belgium,BEL,Group G,16,belgium_koni_de_winter,Koni De Winter,Defender,belgium_koni_de_winter.jpg
+Belgium,belgium,BEL,Group G,17,belgium_charles_de_ketelaere,Charles De Ketelaere,Forward,belgium_charles_de_ketelaere.jpg
+Belgium,belgium,BEL,Group G,18,belgium_joaquin_seys,Joaquin Seys,Defender,belgium_joaquin_seys.jpg
+Belgium,belgium,BEL,Group G,19,belgium_diego_moreira,Diego Moreira,Midfielder,belgium_diego_moreira.jpg
+Belgium,belgium,BEL,Group G,20,belgium_hans_vanaken,Hans Vanaken,Midfielder,belgium_hans_vanaken.jpg
+Belgium,belgium,BEL,Group G,21,belgium_timothy_castagne,Timothy Castagne,Defender,belgium_timothy_castagne.jpg
+Belgium,belgium,BEL,Group G,22,belgium_alexis_saelemaekers,Alexis Saelemaekers,Midfielder,belgium_alexis_saelemaekers.jpg
+Belgium,belgium,BEL,Group G,23,belgium_nicolas_raskin,Nicolas Raskin,Midfielder,belgium_nicolas_raskin.jpg
+Belgium,belgium,BEL,Group G,24,belgium_amadou_onana,Amadou Onana,Midfielder,belgium_amadou_onana.jpg
+Belgium,belgium,BEL,Group G,25,belgium_nathan_ngoy,Nathan Ngoy,Defender,belgium_nathan_ngoy.jpg
+Belgium,belgium,BEL,Group G,26,belgium_matias_fernandez_pardo,Matias Fernandez-Pardo,Forward,belgium_matias_fernandez_pardo.jpg
+Iran,iran,IRN,Group G,1,iran_alireza_beiranvand,Alireza Beiranvand,Goalkeeper,iran_alireza_beiranvand.jpg
+Iran,iran,IRN,Group G,2,iran_saleh_hardani,Saleh Hardani,Defender,iran_saleh_hardani.jpg
+Iran,iran,IRN,Group G,3,iran_ehsan_hajsafi,Ehsan Hajsafi,Defender,iran_ehsan_hajsafi.jpg
+Iran,iran,IRN,Group G,4,iran_shojae_khalilzadeh,Shojae Khalilzadeh,Defender,iran_shojae_khalilzadeh.jpg
+Iran,iran,IRN,Group G,5,iran_milad_mohammadi,Milad Mohammadi,Defender,iran_milad_mohammadi.jpg
+Iran,iran,IRN,Group G,6,iran_saeid_ezatolahi,Saeid Ezatolahi,Midfielder,iran_saeid_ezatolahi.jpg
+Iran,iran,IRN,Group G,7,iran_alireza_jahanbakhsh,Alireza Jahanbakhsh,Midfielder,iran_alireza_jahanbakhsh.jpg
+Iran,iran,IRN,Group G,8,iran_mohammad_mohebi,Mohammad Mohebi,Midfielder,iran_mohammad_mohebi.jpg
+Iran,iran,IRN,Group G,9,iran_mehdi_taremi,Mehdi Taremi,Forward,iran_mehdi_taremi.jpg
+Iran,iran,IRN,Group G,10,iran_mehdi_ghayedi,Mehdi Ghayedi,Forward,iran_mehdi_ghayedi.jpg
+Iran,iran,IRN,Group G,11,iran_ali_alipour,Ali Alipour,Forward,iran_ali_alipour.jpg
+Iran,iran,IRN,Group G,12,iran_payam_niazmand,Payam Niazmand,Goalkeeper,iran_payam_niazmand.jpg
+Iran,iran,IRN,Group G,13,iran_hossein_kanaanizadegan,Hossein Kanaanizadegan,Defender,iran_hossein_kanaanizadegan.jpg
+Iran,iran,IRN,Group G,14,iran_saman_ghoddos,Saman Ghoddos,Midfielder,iran_saman_ghoddos.jpg
+Iran,iran,IRN,Group G,15,iran_rouzbeh_cheshmi,Rouzbeh Cheshmi,Midfielder,iran_rouzbeh_cheshmi.jpg
+Iran,iran,IRN,Group G,16,iran_mehdi_torabi,Mehdi Torabi,Midfielder,iran_mehdi_torabi.jpg
+Iran,iran,IRN,Group G,17,iran_aria_yousefi,Aria Yousefi,Defender,iran_aria_yousefi.jpg
+Iran,iran,IRN,Group G,18,iran_amirhossein_hosseinzadeh,Amirhossein Hosseinzadeh,Forward,iran_amirhossein_hosseinzadeh.jpg
+Iran,iran,IRN,Group G,19,iran_ali_nemati,Ali Nemati,Defender,iran_ali_nemati.jpg
+Iran,iran,IRN,Group G,20,iran_shahriyar_moghanlou,Shahriyar Moghanlou,Forward,iran_shahriyar_moghanlou.jpg
+Iran,iran,IRN,Group G,21,iran_mohammad_ghorbani,Mohammad Ghorbani,Midfielder,iran_mohammad_ghorbani.jpg
+Iran,iran,IRN,Group G,22,iran_hossein_hosseini,Hossein Hosseini,Goalkeeper,iran_hossein_hosseini.jpg
+Iran,iran,IRN,Group G,23,iran_ramin_rezaeian,Ramin Rezaeian,Defender,iran_ramin_rezaeian.jpg
+Iran,iran,IRN,Group G,24,iran_dennis_eckert,Dennis Eckert,Forward,iran_dennis_eckert.jpg
+Iran,iran,IRN,Group G,25,iran_danial_eiri,Danial Eiri,Defender,iran_danial_eiri.jpg
+Iran,iran,IRN,Group G,26,iran_amirmohammad_razzaghinia,Amirmohammad Razzaghinia,Midfielder,iran_amirmohammad_razzaghinia.jpg
+Egypt,egypt,EGY,Group G,1,egypt_mohamed_el_shenawy,Mohamed El Shenawy,Goalkeeper,egypt_mohamed_el_shenawy.jpg
+Egypt,egypt,EGY,Group G,2,egypt_yasser_ibrahim,Yasser Ibrahim,Defender,egypt_yasser_ibrahim.jpg
+Egypt,egypt,EGY,Group G,3,egypt_mohamed_hany,Mohamed Hany,Defender,egypt_mohamed_hany.jpg
+Egypt,egypt,EGY,Group G,4,egypt_hossam_abdelmaguid,Hossam Abdelmaguid,Defender,egypt_hossam_abdelmaguid.jpg
+Egypt,egypt,EGY,Group G,5,egypt_ramy_rabia,Ramy Rabia,Defender,egypt_ramy_rabia.jpg
+Egypt,egypt,EGY,Group G,6,egypt_mohamed_abdelmonem,Mohamed Abdelmonem,Defender,egypt_mohamed_abdelmonem.jpg
+Egypt,egypt,EGY,Group G,7,egypt_trezeguet,Trézéguet,Forward,egypt_trezeguet.jpg
+Egypt,egypt,EGY,Group G,8,egypt_emam_ashour,Emam Ashour,Midfielder,egypt_emam_ashour.jpg
+Egypt,egypt,EGY,Group G,9,egypt_hamza_abdelkarim,Hamza Abdelkarim,Forward,egypt_hamza_abdelkarim.jpg
+Egypt,egypt,EGY,Group G,10,egypt_mohamed_salah,Mohamed Salah,Forward,egypt_mohamed_salah.jpg
+Egypt,egypt,EGY,Group G,11,egypt_mostafa_ziko,Mostafa Ziko,Midfielder,egypt_mostafa_ziko.jpg
+Egypt,egypt,EGY,Group G,12,egypt_haissem_hassan,Haissem Hassan,Forward,egypt_haissem_hassan.jpg
+Egypt,egypt,EGY,Group G,13,egypt_ahmed_fatouh,Ahmed Fatouh,Defender,egypt_ahmed_fatouh.jpg
+Egypt,egypt,EGY,Group G,14,egypt_hamdy_fathy,Hamdy Fathy,Midfielder,egypt_hamdy_fathy.jpg
+Egypt,egypt,EGY,Group G,15,egypt_karim_hafez,Karim Hafez,Defender,egypt_karim_hafez.jpg
+Egypt,egypt,EGY,Group G,16,egypt_el_mahdy_soliman,El Mahdy Soliman,Goalkeeper,egypt_el_mahdy_soliman.jpg
+Egypt,egypt,EGY,Group G,17,egypt_mohanad_lasheen,Mohanad Lasheen,Midfielder,egypt_mohanad_lasheen.jpg
+Egypt,egypt,EGY,Group G,18,egypt_nabil_emad,Nabil Emad,Midfielder,egypt_nabil_emad.jpg
+Egypt,egypt,EGY,Group G,19,egypt_marwan_attia,Marwan Attia,Midfielder,egypt_marwan_attia.jpg
+Egypt,egypt,EGY,Group G,20,egypt_ibrahim_adel,Ibrahim Adel,Forward,egypt_ibrahim_adel.jpg
+Egypt,egypt,EGY,Group G,21,egypt_mahmoud_saber,Mahmoud Saber,Midfielder,egypt_mahmoud_saber.jpg
+Egypt,egypt,EGY,Group G,22,egypt_omar_marmoush,Omar Marmoush,Forward,egypt_omar_marmoush.jpg
+Egypt,egypt,EGY,Group G,23,egypt_mostafa_shobeir,Mostafa Shobeir,Goalkeeper,egypt_mostafa_shobeir.jpg
+Egypt,egypt,EGY,Group G,24,egypt_tarek_alaa,Tarek Alaa,Defender,egypt_tarek_alaa.jpg
+Egypt,egypt,EGY,Group G,25,egypt_zizo,Zizo,Forward,egypt_zizo.jpg
+Egypt,egypt,EGY,Group G,26,egypt_mohamed_alaa,Mohamed Alaa,Goalkeeper,egypt_mohamed_alaa.jpg
+New Zealand,new_zealand,NZL,Group G,1,new_zealand_max_crocombe,Max Crocombe,Goalkeeper,new_zealand_max_crocombe.jpg
+New Zealand,new_zealand,NZL,Group G,2,new_zealand_tim_payne,Tim Payne,Defender,new_zealand_tim_payne.jpg
+New Zealand,new_zealand,NZL,Group G,3,new_zealand_francis_de_vries,Francis de Vries,Defender,new_zealand_francis_de_vries.jpg
+New Zealand,new_zealand,NZL,Group G,4,new_zealand_tyler_bindon,Tyler Bindon,Defender,new_zealand_tyler_bindon.jpg
+New Zealand,new_zealand,NZL,Group G,5,new_zealand_michael_boxall,Michael Boxall,Defender,new_zealand_michael_boxall.jpg
+New Zealand,new_zealand,NZL,Group G,6,new_zealand_joe_bell,Joe Bell,Midfielder,new_zealand_joe_bell.jpg
+New Zealand,new_zealand,NZL,Group G,7,new_zealand_matthew_garbett,Matthew Garbett,Midfielder,new_zealand_matthew_garbett.jpg
+New Zealand,new_zealand,NZL,Group G,8,new_zealand_marko_stamenic,Marko Stamenić,Midfielder,new_zealand_marko_stamenic.jpg
+New Zealand,new_zealand,NZL,Group G,9,new_zealand_chris_wood,Chris Wood,Forward,new_zealand_chris_wood.jpg
+New Zealand,new_zealand,NZL,Group G,10,new_zealand_sarpreet_singh,Sarpreet Singh,Midfielder,new_zealand_sarpreet_singh.jpg
+New Zealand,new_zealand,NZL,Group G,11,new_zealand_elijah_just,Elijah Just,Midfielder,new_zealand_elijah_just.jpg
+New Zealand,new_zealand,NZL,Group G,12,new_zealand_alex_paulsen,Alex Paulsen,Goalkeeper,new_zealand_alex_paulsen.jpg
+New Zealand,new_zealand,NZL,Group G,13,new_zealand_liberato_cacace,Liberato Cacace,Defender,new_zealand_liberato_cacace.jpg
+New Zealand,new_zealand,NZL,Group G,14,new_zealand_alex_rufer,Alex Rufer,Midfielder,new_zealand_alex_rufer.jpg
+New Zealand,new_zealand,NZL,Group G,15,new_zealand_nando_pijnaker,Nando Pijnaker,Defender,new_zealand_nando_pijnaker.jpg
+New Zealand,new_zealand,NZL,Group G,16,new_zealand_finn_surman,Finn Surman,Defender,new_zealand_finn_surman.jpg
+New Zealand,new_zealand,NZL,Group G,17,new_zealand_kosta_barbarouses,Kosta Barbarouses,Forward,new_zealand_kosta_barbarouses.jpg
+New Zealand,new_zealand,NZL,Group G,18,new_zealand_ben_waine,Ben Waine,Forward,new_zealand_ben_waine.jpg
+New Zealand,new_zealand,NZL,Group G,19,new_zealand_ben_old,Ben Old,Midfielder,new_zealand_ben_old.jpg
+New Zealand,new_zealand,NZL,Group G,20,new_zealand_callum_mccowatt,Callum McCowatt,Midfielder,new_zealand_callum_mccowatt.jpg
+New Zealand,new_zealand,NZL,Group G,21,new_zealand_jesse_randall,Jesse Randall,Forward,new_zealand_jesse_randall.jpg
+New Zealand,new_zealand,NZL,Group G,22,new_zealand_michael_woud,Michael Woud,Goalkeeper,new_zealand_michael_woud.jpg
+New Zealand,new_zealand,NZL,Group G,23,new_zealand_ryan_thomas,Ryan Thomas,Midfielder,new_zealand_ryan_thomas.jpg
+New Zealand,new_zealand,NZL,Group G,24,new_zealand_callan_elliot,Callan Elliot,Defender,new_zealand_callan_elliot.jpg
+New Zealand,new_zealand,NZL,Group G,25,new_zealand_lachlan_bayliss,Lachlan Bayliss,Midfielder,new_zealand_lachlan_bayliss.jpg
+New Zealand,new_zealand,NZL,Group G,26,new_zealand_tommy_smith,Tommy Smith,Defender,new_zealand_tommy_smith.jpg
+Spain,spain,ESP,Group H,1,spain_david_raya,David Raya,Goalkeeper,spain_david_raya.jpg
+Spain,spain,ESP,Group H,2,spain_marc_pubill,Marc Pubill,Defender,spain_marc_pubill.jpg
+Spain,spain,ESP,Group H,3,spain_alex_grimaldo,Álex Grimaldo,Defender,spain_alex_grimaldo.jpg
+Spain,spain,ESP,Group H,4,spain_eric_garcia,Eric García,Defender,spain_eric_garcia.jpg
+Spain,spain,ESP,Group H,5,spain_marcos_llorente,Marcos Llorente,Defender,spain_marcos_llorente.jpg
+Spain,spain,ESP,Group H,6,spain_mikel_merino,Mikel Merino,Midfielder,spain_mikel_merino.jpg
+Spain,spain,ESP,Group H,7,spain_ferran_torres,Ferran Torres,Forward,spain_ferran_torres.jpg
+Spain,spain,ESP,Group H,8,spain_fabian_ruiz,Fabián Ruiz,Midfielder,spain_fabian_ruiz.jpg
+Spain,spain,ESP,Group H,9,spain_gavi,Gavi,Midfielder,spain_gavi.jpg
+Spain,spain,ESP,Group H,10,spain_dani_olmo,Dani Olmo,Forward,spain_dani_olmo.jpg
+Spain,spain,ESP,Group H,11,spain_yeremy_pino,Yéremy Pino,Forward,spain_yeremy_pino.jpg
+Spain,spain,ESP,Group H,12,spain_pedro_porro,Pedro Porro,Defender,spain_pedro_porro.jpg
+Spain,spain,ESP,Group H,13,spain_joan_garcia,Joan Garcia,Goalkeeper,spain_joan_garcia.jpg
+Spain,spain,ESP,Group H,14,spain_aymeric_laporte,Aymeric Laporte,Defender,spain_aymeric_laporte.jpg
+Spain,spain,ESP,Group H,15,spain_alex_baena,Álex Baena,Midfielder,spain_alex_baena.jpg
+Spain,spain,ESP,Group H,16,spain_rodri,Rodri,Midfielder,spain_rodri.jpg
+Spain,spain,ESP,Group H,17,spain_nico_williams,Nico Williams,Forward,spain_nico_williams.jpg
+Spain,spain,ESP,Group H,18,spain_martin_zubimendi,Martín Zubimendi,Midfielder,spain_martin_zubimendi.jpg
+Spain,spain,ESP,Group H,19,spain_lamine_yamal,Lamine Yamal,Forward,spain_lamine_yamal.jpg
+Spain,spain,ESP,Group H,20,spain_pedri,Pedri,Midfielder,spain_pedri.jpg
+Spain,spain,ESP,Group H,21,spain_mikel_oyarzabal,Mikel Oyarzabal,Forward,spain_mikel_oyarzabal.jpg
+Spain,spain,ESP,Group H,22,spain_pau_cubarsi,Pau Cubarsí,Defender,spain_pau_cubarsi.jpg
+Spain,spain,ESP,Group H,23,spain_unai_simon,Unai Simón,Goalkeeper,spain_unai_simon.jpg
+Spain,spain,ESP,Group H,24,spain_marc_cucurella,Marc Cucurella,Defender,spain_marc_cucurella.jpg
+Spain,spain,ESP,Group H,25,spain_victor_munoz,Víctor Muñoz,Forward,spain_victor_munoz.jpg
+Spain,spain,ESP,Group H,26,spain_borja_iglesias,Borja Iglesias,Forward,spain_borja_iglesias.jpg
+Uruguay,uruguay,URU,Group H,1,uruguay_sergio_rochet,Sergio Rochet,Goalkeeper,uruguay_sergio_rochet.jpg
+Uruguay,uruguay,URU,Group H,2,uruguay_jose_maria_gimenez,José María Giménez,Defender,uruguay_jose_maria_gimenez.jpg
+Uruguay,uruguay,URU,Group H,3,uruguay_sebastian_caceres,Sebastián Cáceres,Defender,uruguay_sebastian_caceres.jpg
+Uruguay,uruguay,URU,Group H,4,uruguay_ronald_araujo,Ronald Araújo,Defender,uruguay_ronald_araujo.jpg
+Uruguay,uruguay,URU,Group H,5,uruguay_manuel_ugarte,Manuel Ugarte,Midfielder,uruguay_manuel_ugarte.jpg
+Uruguay,uruguay,URU,Group H,6,uruguay_rodrigo_bentancur,Rodrigo Bentancur,Midfielder,uruguay_rodrigo_bentancur.jpg
+Uruguay,uruguay,URU,Group H,7,uruguay_nicolas_de_la_cruz,Nicolás de la Cruz,Midfielder,uruguay_nicolas_de_la_cruz.jpg
+Uruguay,uruguay,URU,Group H,8,uruguay_federico_valverde,Federico Valverde,Midfielder,uruguay_federico_valverde.jpg
+Uruguay,uruguay,URU,Group H,9,uruguay_darwin_nunez,Darwin Núñez,Forward,uruguay_darwin_nunez.jpg
+Uruguay,uruguay,URU,Group H,10,uruguay_giorgian_de_arrascaeta,Giorgian de Arrascaeta,Midfielder,uruguay_giorgian_de_arrascaeta.jpg
+Uruguay,uruguay,URU,Group H,11,uruguay_facundo_pellistri,Facundo Pellistri,Forward,uruguay_facundo_pellistri.jpg
+Uruguay,uruguay,URU,Group H,12,uruguay_santiago_mele,Santiago Mele,Goalkeeper,uruguay_santiago_mele.jpg
+Uruguay,uruguay,URU,Group H,13,uruguay_guillermo_varela,Guillermo Varela,Defender,uruguay_guillermo_varela.jpg
+Uruguay,uruguay,URU,Group H,14,uruguay_agustin_canobbio,Agustín Canobbio,Midfielder,uruguay_agustin_canobbio.jpg
+Uruguay,uruguay,URU,Group H,15,uruguay_emiliano_martinez,Emiliano Martínez,Midfielder,uruguay_emiliano_martinez.jpg
+Uruguay,uruguay,URU,Group H,16,uruguay_mathias_olivera,Mathías Olivera,Defender,uruguay_mathias_olivera.jpg
+Uruguay,uruguay,URU,Group H,17,uruguay_matias_vina,Matías Viña,Defender,uruguay_matias_vina.jpg
+Uruguay,uruguay,URU,Group H,18,uruguay_brian_rodriguez,Brian Rodríguez,Forward,uruguay_brian_rodriguez.jpg
+Uruguay,uruguay,URU,Group H,19,uruguay_rodrigo_aguirre,Rodrigo Aguirre,Forward,uruguay_rodrigo_aguirre.jpg
+Uruguay,uruguay,URU,Group H,20,uruguay_maximiliano_araujo,Maximiliano Araújo,Midfielder,uruguay_maximiliano_araujo.jpg
+Uruguay,uruguay,URU,Group H,21,uruguay_federico_vinas,Federico Viñas,Forward,uruguay_federico_vinas.jpg
+Uruguay,uruguay,URU,Group H,22,uruguay_joaquin_piquerez,Joaquín Piquerez,Midfielder,uruguay_joaquin_piquerez.jpg
+Uruguay,uruguay,URU,Group H,23,uruguay_fernando_muslera,Fernando Muslera,Goalkeeper,uruguay_fernando_muslera.jpg
+Uruguay,uruguay,URU,Group H,24,uruguay_santiago_bueno,Santiago Bueno,Defender,uruguay_santiago_bueno.jpg
+Uruguay,uruguay,URU,Group H,25,uruguay_juan_manuel_sanabria,Juan Manuel Sanabria,Midfielder,uruguay_juan_manuel_sanabria.jpg
+Uruguay,uruguay,URU,Group H,26,uruguay_rodrigo_zalazar,Rodrigo Zalazar,Midfielder,uruguay_rodrigo_zalazar.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,1,saudi_arabia_nawaf_al_aqidi,Nawaf Al-Aqidi,Goalkeeper,saudi_arabia_nawaf_al_aqidi.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,2,saudi_arabia_ali_majrashi,Ali Majrashi,Defender,saudi_arabia_ali_majrashi.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,3,saudi_arabia_ali_lajami,Ali Lajami,Defender,saudi_arabia_ali_lajami.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,4,saudi_arabia_abdulelah_al_amri,Abdulelah Al-Amri,Defender,saudi_arabia_abdulelah_al_amri.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,5,saudi_arabia_hassan_al_tambakti,Hassan Al-Tambakti,Defender,saudi_arabia_hassan_al_tambakti.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,6,saudi_arabia_nasser_al_dawsari,Nasser Al-Dawsari,Midfielder,saudi_arabia_nasser_al_dawsari.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,7,saudi_arabia_musab_al_juwayr,Musab Al-Juwayr,Midfielder,saudi_arabia_musab_al_juwayr.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,8,saudi_arabia_ayman_yahya,Ayman Yahya,Forward,saudi_arabia_ayman_yahya.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,9,saudi_arabia_firas_al_buraikan,Firas Al-Buraikan,Forward,saudi_arabia_firas_al_buraikan.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,10,saudi_arabia_salem_al_dawsari,Salem Al-Dawsari,Forward,saudi_arabia_salem_al_dawsari.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,11,saudi_arabia_saleh_al_shehri,Saleh Al-Shehri,Forward,saudi_arabia_saleh_al_shehri.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,12,saudi_arabia_saud_abdulhamid,Saud Abdulhamid,Defender,saudi_arabia_saud_abdulhamid.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,13,saudi_arabia_nawaf_boushal,Nawaf Boushal,Defender,saudi_arabia_nawaf_boushal.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,14,saudi_arabia_hassan_kadesh,Hassan Kadesh,Defender,saudi_arabia_hassan_kadesh.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,15,saudi_arabia_abdullah_al_khaibari,Abdullah Al-Khaibari,Midfielder,saudi_arabia_abdullah_al_khaibari.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,16,saudi_arabia_ziyad_al_johani,Ziyad Al-Johani,Midfielder,saudi_arabia_ziyad_al_johani.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,17,saudi_arabia_khalid_al_ghannam,Khalid Al-Ghannam,Forward,saudi_arabia_khalid_al_ghannam.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,18,saudi_arabia_alaa_al_hejji,Alaa Al-Hejji,Midfielder,saudi_arabia_alaa_al_hejji.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,19,saudi_arabia_abdullah_al_hamdan,Abdullah Al-Hamdan,Forward,saudi_arabia_abdullah_al_hamdan.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,20,saudi_arabia_sultan_mandash,Sultan Mandash,Forward,saudi_arabia_sultan_mandash.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,21,saudi_arabia_mohammed_al_owais,Mohammed Al-Owais,Goalkeeper,saudi_arabia_mohammed_al_owais.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,22,saudi_arabia_ahmed_al_kassar,Ahmed Al-Kassar,Goalkeeper,saudi_arabia_ahmed_al_kassar.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,23,saudi_arabia_mohamed_kanno,Mohamed Kanno,Midfielder,saudi_arabia_mohamed_kanno.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,24,saudi_arabia_moteb_al_harbi,Moteb Al-Harbi,Defender,saudi_arabia_moteb_al_harbi.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,25,saudi_arabia_jehad_thakri,Jehad Thakri,Defender,saudi_arabia_jehad_thakri.jpg
+Saudi Arabia,saudi_arabia,KSA,Group H,26,saudi_arabia_mohammed_abu_al_shamat,Mohammed Abu Al-Shamat,Defender,saudi_arabia_mohammed_abu_al_shamat.jpg
+Cape Verde,cape_verde,CPV,Group H,1,cape_verde_vozinha,Vozinha,Goalkeeper,cape_verde_vozinha.jpg
+Cape Verde,cape_verde,CPV,Group H,2,cape_verde_stopira,Stopira,Defender,cape_verde_stopira.jpg
+Cape Verde,cape_verde,CPV,Group H,3,cape_verde_diney,Diney,Defender,cape_verde_diney.jpg
+Cape Verde,cape_verde,CPV,Group H,4,cape_verde_roberto_lopes,Roberto Lopes,Defender,cape_verde_roberto_lopes.jpg
+Cape Verde,cape_verde,CPV,Group H,5,cape_verde_logan_costa,Logan Costa,Defender,cape_verde_logan_costa.jpg
+Cape Verde,cape_verde,CPV,Group H,6,cape_verde_kevin_pina,Kevin Pina,Midfielder,cape_verde_kevin_pina.jpg
+Cape Verde,cape_verde,CPV,Group H,7,cape_verde_jovane_cabral,Jovane Cabral,Midfielder,cape_verde_jovane_cabral.jpg
+Cape Verde,cape_verde,CPV,Group H,8,cape_verde_joao_paulo,João Paulo,Midfielder,cape_verde_joao_paulo.jpg
+Cape Verde,cape_verde,CPV,Group H,9,cape_verde_gilson_benchimol,Gilson Benchimol,Forward,cape_verde_gilson_benchimol.jpg
+Cape Verde,cape_verde,CPV,Group H,10,cape_verde_jamiro_monteiro,Jamiro Monteiro,Midfielder,cape_verde_jamiro_monteiro.jpg
+Cape Verde,cape_verde,CPV,Group H,11,cape_verde_garry_rodrigues,Garry Rodrigues,Midfielder,cape_verde_garry_rodrigues.jpg
+Cape Verde,cape_verde,CPV,Group H,12,cape_verde_marcio_rosa,Márcio Rosa,Goalkeeper,cape_verde_marcio_rosa.jpg
+Cape Verde,cape_verde,CPV,Group H,13,cape_verde_sidny_lopes_cabral,Sidny Lopes Cabral,Defender,cape_verde_sidny_lopes_cabral.jpg
+Cape Verde,cape_verde,CPV,Group H,14,cape_verde_deroy_duarte,Deroy Duarte,Midfielder,cape_verde_deroy_duarte.jpg
+Cape Verde,cape_verde,CPV,Group H,15,cape_verde_laros_duarte,Laros Duarte,Midfielder,cape_verde_laros_duarte.jpg
+Cape Verde,cape_verde,CPV,Group H,16,cape_verde_yannick_semedo,Yannick Semedo,Midfielder,cape_verde_yannick_semedo.jpg
+Cape Verde,cape_verde,CPV,Group H,17,cape_verde_willy_semedo,Willy Semedo,Midfielder,cape_verde_willy_semedo.jpg
+Cape Verde,cape_verde,CPV,Group H,18,cape_verde_telmo_arcanjo,Telmo Arcanjo,Midfielder,cape_verde_telmo_arcanjo.jpg
+Cape Verde,cape_verde,CPV,Group H,19,cape_verde_dailon_livramento,Dailon Livramento,Forward,cape_verde_dailon_livramento.jpg
+Cape Verde,cape_verde,CPV,Group H,20,cape_verde_ryan_mendes,Ryan Mendes,Forward,cape_verde_ryan_mendes.jpg
+Cape Verde,cape_verde,CPV,Group H,21,cape_verde_nuno_da_costa,Nuno da Costa,Midfielder,cape_verde_nuno_da_costa.jpg
+Cape Verde,cape_verde,CPV,Group H,22,cape_verde_steven_moreira,Steven Moreira,Defender,cape_verde_steven_moreira.jpg
+Cape Verde,cape_verde,CPV,Group H,23,cape_verde_cj_dos_santos,CJ dos Santos,Goalkeeper,cape_verde_cj_dos_santos.jpg
+Cape Verde,cape_verde,CPV,Group H,24,cape_verde_wagner_pina,Wagner Pina,Defender,cape_verde_wagner_pina.jpg
+Cape Verde,cape_verde,CPV,Group H,25,cape_verde_kelvin_pires,Kelvin Pires,Defender,cape_verde_kelvin_pires.jpg
+Cape Verde,cape_verde,CPV,Group H,26,cape_verde_helio_varela,Hélio Varela,Midfielder,cape_verde_helio_varela.jpg
+France,france,FRA,Group I,1,france_brice_samba,Brice Samba,Goalkeeper,france_brice_samba.jpg
+France,france,FRA,Group I,2,france_malo_gusto,Malo Gusto,Defender,france_malo_gusto.jpg
+France,france,FRA,Group I,3,france_lucas_digne,Lucas Digne,Defender,france_lucas_digne.jpg
+France,france,FRA,Group I,4,france_dayot_upamecano,Dayot Upamecano,Defender,france_dayot_upamecano.jpg
+France,france,FRA,Group I,5,france_jules_kounde,Jules Koundé,Defender,france_jules_kounde.jpg
+France,france,FRA,Group I,6,france_manu_kone,Manu Koné,Midfielder,france_manu_kone.jpg
+France,france,FRA,Group I,7,france_ousmane_dembele,Ousmane Dembélé,Forward,france_ousmane_dembele.jpg
+France,france,FRA,Group I,8,france_aurelien_tchouameni,Aurélien Tchouaméni,Midfielder,france_aurelien_tchouameni.jpg
+France,france,FRA,Group I,9,france_marcus_thuram,Marcus Thuram,Forward,france_marcus_thuram.jpg
+France,france,FRA,Group I,10,france_kylian_mbappe,Kylian Mbappé,Forward,france_kylian_mbappe.jpg
+France,france,FRA,Group I,11,france_michael_olise,Michael Olise,Forward,france_michael_olise.jpg
+France,france,FRA,Group I,12,france_bradley_barcola,Bradley Barcola,Forward,france_bradley_barcola.jpg
+France,france,FRA,Group I,13,france_n_golo_kante,N'Golo Kanté,Midfielder,france_n_golo_kante.jpg
+France,france,FRA,Group I,14,france_adrien_rabiot,Adrien Rabiot,Midfielder,france_adrien_rabiot.jpg
+France,france,FRA,Group I,15,france_ibrahima_konate,Ibrahima Konaté,Defender,france_ibrahima_konate.jpg
+France,france,FRA,Group I,16,france_mike_maignan,Mike Maignan,Goalkeeper,france_mike_maignan.jpg
+France,france,FRA,Group I,17,france_william_saliba,William Saliba,Defender,france_william_saliba.jpg
+France,france,FRA,Group I,18,france_warren_zaire_emery,Warren Zaïre-Emery,Midfielder,france_warren_zaire_emery.jpg
+France,france,FRA,Group I,19,france_theo_hernandez,Théo Hernandez,Defender,france_theo_hernandez.jpg
+France,france,FRA,Group I,20,france_desire_doue,Désiré Doué,Forward,france_desire_doue.jpg
+France,france,FRA,Group I,21,france_lucas_hernandez,Lucas Hernandez,Defender,france_lucas_hernandez.jpg
+France,france,FRA,Group I,22,france_jean_philippe_mateta,Jean-Philippe Mateta,Forward,france_jean_philippe_mateta.jpg
+France,france,FRA,Group I,23,france_robin_risser,Robin Risser,Goalkeeper,france_robin_risser.jpg
+France,france,FRA,Group I,24,france_rayan_cherki,Rayan Cherki,Midfielder,france_rayan_cherki.jpg
+France,france,FRA,Group I,25,france_maghnes_akliouche,Maghnes Akliouche,Midfielder,france_maghnes_akliouche.jpg
+France,france,FRA,Group I,26,france_maxence_lacroix,Maxence Lacroix,Defender,france_maxence_lacroix.jpg
+Senegal,senegal,SEN,Group I,1,senegal_yehvann_diouf,Yehvann Diouf,Goalkeeper,senegal_yehvann_diouf.jpg
+Senegal,senegal,SEN,Group I,2,senegal_mamadou_sarr,Mamadou Sarr,Defender,senegal_mamadou_sarr.jpg
+Senegal,senegal,SEN,Group I,3,senegal_kalidou_koulibaly,Kalidou Koulibaly,Defender,senegal_kalidou_koulibaly.jpg
+Senegal,senegal,SEN,Group I,4,senegal_abdoulaye_seck,Abdoulaye Seck,Defender,senegal_abdoulaye_seck.jpg
+Senegal,senegal,SEN,Group I,5,senegal_idrissa_gueye,Idrissa Gueye,Midfielder,senegal_idrissa_gueye.jpg
+Senegal,senegal,SEN,Group I,6,senegal_pathe_ciss,Pathé Ciss,Midfielder,senegal_pathe_ciss.jpg
+Senegal,senegal,SEN,Group I,7,senegal_assane_diao,Assane Diao,Forward,senegal_assane_diao.jpg
+Senegal,senegal,SEN,Group I,8,senegal_lamine_camara,Lamine Camara,Midfielder,senegal_lamine_camara.jpg
+Senegal,senegal,SEN,Group I,9,senegal_bamba_dieng,Bamba Dieng,Forward,senegal_bamba_dieng.jpg
+Senegal,senegal,SEN,Group I,10,senegal_sadio_mane,Sadio Mané,Forward,senegal_sadio_mane.jpg
+Senegal,senegal,SEN,Group I,11,senegal_nicolas_jackson,Nicolas Jackson,Forward,senegal_nicolas_jackson.jpg
+Senegal,senegal,SEN,Group I,12,senegal_cherif_ndiaye,Cherif Ndiaye,Forward,senegal_cherif_ndiaye.jpg
+Senegal,senegal,SEN,Group I,13,senegal_iliman_ndiaye,Iliman Ndiaye,Forward,senegal_iliman_ndiaye.jpg
+Senegal,senegal,SEN,Group I,14,senegal_ismail_jakobs,Ismail Jakobs,Defender,senegal_ismail_jakobs.jpg
+Senegal,senegal,SEN,Group I,15,senegal_krepin_diatta,Krépin Diatta,Defender,senegal_krepin_diatta.jpg
+Senegal,senegal,SEN,Group I,16,senegal_edouard_mendy,Édouard Mendy,Goalkeeper,senegal_edouard_mendy.jpg
+Senegal,senegal,SEN,Group I,17,senegal_pape_matar_sarr,Pape Matar Sarr,Midfielder,senegal_pape_matar_sarr.jpg
+Senegal,senegal,SEN,Group I,18,senegal_ismaila_sarr,Ismaïla Sarr,Forward,senegal_ismaila_sarr.jpg
+Senegal,senegal,SEN,Group I,19,senegal_moussa_niakhate,Moussa Niakhaté,Defender,senegal_moussa_niakhate.jpg
+Senegal,senegal,SEN,Group I,20,senegal_ibrahim_mbaye,Ibrahim Mbaye,Forward,senegal_ibrahim_mbaye.jpg
+Senegal,senegal,SEN,Group I,21,senegal_habib_diarra,Habib Diarra,Midfielder,senegal_habib_diarra.jpg
+Senegal,senegal,SEN,Group I,22,senegal_bara_sapoko_ndiaye,Bara Sapoko Ndiaye,Midfielder,senegal_bara_sapoko_ndiaye.jpg
+Senegal,senegal,SEN,Group I,23,senegal_mory_diaw,Mory Diaw,Goalkeeper,senegal_mory_diaw.jpg
+Senegal,senegal,SEN,Group I,24,senegal_antoine_mendy,Antoine Mendy,Defender,senegal_antoine_mendy.jpg
+Senegal,senegal,SEN,Group I,25,senegal_el_hadji_malick_diouf,El Hadji Malick Diouf,Defender,senegal_el_hadji_malick_diouf.jpg
+Senegal,senegal,SEN,Group I,26,senegal_pape_gueye,Pape Gueye,Midfielder,senegal_pape_gueye.jpg
+Norway,norway,NOR,Group I,1,norway_rjan_nyland,Ørjan Nyland,Goalkeeper,norway_rjan_nyland.jpg
+Norway,norway,NOR,Group I,2,norway_morten_thorsby,Morten Thorsby,Midfielder,norway_morten_thorsby.jpg
+Norway,norway,NOR,Group I,3,norway_kristoffer_ajer,Kristoffer Ajer,Defender,norway_kristoffer_ajer.jpg
+Norway,norway,NOR,Group I,4,norway_leo_stigard,Leo Østigård,Defender,norway_leo_stigard.jpg
+Norway,norway,NOR,Group I,5,norway_david_mller_wolfe,David Møller Wolfe,Defender,norway_david_mller_wolfe.jpg
+Norway,norway,NOR,Group I,6,norway_patrick_berg,Patrick Berg,Midfielder,norway_patrick_berg.jpg
+Norway,norway,NOR,Group I,7,norway_alexander_srloth,Alexander Sørloth,Forward,norway_alexander_srloth.jpg
+Norway,norway,NOR,Group I,8,norway_sander_berge,Sander Berge,Midfielder,norway_sander_berge.jpg
+Norway,norway,NOR,Group I,9,norway_erling_haaland,Erling Haaland,Forward,norway_erling_haaland.jpg
+Norway,norway,NOR,Group I,10,norway_martin_degaard,Martin Ødegaard,Midfielder,norway_martin_degaard.jpg
+Norway,norway,NOR,Group I,11,norway_jrgen_strand_larsen,Jørgen Strand Larsen,Forward,norway_jrgen_strand_larsen.jpg
+Norway,norway,NOR,Group I,12,norway_sander_tangvik,Sander Tangvik,Goalkeeper,norway_sander_tangvik.jpg
+Norway,norway,NOR,Group I,13,norway_egil_selvik,Egil Selvik,Goalkeeper,norway_egil_selvik.jpg
+Norway,norway,NOR,Group I,14,norway_fredrik_aursnes,Fredrik Aursnes,Midfielder,norway_fredrik_aursnes.jpg
+Norway,norway,NOR,Group I,15,norway_fredrik_andre_bjrkan,Fredrik André Bjørkan,Defender,norway_fredrik_andre_bjrkan.jpg
+Norway,norway,NOR,Group I,16,norway_marcus_holmgren_pedersen,Marcus Holmgren Pedersen,Defender,norway_marcus_holmgren_pedersen.jpg
+Norway,norway,NOR,Group I,17,norway_torbjrn_heggem,Torbjørn Heggem,Defender,norway_torbjrn_heggem.jpg
+Norway,norway,NOR,Group I,18,norway_kristian_thorstvedt,Kristian Thorstvedt,Midfielder,norway_kristian_thorstvedt.jpg
+Norway,norway,NOR,Group I,19,norway_thelo_aasgaard,Thelo Aasgaard,Midfielder,norway_thelo_aasgaard.jpg
+Norway,norway,NOR,Group I,20,norway_antonio_nusa,Antonio Nusa,Forward,norway_antonio_nusa.jpg
+Norway,norway,NOR,Group I,21,norway_andreas_schjelderup,Andreas Schjelderup,Midfielder,norway_andreas_schjelderup.jpg
+Norway,norway,NOR,Group I,22,norway_oscar_bobb,Oscar Bobb,Midfielder,norway_oscar_bobb.jpg
+Norway,norway,NOR,Group I,23,norway_jens_petter_hauge,Jens Petter Hauge,Midfielder,norway_jens_petter_hauge.jpg
+Norway,norway,NOR,Group I,24,norway_sondre_langas,Sondre Langås,Defender,norway_sondre_langas.jpg
+Norway,norway,NOR,Group I,25,norway_henrik_falchener,Henrik Falchener,Defender,norway_henrik_falchener.jpg
+Norway,norway,NOR,Group I,26,norway_julian_ryerson,Julian Ryerson,Forward,norway_julian_ryerson.jpg
+Iraq,iraq,IRQ,Group I,1,iraq_fahad_talib,Fahad Talib,Goalkeeper,iraq_fahad_talib.jpg
+Iraq,iraq,IRQ,Group I,2,iraq_rebin_sulaka,Rebin Sulaka,Defender,iraq_rebin_sulaka.jpg
+Iraq,iraq,IRQ,Group I,3,iraq_hussein_ali,Hussein Ali,Defender,iraq_hussein_ali.jpg
+Iraq,iraq,IRQ,Group I,4,iraq_zaid_tahseen,Zaid Tahseen,Defender,iraq_zaid_tahseen.jpg
+Iraq,iraq,IRQ,Group I,5,iraq_akam_hashim,Akam Hashim,Defender,iraq_akam_hashim.jpg
+Iraq,iraq,IRQ,Group I,6,iraq_manaf_younis,Manaf Younis,Defender,iraq_manaf_younis.jpg
+Iraq,iraq,IRQ,Group I,7,iraq_youssef_amyn,Youssef Amyn,Midfielder,iraq_youssef_amyn.jpg
+Iraq,iraq,IRQ,Group I,8,iraq_ibrahim_bayesh,Ibrahim Bayesh,Midfielder,iraq_ibrahim_bayesh.jpg
+Iraq,iraq,IRQ,Group I,9,iraq_ali_al_hamadi,Ali Al-Hamadi,Forward,iraq_ali_al_hamadi.jpg
+Iraq,iraq,IRQ,Group I,10,iraq_mohanad_ali,Mohanad Ali,Forward,iraq_mohanad_ali.jpg
+Iraq,iraq,IRQ,Group I,11,iraq_ahmed_qasem,Ahmed Qasem,Forward,iraq_ahmed_qasem.jpg
+Iraq,iraq,IRQ,Group I,12,iraq_jalal_hassan,Jalal Hassan,Goalkeeper,iraq_jalal_hassan.jpg
+Iraq,iraq,IRQ,Group I,13,iraq_ali_yousif,Ali Yousif,Forward,iraq_ali_yousif.jpg
+Iraq,iraq,IRQ,Group I,14,iraq_zidane_iqbal,Zidane Iqbal,Midfielder,iraq_zidane_iqbal.jpg
+Iraq,iraq,IRQ,Group I,15,iraq_ahmed_yahya,Ahmed Yahya,Defender,iraq_ahmed_yahya.jpg
+Iraq,iraq,IRQ,Group I,16,iraq_amir_al_ammari,Amir Al-Ammari,Midfielder,iraq_amir_al_ammari.jpg
+Iraq,iraq,IRQ,Group I,17,iraq_ali_jasim,Ali Jasim,Forward,iraq_ali_jasim.jpg
+Iraq,iraq,IRQ,Group I,18,iraq_aymen_hussein,Aymen Hussein,Forward,iraq_aymen_hussein.jpg
+Iraq,iraq,IRQ,Group I,19,iraq_kevin_yakob,Kevin Yakob,Midfielder,iraq_kevin_yakob.jpg
+Iraq,iraq,IRQ,Group I,20,iraq_aimar_sher,Aimar Sher,Midfielder,iraq_aimar_sher.jpg
+Iraq,iraq,IRQ,Group I,21,iraq_marko_farji,Marko Farji,Forward,iraq_marko_farji.jpg
+Iraq,iraq,IRQ,Group I,22,iraq_ahmed_basil,Ahmed Basil,Goalkeeper,iraq_ahmed_basil.jpg
+Iraq,iraq,IRQ,Group I,23,iraq_merchas_doski,Merchas Doski,Defender,iraq_merchas_doski.jpg
+Iraq,iraq,IRQ,Group I,24,iraq_zaid_ismail,Zaid Ismail,Midfielder,iraq_zaid_ismail.jpg
+Iraq,iraq,IRQ,Group I,25,iraq_mustafa_saadoon,Mustafa Saadoon,Defender,iraq_mustafa_saadoon.jpg
+Iraq,iraq,IRQ,Group I,26,iraq_frans_putros,Frans Putros,Defender,iraq_frans_putros.jpg
+Argentina,argentina,ARG,Group J,1,argentina_juan_musso,Juan Musso,Goalkeeper,argentina_juan_musso.jpg
+Argentina,argentina,ARG,Group J,2,argentina_leonardo_balerdi,Leonardo Balerdi,Defender,argentina_leonardo_balerdi.jpg
+Argentina,argentina,ARG,Group J,3,argentina_nicolas_tagliafico,Nicolás Tagliafico,Defender,argentina_nicolas_tagliafico.jpg
+Argentina,argentina,ARG,Group J,4,argentina_gonzalo_montiel,Gonzalo Montiel,Defender,argentina_gonzalo_montiel.jpg
+Argentina,argentina,ARG,Group J,5,argentina_leandro_paredes,Leandro Paredes,Midfielder,argentina_leandro_paredes.jpg
+Argentina,argentina,ARG,Group J,6,argentina_lisandro_martinez,Lisandro Martínez,Defender,argentina_lisandro_martinez.jpg
+Argentina,argentina,ARG,Group J,7,argentina_rodrigo_de_paul,Rodrigo De Paul,Midfielder,argentina_rodrigo_de_paul.jpg
+Argentina,argentina,ARG,Group J,8,argentina_valentin_barco,Valentín Barco,Midfielder,argentina_valentin_barco.jpg
+Argentina,argentina,ARG,Group J,9,argentina_julian_alvarez,Julián Alvarez,Forward,argentina_julian_alvarez.jpg
+Argentina,argentina,ARG,Group J,10,argentina_lionel_messi,Lionel Messi,Forward,argentina_lionel_messi.jpg
+Argentina,argentina,ARG,Group J,11,argentina_giovani_lo_celso,Giovani Lo Celso,Midfielder,argentina_giovani_lo_celso.jpg
+Argentina,argentina,ARG,Group J,12,argentina_geronimo_rulli,Gerónimo Rulli,Goalkeeper,argentina_geronimo_rulli.jpg
+Argentina,argentina,ARG,Group J,13,argentina_cristian_romero,Cristian Romero,Defender,argentina_cristian_romero.jpg
+Argentina,argentina,ARG,Group J,14,argentina_exequiel_palacios,Exequiel Palacios,Midfielder,argentina_exequiel_palacios.jpg
+Argentina,argentina,ARG,Group J,15,argentina_nicolas_gonzalez,Nicolás González,Midfielder,argentina_nicolas_gonzalez.jpg
+Argentina,argentina,ARG,Group J,16,argentina_thiago_almada,Thiago Almada,Forward,argentina_thiago_almada.jpg
+Argentina,argentina,ARG,Group J,17,argentina_giuliano_simeone,Giuliano Simeone,Forward,argentina_giuliano_simeone.jpg
+Argentina,argentina,ARG,Group J,18,argentina_nico_paz,Nico Paz,Forward,argentina_nico_paz.jpg
+Argentina,argentina,ARG,Group J,19,argentina_nicolas_otamendi,Nicolás Otamendi,Defender,argentina_nicolas_otamendi.jpg
+Argentina,argentina,ARG,Group J,20,argentina_alexis_mac_allister,Alexis Mac Allister,Midfielder,argentina_alexis_mac_allister.jpg
+Argentina,argentina,ARG,Group J,21,argentina_jose_manuel_lopez,José Manuel López,Forward,argentina_jose_manuel_lopez.jpg
+Argentina,argentina,ARG,Group J,22,argentina_lautaro_martinez,Lautaro Martínez,Forward,argentina_lautaro_martinez.jpg
+Argentina,argentina,ARG,Group J,23,argentina_emiliano_martinez,Emiliano Martínez,Goalkeeper,argentina_emiliano_martinez.jpg
+Argentina,argentina,ARG,Group J,24,argentina_enzo_fernandez,Enzo Fernández,Midfielder,argentina_enzo_fernandez.jpg
+Argentina,argentina,ARG,Group J,25,argentina_facundo_medina,Facundo Medina,Defender,argentina_facundo_medina.jpg
+Argentina,argentina,ARG,Group J,26,argentina_nahuel_molina,Nahuel Molina,Defender,argentina_nahuel_molina.jpg
+Austria,austria,AUT,Group J,1,austria_alexander_schlager,Alexander Schlager,Goalkeeper,austria_alexander_schlager.jpg
+Austria,austria,AUT,Group J,2,austria_david_affengruber,David Affengruber,Defender,austria_david_affengruber.jpg
+Austria,austria,AUT,Group J,3,austria_kevin_danso,Kevin Danso,Defender,austria_kevin_danso.jpg
+Austria,austria,AUT,Group J,4,austria_xaver_schlager,Xaver Schlager,Midfielder,austria_xaver_schlager.jpg
+Austria,austria,AUT,Group J,5,austria_stefan_posch,Stefan Posch,Defender,austria_stefan_posch.jpg
+Austria,austria,AUT,Group J,6,austria_nicolas_seiwald,Nicolas Seiwald,Midfielder,austria_nicolas_seiwald.jpg
+Austria,austria,AUT,Group J,7,austria_marko_arnautovic,Marko Arnautović,Forward,austria_marko_arnautovic.jpg
+Austria,austria,AUT,Group J,8,austria_david_alaba,David Alaba,Defender,austria_david_alaba.jpg
+Austria,austria,AUT,Group J,9,austria_marcel_sabitzer,Marcel Sabitzer,Midfielder,austria_marcel_sabitzer.jpg
+Austria,austria,AUT,Group J,10,austria_florian_grillitsch,Florian Grillitsch,Midfielder,austria_florian_grillitsch.jpg
+Austria,austria,AUT,Group J,11,austria_michael_gregoritsch,Michael Gregoritsch,Forward,austria_michael_gregoritsch.jpg
+Austria,austria,AUT,Group J,12,austria_florian_wiegele,Florian Wiegele,Goalkeeper,austria_florian_wiegele.jpg
+Austria,austria,AUT,Group J,13,austria_patrick_pentz,Patrick Pentz,Goalkeeper,austria_patrick_pentz.jpg
+Austria,austria,AUT,Group J,14,austria_sasa_kalajdzic,Saša Kalajdžić,Forward,austria_sasa_kalajdzic.jpg
+Austria,austria,AUT,Group J,15,austria_philipp_lienhart,Philipp Lienhart,Defender,austria_philipp_lienhart.jpg
+Austria,austria,AUT,Group J,16,austria_phillipp_mwene,Phillipp Mwene,Defender,austria_phillipp_mwene.jpg
+Austria,austria,AUT,Group J,17,austria_carney_chukwuemeka,Carney Chukwuemeka,Midfielder,austria_carney_chukwuemeka.jpg
+Austria,austria,AUT,Group J,18,austria_romano_schmid,Romano Schmid,Midfielder,austria_romano_schmid.jpg
+Austria,austria,AUT,Group J,19,austria_christoph_baumgartner,Christoph Baumgartner,Midfielder,austria_christoph_baumgartner.jpg
+Austria,austria,AUT,Group J,20,austria_konrad_laimer,Konrad Laimer,Midfielder,austria_konrad_laimer.jpg
+Austria,austria,AUT,Group J,21,austria_patrick_wimmer,Patrick Wimmer,Forward,austria_patrick_wimmer.jpg
+Austria,austria,AUT,Group J,22,austria_alexander_prass,Alexander Prass,Midfielder,austria_alexander_prass.jpg
+Austria,austria,AUT,Group J,23,austria_marco_friedl,Marco Friedl,Defender,austria_marco_friedl.jpg
+Austria,austria,AUT,Group J,24,austria_paul_wanner,Paul Wanner,Midfielder,austria_paul_wanner.jpg
+Austria,austria,AUT,Group J,25,austria_michael_svoboda,Michael Svoboda,Defender,austria_michael_svoboda.jpg
+Austria,austria,AUT,Group J,26,austria_alessandro_schopf,Alessandro Schöpf,Midfielder,austria_alessandro_schopf.jpg
+Algeria,algeria,ALG,Group J,1,algeria_melvin_mastil,Melvin Mastil,Goalkeeper,algeria_melvin_mastil.jpg
+Algeria,algeria,ALG,Group J,2,algeria_aissa_mandi,Aïssa Mandi,Defender,algeria_aissa_mandi.jpg
+Algeria,algeria,ALG,Group J,3,algeria_achref_abada,Achref Abada,Defender,algeria_achref_abada.jpg
+Algeria,algeria,ALG,Group J,4,algeria_mohamed_amine_tougai,Mohamed Amine Tougai,Defender,algeria_mohamed_amine_tougai.jpg
+Algeria,algeria,ALG,Group J,5,algeria_zineddine_belaid,Zineddine Belaïd,Defender,algeria_zineddine_belaid.jpg
+Algeria,algeria,ALG,Group J,6,algeria_ramiz_zerrouki,Ramiz Zerrouki,Midfielder,algeria_ramiz_zerrouki.jpg
+Algeria,algeria,ALG,Group J,7,algeria_riyad_mahrez,Riyad Mahrez,Forward,algeria_riyad_mahrez.jpg
+Algeria,algeria,ALG,Group J,8,algeria_houssem_aouar,Houssem Aouar,Midfielder,algeria_houssem_aouar.jpg
+Algeria,algeria,ALG,Group J,9,algeria_amine_gouiri,Amine Gouiri,Forward,algeria_amine_gouiri.jpg
+Algeria,algeria,ALG,Group J,10,algeria_fares_chaibi,Farès Chaïbi,Midfielder,algeria_fares_chaibi.jpg
+Algeria,algeria,ALG,Group J,11,algeria_anis_hadj_moussa,Anis Hadj Moussa,Forward,algeria_anis_hadj_moussa.jpg
+Algeria,algeria,ALG,Group J,12,algeria_nadhir_benbouali,Nadhir Benbouali,Forward,algeria_nadhir_benbouali.jpg
+Algeria,algeria,ALG,Group J,13,algeria_jaouen_hadjam,Jaouen Hadjam,Defender,algeria_jaouen_hadjam.jpg
+Algeria,algeria,ALG,Group J,14,algeria_hicham_boudaoui,Hicham Boudaoui,Midfielder,algeria_hicham_boudaoui.jpg
+Algeria,algeria,ALG,Group J,15,algeria_rayan_ait_nouri,Rayan Aït-Nouri,Defender,algeria_rayan_ait_nouri.jpg
+Algeria,algeria,ALG,Group J,16,algeria_oussama_benbot,Oussama Benbot,Goalkeeper,algeria_oussama_benbot.jpg
+Algeria,algeria,ALG,Group J,17,algeria_rafik_belghali,Rafik Belghali,Defender,algeria_rafik_belghali.jpg
+Algeria,algeria,ALG,Group J,18,algeria_mohamed_amoura,Mohamed Amoura,Forward,algeria_mohamed_amoura.jpg
+Algeria,algeria,ALG,Group J,19,algeria_nabil_bentaleb,Nabil Bentaleb,Midfielder,algeria_nabil_bentaleb.jpg
+Algeria,algeria,ALG,Group J,20,algeria_adil_boulbina,Adil Boulbina,Forward,algeria_adil_boulbina.jpg
+Algeria,algeria,ALG,Group J,21,algeria_ramy_bensebaini,Ramy Bensebaini,Defender,algeria_ramy_bensebaini.jpg
+Algeria,algeria,ALG,Group J,22,algeria_ibrahim_maza,Ibrahim Maza,Midfielder,algeria_ibrahim_maza.jpg
+Algeria,algeria,ALG,Group J,23,algeria_luca_zidane,Luca Zidane,Goalkeeper,algeria_luca_zidane.jpg
+Algeria,algeria,ALG,Group J,24,algeria_yacine_titraoui,Yacine Titraoui,Midfielder,algeria_yacine_titraoui.jpg
+Algeria,algeria,ALG,Group J,25,algeria_fares_ghedjemis,Farès Ghedjemis,Forward,algeria_fares_ghedjemis.jpg
+Algeria,algeria,ALG,Group J,26,algeria_samir_chergui,Samir Chergui,Defender,algeria_samir_chergui.jpg
+Jordan,jordan,JOR,Group J,1,jordan_yazeed_abulaila,Yazeed Abulaila,Goalkeeper,jordan_yazeed_abulaila.jpg
+Jordan,jordan,JOR,Group J,2,jordan_mohammad_abu_hashish,Mohammad Abu Hashish,Defender,jordan_mohammad_abu_hashish.jpg
+Jordan,jordan,JOR,Group J,3,jordan_abdallah_nasib,Abdallah Nasib,Defender,jordan_abdallah_nasib.jpg
+Jordan,jordan,JOR,Group J,4,jordan_husam_abu_dahab,Husam Abu Dahab,Defender,jordan_husam_abu_dahab.jpg
+Jordan,jordan,JOR,Group J,5,jordan_yazan_al_arab,Yazan Al-Arab,Defender,jordan_yazan_al_arab.jpg
+Jordan,jordan,JOR,Group J,6,jordan_amer_jamous,Amer Jamous,Midfielder,jordan_amer_jamous.jpg
+Jordan,jordan,JOR,Group J,7,jordan_mohammad_abu_zrayq,Mohammad Abu Zrayq,Forward,jordan_mohammad_abu_zrayq.jpg
+Jordan,jordan,JOR,Group J,8,jordan_noor_al_rawabdeh,Noor Al-Rawabdeh,Midfielder,jordan_noor_al_rawabdeh.jpg
+Jordan,jordan,JOR,Group J,9,jordan_ali_olwan,Ali Olwan,Forward,jordan_ali_olwan.jpg
+Jordan,jordan,JOR,Group J,10,jordan_musa_al_taamari,Musa Al-Taamari,Forward,jordan_musa_al_taamari.jpg
+Jordan,jordan,JOR,Group J,11,jordan_odeh_al_fakhouri,Odeh Al-Fakhouri,Forward,jordan_odeh_al_fakhouri.jpg
+Jordan,jordan,JOR,Group J,12,jordan_nour_bani_attiah,Nour Bani Attiah,Goalkeeper,jordan_nour_bani_attiah.jpg
+Jordan,jordan,JOR,Group J,13,jordan_mahmoud_al_mardi,Mahmoud Al-Mardi,Forward,jordan_mahmoud_al_mardi.jpg
+Jordan,jordan,JOR,Group J,14,jordan_rajaei_ayed,Rajaei Ayed,Midfielder,jordan_rajaei_ayed.jpg
+Jordan,jordan,JOR,Group J,15,jordan_ibrahim_sadeh,Ibrahim Sadeh,Midfielder,jordan_ibrahim_sadeh.jpg
+Jordan,jordan,JOR,Group J,16,jordan_mo_abualnadi,Mo Abualnadi,Defender,jordan_mo_abualnadi.jpg
+Jordan,jordan,JOR,Group J,17,jordan_salim_obaid,Salim Obaid,Defender,jordan_salim_obaid.jpg
+Jordan,jordan,JOR,Group J,18,jordan_ibrahim_sabra,Ibrahim Sabra,Forward,jordan_ibrahim_sabra.jpg
+Jordan,jordan,JOR,Group J,19,jordan_saed_al_rosan,Saed Al-Rosan,Defender,jordan_saed_al_rosan.jpg
+Jordan,jordan,JOR,Group J,20,jordan_mohannad_abu_taha,Mohannad Abu Taha,Midfielder,jordan_mohannad_abu_taha.jpg
+Jordan,jordan,JOR,Group J,21,jordan_nizar_al_rashdan,Nizar Al-Rashdan,Midfielder,jordan_nizar_al_rashdan.jpg
+Jordan,jordan,JOR,Group J,22,jordan_abdallah_al_fakhouri,Abdallah Al-Fakhouri,Goalkeeper,jordan_abdallah_al_fakhouri.jpg
+Jordan,jordan,JOR,Group J,23,jordan_ihsan_haddad,Ihsan Haddad,Defender,jordan_ihsan_haddad.jpg
+Jordan,jordan,JOR,Group J,24,jordan_ali_azaizeh,Ali Azaizeh,Forward,jordan_ali_azaizeh.jpg
+Jordan,jordan,JOR,Group J,25,jordan_mohammad_al_dawoud,Mohammad Al-Dawoud,Midfielder,jordan_mohammad_al_dawoud.jpg
+Jordan,jordan,JOR,Group J,26,jordan_anas_badawi,Anas Badawi,Defender,jordan_anas_badawi.jpg
+Portugal,portugal,POR,Group K,1,portugal_diogo_costa,Diogo Costa,Goalkeeper,portugal_diogo_costa.jpg
+Portugal,portugal,POR,Group K,2,portugal_nelson_semedo,Nélson Semedo,Defender,portugal_nelson_semedo.jpg
+Portugal,portugal,POR,Group K,3,portugal_ruben_dias,Rúben Dias,Defender,portugal_ruben_dias.jpg
+Portugal,portugal,POR,Group K,4,portugal_tomas_araujo,Tomás Araújo,Defender,portugal_tomas_araujo.jpg
+Portugal,portugal,POR,Group K,5,portugal_diogo_dalot,Diogo Dalot,Defender,portugal_diogo_dalot.jpg
+Portugal,portugal,POR,Group K,6,portugal_matheus_nunes,Matheus Nunes,Midfielder,portugal_matheus_nunes.jpg
+Portugal,portugal,POR,Group K,7,portugal_cristiano_ronaldo,Cristiano Ronaldo,Forward,portugal_cristiano_ronaldo.jpg
+Portugal,portugal,POR,Group K,8,portugal_bruno_fernandes,Bruno Fernandes,Midfielder,portugal_bruno_fernandes.jpg
+Portugal,portugal,POR,Group K,9,portugal_goncalo_ramos,Gonçalo Ramos,Forward,portugal_goncalo_ramos.jpg
+Portugal,portugal,POR,Group K,10,portugal_bernardo_silva,Bernardo Silva,Midfielder,portugal_bernardo_silva.jpg
+Portugal,portugal,POR,Group K,11,portugal_joao_felix,João Félix,Forward,portugal_joao_felix.jpg
+Portugal,portugal,POR,Group K,12,portugal_jose_sa,José Sá,Goalkeeper,portugal_jose_sa.jpg
+Portugal,portugal,POR,Group K,13,portugal_renato_veiga,Renato Veiga,Defender,portugal_renato_veiga.jpg
+Portugal,portugal,POR,Group K,14,portugal_goncalo_inacio,Gonçalo Inácio,Defender,portugal_goncalo_inacio.jpg
+Portugal,portugal,POR,Group K,15,portugal_joao_neves,João Neves,Midfielder,portugal_joao_neves.jpg
+Portugal,portugal,POR,Group K,16,portugal_francisco_trincao,Francisco Trincão,Forward,portugal_francisco_trincao.jpg
+Portugal,portugal,POR,Group K,17,portugal_rafael_leao,Rafael Leão,Forward,portugal_rafael_leao.jpg
+Portugal,portugal,POR,Group K,18,portugal_pedro_neto,Pedro Neto,Forward,portugal_pedro_neto.jpg
+Portugal,portugal,POR,Group K,19,portugal_goncalo_guedes,Gonçalo Guedes,Forward,portugal_goncalo_guedes.jpg
+Portugal,portugal,POR,Group K,20,portugal_joao_cancelo,João Cancelo,Defender,portugal_joao_cancelo.jpg
+Portugal,portugal,POR,Group K,21,portugal_ruben_neves,Rúben Neves,Midfielder,portugal_ruben_neves.jpg
+Portugal,portugal,POR,Group K,22,portugal_rui_silva,Rui Silva,Goalkeeper,portugal_rui_silva.jpg
+Portugal,portugal,POR,Group K,23,portugal_vitinha,Vitinha,Midfielder,portugal_vitinha.jpg
+Portugal,portugal,POR,Group K,24,portugal_samu_costa,Samú Costa,Defender,portugal_samu_costa.jpg
+Portugal,portugal,POR,Group K,25,portugal_nuno_mendes,Nuno Mendes,Defender,portugal_nuno_mendes.jpg
+Portugal,portugal,POR,Group K,26,portugal_francisco_conceicao,Francisco Conceição,Forward,portugal_francisco_conceicao.jpg
+Colombia,colombia,COL,Group K,1,colombia_david_ospina,David Ospina,Goalkeeper,colombia_david_ospina.jpg
+Colombia,colombia,COL,Group K,2,colombia_daniel_munoz,Daniel Muñoz,Defender,colombia_daniel_munoz.jpg
+Colombia,colombia,COL,Group K,3,colombia_jhon_lucumi,Jhon Lucumí,Defender,colombia_jhon_lucumi.jpg
+Colombia,colombia,COL,Group K,4,colombia_santiago_arias,Santiago Arias,Defender,colombia_santiago_arias.jpg
+Colombia,colombia,COL,Group K,5,colombia_kevin_castano,Kevin Castaño,Midfielder,colombia_kevin_castano.jpg
+Colombia,colombia,COL,Group K,6,colombia_richard_rios,Richard Ríos,Midfielder,colombia_richard_rios.jpg
+Colombia,colombia,COL,Group K,7,colombia_luis_diaz,Luis Díaz,Forward,colombia_luis_diaz.jpg
+Colombia,colombia,COL,Group K,8,colombia_jorge_carrascal,Jorge Carrascal,Midfielder,colombia_jorge_carrascal.jpg
+Colombia,colombia,COL,Group K,9,colombia_jhon_cordoba,Jhon Córdoba,Forward,colombia_jhon_cordoba.jpg
+Colombia,colombia,COL,Group K,10,colombia_james_rodriguez,James Rodríguez,Midfielder,colombia_james_rodriguez.jpg
+Colombia,colombia,COL,Group K,11,colombia_jhon_arias,Jhon Arias,Midfielder,colombia_jhon_arias.jpg
+Colombia,colombia,COL,Group K,12,colombia_camilo_vargas,Camilo Vargas,Goalkeeper,colombia_camilo_vargas.jpg
+Colombia,colombia,COL,Group K,13,colombia_yerry_mina,Yerry Mina,Defender,colombia_yerry_mina.jpg
+Colombia,colombia,COL,Group K,14,colombia_gustavo_puerta,Gustavo Puerta,Defender,colombia_gustavo_puerta.jpg
+Colombia,colombia,COL,Group K,15,colombia_juan_portilla,Juan Portilla,Midfielder,colombia_juan_portilla.jpg
+Colombia,colombia,COL,Group K,16,colombia_jefferson_lerma,Jefferson Lerma,Midfielder,colombia_jefferson_lerma.jpg
+Colombia,colombia,COL,Group K,17,colombia_johan_mojica,Johan Mojica,Defender,colombia_johan_mojica.jpg
+Colombia,colombia,COL,Group K,18,colombia_willer_ditta,Willer Ditta,Defender,colombia_willer_ditta.jpg
+Colombia,colombia,COL,Group K,19,colombia_cucho_hernandez,Cucho Hernández,Forward,colombia_cucho_hernandez.jpg
+Colombia,colombia,COL,Group K,20,colombia_juan_fernando_quintero,Juan Fernando Quintero,Midfielder,colombia_juan_fernando_quintero.jpg
+Colombia,colombia,COL,Group K,21,colombia_jaminton_campaz,Jaminton Campaz,Forward,colombia_jaminton_campaz.jpg
+Colombia,colombia,COL,Group K,22,colombia_deiver_machado,Deiver Machado,Defender,colombia_deiver_machado.jpg
+Colombia,colombia,COL,Group K,23,colombia_davinson_sanchez,Davinson Sánchez,Defender,colombia_davinson_sanchez.jpg
+Colombia,colombia,COL,Group K,24,colombia_alvaro_montero,Álvaro Montero,Goalkeeper,colombia_alvaro_montero.jpg
+Colombia,colombia,COL,Group K,25,colombia_luis_suarez,Luis Suárez,Forward,colombia_luis_suarez.jpg
+Colombia,colombia,COL,Group K,26,colombia_andres_gomez,Andrés Gómez,Forward,colombia_andres_gomez.jpg
+Uzbekistan,uzbekistan,UZB,Group K,1,uzbekistan_utkir_yusupov,Utkir Yusupov,Goalkeeper,uzbekistan_utkir_yusupov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,2,uzbekistan_abdukodir_khusanov,Abdukodir Khusanov,Defender,uzbekistan_abdukodir_khusanov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,3,uzbekistan_khojiakbar_alijonov,Khojiakbar Alijonov,Defender,uzbekistan_khojiakbar_alijonov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,4,uzbekistan_farrukh_sayfiev,Farrukh Sayfiev,Defender,uzbekistan_farrukh_sayfiev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,5,uzbekistan_rustam_ashurmatov,Rustam Ashurmatov,Defender,uzbekistan_rustam_ashurmatov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,6,uzbekistan_akmal_mozgovoy,Akmal Mozgovoy,Midfielder,uzbekistan_akmal_mozgovoy.jpg
+Uzbekistan,uzbekistan,UZB,Group K,7,uzbekistan_otabek_shukurov,Otabek Shukurov,Midfielder,uzbekistan_otabek_shukurov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,8,uzbekistan_jamshid_iskanderov,Jamshid Iskanderov,Midfielder,uzbekistan_jamshid_iskanderov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,9,uzbekistan_odiljon_hamrobekov,Odiljon Hamrobekov,Midfielder,uzbekistan_odiljon_hamrobekov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,10,uzbekistan_jaloliddin_masharipov,Jaloliddin Masharipov,Midfielder,uzbekistan_jaloliddin_masharipov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,11,uzbekistan_oston_urunov,Oston Urunov,Midfielder,uzbekistan_oston_urunov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,12,uzbekistan_abduvohid_nematov,Abduvohid Nematov,Goalkeeper,uzbekistan_abduvohid_nematov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,13,uzbekistan_sherzod_nasrullaev,Sherzod Nasrullaev,Defender,uzbekistan_sherzod_nasrullaev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,14,uzbekistan_eldor_shomurodov,Eldor Shomurodov,Forward,uzbekistan_eldor_shomurodov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,15,uzbekistan_umar_eshmurodov,Umar Eshmurodov,Defender,uzbekistan_umar_eshmurodov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,16,uzbekistan_botirali_ergashev,Botirali Ergashev,Goalkeeper,uzbekistan_botirali_ergashev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,17,uzbekistan_dostonbek_khamdamov,Dostonbek Khamdamov,Midfielder,uzbekistan_dostonbek_khamdamov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,18,uzbekistan_abdulla_abdullaev,Abdulla Abdullaev,Defender,uzbekistan_abdulla_abdullaev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,19,uzbekistan_azizjon_ganiev,Azizjon Ganiev,Midfielder,uzbekistan_azizjon_ganiev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,20,uzbekistan_azizbek_amonov,Azizbek Amonov,Forward,uzbekistan_azizbek_amonov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,21,uzbekistan_igor_sergeev,Igor Sergeev,Forward,uzbekistan_igor_sergeev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,22,uzbekistan_abbosbek_fayzullaev,Abbosbek Fayzullaev,Midfielder,uzbekistan_abbosbek_fayzullaev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,23,uzbekistan_sherzod_esanov,Sherzod Esanov,Midfielder,uzbekistan_sherzod_esanov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,24,uzbekistan_bekhruz_karimov,Bekhruz Karimov,Defender,uzbekistan_bekhruz_karimov.jpg
+Uzbekistan,uzbekistan,UZB,Group K,25,uzbekistan_avazbek_ulmasaliev,Avazbek Ulmasaliev,Defender,uzbekistan_avazbek_ulmasaliev.jpg
+Uzbekistan,uzbekistan,UZB,Group K,26,uzbekistan_jakhongir_urozov,Jakhongir Urozov,Defender,uzbekistan_jakhongir_urozov.jpg
+DR Congo,dr_congo,COD,Group K,1,dr_congo_lionel_mpasi,Lionel Mpasi,Goalkeeper,dr_congo_lionel_mpasi.jpg
+DR Congo,dr_congo,COD,Group K,2,dr_congo_aaron_wan_bissaka,Aaron Wan-Bissaka,Defender,dr_congo_aaron_wan_bissaka.jpg
+DR Congo,dr_congo,COD,Group K,3,dr_congo_steve_kapuadi,Steve Kapuadi,Defender,dr_congo_steve_kapuadi.jpg
+DR Congo,dr_congo,COD,Group K,4,dr_congo_axel_tuanzebe,Axel Tuanzebe,Defender,dr_congo_axel_tuanzebe.jpg
+DR Congo,dr_congo,COD,Group K,5,dr_congo_dylan_batubinsika,Dylan Batubinsika,Defender,dr_congo_dylan_batubinsika.jpg
+DR Congo,dr_congo,COD,Group K,6,dr_congo_ngal_ayel_mukau,Ngal'ayel Mukau,Midfielder,dr_congo_ngal_ayel_mukau.jpg
+DR Congo,dr_congo,COD,Group K,7,dr_congo_nathanael_mbuku,Nathanaël Mbuku,Midfielder,dr_congo_nathanael_mbuku.jpg
+DR Congo,dr_congo,COD,Group K,8,dr_congo_samuel_moutoussamy,Samuel Moutoussamy,Midfielder,dr_congo_samuel_moutoussamy.jpg
+DR Congo,dr_congo,COD,Group K,9,dr_congo_brian_cipenga,Brian Cipenga,Forward,dr_congo_brian_cipenga.jpg
+DR Congo,dr_congo,COD,Group K,10,dr_congo_theo_bongonda,Théo Bongonda,Midfielder,dr_congo_theo_bongonda.jpg
+DR Congo,dr_congo,COD,Group K,11,dr_congo_gael_kakuta,Gaël Kakuta,Forward,dr_congo_gael_kakuta.jpg
+DR Congo,dr_congo,COD,Group K,12,dr_congo_joris_kayembe,Joris Kayembe,Defender,dr_congo_joris_kayembe.jpg
+DR Congo,dr_congo,COD,Group K,13,dr_congo_meschak_elia,Meschak Elia,Forward,dr_congo_meschak_elia.jpg
+DR Congo,dr_congo,COD,Group K,14,dr_congo_noah_sadiki,Noah Sadiki,Midfielder,dr_congo_noah_sadiki.jpg
+DR Congo,dr_congo,COD,Group K,15,dr_congo_aaron_tshibola,Aaron Tshibola,Midfielder,dr_congo_aaron_tshibola.jpg
+DR Congo,dr_congo,COD,Group K,16,dr_congo_timothy_fayulu,Timothy Fayulu,Goalkeeper,dr_congo_timothy_fayulu.jpg
+DR Congo,dr_congo,COD,Group K,17,dr_congo_cedric_bakambu,Cédric Bakambu,Forward,dr_congo_cedric_bakambu.jpg
+DR Congo,dr_congo,COD,Group K,18,dr_congo_charles_pickel,Charles Pickel,Midfielder,dr_congo_charles_pickel.jpg
+DR Congo,dr_congo,COD,Group K,19,dr_congo_fiston_mayele,Fiston Mayele,Forward,dr_congo_fiston_mayele.jpg
+DR Congo,dr_congo,COD,Group K,20,dr_congo_yoane_wissa,Yoane Wissa,Forward,dr_congo_yoane_wissa.jpg
+DR Congo,dr_congo,COD,Group K,21,dr_congo_matthieu_epolo,Matthieu Epolo,Goalkeeper,dr_congo_matthieu_epolo.jpg
+DR Congo,dr_congo,COD,Group K,22,dr_congo_chancel_mbemba,Chancel Mbemba,Defender,dr_congo_chancel_mbemba.jpg
+DR Congo,dr_congo,COD,Group K,23,dr_congo_simon_banza,Simon Banza,Forward,dr_congo_simon_banza.jpg
+DR Congo,dr_congo,COD,Group K,24,dr_congo_gedeon_kalulu,Gédéon Kalulu,Defender,dr_congo_gedeon_kalulu.jpg
+DR Congo,dr_congo,COD,Group K,25,dr_congo_edo_kayembe,Edo Kayembe,Midfielder,dr_congo_edo_kayembe.jpg
+DR Congo,dr_congo,COD,Group K,26,dr_congo_arthur_masuaku,Arthur Masuaku,Defender,dr_congo_arthur_masuaku.jpg
+England,england,ENG,Group L,1,england_jordan_pickford,Jordan Pickford,Goalkeeper,england_jordan_pickford.jpg
+England,england,ENG,Group L,2,england_ezri_konsa,Ezri Konsa,Defender,england_ezri_konsa.jpg
+England,england,ENG,Group L,3,england_nico_o_reilly,Nico O'Reilly,Defender,england_nico_o_reilly.jpg
+England,england,ENG,Group L,4,england_declan_rice,Declan Rice,Midfielder,england_declan_rice.jpg
+England,england,ENG,Group L,5,england_john_stones,John Stones,Defender,england_john_stones.jpg
+England,england,ENG,Group L,6,england_marc_guehi,Marc Guéhi,Defender,england_marc_guehi.jpg
+England,england,ENG,Group L,7,england_bukayo_saka,Bukayo Saka,Forward,england_bukayo_saka.jpg
+England,england,ENG,Group L,8,england_elliot_anderson,Elliot Anderson,Midfielder,england_elliot_anderson.jpg
+England,england,ENG,Group L,9,england_harry_kane,Harry Kane,Forward,england_harry_kane.jpg
+England,england,ENG,Group L,10,england_jude_bellingham,Jude Bellingham,Midfielder,england_jude_bellingham.jpg
+England,england,ENG,Group L,11,england_marcus_rashford,Marcus Rashford,Forward,england_marcus_rashford.jpg
+England,england,ENG,Group L,12,england_tino_livramento,Tino Livramento,Defender,england_tino_livramento.jpg
+England,england,ENG,Group L,13,england_dean_henderson,Dean Henderson,Goalkeeper,england_dean_henderson.jpg
+England,england,ENG,Group L,14,england_jordan_henderson,Jordan Henderson,Midfielder,england_jordan_henderson.jpg
+England,england,ENG,Group L,15,england_dan_burn,Dan Burn,Defender,england_dan_burn.jpg
+England,england,ENG,Group L,16,england_kobbie_mainoo,Kobbie Mainoo,Midfielder,england_kobbie_mainoo.jpg
+England,england,ENG,Group L,17,england_morgan_rogers,Morgan Rogers,Midfielder,england_morgan_rogers.jpg
+England,england,ENG,Group L,18,england_anthony_gordon,Anthony Gordon,Forward,england_anthony_gordon.jpg
+England,england,ENG,Group L,19,england_ollie_watkins,Ollie Watkins,Forward,england_ollie_watkins.jpg
+England,england,ENG,Group L,20,england_noni_madueke,Noni Madueke,Forward,england_noni_madueke.jpg
+England,england,ENG,Group L,21,england_eberechi_eze,Eberechi Eze,Midfielder,england_eberechi_eze.jpg
+England,england,ENG,Group L,22,england_ivan_toney,Ivan Toney,Forward,england_ivan_toney.jpg
+England,england,ENG,Group L,23,england_james_trafford,James Trafford,Goalkeeper,england_james_trafford.jpg
+England,england,ENG,Group L,24,england_reece_james,Reece James,Defender,england_reece_james.jpg
+England,england,ENG,Group L,25,england_djed_spence,Djed Spence,Defender,england_djed_spence.jpg
+England,england,ENG,Group L,26,england_jarell_quansah,Jarell Quansah,Defender,england_jarell_quansah.jpg
+Croatia,croatia,CRO,Group L,1,croatia_dominik_livakovic,Dominik Livaković,Goalkeeper,croatia_dominik_livakovic.jpg
+Croatia,croatia,CRO,Group L,2,croatia_josip_stanisic,Josip Stanišić,Defender,croatia_josip_stanisic.jpg
+Croatia,croatia,CRO,Group L,3,croatia_marin_pongracic,Marin Pongračić,Defender,croatia_marin_pongracic.jpg
+Croatia,croatia,CRO,Group L,4,croatia_josko_gvardiol,Joško Gvardiol,Defender,croatia_josko_gvardiol.jpg
+Croatia,croatia,CRO,Group L,5,croatia_duje_caleta_car,Duje Ćaleta-Car,Defender,croatia_duje_caleta_car.jpg
+Croatia,croatia,CRO,Group L,6,croatia_josip_sutalo,Josip Šutalo,Defender,croatia_josip_sutalo.jpg
+Croatia,croatia,CRO,Group L,7,croatia_nikola_moro,Nikola Moro,Midfielder,croatia_nikola_moro.jpg
+Croatia,croatia,CRO,Group L,8,croatia_mateo_kovacic,Mateo Kovačić,Midfielder,croatia_mateo_kovacic.jpg
+Croatia,croatia,CRO,Group L,9,croatia_andrej_kramaric,Andrej Kramarić,Forward,croatia_andrej_kramaric.jpg
+Croatia,croatia,CRO,Group L,10,croatia_luka_modric,Luka Modrić,Midfielder,croatia_luka_modric.jpg
+Croatia,croatia,CRO,Group L,11,croatia_ante_budimir,Ante Budimir,Forward,croatia_ante_budimir.jpg
+Croatia,croatia,CRO,Group L,12,croatia_ivor_pandur,Ivor Pandur,Goalkeeper,croatia_ivor_pandur.jpg
+Croatia,croatia,CRO,Group L,13,croatia_nikola_vlasic,Nikola Vlašić,Midfielder,croatia_nikola_vlasic.jpg
+Croatia,croatia,CRO,Group L,14,croatia_ivan_perisic,Ivan Perišić,Forward,croatia_ivan_perisic.jpg
+Croatia,croatia,CRO,Group L,15,croatia_mario_pasalic,Mario Pašalić,Midfielder,croatia_mario_pasalic.jpg
+Croatia,croatia,CRO,Group L,16,croatia_martin_baturina,Martin Baturina,Midfielder,croatia_martin_baturina.jpg
+Croatia,croatia,CRO,Group L,17,croatia_petar_sucic,Petar Sučić,Midfielder,croatia_petar_sucic.jpg
+Croatia,croatia,CRO,Group L,18,croatia_kristijan_jakic,Kristijan Jakić,Defender,croatia_kristijan_jakic.jpg
+Croatia,croatia,CRO,Group L,19,croatia_toni_fruk,Toni Fruk,Midfielder,croatia_toni_fruk.jpg
+Croatia,croatia,CRO,Group L,20,croatia_igor_matanovic,Igor Matanović,Forward,croatia_igor_matanovic.jpg
+Croatia,croatia,CRO,Group L,21,croatia_luka_sucic,Luka Sučić,Midfielder,croatia_luka_sucic.jpg
+Croatia,croatia,CRO,Group L,22,croatia_luka_vuskovic,Luka Vušković,Defender,croatia_luka_vuskovic.jpg
+Croatia,croatia,CRO,Group L,23,croatia_dominik_kotarski,Dominik Kotarski,Goalkeeper,croatia_dominik_kotarski.jpg
+Croatia,croatia,CRO,Group L,24,croatia_marco_pasalic,Marco Pašalić,Forward,croatia_marco_pasalic.jpg
+Croatia,croatia,CRO,Group L,25,croatia_martin_erlic,Martin Erlić,Defender,croatia_martin_erlic.jpg
+Croatia,croatia,CRO,Group L,26,croatia_petar_musa,Petar Musa,Forward,croatia_petar_musa.jpg
+Panama,panama,PAN,Group L,1,panama_luis_mejia,Luis Mejía,Goalkeeper,panama_luis_mejia.jpg
+Panama,panama,PAN,Group L,2,panama_cesar_blackman,César Blackman,Defender,panama_cesar_blackman.jpg
+Panama,panama,PAN,Group L,3,panama_jose_cordoba,José Córdoba,Defender,panama_jose_cordoba.jpg
+Panama,panama,PAN,Group L,4,panama_fidel_escobar,Fidel Escobar,Defender,panama_fidel_escobar.jpg
+Panama,panama,PAN,Group L,5,panama_edgardo_farina,Edgardo Fariña,Defender,panama_edgardo_farina.jpg
+Panama,panama,PAN,Group L,6,panama_cristian_martinez,Cristian Martínez,Midfielder,panama_cristian_martinez.jpg
+Panama,panama,PAN,Group L,7,panama_jose_luis_rodriguez,José Luis Rodríguez,Midfielder,panama_jose_luis_rodriguez.jpg
+Panama,panama,PAN,Group L,8,panama_adalberto_carrasquilla,Adalberto Carrasquilla,Midfielder,panama_adalberto_carrasquilla.jpg
+Panama,panama,PAN,Group L,9,panama_tomas_rodriguez,Tomás Rodríguez,Forward,panama_tomas_rodriguez.jpg
+Panama,panama,PAN,Group L,10,panama_ismael_diaz,Ismael Díaz,Midfielder,panama_ismael_diaz.jpg
+Panama,panama,PAN,Group L,11,panama_yoel_barcenas,Yoel Bárcenas,Midfielder,panama_yoel_barcenas.jpg
+Panama,panama,PAN,Group L,12,panama_cesar_samudio,César Samudio,Goalkeeper,panama_cesar_samudio.jpg
+Panama,panama,PAN,Group L,13,panama_jiovany_ramos,Jiovany Ramos,Defender,panama_jiovany_ramos.jpg
+Panama,panama,PAN,Group L,14,panama_carlos_harvey,Carlos Harvey,Defender,panama_carlos_harvey.jpg
+Panama,panama,PAN,Group L,15,panama_eric_davis,Eric Davis,Defender,panama_eric_davis.jpg
+Panama,panama,PAN,Group L,16,panama_andres_andrade,Andrés Andrade,Defender,panama_andres_andrade.jpg
+Panama,panama,PAN,Group L,17,panama_jose_fajardo,José Fajardo,Forward,panama_jose_fajardo.jpg
+Panama,panama,PAN,Group L,18,panama_cecilio_waterman,Cecilio Waterman,Forward,panama_cecilio_waterman.jpg
+Panama,panama,PAN,Group L,19,panama_alberto_quintero,Alberto Quintero,Midfielder,panama_alberto_quintero.jpg
+Panama,panama,PAN,Group L,20,panama_anibal_godoy,Aníbal Godoy,Midfielder,panama_anibal_godoy.jpg
+Panama,panama,PAN,Group L,21,panama_cesar_yanis,César Yanis,Midfielder,panama_cesar_yanis.jpg
+Panama,panama,PAN,Group L,22,panama_orlando_mosquera,Orlando Mosquera,Goalkeeper,panama_orlando_mosquera.jpg
+Panama,panama,PAN,Group L,23,panama_michael_amir_murillo,Michael Amir Murillo,Defender,panama_michael_amir_murillo.jpg
+Panama,panama,PAN,Group L,24,panama_azarias_londono,Azarias Londoño,Forward,panama_azarias_londono.jpg
+Panama,panama,PAN,Group L,25,panama_roderick_miller,Roderick Miller,Defender,panama_roderick_miller.jpg
+Panama,panama,PAN,Group L,26,panama_jorge_gutierrez,Jorge Gutiérrez,Defender,panama_jorge_gutierrez.jpg
+Ghana,ghana,GHA,Group L,1,ghana_lawrence_ati_zigi,Lawrence Ati-Zigi,Goalkeeper,ghana_lawrence_ati_zigi.jpg
+Ghana,ghana,GHA,Group L,2,ghana_alidu_seidu,Alidu Seidu,Defender,ghana_alidu_seidu.jpg
+Ghana,ghana,GHA,Group L,3,ghana_caleb_yirenkyi,Caleb Yirenkyi,Midfielder,ghana_caleb_yirenkyi.jpg
+Ghana,ghana,GHA,Group L,4,ghana_jonas_adjetey,Jonas Adjetey,Defender,ghana_jonas_adjetey.jpg
+Ghana,ghana,GHA,Group L,5,ghana_thomas_partey,Thomas Partey,Midfielder,ghana_thomas_partey.jpg
+Ghana,ghana,GHA,Group L,6,ghana_abdul_mumin,Abdul Mumin,Defender,ghana_abdul_mumin.jpg
+Ghana,ghana,GHA,Group L,7,ghana_abdul_fatawu,Abdul Fatawu,Forward,ghana_abdul_fatawu.jpg
+Ghana,ghana,GHA,Group L,8,ghana_kwasi_sibo,Kwasi Sibo,Midfielder,ghana_kwasi_sibo.jpg
+Ghana,ghana,GHA,Group L,9,ghana_jordan_ayew,Jordan Ayew,Forward,ghana_jordan_ayew.jpg
+Ghana,ghana,GHA,Group L,10,ghana_brandon_thomas_asante,Brandon Thomas-Asante,Forward,ghana_brandon_thomas_asante.jpg
+Ghana,ghana,GHA,Group L,11,ghana_antoine_semenyo,Antoine Semenyo,Midfielder,ghana_antoine_semenyo.jpg
+Ghana,ghana,GHA,Group L,12,ghana_joseph_anang,Joseph Anang,Goalkeeper,ghana_joseph_anang.jpg
+Ghana,ghana,GHA,Group L,13,ghana_christopher_bonsu_baah,Christopher Bonsu Baah,Forward,ghana_christopher_bonsu_baah.jpg
+Ghana,ghana,GHA,Group L,14,ghana_gideon_mensah,Gideon Mensah,Defender,ghana_gideon_mensah.jpg
+Ghana,ghana,GHA,Group L,15,ghana_elisha_owusu,Elisha Owusu,Midfielder,ghana_elisha_owusu.jpg
+Ghana,ghana,GHA,Group L,16,ghana_benjamin_asare,Benjamin Asare,Goalkeeper,ghana_benjamin_asare.jpg
+Ghana,ghana,GHA,Group L,17,ghana_abdul_rahman_baba,Abdul Rahman Baba,Defender,ghana_abdul_rahman_baba.jpg
+Ghana,ghana,GHA,Group L,18,ghana_jerome_opoku,Jerome Opoku,Defender,ghana_jerome_opoku.jpg
+Ghana,ghana,GHA,Group L,19,ghana_inaki_williams,Iñaki Williams,Forward,ghana_inaki_williams.jpg
+Ghana,ghana,GHA,Group L,20,ghana_augustine_boakye,Augustine Boakye,Midfielder,ghana_augustine_boakye.jpg
+Ghana,ghana,GHA,Group L,21,ghana_kojo_peprah_oppong,Kojo Peprah Oppong,Defender,ghana_kojo_peprah_oppong.jpg
+Ghana,ghana,GHA,Group L,22,ghana_kamaldeen_sulemana,Kamaldeen Sulemana,Forward,ghana_kamaldeen_sulemana.jpg
+Ghana,ghana,GHA,Group L,23,ghana_derrick_luckassen,Derrick Luckassen,Defender,ghana_derrick_luckassen.jpg
+Ghana,ghana,GHA,Group L,24,ghana_ernest_nuamah,Ernest Nuamah,Forward,ghana_ernest_nuamah.jpg
+Ghana,ghana,GHA,Group L,25,ghana_prince_kwabena_adu,Prince Kwabena Adu,Forward,ghana_prince_kwabena_adu.jpg
+Ghana,ghana,GHA,Group L,26,ghana_marvin_senaya,Marvin Senaya,Defender,ghana_marvin_senaya.jpg

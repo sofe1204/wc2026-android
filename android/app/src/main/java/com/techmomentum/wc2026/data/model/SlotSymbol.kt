@@ -7,6 +7,8 @@ data class SlotSymbol(
     val type: String = "player",
     val imageUrl: String = "",
     val isActive: Boolean = true,
+    /** Firestore document id when it differs from [symbolId]. */
+    val documentId: String = "",
 ) {
     val isTrophy: Boolean get() = type == "trophy" || symbolId == "trophy"
 }

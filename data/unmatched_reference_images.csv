@@ -1,0 +1,337 @@
+player_id,player_name,country,position,team_id,shirt_number
+mexico_raul_rangel,Raúl Rangel,Mexico,Goalkeeper,mexico,1
+mexico_erik_lira,Érik Lira,Mexico,Midfielder,mexico,6
+mexico_alvaro_fidalgo,Álvaro Fidalgo,Mexico,Midfielder,mexico,8
+mexico_alexis_vega,Alexis Vega,Mexico,Forward,mexico,10
+mexico_carlos_acevedo,Carlos Acevedo,Mexico,Goalkeeper,mexico,12
+mexico_armando_gonzalez,Armando González,Mexico,Forward,mexico,14
+mexico_gilberto_mora,Gilberto Mora,Mexico,Midfielder,mexico,19
+mexico_mateo_chavez,Mateo Chávez,Mexico,Defender,mexico,20
+mexico_guillermo_martinez,Guillermo Martínez,Mexico,Forward,mexico,22
+south_africa_ronwen_williams,Ronwen Williams,South Africa,Goalkeeper,south_africa,1
+south_africa_thabang_matuludi,Thabang Matuludi,South Africa,Defender,south_africa,2
+south_africa_khulumani_ndamane,Khulumani Ndamane,South Africa,Defender,south_africa,3
+south_africa_teboho_mokoena,Teboho Mokoena,South Africa,Midfielder,south_africa,4
+south_africa_thalente_mbatha,Thalente Mbatha,South Africa,Midfielder,south_africa,5
+south_africa_aubrey_modiba,Aubrey Modiba,South Africa,Defender,south_africa,6
+south_africa_oswin_appollis,Oswin Appollis,South Africa,Forward,south_africa,7
+south_africa_tshepang_moremi,Tshepang Moremi,South Africa,Forward,south_africa,8
+south_africa_relebohile_mofokeng,Relebohile Mofokeng,South Africa,Forward,south_africa,10
+south_africa_themba_zwane,Themba Zwane,South Africa,Midfielder,south_africa,11
+south_africa_thapelo_maseko,Thapelo Maseko,South Africa,Forward,south_africa,12
+south_africa_sphephelo_sithole,Sphephelo Sithole,South Africa,Midfielder,south_africa,13
+south_africa_mbekezeli_mbokazi,Mbekezeli Mbokazi,South Africa,Defender,south_africa,14
+south_africa_iqraam_rayners,Iqraam Rayners,South Africa,Forward,south_africa,15
+south_africa_sipho_chaine,Sipho Chaine,South Africa,Goalkeeper,south_africa,16
+south_africa_evidence_makgopa,Evidence Makgopa,South Africa,Forward,south_africa,17
+south_africa_samukele_kabini,Samukele Kabini,South Africa,Defender,south_africa,18
+south_africa_nkosinathi_sibisi,Nkosinathi Sibisi,South Africa,Defender,south_africa,19
+south_africa_khuliso_mudau,Khuliso Mudau,South Africa,Defender,south_africa,20
+south_africa_ime_okon,Ime Okon,South Africa,Defender,south_africa,21
+south_africa_ricardo_goss,Ricardo Goss,South Africa,Goalkeeper,south_africa,22
+south_africa_jayden_adams,Jayden Adams,South Africa,Midfielder,south_africa,23
+south_africa_kamogelo_sebelebele,Kamogelo Sebelebele,South Africa,Forward,south_africa,25
+south_africa_bradley_cross,Bradley Cross,South Africa,Defender,south_africa,26
+south_korea_kim_tae_hyeon,Kim Tae-hyeon,South Korea,Defender,south_korea,5
+south_korea_hwang_in_beom,Hwang In-beom,South Korea,Midfielder,south_korea,6
+south_korea_song_bum_keun,Song Bum-keun,South Korea,Goalkeeper,south_korea,12
+south_korea_cho_wi_je,Cho Wi-je,South Korea,Defender,south_korea,14
+south_korea_seol_young_woo,Seol Young-woo,South Korea,Defender,south_korea,22
+south_korea_kim_jin_gyu,Kim Jin-gyu,South Korea,Midfielder,south_korea,24
+south_korea_lee_dong_gyeong,Lee Dong-gyeong,South Korea,Midfielder,south_korea,26
+czechia_stepan_chaloupek,Štěpán Chaloupek,Czechia,Defender,czechia,6
+czechia_vladimir_darida,Vladimír Darida,Czechia,Midfielder,czechia,8
+czechia_jan_kuchta,Jan Kuchta,Czechia,Forward,czechia,11
+czechia_alexandr_sojka,Alexandr Sojka,Czechia,Midfielder,czechia,24
+czechia_hugo_sochurek,Hugo Sochůrek,Czechia,Midfielder,czechia,25
+czechia_denis_visinsky,Denis Višinský,Czechia,Forward,czechia,26
+canada_promise_david,Promise David,Canada,Forward,canada,24
+canada_marcelo_flores,Marcelo Flores,Canada,Midfielder,canada,26
+switzerland_johan_manzambi,Johan Manzambi,Switzerland,Midfielder,switzerland,9
+qatar_mahmud_abunada,Mahmud Abunada,Qatar,Goalkeeper,qatar,1
+qatar_issa_laye,Issa Laye,Qatar,Defender,qatar,4
+qatar_edmilson_junior,Edmilson Junior,Qatar,Forward,qatar,8
+qatar_ayoub_al_oui,Ayoub Al-Oui,Qatar,Defender,qatar,13
+qatar_ahmed_al_ganehi,Ahmed Al-Ganehi,Qatar,Midfielder,qatar,17
+qatar_tahsin_jamshid,Tahsin Jamshid,Qatar,Forward,qatar,24
+qatar_mohamed_manai,Mohamed Manai,Qatar,Forward,qatar,26
+bosnia_herzegovina_tarik_muharemovic,Tarik Muharemović,Bosnia and Herzegovina,Defender,bosnia_herzegovina,4
+bosnia_herzegovina_samed_bazdar,Samed Baždar,Bosnia and Herzegovina,Forward,bosnia_herzegovina,9
+bosnia_herzegovina_mladen_jurkas,Mladen Jurkas,Bosnia and Herzegovina,Goalkeeper,bosnia_herzegovina,12
+bosnia_herzegovina_ivan_basic,Ivan Bašić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,13
+bosnia_herzegovina_amar_memic,Amar Memić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,15
+bosnia_herzegovina_amir_hadziahmetovic,Amir Hadžiahmetović,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,16
+bosnia_herzegovina_kerim_alajbegovic,Kerim Alajbegović,Bosnia and Herzegovina,Forward,bosnia_herzegovina,19
+bosnia_herzegovina_stjepan_radeljic,Stjepan Radeljić,Bosnia and Herzegovina,Defender,bosnia_herzegovina,21
+bosnia_herzegovina_martin_zlomislic,Martin Zlomislić,Bosnia and Herzegovina,Goalkeeper,bosnia_herzegovina,22
+bosnia_herzegovina_nidal_celik,Nidal Čelik,Bosnia and Herzegovina,Defender,bosnia_herzegovina,24
+bosnia_herzegovina_jovo_lukic,Jovo Lukić,Bosnia and Herzegovina,Forward,bosnia_herzegovina,25
+bosnia_herzegovina_ermin_mahmic,Ermin Mahmić,Bosnia and Herzegovina,Midfielder,bosnia_herzegovina,26
+brazil_weverton,Weverton,Brazil,Goalkeeper,brazil,12
+brazil_leo_pereira,Léo Pereira,Brazil,Defender,brazil,15
+brazil_douglas_santos,Douglas Santos,Brazil,Defender,brazil,16
+brazil_endrick,Endrick,Brazil,Forward,brazil,19
+brazil_luiz_henrique,Luiz Henrique,Brazil,Forward,brazil,21
+morocco_ayyoub_bouaddi,Ayyoub Bouaddi,Morocco,Midfielder,morocco,6
+morocco_samir_el_mourabet,Samir El Mourabet,Morocco,Midfielder,morocco,15
+morocco_youssef_belammari,Youssef Belammari,Morocco,Defender,morocco,19
+morocco_ayoube_amaimouni,Ayoube Amaimouni,Morocco,Forward,morocco,21
+morocco_redouane_halhal,Redouane Halhal,Morocco,Defender,morocco,25
+scotland_tyler_fletcher,Tyler Fletcher,Scotland,Midfielder,scotland,8
+scotland_findlay_curtis,Findlay Curtis,Scotland,Forward,scotland,25
+haiti_keeto_thermoncy,Keeto Thermoncy,Haiti,Defender,haiti,3
+haiti_carl_sainte,Carl Sainté,Haiti,Midfielder,haiti,6
+haiti_martin_experience,Martin Expérience,Haiti,Defender,haiti,8
+haiti_duke_lacroix,Duke Lacroix,Haiti,Defender,haiti,13
+haiti_leverton_pierre,Leverton Pierre,Haiti,Midfielder,haiti,14
+haiti_wilson_isidor,Wilson Isidor,Haiti,Forward,haiti,18
+haiti_yassin_fortune,Yassin Fortuné,Haiti,Forward,haiti,19
+haiti_frantzdy_pierrot,Frantzdy Pierrot,Haiti,Forward,haiti,20
+haiti_josue_duverger,Josué Duverger,Haiti,Goalkeeper,haiti,23
+haiti_wilguens_paugain,Wilguens Paugain,Haiti,Defender,haiti,24
+haiti_dominique_simon,Dominique Simon,Haiti,Midfielder,haiti,25
+haiti_woodensky_pierre,Woodensky Pierre,Haiti,Midfielder,haiti,26
+united_states_alex_freeman,Alex Freeman,United States,Defender,united_states,16
+paraguay_gatito_fernandez,Gatito Fernández,Paraguay,Goalkeeper,paraguay,1
+paraguay_fabian_balbuena,Fabián Balbuena,Paraguay,Defender,paraguay,5
+paraguay_orlando_gill,Orlando Gill,Paraguay,Goalkeeper,paraguay,12
+paraguay_gustavo_gomez,Gustavo Gómez,Paraguay,Defender,paraguay,15
+paraguay_damian_bobadilla,Damián Bobadilla,Paraguay,Midfielder,paraguay,16
+paraguay_isidro_pitta,Isidro Pitta,Paraguay,Forward,paraguay,25
+paraguay_alexandro_maidana,Alexandro Maidana,Paraguay,Defender,paraguay,26
+australia_milos_degenek,Miloš Degenek,Australia,Defender,australia,2
+australia_jacob_italiano,Jacob Italiano,Australia,Defender,australia,4
+australia_cammy_devlin,Cammy Devlin,Australia,Midfielder,australia,14
+australia_paul_okon_engstler,Paul Okon-Engstler,Australia,Midfielder,australia,24
+australia_lucas_herrington,Lucas Herrington,Australia,Defender,australia,25
+turkiye_samet_akaydin,Samet Akaydin,Türkiye,Defender,turkiye,25
+germany_lennart_karl,Lennart Karl,Germany,Midfielder,germany,25
+ecuador_felix_torres,Félix Torres,Ecuador,Defender,ecuador,2
+ecuador_enner_valencia,Enner Valencia,Ecuador,Forward,ecuador,13
+ecuador_jordy_caicedo,Jordy Caicedo,Ecuador,Forward,ecuador,16
+ecuador_denil_castillo,Denil Castillo,Ecuador,Midfielder,ecuador,18
+ecuador_gonzalo_plata,Gonzalo Plata,Ecuador,Forward,ecuador,19
+ecuador_alan_franco,Alan Franco,Ecuador,Midfielder,ecuador,21
+ivory_coast_yan_diomande,Yan Diomande,Ivory Coast,Forward,ivory_coast,11
+ivory_coast_christ_inao_oulai,Christ Inao Oulaï,Ivory Coast,Midfielder,ivory_coast,26
+curacao_roshon_van_eijma,Roshon van Eijma,Curaçao,Defender,curacao,4
+curacao_livano_comenencia,Livano Comenencia,Curaçao,Midfielder,curacao,8
+curacao_leandro_bacuna,Leandro Bacuna,Curaçao,Midfielder,curacao,10
+curacao_tyrese_noslin,Tyrese Noslin,Curaçao,Forward,curacao,13
+curacao_kenji_gorre,Kenji Gorré,Curaçao,Forward,curacao,14
+curacao_jearl_margaritha,Jearl Margaritha,Curaçao,Forward,curacao,16
+curacao_brandley_kuwas,Brandley Kuwas,Curaçao,Forward,curacao,17
+curacao_gervane_kastaneer,Gervane Kastaneer,Curaçao,Forward,curacao,19
+curacao_joshua_brenet,Joshua Brenet,Curaçao,Defender,curacao,20
+curacao_deveron_fonville,Deveron Fonville,Curaçao,Defender,curacao,24
+curacao_tyrick_bodak,Tyrick Bodak,Curaçao,Goalkeeper,curacao,25
+curacao_trevor_doornbusch,Trevor Doornbusch,Curaçao,Goalkeeper,curacao,26
+japan_shogo_taniguchi,Shōgo Taniguchi,Japan,Defender,japan,3
+japan_yuto_nagatomo,Yūto Nagatomo,Japan,Defender,japan,5
+japan_keisuke_goto,Keisuke Gotō,Japan,Forward,japan,9
+japan_keisuke_osako,Keisuke Ōsako,Japan,Goalkeeper,japan,12
+japan_tomoki_hayakawa,Tomoki Hayakawa,Japan,Goalkeeper,japan,23
+japan_kaishu_sano,Kaishū Sano,Japan,Midfielder,japan,24
+japan_junnosuke_suzuki,Junnosuke Suzuki,Japan,Defender,japan,25
+japan_kento_shiogai,Kento Shiogai,Japan,Forward,japan,26
+tunisia_mouhib_chamakh,Mouhib Chamakh,Tunisia,Goalkeeper,tunisia,1
+tunisia_adem_arous,Adem Arous,Tunisia,Defender,tunisia,5
+tunisia_hazem_mastouri,Hazem Mastouri,Tunisia,Forward,tunisia,9
+tunisia_khalil_ayari,Khalil Ayari,Tunisia,Midfielder,tunisia,14
+tunisia_hadj_mahmoud,Hadj Mahmoud,Tunisia,Midfielder,tunisia,15
+tunisia_rayan_elloumi,Rayan Elloumi,Tunisia,Forward,tunisia,18
+tunisia_firas_chaouat,Firas Chaouat,Tunisia,Forward,tunisia,19
+tunisia_mohamed_amine_ben_hamida,Mohamed Amine Ben Hamida,Tunisia,Defender,tunisia,21
+tunisia_sabri_ben_hessen,Sabri Ben Hessen,Tunisia,Goalkeeper,tunisia,22
+tunisia_raed_chikhaoui,Raed Chikhaoui,Tunisia,Defender,tunisia,24
+sweden_lucas_bergvall,Lucas Bergvall,Sweden,Midfielder,sweden,7
+belgium_joaquin_seys,Joaquin Seys,Belgium,Defender,belgium,18
+iran_alireza_beiranvand,Alireza Beiranvand,Iran,Goalkeeper,iran,1
+iran_saleh_hardani,Saleh Hardani,Iran,Defender,iran,2
+iran_shojae_khalilzadeh,Shojae Khalilzadeh,Iran,Defender,iran,4
+iran_saeid_ezatolahi,Saeid Ezatolahi,Iran,Midfielder,iran,6
+iran_mohammad_mohebi,Mohammad Mohebi,Iran,Midfielder,iran,8
+iran_mehdi_ghayedi,Mehdi Ghayedi,Iran,Forward,iran,10
+iran_payam_niazmand,Payam Niazmand,Iran,Goalkeeper,iran,12
+iran_hossein_kanaanizadegan,Hossein Kanaanizadegan,Iran,Defender,iran,13
+iran_rouzbeh_cheshmi,Rouzbeh Cheshmi,Iran,Midfielder,iran,15
+iran_mehdi_torabi,Mehdi Torabi,Iran,Midfielder,iran,16
+iran_aria_yousefi,Aria Yousefi,Iran,Defender,iran,17
+iran_amirhossein_hosseinzadeh,Amirhossein Hosseinzadeh,Iran,Forward,iran,18
+iran_ali_nemati,Ali Nemati,Iran,Defender,iran,19
+iran_shahriyar_moghanlou,Shahriyar Moghanlou,Iran,Forward,iran,20
+iran_mohammad_ghorbani,Mohammad Ghorbani,Iran,Midfielder,iran,21
+iran_hossein_hosseini,Hossein Hosseini,Iran,Goalkeeper,iran,22
+iran_ramin_rezaeian,Ramin Rezaeian,Iran,Defender,iran,23
+iran_danial_eiri,Danial Eiri,Iran,Defender,iran,25
+iran_amirmohammad_razzaghinia,Amirmohammad Razzaghinia,Iran,Midfielder,iran,26
+egypt_mohamed_el_shenawy,Mohamed El Shenawy,Egypt,Goalkeeper,egypt,1
+egypt_yasser_ibrahim,Yasser Ibrahim,Egypt,Defender,egypt,2
+egypt_mohamed_hany,Mohamed Hany,Egypt,Defender,egypt,3
+egypt_hossam_abdelmaguid,Hossam Abdelmaguid,Egypt,Defender,egypt,4
+egypt_ramy_rabia,Ramy Rabia,Egypt,Defender,egypt,5
+egypt_mohamed_abdelmonem,Mohamed Abdelmonem,Egypt,Defender,egypt,6
+egypt_emam_ashour,Emam Ashour,Egypt,Midfielder,egypt,8
+egypt_hamza_abdelkarim,Hamza Abdelkarim,Egypt,Forward,egypt,9
+egypt_mostafa_ziko,Mostafa Ziko,Egypt,Midfielder,egypt,11
+egypt_ahmed_fatouh,Ahmed Fatouh,Egypt,Defender,egypt,13
+egypt_hamdy_fathy,Hamdy Fathy,Egypt,Midfielder,egypt,14
+egypt_karim_hafez,Karim Hafez,Egypt,Defender,egypt,15
+egypt_el_mahdy_soliman,El Mahdy Soliman,Egypt,Goalkeeper,egypt,16
+egypt_mohanad_lasheen,Mohanad Lasheen,Egypt,Midfielder,egypt,17
+egypt_nabil_emad,Nabil Emad,Egypt,Midfielder,egypt,18
+egypt_marwan_attia,Marwan Attia,Egypt,Midfielder,egypt,19
+egypt_ibrahim_adel,Ibrahim Adel,Egypt,Forward,egypt,20
+egypt_mahmoud_saber,Mahmoud Saber,Egypt,Midfielder,egypt,21
+egypt_mostafa_shobeir,Mostafa Shobeir,Egypt,Goalkeeper,egypt,23
+egypt_tarek_alaa,Tarek Alaa,Egypt,Defender,egypt,24
+egypt_zizo,Zizo,Egypt,Forward,egypt,25
+egypt_mohamed_alaa,Mohamed Alaa,Egypt,Goalkeeper,egypt,26
+new_zealand_francis_de_vries,Francis de Vries,New Zealand,Defender,new_zealand,3
+new_zealand_jesse_randall,Jesse Randall,New Zealand,Forward,new_zealand,21
+spain_lamine_yamal,Lamine Yamal,Spain,Forward,spain,19
+spain_victor_munoz,Víctor Muñoz,Spain,Forward,spain,25
+uruguay_sergio_rochet,Sergio Rochet,Uruguay,Goalkeeper,uruguay,1
+uruguay_sebastian_caceres,Sebastián Cáceres,Uruguay,Defender,uruguay,3
+uruguay_nicolas_de_la_cruz,Nicolás de la Cruz,Uruguay,Midfielder,uruguay,7
+uruguay_giorgian_de_arrascaeta,Giorgian de Arrascaeta,Uruguay,Midfielder,uruguay,10
+uruguay_guillermo_varela,Guillermo Varela,Uruguay,Defender,uruguay,13
+uruguay_agustin_canobbio,Agustín Canobbio,Uruguay,Midfielder,uruguay,14
+uruguay_matias_vina,Matías Viña,Uruguay,Defender,uruguay,17
+uruguay_brian_rodriguez,Brian Rodríguez,Uruguay,Forward,uruguay,18
+uruguay_rodrigo_aguirre,Rodrigo Aguirre,Uruguay,Forward,uruguay,19
+uruguay_maximiliano_araujo,Maximiliano Araújo,Uruguay,Midfielder,uruguay,20
+uruguay_federico_vinas,Federico Viñas,Uruguay,Forward,uruguay,21
+uruguay_joaquin_piquerez,Joaquín Piquerez,Uruguay,Midfielder,uruguay,22
+uruguay_juan_manuel_sanabria,Juan Manuel Sanabria,Uruguay,Midfielder,uruguay,25
+saudi_arabia_musab_al_juwayr,Musab Al-Juwayr,Saudi Arabia,Midfielder,saudi_arabia,7
+saudi_arabia_alaa_al_hejji,Alaa Al-Hejji,Saudi Arabia,Midfielder,saudi_arabia,18
+saudi_arabia_ahmed_al_kassar,Ahmed Al-Kassar,Saudi Arabia,Goalkeeper,saudi_arabia,22
+saudi_arabia_mohamed_kanno,Mohamed Kanno,Saudi Arabia,Midfielder,saudi_arabia,23
+saudi_arabia_jehad_thakri,Jehad Thakri,Saudi Arabia,Defender,saudi_arabia,25
+saudi_arabia_mohammed_abu_al_shamat,Mohammed Abu Al-Shamat,Saudi Arabia,Defender,saudi_arabia,26
+cape_verde_vozinha,Vozinha,Cape Verde,Goalkeeper,cape_verde,1
+cape_verde_stopira,Stopira,Cape Verde,Defender,cape_verde,2
+cape_verde_diney,Diney,Cape Verde,Defender,cape_verde,3
+cape_verde_kevin_pina,Kevin Pina,Cape Verde,Midfielder,cape_verde,6
+cape_verde_jovane_cabral,Jovane Cabral,Cape Verde,Midfielder,cape_verde,7
+cape_verde_gilson_benchimol,Gilson Benchimol,Cape Verde,Forward,cape_verde,9
+cape_verde_marcio_rosa,Márcio Rosa,Cape Verde,Goalkeeper,cape_verde,12
+cape_verde_laros_duarte,Laros Duarte,Cape Verde,Midfielder,cape_verde,15
+cape_verde_yannick_semedo,Yannick Semedo,Cape Verde,Midfielder,cape_verde,16
+cape_verde_willy_semedo,Willy Semedo,Cape Verde,Midfielder,cape_verde,17
+cape_verde_dailon_livramento,Dailon Livramento,Cape Verde,Forward,cape_verde,19
+cape_verde_kelvin_pires,Kelvin Pires,Cape Verde,Defender,cape_verde,25
+france_robin_risser,Robin Risser,France,Goalkeeper,france,23
+senegal_abdoulaye_seck,Abdoulaye Seck,Senegal,Defender,senegal,4
+senegal_cherif_ndiaye,Cherif Ndiaye,Senegal,Forward,senegal,12
+senegal_ibrahim_mbaye,Ibrahim Mbaye,Senegal,Forward,senegal,20
+senegal_bara_sapoko_ndiaye,Bara Sapoko Ndiaye,Senegal,Midfielder,senegal,22
+norway_henrik_falchener,Henrik Falchener,Norway,Defender,norway,25
+iraq_fahad_talib,Fahad Talib,Iraq,Goalkeeper,iraq,1
+iraq_rebin_sulaka,Rebin Sulaka,Iraq,Defender,iraq,2
+iraq_zaid_tahseen,Zaid Tahseen,Iraq,Defender,iraq,4
+iraq_akam_hashim,Akam Hashim,Iraq,Defender,iraq,5
+iraq_manaf_younis,Manaf Younis,Iraq,Defender,iraq,6
+iraq_ibrahim_bayesh,Ibrahim Bayesh,Iraq,Midfielder,iraq,8
+iraq_mohanad_ali,Mohanad Ali,Iraq,Forward,iraq,10
+iraq_jalal_hassan,Jalal Hassan,Iraq,Goalkeeper,iraq,12
+iraq_ali_yousif,Ali Yousif,Iraq,Forward,iraq,13
+iraq_ali_jasim,Ali Jasim,Iraq,Forward,iraq,17
+iraq_aymen_hussein,Aymen Hussein,Iraq,Forward,iraq,18
+iraq_ahmed_basil,Ahmed Basil,Iraq,Goalkeeper,iraq,22
+iraq_merchas_doski,Merchas Doski,Iraq,Defender,iraq,23
+iraq_zaid_ismail,Zaid Ismail,Iraq,Midfielder,iraq,24
+iraq_mustafa_saadoon,Mustafa Saadoon,Iraq,Defender,iraq,25
+iraq_frans_putros,Frans Putros,Iraq,Defender,iraq,26
+austria_florian_wiegele,Florian Wiegele,Austria,Goalkeeper,austria,12
+algeria_melvin_mastil,Melvin Mastil,Algeria,Goalkeeper,algeria,1
+algeria_achref_abada,Achref Abada,Algeria,Defender,algeria,3
+algeria_mohamed_amine_tougai,Mohamed Amine Tougai,Algeria,Defender,algeria,4
+algeria_zineddine_belaid,Zineddine Belaïd,Algeria,Defender,algeria,5
+algeria_oussama_benbot,Oussama Benbot,Algeria,Goalkeeper,algeria,16
+algeria_adil_boulbina,Adil Boulbina,Algeria,Forward,algeria,20
+algeria_yacine_titraoui,Yacine Titraoui,Algeria,Midfielder,algeria,24
+jordan_yazeed_abulaila,Yazeed Abulaila,Jordan,Goalkeeper,jordan,1
+jordan_mohammad_abu_hashish,Mohammad Abu Hashish,Jordan,Defender,jordan,2
+jordan_abdallah_nasib,Abdallah Nasib,Jordan,Defender,jordan,3
+jordan_husam_abu_dahab,Husam Abu Dahab,Jordan,Defender,jordan,4
+jordan_yazan_al_arab,Yazan Al-Arab,Jordan,Defender,jordan,5
+jordan_amer_jamous,Amer Jamous,Jordan,Midfielder,jordan,6
+jordan_mohammad_abu_zrayq,Mohammad Abu Zrayq,Jordan,Forward,jordan,7
+jordan_noor_al_rawabdeh,Noor Al-Rawabdeh,Jordan,Midfielder,jordan,8
+jordan_ali_olwan,Ali Olwan,Jordan,Forward,jordan,9
+jordan_musa_al_taamari,Musa Al-Taamari,Jordan,Forward,jordan,10
+jordan_odeh_al_fakhouri,Odeh Al-Fakhouri,Jordan,Forward,jordan,11
+jordan_nour_bani_attiah,Nour Bani Attiah,Jordan,Goalkeeper,jordan,12
+jordan_mahmoud_al_mardi,Mahmoud Al-Mardi,Jordan,Forward,jordan,13
+jordan_rajaei_ayed,Rajaei Ayed,Jordan,Midfielder,jordan,14
+jordan_ibrahim_sadeh,Ibrahim Sadeh,Jordan,Midfielder,jordan,15
+jordan_mo_abualnadi,Mo Abualnadi,Jordan,Defender,jordan,16
+jordan_salim_obaid,Salim Obaid,Jordan,Defender,jordan,17
+jordan_ibrahim_sabra,Ibrahim Sabra,Jordan,Forward,jordan,18
+jordan_saed_al_rosan,Saed Al-Rosan,Jordan,Defender,jordan,19
+jordan_mohannad_abu_taha,Mohannad Abu Taha,Jordan,Midfielder,jordan,20
+jordan_nizar_al_rashdan,Nizar Al-Rashdan,Jordan,Midfielder,jordan,21
+jordan_abdallah_al_fakhouri,Abdallah Al-Fakhouri,Jordan,Goalkeeper,jordan,22
+jordan_ihsan_haddad,Ihsan Haddad,Jordan,Defender,jordan,23
+jordan_ali_azaizeh,Ali Azaizeh,Jordan,Forward,jordan,24
+jordan_mohammad_al_dawoud,Mohammad Al-Dawoud,Jordan,Midfielder,jordan,25
+jordan_anas_badawi,Anas Badawi,Jordan,Defender,jordan,26
+colombia_santiago_arias,Santiago Arias,Colombia,Defender,colombia,4
+colombia_kevin_castano,Kevin Castaño,Colombia,Midfielder,colombia,5
+colombia_richard_rios,Richard Ríos,Colombia,Midfielder,colombia,6
+colombia_jorge_carrascal,Jorge Carrascal,Colombia,Midfielder,colombia,8
+colombia_jhon_cordoba,Jhon Córdoba,Colombia,Forward,colombia,9
+colombia_james_rodriguez,James Rodríguez,Colombia,Midfielder,colombia,10
+colombia_camilo_vargas,Camilo Vargas,Colombia,Goalkeeper,colombia,12
+colombia_willer_ditta,Willer Ditta,Colombia,Defender,colombia,18
+uzbekistan_utkir_yusupov,Utkir Yusupov,Uzbekistan,Goalkeeper,uzbekistan,1
+uzbekistan_khojiakbar_alijonov,Khojiakbar Alijonov,Uzbekistan,Defender,uzbekistan,3
+uzbekistan_farrukh_sayfiev,Farrukh Sayfiev,Uzbekistan,Defender,uzbekistan,4
+uzbekistan_rustam_ashurmatov,Rustam Ashurmatov,Uzbekistan,Defender,uzbekistan,5
+uzbekistan_akmal_mozgovoy,Akmal Mozgovoy,Uzbekistan,Midfielder,uzbekistan,6
+uzbekistan_jamshid_iskanderov,Jamshid Iskanderov,Uzbekistan,Midfielder,uzbekistan,8
+uzbekistan_odiljon_hamrobekov,Odiljon Hamrobekov,Uzbekistan,Midfielder,uzbekistan,9
+uzbekistan_jaloliddin_masharipov,Jaloliddin Masharipov,Uzbekistan,Midfielder,uzbekistan,10
+uzbekistan_oston_urunov,Oston Urunov,Uzbekistan,Midfielder,uzbekistan,11
+uzbekistan_abduvohid_nematov,Abduvohid Nematov,Uzbekistan,Goalkeeper,uzbekistan,12
+uzbekistan_sherzod_nasrullaev,Sherzod Nasrullaev,Uzbekistan,Defender,uzbekistan,13
+uzbekistan_umar_eshmurodov,Umar Eshmurodov,Uzbekistan,Defender,uzbekistan,15
+uzbekistan_botirali_ergashev,Botirali Ergashev,Uzbekistan,Goalkeeper,uzbekistan,16
+uzbekistan_dostonbek_khamdamov,Dostonbek Khamdamov,Uzbekistan,Midfielder,uzbekistan,17
+uzbekistan_abdulla_abdullaev,Abdulla Abdullaev,Uzbekistan,Defender,uzbekistan,18
+uzbekistan_azizjon_ganiev,Azizjon Ganiev,Uzbekistan,Midfielder,uzbekistan,19
+uzbekistan_azizbek_amonov,Azizbek Amonov,Uzbekistan,Forward,uzbekistan,20
+uzbekistan_igor_sergeev,Igor Sergeev,Uzbekistan,Forward,uzbekistan,21
+uzbekistan_abbosbek_fayzullaev,Abbosbek Fayzullaev,Uzbekistan,Midfielder,uzbekistan,22
+uzbekistan_sherzod_esanov,Sherzod Esanov,Uzbekistan,Midfielder,uzbekistan,23
+uzbekistan_bekhruz_karimov,Bekhruz Karimov,Uzbekistan,Defender,uzbekistan,24
+uzbekistan_avazbek_ulmasaliev,Avazbek Ulmasaliev,Uzbekistan,Defender,uzbekistan,25
+uzbekistan_jakhongir_urozov,Jakhongir Urozov,Uzbekistan,Defender,uzbekistan,26
+dr_congo_brian_cipenga,Brian Cipenga,DR Congo,Forward,dr_congo,9
+dr_congo_theo_bongonda,Théo Bongonda,DR Congo,Midfielder,dr_congo,10
+dr_congo_meschak_elia,Meschak Elia,DR Congo,Forward,dr_congo,13
+dr_congo_aaron_tshibola,Aaron Tshibola,DR Congo,Midfielder,dr_congo,15
+dr_congo_timothy_fayulu,Timothy Fayulu,DR Congo,Goalkeeper,dr_congo,16
+dr_congo_fiston_mayele,Fiston Mayele,DR Congo,Forward,dr_congo,19
+dr_congo_arthur_masuaku,Arthur Masuaku,DR Congo,Defender,dr_congo,26
+croatia_toni_fruk,Toni Fruk,Croatia,Midfielder,croatia,19
+panama_cesar_blackman,César Blackman,Panama,Defender,panama,2
+panama_jose_cordoba,José Córdoba,Panama,Defender,panama,3
+panama_fidel_escobar,Fidel Escobar,Panama,Defender,panama,4
+panama_edgardo_farina,Edgardo Fariña,Panama,Defender,panama,5
+panama_tomas_rodriguez,Tomás Rodríguez,Panama,Forward,panama,9
+panama_yoel_barcenas,Yoel Bárcenas,Panama,Midfielder,panama,11
+panama_cesar_samudio,César Samudio,Panama,Goalkeeper,panama,12
+panama_eric_davis,Eric Davis,Panama,Defender,panama,15
+panama_alberto_quintero,Alberto Quintero,Panama,Midfielder,panama,19
+panama_cesar_yanis,César Yanis,Panama,Midfielder,panama,21
+panama_orlando_mosquera,Orlando Mosquera,Panama,Goalkeeper,panama,22
+panama_azarias_londono,Azarias Londoño,Panama,Forward,panama,24
+panama_roderick_miller,Roderick Miller,Panama,Defender,panama,25
+ghana_caleb_yirenkyi,Caleb Yirenkyi,Ghana,Midfielder,ghana,3
+ghana_jonas_adjetey,Jonas Adjetey,Ghana,Defender,ghana,4
+ghana_benjamin_asare,Benjamin Asare,Ghana,Goalkeeper,ghana,16
+ghana_kojo_peprah_oppong,Kojo Peprah Oppong,Ghana,Defender,ghana,21
+ghana_derrick_luckassen,Derrick Luckassen,Ghana,Defender,ghana,23

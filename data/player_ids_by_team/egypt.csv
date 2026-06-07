@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Egypt,egypt,EGY,Group G,1,egypt_mohamed_el_shenawy,Mohamed El Shenawy,Goalkeeper,egypt_mohamed_el_shenawy.jpg
+Egypt,egypt,EGY,Group G,2,egypt_yasser_ibrahim,Yasser Ibrahim,Defender,egypt_yasser_ibrahim.jpg
+Egypt,egypt,EGY,Group G,3,egypt_mohamed_hany,Mohamed Hany,Defender,egypt_mohamed_hany.jpg
+Egypt,egypt,EGY,Group G,4,egypt_hossam_abdelmaguid,Hossam Abdelmaguid,Defender,egypt_hossam_abdelmaguid.jpg
+Egypt,egypt,EGY,Group G,5,egypt_ramy_rabia,Ramy Rabia,Defender,egypt_ramy_rabia.jpg
+Egypt,egypt,EGY,Group G,6,egypt_mohamed_abdelmonem,Mohamed Abdelmonem,Defender,egypt_mohamed_abdelmonem.jpg
+Egypt,egypt,EGY,Group G,7,egypt_trezeguet,Trézéguet,Forward,egypt_trezeguet.jpg
+Egypt,egypt,EGY,Group G,8,egypt_emam_ashour,Emam Ashour,Midfielder,egypt_emam_ashour.jpg
+Egypt,egypt,EGY,Group G,9,egypt_hamza_abdelkarim,Hamza Abdelkarim,Forward,egypt_hamza_abdelkarim.jpg
+Egypt,egypt,EGY,Group G,10,egypt_mohamed_salah,Mohamed Salah,Forward,egypt_mohamed_salah.jpg
+Egypt,egypt,EGY,Group G,11,egypt_mostafa_ziko,Mostafa Ziko,Midfielder,egypt_mostafa_ziko.jpg
+Egypt,egypt,EGY,Group G,12,egypt_haissem_hassan,Haissem Hassan,Forward,egypt_haissem_hassan.jpg
+Egypt,egypt,EGY,Group G,13,egypt_ahmed_fatouh,Ahmed Fatouh,Defender,egypt_ahmed_fatouh.jpg
+Egypt,egypt,EGY,Group G,14,egypt_hamdy_fathy,Hamdy Fathy,Midfielder,egypt_hamdy_fathy.jpg
+Egypt,egypt,EGY,Group G,15,egypt_karim_hafez,Karim Hafez,Defender,egypt_karim_hafez.jpg
+Egypt,egypt,EGY,Group G,16,egypt_el_mahdy_soliman,El Mahdy Soliman,Goalkeeper,egypt_el_mahdy_soliman.jpg
+Egypt,egypt,EGY,Group G,17,egypt_mohanad_lasheen,Mohanad Lasheen,Midfielder,egypt_mohanad_lasheen.jpg
+Egypt,egypt,EGY,Group G,18,egypt_nabil_emad,Nabil Emad,Midfielder,egypt_nabil_emad.jpg
+Egypt,egypt,EGY,Group G,19,egypt_marwan_attia,Marwan Attia,Midfielder,egypt_marwan_attia.jpg
+Egypt,egypt,EGY,Group G,20,egypt_ibrahim_adel,Ibrahim Adel,Forward,egypt_ibrahim_adel.jpg
+Egypt,egypt,EGY,Group G,21,egypt_mahmoud_saber,Mahmoud Saber,Midfielder,egypt_mahmoud_saber.jpg
+Egypt,egypt,EGY,Group G,22,egypt_omar_marmoush,Omar Marmoush,Forward,egypt_omar_marmoush.jpg
+Egypt,egypt,EGY,Group G,23,egypt_mostafa_shobeir,Mostafa Shobeir,Goalkeeper,egypt_mostafa_shobeir.jpg
+Egypt,egypt,EGY,Group G,24,egypt_tarek_alaa,Tarek Alaa,Defender,egypt_tarek_alaa.jpg
+Egypt,egypt,EGY,Group G,25,egypt_zizo,Zizo,Forward,egypt_zizo.jpg
+Egypt,egypt,EGY,Group G,26,egypt_mohamed_alaa,Mohamed Alaa,Goalkeeper,egypt_mohamed_alaa.jpg

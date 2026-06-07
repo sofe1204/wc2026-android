@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Panama,panama,PAN,Group L,1,panama_luis_mejia,Luis Mejía,Goalkeeper,panama_luis_mejia.jpg
+Panama,panama,PAN,Group L,2,panama_cesar_blackman,César Blackman,Defender,panama_cesar_blackman.jpg
+Panama,panama,PAN,Group L,3,panama_jose_cordoba,José Córdoba,Defender,panama_jose_cordoba.jpg
+Panama,panama,PAN,Group L,4,panama_fidel_escobar,Fidel Escobar,Defender,panama_fidel_escobar.jpg
+Panama,panama,PAN,Group L,5,panama_edgardo_farina,Edgardo Fariña,Defender,panama_edgardo_farina.jpg
+Panama,panama,PAN,Group L,6,panama_cristian_martinez,Cristian Martínez,Midfielder,panama_cristian_martinez.jpg
+Panama,panama,PAN,Group L,7,panama_jose_luis_rodriguez,José Luis Rodríguez,Midfielder,panama_jose_luis_rodriguez.jpg
+Panama,panama,PAN,Group L,8,panama_adalberto_carrasquilla,Adalberto Carrasquilla,Midfielder,panama_adalberto_carrasquilla.jpg
+Panama,panama,PAN,Group L,9,panama_tomas_rodriguez,Tomás Rodríguez,Forward,panama_tomas_rodriguez.jpg
+Panama,panama,PAN,Group L,10,panama_ismael_diaz,Ismael Díaz,Midfielder,panama_ismael_diaz.jpg
+Panama,panama,PAN,Group L,11,panama_yoel_barcenas,Yoel Bárcenas,Midfielder,panama_yoel_barcenas.jpg
+Panama,panama,PAN,Group L,12,panama_cesar_samudio,César Samudio,Goalkeeper,panama_cesar_samudio.jpg
+Panama,panama,PAN,Group L,13,panama_jiovany_ramos,Jiovany Ramos,Defender,panama_jiovany_ramos.jpg
+Panama,panama,PAN,Group L,14,panama_carlos_harvey,Carlos Harvey,Defender,panama_carlos_harvey.jpg
+Panama,panama,PAN,Group L,15,panama_eric_davis,Eric Davis,Defender,panama_eric_davis.jpg
+Panama,panama,PAN,Group L,16,panama_andres_andrade,Andrés Andrade,Defender,panama_andres_andrade.jpg
+Panama,panama,PAN,Group L,17,panama_jose_fajardo,José Fajardo,Forward,panama_jose_fajardo.jpg
+Panama,panama,PAN,Group L,18,panama_cecilio_waterman,Cecilio Waterman,Forward,panama_cecilio_waterman.jpg
+Panama,panama,PAN,Group L,19,panama_alberto_quintero,Alberto Quintero,Midfielder,panama_alberto_quintero.jpg
+Panama,panama,PAN,Group L,20,panama_anibal_godoy,Aníbal Godoy,Midfielder,panama_anibal_godoy.jpg
+Panama,panama,PAN,Group L,21,panama_cesar_yanis,César Yanis,Midfielder,panama_cesar_yanis.jpg
+Panama,panama,PAN,Group L,22,panama_orlando_mosquera,Orlando Mosquera,Goalkeeper,panama_orlando_mosquera.jpg
+Panama,panama,PAN,Group L,23,panama_michael_amir_murillo,Michael Amir Murillo,Defender,panama_michael_amir_murillo.jpg
+Panama,panama,PAN,Group L,24,panama_azarias_londono,Azarias Londoño,Forward,panama_azarias_londono.jpg
+Panama,panama,PAN,Group L,25,panama_roderick_miller,Roderick Miller,Defender,panama_roderick_miller.jpg
+Panama,panama,PAN,Group L,26,panama_jorge_gutierrez,Jorge Gutiérrez,Defender,panama_jorge_gutierrez.jpg

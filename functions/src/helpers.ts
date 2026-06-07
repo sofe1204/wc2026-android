@@ -176,22 +176,19 @@ export async function pickRandomPlayerIds(count: number): Promise<string[]> {
 
 function slotLineWins(line: string[]): boolean {
   if (line.some((s) => !s || s === "unknown")) return false;
-  const nonWild = line.filter((s) => s !== TROPHY_SYMBOL_ID);
-  if (nonWild.length === 0) return true;
-  const target = nonWild[0];
-  return (
-    nonWild.every((s) => s === target) &&
-    line.every((s) => s === target || s === TROPHY_SYMBOL_ID)
-  );
+  return line[0] === line[1] && line[1] === line[2];
 }
 
-/** Win only on a diagonal — 3 matching symbols (trophy = wildcard). */
+/** Win on any of 5 lines: 3 rows + 2 diagonals. All 3 symbols must match exactly (no wildcards). */
 export function checkSlotWin(grid: string[][]): boolean {
-  const diagonals = [
+  const lines = [
+    [grid[0][0], grid[0][1], grid[0][2]],
+    [grid[1][0], grid[1][1], grid[1][2]],
+    [grid[2][0], grid[2][1], grid[2][2]],
     [grid[0][0], grid[1][1], grid[2][2]],
     [grid[0][2], grid[1][1], grid[2][0]],
   ];
-  return diagonals.some(slotLineWins);
+  return lines.some(slotLineWins);
 }
 
 const LOGIN_REWARD_INTERVAL_MS = LOGIN_REWARD_INTERVAL_HOURS * 60 * 60 * 1000;

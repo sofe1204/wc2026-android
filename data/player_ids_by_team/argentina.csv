@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Argentina,argentina,ARG,Group J,1,argentina_juan_musso,Juan Musso,Goalkeeper,argentina_juan_musso.jpg
+Argentina,argentina,ARG,Group J,2,argentina_leonardo_balerdi,Leonardo Balerdi,Defender,argentina_leonardo_balerdi.jpg
+Argentina,argentina,ARG,Group J,3,argentina_nicolas_tagliafico,Nicolás Tagliafico,Defender,argentina_nicolas_tagliafico.jpg
+Argentina,argentina,ARG,Group J,4,argentina_gonzalo_montiel,Gonzalo Montiel,Defender,argentina_gonzalo_montiel.jpg
+Argentina,argentina,ARG,Group J,5,argentina_leandro_paredes,Leandro Paredes,Midfielder,argentina_leandro_paredes.jpg
+Argentina,argentina,ARG,Group J,6,argentina_lisandro_martinez,Lisandro Martínez,Defender,argentina_lisandro_martinez.jpg
+Argentina,argentina,ARG,Group J,7,argentina_rodrigo_de_paul,Rodrigo De Paul,Midfielder,argentina_rodrigo_de_paul.jpg
+Argentina,argentina,ARG,Group J,8,argentina_valentin_barco,Valentín Barco,Midfielder,argentina_valentin_barco.jpg
+Argentina,argentina,ARG,Group J,9,argentina_julian_alvarez,Julián Alvarez,Forward,argentina_julian_alvarez.jpg
+Argentina,argentina,ARG,Group J,10,argentina_lionel_messi,Lionel Messi,Forward,argentina_lionel_messi.jpg
+Argentina,argentina,ARG,Group J,11,argentina_giovani_lo_celso,Giovani Lo Celso,Midfielder,argentina_giovani_lo_celso.jpg
+Argentina,argentina,ARG,Group J,12,argentina_geronimo_rulli,Gerónimo Rulli,Goalkeeper,argentina_geronimo_rulli.jpg
+Argentina,argentina,ARG,Group J,13,argentina_cristian_romero,Cristian Romero,Defender,argentina_cristian_romero.jpg
+Argentina,argentina,ARG,Group J,14,argentina_exequiel_palacios,Exequiel Palacios,Midfielder,argentina_exequiel_palacios.jpg
+Argentina,argentina,ARG,Group J,15,argentina_nicolas_gonzalez,Nicolás González,Midfielder,argentina_nicolas_gonzalez.jpg
+Argentina,argentina,ARG,Group J,16,argentina_thiago_almada,Thiago Almada,Forward,argentina_thiago_almada.jpg
+Argentina,argentina,ARG,Group J,17,argentina_giuliano_simeone,Giuliano Simeone,Forward,argentina_giuliano_simeone.jpg
+Argentina,argentina,ARG,Group J,18,argentina_nico_paz,Nico Paz,Forward,argentina_nico_paz.jpg
+Argentina,argentina,ARG,Group J,19,argentina_nicolas_otamendi,Nicolás Otamendi,Defender,argentina_nicolas_otamendi.jpg
+Argentina,argentina,ARG,Group J,20,argentina_alexis_mac_allister,Alexis Mac Allister,Midfielder,argentina_alexis_mac_allister.jpg
+Argentina,argentina,ARG,Group J,21,argentina_jose_manuel_lopez,José Manuel López,Forward,argentina_jose_manuel_lopez.jpg
+Argentina,argentina,ARG,Group J,22,argentina_lautaro_martinez,Lautaro Martínez,Forward,argentina_lautaro_martinez.jpg
+Argentina,argentina,ARG,Group J,23,argentina_emiliano_martinez,Emiliano Martínez,Goalkeeper,argentina_emiliano_martinez.jpg
+Argentina,argentina,ARG,Group J,24,argentina_enzo_fernandez,Enzo Fernández,Midfielder,argentina_enzo_fernandez.jpg
+Argentina,argentina,ARG,Group J,25,argentina_facundo_medina,Facundo Medina,Defender,argentina_facundo_medina.jpg
+Argentina,argentina,ARG,Group J,26,argentina_nahuel_molina,Nahuel Molina,Defender,argentina_nahuel_molina.jpg

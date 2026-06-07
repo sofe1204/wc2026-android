@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Czechia,czechia,CZE,Group A,1,czechia_matej_kovar,Matěj Kovář,Goalkeeper,czechia_matej_kovar.jpg
+Czechia,czechia,CZE,Group A,2,czechia_david_zima,David Zima,Defender,czechia_david_zima.jpg
+Czechia,czechia,CZE,Group A,3,czechia_tomas_holes,Tomáš Holeš,Defender,czechia_tomas_holes.jpg
+Czechia,czechia,CZE,Group A,4,czechia_robin_hranac,Robin Hranáč,Defender,czechia_robin_hranac.jpg
+Czechia,czechia,CZE,Group A,5,czechia_vladimir_coufal,Vladimír Coufal,Defender,czechia_vladimir_coufal.jpg
+Czechia,czechia,CZE,Group A,6,czechia_stepan_chaloupek,Štěpán Chaloupek,Defender,czechia_stepan_chaloupek.jpg
+Czechia,czechia,CZE,Group A,7,czechia_ladislav_krejci,Ladislav Krejčí,Defender,czechia_ladislav_krejci.jpg
+Czechia,czechia,CZE,Group A,8,czechia_vladimir_darida,Vladimír Darida,Midfielder,czechia_vladimir_darida.jpg
+Czechia,czechia,CZE,Group A,9,czechia_adam_hlozek,Adam Hložek,Forward,czechia_adam_hlozek.jpg
+Czechia,czechia,CZE,Group A,10,czechia_patrik_schick,Patrik Schick,Forward,czechia_patrik_schick.jpg
+Czechia,czechia,CZE,Group A,11,czechia_jan_kuchta,Jan Kuchta,Forward,czechia_jan_kuchta.jpg
+Czechia,czechia,CZE,Group A,12,czechia_lukas_cerv,Lukáš Červ,Midfielder,czechia_lukas_cerv.jpg
+Czechia,czechia,CZE,Group A,13,czechia_mojmir_chytil,Mojmír Chytil,Forward,czechia_mojmir_chytil.jpg
+Czechia,czechia,CZE,Group A,14,czechia_david_jurasek,David Jurásek,Defender,czechia_david_jurasek.jpg
+Czechia,czechia,CZE,Group A,15,czechia_pavel_sulc,Pavel Šulc,Forward,czechia_pavel_sulc.jpg
+Czechia,czechia,CZE,Group A,16,czechia_jindrich_stanek,Jindřich Staněk,Goalkeeper,czechia_jindrich_stanek.jpg
+Czechia,czechia,CZE,Group A,17,czechia_lukas_provod,Lukáš Provod,Midfielder,czechia_lukas_provod.jpg
+Czechia,czechia,CZE,Group A,18,czechia_michal_sadilek,Michal Sadílek,Midfielder,czechia_michal_sadilek.jpg
+Czechia,czechia,CZE,Group A,19,czechia_tomas_chory,Tomáš Chorý,Forward,czechia_tomas_chory.jpg
+Czechia,czechia,CZE,Group A,20,czechia_jaroslav_zeleny,Jaroslav Zelený,Defender,czechia_jaroslav_zeleny.jpg
+Czechia,czechia,CZE,Group A,21,czechia_david_doudera,David Douděra,Defender,czechia_david_doudera.jpg
+Czechia,czechia,CZE,Group A,22,czechia_tomas_soucek,Tomáš Souček,Midfielder,czechia_tomas_soucek.jpg
+Czechia,czechia,CZE,Group A,23,czechia_lukas_hornicek,Lukáš Horníček,Goalkeeper,czechia_lukas_hornicek.jpg
+Czechia,czechia,CZE,Group A,24,czechia_alexandr_sojka,Alexandr Sojka,Midfielder,czechia_alexandr_sojka.jpg
+Czechia,czechia,CZE,Group A,25,czechia_hugo_sochurek,Hugo Sochůrek,Midfielder,czechia_hugo_sochurek.jpg
+Czechia,czechia,CZE,Group A,26,czechia_denis_visinsky,Denis Višinský,Forward,czechia_denis_visinsky.jpg

@@ -3,6 +3,7 @@ package com.techmomentum.wc2026.ui.bootstrap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.data.firebase.FirebaseSessionCoordinator
+import com.techmomentum.wc2026.data.slot.SlotSymbolsWarmup
 import com.techmomentum.wc2026.data.repository.AppAuthState
 import com.techmomentum.wc2026.data.repository.AuthRepository
 import com.techmomentum.wc2026.data.repository.UserRepository
@@ -13,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,6 +31,7 @@ class SessionBootstrapViewModel @Inject constructor(
     private val sessionCoordinator: FirebaseSessionCoordinator,
     private val userRepository: UserRepository,
     private val determineSignedInGate: DetermineSignedInGateUseCase,
+    private val slotSymbolsWarmup: SlotSymbolsWarmup,
 ) : ViewModel() {
     private val _state = MutableStateFlow<BootstrapState>(BootstrapState.Loading)
     val state: StateFlow<BootstrapState> = _state.asStateFlow()
@@ -44,6 +47,7 @@ class SessionBootstrapViewModel @Inject constructor(
             _state.value = BootstrapState.Loading
             when (val auth = authRepository.authState().first()) {
                 is AppAuthState.SignedIn -> {
+                    val slotWarmup = async { slotSymbolsWarmup.warmIfNeeded() }
                     val result = sessionCoordinator.bootstrapSignedInUser()
                     result.fold(
                         onSuccess = { profile ->
@@ -54,6 +58,7 @@ class SessionBootstrapViewModel @Inject constructor(
                                     SignedInGate.NeedsProfileCompletion -> Routes.COMPLETE_PROFILE
                                     SignedInGate.Ready -> Routes.HOME
                                 }
+                                slotWarmup.await()
                                 _state.value = BootstrapState.Ready(route)
                             } else {
                                 _state.value = BootstrapState.Error(
@@ -68,7 +73,10 @@ class SessionBootstrapViewModel @Inject constructor(
                         },
                     )
                 }
-                AppAuthState.Guest -> _state.value = BootstrapState.Ready(Routes.HOME)
+                AppAuthState.Guest -> {
+                    slotSymbolsWarmup.warmIfNeeded()
+                    _state.value = BootstrapState.Ready(Routes.HOME)
+                }
                 AppAuthState.Unauthenticated -> _state.value = BootstrapState.Ready(Routes.AUTH)
             }
         }

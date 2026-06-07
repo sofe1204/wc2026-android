@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Norway,norway,NOR,Group I,1,norway_rjan_nyland,Ørjan Nyland,Goalkeeper,norway_rjan_nyland.jpg
+Norway,norway,NOR,Group I,2,norway_morten_thorsby,Morten Thorsby,Midfielder,norway_morten_thorsby.jpg
+Norway,norway,NOR,Group I,3,norway_kristoffer_ajer,Kristoffer Ajer,Defender,norway_kristoffer_ajer.jpg
+Norway,norway,NOR,Group I,4,norway_leo_stigard,Leo Østigård,Defender,norway_leo_stigard.jpg
+Norway,norway,NOR,Group I,5,norway_david_mller_wolfe,David Møller Wolfe,Defender,norway_david_mller_wolfe.jpg
+Norway,norway,NOR,Group I,6,norway_patrick_berg,Patrick Berg,Midfielder,norway_patrick_berg.jpg
+Norway,norway,NOR,Group I,7,norway_alexander_srloth,Alexander Sørloth,Forward,norway_alexander_srloth.jpg
+Norway,norway,NOR,Group I,8,norway_sander_berge,Sander Berge,Midfielder,norway_sander_berge.jpg
+Norway,norway,NOR,Group I,9,norway_erling_haaland,Erling Haaland,Forward,norway_erling_haaland.jpg
+Norway,norway,NOR,Group I,10,norway_martin_degaard,Martin Ødegaard,Midfielder,norway_martin_degaard.jpg
+Norway,norway,NOR,Group I,11,norway_jrgen_strand_larsen,Jørgen Strand Larsen,Forward,norway_jrgen_strand_larsen.jpg
+Norway,norway,NOR,Group I,12,norway_sander_tangvik,Sander Tangvik,Goalkeeper,norway_sander_tangvik.jpg
+Norway,norway,NOR,Group I,13,norway_egil_selvik,Egil Selvik,Goalkeeper,norway_egil_selvik.jpg
+Norway,norway,NOR,Group I,14,norway_fredrik_aursnes,Fredrik Aursnes,Midfielder,norway_fredrik_aursnes.jpg
+Norway,norway,NOR,Group I,15,norway_fredrik_andre_bjrkan,Fredrik André Bjørkan,Defender,norway_fredrik_andre_bjrkan.jpg
+Norway,norway,NOR,Group I,16,norway_marcus_holmgren_pedersen,Marcus Holmgren Pedersen,Defender,norway_marcus_holmgren_pedersen.jpg
+Norway,norway,NOR,Group I,17,norway_torbjrn_heggem,Torbjørn Heggem,Defender,norway_torbjrn_heggem.jpg
+Norway,norway,NOR,Group I,18,norway_kristian_thorstvedt,Kristian Thorstvedt,Midfielder,norway_kristian_thorstvedt.jpg
+Norway,norway,NOR,Group I,19,norway_thelo_aasgaard,Thelo Aasgaard,Midfielder,norway_thelo_aasgaard.jpg
+Norway,norway,NOR,Group I,20,norway_antonio_nusa,Antonio Nusa,Forward,norway_antonio_nusa.jpg
+Norway,norway,NOR,Group I,21,norway_andreas_schjelderup,Andreas Schjelderup,Midfielder,norway_andreas_schjelderup.jpg
+Norway,norway,NOR,Group I,22,norway_oscar_bobb,Oscar Bobb,Midfielder,norway_oscar_bobb.jpg
+Norway,norway,NOR,Group I,23,norway_jens_petter_hauge,Jens Petter Hauge,Midfielder,norway_jens_petter_hauge.jpg
+Norway,norway,NOR,Group I,24,norway_sondre_langas,Sondre Langås,Defender,norway_sondre_langas.jpg
+Norway,norway,NOR,Group I,25,norway_henrik_falchener,Henrik Falchener,Defender,norway_henrik_falchener.jpg
+Norway,norway,NOR,Group I,26,norway_julian_ryerson,Julian Ryerson,Forward,norway_julian_ryerson.jpg

@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Sweden,sweden,SWE,Group F,1,sweden_jacob_widell_zetterstrom,Jacob Widell Zetterström,Goalkeeper,sweden_jacob_widell_zetterstrom.jpg
+Sweden,sweden,SWE,Group F,2,sweden_gustaf_lagerbielke,Gustaf Lagerbielke,Defender,sweden_gustaf_lagerbielke.jpg
+Sweden,sweden,SWE,Group F,3,sweden_victor_lindelof,Victor Lindelöf,Defender,sweden_victor_lindelof.jpg
+Sweden,sweden,SWE,Group F,4,sweden_isak_hien,Isak Hien,Defender,sweden_isak_hien.jpg
+Sweden,sweden,SWE,Group F,5,sweden_gabriel_gudmundsson,Gabriel Gudmundsson,Defender,sweden_gabriel_gudmundsson.jpg
+Sweden,sweden,SWE,Group F,6,sweden_herman_johansson,Herman Johansson,Defender,sweden_herman_johansson.jpg
+Sweden,sweden,SWE,Group F,7,sweden_lucas_bergvall,Lucas Bergvall,Midfielder,sweden_lucas_bergvall.jpg
+Sweden,sweden,SWE,Group F,8,sweden_daniel_svensson,Daniel Svensson,Defender,sweden_daniel_svensson.jpg
+Sweden,sweden,SWE,Group F,9,sweden_alexander_isak,Alexander Isak,Forward,sweden_alexander_isak.jpg
+Sweden,sweden,SWE,Group F,10,sweden_benjamin_nygren,Benjamin Nygren,Midfielder,sweden_benjamin_nygren.jpg
+Sweden,sweden,SWE,Group F,11,sweden_anthony_elanga,Anthony Elanga,Forward,sweden_anthony_elanga.jpg
+Sweden,sweden,SWE,Group F,12,sweden_viktor_johansson,Viktor Johansson,Goalkeeper,sweden_viktor_johansson.jpg
+Sweden,sweden,SWE,Group F,13,sweden_ken_sema,Ken Sema,Midfielder,sweden_ken_sema.jpg
+Sweden,sweden,SWE,Group F,14,sweden_hjalmar_ekdal,Hjalmar Ekdal,Defender,sweden_hjalmar_ekdal.jpg
+Sweden,sweden,SWE,Group F,15,sweden_carl_starfelt,Carl Starfelt,Defender,sweden_carl_starfelt.jpg
+Sweden,sweden,SWE,Group F,16,sweden_jesper_karlstrom,Jesper Karlström,Midfielder,sweden_jesper_karlstrom.jpg
+Sweden,sweden,SWE,Group F,17,sweden_viktor_gyokeres,Viktor Gyökeres,Forward,sweden_viktor_gyokeres.jpg
+Sweden,sweden,SWE,Group F,18,sweden_yasin_ayari,Yasin Ayari,Midfielder,sweden_yasin_ayari.jpg
+Sweden,sweden,SWE,Group F,19,sweden_mattias_svanberg,Mattias Svanberg,Midfielder,sweden_mattias_svanberg.jpg
+Sweden,sweden,SWE,Group F,20,sweden_eric_smith,Eric Smith,Defender,sweden_eric_smith.jpg
+Sweden,sweden,SWE,Group F,21,sweden_alexander_bernhardsson,Alexander Bernhardsson,Defender,sweden_alexander_bernhardsson.jpg
+Sweden,sweden,SWE,Group F,22,sweden_besfort_zeneli,Besfort Zeneli,Midfielder,sweden_besfort_zeneli.jpg
+Sweden,sweden,SWE,Group F,23,sweden_kristoffer_nordfeldt,Kristoffer Nordfeldt,Goalkeeper,sweden_kristoffer_nordfeldt.jpg
+Sweden,sweden,SWE,Group F,24,sweden_elliot_stroud,Elliot Stroud,Defender,sweden_elliot_stroud.jpg
+Sweden,sweden,SWE,Group F,25,sweden_gustaf_nilsson,Gustaf Nilsson,Forward,sweden_gustaf_nilsson.jpg
+Sweden,sweden,SWE,Group F,26,sweden_taha_ali,Taha Ali,Forward,sweden_taha_ali.jpg

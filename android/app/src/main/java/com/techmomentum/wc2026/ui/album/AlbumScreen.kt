@@ -110,7 +110,9 @@ private fun AlbumCollectionContent(
                 onSelectMissing = viewModel::setMissingFilter,
             )
         }
-        if (!hasVisibleTeams) {
+        if (!album.isLoaded) {
+            // Data still loading — don't flash the empty-filter message.
+        } else if (!hasVisibleTeams) {
             item(key = "empty_filter") {
                 AlbumEmptyFilterState()
             }

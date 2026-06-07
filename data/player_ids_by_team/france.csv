@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+France,france,FRA,Group I,1,france_brice_samba,Brice Samba,Goalkeeper,france_brice_samba.jpg
+France,france,FRA,Group I,2,france_malo_gusto,Malo Gusto,Defender,france_malo_gusto.jpg
+France,france,FRA,Group I,3,france_lucas_digne,Lucas Digne,Defender,france_lucas_digne.jpg
+France,france,FRA,Group I,4,france_dayot_upamecano,Dayot Upamecano,Defender,france_dayot_upamecano.jpg
+France,france,FRA,Group I,5,france_jules_kounde,Jules Koundé,Defender,france_jules_kounde.jpg
+France,france,FRA,Group I,6,france_manu_kone,Manu Koné,Midfielder,france_manu_kone.jpg
+France,france,FRA,Group I,7,france_ousmane_dembele,Ousmane Dembélé,Forward,france_ousmane_dembele.jpg
+France,france,FRA,Group I,8,france_aurelien_tchouameni,Aurélien Tchouaméni,Midfielder,france_aurelien_tchouameni.jpg
+France,france,FRA,Group I,9,france_marcus_thuram,Marcus Thuram,Forward,france_marcus_thuram.jpg
+France,france,FRA,Group I,10,france_kylian_mbappe,Kylian Mbappé,Forward,france_kylian_mbappe.jpg
+France,france,FRA,Group I,11,france_michael_olise,Michael Olise,Forward,france_michael_olise.jpg
+France,france,FRA,Group I,12,france_bradley_barcola,Bradley Barcola,Forward,france_bradley_barcola.jpg
+France,france,FRA,Group I,13,france_n_golo_kante,N'Golo Kanté,Midfielder,france_n_golo_kante.jpg
+France,france,FRA,Group I,14,france_adrien_rabiot,Adrien Rabiot,Midfielder,france_adrien_rabiot.jpg
+France,france,FRA,Group I,15,france_ibrahima_konate,Ibrahima Konaté,Defender,france_ibrahima_konate.jpg
+France,france,FRA,Group I,16,france_mike_maignan,Mike Maignan,Goalkeeper,france_mike_maignan.jpg
+France,france,FRA,Group I,17,france_william_saliba,William Saliba,Defender,france_william_saliba.jpg
+France,france,FRA,Group I,18,france_warren_zaire_emery,Warren Zaïre-Emery,Midfielder,france_warren_zaire_emery.jpg
+France,france,FRA,Group I,19,france_theo_hernandez,Théo Hernandez,Defender,france_theo_hernandez.jpg
+France,france,FRA,Group I,20,france_desire_doue,Désiré Doué,Forward,france_desire_doue.jpg
+France,france,FRA,Group I,21,france_lucas_hernandez,Lucas Hernandez,Defender,france_lucas_hernandez.jpg
+France,france,FRA,Group I,22,france_jean_philippe_mateta,Jean-Philippe Mateta,Forward,france_jean_philippe_mateta.jpg
+France,france,FRA,Group I,23,france_robin_risser,Robin Risser,Goalkeeper,france_robin_risser.jpg
+France,france,FRA,Group I,24,france_rayan_cherki,Rayan Cherki,Midfielder,france_rayan_cherki.jpg
+France,france,FRA,Group I,25,france_maghnes_akliouche,Maghnes Akliouche,Midfielder,france_maghnes_akliouche.jpg
+France,france,FRA,Group I,26,france_maxence_lacroix,Maxence Lacroix,Defender,france_maxence_lacroix.jpg

@@ -1,0 +1,27 @@
+country,team_id,team_code,group,shirt_number,player_id,player_name,position,reference_filename
+Spain,spain,ESP,Group H,1,spain_david_raya,David Raya,Goalkeeper,spain_david_raya.jpg
+Spain,spain,ESP,Group H,2,spain_marc_pubill,Marc Pubill,Defender,spain_marc_pubill.jpg
+Spain,spain,ESP,Group H,3,spain_alex_grimaldo,Álex Grimaldo,Defender,spain_alex_grimaldo.jpg
+Spain,spain,ESP,Group H,4,spain_eric_garcia,Eric García,Defender,spain_eric_garcia.jpg
+Spain,spain,ESP,Group H,5,spain_marcos_llorente,Marcos Llorente,Defender,spain_marcos_llorente.jpg
+Spain,spain,ESP,Group H,6,spain_mikel_merino,Mikel Merino,Midfielder,spain_mikel_merino.jpg
+Spain,spain,ESP,Group H,7,spain_ferran_torres,Ferran Torres,Forward,spain_ferran_torres.jpg
+Spain,spain,ESP,Group H,8,spain_fabian_ruiz,Fabián Ruiz,Midfielder,spain_fabian_ruiz.jpg
+Spain,spain,ESP,Group H,9,spain_gavi,Gavi,Midfielder,spain_gavi.jpg
+Spain,spain,ESP,Group H,10,spain_dani_olmo,Dani Olmo,Forward,spain_dani_olmo.jpg
+Spain,spain,ESP,Group H,11,spain_yeremy_pino,Yéremy Pino,Forward,spain_yeremy_pino.jpg
+Spain,spain,ESP,Group H,12,spain_pedro_porro,Pedro Porro,Defender,spain_pedro_porro.jpg
+Spain,spain,ESP,Group H,13,spain_joan_garcia,Joan Garcia,Goalkeeper,spain_joan_garcia.jpg
+Spain,spain,ESP,Group H,14,spain_aymeric_laporte,Aymeric Laporte,Defender,spain_aymeric_laporte.jpg
+Spain,spain,ESP,Group H,15,spain_alex_baena,Álex Baena,Midfielder,spain_alex_baena.jpg
+Spain,spain,ESP,Group H,16,spain_rodri,Rodri,Midfielder,spain_rodri.jpg
+Spain,spain,ESP,Group H,17,spain_nico_williams,Nico Williams,Forward,spain_nico_williams.jpg
+Spain,spain,ESP,Group H,18,spain_martin_zubimendi,Martín Zubimendi,Midfielder,spain_martin_zubimendi.jpg
+Spain,spain,ESP,Group H,19,spain_lamine_yamal,Lamine Yamal,Forward,spain_lamine_yamal.jpg
+Spain,spain,ESP,Group H,20,spain_pedri,Pedri,Midfielder,spain_pedri.jpg
+Spain,spain,ESP,Group H,21,spain_mikel_oyarzabal,Mikel Oyarzabal,Forward,spain_mikel_oyarzabal.jpg
+Spain,spain,ESP,Group H,22,spain_pau_cubarsi,Pau Cubarsí,Defender,spain_pau_cubarsi.jpg
+Spain,spain,ESP,Group H,23,spain_unai_simon,Unai Simón,Goalkeeper,spain_unai_simon.jpg
+Spain,spain,ESP,Group H,24,spain_marc_cucurella,Marc Cucurella,Defender,spain_marc_cucurella.jpg
+Spain,spain,ESP,Group H,25,spain_victor_munoz,Víctor Muñoz,Forward,spain_victor_munoz.jpg
+Spain,spain,ESP,Group H,26,spain_borja_iglesias,Borja Iglesias,Forward,spain_borja_iglesias.jpg

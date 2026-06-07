@@ -1,13 +1,18 @@
 package com.techmomentum.wc2026.ui.pack
 
-import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -16,16 +21,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.techmomentum.wc2026.data.model.Rarity
+import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
+import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.ErrorState
-import com.techmomentum.wc2026.ui.components.RarityBadge
-import com.techmomentum.wc2026.ui.components.StickerCard
+import com.techmomentum.wc2026.ui.components.PixarCelebrationChip
+import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
 import com.techmomentum.wc2026.ui.components.WorldCupTopBar
+import com.techmomentum.wc2026.ui.components.rarityColor
+import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
+import com.techmomentum.wc2026.ui.theme.CardGold
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,48 +61,142 @@ fun PackOpeningScreen(
     }
 
     Scaffold(
+        containerColor = Color.Transparent,
         topBar = { WorldCupTopBar(title = "Pack Opening", showBack = true, onBack = onDone) },
     ) { padding ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+                .background(Brush.verticalGradient(AlbumPageStyle.backgroundGradient)),
         ) {
-            Text("✨ Reveal your stickers!", style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center)
-            when {
-                state.loading -> CircularProgressIndicator()
-                state.error != null -> ErrorState(state.error!!, onRetry = viewModel::openPack)
-                else -> {
-                    val visible = state.revealed.take(state.revealIndex + 1)
-                    visible.forEachIndexed { index, item ->
-                        val alpha by animateFloatAsState(if (index <= state.revealIndex) 1f else 0f, label = "reveal")
-                        Column(
-                            modifier = Modifier.fillMaxWidth().alpha(alpha),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                        ) {
-                            StickerCard(
-                                sticker = item.sticker,
-                                player = item.player,
-                                owned = true,
-                                duplicateCount = 1,
-                                onClick = {},
-                                modifier = Modifier.fillMaxWidth(0.65f),
-                            )
-                            RarityBadge(rarity = item.sticker.rarity)
-                        }
+            AlbumOverviewBackground()
+
+            AlbumPageFrame(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 10.dp, vertical = 8.dp),
+            ) {
+                when {
+                    state.loading -> LoadingContent()
+                    state.error != null -> Box(
+                        modifier = Modifier.fillMaxSize().padding(16.dp),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        ErrorState(state.error!!, onRetry = viewModel::openPack)
                     }
-                    if (!state.finished && state.revealIndex < state.revealed.lastIndex) {
-                        Button(onClick = viewModel::revealNext, modifier = Modifier.fillMaxWidth()) {
-                            Text("Reveal Next")
-                        }
-                    } else if (state.finished || (state.revealed.isNotEmpty() && state.revealIndex >= state.revealed.lastIndex)) {
-                        Button(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Add to Album") }
-                    }
+                    state.revealed.isNotEmpty() -> RevealContent(
+                        state = state,
+                        onRevealNext = viewModel::revealNext,
+                        onDone = onDone,
+                    )
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun LoadingContent() {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        AnimatedPackLoader(modifier = Modifier.fillMaxWidth())
+        Text(
+            text = "Opening your pack…",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            color = AlbumPageStyle.headerAccent,
+            modifier = Modifier.padding(top = 24.dp),
+        )
+    }
+}
+
+@Composable
+private fun RevealContent(
+    state: PackOpeningUiState,
+    onRevealNext: () -> Unit,
+    onDone: () -> Unit,
+) {
+    val revealIndex = state.revealIndex.coerceIn(0, state.revealed.lastIndex)
+    val current = state.revealed[revealIndex]
+    val rarity = current.sticker.rarity
+    val isRarePull = rarity.ordinal >= Rarity.RARE.ordinal
+    val isLast = revealIndex >= state.revealed.lastIndex
+
+    // Flip + bouncy entrance, re-triggered each time we move to a new card.
+    var faceUp by remember(revealIndex) { mutableStateOf(false) }
+    val entrance = remember(revealIndex) { Animatable(0.86f) }
+    LaunchedEffect(revealIndex) {
+        entrance.animateTo(1f, animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessLow))
+    }
+    LaunchedEffect(revealIndex) {
+        delay(150)
+        faceUp = true
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(horizontal = 16.dp, vertical = 14.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(14.dp),
+    ) {
+        Text(
+            text = "✨ Reveal your stickers!",
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Black,
+            color = AlbumPageStyle.headerAccent,
+            textAlign = TextAlign.Center,
+        )
+
+        Text(
+            text = "${revealIndex + 1} / ${state.revealed.size}",
+            modifier = Modifier
+                .clip(RoundedCornerShape(50))
+                .background(AlbumPageStyle.headerAccent.copy(alpha = 0.12f))
+                .padding(horizontal = 14.dp, vertical = 4.dp),
+            style = MaterialTheme.typography.labelMedium,
+            fontWeight = FontWeight.Bold,
+            color = AlbumPageStyle.headerAccent,
+        )
+
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.Center,
+        ) {
+            RarityGlow(
+                color = if (isRarePull) rarityColor(rarity) else CardGold,
+                intense = isRarePull,
+            )
+            PackRevealCard(
+                item = current,
+                faceUp = faceUp,
+                modifier = Modifier
+                    .fillMaxWidth(0.62f)
+                    .graphicsLayer {
+                        scaleX = entrance.value
+                        scaleY = entrance.value
+                    },
+            )
+        }
+
+        if (faceUp && isRarePull) {
+            val label = rarity.name.lowercase().replaceFirstChar { it.uppercase() }
+            PixarCelebrationChip(message = "$label pull!")
+        }
+
+        if (revealIndex > 0) {
+            RevealedStrip(items = state.revealed.take(revealIndex))
+        }
+
+        if (isLast) {
+            PixarPrimaryButton(text = "Add to Album", onClick = onDone)
+        } else {
+            PixarPrimaryButton(text = "Reveal Next", onClick = onRevealNext)
         }
     }
 }

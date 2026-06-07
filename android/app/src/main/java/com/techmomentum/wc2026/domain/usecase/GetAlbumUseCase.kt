@@ -32,6 +32,7 @@ data class AlbumState(
     val stickers: List<Sticker> = emptyList(),
     val players: List<Player> = emptyList(),
     val owned: Map<String, UserSticker> = emptyMap(),
+    val isLoaded: Boolean = false,
 )
 
 class GetAlbumUseCase @Inject constructor(
@@ -68,6 +69,7 @@ class GetAlbumUseCase @Inject constructor(
                         stickers = stickers,
                         players = players,
                         owned = owned,
+                        isLoaded = true,
                     ),
                 )
             }
