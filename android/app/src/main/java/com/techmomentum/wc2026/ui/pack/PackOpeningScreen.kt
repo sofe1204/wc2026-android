@@ -72,11 +72,7 @@ fun PackOpeningScreen(
         ) {
             AlbumOverviewBackground()
 
-            AlbumPageFrame(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 10.dp, vertical = 8.dp),
-            ) {
+            AlbumPageFrame(modifier = Modifier.fillMaxSize()) {
                 when {
                     state.loading -> LoadingContent()
                     state.error != null -> Box(

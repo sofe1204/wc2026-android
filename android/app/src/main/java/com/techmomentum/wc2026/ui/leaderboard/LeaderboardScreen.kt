@@ -50,11 +50,7 @@ fun LeaderboardScreen(
                 .background(Brush.verticalGradient(AlbumPageStyle.backgroundGradient)),
         ) {
             AlbumOverviewBackground()
-            AlbumPageFrame(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 10.dp, vertical = 8.dp),
-            ) {
+            AlbumPageFrame(modifier = Modifier.fillMaxSize()) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()

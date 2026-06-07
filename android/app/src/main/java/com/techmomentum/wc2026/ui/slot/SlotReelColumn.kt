@@ -14,6 +14,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -90,19 +91,20 @@ fun SlotReelColumn(
 
     BoxWithConstraints(
         modifier = modifier
+            .fillMaxHeight()
             .clip(columnShape)
             .background(
                 Brush.verticalGradient(
                     listOf(Color(0xFF1A2530), Color(0xFF0F1720)),
                 ),
             )
-            .border(2.5.dp, frameBrush, columnShape)
-            .padding(3.dp)
+            .border(2.dp, frameBrush, columnShape)
+            .padding(2.dp)
             .clip(RoundedCornerShape(11.dp))
             .background(Color(0xFF0A1018))
             .border(1.dp, Color.Black.copy(alpha = 0.55f), RoundedCornerShape(11.dp)),
     ) {
-        val cellHeight: Dp = maxWidth
+        val cellHeight = maxHeight / VISIBLE_SLOTS
         val cellHeightPx = with(LocalDensity.current) { cellHeight.toPx() }
 
         ColumnReelEngine(
@@ -199,7 +201,7 @@ private fun ColumnReelEngine(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(cellHeight * VISIBLE_SLOTS)
+            .fillMaxHeight()
             .clip(RoundedCornerShape(10.dp)),
     ) {
         when {
@@ -218,7 +220,6 @@ private fun ColumnReelEngine(
                 SettledColumnView(
                     symbols = displaySymbols,
                     columnIndex = columnIndex,
-                    cellHeight = cellHeight,
                     winningRows = winningRows,
                 )
             }
@@ -235,7 +236,6 @@ private fun ColumnReelEngine(
                 SettledColumnView(
                     symbols = displaySymbols,
                     columnIndex = columnIndex,
-                    cellHeight = cellHeight,
                     winningRows = winningRows,
                 )
             }
@@ -336,7 +336,6 @@ private fun ScrollingSymbolsColumn(
 private fun SettledColumnView(
     symbols: List<SlotSymbol>,
     columnIndex: Int,
-    cellHeight: Dp,
     winningRows: Set<Int>,
 ) {
     val transition = rememberInfiniteTransition(label = "winPulse")
@@ -351,7 +350,7 @@ private fun SettledColumnView(
     )
     val hasWin = winningRows.isNotEmpty()
 
-    Column {
+    Column(modifier = Modifier.fillMaxHeight()) {
         repeat(VISIBLE_SLOTS) { index ->
             val symbol = symbols.getOrElse(index) { symbols.first() }
             val isWinning = index in winningRows
@@ -361,7 +360,7 @@ private fun SettledColumnView(
                     highlight = isWinning,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(cellHeight)
+                        .weight(1f)
                         .graphicsLayer {
                             if (isWinning) {
                                 scaleX = pulse
@@ -395,7 +394,7 @@ private fun SlotSymbolFace(
 
     Box(
         modifier = modifier
-            .padding(horizontal = 4.dp, vertical = 3.dp)
+            .padding(horizontal = 2.dp, vertical = 2.dp)
             .clip(faceShape)
             .background(
                 Brush.verticalGradient(
