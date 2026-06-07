@@ -114,23 +114,33 @@ private fun SlotReelCell(symbol: SlotSymbol?, modifier: Modifier = Modifier) {
             .background(MaterialTheme.colorScheme.primaryContainer),
         contentAlignment = Alignment.Center,
     ) {
-        if (symbol != null && symbol.imageUrl.isNotBlank()) {
-            AsyncImage(
-                model = symbol.imageUrl,
-                contentDescription = symbol.label,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(4.dp)
-                    .clip(RoundedCornerShape(8.dp)),
-                contentScale = ContentScale.Crop,
-            )
-        } else {
-            Text(
-                text = symbol?.label?.take(8) ?: "?",
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.labelSmall,
-                maxLines = 2,
-            )
+        when {
+            symbol != null && symbol.imageUrl.isNotBlank() -> {
+                AsyncImage(
+                    model = symbol.imageUrl,
+                    contentDescription = symbol.label,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(4.dp)
+                        .clip(RoundedCornerShape(8.dp)),
+                    contentScale = ContentScale.Crop,
+                )
+            }
+            symbol != null -> {
+                Text(
+                    text = symbol.label.take(10),
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.labelSmall,
+                    maxLines = 2,
+                )
+            }
+            else -> {
+                Text(
+                    text = "?",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.labelSmall,
+                )
+            }
         }
     }
 }
