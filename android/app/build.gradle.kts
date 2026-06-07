@@ -20,6 +20,13 @@ val localProperties = Properties().apply {
 }
 val useFirebaseEmulators = localProperties.getProperty("firebase.emulators", "false") == "true"
 
+// Google official test AdMob IDs by default — override in local.properties for production.
+val admobAppId = localProperties.getProperty("admob.app.id")
+    ?: "ca-app-pub-3940256099942544~3347511713"
+val admobRewardedUnitId = localProperties.getProperty("admob.rewarded.unit.id")
+    ?: "ca-app-pub-3940256099942544/5224354917"
+val useTestAdMob = admobAppId.contains("3940256099942544")
+
 @Suppress("UNCHECKED_CAST")
 val projectConfig = JsonSlurper().parseText(
     rootProject.projectDir.parentFile.resolve("project.config.json").readText(),
@@ -63,7 +70,9 @@ android {
         versionCode = 1
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "REWARDED_AD_UNIT_ID", "\"ca-app-pub-3940256099942544/5224354917\"")
+        manifestPlaceholders["admobAppId"] = admobAppId
+        buildConfigField("String", "REWARDED_AD_UNIT_ID", quote(admobRewardedUnitId))
+        buildConfigField("boolean", "USE_TEST_ADMOB", useTestAdMob.toString())
         buildConfigField("String", "FIREBASE_PROJECT_ID", quote(firebase["projectId"] as String))
         buildConfigField("String", "ANDROID_PACKAGE", quote(firebase["androidPackage"] as String))
         buildConfigField("String", "FUNCTIONS_REGION", quote(firebase["functionsRegion"] as String))

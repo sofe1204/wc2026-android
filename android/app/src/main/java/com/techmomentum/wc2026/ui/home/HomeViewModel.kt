@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.data.repository.RewardsRepository
 import com.techmomentum.wc2026.domain.usecase.HomeState
 import com.techmomentum.wc2026.domain.usecase.ObserveHomeStateUseCase
-import com.techmomentum.wc2026.utils.DateUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -27,14 +26,13 @@ class HomeViewModel @Inject constructor(
     observeHomeState: ObserveHomeStateUseCase,
     private val rewardsRepository: RewardsRepository,
 ) : ViewModel() {
-    val homeState: StateFlow<HomeState> = observeHomeState(DateUtils.todayUtc())
+    val homeState: StateFlow<HomeState> = observeHomeState()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), HomeState())
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
-    fun claimDailyPacks() = launchReward { rewardsRepository.claimDailyPacks() }
-    fun claimRewardedAdPack() = launchReward { rewardsRepository.claimRewardedAdPack() }
+    fun claimRewardedAdStickers() = launchReward { rewardsRepository.claimRewardedAdStickers() }
 
     fun clearMessage() = _uiState.update { it.copy(message = null) }
 

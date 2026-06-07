@@ -4,7 +4,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.FirebaseFunctionsException
 import com.techmomentum.wc2026.data.model.CallableResult
+import com.techmomentum.wc2026.data.model.LeaderboardEntry
+import com.techmomentum.wc2026.data.model.LeaderboardResult
 import com.techmomentum.wc2026.data.model.PackOpenResult
+import com.techmomentum.wc2026.data.model.ProfileUpdateRequest
 import com.techmomentum.wc2026.data.model.SlotResult
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
@@ -29,9 +32,38 @@ class CloudFunctionsClient @Inject constructor(
         )
     }
 
-    suspend fun claimDailyPacks(): CallableResult = call("claimDailyPacks")
+    suspend fun claimRewardedAdStickers(): CallableResult = call("claimRewardedAdStickers")
 
-    suspend fun claimRewardedAdPack(): CallableResult = call("claimRewardedAdPack")
+    suspend fun updateUserProfile(request: ProfileUpdateRequest): CallableResult {
+        val data = invoke(
+            "updateUserProfile",
+            mapOf(
+                "username" to request.username,
+                "firstName" to request.firstName,
+                "lastName" to request.lastName,
+                "countryCode" to request.countryCode,
+                "countryName" to request.countryName,
+            ),
+        )
+        return CallableResult(
+            success = data["success"] as? Boolean ?: false,
+            message = data["message"] as? String ?: "",
+        )
+    }
+
+    suspend fun getLeaderboard(): LeaderboardResult {
+        val data = invoke("getLeaderboard")
+        return LeaderboardResult(
+            global = parseLeaderboardRows(data["global"]),
+            country = parseLeaderboardRows(data["country"]),
+            myGlobalRank = (data["myGlobalRank"] as? Number)?.toInt(),
+            myCountryRank = (data["myCountryRank"] as? Number)?.toInt(),
+            myUsername = data["myUsername"] as? String ?: "",
+            myAlbumUniqueCount = (data["myAlbumUniqueCount"] as? Number)?.toInt() ?: 0,
+            myCountryCode = data["myCountryCode"] as? String ?: "",
+            myCountryName = data["myCountryName"] as? String ?: "",
+        )
+    }
 
     suspend fun spinSlotMachine(): SlotResult {
         val data = invoke("spinSlotMachine")
@@ -49,9 +81,27 @@ class CloudFunctionsClient @Inject constructor(
 
     suspend fun claimRewardedSlotSpins(): CallableResult = call("claimRewardedSlotSpins")
 
+    suspend fun redeemSwapDeck(): CallableResult = call("redeemSwapDeck")
+
     suspend fun seedTeams(): CallableResult = call("seedTeams")
     suspend fun seedPlayers(): CallableResult = call("seedPlayers")
     suspend fun seedStickers(): CallableResult = call("seedStickers")
+
+    @Suppress("UNCHECKED_CAST")
+    private fun parseLeaderboardRows(raw: Any?): List<LeaderboardEntry> {
+        val rows = raw as? List<Map<String, Any?>> ?: return emptyList()
+        return rows.map { row ->
+            LeaderboardEntry(
+                rank = (row["rank"] as? Number)?.toInt() ?: 0,
+                username = row["username"] as? String ?: "",
+                countryCode = row["countryCode"] as? String ?: "",
+                countryName = row["countryName"] as? String ?: "",
+                albumUniqueCount = (row["albumUniqueCount"] as? Number)?.toInt() ?: 0,
+                totalStickerCount = (row["totalStickerCount"] as? Number)?.toInt() ?: 0,
+                isMe = row["isMe"] as? Boolean ?: false,
+            )
+        }
+    }
 
     private suspend fun call(name: String): CallableResult {
         val data = invoke(name)
@@ -59,15 +109,16 @@ class CloudFunctionsClient @Inject constructor(
             success = data["success"] as? Boolean ?: true,
             message = data["message"] as? String ?: "",
             unopenedPacks = (data["unopenedPacks"] as? Number)?.toInt(),
+            stickerIds = (data["stickerIds"] as? List<*>)?.mapNotNull { it as? String } ?: emptyList(),
         )
     }
 
-    private suspend fun invoke(name: String): Map<String, Any?> {
+    private suspend fun invoke(name: String, payload: Map<String, Any?> = emptyMap()): Map<String, Any?> {
         requireSignedIn()
         connectionRepository.refreshConfigState()
         return try {
             @Suppress("UNCHECKED_CAST")
-            functions.getHttpsCallable(name).call().await().getData() as? Map<String, Any?> ?: emptyMap()
+            functions.getHttpsCallable(name).call(payload).await().getData() as? Map<String, Any?> ?: emptyMap()
         } catch (e: FirebaseFunctionsException) {
             throw mapFunctionsError(e)
         }
@@ -91,6 +142,8 @@ class CloudFunctionsClient @Inject constructor(
                     e,
                 )
             FirebaseFunctionsException.Code.FAILED_PRECONDITION ->
+                IllegalStateException(detail)
+            FirebaseFunctionsException.Code.ALREADY_EXISTS ->
                 IllegalStateException(detail)
             FirebaseFunctionsException.Code.UNAVAILABLE ->
                 IllegalStateException("Firebase unavailable. Check network or emulators: $detail")

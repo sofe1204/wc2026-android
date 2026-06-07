@@ -35,8 +35,11 @@ fun ProfileScreen(
 ) {
     val ui by viewModel.uiState.collectAsState()
     val profile by viewModel.profile.collectAsState()
-    val displayName = viewModel.displayName.ifBlank { "Collector" }
     val subtitle = if (isGuest) "Guest account" else "Collector account"
+    val headerName = profile?.username?.takeIf { it.isNotBlank() }?.let { "@$it" }
+        ?: profile?.let { listOf(it.firstName, it.lastName).filter { n -> n.isNotBlank() }.joinToString(" ") }
+            ?.takeIf { it.isNotBlank() }
+        ?: viewModel.displayName.ifBlank { "Collector" }
 
     Scaffold(containerColor = Color.Transparent) { padding ->
         Box(
@@ -61,12 +64,12 @@ fun ProfileScreen(
                 ) {
                     ProfileOverviewHeader(
                         subtitle = subtitle,
-                        displayName = displayName,
+                        displayName = headerName,
                         onSettings = onSettings,
                     )
 
                     ProfileIdentityCard(
-                        displayName = displayName,
+                        profile = profile,
                         email = viewModel.email,
                         isGuest = isGuest,
                     )

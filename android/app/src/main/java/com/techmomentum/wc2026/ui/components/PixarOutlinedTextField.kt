@@ -21,6 +21,9 @@ fun PixarOutlinedTextField(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     singleLine: Boolean = true,
+    readOnly: Boolean = false,
+    enabled: Boolean = true,
+    trailingIcon: @Composable (() -> Unit)? = null,
 ) {
     val shape = RoundedCornerShape(14.dp)
     OutlinedTextField(
@@ -29,8 +32,11 @@ fun PixarOutlinedTextField(
         label = { Text(label) },
         modifier = modifier,
         singleLine = singleLine,
+        readOnly = readOnly,
+        enabled = enabled,
         keyboardOptions = keyboardOptions,
         visualTransformation = visualTransformation,
+        trailingIcon = trailingIcon,
         shape = shape,
         colors = OutlinedTextFieldDefaults.colors(
             focusedContainerColor = AlbumPageStyle.filterUnselectedFill,

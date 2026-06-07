@@ -50,8 +50,8 @@ class FirebaseSessionCoordinator @Inject constructor(
         catalogRepository.clearCache()
         connectionRepository.refreshConfigState()
         when (mode) {
-            is SessionMode.Cloud -> rewardsRepository.ensureUserProfile()
-            SessionMode.Guest, SessionMode.None -> Unit
+            is SessionMode.Cloud, SessionMode.Guest -> rewardsRepository.ensureUserProfile()
+            SessionMode.None -> Unit
         }
     }
 

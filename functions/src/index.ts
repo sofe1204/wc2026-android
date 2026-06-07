@@ -10,16 +10,27 @@ import {
   DAILY_FREE_PACKS,
   DAILY_SLOT_PACK_REWARD_CAP,
   REWARDED_SLOT_SPINS,
+  REWARDED_SLOT_SPIN_COOLDOWN_MINUTES,
   STICKERS_PER_PACK,
 } from "./constants";
 import {
+  applyLoginPackGrant,
   checkSlotWin,
   ensureUserDoc,
   getUserRef,
+  grantRewardedAdStickers,
   openPackForUser,
   pickRandomSlotSymbolIds,
   resetDailySlotIfNeeded,
+  swapDuplicatesForPack,
 } from "./helpers";
+import {
+  fetchLeaderboardTop,
+  fetchUserRank,
+  reserveUsername,
+  syncLeaderboardInTransaction,
+  validateProfileInput,
+} from "./profileHelpers";
 import {
   loadPlayersSeed,
   loadStickersSeed,
@@ -36,13 +47,23 @@ export const ensureUserProfile = onCall(async (request) => {
   const uid = requireAuth(request);
   const email = request.auth?.token?.email || "";
   const name = request.auth?.token?.name || email;
+  const userRef = await getUserRef(uid);
+  const existedBefore = (await userRef.get()).exists;
   await ensureUserDoc(uid, email, name);
-  const snap = await (await getUserRef(uid)).get();
-  return {
-    success: true,
-    unopenedPacks: snap.data()?.unopenedPacks ?? 0,
-    message: "Profile ready.",
-  };
+
+  return db.runTransaction(async (tx) => {
+    const snap = await tx.get(userRef);
+    if (!snap.exists) throw new HttpsError("not-found", "User not found.");
+    const data = snap.data()!;
+    const hadLoginTimestamp = data.lastLoginPackGrantedAt != null;
+    const result = applyLoginPackGrant(tx, userRef, data, existedBefore && !hadLoginTimestamp);
+    return {
+      success: true,
+      unopenedPacks: result.packs,
+      message: result.message,
+      loginPackGranted: result.granted,
+    };
+  });
 });
 
 export const openStickerPack = onCall(async (request) => {
@@ -90,33 +111,18 @@ export const claimDailyPacks = onCall(async (request) => {
 });
 
 // TODO: Implement AdMob Server-Side Verification before production ad rewards.
-export const claimRewardedAdPack = onCall(async (request) => {
+export const claimRewardedAdStickers = onCall(async (request) => {
   const uid = requireAuth(request);
-  const today = todayUtc();
-  const userRef = await getUserRef(uid);
-
-  return db.runTransaction(async (tx) => {
-    const snap = await tx.get(userRef);
-    if (!snap.exists) throw new HttpsError("not-found", "User not found.");
-    const data = snap.data()!;
-    if (data.rewardedAdPackClaimDate === today) {
-      return {
-        success: false,
-        message: "Rewarded ad pack already claimed today.",
-        unopenedPacks: data.unopenedPacks,
-      };
-    }
-    tx.update(userRef, {
-      unopenedPacks: (data.unopenedPacks || 0) + 1,
-      rewardedAdPackClaimDate: today,
-    });
-    return {
-      success: true,
-      message: "Added 1 pack from rewarded ad.",
-      unopenedPacks: (data.unopenedPacks || 0) + 1,
-    };
-  });
+  try {
+    return await grantRewardedAdStickers(uid);
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : "Failed to claim ad reward.";
+    throw new HttpsError("failed-precondition", msg);
+  }
 });
+
+/** @deprecated Use claimRewardedAdStickers — kept for older app builds. */
+export const claimRewardedAdPack = claimRewardedAdStickers;
 
 export const spinSlotMachine = onCall(async (request) => {
   const uid = requireAuth(request);
@@ -183,16 +189,149 @@ export const spinSlotMachine = onCall(async (request) => {
   });
 });
 
+export const redeemSwapDeck = onCall(async (request) => {
+  const uid = requireAuth(request);
+  try {
+    return await swapDuplicatesForPack(uid);
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : "Swap failed.";
+    throw new HttpsError("failed-precondition", msg);
+  }
+});
+
+export const updateUserProfile = onCall(async (request) => {
+  const uid = requireAuth(request);
+  const data = request.data as Record<string, unknown>;
+  const validated = validateProfileInput({
+    username: String(data.username ?? ""),
+    firstName: String(data.firstName ?? ""),
+    lastName: String(data.lastName ?? ""),
+    countryCode: String(data.countryCode ?? ""),
+    countryName: String(data.countryName ?? ""),
+  });
+
+  const userRef = await getUserRef(uid);
+  const emailVerified = request.auth?.token?.email_verified === true;
+  const provider = String(
+    (request.auth?.token as { firebase?: { sign_in_provider?: string } })?.firebase
+      ?.sign_in_provider ?? ""
+  );
+  if (provider === "password" && !emailVerified) {
+    throw new HttpsError(
+      "failed-precondition",
+      "Verify your email before completing your profile."
+    );
+  }
+
+  return db.runTransaction(async (tx) => {
+    const snap = await tx.get(userRef);
+    if (!snap.exists) throw new HttpsError("not-found", "User not found.");
+    const existing = snap.data()!;
+    await reserveUsername(tx, uid, validated.username, existing.username as string | undefined);
+
+    const displayName = `${validated.firstName} ${validated.lastName}`;
+    const updatedData = {
+      ...existing,
+      username: validated.username,
+      firstName: validated.firstName,
+      lastName: validated.lastName,
+      displayName,
+      countryCode: validated.countryCode,
+      countryName: validated.countryName,
+      profileComplete: true,
+      emailVerified,
+      leaderboardOptIn: true,
+    };
+
+    tx.update(userRef, {
+      username: validated.username,
+      firstName: validated.firstName,
+      lastName: validated.lastName,
+      displayName,
+      countryCode: validated.countryCode,
+      countryName: validated.countryName,
+      profileComplete: true,
+      emailVerified,
+      leaderboardOptIn: true,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    syncLeaderboardInTransaction(tx, uid, updatedData);
+
+    return {
+      success: true,
+      message: "Profile saved.",
+      profileComplete: true,
+    };
+  });
+});
+
+export const getLeaderboard = onCall(async (request) => {
+  const uid = requireAuth(request);
+  const userRef = await getUserRef(uid);
+  const userSnap = await userRef.get();
+  if (!userSnap.exists) throw new HttpsError("not-found", "User not found.");
+  const userData = userSnap.data()!;
+  const myCount = Number(userData.albumUniqueCount || 0);
+  const myCountry = String(userData.countryCode || "");
+  const myUsername = String(userData.username || "");
+
+  const globalTop = await fetchLeaderboardTop(null, 50);
+  const countryTop = myCountry ? await fetchLeaderboardTop(myCountry, 50) : [];
+
+  const profileComplete = userData.profileComplete === true;
+  const myGlobalRank = profileComplete ? await fetchUserRank(myCount, null) : null;
+  const myCountryRank =
+    profileComplete && myCountry ? await fetchUserRank(myCount, myCountry) : null;
+
+  const mapRows = (
+    rows: Awaited<ReturnType<typeof fetchLeaderboardTop>>
+  ) =>
+    rows.map((row, index) => ({
+      rank: index + 1,
+      username: row.username,
+      countryCode: row.countryCode,
+      countryName: row.countryName,
+      albumUniqueCount: row.albumUniqueCount,
+      totalStickerCount: row.totalStickerCount,
+      isMe: row.username === myUsername,
+    }));
+
+  return {
+    success: true,
+    global: mapRows(globalTop),
+    country: mapRows(countryTop),
+    myGlobalRank,
+    myCountryRank,
+    myUsername,
+    myAlbumUniqueCount: myCount,
+    myCountryCode: myCountry,
+    myCountryName: String(userData.countryName || ""),
+  };
+});
+
 export const claimRewardedSlotSpins = onCall(async (request) => {
   const uid = requireAuth(request);
   const userRef = await getUserRef(uid);
+  const cooldownMs = REWARDED_SLOT_SPIN_COOLDOWN_MINUTES * 60 * 1000;
 
   return db.runTransaction(async (tx) => {
     const snap = await tx.get(userRef);
     if (!snap.exists) throw new HttpsError("not-found", "User not found.");
     const data = snap.data()!;
+    const last = data.lastRewardedSlotSpinAt as admin.firestore.Timestamp | undefined;
+    if (last && Date.now() - last.toMillis() < cooldownMs) {
+      const waitMin = Math.ceil((cooldownMs - (Date.now() - last.toMillis())) / 60000);
+      return {
+        success: false,
+        message: `Wait ${waitMin} min for next spin ad reward.`,
+        spinsRemaining: data.slotSpinsRemaining || 0,
+      };
+    }
     const spins = (data.slotSpinsRemaining || 0) + REWARDED_SLOT_SPINS;
-    tx.update(userRef, { slotSpinsRemaining: spins });
+    tx.update(userRef, {
+      slotSpinsRemaining: spins,
+      lastRewardedSlotSpinAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
     return {
       success: true,
       message: `Added ${REWARDED_SLOT_SPINS} slot spins.`,

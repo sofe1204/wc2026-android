@@ -5,11 +5,12 @@ import com.techmomentum.wc2026.data.model.PackOpenResult
 import com.techmomentum.wc2026.data.model.Rarity
 import com.techmomentum.wc2026.data.model.SlotResult
 import com.techmomentum.wc2026.data.model.Sticker
-import com.techmomentum.wc2026.data.model.UserProfile
 import com.techmomentum.wc2026.data.repository.CatalogRepository
 import com.techmomentum.wc2026.data.session.AppSession
 import com.techmomentum.wc2026.utils.DateUtils
 import com.techmomentum.wc2026.utils.GameConstants
+import com.techmomentum.wc2026.utils.RewardEligibility
+import com.techmomentum.wc2026.utils.SwapDeckUtils
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.random.Random
@@ -23,8 +24,25 @@ class DemoRewardsEngine @Inject constructor(
     private var slotSymbolIdsCache: List<String>? = null
 
     suspend fun ensureUserProfile(): CallableResult {
-        appSession.enterGuestMode()
-        return CallableResult(success = true, message = "Guest profile ready.")
+        val now = System.currentTimeMillis()
+        var message = "Guest profile ready."
+        appSession.updateGuestProfile { profile ->
+            if (RewardEligibility.isLoginPackEligible(profile.lastLoginPackGrantedAtEpochMs, now)) {
+                message = "Welcome back! +${GameConstants.LOGIN_REWARD_PACKS} pack " +
+                    "(${GameConstants.STICKERS_PER_PACK} stickers each)."
+                profile.copy(
+                    unopenedPacks = profile.unopenedPacks + GameConstants.LOGIN_REWARD_PACKS,
+                    lastLoginPackGrantedAtEpochMs = now,
+                )
+            } else {
+                profile
+            }
+        }
+        return CallableResult(
+            success = true,
+            message = message,
+            unopenedPacks = appSession.guestProfile.value.unopenedPacks,
+        )
     }
 
     suspend fun openStickerPack(): PackOpenResult {
@@ -48,40 +66,32 @@ class DemoRewardsEngine @Inject constructor(
         )
     }
 
-    suspend fun claimDailyPacks(): CallableResult {
-        val today = DateUtils.todayUtc()
+    suspend fun claimRewardedAdStickers(): CallableResult {
         val profile = appSession.guestProfile.value
-        if (profile.lastDailyPackClaimDate == today) {
-            return CallableResult(success = false, message = "Daily packs already claimed today.")
-        }
-        appSession.updateGuestProfile {
-            it.copy(
-                unopenedPacks = it.unopenedPacks + GameConstants.DAILY_FREE_PACKS,
-                lastDailyPackClaimDate = today,
+        val now = System.currentTimeMillis()
+        if (!RewardEligibility.isAdStickerAvailable(profile.lastRewardedAdStickerAtEpochMs, now)) {
+            val waitMin = RewardEligibility.adStickerCooldownMinutesRemaining(
+                profile.lastRewardedAdStickerAtEpochMs,
+                now,
             )
+            return CallableResult(success = false, message = "Wait $waitMin min for next ad reward.")
+        }
+        val stickers = loadStickers()
+        val picked = (1..GameConstants.REWARDED_AD_STICKERS).mapNotNull {
+            pickByRarity(stickers)?.stickerId
+        }
+        if (picked.isEmpty()) {
+            return CallableResult(success = false, message = "No stickers available.")
+        }
+        val meta = stickers.associate { it.stickerId to (it.playerId to it.teamId) }
+        appSession.addGuestStickers(picked, meta)
+        appSession.updateGuestProfile {
+            it.copy(lastRewardedAdStickerAtEpochMs = now)
         }
         return CallableResult(
             success = true,
-            message = "Added ${GameConstants.DAILY_FREE_PACKS} daily packs (demo).",
-            unopenedPacks = appSession.guestProfile.value.unopenedPacks,
-        )
-    }
-
-    suspend fun claimRewardedAdPack(): CallableResult {
-        val today = DateUtils.todayUtc()
-        val profile = appSession.guestProfile.value
-        if (profile.rewardedAdPackClaimDate == today) {
-            return CallableResult(success = false, message = "Rewarded ad pack already claimed today.")
-        }
-        appSession.updateGuestProfile {
-            it.copy(
-                unopenedPacks = it.unopenedPacks + 1,
-                rewardedAdPackClaimDate = today,
-            )
-        }
-        return CallableResult(
-            success = true,
-            message = "Added 1 pack (demo ad reward).",
+            message = "You earned ${picked.size} stickers!",
+            stickerIds = picked,
             unopenedPacks = appSession.guestProfile.value.unopenedPacks,
         )
     }
@@ -126,9 +136,44 @@ class DemoRewardsEngine @Inject constructor(
         )
     }
 
-    fun claimRewardedSlotSpins(): CallableResult {
+    suspend fun redeemSwapDeck(): CallableResult {
+        val stickers = appSession.guestStickers.value
+        val total = SwapDeckUtils.totalSwapDuplicates(stickers)
+        if (total < GameConstants.SWAP_DUPLICATES_FOR_PACK) {
+            return CallableResult(
+                success = false,
+                message = "Need ${GameConstants.SWAP_DUPLICATES_FOR_PACK} duplicates " +
+                    "in swap deck ($total/${GameConstants.SWAP_DUPLICATES_FOR_PACK}).",
+            )
+        }
+        if (!appSession.consumeGuestDuplicates(GameConstants.SWAP_DUPLICATES_FOR_PACK)) {
+            return CallableResult(success = false, message = "Could not consume duplicates.")
+        }
         appSession.updateGuestProfile {
-            it.copy(slotSpinsRemaining = it.slotSpinsRemaining + GameConstants.REWARDED_SLOT_SPINS)
+            it.copy(unopenedPacks = it.unopenedPacks + 1)
+        }
+        return CallableResult(
+            success = true,
+            message = "Swapped ${GameConstants.SWAP_DUPLICATES_FOR_PACK} duplicates for 1 sticker pack!",
+            unopenedPacks = appSession.guestProfile.value.unopenedPacks,
+        )
+    }
+
+    fun claimRewardedSlotSpins(): CallableResult {
+        val profile = appSession.guestProfile.value
+        val now = System.currentTimeMillis()
+        if (!RewardEligibility.isSlotSpinAdAvailable(profile.lastRewardedSlotSpinAtEpochMs, now)) {
+            val waitMin = RewardEligibility.slotSpinAdCooldownMinutesRemaining(
+                profile.lastRewardedSlotSpinAtEpochMs,
+                now,
+            )
+            return CallableResult(success = false, message = "Wait $waitMin min for next spin ad reward.")
+        }
+        appSession.updateGuestProfile {
+            it.copy(
+                slotSpinsRemaining = it.slotSpinsRemaining + GameConstants.REWARDED_SLOT_SPINS,
+                lastRewardedSlotSpinAtEpochMs = now,
+            )
         }
         return CallableResult(
             success = true,
@@ -184,14 +229,11 @@ class DemoRewardsEngine @Inject constructor(
     }
 
     private fun checkWin(grid: List<List<String>>): Boolean {
-        val lines = listOf(
-            listOf(grid[0][0], grid[0][1], grid[0][2]),
-            listOf(grid[1][0], grid[1][1], grid[1][2]),
-            listOf(grid[2][0], grid[2][1], grid[2][2]),
+        val diagonals = listOf(
             listOf(grid[0][0], grid[1][1], grid[2][2]),
             listOf(grid[0][2], grid[1][1], grid[2][0]),
         )
-        return lines.any { lineWins(it) }
+        return diagonals.any { lineWins(it) }
     }
 
     private fun lineWins(line: List<String>): Boolean {

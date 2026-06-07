@@ -5,6 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.data.firebase.FirebaseSessionCoordinator
 import com.techmomentum.wc2026.data.repository.AppAuthState
 import com.techmomentum.wc2026.data.repository.AuthRepository
+import com.techmomentum.wc2026.data.repository.UserRepository
+import com.techmomentum.wc2026.domain.usecase.DetermineSignedInGateUseCase
+import com.techmomentum.wc2026.domain.usecase.SignedInGate
+import com.techmomentum.wc2026.ui.navigation.Routes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +19,7 @@ import javax.inject.Inject
 
 sealed class BootstrapState {
     data object Loading : BootstrapState()
-    data object Ready : BootstrapState()
+    data class Ready(val destinationRoute: String) : BootstrapState()
     data class Error(val message: String) : BootstrapState()
 }
 
@@ -23,6 +27,8 @@ sealed class BootstrapState {
 class SessionBootstrapViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val sessionCoordinator: FirebaseSessionCoordinator,
+    private val userRepository: UserRepository,
+    private val determineSignedInGate: DetermineSignedInGateUseCase,
 ) : ViewModel() {
     private val _state = MutableStateFlow<BootstrapState>(BootstrapState.Loading)
     val state: StateFlow<BootstrapState> = _state.asStateFlow()
@@ -42,7 +48,13 @@ class SessionBootstrapViewModel @Inject constructor(
                     result.fold(
                         onSuccess = { profile ->
                             if (profile.success) {
-                                _state.value = BootstrapState.Ready
+                                val userProfile = userRepository.observeUserProfile().first()
+                                val route = when (determineSignedInGate(userProfile)) {
+                                    SignedInGate.NeedsEmailVerification -> Routes.VERIFY_EMAIL
+                                    SignedInGate.NeedsProfileCompletion -> Routes.COMPLETE_PROFILE
+                                    SignedInGate.Ready -> Routes.HOME
+                                }
+                                _state.value = BootstrapState.Ready(route)
                             } else {
                                 _state.value = BootstrapState.Error(
                                     profile.message.ifBlank { "Could not sync profile with Firebase." },
@@ -56,9 +68,8 @@ class SessionBootstrapViewModel @Inject constructor(
                         },
                     )
                 }
-                AppAuthState.Guest, AppAuthState.Unauthenticated -> {
-                    _state.value = BootstrapState.Ready
-                }
+                AppAuthState.Guest -> _state.value = BootstrapState.Ready(Routes.HOME)
+                AppAuthState.Unauthenticated -> _state.value = BootstrapState.Ready(Routes.AUTH)
             }
         }
     }

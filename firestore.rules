@@ -35,7 +35,7 @@ service cloud.firestore {
         && request.resource.data.albumUniqueCount == 0
         && request.resource.data.totalStickerCount == 0
         && request.resource.data.unopenedPacks == 2
-        && request.resource.data.slotSpinsRemaining == 15
+        && request.resource.data.slotSpinsRemaining == 10
         && request.resource.data.slotRewardPacksWonToday == 0;
       allow update: if isOwner(uid)
         && request.resource.data.unopenedPacks == resource.data.unopenedPacks
@@ -63,6 +63,15 @@ service cloud.firestore {
     match /slot_history/{spinId} {
       allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
       allow write: if false;
+    }
+
+    match /leaderboard/{uid} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /usernames/{usernameKey} {
+      allow read, write: if false;
     }
   }
 }

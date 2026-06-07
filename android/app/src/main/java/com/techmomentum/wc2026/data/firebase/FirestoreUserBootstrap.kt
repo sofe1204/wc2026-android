@@ -8,6 +8,7 @@ import com.google.firebase.firestore.Source
 import com.techmomentum.wc2026.BuildConfig
 import com.techmomentum.wc2026.data.model.CallableResult
 import com.techmomentum.wc2026.debug.DebugAgentLog
+import com.google.firebase.Timestamp
 import com.techmomentum.wc2026.utils.DateUtils
 import com.techmomentum.wc2026.utils.GameConstants
 import kotlinx.coroutines.tasks.await
@@ -74,31 +75,41 @@ class FirestoreUserBootstrap @Inject constructor(
         createNewAccount: Boolean,
     ): CallableResult {
         val ref = firestore.collection("users").document(uid)
-        if (!createNewAccount) {
-            val existing = getFromServerWithRetry(ref)
-            if (existing.exists()) {
-                val packs = existing.getLong("unopenedPacks")?.toInt() ?: 0
-                return CallableResult(
-                    success = true,
-                    message = "Profile ready.",
-                    unopenedPacks = packs,
-                )
-            }
+        val existing = if (!createNewAccount) getFromServerWithRetry(ref) else null
+        if (existing?.exists() == true) {
+            val packs = existing.getLong("unopenedPacks")?.toInt() ?: 0
+            return CallableResult(
+                success = true,
+                message = "Profile ready.",
+                unopenedPacks = packs,
+            )
         }
         val today = DateUtils.todayUtc()
+        val now = Timestamp.now()
         val data = mapOf(
             "uid" to uid,
             "email" to (email ?: ""),
             "displayName" to (displayName?.takeIf { it.isNotBlank() } ?: email ?: ""),
+            "username" to "",
+            "firstName" to "",
+            "lastName" to "",
+            "countryCode" to "",
+            "countryName" to "",
+            "profileComplete" to false,
+            "emailVerified" to (auth.currentUser?.isEmailVerified == true),
+            "leaderboardOptIn" to true,
             "unopenedPacks" to GameConstants.SIGNUP_FREE_PACKS,
             "albumUniqueCount" to 0,
             "totalStickerCount" to 0,
             "lastDailyPackClaimDate" to "",
             "rewardedAdPackClaimDate" to "",
+            "lastLoginPackGrantedAt" to now,
+            "lastRewardedAdStickerAt" to null,
             "slotSpinsRemaining" to GameConstants.DAILY_FREE_SLOT_SPINS,
             "slotSpinsDate" to today,
             "slotRewardDate" to today,
             "slotRewardPacksWonToday" to 0,
+            "lastRewardedSlotSpinAt" to null,
         )
         ref.set(data).await()
         return CallableResult(

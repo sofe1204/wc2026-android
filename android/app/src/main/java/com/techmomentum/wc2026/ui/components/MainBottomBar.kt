@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Collections
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,7 +45,8 @@ data class BottomNavItem(
 
 val mainBottomNavItems = listOf(
     BottomNavItem(Routes.HOME, "Home", Icons.Default.Home),
-    BottomNavItem(Routes.ALBUM, "Album", Icons.Default.Collections),
+    BottomNavItem(Routes.ALBUM, "Decks", Icons.Default.Collections),
+    BottomNavItem(Routes.LEADERBOARD, "Ranks", Icons.Default.EmojiEvents),
     BottomNavItem(Routes.SLOT, "Slots", Icons.Default.SportsEsports),
     BottomNavItem(Routes.PROFILE, "Profile", Icons.Default.AccountCircle),
 )

@@ -20,12 +20,14 @@ import androidx.compose.ui.unit.dp
 import com.techmomentum.wc2026.ui.components.PixarStatusChip
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.darken
+import com.techmomentum.wc2026.utils.GameConstants
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun HomeRewardsCard(
-    dailyClaimedToday: Boolean,
-    adPackClaimedToday: Boolean,
+    loginPackAvailable: Boolean,
+    adStickerAvailable: Boolean,
+    adStickerCooldownMinutes: Int,
     slotSpinsRemaining: Int,
     slotPacksWonToday: Int,
     slotPackCap: Int,
@@ -45,10 +47,18 @@ fun HomeRewardsCard(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         Text(
-            text = "Daily rewards",
+            text = "Rewards",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Black,
             color = AlbumPageStyle.headerAccent.darken(0.1f),
+        )
+        Text(
+            text = "Sign in: ${GameConstants.SIGNUP_FREE_PACKS} starter packs, then " +
+                "+${GameConstants.LOGIN_REWARD_PACKS} pack every ${GameConstants.LOGIN_REWARD_INTERVAL_HOURS}h. " +
+                "Ads: ${GameConstants.REWARDED_AD_STICKERS} stickers / " +
+                "${GameConstants.REWARDED_SLOT_SPINS} spins every ${GameConstants.REWARDED_AD_COOLDOWN_MINUTES} min.",
+            style = MaterialTheme.typography.bodySmall,
+            color = AlbumPageStyle.headerAccent.darken(0.15f),
         )
         FlowRow(
             modifier = Modifier.fillMaxWidth(),
@@ -56,12 +66,16 @@ fun HomeRewardsCard(
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             PixarStatusChip(
-                label = "Daily packs",
-                available = !dailyClaimedToday,
+                label = if (loginPackAvailable) "Login pack · ready" else "Login pack · 24h",
+                available = loginPackAvailable,
             )
             PixarStatusChip(
-                label = "Ad bonus",
-                available = !adPackClaimedToday,
+                label = if (adStickerAvailable) {
+                    "Ad stickers · ready"
+                } else {
+                    "Ad stickers · ${adStickerCooldownMinutes}m"
+                },
+                available = adStickerAvailable,
             )
         }
         FlowRow(

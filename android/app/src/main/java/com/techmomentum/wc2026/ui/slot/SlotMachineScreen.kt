@@ -50,7 +50,12 @@ fun SlotMachineScreen(
     val activity = LocalContext.current as Activity
 
     Scaffold(
-        topBar = { WorldCupTopBar(title = "Slot Machine", subtitle = "Match 3 symbols to win packs") },
+        topBar = {
+            WorldCupTopBar(
+                title = "Slot Machine",
+                subtitle = "Match 3 on a diagonal to win a pack · ${com.techmomentum.wc2026.utils.GameConstants.DAILY_FREE_SLOT_SPINS} free spins/day",
+            )
+        },
     ) { padding ->
         Column(
             modifier = Modifier
@@ -99,8 +104,17 @@ fun SlotMachineScreen(
             }
             OutlinedButton(
                 onClick = { viewModel.watchAdForSpins(activity, rewardedAdManager) },
+                enabled = state.slotSpinAdAvailable,
                 modifier = Modifier.fillMaxWidth(),
-            ) { Text("Watch Ad (+5 Spins)") }
+            ) {
+                Text(
+                    if (state.slotSpinAdAvailable) {
+                        "Watch Ad (+${com.techmomentum.wc2026.utils.GameConstants.REWARDED_SLOT_SPINS} Spins)"
+                    } else {
+                        "Spin ad · ${state.slotSpinAdCooldownMinutes}m"
+                    },
+                )
+            }
         }
     }
 }

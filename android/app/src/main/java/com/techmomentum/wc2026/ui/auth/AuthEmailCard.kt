@@ -35,12 +35,16 @@ fun AuthEmailCard(
     isSignUp: Boolean,
     displayName: String,
     email: String,
+    confirmEmail: String,
     password: String,
+    confirmPassword: String,
     error: String?,
     loading: Boolean,
     onDisplayNameChange: (String) -> Unit,
     onEmailChange: (String) -> Unit,
+    onConfirmEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
+    onConfirmPasswordChange: (String) -> Unit,
     onSubmit: () -> Unit,
     onToggleMode: () -> Unit,
     modifier: Modifier = Modifier,
@@ -89,6 +93,15 @@ fun AuthEmailCard(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth(),
         )
+        if (isSignUp) {
+            PixarOutlinedTextField(
+                value = confirmEmail,
+                onValueChange = onConfirmEmailChange,
+                label = "Confirm email",
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
         PixarOutlinedTextField(
             value = password,
             onValueChange = onPasswordChange,
@@ -96,6 +109,15 @@ fun AuthEmailCard(
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
         )
+        if (isSignUp) {
+            PixarOutlinedTextField(
+                value = confirmPassword,
+                onValueChange = onConfirmPasswordChange,
+                label = "Confirm password",
+                visualTransformation = PasswordVisualTransformation(),
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
         error?.let { AuthErrorPill(message = it) }
         Spacer(Modifier.height(4.dp))
         PixarPrimaryButton(

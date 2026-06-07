@@ -74,17 +74,17 @@ class RewardsRepository @Inject constructor(
     suspend fun openStickerPack(): PackOpenResult =
         if (useDemo()) demoRewardsEngine.openStickerPack() else cloudFunctions.openStickerPack()
 
-    suspend fun claimDailyPacks(): CallableResult =
-        if (useDemo()) demoRewardsEngine.claimDailyPacks() else cloudFunctions.claimDailyPacks()
-
-    suspend fun claimRewardedAdPack(): CallableResult =
-        if (useDemo()) demoRewardsEngine.claimRewardedAdPack() else cloudFunctions.claimRewardedAdPack()
+    suspend fun claimRewardedAdStickers(): CallableResult =
+        if (useDemo()) demoRewardsEngine.claimRewardedAdStickers() else cloudFunctions.claimRewardedAdStickers()
 
     suspend fun spinSlotMachine(): SlotResult =
         if (useDemo()) demoRewardsEngine.spinSlotMachine() else cloudFunctions.spinSlotMachine()
 
     suspend fun claimRewardedSlotSpins(): CallableResult =
         if (useDemo()) demoRewardsEngine.claimRewardedSlotSpins() else cloudFunctions.claimRewardedSlotSpins()
+
+    suspend fun redeemSwapDeck(): CallableResult =
+        if (useDemo()) demoRewardsEngine.redeemSwapDeck() else cloudFunctions.redeemSwapDeck()
 
     suspend fun seedTeams(): CallableResult = cloudFunctions.seedTeams()
 

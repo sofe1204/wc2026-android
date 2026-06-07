@@ -1,11 +1,17 @@
 import * as admin from "firebase-admin";
 import {
   DAILY_FREE_SLOT_SPINS,
+  LOGIN_REWARD_INTERVAL_HOURS,
+  LOGIN_REWARD_PACKS,
   RARITY_FALLBACK_ORDER,
   RARITY_WEIGHTS,
+  REWARDED_AD_COOLDOWN_MINUTES,
+  REWARDED_AD_STICKERS,
   STICKERS_PER_PACK,
+  SWAP_DUPLICATES_FOR_PACK,
 } from "./constants";
 import { todayUtc } from "./admin";
+import { syncLeaderboardInTransaction } from "./profileHelpers";
 
 const db = () => admin.firestore();
 
@@ -26,16 +32,27 @@ export async function ensureUserDoc(
     uid,
     email,
     displayName: displayName || email,
+    username: "",
+    firstName: "",
+    lastName: "",
+    countryCode: "",
+    countryName: "",
+    profileComplete: false,
+    emailVerified: false,
+    leaderboardOptIn: true,
     createdAt: now,
     unopenedPacks: 2,
     albumUniqueCount: 0,
     totalStickerCount: 0,
     lastDailyPackClaimDate: "",
     rewardedAdPackClaimDate: "",
+    lastLoginPackGrantedAt: now,
+    lastRewardedAdStickerAt: null,
     slotSpinsRemaining: DAILY_FREE_SLOT_SPINS,
     slotSpinsDate: todayUtc(),
     slotRewardDate: todayUtc(),
     slotRewardPacksWonToday: 0,
+    lastRewardedSlotSpinAt: null,
   });
   return (await ref.get());
 }
@@ -168,15 +185,214 @@ function slotLineWins(line: string[]): boolean {
   );
 }
 
+/** Win only on a diagonal — 3 matching symbols (trophy = wildcard). */
 export function checkSlotWin(grid: string[][]): boolean {
-  const lines = [
-    [grid[0][0], grid[0][1], grid[0][2]],
-    [grid[1][0], grid[1][1], grid[1][2]],
-    [grid[2][0], grid[2][1], grid[2][2]],
+  const diagonals = [
     [grid[0][0], grid[1][1], grid[2][2]],
     [grid[0][2], grid[1][1], grid[2][0]],
   ];
-  return lines.some(slotLineWins);
+  return diagonals.some(slotLineWins);
+}
+
+const LOGIN_REWARD_INTERVAL_MS = LOGIN_REWARD_INTERVAL_HOURS * 60 * 60 * 1000;
+const REWARDED_AD_COOLDOWN_MS = REWARDED_AD_COOLDOWN_MINUTES * 60 * 1000;
+
+export function isLoginPackEligible(
+  last: admin.firestore.Timestamp | undefined | null,
+  existedBeforeField: boolean
+): boolean {
+  if (!last) return existedBeforeField;
+  return Date.now() - last.toMillis() >= LOGIN_REWARD_INTERVAL_MS;
+}
+
+export function applyLoginPackGrant(
+  tx: FirebaseFirestore.Transaction,
+  userRef: FirebaseFirestore.DocumentReference,
+  data: FirebaseFirestore.DocumentData,
+  existedBeforeField: boolean
+): { granted: boolean; packs: number; message: string } {
+  const packs = data.unopenedPacks || 0;
+  const last = data.lastLoginPackGrantedAt as admin.firestore.Timestamp | undefined;
+  if (!isLoginPackEligible(last, existedBeforeField)) {
+    return { granted: false, packs, message: "Profile ready." };
+  }
+  const newPacks = packs + LOGIN_REWARD_PACKS;
+  tx.update(userRef, {
+    unopenedPacks: newPacks,
+    lastLoginPackGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+  return {
+    granted: true,
+    packs: newPacks,
+    message: `Welcome back! +${LOGIN_REWARD_PACKS} pack (${STICKERS_PER_PACK} stickers each).`,
+  };
+}
+
+export async function grantRewardedAdStickers(uid: string): Promise<{
+  success: boolean;
+  message: string;
+  stickerIds: string[];
+  unopenedPacks: number;
+}> {
+  const userRef = await getUserRef(uid);
+  const stickerIds: string[] = [];
+  for (let i = 0; i < REWARDED_AD_STICKERS; i++) {
+    const id = await pickStickerByRarity(rollRarity());
+    if (id) stickerIds.push(id);
+  }
+  if (stickerIds.length === 0) {
+    return {
+      success: false,
+      message: "No stickers available.",
+      stickerIds: [],
+      unopenedPacks: 0,
+    };
+  }
+
+  return db().runTransaction(async (tx) => {
+    const snap = await tx.get(userRef);
+    if (!snap.exists) {
+      throw new Error("User not found.");
+    }
+    const data = snap.data()!;
+    const last = data.lastRewardedAdStickerAt as admin.firestore.Timestamp | undefined;
+    if (last && Date.now() - last.toMillis() < REWARDED_AD_COOLDOWN_MS) {
+      const waitMin = Math.ceil(
+        (REWARDED_AD_COOLDOWN_MS - (Date.now() - last.toMillis())) / 60000
+      );
+      return {
+        success: false,
+        message: `Wait ${waitMin} min for next ad reward.`,
+        stickerIds: [],
+        unopenedPacks: data.unopenedPacks || 0,
+      };
+    }
+    const { newUnique, totalAdded } = await grantStickers(tx, uid, stickerIds);
+    const albumUniqueCount = (data.albumUniqueCount || 0) + newUnique;
+    const totalStickerCount = (data.totalStickerCount || 0) + totalAdded;
+    tx.update(userRef, {
+      lastRewardedAdStickerAt: admin.firestore.FieldValue.serverTimestamp(),
+      albumUniqueCount,
+      totalStickerCount,
+    });
+    syncLeaderboardInTransaction(tx, uid, {
+      ...data,
+      albumUniqueCount,
+      totalStickerCount,
+    });
+    const adRef = db().collection("pack_history").doc();
+    tx.set(adRef, {
+      uid,
+      source: "rewarded_ad",
+      stickers: stickerIds,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    return {
+      success: true,
+      message: `You earned ${stickerIds.length} stickers!`,
+      stickerIds,
+      unopenedPacks: data.unopenedPacks || 0,
+    };
+  });
+}
+
+export function duplicateCount(stickerCount: number): number {
+  return Math.max(0, stickerCount - 1);
+}
+
+export async function countTotalSwapDuplicates(uid: string): Promise<number> {
+  const snap = await db()
+    .collection("user_stickers")
+    .doc(uid)
+    .collection("items")
+    .get();
+  return snap.docs.reduce((sum, doc) => {
+    const count = doc.data().count || 0;
+    return sum + duplicateCount(count);
+  }, 0);
+}
+
+export async function swapDuplicatesForPack(uid: string): Promise<{
+  success: boolean;
+  message: string;
+  unopenedPacks: number;
+  duplicatesConsumed: number;
+}> {
+  const userRef = await getUserRef(uid);
+  const itemsRef = db().collection("user_stickers").doc(uid).collection("items");
+  const itemsSnap = await itemsRef.get();
+
+  const totalDupes = itemsSnap.docs.reduce((sum, doc) => {
+    return sum + duplicateCount(doc.data().count || 0);
+  }, 0);
+
+  if (totalDupes < SWAP_DUPLICATES_FOR_PACK) {
+    const userSnap = await userRef.get();
+    return {
+      success: false,
+      message: `Need ${SWAP_DUPLICATES_FOR_PACK} duplicate stickers in your swap deck (${totalDupes}/${SWAP_DUPLICATES_FOR_PACK}).`,
+      unopenedPacks: userSnap.data()?.unopenedPacks || 0,
+      duplicatesConsumed: 0,
+    };
+  }
+
+  const sorted = itemsSnap.docs
+    .map((doc) => ({ ref: doc.ref, count: doc.data().count || 0 }))
+    .filter((item) => duplicateCount(item.count) > 0)
+    .sort((a, b) => duplicateCount(b.count) - duplicateCount(a.count));
+
+  return db().runTransaction(async (tx) => {
+    const userSnap = await tx.get(userRef);
+    if (!userSnap.exists) throw new Error("User profile not found.");
+    const userData = userSnap.data()!;
+
+    let remaining = SWAP_DUPLICATES_FOR_PACK;
+    for (const item of sorted) {
+      if (remaining <= 0) break;
+      const itemSnap = await tx.get(item.ref);
+      if (!itemSnap.exists) continue;
+      const count = itemSnap.data()?.count || 0;
+      const dupes = duplicateCount(count);
+      if (dupes <= 0) continue;
+      const take = Math.min(dupes, remaining);
+      const newCount = count - take;
+      if (newCount <= 0) {
+        tx.delete(item.ref);
+      } else {
+        tx.update(item.ref, { count: newCount });
+      }
+      remaining -= take;
+    }
+
+    if (remaining > 0) {
+      throw new Error("Could not consume enough duplicates.");
+    }
+
+    const packs = (userData.unopenedPacks || 0) + 1;
+    tx.update(userRef, {
+      unopenedPacks: packs,
+      totalStickerCount: Math.max(
+        0,
+        (userData.totalStickerCount || 0) - SWAP_DUPLICATES_FOR_PACK
+      ),
+    });
+
+    const historyRef = db().collection("pack_history").doc();
+    tx.set(historyRef, {
+      uid,
+      source: "swap_deck",
+      stickers: [],
+      duplicatesConsumed: SWAP_DUPLICATES_FOR_PACK,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
+    return {
+      success: true,
+      message: `Swapped ${SWAP_DUPLICATES_FOR_PACK} duplicates for 1 sticker pack!`,
+      unopenedPacks: packs,
+      duplicatesConsumed: SWAP_DUPLICATES_FOR_PACK,
+    };
+  });
 }
 
 export async function openPackForUser(uid: string): Promise<{
@@ -201,10 +417,17 @@ export async function openPackForUser(uid: string): Promise<{
       if (id) stickerIds.push(id);
     }
     const { newUnique, totalAdded } = await grantStickers(tx, uid, stickerIds);
+    const albumUniqueCount = (data.albumUniqueCount || 0) + newUnique;
+    const totalStickerCount = (data.totalStickerCount || 0) + totalAdded;
     tx.update(userRef, {
       unopenedPacks: packs - 1,
-      albumUniqueCount: (data.albumUniqueCount || 0) + newUnique,
-      totalStickerCount: (data.totalStickerCount || 0) + totalAdded,
+      albumUniqueCount,
+      totalStickerCount,
+    });
+    syncLeaderboardInTransaction(tx, uid, {
+      ...data,
+      albumUniqueCount,
+      totalStickerCount,
     });
     const packRef = db().collection("pack_history").doc();
     tx.set(packRef, {

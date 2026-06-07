@@ -9,6 +9,7 @@ import com.techmomentum.wc2026.data.remote.RewardedAdManager
 import com.techmomentum.wc2026.data.repository.CatalogRepository
 import com.techmomentum.wc2026.data.repository.RewardsRepository
 import com.techmomentum.wc2026.data.repository.UserRepository
+import com.techmomentum.wc2026.utils.RewardEligibility
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,6 +26,8 @@ data class SlotUiState(
     val isWin: Boolean = false,
     val loading: Boolean = false,
     val message: String? = null,
+    val slotSpinAdAvailable: Boolean = true,
+    val slotSpinAdCooldownMinutes: Int = 0,
 )
 
 @HiltViewModel
@@ -49,10 +52,13 @@ class SlotViewModel @Inject constructor(
         viewModelScope.launch {
             userRepository.observeUserProfile().collect { profile ->
                 if (profile != null) {
+                    val lastAd = profile.lastRewardedSlotSpinAtEpochMs
                     _uiState.update {
                         it.copy(
                             spinsRemaining = profile.slotSpinsRemaining,
                             packsWonToday = profile.slotRewardPacksWonToday,
+                            slotSpinAdAvailable = RewardEligibility.isSlotSpinAdAvailable(lastAd),
+                            slotSpinAdCooldownMinutes = RewardEligibility.slotSpinAdCooldownMinutesRemaining(lastAd),
                         )
                     }
                 }
@@ -72,12 +78,20 @@ class SlotViewModel @Inject constructor(
     }
 
     fun watchAdForSpins(activity: Activity, rewardedAdManager: RewardedAdManager) {
+        if (!_uiState.value.slotSpinAdAvailable) return
         rewardedAdManager.show(
             activity = activity,
             onReward = {
                 viewModelScope.launch {
                     runCatching { rewardsRepository.claimRewardedSlotSpins() }
-                        .onSuccess { result -> _uiState.update { s -> s.copy(message = result.message) } }
+                        .onSuccess { result ->
+                            _uiState.update { s ->
+                                s.copy(message = result.message.ifBlank { "Done!" })
+                            }
+                        }
+                        .onFailure { e ->
+                            _uiState.update { s -> s.copy(message = e.message) }
+                        }
                 }
             },
             onDismiss = {},
@@ -101,9 +115,8 @@ class SlotViewModel @Inject constructor(
         _uiState.update { it.copy(grid = grid) }
     }
 
-    private fun resolveSymbol(id: String): SlotSymbol? {
+    private fun resolveSymbol(id: String): SlotSymbol? =
         symbolsById[id] ?: symbolList.find { it.playerId == id }
-    }
 
     private suspend fun applyResult(result: SlotResult) {
         ensureSymbols()
@@ -118,8 +131,8 @@ class SlotViewModel @Inject constructor(
                 message = result.message.ifBlank {
                     when {
                         result.rewardGranted -> "You won a sticker pack!"
-                        result.isWin -> "Win! Daily pack limit reached."
-                        else -> "No match — try again!"
+                        result.isWin -> "Diagonal match! Daily pack limit reached."
+                        else -> "No diagonal match — try again!"
                     }
                 },
             )

@@ -101,8 +101,9 @@ fun HomeScreen(
                     }
 
                     HomeRewardsCard(
-                        dailyClaimedToday = home.dailyClaimedToday,
-                        adPackClaimedToday = home.adPackClaimedToday,
+                        loginPackAvailable = home.loginPackAvailable,
+                        adStickerAvailable = home.adStickerAvailable,
+                        adStickerCooldownMinutes = home.adStickerCooldownMinutes,
                         slotSpinsRemaining = profile?.slotSpinsRemaining ?: 0,
                         slotPacksWonToday = profile?.slotRewardPacksWonToday ?: 0,
                         slotPackCap = GameConstants.DAILY_SLOT_PACK_REWARD_CAP,
@@ -119,28 +120,21 @@ fun HomeScreen(
                     )
 
                     PixarSecondaryButton(
-                        text = "Claim Daily Packs (+${GameConstants.DAILY_FREE_PACKS})",
-                        onClick = viewModel::claimDailyPacks,
-                        enabled = !ui.loading && !home.dailyClaimedToday,
-                        loading = ui.loading && !home.dailyClaimedToday,
-                    )
-
-                    PixarSecondaryButton(
-                        text = "Watch Ad for Bonus Pack",
+                        text = "Watch Ad for ${GameConstants.REWARDED_AD_STICKERS} Stickers",
                         onClick = {
                             val activity = context as? Activity
                             if (activity != null && rewardedAdManager != null) {
                                 rewardedAdManager.show(
                                     activity,
-                                    onReward = { viewModel.claimRewardedAdPack() },
+                                    onReward = { viewModel.claimRewardedAdStickers() },
                                     onDismiss = {},
                                 )
                             } else {
-                                viewModel.claimRewardedAdPack()
+                                viewModel.claimRewardedAdStickers()
                             }
                         },
-                        enabled = !ui.loading && !home.adPackClaimedToday,
-                        loading = ui.loading && !home.adPackClaimedToday,
+                        enabled = !ui.loading && home.adStickerAvailable,
+                        loading = ui.loading && home.adStickerAvailable,
                         accentBorder = true,
                     )
                 }

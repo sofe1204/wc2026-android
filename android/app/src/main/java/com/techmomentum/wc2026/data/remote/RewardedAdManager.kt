@@ -6,12 +6,12 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
-import com.techmomentum.wc2026.BuildConfig
+import com.techmomentum.wc2026.config.AdMobConfig
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
-// TODO: Replace with production AdMob unit IDs and implement Server-Side Verification (SSV).
+/** Rewarded ads for sticker + slot spin bonuses. Uses test AdMob until production IDs are set. */
 @Singleton
 class RewardedAdManager @Inject constructor(
     @ApplicationContext private val context: Context,
@@ -21,7 +21,7 @@ class RewardedAdManager @Inject constructor(
     fun load(onReady: (() -> Unit)? = null, onFailed: ((String) -> Unit)? = null) {
         RewardedAd.load(
             context,
-            BuildConfig.REWARDED_AD_UNIT_ID,
+            AdMobConfig.rewardedUnitId,
             AdRequest.Builder().build(),
             object : RewardedAdLoadCallback() {
                 override fun onAdLoaded(ad: RewardedAd) {

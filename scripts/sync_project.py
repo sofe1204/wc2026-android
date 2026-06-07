@@ -78,11 +78,17 @@ export const DATA_CONNECT_DATABASE = "{dc['database']}";
 
 export const STICKERS_PER_PACK = {game['stickersPerPack']};
 export const SIGNUP_FREE_PACKS = {game['signupFreePacks']};
+export const LOGIN_REWARD_PACKS = {game['loginRewardPacks']};
+export const LOGIN_REWARD_INTERVAL_HOURS = {game['loginRewardIntervalHours']};
+export const REWARDED_AD_STICKERS = {game['rewardedAdStickers']};
+export const REWARDED_AD_COOLDOWN_MINUTES = {game['rewardedAdCooldownMinutes']};
 export const DAILY_FREE_PACKS = {game['dailyFreePacks']};
 export const DAILY_REWARDED_PACK_LIMIT = {game['dailyRewardedPackLimit']};
 export const DAILY_FREE_SLOT_SPINS = {game['dailyFreeSlotSpins']};
 export const REWARDED_SLOT_SPINS = {game['rewardedSlotSpins']};
+export const REWARDED_SLOT_SPIN_COOLDOWN_MINUTES = {game['rewardedSlotSpinCooldownMinutes']};
 export const DAILY_SLOT_PACK_REWARD_CAP = {game['dailySlotPackRewardCap']};
+export const SWAP_DUPLICATES_FOR_PACK = {game['swapDuplicatesForPack']};
 export const TOTAL_TEAMS = {game['totalTeams']};
 export const PLAYERS_PER_TEAM = {game['playersPerTeam']};
 export const TOTAL_STICKERS = {game['totalStickers']};
@@ -174,6 +180,8 @@ def validate_game_constants(config: dict) -> None:
     pc_ts = read_text(ROOT / "functions/src/projectConfig.ts")
     for name, key in [
         ("STICKERS_PER_PACK", "stickersPerPack"),
+        ("LOGIN_REWARD_PACKS", "loginRewardPacks"),
+        ("REWARDED_AD_STICKERS", "rewardedAdStickers"),
         ("DAILY_FREE_PACKS", "dailyFreePacks"),
         ("REWARDED_SLOT_SPINS", "rewardedSlotSpins"),
     ]:

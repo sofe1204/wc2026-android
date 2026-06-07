@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.techmomentum.wc2026.data.model.UserProfile
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.AnimePink
 import com.techmomentum.wc2026.ui.theme.CardGold
@@ -31,13 +32,17 @@ import com.techmomentum.wc2026.ui.theme.darken
 
 @Composable
 fun ProfileIdentityCard(
-    displayName: String,
+    profile: UserProfile?,
     email: String,
     isGuest: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val shape = RoundedCornerShape(20.dp)
-    val initials = profileInitials(displayName)
+    val fullName = profile?.let {
+        listOf(it.firstName, it.lastName).filter { part -> part.isNotBlank() }.joinToString(" ")
+    }.orEmpty().ifBlank { profile?.displayName.orEmpty() }
+    val username = profile?.username.orEmpty()
+    val initials = profileInitials(fullName.ifBlank { username })
 
     Row(
         modifier = modifier
@@ -84,18 +89,38 @@ fun ProfileIdentityCard(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {
-            Text(
-                text = displayName.ifBlank { "Collector" },
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Black,
-                color = AlbumPageStyle.headerAccent.darken(0.1f),
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
+            if (username.isNotBlank()) {
+                Text(
+                    text = "@$username",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Black,
+                    color = AlbumPageStyle.headerAccent.darken(0.1f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            if (fullName.isNotBlank()) {
+                Text(
+                    text = fullName,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = AlbumPageStyle.bottomNavUnselectedLabel,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            if (profile?.countryName?.isNotBlank() == true) {
+                Text(
+                    text = profile.countryName,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = AlbumPageStyle.bottomNavUnselectedIcon,
+                )
+            }
             Text(
                 text = email,
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.SemiBold,
+                style = MaterialTheme.typography.bodySmall,
+                fontWeight = FontWeight.Medium,
                 color = AlbumPageStyle.bottomNavUnselectedIcon,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,

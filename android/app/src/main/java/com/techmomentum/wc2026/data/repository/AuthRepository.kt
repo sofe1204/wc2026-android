@@ -41,6 +41,12 @@ class AuthRepository @Inject constructor(
 
     val isGuest: Boolean get() = appSession.isActive()
 
+    val isEmailVerified: Boolean
+        get() = auth.currentUser?.isEmailVerified == true
+
+    val isPasswordAccount: Boolean
+        get() = auth.currentUser?.providerData?.any { it.providerId == "password" } == true
+
     fun authState(): Flow<AppAuthState> = combine(
         firebaseAuthFlow(),
         appSession.isGuest,
@@ -64,7 +70,18 @@ class AuthRepository @Inject constructor(
                 .setDisplayName(displayName)
                 .build()
             result.user?.updateProfile(profile)?.await()
+            result.user?.sendEmailVerification()?.await()
         })
+
+    suspend fun sendEmailVerification(): Result<Unit> = runCatching {
+        val user = auth.currentUser ?: error("Not signed in.")
+        user.sendEmailVerification().await()
+    }
+
+    suspend fun reloadAuthUser(): Result<Unit> = runCatching {
+        val user = auth.currentUser ?: error("Not signed in.")
+        user.reload().await()
+    }
 
     suspend fun signInWithGoogle(idToken: String): Result<Unit> = runAuthWithRetry(block = {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
@@ -75,7 +92,7 @@ class AuthRepository @Inject constructor(
         attempts: Int = 3,
         block: suspend () -> Unit,
     ): Result<Unit> {
-        appSession.exitGuestMode()
+        appSession.exitGuestMode(clearPersistence = true)
         var lastError: Exception? = null
         repeat(attempts) { attempt ->
             try {

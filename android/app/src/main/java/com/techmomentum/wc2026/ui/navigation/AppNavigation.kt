@@ -17,6 +17,9 @@ import com.techmomentum.wc2026.data.repository.AppAuthState
 import com.techmomentum.wc2026.data.repository.AuthRepository
 import com.techmomentum.wc2026.ui.album.AlbumScreen
 import com.techmomentum.wc2026.ui.auth.AuthScreen
+import com.techmomentum.wc2026.ui.auth.CompleteProfileScreen
+import com.techmomentum.wc2026.ui.auth.VerifyEmailScreen
+import com.techmomentum.wc2026.ui.leaderboard.LeaderboardScreen
 import com.techmomentum.wc2026.ui.bootstrap.BootstrapState
 import com.techmomentum.wc2026.ui.bootstrap.SessionBootstrapViewModel
 import com.techmomentum.wc2026.ui.components.ErrorState
@@ -81,19 +84,11 @@ fun AppNavigation(
                             onRetry = { bootstrapVm.retry() },
                         )
                     }
-                    BootstrapState.Ready -> {
-                        androidx.compose.runtime.LaunchedEffect(authState) {
-                            when (authState) {
-                                is AppAuthState.Unauthenticated -> {
-                                    navController.navigate(Routes.AUTH) {
-                                        popUpTo(Routes.LOADING) { inclusive = true }
-                                    }
-                                }
-                                else -> {
-                                    navController.navigate(Routes.HOME) {
-                                        popUpTo(Routes.LOADING) { inclusive = true }
-                                    }
-                                }
+                    is BootstrapState.Ready -> {
+                        val destination = (bootstrapState as BootstrapState.Ready).destinationRoute
+                        androidx.compose.runtime.LaunchedEffect(destination) {
+                            navController.navigate(destination) {
+                                popUpTo(Routes.LOADING) { inclusive = true }
                             }
                         }
                         LoadingScreen()
@@ -103,9 +98,27 @@ fun AppNavigation(
             composable(Routes.AUTH) {
                 AuthScreen(
                     isGuestMode = authState is AppAuthState.Guest,
-                    onAuthenticated = {
-                        navController.navigate(Routes.HOME) {
+                    onAuthenticated = { route ->
+                        navController.navigate(route) {
                             popUpTo(Routes.AUTH) { inclusive = true }
+                        }
+                    },
+                )
+            }
+            composable(Routes.VERIFY_EMAIL) {
+                VerifyEmailScreen(
+                    onContinue = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Routes.VERIFY_EMAIL) { inclusive = true }
+                        }
+                    },
+                )
+            }
+            composable(Routes.COMPLETE_PROFILE) {
+                CompleteProfileScreen(
+                    onContinue = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Routes.COMPLETE_PROFILE) { inclusive = true }
                         }
                     },
                 )
@@ -120,6 +133,9 @@ fun AppNavigation(
             }
             composable(Routes.ALBUM) {
                 AlbumScreen(onTeamClick = { navController.navigate(Routes.team(it)) })
+            }
+            composable(Routes.LEADERBOARD) {
+                LeaderboardScreen(isGuest = authState is AppAuthState.Guest)
             }
             composable(Routes.SLOT) {
                 SlotMachineScreen(rewardedAdManager = rewardedAdManager)

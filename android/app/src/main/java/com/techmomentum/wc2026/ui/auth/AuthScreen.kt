@@ -33,7 +33,7 @@ import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 @Composable
 fun AuthScreen(
     @Suppress("UNUSED_PARAMETER") isGuestMode: Boolean,
-    onAuthenticated: () -> Unit,
+    onAuthenticated: (String) -> Unit,
     viewModel: AuthViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -41,8 +41,10 @@ fun AuthScreen(
         contract = ActivityResultContracts.StartActivityForResult(),
     ) { result -> viewModel.onGoogleSignInResult(result.data) }
 
-    LaunchedEffect(state.success) {
-        if (state.success) onAuthenticated()
+    LaunchedEffect(state.success, state.destinationRoute) {
+        if (state.success) {
+            onAuthenticated(state.destinationRoute ?: com.techmomentum.wc2026.ui.navigation.Routes.HOME)
+        }
     }
 
     Scaffold(containerColor = Color.Transparent) { padding ->
@@ -72,12 +74,16 @@ fun AuthScreen(
                         isSignUp = state.isSignUp,
                         displayName = state.displayName,
                         email = state.email,
+                        confirmEmail = state.confirmEmail,
                         password = state.password,
+                        confirmPassword = state.confirmPassword,
                         error = state.error,
                         loading = state.loading,
                         onDisplayNameChange = viewModel::onDisplayNameChange,
                         onEmailChange = viewModel::onEmailChange,
+                        onConfirmEmailChange = viewModel::onConfirmEmailChange,
                         onPasswordChange = viewModel::onPasswordChange,
+                        onConfirmPasswordChange = viewModel::onConfirmPasswordChange,
                         onSubmit = viewModel::submit,
                         onToggleMode = viewModel::toggleMode,
                     )
