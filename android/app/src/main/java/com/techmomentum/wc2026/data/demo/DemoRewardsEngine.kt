@@ -6,7 +6,7 @@ import com.techmomentum.wc2026.data.model.Rarity
 import com.techmomentum.wc2026.data.model.SlotResult
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.UserProfile
-import com.techmomentum.wc2026.data.seed.SeedJsonParser
+import com.techmomentum.wc2026.data.repository.CatalogRepository
 import com.techmomentum.wc2026.data.session.AppSession
 import com.techmomentum.wc2026.utils.DateUtils
 import com.techmomentum.wc2026.utils.GameConstants
@@ -17,14 +17,14 @@ import kotlin.random.Random
 @Singleton
 class DemoRewardsEngine @Inject constructor(
     private val appSession: AppSession,
-    private val seedJsonParser: SeedJsonParser,
+    private val catalogRepository: CatalogRepository,
 ) {
     private var stickersCache: List<Sticker>? = null
     private var slotSymbolIdsCache: List<String>? = null
 
     suspend fun ensureUserProfile(): CallableResult {
         appSession.enterGuestMode()
-        return CallableResult(success = true, message = "Guest profile ready (offline demo).")
+        return CallableResult(success = true, message = "Guest profile ready.")
     }
 
     suspend fun openStickerPack(): PackOpenResult {
@@ -153,16 +153,16 @@ class DemoRewardsEngine @Inject constructor(
 
     private suspend fun loadStickers(): List<Sticker> {
         stickersCache?.let { return it }
-        return seedJsonParser.loadStickers().also { stickersCache = it }
+        return catalogRepository.getStickers().also { stickersCache = it }
     }
 
     private suspend fun loadSlotSymbolIds(): List<String> {
         slotSymbolIdsCache?.let { return it }
-        val ids = seedJsonParser.loadSlotSymbols()
+        val ids = catalogRepository.getSlotSymbols()
             .filter { it.isActive }
             .map { it.symbolId }
         if (ids.isNotEmpty()) return ids.also { slotSymbolIdsCache = it }
-        return seedJsonParser.loadPlayers().map { it.playerId }.also { slotSymbolIdsCache = it }
+        return catalogRepository.getPlayers().map { it.playerId }.also { slotSymbolIdsCache = it }
     }
 
     private fun pickByRarity(stickers: List<Sticker>): Sticker? {

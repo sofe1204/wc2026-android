@@ -104,7 +104,7 @@ fun AuthScreen(
                     AuthOrDivider(label = "or")
 
                     PixarSecondaryButton(
-                        text = "Continue as Guest (offline demo)",
+                        text = "Continue as Guest",
                         onClick = viewModel::continueAsGuest,
                         enabled = !state.loading,
                         accentBorder = true,
@@ -114,7 +114,7 @@ fun AuthScreen(
                         AuthHintText(hint, modifier = Modifier.padding(top = 4.dp))
                     }
                     AuthHintText(
-                        "Email or Google saves progress in the cloud. Guest mode is offline only.",
+                        "Email or Google saves album progress in the cloud. Guest uses Firebase catalog with local progress.",
                     )
                 }
             }

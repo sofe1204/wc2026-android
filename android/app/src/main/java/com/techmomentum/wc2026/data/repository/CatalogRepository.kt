@@ -11,7 +11,6 @@ import com.techmomentum.wc2026.data.remote.toSlotSymbol
 import com.techmomentum.wc2026.data.remote.toSticker
 import com.techmomentum.wc2026.data.remote.toTeam
 import com.techmomentum.wc2026.data.seed.SeedJsonParser
-import com.techmomentum.wc2026.data.session.AppSession
 import com.techmomentum.wc2026.utils.GameConstants
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
@@ -21,7 +20,6 @@ import javax.inject.Singleton
 class CatalogRepository @Inject constructor(
     private val firestore: FirebaseFirestore,
     private val seedJsonParser: SeedJsonParser,
-    private val appSession: AppSession,
     private val sqlConnectCatalog: SqlConnectCatalogDataSource,
 ) {
     private var teamsCache: List<Team>? = null
@@ -64,13 +62,10 @@ class CatalogRepository @Inject constructor(
 
     suspend fun getSlotSymbols(): List<SlotSymbol> {
         slotSymbolsCache?.let { return it }
-        val symbols = if (appSession.isActive()) {
-            seedJsonParser.loadSlotSymbols()
-        } else {
-            loadFromFirestoreSlotSymbols().getOrNull()
-                ?.takeIf { it.size >= GameConstants.SLOT_SYMBOL_COUNT }
-                ?: seedJsonParser.loadSlotSymbols()
-        }
+        val symbols = resolveSlotSymbols(
+            firestoreLoad = { loadFromFirestoreSlotSymbols() },
+            seedLoad = { seedJsonParser.loadSlotSymbols() },
+        )
         slotSymbolsCache = symbols
         return symbols
     }
@@ -89,10 +84,8 @@ class CatalogRepository @Inject constructor(
     suspend fun getPlayer(playerId: String): Player? = getPlayers().firstOrNull { it.playerId == playerId }
 
     /**
-     * Priority: SQL Connect (Kotlin SDK) → Firestore → bundled seed JSON.
-     * Guest mode always uses bundled seed. Signed-in users fall back to seed when
-     * Firestore is empty or still has a partial/old catalog (packs still need a full
-     * Firestore seed via [scripts/seed_firestore.mjs]).
+     * Priority: SQL Connect (Kotlin SDK) → Firestore → bundled seed JSON fallback.
+     * Guest and signed-in users both load catalog images from Firestore when seeded.
      */
     private suspend fun resolveTeams(
         sqlLoad: suspend () -> List<Team>,
@@ -127,13 +120,21 @@ class CatalogRepository @Inject constructor(
         seedLoad = seedLoad,
     )
 
+    private suspend fun resolveSlotSymbols(
+        firestoreLoad: suspend () -> Result<List<SlotSymbol>>,
+        seedLoad: suspend () -> List<SlotSymbol>,
+    ): List<SlotSymbol> {
+        val fromFirestore = firestoreLoad().getOrNull()?.takeIf { it.size >= GameConstants.SLOT_SYMBOL_COUNT }
+        if (fromFirestore != null) return fromFirestore
+        return seedLoad()
+    }
+
     private suspend fun <T> resolveCatalog(
         minCount: Int,
         sqlLoad: suspend () -> List<T>,
         firestoreLoad: suspend () -> Result<List<T>>,
         seedLoad: suspend () -> List<T>,
     ): List<T> {
-        if (appSession.isActive()) return seedLoad()
         if (sqlConnectCatalog.isAvailable()) {
             runCatching { sqlLoad() }.getOrNull()?.takeIf { it.size >= minCount }?.let { return it }
         }

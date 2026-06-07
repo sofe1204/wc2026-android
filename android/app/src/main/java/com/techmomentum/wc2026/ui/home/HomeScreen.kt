@@ -47,7 +47,7 @@ fun HomeScreen(
     val profile = home.profile
     val context = LocalContext.current
     val welcomeName = "Welcome, ${profile?.displayName?.ifBlank { profile.email } ?: "Collector"}"
-    val subtitle = if (isGuest) "Guest · Offline demo" else "Sticker Album"
+    val subtitle = if (isGuest) "Guest · Sticker Album" else "Sticker Album"
     val unopenedPacks = profile?.unopenedPacks ?: 0
 
     Scaffold(containerColor = Color.Transparent) { padding ->

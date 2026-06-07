@@ -76,7 +76,7 @@ fun SettingsScreen(
                     )
                     if (state.isGuest) {
                         Text(
-                            "Guest mode uses offline seed data; sign in for Firestore + Cloud Functions.",
+                            "Guest mode uses Firebase catalog; sign in to save progress and rewards in the cloud.",
                             style = MaterialTheme.typography.bodySmall,
                         )
                     }

@@ -102,7 +102,7 @@ fun ProfileIdentityCard(
             )
             if (isGuest) {
                 Text(
-                    text = "Offline demo — progress stored on device only.",
+                    text = "Guest — album progress stored on device only.",
                     style = MaterialTheme.typography.labelSmall,
                     fontWeight = FontWeight.Medium,
                     color = AlbumPageStyle.bottomNavUnselectedLabel.copy(alpha = 0.75f),
