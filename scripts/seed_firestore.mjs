@@ -14,10 +14,13 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { createRequire } from "module";
+import { loadEnvFile } from "./sticker_images_lib.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const require = createRequire(import.meta.url);
+
+loadEnvFile(root);
 
 const projectConfig = JSON.parse(
   fs.readFileSync(path.join(root, "project.config.json"), "utf8")
@@ -99,6 +102,16 @@ async function main() {
     const stickers = loadJson("stickers_seed.json");
     const n = await batchSeed(db, "stickers", stickers, "stickerId");
     console.log(`  stickers: ${n}`);
+  }
+  if (run("slot_symbols")) {
+    const slotSymbolsPath = path.join(seedDir, "slot_symbols_seed.json");
+    if (fs.existsSync(slotSymbolsPath)) {
+      const slotSymbols = loadJson("slot_symbols_seed.json");
+      const n = await batchSeed(db, "slot_symbols", slotSymbols, "symbolId");
+      console.log(`  slot_symbols: ${n}`);
+    } else {
+      console.log("  slot_symbols: skipped (no slot_symbols_seed.json)");
+    }
   }
 
   console.log("\nDone. Signed-in users can open packs and browse the official catalog.");

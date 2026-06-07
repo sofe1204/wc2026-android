@@ -139,11 +139,33 @@ export async function resetDailySlotIfNeeded(
   return updated;
 }
 
+export const TROPHY_SYMBOL_ID = "trophy";
+
+export async function pickRandomSlotSymbolIds(count: number): Promise<string[]> {
+  const snap = await db().collection("slot_symbols").where("isActive", "==", true).get();
+  if (!snap.empty) {
+    const ids = snap.docs.map((d) => d.id);
+    return Array.from({ length: count }, () => ids[Math.floor(Math.random() * ids.length)]);
+  }
+  return pickRandomPlayerIds(count);
+}
+
 export async function pickRandomPlayerIds(count: number): Promise<string[]> {
   const snap = await db().collection("players").where("isActive", "==", true).limit(200).get();
   if (snap.empty) return Array(count).fill("unknown");
   const ids = snap.docs.map((d) => d.id);
   return Array.from({ length: count }, () => ids[Math.floor(Math.random() * ids.length)]);
+}
+
+function slotLineWins(line: string[]): boolean {
+  if (line.some((s) => !s || s === "unknown")) return false;
+  const nonWild = line.filter((s) => s !== TROPHY_SYMBOL_ID);
+  if (nonWild.length === 0) return true;
+  const target = nonWild[0];
+  return (
+    nonWild.every((s) => s === target) &&
+    line.every((s) => s === target || s === TROPHY_SYMBOL_ID)
+  );
 }
 
 export function checkSlotWin(grid: string[][]): boolean {
@@ -154,9 +176,7 @@ export function checkSlotWin(grid: string[][]): boolean {
     [grid[0][0], grid[1][1], grid[2][2]],
     [grid[0][2], grid[1][1], grid[2][0]],
   ];
-  return lines.some(
-    (line) => line[0] === line[1] && line[1] === line[2] && line[0] !== ""
-  );
+  return lines.some(slotLineWins);
 }
 
 export async function openPackForUser(uid: string): Promise<{

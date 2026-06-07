@@ -28,7 +28,12 @@ data/wikipedia_squads_raw.json
 # Secrets — never commit real keys
 .env
 android/app/google-services.json
+*-firebase-adminsdk-*.json
 
 # Sticker image generation artifacts
 data/sticker_images_progress.json
+data/grok_sticker_edit_progress.json
+data/emblem_upload_progress.json
+data/slot_symbol_upload_progress.json
 data/generated_stickers/
+data/generated_stickers_grok/

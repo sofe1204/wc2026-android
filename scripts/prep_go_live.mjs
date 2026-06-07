@@ -8,10 +8,12 @@ import { fileURLToPath } from "url";
 import { createRequire } from "module";
 import {
   getFalModel,
+  GROK_EDIT_COST_PER_IMAGE,
   IMAGEN4_COST_PER_IMAGE,
   loadEnvFile,
   readJson,
 } from "./sticker_images_lib.mjs";
+import { scanWc26SourceDir } from "./wc26_sticker_match_lib.mjs";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(root);
@@ -83,20 +85,40 @@ if (emblemsMissing > 0) {
   console.log(`  → ${emblemsMissing} team emblems still to generate`);
 }
 
+const wc26Dir = process.env.STICKER_SOURCE_DIR?.trim()
+  ? path.isAbsolute(process.env.STICKER_SOURCE_DIR)
+    ? process.env.STICKER_SOURCE_DIR
+    : path.join(root, process.env.STICKER_SOURCE_DIR)
+  : path.join(root, "wc26");
+
+if (fs.existsSync(wc26Dir)) {
+  try {
+    const scan = scanWc26SourceDir(wc26Dir, teams, players);
+    const grokQueue = scan.matched.filter((r) => !r.player.imageUrl?.trim()).length;
+    const grokEst = (grokQueue * GROK_EDIT_COST_PER_IMAGE).toFixed(2);
+    console.log(
+      `\nwc26/ found: ${scan.matched.length} matched scans → Grok edit ~$${grokEst} (${grokQueue} without imageUrl)`
+    );
+    console.log("  npm run edit:stickers-grok -- --dry-run");
+    console.log("  npm run go-live:edit-grok:pilot");
+    console.log("  npm run go-live:edit-grok");
+  } catch (e) {
+    warn(`wc26 scan: ${e.message || e}`);
+  }
+}
+
 const model = getFalModel();
 const costPer = model.includes("imagen") ? IMAGEN4_COST_PER_IMAGE : 0.003;
 const total = playersMissing + emblemsMissing;
 const est = (total * costPer).toFixed(2);
-console.log(`\nEstimated fal cost (approx): $${est} (${total} images × $${costPer})`);
+console.log(`\nImagen/Kontext path (approx): $${est} (${total} images × $${costPer})`);
 console.log("Budget ~10% extra for retries.\n");
 
 if (ok) {
-  console.log("Ready. Tomorrow run:");
-  console.log("  npm run go-live:images:pilot");
-  console.log("  npm run go-live:images");
-  console.log("  npm run go-live:images:emblems");
-  console.log("  npm run go-live:publish");
-  console.log("\nFull steps: docs/GO_LIVE.md\n");
+  console.log("Ready. Image paths — see docs/GO_LIVE.md:");
+  console.log("  Grok (wc26 scans): go-live:edit-grok");
+  console.log("  Imagen/Kontext:    go-live:images → go-live:images:emblems");
+  console.log("  Then: npm run go-live:publish\n");
 } else {
   console.log("Fix the items above, then re-run: npm run go-live:check\n");
   process.exit(1);

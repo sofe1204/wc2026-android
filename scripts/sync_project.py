@@ -43,7 +43,12 @@ def check_contains(path: Path, needle: str, label: str) -> None:
 def sync_seed_files(config: dict) -> None:
     android = ROOT / config["seed"]["android"]
     functions = ROOT / config["seed"]["functions"]
-    names = ["teams_seed.json", "players_seed.json", "stickers_seed.json"]
+    names = [
+        "teams_seed.json",
+        "players_seed.json",
+        "stickers_seed.json",
+        "slot_symbols_seed.json",
+    ]
     for name in names:
         a, f = android / name, functions / name
         if not a.exists() or not f.exists():

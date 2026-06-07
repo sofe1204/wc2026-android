@@ -1,0 +1,58 @@
+[
+  {
+    "symbolId": "argentina_lionel_messi",
+    "playerId": "argentina_lionel_messi",
+    "label": "Lionel Messi",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/argentina_lionel_messi.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "portugal_cristiano_ronaldo",
+    "playerId": "portugal_cristiano_ronaldo",
+    "label": "Cristiano Ronaldo",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/portugal_cristiano_ronaldo.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "france_kylian_mbappe",
+    "playerId": "france_kylian_mbappe",
+    "label": "Kylian Mbappé",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/france_kylian_mbappe.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "brazil_neymar",
+    "playerId": "brazil_neymar",
+    "label": "Neymar",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/brazil_neymar.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "egypt_mohamed_salah",
+    "playerId": "egypt_mohamed_salah",
+    "label": "Mohamed Salah",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/egypt_mohamed_salah.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "england_harry_kane",
+    "playerId": "england_harry_kane",
+    "label": "Harry Kane",
+    "type": "player",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/england_harry_kane.png",
+    "isActive": true
+  },
+  {
+    "symbolId": "trophy",
+    "playerId": "",
+    "label": "Trophy",
+    "type": "trophy",
+    "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/slots/trophy.jpg",
+    "isActive": true
+  }
+]

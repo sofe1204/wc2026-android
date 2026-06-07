@@ -5,7 +5,7 @@
     "group": "Group A",
     "teamCode": "MEX",
     "flagEmoji": "🇲🇽",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/mexico.jpg",
     "primaryColor": "#006847",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -16,7 +16,7 @@
     "group": "Group A",
     "teamCode": "RSA",
     "flagEmoji": "🇿🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/south_africa.jpg",
     "primaryColor": "#007A4D",
     "secondaryColor": "#FFB612",
     "isActive": true
@@ -27,7 +27,7 @@
     "group": "Group A",
     "teamCode": "KOR",
     "flagEmoji": "🇰🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/south_korea.jpg",
     "primaryColor": "#CD2E3A",
     "secondaryColor": "#0047A0",
     "isActive": true
@@ -38,7 +38,7 @@
     "group": "Group A",
     "teamCode": "CZE",
     "flagEmoji": "🇨🇿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/czechia.jpg",
     "primaryColor": "#11457E",
     "secondaryColor": "#D7141A",
     "isActive": true
@@ -49,7 +49,7 @@
     "group": "Group B",
     "teamCode": "CAN",
     "flagEmoji": "🇨🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/canada.jpg",
     "primaryColor": "#FF0000",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -60,7 +60,7 @@
     "group": "Group B",
     "teamCode": "SUI",
     "flagEmoji": "🇨🇭",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/switzerland.jpg",
     "primaryColor": "#FF0000",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -71,7 +71,7 @@
     "group": "Group B",
     "teamCode": "QAT",
     "flagEmoji": "🇶🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/qatar.jpg",
     "primaryColor": "#8D1B3D",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -82,7 +82,7 @@
     "group": "Group B",
     "teamCode": "BIH",
     "flagEmoji": "🇧🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/bosnia_herzegovina.jpg",
     "primaryColor": "#002395",
     "secondaryColor": "#FECB00",
     "isActive": true
@@ -93,7 +93,7 @@
     "group": "Group C",
     "teamCode": "BRA",
     "flagEmoji": "🇧🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/brazil.jpg",
     "primaryColor": "#009C3B",
     "secondaryColor": "#FFDF00",
     "isActive": true
@@ -104,7 +104,7 @@
     "group": "Group C",
     "teamCode": "MAR",
     "flagEmoji": "🇲🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/morocco.jpg",
     "primaryColor": "#C1272D",
     "secondaryColor": "#006233",
     "isActive": true
@@ -115,7 +115,7 @@
     "group": "Group C",
     "teamCode": "SCO",
     "flagEmoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/scotland.jpg",
     "primaryColor": "#005EB8",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -126,7 +126,7 @@
     "group": "Group C",
     "teamCode": "HAI",
     "flagEmoji": "🇭🇹",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/haiti.jpg",
     "primaryColor": "#00209F",
     "secondaryColor": "#D21034",
     "isActive": true
@@ -137,7 +137,7 @@
     "group": "Group D",
     "teamCode": "USA",
     "flagEmoji": "🇺🇸",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/united_states.jpg",
     "primaryColor": "#3C3B6E",
     "secondaryColor": "#B22234",
     "isActive": true
@@ -148,7 +148,7 @@
     "group": "Group D",
     "teamCode": "PAR",
     "flagEmoji": "🇵🇾",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/paraguay.jpg",
     "primaryColor": "#D52B1E",
     "secondaryColor": "#0038A8",
     "isActive": true
@@ -159,7 +159,7 @@
     "group": "Group D",
     "teamCode": "AUS",
     "flagEmoji": "🇦🇺",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/australia.jpg",
     "primaryColor": "#00008B",
     "secondaryColor": "#FFCD00",
     "isActive": true
@@ -170,7 +170,7 @@
     "group": "Group D",
     "teamCode": "TUR",
     "flagEmoji": "🇹🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/turkiye.jpg",
     "primaryColor": "#E30A17",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -181,7 +181,7 @@
     "group": "Group E",
     "teamCode": "GER",
     "flagEmoji": "🇩🇪",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/germany.jpg",
     "primaryColor": "#000000",
     "secondaryColor": "#DD0000",
     "isActive": true
@@ -192,7 +192,7 @@
     "group": "Group E",
     "teamCode": "ECU",
     "flagEmoji": "🇪🇨",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/ecuador.jpg",
     "primaryColor": "#FFD100",
     "secondaryColor": "#0033A0",
     "isActive": true
@@ -203,7 +203,7 @@
     "group": "Group E",
     "teamCode": "CIV",
     "flagEmoji": "🇨🇮",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/ivory_coast.jpg",
     "primaryColor": "#F77F00",
     "secondaryColor": "#009E60",
     "isActive": true
@@ -214,7 +214,7 @@
     "group": "Group E",
     "teamCode": "CUW",
     "flagEmoji": "🇨🇼",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/curacao.jpg",
     "primaryColor": "#002B7F",
     "secondaryColor": "#F9E814",
     "isActive": true
@@ -225,7 +225,7 @@
     "group": "Group F",
     "teamCode": "NED",
     "flagEmoji": "🇳🇱",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/netherlands.jpg",
     "primaryColor": "#FF6600",
     "secondaryColor": "#21468B",
     "isActive": true
@@ -236,7 +236,7 @@
     "group": "Group F",
     "teamCode": "JPN",
     "flagEmoji": "🇯🇵",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/japan.jpg",
     "primaryColor": "#BC002D",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -247,7 +247,7 @@
     "group": "Group F",
     "teamCode": "TUN",
     "flagEmoji": "🇹🇳",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/tunisia.jpg",
     "primaryColor": "#E70013",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -258,7 +258,7 @@
     "group": "Group F",
     "teamCode": "SWE",
     "flagEmoji": "🇸🇪",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/sweden.jpg",
     "primaryColor": "#006AA7",
     "secondaryColor": "#FECC00",
     "isActive": true
@@ -269,7 +269,7 @@
     "group": "Group G",
     "teamCode": "BEL",
     "flagEmoji": "🇧🇪",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/belgium.jpg",
     "primaryColor": "#000000",
     "secondaryColor": "#FAE042",
     "isActive": true
@@ -280,7 +280,7 @@
     "group": "Group G",
     "teamCode": "IRN",
     "flagEmoji": "🇮🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/iran.jpg",
     "primaryColor": "#239F40",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -291,7 +291,7 @@
     "group": "Group G",
     "teamCode": "EGY",
     "flagEmoji": "🇪🇬",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/egypt.jpg",
     "primaryColor": "#CE1126",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -302,7 +302,7 @@
     "group": "Group G",
     "teamCode": "NZL",
     "flagEmoji": "🇳🇿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/new_zealand.jpg",
     "primaryColor": "#00247D",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -313,7 +313,7 @@
     "group": "Group H",
     "teamCode": "ESP",
     "flagEmoji": "🇪🇸",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/spain.jpg",
     "primaryColor": "#AA151B",
     "secondaryColor": "#F1BF00",
     "isActive": true
@@ -324,7 +324,7 @@
     "group": "Group H",
     "teamCode": "URU",
     "flagEmoji": "🇺🇾",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/uruguay.jpg",
     "primaryColor": "#0038A8",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -335,7 +335,7 @@
     "group": "Group H",
     "teamCode": "KSA",
     "flagEmoji": "🇸🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/saudi_arabia.jpg",
     "primaryColor": "#006C35",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -346,7 +346,7 @@
     "group": "Group H",
     "teamCode": "CPV",
     "flagEmoji": "🇨🇻",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/cape_verde.jpg",
     "primaryColor": "#003893",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -357,7 +357,7 @@
     "group": "Group I",
     "teamCode": "FRA",
     "flagEmoji": "🇫🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/france.jpg",
     "primaryColor": "#0055A4",
     "secondaryColor": "#EF4135",
     "isActive": true
@@ -368,7 +368,7 @@
     "group": "Group I",
     "teamCode": "SEN",
     "flagEmoji": "🇸🇳",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/senegal.jpg",
     "primaryColor": "#00853F",
     "secondaryColor": "#FDEF42",
     "isActive": true
@@ -379,7 +379,7 @@
     "group": "Group I",
     "teamCode": "NOR",
     "flagEmoji": "🇳🇴",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/norway.jpg",
     "primaryColor": "#BA0C2F",
     "secondaryColor": "#00205B",
     "isActive": true
@@ -390,7 +390,7 @@
     "group": "Group I",
     "teamCode": "IRQ",
     "flagEmoji": "🇮🇶",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/iraq.jpg",
     "primaryColor": "#CE1126",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -401,7 +401,7 @@
     "group": "Group J",
     "teamCode": "ARG",
     "flagEmoji": "🇦🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/argentina.jpg",
     "primaryColor": "#74ACDF",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -412,7 +412,7 @@
     "group": "Group J",
     "teamCode": "AUT",
     "flagEmoji": "🇦🇹",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/austria.jpg",
     "primaryColor": "#ED2939",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -423,7 +423,7 @@
     "group": "Group J",
     "teamCode": "ALG",
     "flagEmoji": "🇩🇿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/algeria.jpg",
     "primaryColor": "#006233",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -434,7 +434,7 @@
     "group": "Group J",
     "teamCode": "JOR",
     "flagEmoji": "🇯🇴",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/jordan.jpg",
     "primaryColor": "#007A3D",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -445,7 +445,7 @@
     "group": "Group K",
     "teamCode": "POR",
     "flagEmoji": "🇵🇹",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/portugal.jpg",
     "primaryColor": "#006600",
     "secondaryColor": "#FF0000",
     "isActive": true
@@ -456,7 +456,7 @@
     "group": "Group K",
     "teamCode": "COL",
     "flagEmoji": "🇨🇴",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/colombia.jpg",
     "primaryColor": "#FCD116",
     "secondaryColor": "#003893",
     "isActive": true
@@ -467,7 +467,7 @@
     "group": "Group K",
     "teamCode": "UZB",
     "flagEmoji": "🇺🇿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/uzbekistan.jpg",
     "primaryColor": "#1EB53A",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -478,7 +478,7 @@
     "group": "Group K",
     "teamCode": "COD",
     "flagEmoji": "🇨🇩",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/dr_congo.jpg",
     "primaryColor": "#007FFF",
     "secondaryColor": "#F7D618",
     "isActive": true
@@ -489,7 +489,7 @@
     "group": "Group L",
     "teamCode": "ENG",
     "flagEmoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/england.jpg",
     "primaryColor": "#FFFFFF",
     "secondaryColor": "#CE1141",
     "isActive": true
@@ -500,7 +500,7 @@
     "group": "Group L",
     "teamCode": "CRO",
     "flagEmoji": "🇭🇷",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/croatia.jpg",
     "primaryColor": "#FF0000",
     "secondaryColor": "#FFFFFF",
     "isActive": true
@@ -511,7 +511,7 @@
     "group": "Group L",
     "teamCode": "PAN",
     "flagEmoji": "🇵🇦",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/panama.jpg",
     "primaryColor": "#005293",
     "secondaryColor": "#DC143C",
     "isActive": true
@@ -522,7 +522,7 @@
     "group": "Group L",
     "teamCode": "GHA",
     "flagEmoji": "🇬🇭",
-    "customEmblemUrl": "",
+    "customEmblemUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/emblems/ghana.jpg",
     "primaryColor": "#006B3F",
     "secondaryColor": "#FCD116",
     "isActive": true

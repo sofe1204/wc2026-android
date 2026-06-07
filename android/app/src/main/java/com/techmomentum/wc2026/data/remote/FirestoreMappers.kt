@@ -4,6 +4,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.techmomentum.wc2026.data.model.Player
 import com.techmomentum.wc2026.data.model.PlayerRatings
 import com.techmomentum.wc2026.data.model.Rarity
+import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.Team
 import com.techmomentum.wc2026.data.model.UserProfile
@@ -63,6 +64,15 @@ private fun Map<String, Any>.int(key: String): Int = when (val v = this[key]) {
     is Number -> v.toInt()
     else -> 0
 }
+
+fun DocumentSnapshot.toSlotSymbol(): SlotSymbol = SlotSymbol(
+    symbolId = getString("symbolId") ?: id,
+    playerId = getString("playerId") ?: "",
+    label = getString("label") ?: "",
+    type = getString("type") ?: "player",
+    imageUrl = getString("imageUrl") ?: "",
+    isActive = getBoolean("isActive") ?: true,
+)
 
 fun DocumentSnapshot.toSticker(): Sticker = Sticker(
     stickerId = getString("stickerId") ?: id,

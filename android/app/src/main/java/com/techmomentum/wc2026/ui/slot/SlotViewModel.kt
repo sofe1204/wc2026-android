@@ -3,8 +3,8 @@ package com.techmomentum.wc2026.ui.slot
 import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.techmomentum.wc2026.data.model.Player
 import com.techmomentum.wc2026.data.model.SlotResult
+import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.remote.RewardedAdManager
 import com.techmomentum.wc2026.data.repository.CatalogRepository
 import com.techmomentum.wc2026.data.repository.RewardsRepository
@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class SlotUiState(
-    val grid: List<List<Player?>> = List(3) { List(3) { null } },
+    val grid: List<List<SlotSymbol?>> = List(3) { List(3) { null } },
     val spinsRemaining: Int = 0,
     val packsWonToday: Int = 0,
     val isWin: Boolean = false,
@@ -34,11 +34,11 @@ class SlotViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(SlotUiState())
     val uiState: StateFlow<SlotUiState> = _uiState.asStateFlow()
 
-    private var playersById: Map<String, Player> = emptyMap()
+    private var symbolsById: Map<String, SlotSymbol> = emptyMap()
 
     init {
         viewModelScope.launch {
-            playersById = catalogRepository.getPlayers().associateBy { it.playerId }
+            symbolsById = catalogRepository.getSlotSymbols().associateBy { it.symbolId }
             rewardedAdManager.load()
         }
     }
@@ -68,7 +68,7 @@ class SlotViewModel @Inject constructor(
 
     private fun applyResult(result: SlotResult) {
         val grid = result.grid.map { row ->
-            row.map { pid -> playersById[pid] }
+            row.map { symbolId -> symbolsById[symbolId] }
         }
         _uiState.update {
             it.copy(

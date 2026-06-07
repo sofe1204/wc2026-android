@@ -3,9 +3,11 @@ package com.techmomentum.wc2026.data.repository
 import com.google.firebase.firestore.FirebaseFirestore
 import com.techmomentum.wc2026.data.dataconnect.SqlConnectCatalogDataSource
 import com.techmomentum.wc2026.data.model.Player
+import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.Team
 import com.techmomentum.wc2026.data.remote.toPlayer
+import com.techmomentum.wc2026.data.remote.toSlotSymbol
 import com.techmomentum.wc2026.data.remote.toSticker
 import com.techmomentum.wc2026.data.remote.toTeam
 import com.techmomentum.wc2026.data.seed.SeedJsonParser
@@ -25,6 +27,7 @@ class CatalogRepository @Inject constructor(
     private var teamsCache: List<Team>? = null
     private var playersCache: List<Player>? = null
     private var stickersCache: List<Sticker>? = null
+    private var slotSymbolsCache: List<SlotSymbol>? = null
 
     suspend fun getTeams(): List<Team> {
         teamsCache?.let { return it }
@@ -59,10 +62,24 @@ class CatalogRepository @Inject constructor(
         return stickers
     }
 
+    suspend fun getSlotSymbols(): List<SlotSymbol> {
+        slotSymbolsCache?.let { return it }
+        val symbols = if (appSession.isActive()) {
+            seedJsonParser.loadSlotSymbols()
+        } else {
+            loadFromFirestoreSlotSymbols().getOrNull()
+                ?.takeIf { it.size >= GameConstants.SLOT_SYMBOL_COUNT }
+                ?: seedJsonParser.loadSlotSymbols()
+        }
+        slotSymbolsCache = symbols
+        return symbols
+    }
+
     fun clearCache() {
         teamsCache = null
         playersCache = null
         stickersCache = null
+        slotSymbolsCache = null
     }
 
     suspend fun getTeam(teamId: String): Team? = getTeams().firstOrNull { it.teamId == teamId }
@@ -151,5 +168,14 @@ class CatalogRepository @Inject constructor(
             .await()
             .documents
             .map { it.toSticker() }
+    }
+
+    private suspend fun loadFromFirestoreSlotSymbols(): Result<List<SlotSymbol>> = runCatching {
+        firestore.collection("slot_symbols")
+            .whereEqualTo("isActive", true)
+            .get()
+            .await()
+            .documents
+            .map { it.toSlotSymbol() }
     }
 }

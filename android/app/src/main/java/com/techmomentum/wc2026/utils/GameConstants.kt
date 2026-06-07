@@ -14,6 +14,8 @@ object GameConstants {
     /** Players plus one collectible team crest sticker per squad. */
     const val STICKERS_PER_TEAM = PLAYERS_PER_TEAM + 1
     const val TOTAL_TEAMS = 48
+    const val SLOT_SYMBOL_COUNT = 7
+    const val TROPHY_SYMBOL_ID = "trophy"
 
     const val RARITY_COMMON_WEIGHT = 70
     const val RARITY_RARE_WEIGHT = 20

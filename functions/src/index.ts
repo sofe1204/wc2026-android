@@ -17,7 +17,7 @@ import {
   ensureUserDoc,
   getUserRef,
   openPackForUser,
-  pickRandomPlayerIds,
+  pickRandomSlotSymbolIds,
   resetDailySlotIfNeeded,
 } from "./helpers";
 import {
@@ -133,7 +133,7 @@ export const spinSlotMachine = onCall(async (request) => {
       throw new HttpsError("failed-precondition", "No slot spins remaining.");
     }
 
-    const flatIds = await pickRandomPlayerIds(9);
+    const flatIds = await pickRandomSlotSymbolIds(9);
     const grid = [
       [flatIds[0], flatIds[1], flatIds[2]],
       [flatIds[3], flatIds[4], flatIds[5]],

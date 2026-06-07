@@ -4,6 +4,7 @@ import android.content.Context
 import com.techmomentum.wc2026.data.model.Player
 import com.techmomentum.wc2026.data.model.PlayerRatings
 import com.techmomentum.wc2026.data.model.Rarity
+import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.Team
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -60,6 +61,16 @@ private data class PlayerSeedDto(
     @SerialName("clubLogoUrl") val clubLogoUrl: String = "",
     @SerialName("ratings") val ratings: PlayerRatingsSeedDto = PlayerRatingsSeedDto(),
     @SerialName("ratingsComplete") val ratingsComplete: Boolean = false,
+    @SerialName("isActive") val isActive: Boolean = true,
+)
+
+@Serializable
+private data class SlotSymbolSeedDto(
+    @SerialName("symbolId") val symbolId: String,
+    @SerialName("playerId") val playerId: String = "",
+    @SerialName("label") val label: String = "",
+    @SerialName("type") val type: String = "player",
+    @SerialName("imageUrl") val imageUrl: String = "",
     @SerialName("isActive") val isActive: Boolean = true,
 )
 
@@ -132,6 +143,20 @@ class SeedJsonParser @Inject constructor(
                     positioning = dto.ratings.positioning,
                 ),
                 ratingsComplete = dto.ratingsComplete,
+                isActive = dto.isActive,
+            )
+        }
+    }
+
+    fun loadSlotSymbols(): List<SlotSymbol> {
+        val dtos = parseAsset<List<SlotSymbolSeedDto>>("seed/slot_symbols_seed.json")
+        return dtos.map { dto ->
+            SlotSymbol(
+                symbolId = dto.symbolId,
+                playerId = dto.playerId,
+                label = dto.label,
+                type = dto.type,
+                imageUrl = dto.imageUrl,
                 isActive = dto.isActive,
             )
         }

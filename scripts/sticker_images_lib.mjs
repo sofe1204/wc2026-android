@@ -8,7 +8,9 @@ const require = createRequire(import.meta.url);
 /** T2I fallback (~$0.04/image). Kontext edit used when STICKER_MASTER_IMAGE_URL is set. */
 export const DEFAULT_FAL_MODEL = "fal-ai/imagen4/preview";
 export const DEFAULT_KONTEXT_MODEL = "fal-ai/flux-pro/kontext";
+export const GROK_EDIT_MODEL = "xai/grok-imagine-image/edit";
 export const IMAGEN4_COST_PER_IMAGE = 0.04;
+export const GROK_EDIT_COST_PER_IMAGE = 0.022;
 
 export function isGoalkeeper(position) {
   return String(position || "").toLowerCase() === "goalkeeper";
@@ -88,6 +90,15 @@ export function kontextEditPrompt(playerName, countryName, position = "Midfielde
   );
 }
 
+/** Grok edit prompt — Panini scan → Pixar portrait (fixed transform, name varies). */
+export function grokEditPrompt(playerName) {
+  return (
+    `Transform ${playerName} face into a 3D Pixar-style portrait facing the camera, ` +
+    `remove "Panini logo", remove logo in upper right completely, ` +
+    `keep the other details exactly as they are.`
+  );
+}
+
 /** Pick T2I or Kontext edit prompt from player seed row + .env masters. */
 export function promptForPlayer(player) {
   if (getMasterImageUrl(player.position)) {
@@ -142,6 +153,7 @@ export function parseArgs(argv) {
     concurrency: 2,
     playerId: null,
     teamId: null,
+    symbolId: null,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -158,6 +170,8 @@ export function parseArgs(argv) {
     else if (a.startsWith("--player-id=")) out.playerId = a.split("=")[1];
     else if (a === "--team-id" && argv[i + 1]) out.teamId = argv[++i];
     else if (a.startsWith("--team-id=")) out.teamId = a.split("=")[1];
+    else if (a === "--symbol-id" && argv[i + 1]) out.symbolId = argv[++i];
+    else if (a.startsWith("--symbol-id=")) out.symbolId = a.split("=")[1];
   }
   if (out.playersOnly && out.emblemsOnly) {
     throw new Error("Use only one of --players-only or --emblems-only");
@@ -285,6 +299,79 @@ export async function generateWithFal(prompt, opts = {}) {
     }
   }
   throw lastErr;
+}
+
+/**
+ * Grok Imagine image edit via fal.ai (Panini scan → Pixar portrait).
+ * @param {{ prompt: string, imageUrl: string, aspectRatio?: string }} opts
+ */
+export async function generateWithGrokEdit(opts) {
+  const falKey = process.env.FAL_KEY;
+  if (!falKey) {
+    throw new Error("FAL_KEY is not set. Add it to .env or export FAL_KEY=...");
+  }
+
+  const imageUrl = opts.imageUrl?.trim();
+  if (!imageUrl) throw new Error("generateWithGrokEdit requires imageUrl");
+
+  const url = `https://fal.run/${GROK_EDIT_MODEL}`;
+  const body = {
+    prompt: opts.prompt,
+    image_urls: [imageUrl],
+    aspect_ratio: opts.aspectRatio || "3:4",
+    output_format: "jpeg",
+    num_images: 1,
+    resolution: "1k",
+  };
+
+  let lastErr;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Key ${falKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const text = await res.text();
+      let json;
+      try {
+        json = JSON.parse(text);
+      } catch {
+        throw new Error(`fal.ai returned non-JSON (${res.status}): ${text.slice(0, 200)}`);
+      }
+      if (!res.ok) {
+        const msg = json.detail || json.message || text;
+        throw new Error(`fal.ai ${res.status}: ${typeof msg === "string" ? msg : JSON.stringify(msg)}`);
+      }
+      const outUrl = json?.images?.[0]?.url;
+      if (!outUrl) throw new Error("fal.ai response missing images[0].url");
+      return { imageUrl: outUrl, model: GROK_EDIT_MODEL };
+    } catch (e) {
+      lastErr = e;
+      const retryable =
+        String(e.message).includes("429") ||
+        String(e.message).includes("503") ||
+        String(e.message).includes("502");
+      if (!retryable || attempt === 4) break;
+      await sleep(2000 * (attempt + 1));
+    }
+  }
+  throw lastErr;
+}
+
+export function contentTypeForPath(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  if (ext === ".png") return "image/png";
+  if (ext === ".webp") return "image/webp";
+  return "image/jpeg";
+}
+
+export async function uploadLocalFileToStorage(bucket, storagePath, filePath) {
+  const buffer = fs.readFileSync(filePath);
+  return uploadToStorage(bucket, storagePath, buffer, contentTypeForPath(filePath));
 }
 
 export function initFirebaseAdmin(root, projectConfig) {

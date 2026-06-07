@@ -28,10 +28,14 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.compose.AsyncImage
+import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.remote.RewardedAdManager
 import com.techmomentum.wc2026.ui.components.WorldCupTopBar
 import com.techmomentum.wc2026.ui.theme.CardGold
@@ -46,7 +50,7 @@ fun SlotMachineScreen(
     val activity = LocalContext.current as Activity
 
     Scaffold(
-        topBar = { WorldCupTopBar(title = "Slot Machine", subtitle = "Match 3 players to win packs") },
+        topBar = { WorldCupTopBar(title = "Slot Machine", subtitle = "Match 3 symbols to win packs") },
     ) { padding ->
         Column(
             modifier = Modifier
@@ -76,21 +80,8 @@ fun SlotMachineScreen(
             ) {
                 state.grid.forEach { row ->
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth()) {
-                        row.forEach { player ->
-                            Box(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .aspectRatio(1f)
-                                    .background(MaterialTheme.colorScheme.primaryContainer, RoundedCornerShape(10.dp)),
-                                contentAlignment = Alignment.Center,
-                            ) {
-                                Text(
-                                    text = player?.playerName?.take(10) ?: "?",
-                                    textAlign = TextAlign.Center,
-                                    style = MaterialTheme.typography.labelSmall,
-                                    maxLines = 2,
-                                )
-                            }
+                        row.forEach { symbol ->
+                            SlotReelCell(symbol = symbol, modifier = Modifier.weight(1f))
                         }
                     }
                 }
@@ -110,6 +101,36 @@ fun SlotMachineScreen(
                 onClick = { viewModel.watchAdForSpins(activity, rewardedAdManager) },
                 modifier = Modifier.fillMaxWidth(),
             ) { Text("Watch Ad (+5 Spins)") }
+        }
+    }
+}
+
+@Composable
+private fun SlotReelCell(symbol: SlotSymbol?, modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .aspectRatio(1f)
+            .clip(RoundedCornerShape(10.dp))
+            .background(MaterialTheme.colorScheme.primaryContainer),
+        contentAlignment = Alignment.Center,
+    ) {
+        if (symbol != null && symbol.imageUrl.isNotBlank()) {
+            AsyncImage(
+                model = symbol.imageUrl,
+                contentDescription = symbol.label,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(4.dp)
+                    .clip(RoundedCornerShape(8.dp)),
+                contentScale = ContentScale.Crop,
+            )
+        } else {
+            Text(
+                text = symbol?.label?.take(8) ?: "?",
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.labelSmall,
+                maxLines = 2,
+            )
         }
     }
 }

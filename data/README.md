@@ -107,15 +107,32 @@ npm run go-live:publish          # if signed-in users use Firestore
 
 `ratingsComplete` in JSON is set automatically when overall and the correct six attributes for that position are all &gt; 0.
 
-## Sticker images (fal.ai / Imagen 4)
+## Sticker images (fal.ai)
 
 **Full go-live steps:** [`docs/GO_LIVE.md`](../docs/GO_LIVE.md)
+
+### Panini scans → Grok edit (`wc26/`)
+
+Country folders under `wc26/` (e.g. `wc26/argentina/lionel messi.png`) are matched to `playerId` by normalized name + `teamId`. ~864 files cover most of the album; seed players without a scan are skipped.
+
+```bash
+npm run edit:stickers-grok -- --dry-run   # match report only
+npm run go-live:edit-grok:pilot           # 5 edits
+npm run go-live:edit-grok                 # all matched scans
+npm run go-live:publish                   # Firestore for signed-in users
+```
+
+Model: **Grok Imagine edit** (`xai/grok-imagine-image/edit`), 3:4, ~$0.022/image. Progress: `data/grok_sticker_edit_progress.json` (gitignored).
+
+### Text-to-image / Kontext (no scans)
 
 ```bash
 npm run go-live:check              # preflight
 npm run go-live:images:pilot       # 5 test images
 npm run go-live:images             # all players
-npm run go-live:images:emblems     # 48 crests
+npm run upload:emblems             # 48 crests from logos done/
+npm run upload:slot-symbols        # 7 slot reel images from slots/
+npm run go-live:images:emblems     # 48 AI crests (fal)
 npm run go-live:publish            # Firestore for signed-in users
 ```
 

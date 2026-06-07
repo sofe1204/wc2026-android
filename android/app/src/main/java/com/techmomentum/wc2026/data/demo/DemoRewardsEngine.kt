@@ -20,7 +20,7 @@ class DemoRewardsEngine @Inject constructor(
     private val seedJsonParser: SeedJsonParser,
 ) {
     private var stickersCache: List<Sticker>? = null
-    private var playersCache: List<String>? = null
+    private var slotSymbolIdsCache: List<String>? = null
 
     suspend fun ensureUserProfile(): CallableResult {
         appSession.enterGuestMode()
@@ -92,8 +92,8 @@ class DemoRewardsEngine @Inject constructor(
         if (profile.slotSpinsRemaining <= 0) {
             return SlotResult(message = "No slot spins remaining.")
         }
-        val playerIds = loadPlayerIds()
-        val grid = List(3) { List(3) { playerIds.random() } }
+        val symbolIds = loadSlotSymbolIds()
+        val grid = List(3) { List(3) { symbolIds.random() } }
         val isWin = checkWin(grid)
         var rewardGranted = false
         var packsWon = profile.slotRewardPacksWonToday
@@ -156,9 +156,13 @@ class DemoRewardsEngine @Inject constructor(
         return seedJsonParser.loadStickers().also { stickersCache = it }
     }
 
-    private suspend fun loadPlayerIds(): List<String> {
-        playersCache?.let { return it }
-        return seedJsonParser.loadPlayers().map { it.playerId }.also { playersCache = it }
+    private suspend fun loadSlotSymbolIds(): List<String> {
+        slotSymbolIdsCache?.let { return it }
+        val ids = seedJsonParser.loadSlotSymbols()
+            .filter { it.isActive }
+            .map { it.symbolId }
+        if (ids.isNotEmpty()) return ids.also { slotSymbolIdsCache = it }
+        return seedJsonParser.loadPlayers().map { it.playerId }.also { slotSymbolIdsCache = it }
     }
 
     private fun pickByRarity(stickers: List<Sticker>): Sticker? {
@@ -187,6 +191,15 @@ class DemoRewardsEngine @Inject constructor(
             listOf(grid[0][0], grid[1][1], grid[2][2]),
             listOf(grid[0][2], grid[1][1], grid[2][0]),
         )
-        return lines.any { it[0] == it[1] && it[1] == it[2] }
+        return lines.any { lineWins(it) }
+    }
+
+    private fun lineWins(line: List<String>): Boolean {
+        if (line.any { it.isBlank() }) return false
+        val trophy = GameConstants.TROPHY_SYMBOL_ID
+        val nonWild = line.filter { it != trophy }
+        if (nonWild.isEmpty()) return true
+        val target = nonWild.first()
+        return nonWild.all { it == target } && line.all { it == target || it == trophy }
     }
 }
