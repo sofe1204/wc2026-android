@@ -10,13 +10,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,7 +27,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.key
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,14 +62,21 @@ fun SlotMachineScreen(
     viewModel: SlotViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    val slotSounds = rememberSlotSoundController()
     val activity = LocalContext.current as Activity
     val slotBitmaps = remember(viewModel, state.imageRefreshGeneration) {
         { url: String -> viewModel.slotBitmap(url) }
     }
     val haptic = LocalHapticFeedback.current
 
-    LaunchedEffect(state.isWin, state.spinPhase) {
-        if (state.isWin && state.spinPhase == SlotSpinPhase.Idle && state.hapticsEnabled) {
+    LaunchedEffect(state.phase) {
+        if (state.phase != SlotPhase.Spinning) {
+            slotSounds.stopSpinLoop()
+        }
+    }
+
+    LaunchedEffect(state.isWin, state.phase) {
+        if (state.isWin && state.phase == SlotPhase.Settled && state.hapticsEnabled) {
             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
         }
     }
@@ -132,6 +136,8 @@ fun SlotMachineScreen(
                         CompositionLocalProvider(LocalSlotBitmaps provides slotBitmaps) {
                             SlotMachineCabinet(
                                 state = state,
+                                slotSounds = slotSounds,
+                                onSpinAnimationFinished = viewModel::markSpinSettled,
                                 modifier = Modifier.fillMaxWidth(),
                             )
                         }
@@ -139,11 +145,11 @@ fun SlotMachineScreen(
                         SlotCabinetPlaceholder(modifier = Modifier.fillMaxWidth())
                     }
 
-                    if (state.isWin && state.spinPhase == SlotSpinPhase.Idle) {
+                    if (state.isWin && state.phase == SlotPhase.Settled) {
                         PixarCelebrationChip(message = "WIN! Line match!")
                     }
 
-                    state.message?.takeIf { state.spinPhase == SlotSpinPhase.Idle }?.let { message ->
+                    state.message?.takeIf { state.phase == SlotPhase.Settled }?.let { message ->
                         Text(
                             text = message,
                             textAlign = TextAlign.Center,
@@ -156,9 +162,12 @@ fun SlotMachineScreen(
 
                     PixarPrimaryButton(
                         text = if (state.isAnimating) "Spinning…" else "Spin",
-                        onClick = viewModel::spin,
+                        onClick = {
+                            slotSounds.playSpinClick()
+                            viewModel.spin()
+                        },
                         enabled = state.symbolsReady && !state.isAnimating && state.spinsRemaining > 0,
-                        loading = state.spinPhase == SlotSpinPhase.Spinning,
+                        loading = state.phase == SlotPhase.Spinning,
                     )
 
                     PixarSecondaryButton(
@@ -229,38 +238,11 @@ private fun SlotMarqueeStrip(modifier: Modifier = Modifier) {
     }
 }
 
-/** Two dividers between three columns: (3+4+3)dp padding each side × 2. */
-private val SlotReelDividerGutter = 20.dp
-
-@Composable
-private fun SlotReelDivider(modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .width(4.dp)
-            .fillMaxHeight()
-            .clip(RoundedCornerShape(2.dp))
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        Color(0xFF8B6914),
-                        CardGold,
-                        Color.White.copy(alpha = 0.85f),
-                        CardGold,
-                        Color(0xFF8B6914),
-                    ),
-                ),
-            )
-            .border(
-                width = 0.5.dp,
-                color = Color.Black.copy(alpha = 0.35f),
-                shape = RoundedCornerShape(2.dp),
-            ),
-    )
-}
-
 @Composable
 private fun SlotMachineCabinet(
     state: SlotUiState,
+    slotSounds: SlotSoundController,
+    onSpinAnimationFinished: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val cabinetShape = RoundedCornerShape(24.dp)
@@ -302,13 +284,6 @@ private fun SlotMachineCabinet(
                     .border(1.dp, Color.Black.copy(alpha = 0.5f), windowShape)
                     .padding(8.dp),
             ) {
-                val cellHeight = (maxWidth - SlotReelDividerGutter) / 3f
-                val reelHeight = cellHeight * 3f
-                val sourceGrid = when (state.spinPhase) {
-                    SlotSpinPhase.Settling -> state.targetGrid
-                    else -> state.grid
-                }
-
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Box(
                         modifier = Modifier
@@ -325,47 +300,50 @@ private fun SlotMachineCabinet(
                                 ),
                             ),
                     )
-                    Row(
+                    Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(reelHeight)
                             .padding(top = 4.dp),
-                        verticalAlignment = Alignment.Top,
                     ) {
-                        repeat(3) { columnIndex ->
-                            key(columnIndex) {
-                                if (columnIndex > 0) {
-                                    SlotReelDivider(modifier = Modifier.padding(horizontal = 3.dp))
-                                }
-                                val isColumnSpinning = SlotViewModel.isColumnSpinning(
-                                    phase = state.spinPhase,
-                                    settledColumnCount = state.settledColumnCount,
-                                    column = columnIndex,
-                                )
-                                val stopRequested = SlotViewModel.isColumnStopRequested(
-                                    phase = state.spinPhase,
-                                    settledColumnCount = state.settledColumnCount,
-                                    column = columnIndex,
-                                )
-                                val columnSymbols = SlotViewModel.columnSymbols(sourceGrid, columnIndex)
-                                val winningRows = if (state.spinPhase == SlotSpinPhase.Idle && state.isWin) {
-                                    state.winningCells
-                                        .filter { it.second == columnIndex }
-                                        .map { it.first }
-                                        .toSet()
+                        when (state.phase) {
+                            SlotPhase.Spinning -> {
+                                if (state.spinResultReady) {
+                                    SlotCascadeBoard(
+                                        cells = state.finalCells,
+                                        winningCells = emptySet(),
+                                        spinGeneration = state.spinGeneration,
+                                        spinResultReady = state.spinResultReady,
+                                        isWin = state.serverIsWin && state.localIsWin,
+                                        onSpinStarted = slotSounds::startSpinLoop,
+                                        onColumnLanded = slotSounds::playColumnLand,
+                                        onSpinFinished = { didWin ->
+                                            slotSounds.stopSpinLoop()
+                                            if (didWin) {
+                                                slotSounds.playWin()
+                                            }
+                                        },
+                                        onFinished = onSpinAnimationFinished,
+                                        modifier = Modifier.fillMaxWidth(),
+                                    )
                                 } else {
-                                    emptySet()
+                                    SlotGridBoard(
+                                        cells = state.finalCells,
+                                        winningCells = emptySet(),
+                                        spinGeneration = state.spinGeneration,
+                                        modifier = Modifier.fillMaxWidth(),
+                                    )
                                 }
-
-                                SlotReelColumn(
-                                    columnIndex = columnIndex,
-                                    finalSymbols = columnSymbols,
-                                    isColumnSpinning = isColumnSpinning,
-                                    stopRequested = stopRequested,
-                                    symbolPool = state.symbolPool,
+                            }
+                            SlotPhase.Idle, SlotPhase.Settled -> {
+                                SlotGridBoard(
+                                    cells = state.finalCells,
+                                    winningCells = if (state.phase == SlotPhase.Settled) {
+                                        state.winningCells
+                                    } else {
+                                        emptySet()
+                                    },
                                     spinGeneration = state.spinGeneration,
-                                    winningRows = winningRows,
-                                    modifier = Modifier.weight(1f).fillMaxHeight(),
+                                    modifier = Modifier.fillMaxWidth(),
                                 )
                             }
                         }
@@ -396,46 +374,15 @@ private fun SlotCabinetPlaceholder(modifier: Modifier = Modifier) {
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
             SlotMarqueeStrip()
-            BoxWithConstraints(
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 8.dp)
+                    .height(280.dp)
                     .clip(windowShape)
                     .background(Color(0xFF151F2B))
-                    .border(2.dp, slotGoldFrameBrush(), windowShape)
-                    .padding(8.dp),
-            ) {
-                val cellHeight = (maxWidth - SlotReelDividerGutter) / 3f
-                val reelHeight = cellHeight * 3f
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(reelHeight),
-                ) {
-                    repeat(3) { index ->
-                        if (index > 0) {
-                            SlotReelDivider(modifier = Modifier.padding(horizontal = 3.dp))
-                        }
-                        Column(modifier = Modifier.weight(1f).height(reelHeight)) {
-                            repeat(3) {
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(cellHeight)
-                                        .padding(vertical = 2.dp)
-                                        .clip(RoundedCornerShape(10.dp))
-                                        .background(Color(0xFF2A3848).copy(alpha = 0.65f))
-                                        .border(
-                                            width = 1.dp,
-                                            color = CardGold.copy(alpha = 0.25f),
-                                            shape = RoundedCornerShape(10.dp),
-                                        ),
-                                )
-                            }
-                        }
-                    }
-                }
-            }
+                    .border(2.dp, slotGoldFrameBrush(), windowShape),
+            )
         }
     }
 }

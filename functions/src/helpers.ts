@@ -162,7 +162,9 @@ export const TROPHY_SYMBOL_ID = "trophy";
 export async function pickRandomSlotSymbolIds(count: number): Promise<string[]> {
   const snap = await db().collection("slot_symbols").where("isActive", "==", true).get();
   if (!snap.empty) {
-    const ids = snap.docs.map((d) => d.id);
+    // Use stable symbolId from doc data (not Firestore doc id) so scoring matches the app catalog.
+    const ids = [...new Set(snap.docs.map((d) => String(d.data().symbolId || d.id)))];
+    if (ids.length === 0) return pickRandomPlayerIds(count);
     return Array.from({ length: count }, () => ids[Math.floor(Math.random() * ids.length)]);
   }
   return pickRandomPlayerIds(count);

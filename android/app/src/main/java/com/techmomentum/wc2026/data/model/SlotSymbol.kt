@@ -11,4 +11,11 @@ data class SlotSymbol(
     val documentId: String = "",
 ) {
     val isTrophy: Boolean get() = type == "trophy" || symbolId == "trophy"
+
+    companion object {
+        fun placeholder(spinId: String): SlotSymbol = SlotSymbol(
+            symbolId = spinId.ifBlank { "unknown" },
+            label = spinId.takeLast(8).ifBlank { "?" },
+        )
+    }
 }

@@ -9,6 +9,7 @@ import com.techmomentum.wc2026.data.model.LeaderboardResult
 import com.techmomentum.wc2026.data.model.PackOpenResult
 import com.techmomentum.wc2026.data.model.ProfileUpdateRequest
 import com.techmomentum.wc2026.data.model.SlotResult
+import com.techmomentum.wc2026.data.slot.SlotGridParser
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -67,10 +68,14 @@ class CloudFunctionsClient @Inject constructor(
 
     suspend fun spinSlotMachine(): SlotResult {
         val data = invoke("spinSlotMachine")
+        val grid = SlotGridParser.parseSpinIds(data)
+        if (!SlotGridParser.isValid(grid)) {
+            throw IllegalStateException("Could not read spin result. Please try again.")
+        }
         return SlotResult(
-            grid = parseSlotGrid(data),
-            isWin = data["isWin"] as? Boolean ?: false,
-            rewardGranted = data["rewardGranted"] as? Boolean ?: false,
+            grid = grid,
+            isWin = parseBoolean(data["isWin"]),
+            rewardGranted = parseBoolean(data["rewardGranted"]),
             spinsRemaining = (data["spinsRemaining"] as? Number)?.toInt() ?: 0,
             packsWonToday = (data["packsWonToday"] as? Number)?.toInt() ?: 0,
             message = data["message"] as? String ?: "",
@@ -85,32 +90,11 @@ class CloudFunctionsClient @Inject constructor(
     suspend fun seedPlayers(): CallableResult = call("seedPlayers")
     suspend fun seedStickers(): CallableResult = call("seedStickers")
 
-    /**
-     * Prefer flat [symbolIds] (Firestore-safe) over nested [grid] from callable responses.
-     * Firebase Android can deserialize nested lists inconsistently; a flat 9-pack is reliable.
-     */
-    private fun parseSlotGrid(data: Map<String, Any?>): List<List<String>> {
-        val flat = (data["symbolIds"] as? List<*>)?.mapNotNull { it?.toString()?.trim()?.takeIf { s -> s.isNotEmpty() } }
-        if (flat != null && flat.size >= 9) {
-            return listOf(
-                flat.subList(0, 3),
-                flat.subList(3, 6),
-                flat.subList(6, 9),
-            )
-        }
-        val nested = data["grid"] as? List<*>
-        if (nested != null) {
-            val rows = nested.mapNotNull { row ->
-                (row as? List<*>)?.map { cell -> cell?.toString()?.trim().orEmpty() }
-            }
-            if (rows.isNotEmpty()) {
-                return List(3) { rowIndex ->
-                    val row = rows.getOrNull(rowIndex).orEmpty()
-                    List(3) { colIndex -> row.getOrNull(colIndex).orEmpty() }
-                }
-            }
-        }
-        return emptyList()
+    private fun parseBoolean(value: Any?): Boolean = when (value) {
+        is Boolean -> value
+        is Number -> value.toInt() != 0
+        is String -> value.equals("true", ignoreCase = true)
+        else -> false
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -179,6 +163,8 @@ class CloudFunctionsClient @Inject constructor(
                         "Run: ./scripts/deploy_functions.sh",
                     e,
                 )
+            FirebaseFunctionsException.Code.INVALID_ARGUMENT ->
+                IllegalStateException(detail)
             FirebaseFunctionsException.Code.FAILED_PRECONDITION ->
                 IllegalStateException(detail)
             FirebaseFunctionsException.Code.ALREADY_EXISTS ->

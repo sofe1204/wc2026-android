@@ -6,6 +6,7 @@ import com.techmomentum.wc2026.data.model.CountryOption
 import com.techmomentum.wc2026.data.model.ProfileUpdateRequest
 import com.techmomentum.wc2026.data.repository.ProfileRepository
 import com.techmomentum.wc2026.ui.navigation.Routes
+import com.techmomentum.wc2026.utils.ProfileValidation
 import com.techmomentum.wc2026.utils.WorldCountries
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -49,26 +50,46 @@ class CompleteProfileViewModel @Inject constructor(
             _uiState.update { it.copy(error = "Fill in username, full name, surname, and country.") }
             return
         }
+        ProfileValidation.validateUsername(state.username)?.let { message ->
+            _uiState.update { it.copy(error = message) }
+            return
+        }
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true, error = null) }
-            val result = profileRepository.updateUserProfile(
-                ProfileUpdateRequest(
-                    username = state.username.trim(),
-                    firstName = state.firstName.trim(),
-                    lastName = state.lastName.trim(),
-                    countryCode = country.code,
-                    countryName = country.name,
-                ),
+            runCatching {
+                profileRepository.updateUserProfile(
+                    ProfileUpdateRequest(
+                        username = state.username.trim(),
+                        firstName = state.firstName.trim(),
+                        lastName = state.lastName.trim(),
+                        countryCode = country.code,
+                        countryName = country.name,
+                    ),
+                )
+            }.fold(
+                onSuccess = { result ->
+                    if (result.success) {
+                        _uiState.update {
+                            it.copy(loading = false, destinationRoute = Routes.HOME, error = null)
+                        }
+                    } else {
+                        _uiState.update {
+                            it.copy(
+                                loading = false,
+                                error = result.message.ifBlank { "Could not save profile." },
+                            )
+                        }
+                    }
+                },
+                onFailure = { e ->
+                    _uiState.update {
+                        it.copy(
+                            loading = false,
+                            error = e.message?.ifBlank { null } ?: "Could not save profile.",
+                        )
+                    }
+                },
             )
-            if (result.success) {
-                _uiState.update {
-                    it.copy(loading = false, destinationRoute = Routes.HOME, error = null)
-                }
-            } else {
-                _uiState.update {
-                    it.copy(loading = false, error = result.message.ifBlank { "Could not save profile." })
-                }
-            }
         }
     }
 }
