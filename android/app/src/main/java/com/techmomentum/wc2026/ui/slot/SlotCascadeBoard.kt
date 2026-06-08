@@ -24,8 +24,8 @@ import com.techmomentum.wc2026.data.model.SlotGridPosition
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val COLUMN_STAGGER_MS = 180L
-private const val CASCADE_FINISH_BUFFER_MS = 750L
+private const val COLUMN_STAGGER_MS = 110L
+private const val CASCADE_FINISH_BUFFER_MS = 450L
 private const val DROP_OFFSET_Y = -900f
 
 @Composable
@@ -57,8 +57,8 @@ fun SlotCascadeBoard(
                 animatable.animateTo(
                     targetValue = 0f,
                     animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioMediumBouncy,
-                        stiffness = Spring.StiffnessLow,
+                        dampingRatio = Spring.DampingRatioLowBouncy,
+                        stiffness = Spring.StiffnessMedium,
                     ),
                 )
                 onColumnLanded(col)

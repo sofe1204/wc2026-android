@@ -1,0 +1,3 @@
+file 'C:\Users\Aleksandar\wc26 album\wc2026-android\scripts\.slot-audio-work\win_part1.ogg'
+file 'C:\Users\Aleksandar\wc26 album\wc2026-android\scripts\.slot-audio-work\win_part2.ogg'
+file 'C:\Users\Aleksandar\wc26 album\wc2026-android\scripts\.slot-audio-work\win_part3.ogg'

@@ -85,7 +85,7 @@ class SlotSoundController(
     }
 
     fun playSpinClick() {
-        playSound(spinClickSound, "slot_spin_click", volume = 0.9f, priority = 1, loop = 0, rate = 1f)
+        playSound(spinClickSound, "slot_spin_click", volume = 0.65f, priority = 1, loop = 0, rate = 1f)
     }
 
     fun startSpinLoop() {
@@ -93,7 +93,7 @@ class SlotSoundController(
         if (spinLoopStreamId != null) return
         if (!isReady(spinLoopSound, "slot_spin_loop")) return
 
-        val streamId = soundPool.play(spinLoopSound, 0.35f, 0.35f, 1, -1, 1f)
+        val streamId = soundPool.play(spinLoopSound, 0.28f, 0.28f, 1, -1, 1f)
         if (streamId == 0) {
             Log.e(TAG, "soundPool.play failed for slot_spin_loop soundId=$spinLoopSound")
             return
@@ -114,7 +114,7 @@ class SlotSoundController(
             1 -> 1.0f
             else -> 1.06f
         }
-        playSound(columnLandSound, "slot_column_land", volume = 0.95f, priority = 2, loop = 0, rate = pitch)
+        playSound(columnLandSound, "slot_column_land", volume = 1f, priority = 2, loop = 0, rate = pitch)
     }
 
     fun playWin() {
