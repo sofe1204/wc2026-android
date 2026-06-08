@@ -26,7 +26,7 @@ Full Studio steps: [`android/ANDROID_STUDIO.md`](android/ANDROID_STUDIO.md)
 
 ## Stack
 
-- **Android:** Kotlin, Jetpack Compose, Material 3, Hilt, MVVM, Coil, AdMob (rewarded)
+- **Android:** Kotlin, Jetpack Compose, Material 3, Hilt, MVVM, Coil, AdMob (banner, interstitial, rewarded)
 - **Backend:** Firebase Auth, **Firestore**, Cloud Functions, Storage
 - **Optional:** Firebase SQL Connect (Cloud SQL) — catalog; off by default in app
 - **Rewards:** Server-authoritative (packs, daily claims, slot machine, ownership)

@@ -1,5 +1,6 @@
 package com.techmomentum.wc2026.ui.navigation
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -8,6 +9,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import com.techmomentum.wc2026.ui.components.BannerAd
 import com.techmomentum.wc2026.ui.components.MainBottomBar
 
 @Composable
@@ -23,8 +25,11 @@ fun MainScaffold(
         modifier = modifier,
         snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
-            if (showBottomBar) {
-                MainBottomBar(currentRoute = currentRoute, onNavigate = onNavigate)
+            Column {
+                BannerAd()
+                if (showBottomBar) {
+                    MainBottomBar(currentRoute = currentRoute, onNavigate = onNavigate)
+                }
             }
         },
         content = content,

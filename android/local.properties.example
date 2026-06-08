@@ -6,7 +6,11 @@ sdk.dir=/Users/YOUR_USER/Library/Android/sdk
 # Optional: route Firebase SDK to local emulators (also run: firebase emulators:start)
 # firebase.emulators=true
 
-# AdMob — omit these to use Google's official TEST ad units (default, safe for dev).
-# When going live, create units in AdMob console and uncomment:
-# admob.app.id=ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY
+# AdMob production IDs (used by release builds only; debug/emulator always uses Google test units).
+# Anime World Cup 2026 Album Stickers:
+# admob.app.id=ca-app-pub-9695066968597492~3480108835
+# admob.interstitial.unit.id=ca-app-pub-9695066968597492/8432897080
+# admob.banner.unit.id=ca-app-pub-9695066968597492/7119815417
 # admob.rewarded.unit.id=ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ
+# Debug: ./gradlew installDebug  → test ads
+# Release: ./gradlew assembleRelease → real ads above

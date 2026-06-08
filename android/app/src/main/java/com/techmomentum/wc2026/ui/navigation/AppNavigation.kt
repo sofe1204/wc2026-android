@@ -1,10 +1,13 @@
 package com.techmomentum.wc2026.ui.navigation
 
+import android.app.Activity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -12,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.techmomentum.wc2026.data.remote.InterstitialAdManager
 import com.techmomentum.wc2026.data.remote.RewardedAdManager
 import com.techmomentum.wc2026.data.repository.AppAuthState
 import com.techmomentum.wc2026.data.repository.AuthRepository
@@ -37,6 +41,7 @@ import com.techmomentum.wc2026.ui.team.TeamAlbumScreen
 fun AppNavigation(
     authRepository: AuthRepository,
     rewardedAdManager: RewardedAdManager,
+    interstitialAdManager: InterstitialAdManager,
     modifier: Modifier = Modifier,
 ) {
     val navController = rememberNavController()
@@ -44,8 +49,14 @@ fun AppNavigation(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
+    val context = LocalContext.current
+    val activity = context as? Activity
     val isLoggedIn = authState is AppAuthState.SignedIn || authState is AppAuthState.Guest
     val showBottomBar = currentRoute in Routes.bottomBarDestinations
+
+    LaunchedEffect(isLoggedIn) {
+        if (isLoggedIn) interstitialAdManager.load()
+    }
 
     if (!isLoggedIn && currentRoute != Routes.AUTH && currentRoute != Routes.LOADING) {
         androidx.compose.runtime.LaunchedEffect(Unit) {
@@ -58,12 +69,20 @@ fun AppNavigation(
         currentRoute = currentRoute,
         showBottomBar = showBottomBar && isLoggedIn,
         onNavigate = { route ->
-            navController.navigate(route) {
-                popUpTo(navController.graph.findStartDestination().id) {
-                    saveState = true
+            if (route == currentRoute) return@MainScaffold
+            val navigate = {
+                navController.navigate(route) {
+                    popUpTo(navController.graph.findStartDestination().id) {
+                        saveState = true
+                    }
+                    launchSingleTop = true
+                    restoreState = true
                 }
-                launchSingleTop = true
-                restoreState = true
+            }
+            if (activity != null) {
+                interstitialAdManager.tryShowOnNavigation(activity, navigate)
+            } else {
+                navigate()
             }
         },
     ) { padding ->
@@ -168,7 +187,10 @@ fun AppNavigation(
                 StickerDetailScreen(onBack = { navController.popBackStack() })
             }
             composable(Routes.PACK_OPEN) {
-                PackOpeningScreen(onDone = { navController.popBackStack() })
+                PackOpeningScreen(
+                    interstitialAdManager = interstitialAdManager,
+                    onDone = { navController.popBackStack() },
+                )
             }
         }
     }

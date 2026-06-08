@@ -183,8 +183,8 @@ export const spinSlotMachine = onCall(async (request) => {
 
       return {
         success: true,
-        symbolIds: flatIds,
         grid,
+        symbolIds: flatIds,
         isWin,
         rewardGranted,
         spinsRemaining,

@@ -24,8 +24,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import android.app.Activity
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -35,6 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.data.model.Rarity
+import com.techmomentum.wc2026.data.remote.InterstitialAdManager
 import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
 import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.ErrorState
@@ -49,20 +52,32 @@ import kotlinx.coroutines.delay
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PackOpeningScreen(
+    interstitialAdManager: InterstitialAdManager,
     onDone: () -> Unit,
     viewModel: PackOpeningViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
+    val activity = context as? Activity
 
     LaunchedEffect(Unit) {
+        interstitialAdManager.load()
         if (state.revealed.isEmpty() && !state.loading && state.error == null) {
             viewModel.openPack()
         }
     }
 
+    val finishPackOpening: () -> Unit = {
+        if (activity != null) {
+            interstitialAdManager.show(activity, onDismiss = onDone)
+        } else {
+            onDone()
+        }
+    }
+
     Scaffold(
         containerColor = Color.Transparent,
-        topBar = { WorldCupTopBar(title = "Pack Opening", showBack = true, onBack = onDone) },
+        topBar = { WorldCupTopBar(title = "Pack Opening", showBack = true, onBack = finishPackOpening) },
     ) { padding ->
         Box(
             modifier = Modifier
@@ -84,7 +99,7 @@ fun PackOpeningScreen(
                     state.revealed.isNotEmpty() -> RevealContent(
                         state = state,
                         onRevealNext = viewModel::revealNext,
-                        onDone = onDone,
+                        onDone = finishPackOpening,
                     )
                 }
             }

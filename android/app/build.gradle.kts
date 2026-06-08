@@ -25,7 +25,10 @@ val admobAppId = localProperties.getProperty("admob.app.id")
     ?: "ca-app-pub-3940256099942544~3347511713"
 val admobRewardedUnitId = localProperties.getProperty("admob.rewarded.unit.id")
     ?: "ca-app-pub-3940256099942544/5224354917"
-val useTestAdMob = admobAppId.contains("3940256099942544")
+val admobInterstitialUnitId = localProperties.getProperty("admob.interstitial.unit.id")
+    ?: "ca-app-pub-3940256099942544/1033173712"
+val admobBannerUnitId = localProperties.getProperty("admob.banner.unit.id")
+    ?: "ca-app-pub-3940256099942544/6300978111"
 
 @Suppress("UNCHECKED_CAST")
 val projectConfig = JsonSlurper().parseText(
@@ -71,8 +74,10 @@ android {
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders["admobAppId"] = admobAppId
+        buildConfigField("String", "ADMOB_APP_ID", quote(admobAppId))
         buildConfigField("String", "REWARDED_AD_UNIT_ID", quote(admobRewardedUnitId))
-        buildConfigField("boolean", "USE_TEST_ADMOB", useTestAdMob.toString())
+        buildConfigField("String", "INTERSTITIAL_AD_UNIT_ID", quote(admobInterstitialUnitId))
+        buildConfigField("String", "BANNER_AD_UNIT_ID", quote(admobBannerUnitId))
         buildConfigField("String", "FIREBASE_PROJECT_ID", quote(firebase["projectId"] as String))
         buildConfigField("String", "ANDROID_PACKAGE", quote(firebase["androidPackage"] as String))
         buildConfigField("String", "FUNCTIONS_REGION", quote(firebase["functionsRegion"] as String))
@@ -99,6 +104,8 @@ android {
         release {
             isMinifyEnabled = false
             buildConfigField("boolean", "DEBUG", "false")
+            // Production ad unit IDs from local.properties (AdMobConfig.useTestAds = false).
+            buildConfigField("boolean", "USE_TEST_ADMOB", "false")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -106,6 +113,8 @@ android {
         }
         debug {
             buildConfigField("boolean", "DEBUG", "true")
+            // Google sample ad units on emulator / debug installs (AdMobConfig.useTestAds = true).
+            buildConfigField("boolean", "USE_TEST_ADMOB", "true")
         }
     }
 
