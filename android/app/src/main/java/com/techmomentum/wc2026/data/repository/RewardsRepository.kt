@@ -1,7 +1,6 @@
 package com.techmomentum.wc2026.data.repository
 
 import com.google.firebase.functions.FirebaseFunctionsException
-import com.techmomentum.wc2026.data.demo.DemoRewardsEngine
 import com.techmomentum.wc2026.data.firebase.CloudFunctionsClient
 import com.techmomentum.wc2026.data.firebase.FirestoreUserBootstrap
 import com.techmomentum.wc2026.data.firebase.FunctionsNotDeployedException
@@ -9,7 +8,6 @@ import com.techmomentum.wc2026.data.firebase.FunctionsUnauthenticatedException
 import com.techmomentum.wc2026.data.model.CallableResult
 import com.techmomentum.wc2026.data.model.PackOpenResult
 import com.techmomentum.wc2026.data.model.SlotResult
-import com.techmomentum.wc2026.data.session.AppSession
 import com.techmomentum.wc2026.debug.DebugAgentLog
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -18,15 +16,12 @@ import javax.inject.Singleton
 class RewardsRepository @Inject constructor(
     private val cloudFunctions: CloudFunctionsClient,
     private val firestoreUserBootstrap: FirestoreUserBootstrap,
-    private val appSession: AppSession,
-    private val demoRewardsEngine: DemoRewardsEngine,
 ) {
     /**
      * Ensures Firestore user profile exists after Firebase Auth sign-in/sign-up.
      * Uses Cloud Function when deployed; otherwise creates profile directly in Firestore.
      */
     suspend fun ensureUserProfile(createNewAccount: Boolean = false): CallableResult {
-        if (useDemo()) return demoRewardsEngine.ensureUserProfile()
         return try {
             val fromFunctions = cloudFunctions.ensureUserProfile()
             // #region agent log
@@ -72,28 +67,21 @@ class RewardsRepository @Inject constructor(
         }
     }
 
-    suspend fun openStickerPack(): PackOpenResult =
-        if (useDemo()) demoRewardsEngine.openStickerPack() else cloudFunctions.openStickerPack()
+    suspend fun openStickerPack(): PackOpenResult = cloudFunctions.openStickerPack()
 
-    suspend fun claimRewardedAdStickers(): CallableResult =
-        if (useDemo()) demoRewardsEngine.claimRewardedAdStickers() else cloudFunctions.claimRewardedAdStickers()
+    suspend fun claimRewardedAdStickers(): CallableResult = cloudFunctions.claimRewardedAdStickers()
 
-    suspend fun spinSlotMachine(): SlotResult =
-        if (useDemo()) demoRewardsEngine.spinSlotMachine() else cloudFunctions.spinSlotMachine()
+    suspend fun spinSlotMachine(): SlotResult = cloudFunctions.spinSlotMachine()
 
-    suspend fun claimRewardedSlotSpins(): CallableResult =
-        if (useDemo()) demoRewardsEngine.claimRewardedSlotSpins() else cloudFunctions.claimRewardedSlotSpins()
+    suspend fun claimRewardedSlotSpins(): CallableResult = cloudFunctions.claimRewardedSlotSpins()
 
-    suspend fun redeemSwapDeck(): CallableResult =
-        if (useDemo()) demoRewardsEngine.redeemSwapDeck() else cloudFunctions.redeemSwapDeck()
+    suspend fun redeemSwapDeck(): CallableResult = cloudFunctions.redeemSwapDeck()
 
     suspend fun seedTeams(): CallableResult = cloudFunctions.seedTeams()
 
     suspend fun seedPlayers(): CallableResult = cloudFunctions.seedPlayers()
 
     suspend fun seedStickers(): CallableResult = cloudFunctions.seedStickers()
-
-    private fun useDemo(): Boolean = appSession.isActive()
 
     private fun shouldUseFirestoreBootstrap(e: Exception): Boolean {
         if (e is FunctionsNotDeployedException) return true

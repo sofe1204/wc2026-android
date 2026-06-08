@@ -19,6 +19,54 @@ export async function getUserRef(uid: string) {
   return db().collection("users").doc(uid);
 }
 
+export type AlbumStats = {
+  albumUniqueCount: number;
+  totalStickerCount: number;
+};
+
+/** Counts unique stickers and total copies from `user_stickers/{uid}/items`. */
+export async function countAlbumStatsFromStickers(uid: string): Promise<AlbumStats> {
+  const snap = await db()
+    .collection("user_stickers")
+    .doc(uid)
+    .collection("items")
+    .get();
+  let totalStickerCount = 0;
+  for (const doc of snap.docs) {
+    totalStickerCount += Number(doc.data().count || 0);
+  }
+  return {
+    albumUniqueCount: snap.size,
+    totalStickerCount,
+  };
+}
+
+/** Recomputes album stats from owned stickers and syncs `users` + `leaderboard`. */
+export async function recomputeAndPersistAlbumStats(uid: string): Promise<AlbumStats> {
+  const stats = await countAlbumStatsFromStickers(uid);
+  const userRef = await getUserRef(uid);
+  await db().runTransaction(async (tx) => {
+    const snap = await tx.get(userRef);
+    if (!snap.exists) return;
+    const data = snap.data()!;
+    tx.update(userRef, {
+      albumUniqueCount: stats.albumUniqueCount,
+      totalStickerCount: stats.totalStickerCount,
+    });
+    syncLeaderboardInTransaction(tx, uid, {
+      ...data,
+      albumUniqueCount: stats.albumUniqueCount,
+      totalStickerCount: stats.totalStickerCount,
+    });
+  });
+  return stats;
+}
+
+export async function reconcileLeaderboardStatsForUids(uids: string[]): Promise<void> {
+  const unique = [...new Set(uids.filter(Boolean))];
+  await Promise.all(unique.map((id) => recomputeAndPersistAlbumStats(id)));
+}
+
 export async function ensureUserDoc(
   uid: string,
   email: string,
@@ -401,13 +449,7 @@ export async function swapDuplicatesForPack(uid: string): Promise<{
     }
 
     const packs = (userData.unopenedPacks || 0) + 1;
-    tx.update(userRef, {
-      unopenedPacks: packs,
-      totalStickerCount: Math.max(
-        0,
-        (userData.totalStickerCount || 0) - SWAP_DUPLICATES_FOR_PACK
-      ),
-    });
+    tx.update(userRef, { unopenedPacks: packs });
 
     const historyRef = db().collection("pack_history").doc();
     tx.set(historyRef, {
@@ -424,6 +466,11 @@ export async function swapDuplicatesForPack(uid: string): Promise<{
       unopenedPacks: packs,
       duplicatesConsumed: SWAP_DUPLICATES_FOR_PACK,
     };
+  }).then(async (result) => {
+    if (result.success) {
+      await recomputeAndPersistAlbumStats(uid);
+    }
+    return result;
   });
 }
 

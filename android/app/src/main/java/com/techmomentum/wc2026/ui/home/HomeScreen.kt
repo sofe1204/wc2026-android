@@ -41,7 +41,6 @@ import com.techmomentum.wc2026.utils.GameConstants
 fun HomeScreen(
     onOpenPack: () -> Unit,
     onSettings: () -> Unit,
-    isGuest: Boolean,
     rewardedAdManager: RewardedAdManager? = null,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
@@ -54,7 +53,7 @@ fun HomeScreen(
         ?: profile?.username?.takeIf { it.isNotBlank() }?.let { "@$it" }
         ?: "Collector"
     val welcomeName = "Hey, $displayName 👋"
-    val subtitle = if (isGuest) "Guest album" else "Sticker album"
+    val subtitle = "Sticker album"
     val unopenedPacks = profile?.unopenedPacks ?: 0
 
     Scaffold(containerColor = Color.Transparent) { padding ->

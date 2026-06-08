@@ -14,7 +14,6 @@ class DetermineSignedInGateUseCase @Inject constructor(
     private val authRepository: AuthRepository,
 ) {
     operator fun invoke(profile: UserProfile?): SignedInGate {
-        if (authRepository.isGuest) return SignedInGate.Ready
         if (authRepository.isPasswordAccount && !authRepository.isEmailVerified) {
             return SignedInGate.NeedsEmailVerification
         }

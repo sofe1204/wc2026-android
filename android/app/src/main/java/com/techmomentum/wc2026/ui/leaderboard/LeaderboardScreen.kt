@@ -37,7 +37,6 @@ import com.techmomentum.wc2026.ui.theme.CardGold
 
 @Composable
 fun LeaderboardScreen(
-    isGuest: Boolean,
     viewModel: LeaderboardViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -63,49 +62,41 @@ fun LeaderboardScreen(
                         fontWeight = FontWeight.Black,
                         color = AlbumPageStyle.headerAccent,
                     )
-                    if (isGuest) {
-                        Text(
-                            text = "Sign in to compete on the global and country leaderboards.",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = AlbumPageStyle.bottomNavUnselectedIcon,
+                    LeaderboardTabRow(
+                        selected = state.tab,
+                        countryName = state.result.myCountryName,
+                        onSelect = viewModel::selectTab,
+                    )
+                    MyRankCard(
+                        tab = state.tab,
+                        result = state.result,
+                    )
+                    when {
+                        state.loading -> Box(
+                            modifier = Modifier.fillMaxWidth().padding(24.dp),
+                            contentAlignment = Alignment.Center,
+                        ) { CircularProgressIndicator() }
+                        state.error != null -> Text(
+                            text = state.error ?: "",
+                            color = MaterialTheme.colorScheme.error,
                         )
-                    } else {
-                        LeaderboardTabRow(
-                            selected = state.tab,
-                            countryName = state.result.myCountryName,
-                            onSelect = viewModel::selectTab,
-                        )
-                        MyRankCard(
-                            tab = state.tab,
-                            result = state.result,
-                        )
-                        when {
-                            state.loading -> Box(
-                                modifier = Modifier.fillMaxWidth().padding(24.dp),
-                                contentAlignment = Alignment.Center,
-                            ) { CircularProgressIndicator() }
-                            state.error != null -> Text(
-                                text = state.error ?: "",
-                                color = MaterialTheme.colorScheme.error,
-                            )
-                            else -> {
-                                val rows = when (state.tab) {
-                                    LeaderboardTab.GLOBAL -> state.result.global
-                                    LeaderboardTab.COUNTRY -> state.result.country
-                                }
-                                LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                    items(rows, key = { "${it.rank}-${it.username}" }) { entry ->
-                                        LeaderboardRow(entry = entry)
-                                    }
+                        else -> {
+                            val rows = when (state.tab) {
+                                LeaderboardTab.GLOBAL -> state.result.global
+                                LeaderboardTab.COUNTRY -> state.result.country
+                            }
+                            LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                items(rows, key = { "${it.rank}-${it.username}" }) { entry ->
+                                    LeaderboardRow(entry = entry)
                                 }
                             }
                         }
-                        PixarSecondaryButton(
-                            text = "Refresh",
-                            onClick = viewModel::refresh,
-                            enabled = !state.loading,
-                        )
                     }
+                    PixarSecondaryButton(
+                        text = "Refresh",
+                        onClick = viewModel::refresh,
+                        enabled = !state.loading,
+                    )
                 }
             }
         }

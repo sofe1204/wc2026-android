@@ -96,6 +96,7 @@ fun DocumentSnapshot.toUserProfile(): UserProfile = UserProfile(
     lastName = getString("lastName") ?: "",
     countryCode = getString("countryCode") ?: "",
     countryName = getString("countryName") ?: "",
+    photoUrl = getString("photoUrl") ?: "",
     profileComplete = getBoolean("profileComplete") ?: false,
     emailVerified = getBoolean("emailVerified") ?: false,
     leaderboardOptIn = getBoolean("leaderboardOptIn") ?: true,

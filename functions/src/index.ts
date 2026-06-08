@@ -16,12 +16,14 @@ import {
 import {
   applyLoginPackGrant,
   checkSlotWin,
+  countAlbumStatsFromStickers,
   ensureUserDoc,
   getUserRef,
   grantRewardedAdStickers,
   openPackForUser,
   pickRandomSlotSymbolIds,
   computeDailySlotReset,
+  reconcileLeaderboardStatsForUids,
   swapDuplicatesForPack,
 } from "./helpers";
 import {
@@ -234,6 +236,8 @@ export const updateUserProfile = onCall(async (request) => {
     );
   }
 
+  const albumStats = await countAlbumStatsFromStickers(uid);
+
   return db.runTransaction(async (tx) => {
     const snap = await tx.get(userRef);
     if (!snap.exists) throw new HttpsError("not-found", "User not found.");
@@ -252,6 +256,8 @@ export const updateUserProfile = onCall(async (request) => {
       profileComplete: true,
       emailVerified,
       leaderboardOptIn: true,
+      albumUniqueCount: albumStats.albumUniqueCount,
+      totalStickerCount: albumStats.totalStickerCount,
     };
 
     tx.update(userRef, {
@@ -264,6 +270,8 @@ export const updateUserProfile = onCall(async (request) => {
       profileComplete: true,
       emailVerified,
       leaderboardOptIn: true,
+      albumUniqueCount: albumStats.albumUniqueCount,
+      totalStickerCount: albumStats.totalStickerCount,
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
     });
     syncLeaderboardInTransaction(tx, uid, updatedData);
@@ -278,6 +286,13 @@ export const updateUserProfile = onCall(async (request) => {
 
 export const getLeaderboard = onCall(async (request) => {
   const uid = requireAuth(request);
+  const leaderboardSnap = await db.collection("leaderboard").get();
+  const reconcileUids = [
+    uid,
+    ...leaderboardSnap.docs.map((doc) => doc.id),
+  ];
+  await reconcileLeaderboardStatsForUids(reconcileUids);
+
   const userRef = await getUserRef(uid);
   const userSnap = await userRef.get();
   if (!userSnap.exists) throw new HttpsError("not-found", "User not found.");

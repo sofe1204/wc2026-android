@@ -32,7 +32,6 @@ data class AuthUiState(
     val loading: Boolean = false,
     val error: String? = null,
     val success: Boolean = false,
-    val loginWelcomeGuest: Boolean = false,
     val destinationRoute: String? = null,
     val firebaseHint: String? = null,
     val googleSignInAvailable: Boolean = false,
@@ -130,23 +129,6 @@ class AuthViewModel @Inject constructor(
                 onSuccess = { finishProfileSetup(createNewAccount = state.isSignUp) },
                 onFailure = { e -> showError(e.message) },
             )
-        }
-    }
-
-    fun continueAsGuest() {
-        viewModelScope.launch {
-            _uiState.update { it.copy(loading = true, error = null) }
-            authRepository.signInAsGuest()
-            rewardsRepository.ensureUserProfile()
-            _uiState.update {
-                it.copy(
-                    loading = false,
-                    success = true,
-                    loginWelcomeGuest = true,
-                    destinationRoute = Routes.HOME,
-                    error = null,
-                )
-            }
         }
     }
 

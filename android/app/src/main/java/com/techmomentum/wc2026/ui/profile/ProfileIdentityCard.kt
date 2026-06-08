@@ -2,15 +2,21 @@ package com.techmomentum.wc2026.ui.profile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,20 +26,24 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.techmomentum.wc2026.data.model.UserProfile
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.CardGold
 import com.techmomentum.wc2026.ui.theme.darken
+import java.io.File
 
 @Composable
 fun ProfileIdentityCard(
     profile: UserProfile?,
     email: String,
-    isGuest: Boolean,
+    avatarUploading: Boolean,
+    onChangePhoto: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val shape = RoundedCornerShape(22.dp)
@@ -42,6 +52,7 @@ fun ProfileIdentityCard(
     }.orEmpty().ifBlank { profile?.displayName.orEmpty() }
     val username = profile?.username.orEmpty()
     val initials = profileInitials(fullName.ifBlank { username })
+    val photoModel = avatarModel(profile?.photoUrl.orEmpty())
     val frameBrush = Brush.linearGradient(
         listOf(
             CardGold.copy(alpha = 0.7f),
@@ -66,30 +77,82 @@ fun ProfileIdentityCard(
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Box(
-            modifier = Modifier
-                .size(76.dp)
-                .shadow(6.dp, CircleShape, ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.35f))
-                .clip(CircleShape)
-                .border(3.dp, frameBrush, CircleShape)
-                .padding(3.dp)
-                .clip(CircleShape)
-                .background(
-                    Brush.verticalGradient(
-                        listOf(
-                            AlbumPageStyle.headerAccentVivid,
-                            AlbumPageStyle.headerAccent,
-                        ),
-                    ),
-                ),
+            modifier = Modifier.size(84.dp),
             contentAlignment = Alignment.Center,
         ) {
-            Text(
-                text = if (isGuest) "🧑" else initials,
-                fontSize = if (isGuest) 32.sp else 26.sp,
-                fontWeight = FontWeight.Black,
-                color = Color.White,
-            )
+            Box(
+                modifier = Modifier
+                    .size(76.dp)
+                    .shadow(6.dp, CircleShape, ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.35f))
+                    .clip(CircleShape)
+                    .border(3.dp, frameBrush, CircleShape)
+                    .clickable(enabled = !avatarUploading, onClick = onChangePhoto)
+                    .padding(3.dp)
+                    .clip(CircleShape)
+                    .background(
+                        Brush.verticalGradient(
+                            listOf(
+                                AlbumPageStyle.headerAccentVivid,
+                                AlbumPageStyle.headerAccent,
+                            ),
+                        ),
+                    ),
+                contentAlignment = Alignment.Center,
+            ) {
+                when {
+                    avatarUploading -> {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(28.dp),
+                            color = Color.White,
+                            strokeWidth = 3.dp,
+                        )
+                    }
+                    photoModel != null -> {
+                        AsyncImage(
+                            model = photoModel,
+                            contentDescription = "Profile photo",
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop,
+                        )
+                    }
+                    else -> {
+                        Text(
+                            text = initials,
+                            fontSize = 26.sp,
+                            fontWeight = FontWeight.Black,
+                            color = Color.White,
+                        )
+                    }
+                }
+            }
+            if (!avatarUploading) {
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd)
+                        .size(28.dp)
+                        .shadow(2.dp, CircleShape)
+                        .clip(CircleShape)
+                        .background(AlbumPageStyle.headerAccent)
+                        .border(2.dp, Color.White, CircleShape)
+                        .clickable(onClick = onChangePhoto),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.PhotoCamera,
+                        contentDescription = "Change photo",
+                        tint = Color.White,
+                        modifier = Modifier.size(16.dp),
+                    )
+                }
+            }
         }
+
+        Text(
+            text = if (avatarUploading) "Uploading photo…" else "Tap photo to change",
+            style = MaterialTheme.typography.labelMedium,
+            fontWeight = FontWeight.SemiBold,
+            color = AlbumPageStyle.bottomNavUnselectedIcon,
+        )
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -132,14 +195,15 @@ fun ProfileIdentityCard(
             }
         }
 
-        if (isGuest) {
-            Text(
-                text = "Guest mode — progress saved on this device only.",
-                style = MaterialTheme.typography.labelMedium,
-                fontWeight = FontWeight.Medium,
-                color = AlbumPageStyle.bottomNavUnselectedIcon,
-            )
-        }
+    }
+}
+
+private fun avatarModel(photoUrl: String): Any? {
+    if (photoUrl.isBlank()) return null
+    return if (photoUrl.startsWith("http", ignoreCase = true)) {
+        photoUrl
+    } else {
+        File(photoUrl)
     }
 }
 

@@ -34,6 +34,7 @@
     "deploy:storage": "firebase deploy --only storage",
     "seed:firestore": "node scripts/seed_firestore.mjs",
     "admin:claim": "node scripts/set_admin_claim.mjs",
-    "setup:auth-users": "bash scripts/setup_authenticated_users.sh"
+    "setup:auth-users": "bash scripts/setup_authenticated_users.sh",
+    "reconcile:leaderboard": "node scripts/reconcile_leaderboard.mjs"
   }
 }

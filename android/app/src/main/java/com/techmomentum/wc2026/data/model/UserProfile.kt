@@ -9,6 +9,7 @@ data class UserProfile(
     val lastName: String = "",
     val countryCode: String = "",
     val countryName: String = "",
+    val photoUrl: String = "",
     val profileComplete: Boolean = false,
     val emailVerified: Boolean = false,
     val leaderboardOptIn: Boolean = true,

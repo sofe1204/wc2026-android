@@ -73,10 +73,6 @@ class SessionBootstrapViewModel @Inject constructor(
                         },
                     )
                 }
-                AppAuthState.Guest -> {
-                    slotSymbolsWarmup.warmIfNeeded()
-                    _state.value = BootstrapState.Ready(Routes.HOME)
-                }
                 AppAuthState.Unauthenticated -> _state.value = BootstrapState.Ready(Routes.AUTH)
             }
         }

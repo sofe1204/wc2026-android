@@ -29,7 +29,6 @@ class FirebaseSessionCoordinator @Inject constructor(
                 .map { state ->
                     when (state) {
                         is AppAuthState.SignedIn -> SessionMode.Cloud(state.user.uid)
-                        AppAuthState.Guest -> SessionMode.Guest
                         AppAuthState.Unauthenticated -> SessionMode.None
                     }
                 }
@@ -50,14 +49,13 @@ class FirebaseSessionCoordinator @Inject constructor(
         catalogRepository.clearCache()
         connectionRepository.refreshConfigState()
         when (mode) {
-            is SessionMode.Cloud, SessionMode.Guest -> rewardsRepository.ensureUserProfile()
+            is SessionMode.Cloud -> rewardsRepository.ensureUserProfile()
             SessionMode.None -> Unit
         }
     }
 
     private sealed interface SessionMode {
         data object None : SessionMode
-        data object Guest : SessionMode
         data class Cloud(val uid: String) : SessionMode
     }
 }

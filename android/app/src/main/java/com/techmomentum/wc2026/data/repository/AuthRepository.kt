@@ -7,14 +7,12 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.techmomentum.wc2026.data.auth.GoogleAuthClient
 import com.techmomentum.wc2026.data.firebase.toAuthUserMessage
 import com.techmomentum.wc2026.debug.DebugAgentLog
-import com.techmomentum.wc2026.data.session.AppSession
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
@@ -24,22 +22,16 @@ import javax.inject.Singleton
 sealed class AppAuthState {
     data object Unauthenticated : AppAuthState()
     data class SignedIn(val user: FirebaseUser) : AppAuthState()
-    data object Guest : AppAuthState()
 }
 
 @Singleton
 class AuthRepository @Inject constructor(
     private val auth: FirebaseAuth,
-    private val appSession: AppSession,
     private val googleAuthClient: GoogleAuthClient,
     @Named("application") private val appScope: CoroutineScope,
 ) {
-    private val guestTrigger = MutableStateFlow(appSession.isGuest.value)
-
     val currentUser: FirebaseUser?
-        get() = if (appSession.isActive()) null else auth.currentUser
-
-    val isGuest: Boolean get() = appSession.isActive()
+        get() = auth.currentUser
 
     val isEmailVerified: Boolean
         get() = auth.currentUser?.isEmailVerified == true
@@ -47,12 +39,8 @@ class AuthRepository @Inject constructor(
     val isPasswordAccount: Boolean
         get() = auth.currentUser?.providerData?.any { it.providerId == "password" } == true
 
-    fun authState(): Flow<AppAuthState> = combine(
-        firebaseAuthFlow(),
-        appSession.isGuest,
-    ) { firebaseUser, isGuest ->
+    fun authState(): Flow<AppAuthState> = firebaseAuthFlow().map { firebaseUser ->
         when {
-            isGuest -> AppAuthState.Guest
             firebaseUser != null -> AppAuthState.SignedIn(firebaseUser)
             else -> AppAuthState.Unauthenticated
         }
@@ -92,7 +80,6 @@ class AuthRepository @Inject constructor(
         attempts: Int = 3,
         block: suspend () -> Unit,
     ): Result<Unit> {
-        appSession.exitGuestMode(clearPersistence = true)
         var lastError: Exception? = null
         repeat(attempts) { attempt ->
             try {
@@ -125,16 +112,8 @@ class AuthRepository @Inject constructor(
             (e is FirebaseAuthException && e.errorCode == "ERROR_NETWORK_REQUEST_FAILED")
     }
 
-    fun signInAsGuest() {
-        auth.signOut()
-        appSession.enterGuestMode()
-        guestTrigger.value = true
-    }
-
     fun signOut() {
-        appSession.exitGuestMode()
         auth.signOut()
-        guestTrigger.value = false
         appScope.launch { googleAuthClient.signOutGoogle() }
     }
 

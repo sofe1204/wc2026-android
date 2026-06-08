@@ -51,7 +51,7 @@ fun AppNavigation(
 
     val context = LocalContext.current
     val activity = context as? Activity
-    val isLoggedIn = authState is AppAuthState.SignedIn || authState is AppAuthState.Guest
+    val isLoggedIn = authState is AppAuthState.SignedIn
     val showBottomBar = currentRoute in Routes.bottomBarDestinations
 
     LaunchedEffect(isLoggedIn) {
@@ -116,7 +116,6 @@ fun AppNavigation(
             }
             composable(Routes.AUTH) {
                 AuthScreen(
-                    isGuestMode = authState is AppAuthState.Guest,
                     onAuthenticated = { route ->
                         navController.navigate(route) {
                             popUpTo(Routes.AUTH) { inclusive = true }
@@ -147,21 +146,19 @@ fun AppNavigation(
                     onOpenPack = { navController.navigate(Routes.PACK_OPEN) },
                     onSettings = { navController.navigate(Routes.SETTINGS) },
                     rewardedAdManager = rewardedAdManager,
-                    isGuest = authState is AppAuthState.Guest,
                 )
             }
             composable(Routes.ALBUM) {
                 AlbumScreen(onTeamClick = { navController.navigate(Routes.team(it)) })
             }
             composable(Routes.LEADERBOARD) {
-                LeaderboardScreen(isGuest = authState is AppAuthState.Guest)
+                LeaderboardScreen()
             }
             composable(Routes.SLOT) {
                 SlotMachineScreen(rewardedAdManager = rewardedAdManager)
             }
             composable(Routes.PROFILE) {
                 ProfileScreen(
-                    isGuest = authState is AppAuthState.Guest,
                     onSignedOut = {
                         navController.navigate(Routes.AUTH) { popUpTo(0) { inclusive = true } }
                     },

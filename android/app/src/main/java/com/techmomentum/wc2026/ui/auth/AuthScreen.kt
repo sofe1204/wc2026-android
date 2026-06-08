@@ -36,7 +36,6 @@ import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 
 @Composable
 fun AuthScreen(
-    @Suppress("UNUSED_PARAMETER") isGuestMode: Boolean,
     onAuthenticated: (String) -> Unit,
     viewModel: AuthViewModel = hiltViewModel(),
 ) {
@@ -44,7 +43,6 @@ fun AuthScreen(
     var showWelcome by remember { mutableStateOf(false) }
     var pendingRoute by remember { mutableStateOf<String?>(null) }
     var welcomeSignUp by remember { mutableStateOf(false) }
-    var welcomeGuest by remember { mutableStateOf(false) }
 
     val googleLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult(),
@@ -54,7 +52,6 @@ fun AuthScreen(
         if (state.success && !showWelcome) {
             pendingRoute = state.destinationRoute ?: Routes.HOME
             welcomeSignUp = state.isSignUp
-            welcomeGuest = state.loginWelcomeGuest
             showWelcome = true
         }
     }
@@ -115,35 +112,22 @@ fun AuthScreen(
                         }
                     }
 
-                    AuthOrDivider(label = "or")
-
-                    PixarSecondaryButton(
-                        text = "Continue as Guest",
-                        onClick = viewModel::continueAsGuest,
-                        enabled = !state.loading,
-                        accentBorder = true,
-                    )
-
                     state.firebaseHint?.let { hint ->
                         AuthHintText(hint, modifier = Modifier.padding(top = 4.dp))
                     }
                     AuthHintText(
-                        "Email or Google saves album progress in the cloud. Guest uses Firebase catalog with local progress.",
+                        "Sign in with email or Google to save your album progress in the cloud.",
                     )
                 }
             }
 
             if (showWelcome) {
                 LoginWelcomeOverlay(
-                    title = when {
-                        welcomeGuest -> "Guest mode!"
-                        welcomeSignUp -> "Welcome, collector!"
-                        else -> "Welcome back!"
-                    },
-                    subtitle = when {
-                        welcomeGuest -> "Your album adventure starts now."
-                        welcomeSignUp -> "Verify your email, then start collecting."
-                        else -> "Your sticker album is ready."
+                    title = if (welcomeSignUp) "Welcome, collector!" else "Welcome back!",
+                    subtitle = if (welcomeSignUp) {
+                        "Verify your email, then start collecting."
+                    } else {
+                        "Your sticker album is ready."
                     },
                     onFinished = {
                         showWelcome = false
