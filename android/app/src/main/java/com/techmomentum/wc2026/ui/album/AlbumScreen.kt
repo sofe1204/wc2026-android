@@ -91,7 +91,10 @@ private fun AlbumCollectionContent(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         item {
-            AlbumOverviewHeader(totalOwned = totalOwned)
+            AlbumOverviewHeader(
+                totalOwned = totalOwned,
+                totalCollectible = album.totalCollectibleStickers,
+            )
         }
         item {
             AlbumSearchBar(

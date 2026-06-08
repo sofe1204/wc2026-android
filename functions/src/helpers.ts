@@ -67,6 +67,23 @@ export function rollRarity(): string {
   return "common";
 }
 
+function isStickerVisibleInApp(data: FirebaseFirestore.DocumentData): boolean {
+  const imageUrl = String(data.imageUrl || "");
+  const playerId = String(data.playerId || "");
+  if (!playerId) {
+    return imageUrl.includes("emblems/");
+  }
+  return imageUrl.includes("stickers/players/");
+}
+
+function pickVisibleStickerId(
+  docs: FirebaseFirestore.QueryDocumentSnapshot[]
+): string | null {
+  const visible = docs.filter((doc) => isStickerVisibleInApp(doc.data()));
+  if (visible.length === 0) return null;
+  return visible[Math.floor(Math.random() * visible.length)].id;
+}
+
 export async function pickStickerByRarity(
   rarity: string
 ): Promise<string | null> {
@@ -77,13 +94,13 @@ export async function pickStickerByRarity(
       .where("rarity", "==", r)
       .get();
     if (!snap.empty) {
-      const docs = snap.docs;
-      return docs[Math.floor(Math.random() * docs.length)].id;
+      const id = pickVisibleStickerId(snap.docs);
+      if (id) return id;
     }
   }
-  const all = await stickersRef.where("isActive", "==", true).limit(500).get();
+  const all = await stickersRef.where("isActive", "==", true).get();
   if (all.empty) return null;
-  return all.docs[Math.floor(Math.random() * all.docs.length)].id;
+  return pickVisibleStickerId(all.docs);
 }
 
 export async function grantStickers(

@@ -25,11 +25,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.techmomentum.wc2026.BuildConfig
 import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
 import com.techmomentum.wc2026.ui.album.AlbumPageFrame
-import com.techmomentum.wc2026.ui.components.PixarCelebrationChip
-import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.darken
@@ -41,8 +38,8 @@ fun ProfileScreen(
     onSettings: () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
-    val ui by viewModel.uiState.collectAsState()
     val profile by viewModel.profile.collectAsState()
+    val totalCollectible by viewModel.totalCollectibleStickers.collectAsState()
     val subtitle = if (isGuest) "Guest account" else "Collector account"
 
     Scaffold(containerColor = Color.Transparent) { padding ->
@@ -74,11 +71,7 @@ fun ProfileScreen(
                     )
 
                     profile?.let { p ->
-                        ProfileStatsCard(profile = p)
-                    }
-
-                    ui.message?.let { message ->
-                        PixarCelebrationChip(message = message)
+                        ProfileStatsCard(profile = p, totalCollectible = totalCollectible)
                     }
 
                     ProfileActionsCard(
@@ -87,9 +80,6 @@ fun ProfileScreen(
                             viewModel.signOut()
                             onSignedOut()
                         },
-                        showAdminSeed = BuildConfig.DEBUG && !isGuest,
-                        onSeedFirestore = viewModel::seedFirestore,
-                        seeding = ui.seeding,
                     )
                 }
             }
@@ -101,9 +91,6 @@ fun ProfileScreen(
 private fun ProfileActionsCard(
     onSettings: () -> Unit,
     onSignOut: () -> Unit,
-    showAdminSeed: Boolean,
-    onSeedFirestore: () -> Unit,
-    seeding: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val shape = RoundedCornerShape(22.dp)
@@ -137,13 +124,5 @@ private fun ProfileActionsCard(
             text = "Sign out",
             onClick = onSignOut,
         )
-        if (showAdminSeed) {
-            PixarPrimaryButton(
-                text = "Seed Firestore (admin)",
-                onClick = onSeedFirestore,
-                enabled = !seeding,
-                loading = seeding,
-            )
-        }
     }
 }

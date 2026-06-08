@@ -152,6 +152,7 @@ export function parseArgs(argv) {
     limit: null,
     concurrency: 2,
     playerId: null,
+    playerIds: null,
     teamId: null,
     symbolId: null,
   };
@@ -168,6 +169,24 @@ export function parseArgs(argv) {
     else if (a.startsWith("--concurrency=")) out.concurrency = Number(a.split("=")[1]);
     else if (a === "--player-id" && argv[i + 1]) out.playerId = argv[++i];
     else if (a.startsWith("--player-id=")) out.playerId = a.split("=")[1];
+    else if (a === "--player-ids" && argv[i + 1]) {
+      out.playerIds = argv[++i].split(",").map((s) => s.trim()).filter(Boolean);
+    } else if (a.startsWith("--player-ids=")) {
+      out.playerIds = a.split("=")[1].split(",").map((s) => s.trim()).filter(Boolean);
+    } else if (a === "--player-ids-file" && argv[i + 1]) {
+      const filePath = path.isAbsolute(argv[i + 1]) ? argv[++i] : path.join(process.cwd(), argv[++i]);
+      out.playerIds = readJson(filePath);
+      if (!Array.isArray(out.playerIds)) {
+        throw new Error(`--player-ids-file must be a JSON array: ${filePath}`);
+      }
+    } else if (a.startsWith("--player-ids-file=")) {
+      const raw = a.split("=")[1];
+      const filePath = path.isAbsolute(raw) ? raw : path.join(process.cwd(), raw);
+      out.playerIds = readJson(filePath);
+      if (!Array.isArray(out.playerIds)) {
+        throw new Error(`--player-ids-file must be a JSON array: ${filePath}`);
+      }
+    }
     else if (a === "--team-id" && argv[i + 1]) out.teamId = argv[++i];
     else if (a.startsWith("--team-id=")) out.teamId = a.split("=")[1];
     else if (a === "--symbol-id" && argv[i + 1]) out.symbolId = argv[++i];

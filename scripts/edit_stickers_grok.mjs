@@ -15,6 +15,7 @@
  *   node scripts/edit_stickers_grok.mjs --limit 5
  *   node scripts/edit_stickers_grok.mjs
  *   node scripts/edit_stickers_grok.mjs --player-id argentina_lionel_messi --force
+ *   node scripts/edit_stickers_grok.mjs --player-ids-file data/grok_sticker_retry_queue.json
  */
 import fs from "fs";
 import path from "path";
@@ -112,20 +113,31 @@ async function main() {
   const scan = scanWc26SourceDir(sourceDir, readJson(path.join(baseSeed, "teams_seed.json")), players);
   printScanReport(scan, players);
 
+  const requestedIds = args.playerIds?.length
+    ? args.playerIds
+    : args.playerId
+      ? [args.playerId]
+      : null;
+
   let queue = scan.matched.filter((row) => needsImage(row.player.imageUrl, args.force));
-  if (args.playerId) {
-    queue = queue.filter((row) => row.player.playerId === args.playerId);
+  if (requestedIds?.length) {
+    const byId = new Map(scan.matched.map((row) => [row.player.playerId, row]));
+    queue = [];
+    for (const id of requestedIds) {
+      const row = byId.get(id);
+      if (!row) {
+        console.error(`No wc26 file matched player-id ${id}`);
+        process.exit(1);
+      }
+      if (!args.force && !needsImage(row.player.imageUrl, false)) {
+        console.log(`  skip ${id}: already has imageUrl`);
+        continue;
+      }
+      queue.push(row);
+    }
     if (!queue.length) {
-      const direct = scan.matched.find((r) => r.player.playerId === args.playerId);
-      if (!direct) {
-        console.error(`No wc26 file matched player-id ${args.playerId}`);
-        process.exit(1);
-      }
-      if (!args.force && !needsImage(direct.player.imageUrl, false)) {
-        console.error(`Player ${args.playerId} already has imageUrl (use --force)`);
-        process.exit(1);
-      }
-      queue = [direct];
+      console.log("Nothing to do — all requested players already have imageUrl.");
+      return;
     }
   }
   if (args.limit != null) queue = queue.slice(0, args.limit);

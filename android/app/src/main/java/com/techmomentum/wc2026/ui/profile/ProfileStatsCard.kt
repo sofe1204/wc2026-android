@@ -22,16 +22,16 @@ import com.techmomentum.wc2026.data.model.UserProfile
 import com.techmomentum.wc2026.ui.components.AlbumProgressBar
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.darken
-import com.techmomentum.wc2026.utils.GameConstants
 import kotlin.math.roundToInt
 
 @Composable
 fun ProfileStatsCard(
     profile: UserProfile,
+    totalCollectible: Int,
     modifier: Modifier = Modifier,
 ) {
-    val albumPercent = if (GameConstants.TOTAL_STICKERS > 0) {
-        profile.albumUniqueCount * 100f / GameConstants.TOTAL_STICKERS
+    val albumPercent = if (totalCollectible > 0) {
+        profile.albumUniqueCount * 100f / totalCollectible
     } else {
         0f
     }
@@ -111,7 +111,7 @@ fun ProfileStatsCard(
         AlbumProgressBar(
             label = "Album completion",
             progress = albumPercent,
-            detail = "${profile.albumUniqueCount} / ${GameConstants.TOTAL_STICKERS} unique stickers",
+            detail = "${profile.albumUniqueCount} / $totalCollectible unique stickers",
             fillBrush = AlbumPageStyle.overallProgressFill,
             trackColor = AlbumPageStyle.filterUnselectedBorder,
             barHeight = 12.dp,

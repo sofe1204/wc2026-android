@@ -32,6 +32,7 @@ data class AlbumState(
     val stickers: List<Sticker> = emptyList(),
     val players: List<Player> = emptyList(),
     val owned: Map<String, UserSticker> = emptyMap(),
+    val totalCollectibleStickers: Int = 0,
     val isLoaded: Boolean = false,
 )
 
@@ -50,15 +51,15 @@ class GetAlbumUseCase @Inject constructor(
             val players = catalogRepository.getPlayers()
             ownedFlow.collect { owned ->
                 val progress = teams.map { team ->
-                    val teamStickerIds = stickers
-                        .filter { it.teamId == team.teamId }
-                        .map { it.stickerId }
-                        .toSet()
+                    val teamStickers = stickers.filter { it.teamId == team.teamId }
+                    val teamStickerIds = teamStickers.map { it.stickerId }.toSet()
+                    val teamTotal = teamStickers.size.coerceAtLeast(1)
                     val ownedCount = owned.keys.count { it in teamStickerIds }
                     TeamAlbumProgress(
                         team = team,
                         ownedCount = ownedCount,
-                        percent = ownedCount.toFloat() / GameConstants.STICKERS_PER_TEAM * 100f,
+                        total = teamTotal,
+                        percent = ownedCount.toFloat() / teamTotal * 100f,
                     )
                 }
                 val byGroup = progress.groupBy { it.team.group }.toSortedMap()
@@ -69,6 +70,7 @@ class GetAlbumUseCase @Inject constructor(
                         stickers = stickers,
                         players = players,
                         owned = owned,
+                        totalCollectibleStickers = stickers.size,
                         isLoaded = true,
                     ),
                 )

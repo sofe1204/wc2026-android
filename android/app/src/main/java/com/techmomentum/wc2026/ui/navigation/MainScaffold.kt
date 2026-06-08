@@ -25,9 +25,9 @@ fun MainScaffold(
         modifier = modifier,
         snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
-            Column {
-                BannerAd()
-                if (showBottomBar) {
+            if (showBottomBar) {
+                Column {
+                    BannerAd()
                     MainBottomBar(currentRoute = currentRoute, onNavigate = onNavigate)
                 }
             }

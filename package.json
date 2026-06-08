@@ -25,6 +25,7 @@
     "edit:stickers-grok": "node scripts/edit_stickers_grok.mjs --concurrency 2",
     "go-live:edit-grok:pilot": "node scripts/edit_stickers_grok.mjs --limit 5 --concurrency 2",
     "go-live:edit-grok": "node scripts/edit_stickers_grok.mjs --concurrency 2",
+    "retry:stickers-grok": "node scripts/edit_stickers_grok.mjs --player-ids-file data/grok_sticker_retry_queue.json --concurrency 1",
     "upload:emblems": "node scripts/upload_emblems.mjs",
     "go-live:emblems": "node scripts/upload_emblems.mjs",
     "upload:slot-symbols": "node scripts/upload_slot_symbols.mjs",

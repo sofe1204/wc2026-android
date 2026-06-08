@@ -24,10 +24,11 @@ import com.techmomentum.wc2026.utils.GameConstants
 @Composable
 fun AlbumOverviewHeader(
     totalOwned: Int,
+    totalCollectible: Int,
     modifier: Modifier = Modifier,
 ) {
-    val percent = if (GameConstants.TOTAL_STICKERS > 0) {
-        totalOwned.toFloat() / GameConstants.TOTAL_STICKERS * 100f
+    val percent = if (totalCollectible > 0) {
+        totalOwned.toFloat() / totalCollectible * 100f
     } else {
         0f
     }
@@ -81,7 +82,7 @@ fun AlbumOverviewHeader(
             AlbumProgressBar(
                 label = "Overall",
                 progress = percent,
-                detail = "$totalOwned / ${GameConstants.TOTAL_STICKERS}",
+                detail = "$totalOwned / $totalCollectible",
                 fillBrush = AlbumPageStyle.overallProgressFill,
                 trackColor = AlbumPageStyle.overallProgressTrackOnHeader,
                 labelColor = Color.White.copy(alpha = 0.92f),

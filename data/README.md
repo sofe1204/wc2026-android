@@ -119,6 +119,7 @@ Country folders under `wc26/` (e.g. `wc26/argentina/lionel messi.png`) are match
 npm run edit:stickers-grok -- --dry-run   # match report only
 npm run go-live:edit-grok:pilot           # 5 edits
 npm run go-live:edit-grok                 # all matched scans
+npm run retry:stickers-grok               # 8 failed Grok edits only (see data/grok_sticker_retry_queue.json)
 npm run go-live:publish                   # Firestore for signed-in users
 ```
 

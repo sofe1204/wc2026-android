@@ -6,6 +6,7 @@ import com.techmomentum.wc2026.data.model.Player
 import com.techmomentum.wc2026.data.model.SlotSymbol
 import com.techmomentum.wc2026.data.model.Sticker
 import com.techmomentum.wc2026.data.model.Team
+import com.techmomentum.wc2026.data.model.isVisibleInCatalog
 import com.techmomentum.wc2026.data.remote.toPlayer
 import com.techmomentum.wc2026.data.remote.toSlotSymbol
 import com.techmomentum.wc2026.data.remote.toSticker
@@ -29,33 +30,27 @@ class CatalogRepository @Inject constructor(
 
     suspend fun getTeams(): List<Team> {
         teamsCache?.let { return it }
-        val teams = resolveTeams(
+        val allTeams = resolveTeams(
             sqlLoad = { sqlConnectCatalog.loadTeams() },
             firestoreLoad = { loadFromFirestoreTeams() },
             seedLoad = { seedJsonParser.loadTeams() },
         )
+        val teamIdsWithArt = getStickers().map { it.teamId }.toSet()
+        val teams = allTeams.filter { it.teamId in teamIdsWithArt }
         teamsCache = teams
         return teams
     }
 
     suspend fun getPlayers(): List<Player> {
         playersCache?.let { return it }
-        val players = resolvePlayers(
-            sqlLoad = { sqlConnectCatalog.loadPlayers() },
-            firestoreLoad = { loadFromFirestorePlayers() },
-            seedLoad = { seedJsonParser.loadPlayers() },
-        )
+        val players = loadVisiblePlayers()
         playersCache = players
         return players
     }
 
     suspend fun getStickers(): List<Sticker> {
         stickersCache?.let { return it }
-        val stickers = resolveStickers(
-            sqlLoad = { sqlConnectCatalog.loadStickers() },
-            firestoreLoad = { loadFromFirestoreStickers() },
-            seedLoad = { seedJsonParser.loadStickers() },
-        )
+        val stickers = loadVisibleStickers()
         stickersCache = stickers
         return stickers
     }
@@ -82,6 +77,22 @@ class CatalogRepository @Inject constructor(
     suspend fun getSticker(stickerId: String): Sticker? = getStickers().firstOrNull { it.stickerId == stickerId }
 
     suspend fun getPlayer(playerId: String): Player? = getPlayers().firstOrNull { it.playerId == playerId }
+
+    suspend fun getCollectibleStickerCount(): Int = getStickers().size
+
+    private suspend fun loadVisiblePlayers(): List<Player> =
+        resolvePlayers(
+            sqlLoad = { sqlConnectCatalog.loadPlayers() },
+            firestoreLoad = { loadFromFirestorePlayers() },
+            seedLoad = { seedJsonParser.loadPlayers() },
+        ).filter { it.isVisibleInCatalog() }
+
+    private suspend fun loadVisibleStickers(): List<Sticker> =
+        resolveStickers(
+            sqlLoad = { sqlConnectCatalog.loadStickers() },
+            firestoreLoad = { loadFromFirestoreStickers() },
+            seedLoad = { seedJsonParser.loadStickers() },
+        ).filter { it.isVisibleInCatalog() }
 
     /**
      * Priority: SQL Connect (Kotlin SDK) → Firestore → bundled seed JSON fallback.

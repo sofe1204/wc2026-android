@@ -1,5 +1,7 @@
 package com.techmomentum.wc2026.ui.components
 
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -19,10 +21,18 @@ import com.techmomentum.wc2026.config.AdMobConfig
 fun BannerAd(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
-    val adView = remember {
+    val adWidthDp = remember(context) {
+        val displayMetrics = context.resources.displayMetrics
+        (displayMetrics.widthPixels / displayMetrics.density).toInt()
+    }
+    val adView = remember(adWidthDp) {
         AdView(context).apply {
-            setAdSize(AdSize.BANNER)
+            setAdSize(AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, adWidthDp))
             adUnitId = AdMobConfig.bannerUnitId
+            layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+            )
             loadAd(AdRequest.Builder().build())
         }
     }
@@ -45,5 +55,11 @@ fun BannerAd(modifier: Modifier = Modifier) {
     AndroidView(
         factory = { adView },
         modifier = modifier.fillMaxWidth(),
+        update = { view ->
+            view.layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+            )
+        },
     )
 }

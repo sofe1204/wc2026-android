@@ -86,7 +86,7 @@ fun HomeScreen(
                         uniqueCount = profile?.albumUniqueCount ?: 0,
                         totalCollected = profile?.totalStickerCount ?: 0,
                         slotSpins = profile?.slotSpinsRemaining ?: 0,
-                        totalStickers = GameConstants.TOTAL_STICKERS,
+                        totalStickers = home.totalCollectibleStickers,
                     )
 
                     HomeRewardsCard(
