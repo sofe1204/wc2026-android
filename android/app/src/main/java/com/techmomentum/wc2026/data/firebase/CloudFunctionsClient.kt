@@ -84,6 +84,13 @@ class CloudFunctionsClient @Inject constructor(
 
     suspend fun claimRewardedSlotSpins(): CallableResult = call("claimRewardedSlotSpins")
 
+    suspend fun registerFcmToken(token: String): CallableResult {
+        val data = invoke("registerFcmToken", mapOf("token" to token))
+        return CallableResult(success = data["success"] as? Boolean ?: true, message = "")
+    }
+
+    suspend fun clearFcmToken(): CallableResult = call("clearFcmToken")
+
     suspend fun redeemSwapDeck(): CallableResult = call("redeemSwapDeck")
 
     suspend fun seedTeams(): CallableResult = call("seedTeams")

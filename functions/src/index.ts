@@ -1,6 +1,8 @@
 import * as admin from "firebase-admin";
 import { onCall, HttpsError } from "firebase-functions/v2/https";
+import { onSchedule } from "firebase-functions/v2/scheduler";
 import { setGlobalOptions } from "firebase-functions/v2";
+import { getMessaging } from "firebase-admin/messaging";
 import {
   assertAdmin,
   requireAuth,
@@ -420,3 +422,58 @@ export const seedStickers = onCall(async (request) => {
   const n = await batchSeed("stickers", stickers, "stickerId");
   return { success: true, message: `Seeded ${n} stickers.` };
 });
+
+export const registerFcmToken = onCall(async (request) => {
+  const uid = requireAuth(request);
+  const token = String((request.data as { token?: string })?.token ?? "").trim();
+  if (!token) throw new HttpsError("invalid-argument", "Missing FCM token.");
+  const userRef = await getUserRef(uid);
+  await userRef.update({
+    fcmToken: token,
+    fcmTokenUpdatedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+  return { success: true, message: "Push token saved." };
+});
+
+export const clearFcmToken = onCall(async (request) => {
+  const uid = requireAuth(request);
+  const userRef = await getUserRef(uid);
+  await userRef.update({
+    fcmToken: admin.firestore.FieldValue.delete(),
+    fcmTokenUpdatedAt: admin.firestore.FieldValue.delete(),
+  });
+  return { success: true, message: "Push token cleared." };
+});
+
+/** Daily UTC reminder for users who registered an FCM token (complements local notifications). */
+export const sendDailyRewardReminders = onSchedule(
+  { schedule: "10 0 * * *", timeZone: "UTC" },
+  async () => {
+    const snap = await db.collection("users").where("profileComplete", "==", true).get();
+    const tokens: string[] = [];
+    for (const doc of snap.docs) {
+      const token = String(doc.data().fcmToken || "").trim();
+      if (token) tokens.push(token);
+    }
+    if (tokens.length === 0) return;
+
+    const messaging = getMessaging();
+    const chunkSize = 500;
+    for (let i = 0; i < tokens.length; i += chunkSize) {
+      const chunk = tokens.slice(i, i + chunkSize);
+      await messaging.sendEachForMulticast({
+        tokens: chunk,
+        notification: {
+          title: "Daily rewards are ready",
+          body: "Your slot spins have reset — come spin and collect!",
+        },
+        data: {
+          route: "slot",
+        },
+        android: {
+          priority: "high",
+        },
+      });
+    }
+  }
+);

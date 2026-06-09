@@ -41,24 +41,26 @@ val emulators = projectConfig["emulators"] as Map<String, Any>
 fun quote(value: String) = "\"$value\""
 
 @Suppress("UNCHECKED_CAST")
-fun extractGoogleWebClientId(): String {
+fun parseGoogleServicesOAuth(): Pair<String, Boolean> {
     val jsonFile = file("google-services.json")
-    if (!jsonFile.exists()) return ""
+    if (!jsonFile.exists()) return "" to false
     val root = JsonSlurper().parseText(jsonFile.readText()) as Map<String, Any>
-    val clients = root["client"] as? List<*> ?: return ""
-    val firstClient = clients.firstOrNull() as? Map<*, *> ?: return ""
-    val oauthClients = firstClient["oauth_client"] as? List<*> ?: return ""
+    val clients = root["client"] as? List<*> ?: return "" to false
+    val firstClient = clients.firstOrNull() as? Map<*, *> ?: return "" to false
+    val oauthClients = firstClient["oauth_client"] as? List<*> ?: return "" to false
+    var webClientId = ""
+    var hasAndroidClient = false
     for (entry in oauthClients) {
         val oauth = entry as? Map<*, *> ?: continue
-        val type = oauth["client_type"]
-        if (type == 3 || type == 3.0) {
-            return oauth["client_id"]?.toString().orEmpty()
+        when (oauth["client_type"]) {
+            1, 1.0 -> hasAndroidClient = true
+            3, 3.0 -> webClientId = oauth["client_id"]?.toString().orEmpty()
         }
     }
-    return ""
+    return webClientId to hasAndroidClient
 }
 
-val googleWebClientId = extractGoogleWebClientId()
+val (googleWebClientId, googleAndroidOAuthConfigured) = parseGoogleServicesOAuth()
 val gcpPublicProjectId = firebase["gcpPublicProjectId"] as? String ?: "project-424696015515"
 val firebaseProjectNumber = firebase["projectNumber"] as? String ?: "424696015515"
 
@@ -97,7 +99,12 @@ android {
         buildConfigField("String", "GCP_PUBLIC_PROJECT_ID", quote(gcpPublicProjectId))
         buildConfigField("String", "FIREBASE_PROJECT_NUMBER", quote(firebaseProjectNumber))
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", quote(googleWebClientId))
-        buildConfigField("boolean", "GOOGLE_SIGN_IN_ENABLED", (googleWebClientId.isNotEmpty()).toString())
+        buildConfigField("boolean", "GOOGLE_ANDROID_OAUTH_CONFIGURED", googleAndroidOAuthConfigured.toString())
+        buildConfigField(
+            "boolean",
+            "GOOGLE_SIGN_IN_ENABLED",
+            (googleWebClientId.isNotEmpty() && googleAndroidOAuthConfigured).toString(),
+        )
     }
 
     buildTypes {
@@ -173,6 +180,8 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-functions")
     implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-messaging")
+    implementation("androidx.work:work-runtime-ktx:2.10.0")
     // Firebase SQL Connect — Kotlin SDK (requires generated connector in dataconnect/generated)
     implementation("com.google.firebase:firebase-dataconnect")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3")

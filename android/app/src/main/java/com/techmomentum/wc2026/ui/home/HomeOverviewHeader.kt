@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -37,85 +36,66 @@ fun HomeOverviewHeader(
     onSettings: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val shape = RoundedCornerShape(28.dp)
+
     Box(
         modifier = modifier
             .fillMaxWidth()
             .shadow(
-                elevation = 8.dp,
-                shape = RoundedCornerShape(22.dp),
-                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.35f),
+                elevation = 10.dp,
+                shape = shape,
+                ambientColor = AlbumPageStyle.headerAccent.copy(alpha = 0.22f),
             )
-            .clip(RoundedCornerShape(22.dp))
+            .clip(shape)
             .background(
-                Brush.verticalGradient(
+                Brush.linearGradient(
                     listOf(
                         AlbumPageStyle.headerAccentVivid,
                         AlbumPageStyle.headerAccent,
                     ),
                 ),
-            ),
+            )
+            .padding(horizontal = 18.dp, vertical = 18.dp),
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(28.dp)
-                .background(
-                    Brush.verticalGradient(
-                        listOf(Color.White.copy(alpha = 0.2f), Color.Transparent),
-                    ),
-                ),
-        )
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 14.dp, end = 8.dp, top = 12.dp, bottom = 14.dp),
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
-            Row(
+            AppLogo(size = 52.dp)
+            Column(
                 modifier = Modifier.weight(1f),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalAlignment = Alignment.CenterVertically,
+                verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
-                AppLogo(size = 56.dp)
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    modifier = Modifier.weight(1f, fill = false),
-                ) {
-                    Text(
-                        text = subtitle.uppercase(),
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(20.dp))
-                            .background(Color.White.copy(alpha = 0.16f))
-                            .padding(horizontal = 8.dp, vertical = 3.dp),
-                        style = MaterialTheme.typography.labelSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White.copy(alpha = 0.95f),
-                    )
-                    Text(
-                        text = "World Cup 2026",
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Black,
-                        color = Color.White,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                    Text(
-                        text = welcomeName,
-                        style = MaterialTheme.typography.bodyMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Color.White.copy(alpha = 0.92f),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                }
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White.copy(alpha = 0.88f),
+                )
+                Text(
+                    text = "World Cup 2026",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Black,
+                    color = Color.White,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+                Text(
+                    text = welcomeName,
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Medium,
+                    color = Color.White.copy(alpha = 0.92f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
             }
             IconButton(
                 onClick = onSettings,
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(42.dp)
                     .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.22f)),
+                    .background(Color.White.copy(alpha = 0.18f)),
             ) {
                 Icon(
                     imageVector = Icons.Default.Settings,

@@ -160,9 +160,5 @@ class AuthViewModel @Inject constructor(
         }
     }
 
-    private fun googleSetupMessage(): String? {
-        if (googleAuthClient.isConfigured) return null
-        return "Enable Google in Firebase Authentication (${ProjectConfig.GCP_PUBLIC_PROJECT_ID}), " +
-            "add debug SHA-1, then re-download google-services.json."
-    }
+    private fun googleSetupMessage(): String? = googleAuthClient.configurationHint()
 }

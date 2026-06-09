@@ -45,7 +45,7 @@ data class BottomNavItem(
 
 val mainBottomNavItems = listOf(
     BottomNavItem(Routes.HOME, "Home", Icons.Default.Home),
-    BottomNavItem(Routes.ALBUM, "Decks", Icons.Default.Collections),
+    BottomNavItem(Routes.ALBUM, "Album", Icons.Default.Collections),
     BottomNavItem(Routes.LEADERBOARD, "Ranks", Icons.Default.EmojiEvents),
     BottomNavItem(Routes.SLOT, "Slots", Icons.Default.SportsEsports),
     BottomNavItem(Routes.PROFILE, "Profile", Icons.Default.AccountCircle),

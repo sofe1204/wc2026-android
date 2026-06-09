@@ -1,5 +1,9 @@
 package com.techmomentum.wc2026.ui.settings
 
+import android.Manifest
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +17,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -28,6 +33,17 @@ fun SettingsScreen(
 ) {
     val state by viewModel.uiState.collectAsState()
 
+    val permissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+    ) { granted -> viewModel.onNotificationPermissionResult(granted) }
+
+    LaunchedEffect(state.needsNotificationPermission) {
+        if (state.needsNotificationPermission && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            viewModel.clearPermissionPrompt()
+        }
+    }
+
     Scaffold(
         topBar = {
             WorldCupTopBar(title = "Settings", showBack = true, onBack = onBack)
@@ -39,27 +55,19 @@ fun SettingsScreen(
                 .padding(padding)
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Text("Preferences", style = MaterialTheme.typography.titleMedium)
-            Card(modifier = Modifier.padding(vertical = 8.dp)) {
+            Card {
                 SettingRow("Sound effects", state.soundEnabled) { viewModel.setSound(it) }
                 SettingRow("Haptic feedback", state.hapticsEnabled) { viewModel.setHaptics(it) }
                 SettingRow("Notifications", state.notificationsEnabled) { viewModel.setNotifications(it) }
             }
             Text(
-                "Legal",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(top = 16.dp),
+                "Notifications remind you when ad rewards are ready, slot spins reset at midnight UTC, login packs return, and unopened packs are waiting.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
-            Card(modifier = Modifier.padding(vertical = 8.dp)) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "TODO: Review World Cup 2026 branding, squad data, and sticker image licensing before release.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-            }
         }
     }
 }

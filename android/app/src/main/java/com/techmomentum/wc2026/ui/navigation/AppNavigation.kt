@@ -42,6 +42,8 @@ fun AppNavigation(
     authRepository: AuthRepository,
     rewardedAdManager: RewardedAdManager,
     interstitialAdManager: InterstitialAdManager,
+    pendingNavRoute: String? = null,
+    onPendingNavRouteConsumed: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     val navController = rememberNavController()
@@ -56,6 +58,23 @@ fun AppNavigation(
 
     LaunchedEffect(isLoggedIn) {
         if (isLoggedIn) interstitialAdManager.load()
+    }
+
+    LaunchedEffect(isLoggedIn, pendingNavRoute) {
+        val route = pendingNavRoute ?: return@LaunchedEffect
+        if (!isLoggedIn) return@LaunchedEffect
+        if (route !in Routes.bottomBarDestinations && route != Routes.PACK_OPEN && route != Routes.SETTINGS) {
+            onPendingNavRouteConsumed()
+            return@LaunchedEffect
+        }
+        navController.navigate(route) {
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            launchSingleTop = true
+            restoreState = true
+        }
+        onPendingNavRouteConsumed()
     }
 
     if (!isLoggedIn && currentRoute != Routes.AUTH && currentRoute != Routes.LOADING) {
