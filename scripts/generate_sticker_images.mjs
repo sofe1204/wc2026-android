@@ -126,6 +126,7 @@ async function main() {
         p.animeStickerPrompt &&
         needsImage(p.imageUrl, args.force)
     );
+    if (args.teamId) queue = queue.filter((p) => p.teamId === args.teamId);
     if (args.playerId) queue = queue.filter((p) => p.playerId === args.playerId);
     if (args.limit != null) queue = queue.slice(0, args.limit);
 

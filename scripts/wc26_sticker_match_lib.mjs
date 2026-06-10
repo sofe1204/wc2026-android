@@ -4,6 +4,11 @@ import path from "path";
 import { slugify } from "./seed_lib.mjs";
 
 /** wc26 folder name → teamId (when folder name ≠ countryName / teamId). */
+/** Panini filename (teamId:normalized) → playerId when romanization/order cannot be inferred. */
+export const WC26_FILE_PLAYER_ID_ALIASES = {
+  "south_korea:hyeongyuoh": "south_korea_oh_hyeon_gyu",
+};
+
 export const WC26_FOLDER_ALIASES = {
   bosnia: "bosnia_herzegovina",
   korea: "south_korea",
@@ -90,9 +95,31 @@ export function buildPlayerLookup(players) {
   return { lookup: byTeamAndKey, conflicts };
 }
 
-export function matchFileToPlayer(fileBaseName, teamId, lookup) {
-  const fileKey = normalizeMatchKey(fileBaseName);
-  return lookup.get(`${teamId}:${fileKey}`) ?? null;
+/** Keys to try for a scan filename (direct + reversed given/family order). */
+export function fileMatchKeys(fileBaseName) {
+  const keys = [normalizeMatchKey(fileBaseName)];
+  const parts = String(fileBaseName ?? "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (parts.length >= 2) {
+    keys.push(normalizeMatchKey([...parts].reverse().join(" ")));
+  }
+  return [...new Set(keys.filter(Boolean))];
+}
+
+export function matchFileToPlayer(fileBaseName, teamId, lookup, playerById = null) {
+  for (const fileKey of fileMatchKeys(fileBaseName)) {
+    const hit = lookup.get(`${teamId}:${fileKey}`);
+    if (hit) return hit;
+
+    const aliasPlayerId = WC26_FILE_PLAYER_ID_ALIASES[`${teamId}:${fileKey}`];
+    if (aliasPlayerId && playerById) {
+      const aliased = playerById.get(aliasPlayerId);
+      if (aliased) return aliased;
+    }
+  }
+  return null;
 }
 
 /**
@@ -106,6 +133,7 @@ export function scanWc26SourceDir(sourceDir, teams, players) {
 
   const folderIndex = buildTeamFolderIndex(teams);
   const { lookup, conflicts } = buildPlayerLookup(players);
+  const playerById = new Map(players.map((p) => [p.playerId, p]));
   const matched = [];
   const unmatchedFiles = [];
   const unknownFolders = new Set();
@@ -127,7 +155,7 @@ export function scanWc26SourceDir(sourceDir, teams, players) {
 
       const fileBaseName = path.basename(fileEnt.name, ext);
       const filePath = path.join(dir, fileEnt.name);
-      const player = matchFileToPlayer(fileBaseName, teamId, lookup);
+      const player = matchFileToPlayer(fileBaseName, teamId, lookup, playerById);
 
       const row = { filePath, folderName, teamId, fileBaseName, ext };
       if (player) {

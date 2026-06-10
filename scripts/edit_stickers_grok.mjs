@@ -120,6 +120,9 @@ async function main() {
       : null;
 
   let queue = scan.matched.filter((row) => needsImage(row.player.imageUrl, args.force));
+  if (args.teamId) {
+    queue = queue.filter((row) => row.player.teamId === args.teamId);
+  }
   if (requestedIds?.length) {
     const byId = new Map(scan.matched.map((row) => [row.player.playerId, row]));
     queue = [];
