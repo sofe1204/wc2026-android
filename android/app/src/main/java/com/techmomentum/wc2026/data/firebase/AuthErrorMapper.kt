@@ -37,17 +37,29 @@ private fun mapFirebaseAuthException(auth: FirebaseAuthException): String = when
         "Password is too weak. Use at least 6 characters."
     "ERROR_USER_NOT_FOUND",
     "ERROR_INVALID_LOGIN_CREDENTIALS",
+    "ERROR_INVALID_CREDENTIAL",
+    "ERROR_WRONG_PASSWORD",
     ->
-        "Wrong email or password."
-    "ERROR_WRONG_PASSWORD" ->
-        "Wrong password."
+        INCORRECT_EMAIL_OR_PASSWORD
     "ERROR_TOO_MANY_REQUESTS" ->
         "Too many attempts. Wait a few minutes and try again."
     "ERROR_NETWORK_REQUEST_FAILED" ->
         networkHelpMessage()
     "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL" ->
         "An account already exists with this email using a different sign-in method."
-    else -> auth.message ?: "Authentication failed (${auth.errorCode})"
+    else -> if (looksLikeInvalidEmailOrPassword(auth)) {
+        INCORRECT_EMAIL_OR_PASSWORD
+    } else {
+        auth.message ?: "Authentication failed"
+    }
+}
+
+private const val INCORRECT_EMAIL_OR_PASSWORD = "Incorrect email or password."
+
+private fun looksLikeInvalidEmailOrPassword(auth: FirebaseAuthException): Boolean {
+    val message = auth.message.orEmpty()
+    return message.contains("supplied auth credential", ignoreCase = true) &&
+        message.contains("incorrect", ignoreCase = true)
 }
 
 private fun networkHelpMessage(): String = buildString {

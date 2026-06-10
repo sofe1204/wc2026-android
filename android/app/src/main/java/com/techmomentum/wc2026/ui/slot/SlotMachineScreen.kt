@@ -20,7 +20,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -42,9 +41,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.data.remote.RewardedAdManager
-import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
-import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.PixarCelebrationChip
+import com.techmomentum.wc2026.ui.layout.AlbumPageScreen
 import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
 import com.techmomentum.wc2026.ui.components.PixarStatusChip
@@ -81,107 +79,100 @@ fun SlotMachineScreen(
         }
     }
 
-    Scaffold(containerColor = Color.Transparent) { padding ->
-        Box(
+    AlbumPageScreen {
+        Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
-                .background(Brush.verticalGradient(AlbumPageStyle.backgroundGradient)),
+                .verticalScroll(rememberScrollState())
+                .padding(14.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(14.dp),
         ) {
-            AlbumOverviewBackground()
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                Text(
+                    text = "Slot Machine",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Black,
+                    color = AlbumPageStyle.headerAccent,
+                )
+                Text(
+                    text = "Match 3 in a row (horizontal or diagonal) to win a pack · " +
+                        "${GameConstants.DAILY_FREE_SLOT_SPINS} free spins/day",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = AlbumPageStyle.bottomNavUnselectedIcon,
+                )
+            }
 
-            AlbumPageFrame(modifier = Modifier.fillMaxSize()) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScroll(rememberScrollState())
-                        .padding(14.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(14.dp),
-                ) {
-                    Column(
+            FlowRow(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                PixarStatusChip(
+                    label = "Spins left · ${state.spinsRemaining}",
+                    available = state.spinsRemaining > 0,
+                )
+                PixarStatusChip(
+                    label = "Packs won · ${state.packsWonToday}/${GameConstants.DAILY_SLOT_PACK_REWARD_CAP}",
+                    available = state.packsWonToday < GameConstants.DAILY_SLOT_PACK_REWARD_CAP,
+                )
+            }
+
+            if (state.symbolsReady) {
+                CompositionLocalProvider(LocalSlotBitmaps provides slotBitmaps) {
+                    SlotMachineCabinet(
+                        state = state,
+                        slotSounds = slotSounds,
+                        onSpinAnimationFinished = viewModel::markSpinSettled,
                         modifier = Modifier.fillMaxWidth(),
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        Text(
-                            text = "Slot Machine",
-                            style = MaterialTheme.typography.headlineSmall,
-                            fontWeight = FontWeight.Black,
-                            color = AlbumPageStyle.headerAccent,
-                        )
-                        Text(
-                            text = "Match 3 in a row (horizontal or diagonal) to win a pack · " +
-                                "${GameConstants.DAILY_FREE_SLOT_SPINS} free spins/day",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = AlbumPageStyle.bottomNavUnselectedIcon,
-                        )
-                    }
-
-                    FlowRow(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
-                        PixarStatusChip(
-                            label = "Spins left · ${state.spinsRemaining}",
-                            available = state.spinsRemaining > 0,
-                        )
-                        PixarStatusChip(
-                            label = "Packs won · ${state.packsWonToday}/${GameConstants.DAILY_SLOT_PACK_REWARD_CAP}",
-                            available = state.packsWonToday < GameConstants.DAILY_SLOT_PACK_REWARD_CAP,
-                        )
-                    }
-
-                    if (state.symbolsReady) {
-                        CompositionLocalProvider(LocalSlotBitmaps provides slotBitmaps) {
-                            SlotMachineCabinet(
-                                state = state,
-                                slotSounds = slotSounds,
-                                onSpinAnimationFinished = viewModel::markSpinSettled,
-                                modifier = Modifier.fillMaxWidth(),
-                            )
-                        }
-                    } else {
-                        SlotCabinetPlaceholder(modifier = Modifier.fillMaxWidth())
-                    }
-
-                    if (state.isWin && state.phase == SlotPhase.Settled) {
-                        PixarCelebrationChip(message = "WIN! Line match!")
-                    }
-
-                    state.message?.takeIf { state.phase == SlotPhase.Settled }?.let { message ->
-                        Text(
-                            text = message,
-                            textAlign = TextAlign.Center,
-                            style = MaterialTheme.typography.bodyMedium,
-                            fontWeight = FontWeight.SemiBold,
-                            color = AlbumPageStyle.headerAccent.darken(0.1f),
-                            modifier = Modifier.fillMaxWidth(),
-                        )
-                    }
-
-                    PixarPrimaryButton(
-                        text = if (state.isAnimating) "Spinning…" else "Spin",
-                        onClick = {
-                            slotSounds.playSpinClick()
-                            viewModel.spin()
-                        },
-                        enabled = state.symbolsReady && !state.isAnimating && state.spinsRemaining > 0,
-                        loading = state.phase == SlotPhase.Spinning,
-                    )
-
-                    PixarSecondaryButton(
-                        text = if (state.slotSpinAdAvailable) {
-                            "Watch Ad (+${GameConstants.REWARDED_SLOT_SPINS} Spins)"
-                        } else {
-                            "Spin ad · ${state.slotSpinAdCooldownMinutes}m"
-                        },
-                        onClick = { viewModel.watchAdForSpins(activity, rewardedAdManager) },
-                        enabled = state.slotSpinAdAvailable && !state.isAnimating,
-                        accentBorder = state.slotSpinAdAvailable,
                     )
                 }
+            } else {
+                SlotCabinetPlaceholder(modifier = Modifier.fillMaxWidth())
             }
+
+            if (state.isWin && state.phase == SlotPhase.Settled) {
+                PixarCelebrationChip(message = "WIN! Line match!")
+            }
+
+            state.message?.takeIf { state.phase == SlotPhase.Settled }?.let { message ->
+                Text(
+                    text = message,
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = AlbumPageStyle.headerAccent.darken(0.1f),
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+
+            PixarPrimaryButton(
+                text = when {
+                    state.isAnimating -> "Spinning…"
+                    state.atSlotPackCap -> "Daily pack limit reached"
+                    else -> "Spin"
+                },
+                onClick = {
+                    slotSounds.playSpinClick()
+                    viewModel.spin()
+                },
+                enabled = state.symbolsReady && !state.isAnimating && state.canSpin,
+                loading = state.phase == SlotPhase.Spinning,
+            )
+
+            PixarSecondaryButton(
+                text = when {
+                    state.atSlotPackCap -> "Daily pack limit reached"
+                    state.slotSpinAdAvailable -> "Watch Ad (+${GameConstants.REWARDED_SLOT_SPINS} Spins)"
+                    else -> "Spin ad · ${state.slotSpinAdCooldownMinutes}m"
+                },
+                onClick = { viewModel.watchAdForSpins(activity, rewardedAdManager) },
+                enabled = state.slotSpinAdAvailable && !state.isAnimating,
+                accentBorder = state.slotSpinAdAvailable,
+            )
         }
     }
 }

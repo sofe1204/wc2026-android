@@ -44,12 +44,6 @@ fun ProfileStatsCard(
                 highlight = profile.unopenedPacks > 0,
             )
             CollectorMetricRow(
-                emoji = "⭐",
-                label = "Unique stickers",
-                value = "${profile.albumUniqueCount}",
-                highlight = true,
-            )
-            CollectorMetricRow(
                 emoji = "🎴",
                 label = "Total collected",
                 value = "${profile.totalStickerCount}",

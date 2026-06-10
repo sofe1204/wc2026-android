@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Deploy Cloud Functions + Firestore rules to wc-2026-3110f
+# Deploy Cloud Functions + Firestore + Storage rules to wc-2026-3110f
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
@@ -25,6 +25,8 @@ $FIREBASE_BIN login --reauth 2>/dev/null || $FIREBASE_BIN login
 $FIREBASE_BIN use wc-2026-3110f
 echo "==> Deploying Firestore rules first (needed for login/register)..."
 $FIREBASE_BIN deploy --only firestore:rules,firestore:indexes
+echo "==> Deploying Storage rules (profile avatars, assets)..."
+$FIREBASE_BIN deploy --only storage
 echo "==> Deploying Cloud Functions..."
 $FIREBASE_BIN deploy --only functions
 

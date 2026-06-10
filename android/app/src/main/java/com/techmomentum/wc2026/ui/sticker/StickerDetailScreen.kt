@@ -15,7 +15,6 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -32,6 +31,7 @@ import com.techmomentum.wc2026.data.model.hasCompleteRatings
 import com.techmomentum.wc2026.data.model.isTeamEmblem
 import com.techmomentum.wc2026.ui.components.LoadingScreen
 import com.techmomentum.wc2026.ui.components.StickerDetailHeroCard
+import com.techmomentum.wc2026.ui.layout.TopBarEdgeToEdgeScaffold
 import com.techmomentum.wc2026.ui.team.CountryAlbumBackgroundOrbs
 import com.techmomentum.wc2026.ui.theme.darken
 import com.techmomentum.wc2026.ui.theme.teamPalette
@@ -43,10 +43,11 @@ fun StickerDetailScreen(
     viewModel: StickerDetailViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    val palette = state.team?.let { teamPalette(it) }
 
-    Scaffold(
+    TopBarEdgeToEdgeScaffold(
         topBar = {
-            val tint = state.team?.let { teamPalette(it).primary.darken(0.3f) } ?: Color.Black
+            val tint = palette?.primary?.darken(0.3f) ?: Color.Black
             TopAppBar(
                 title = {},
                 navigationIcon = {
@@ -67,92 +68,95 @@ fun StickerDetailScreen(
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent),
             )
         },
-        containerColor = Color.Transparent,
-    ) { padding ->
-        if (state.loading) {
-            LoadingScreen(Modifier.padding(padding))
-            return@Scaffold
-        }
-        val sticker = state.sticker ?: return@Scaffold
-        val team = state.team ?: return@Scaffold
-        val player = state.player
-        val owned = state.owned
-        val isOwned = owned != null
-        val palette = teamPalette(team)
-        val isEmblem = sticker.isTeamEmblem()
-        val showStats = !isEmblem && player != null
-
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .background(Brush.verticalGradient(palette.backgroundGradient)),
-        ) {
-            CountryAlbumBackgroundOrbs(palette)
-
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp),
-            ) {
-                StickerDetailHeader(
-                    team = team,
-                    player = player,
-                    sticker = sticker,
-                    palette = palette,
-                )
-
+        background = {
+            if (palette != null) {
                 Box(
-                    modifier = Modifier.fillMaxWidth(0.82f),
-                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Brush.verticalGradient(palette.backgroundGradient)),
                 ) {
-                    Box(
-                        modifier = Modifier.matchParentSize()
-                            .background(
-                                Brush.radialGradient(
-                                    colors = listOf(
-                                        palette.primary.copy(alpha = 0.22f),
-                                        palette.accentVivid.copy(alpha = 0.10f),
-                                        Color.Transparent,
-                                    ),
-                                    radius = 480f,
-                                ),
-                            ),
-                    )
-                    StickerDetailHeroCard(
-                        team = team,
-                        sticker = sticker,
-                        player = player,
-                        owned = isOwned,
-                        duplicateCount = owned?.count ?: 0,
-                        palette = palette,
-                        modifier = Modifier.fillMaxWidth(),
-                    )
+                    CountryAlbumBackgroundOrbs(palette)
                 }
+            }
+        },
+    ) {
+        when {
+            state.loading -> LoadingScreen()
+            state.sticker == null || state.team == null -> Unit
+            else -> {
+                val sticker = state.sticker!!
+                val team = state.team!!
+                val player = state.player
+                val owned = state.owned
+                val isOwned = owned != null
+                val teamPalette = palette!!
+                val isEmblem = sticker.isTeamEmblem()
+                val showStats = !isEmblem && player != null
 
-                if (showStats) {
-                    val p = player!!
-                    if (p.hasCompleteRatings()) {
-                        if (p.clubName.isNotBlank() || p.clubLeague.isNotBlank()) {
-                            StickerDetailClubCard(
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState())
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    StickerDetailHeader(
+                        team = team,
+                        player = player,
+                        sticker = sticker,
+                        palette = teamPalette,
+                    )
+
+                    Box(
+                        modifier = Modifier.fillMaxWidth(0.82f),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Box(
+                            modifier = Modifier.matchParentSize()
+                                .background(
+                                    Brush.radialGradient(
+                                        colors = listOf(
+                                            teamPalette.primary.copy(alpha = 0.22f),
+                                            teamPalette.accentVivid.copy(alpha = 0.10f),
+                                            Color.Transparent,
+                                        ),
+                                        radius = 480f,
+                                    ),
+                                ),
+                        )
+                        StickerDetailHeroCard(
+                            team = team,
+                            sticker = sticker,
+                            player = player,
+                            owned = isOwned,
+                            duplicateCount = owned?.count ?: 0,
+                            palette = teamPalette,
+                            modifier = Modifier.fillMaxWidth(),
+                        )
+                    }
+
+                    if (showStats) {
+                        val p = player!!
+                        if (p.hasCompleteRatings()) {
+                            if (p.clubName.isNotBlank() || p.clubLeague.isNotBlank()) {
+                                StickerDetailClubCard(
+                                    player = p,
+                                    palette = teamPalette,
+                                    modifier = Modifier.fillMaxWidth(),
+                                )
+                            }
+                            StickerDetailRatingsCard(
                                 player = p,
-                                palette = palette,
+                                palette = teamPalette,
+                                modifier = Modifier.fillMaxWidth(),
+                            )
+                        } else {
+                            StickerDetailStatsUnavailable(
+                                palette = teamPalette,
                                 modifier = Modifier.fillMaxWidth(),
                             )
                         }
-                        StickerDetailRatingsCard(
-                            player = p,
-                            palette = palette,
-                            modifier = Modifier.fillMaxWidth(),
-                        )
-                    } else {
-                        StickerDetailStatsUnavailable(
-                            palette = palette,
-                            modifier = Modifier.fillMaxWidth(),
-                        )
                     }
                 }
             }

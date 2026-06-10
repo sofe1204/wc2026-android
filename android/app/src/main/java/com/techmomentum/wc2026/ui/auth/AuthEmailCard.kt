@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -21,12 +22,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.techmomentum.wc2026.ui.components.PixarOutlinedTextField
 import com.techmomentum.wc2026.ui.components.PixarPrimaryButton
+import com.techmomentum.wc2026.ui.components.rememberDismissKeyboardAction
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 import com.techmomentum.wc2026.ui.theme.darken
 
@@ -51,6 +54,12 @@ fun AuthEmailCard(
 ) {
     val shape = RoundedCornerShape(20.dp)
     val interactionSource = remember { MutableInteractionSource() }
+    val dismissKeyboard = rememberDismissKeyboardAction()
+    val submitWithKeyboardDismiss = {
+        dismissKeyboard()
+        onSubmit()
+    }
+    val submitKeyboardActions = KeyboardActions(onDone = { submitWithKeyboardDismiss() })
 
     Column(
         modifier = modifier
@@ -107,6 +116,11 @@ fun AuthEmailCard(
             onValueChange = onPasswordChange,
             label = "Password",
             visualTransformation = PasswordVisualTransformation(),
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Password,
+                imeAction = if (isSignUp) ImeAction.Next else ImeAction.Done,
+            ),
+            keyboardActions = if (isSignUp) KeyboardActions.Default else submitKeyboardActions,
             modifier = Modifier.fillMaxWidth(),
         )
         if (isSignUp) {
@@ -115,6 +129,11 @@ fun AuthEmailCard(
                 onValueChange = onConfirmPasswordChange,
                 label = "Confirm password",
                 visualTransformation = PasswordVisualTransformation(),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Password,
+                    imeAction = ImeAction.Done,
+                ),
+                keyboardActions = submitKeyboardActions,
                 modifier = Modifier.fillMaxWidth(),
             )
         }
@@ -122,7 +141,7 @@ fun AuthEmailCard(
         Spacer(Modifier.height(4.dp))
         PixarPrimaryButton(
             text = if (isSignUp) "Create account" else "Sign in",
-            onClick = onSubmit,
+            onClick = submitWithKeyboardDismiss,
             enabled = !loading,
             loading = loading,
         )
@@ -138,7 +157,10 @@ fun AuthEmailCard(
                 .clickable(
                     interactionSource = interactionSource,
                     indication = null,
-                    onClick = onToggleMode,
+                    onClick = {
+                        dismissKeyboard()
+                        onToggleMode()
+                    },
                 ),
             style = MaterialTheme.typography.labelLarge,
             fontWeight = FontWeight.Bold,

@@ -1,7 +1,6 @@
 import * as admin from "firebase-admin";
 import {
   DAILY_FREE_SLOT_SPINS,
-  LOGIN_REWARD_INTERVAL_HOURS,
   LOGIN_REWARD_PACKS,
   RARITY_FALLBACK_ORDER,
   RARITY_WEIGHTS,
@@ -259,38 +258,55 @@ export function checkSlotWin(grid: string[][]): boolean {
   return lines.some(slotLineWins);
 }
 
-const LOGIN_REWARD_INTERVAL_MS = LOGIN_REWARD_INTERVAL_HOURS * 60 * 60 * 1000;
 const REWARDED_AD_COOLDOWN_MS = REWARDED_AD_COOLDOWN_MINUTES * 60 * 1000;
 
+function loginPackGrantUtcDate(
+  last: admin.firestore.Timestamp | undefined | null
+): string | null {
+  if (!last) return null;
+  return new Date(last.toMillis()).toISOString().slice(0, 10);
+}
+
+/** Once per UTC calendar day — independent of time-of-day the last pack was granted. */
 export function isLoginPackEligible(
   last: admin.firestore.Timestamp | undefined | null,
   existedBeforeField: boolean
 ): boolean {
   if (!last) return existedBeforeField;
-  return Date.now() - last.toMillis() >= LOGIN_REWARD_INTERVAL_MS;
+  return loginPackGrantUtcDate(last) !== todayUtc();
 }
 
-export function applyLoginPackGrant(
+/** Applies daily slot reset and optional login pack grant in a single profile sync. */
+export function applyEnsureUserProfileRewards(
   tx: FirebaseFirestore.Transaction,
   userRef: FirebaseFirestore.DocumentReference,
   data: FirebaseFirestore.DocumentData,
   existedBeforeField: boolean
 ): { granted: boolean; packs: number; message: string } {
-  const packs = data.unopenedPacks || 0;
-  const last = data.lastLoginPackGrantedAt as admin.firestore.Timestamp | undefined;
-  if (!isLoginPackEligible(last, existedBeforeField)) {
-    return { granted: false, packs, message: "Profile ready." };
-  }
-  const newPacks = packs + LOGIN_REWARD_PACKS;
-  tx.update(userRef, {
-    unopenedPacks: newPacks,
-    lastLoginPackGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
-  });
-  return {
-    granted: true,
-    packs: newPacks,
-    message: `Welcome back! +${LOGIN_REWARD_PACKS} pack (${STICKERS_PER_PACK} stickers each).`,
+  const resetData = computeDailySlotReset(data);
+  const packs = resetData.unopenedPacks ?? 0;
+  const last = resetData.lastLoginPackGrantedAt as admin.firestore.Timestamp | undefined;
+  const granted = isLoginPackEligible(last, existedBeforeField);
+
+  const update: Record<string, unknown> = {
+    slotSpinsRemaining: resetData.slotSpinsRemaining ?? 0,
+    slotSpinsDate: resetData.slotSpinsDate,
+    slotRewardPacksWonToday: resetData.slotRewardPacksWonToday ?? 0,
+    slotRewardDate: resetData.slotRewardDate,
   };
+
+  let message = "Profile ready.";
+  let resultPacks = packs;
+
+  if (granted) {
+    resultPacks = packs + LOGIN_REWARD_PACKS;
+    update.unopenedPacks = resultPacks;
+    update.lastLoginPackGrantedAt = admin.firestore.FieldValue.serverTimestamp();
+    message = `Welcome back! +${LOGIN_REWARD_PACKS} pack (${STICKERS_PER_PACK} stickers each).`;
+  }
+
+  tx.update(userRef, update);
+  return { granted, packs: resultPacks, message };
 }
 
 export async function grantRewardedAdStickers(uid: string): Promise<{

@@ -7,6 +7,7 @@ import android.net.Uri
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageMetadata
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
@@ -29,7 +30,10 @@ class ProfileAvatarRepository @Inject constructor(
         val uid = auth.currentUser?.uid
             ?: error("Sign in to upload a profile photo.")
         val ref = storage.reference.child("avatars/$uid.jpg")
-        ref.putBytes(jpegBytes).await()
+        val metadata = StorageMetadata.Builder()
+            .setContentType("image/jpeg")
+            .build()
+        ref.putBytes(jpegBytes, metadata).await()
         val downloadUrl = ref.downloadUrl.await().toString()
         firestore.collection("users").document(uid)
             .update(mapOf("photoUrl" to downloadUrl))

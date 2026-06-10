@@ -18,6 +18,7 @@ import com.techmomentum.wc2026.data.slot.SlotGridParser
 import com.techmomentum.wc2026.data.slot.SlotSymbolsWarmup
 import com.techmomentum.wc2026.data.slot.SlotWinChecker
 import com.techmomentum.wc2026.debug.DebugAgentLog
+import com.techmomentum.wc2026.utils.GameConstants
 import com.techmomentum.wc2026.utils.RewardEligibility
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -54,6 +55,8 @@ data class SlotUiState(
 ) {
     val isAnimating: Boolean get() = phase == SlotPhase.Spinning
     val isWin: Boolean get() = phase == SlotPhase.Settled && serverIsWin && localIsWin
+    val atSlotPackCap: Boolean get() = packsWonToday >= GameConstants.DAILY_SLOT_PACK_REWARD_CAP
+    val canSpin: Boolean get() = RewardEligibility.canSpinSlots(spinsRemaining, packsWonToday)
 }
 
 @HiltViewModel
@@ -90,11 +93,15 @@ class SlotViewModel @Inject constructor(
             userRepository.observeUserProfile().collect { profile ->
                 if (profile != null) {
                     val lastAd = profile.lastRewardedSlotSpinAtEpochMs
+                    val packsWonToday = profile.slotRewardPacksWonToday
                     _uiState.update {
                         it.copy(
                             spinsRemaining = profile.slotSpinsRemaining,
-                            packsWonToday = profile.slotRewardPacksWonToday,
-                            slotSpinAdAvailable = RewardEligibility.isSlotSpinAdAvailable(lastAd),
+                            packsWonToday = packsWonToday,
+                            slotSpinAdAvailable = RewardEligibility.isSlotSpinAdRewardAvailable(
+                                lastAd,
+                                packsWonToday,
+                            ),
                             slotSpinAdCooldownMinutes = RewardEligibility.slotSpinAdCooldownMinutesRemaining(lastAd),
                         )
                     }
@@ -105,7 +112,7 @@ class SlotViewModel @Inject constructor(
 
     fun spin() {
         val current = _uiState.value
-        if (current.phase == SlotPhase.Spinning || current.spinsRemaining <= 0) return
+        if (current.phase == SlotPhase.Spinning || !current.canSpin) return
 
         viewModelScope.launch {
             ensureSymbols()

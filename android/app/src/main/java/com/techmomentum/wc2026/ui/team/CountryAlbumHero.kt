@@ -28,7 +28,6 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.techmomentum.wc2026.data.model.Rarity
 import com.techmomentum.wc2026.data.model.Team
 import com.techmomentum.wc2026.domain.usecase.StickerSlot
@@ -53,11 +52,6 @@ fun CountryAlbumHero(
 ) {
     val palette = teamPalette(team)
     val progress = (percent / 100f).coerceIn(0f, 1f)
-    val subtitle = when {
-        ownedCount == 0 -> "Collect the crest and full squad!"
-        ownedCount >= total -> "Squad complete!"
-        else -> "${total - ownedCount} stickers to go"
-    }
 
     Box(
         modifier = modifier
@@ -82,14 +76,6 @@ fun CountryAlbumHero(
                     ),
                 ),
         )
-        // Subtle football watermark.
-        Text(
-            "⚽",
-            modifier = Modifier.align(Alignment.BottomEnd).padding(10.dp),
-            fontSize = 26.sp,
-            color = palette.onGradient.copy(alpha = 0.16f),
-        )
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -134,14 +120,6 @@ fun CountryAlbumHero(
                         color = Color(0xFF1A1A1A),
                     )
                 }
-                Text(
-                    text = subtitle,
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = palette.onGradient.copy(alpha = 0.92f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
             }
 
             HeroProgressRing(progress, ownedCount, total, palette)

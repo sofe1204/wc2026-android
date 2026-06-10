@@ -1,8 +1,9 @@
 package com.techmomentum.wc2026.ui.navigation
 
 import android.app.Activity
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -28,6 +29,8 @@ import com.techmomentum.wc2026.ui.bootstrap.BootstrapState
 import com.techmomentum.wc2026.ui.bootstrap.SessionBootstrapViewModel
 import com.techmomentum.wc2026.ui.components.ErrorState
 import com.techmomentum.wc2026.ui.components.LoadingScreen
+import com.techmomentum.wc2026.ui.components.dismissKeyboardOnTap
+import com.techmomentum.wc2026.ui.components.rememberDismissKeyboardAction
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.ui.home.HomeScreen
 import com.techmomentum.wc2026.ui.pack.PackOpeningScreen
@@ -35,6 +38,8 @@ import com.techmomentum.wc2026.ui.profile.ProfileScreen
 import com.techmomentum.wc2026.ui.settings.SettingsScreen
 import com.techmomentum.wc2026.ui.slot.SlotMachineScreen
 import com.techmomentum.wc2026.ui.sticker.StickerDetailScreen
+import com.techmomentum.wc2026.ui.layout.AlbumPageScreen
+import com.techmomentum.wc2026.ui.layout.LocalMainScaffoldPadding
 import com.techmomentum.wc2026.ui.team.TeamAlbumScreen
 
 @Composable
@@ -53,6 +58,7 @@ fun AppNavigation(
 
     val context = LocalContext.current
     val activity = context as? Activity
+    val dismissKeyboard = rememberDismissKeyboardAction()
     val isLoggedIn = authState is AppAuthState.SignedIn
     val showBottomBar = currentRoute in Routes.bottomBarDestinations
 
@@ -83,12 +89,9 @@ fun AppNavigation(
         }
     }
 
-    MainScaffold(
-        modifier = modifier,
-        currentRoute = currentRoute,
-        showBottomBar = showBottomBar && isLoggedIn,
-        onNavigate = { route ->
-            if (route == currentRoute) return@MainScaffold
+    val navigateToTab: (String) -> Unit = { route ->
+        if (route != currentRoute) {
+            dismissKeyboard()
             val navigate = {
                 navController.navigate(route) {
                     popUpTo(navController.graph.findStartDestination().id) {
@@ -103,24 +106,34 @@ fun AppNavigation(
             } else {
                 navigate()
             }
-        },
+        }
+    }
+
+    MainScaffold(
+        modifier = modifier,
+        currentRoute = currentRoute,
+        showBottomBar = showBottomBar && isLoggedIn,
+        onNavigate = navigateToTab,
     ) { padding ->
-        NavHost(
-            navController = navController,
-            startDestination = Routes.LOADING,
-            modifier = Modifier.padding(padding),
-        ) {
+        CompositionLocalProvider(LocalMainScaffoldPadding provides padding) {
+            NavHost(
+                navController = navController,
+                startDestination = Routes.LOADING,
+                modifier = Modifier.fillMaxSize().dismissKeyboardOnTap(),
+            ) {
             composable(Routes.LOADING) {
                 val bootstrapVm: SessionBootstrapViewModel = hiltViewModel()
                 val bootstrapState by bootstrapVm.state.collectAsState()
                 when (bootstrapState) {
-                    BootstrapState.Loading -> LoadingScreen()
+                    BootstrapState.Loading -> AlbumPageScreen { LoadingScreen() }
                     is BootstrapState.Error -> {
                         val msg = (bootstrapState as BootstrapState.Error).message
-                        ErrorState(
-                            message = msg,
-                            onRetry = { bootstrapVm.retry() },
-                        )
+                        AlbumPageScreen {
+                            ErrorState(
+                                message = msg,
+                                onRetry = { bootstrapVm.retry() },
+                            )
+                        }
                     }
                     is BootstrapState.Ready -> {
                         val destination = (bootstrapState as BootstrapState.Ready).destinationRoute
@@ -129,7 +142,7 @@ fun AppNavigation(
                                 popUpTo(Routes.LOADING) { inclusive = true }
                             }
                         }
-                        LoadingScreen()
+                        AlbumPageScreen { LoadingScreen() }
                     }
                 }
             }
@@ -164,6 +177,7 @@ fun AppNavigation(
                 HomeScreen(
                     onOpenPack = { navController.navigate(Routes.PACK_OPEN) },
                     onSettings = { navController.navigate(Routes.SETTINGS) },
+                    onNavigateToSlots = { navigateToTab(Routes.SLOT) },
                     rewardedAdManager = rewardedAdManager,
                 )
             }
@@ -207,6 +221,7 @@ fun AppNavigation(
                     interstitialAdManager = interstitialAdManager,
                     onDone = { navController.popBackStack() },
                 )
+            }
             }
         }
     }

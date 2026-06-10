@@ -16,7 +16,7 @@ import {
   STICKERS_PER_PACK,
 } from "./constants";
 import {
-  applyLoginPackGrant,
+  applyEnsureUserProfileRewards,
   checkSlotWin,
   countAlbumStatsFromStickers,
   ensureUserDoc,
@@ -60,7 +60,7 @@ export const ensureUserProfile = onCall(async (request) => {
     if (!snap.exists) throw new HttpsError("not-found", "User not found.");
     const data = snap.data()!;
     const hadLoginTimestamp = data.lastLoginPackGrantedAt != null;
-    const result = applyLoginPackGrant(tx, userRef, data, existedBefore && !hadLoginTimestamp);
+    const result = applyEnsureUserProfileRewards(tx, userRef, data, existedBefore && !hadLoginTimestamp);
     return {
       success: true,
       unopenedPacks: result.packs,
@@ -146,13 +146,17 @@ export const spinSlotMachine = onCall(async (request) => {
       if (!snap.exists) throw new HttpsError("not-found", "User not found.");
       const data = computeDailySlotReset(snap.data()!);
 
+      let packsWonToday = data.slotRewardPacksWonToday ?? 0;
+      if (packsWonToday >= DAILY_SLOT_PACK_REWARD_CAP) {
+        throw new HttpsError("failed-precondition", "Daily slot pack limit reached.");
+      }
+
       const spins = data.slotSpinsRemaining ?? 0;
       if (spins <= 0) {
         throw new HttpsError("failed-precondition", "No slot spins remaining.");
       }
 
       let rewardGranted = false;
-      let packsWonToday = data.slotRewardPacksWonToday ?? 0;
       let unopenedPacks = data.unopenedPacks ?? 0;
       let message = isWin ? "" : "No match — try again!";
 
@@ -345,7 +349,14 @@ export const claimRewardedSlotSpins = onCall(async (request) => {
   return db.runTransaction(async (tx) => {
     const snap = await tx.get(userRef);
     if (!snap.exists) throw new HttpsError("not-found", "User not found.");
-    const data = snap.data()!;
+    const data = computeDailySlotReset(snap.data()!);
+    if ((data.slotRewardPacksWonToday ?? 0) >= DAILY_SLOT_PACK_REWARD_CAP) {
+      return {
+        success: false,
+        message: "Daily slot pack limit reached.",
+        spinsRemaining: data.slotSpinsRemaining || 0,
+      };
+    }
     const last = data.lastRewardedSlotSpinAt as admin.firestore.Timestamp | undefined;
     if (last && Date.now() - last.toMillis() < cooldownMs) {
       const waitMin = Math.ceil((cooldownMs - (Date.now() - last.toMillis())) / 60000);

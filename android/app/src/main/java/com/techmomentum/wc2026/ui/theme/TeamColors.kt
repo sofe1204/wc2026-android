@@ -51,12 +51,46 @@ fun Color.saturate(factor: Float): Color {
     return Color(android.graphics.Color.HSVToColor(hsv)).copy(alpha = alpha)
 }
 
+private fun englandPalette(rawRed: Color): TeamPalette {
+    val red = rawRed.saturate(1.25f)
+    val deepRed = red.darken(0.22f)
+    return TeamPalette(
+        primary = red,
+        secondary = Color.White,
+        onGradient = Color.White,
+        scrim = Color.Black.copy(alpha = 0.08f),
+        heroGradient = listOf(
+            deepRed,
+            red,
+            red.lighten(0.12f),
+        ),
+        backgroundGradient = listOf(
+            Color(0xFFFFF8F8),
+            red.lighten(0.88f),
+            Color(0xFFFFE8EC),
+        ),
+        cardGradient = listOf(
+            Color.White,
+            red.lighten(0.78f),
+        ),
+        sheetColor = red.lighten(0.90f),
+        accent = CardGold,
+        accentVivid = red.lighten(0.18f),
+    )
+}
+
 @Composable
 fun teamPalette(team: Team): TeamPalette {
     val fallbackPrimary = MaterialTheme.colorScheme.primary
     val fallbackSecondary = MaterialTheme.colorScheme.secondary
     val rawPrimary = parseTeamColor(team.primaryColor, fallbackPrimary)
     val rawSecondary = parseTeamColor(team.secondaryColor, fallbackSecondary)
+
+    if (team.teamId.equals("england", ignoreCase = true) ||
+        team.teamCode.equals("ENG", ignoreCase = true)
+    ) {
+        return englandPalette(rawSecondary)
+    }
 
     // Boost saturation so flag colors read as vivid/Pixar, not muted.
     val primary = rawPrimary.saturate(1.25f)

@@ -1,6 +1,8 @@
 package com.techmomentum.wc2026.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -151,7 +154,11 @@ fun CollectorStatusRow(
     status: String,
     available: Boolean,
     modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null,
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val clickable = available && onClick != null
+
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -172,6 +179,12 @@ fun CollectorStatusRow(
                         ),
                     )
                 },
+            )
+            .clickable(
+                enabled = clickable,
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = { onClick?.invoke() },
             )
             .padding(horizontal = 14.dp, vertical = 13.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),

@@ -28,7 +28,7 @@ class NotificationScheduler @Inject constructor(
         val now = System.currentTimeMillis()
         scheduleAdStickerReminder(profile, now)
         scheduleSlotAdReminder(profile, now)
-        scheduleLoginPackReminder(profile, now)
+        scheduleLoginPackReminder(now)
         scheduleSlotDailyReset(now)
         scheduleUnopenedPackReminder(profile, now)
     }
@@ -71,11 +71,7 @@ class NotificationScheduler @Inject constructor(
         )
     }
 
-    private fun scheduleLoginPackReminder(profile: UserProfile, now: Long) {
-        val last = profile.lastLoginPackGrantedAtEpochMs
-        if (last <= 0L) return
-        val readyAt = last + GameConstants.LOGIN_REWARD_INTERVAL_MS
-        if (readyAt <= now) return
+    private fun scheduleLoginPackReminder(now: Long) {
         enqueue(
             ReminderContent(
                 type = ReminderType.LOGIN_PACK,
@@ -83,7 +79,7 @@ class NotificationScheduler @Inject constructor(
                 body = "Open your free sticker pack with ${GameConstants.STICKERS_PER_PACK} stickers.",
                 route = Routes.HOME,
             ),
-            readyAt,
+            DateUtils.nextUtcMidnightEpochMs(now),
         )
     }
 

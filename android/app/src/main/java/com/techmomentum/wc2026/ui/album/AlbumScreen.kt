@@ -1,8 +1,6 @@
 package com.techmomentum.wc2026.ui.album
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,27 +9,29 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.techmomentum.wc2026.domain.usecase.TeamAlbumProgress
 import com.techmomentum.wc2026.ui.components.AlbumTeamCard
 import com.techmomentum.wc2026.ui.components.PixarFilterChip
+import com.techmomentum.wc2026.ui.components.dismissKeyboardOnTap
+import com.techmomentum.wc2026.ui.components.rememberDismissKeyboardAction
 import com.techmomentum.wc2026.ui.decks.DecksTab
 import com.techmomentum.wc2026.ui.decks.DecksTabRow
 import com.techmomentum.wc2026.ui.decks.SwapDeckTab
 import com.techmomentum.wc2026.ui.decks.TradeComingSoonTab
-import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
+import com.techmomentum.wc2026.ui.layout.AlbumPageScreen
 
 @Composable
 fun AlbumScreen(
@@ -39,32 +39,25 @@ fun AlbumScreen(
     viewModel: AlbumViewModel = hiltViewModel(),
 ) {
     var selectedTab by rememberSaveable { mutableStateOf(DecksTab.COLLECTION) }
+    val dismissKeyboard = rememberDismissKeyboardAction()
 
-    Scaffold(containerColor = Color.Transparent) { padding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .background(Brush.verticalGradient(AlbumPageStyle.backgroundGradient)),
-        ) {
-            AlbumOverviewBackground()
-
-            AlbumPageFrame(modifier = Modifier.fillMaxSize()) {
-                Column(modifier = Modifier.fillMaxSize()) {
-                    DecksTabRow(
-                        selected = selectedTab,
-                        onSelect = { selectedTab = it },
-                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
-                    )
-                    when (selectedTab) {
-                        DecksTab.COLLECTION -> AlbumCollectionContent(
-                            onTeamClick = onTeamClick,
-                            viewModel = viewModel,
-                        )
-                        DecksTab.SWAP_DECK -> SwapDeckTab()
-                        DecksTab.TRADE -> TradeComingSoonTab()
-                    }
-                }
+    AlbumPageScreen {
+        Column(modifier = Modifier.fillMaxSize()) {
+            DecksTabRow(
+                selected = selectedTab,
+                onSelect = {
+                    dismissKeyboard()
+                    selectedTab = it
+                },
+                modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+            )
+            when (selectedTab) {
+                DecksTab.COLLECTION -> AlbumCollectionContent(
+                    onTeamClick = onTeamClick,
+                    viewModel = viewModel,
+                )
+                DecksTab.SWAP_DECK -> SwapDeckTab()
+                DecksTab.TRADE -> TradeComingSoonTab()
             }
         }
     }
@@ -84,9 +77,24 @@ private fun AlbumCollectionContent(
     val hasVisibleTeams = remember(album.groups, filter) {
         album.groups.flatMap { (_, teams) -> teams.filter { it.matchesFilter(filter) } }.isNotEmpty()
     }
+    val dismissKeyboard = rememberDismissKeyboardAction()
+    val listState = rememberLazyListState()
+
+    LaunchedEffect(listState) {
+        snapshotFlow { listState.isScrollInProgress }
+            .collect { scrolling ->
+                if (scrolling) dismissKeyboard()
+            }
+    }
+
+    val openTeam: (String) -> Unit = { teamId ->
+        dismissKeyboard()
+        onTeamClick(teamId)
+    }
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        state = listState,
+        modifier = Modifier.fillMaxSize().dismissKeyboardOnTap(),
         contentPadding = PaddingValues(14.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -107,12 +115,22 @@ private fun AlbumCollectionContent(
                 groups = groups,
                 filter = filter,
                 onSelectAll = {
+                    dismissKeyboard()
                     viewModel.setGroupFilter(null)
                     viewModel.setOwnedFilter(null)
                 },
-                onSelectGroup = viewModel::setGroupFilter,
-                onSelectOwned = { viewModel.setOwnedFilter(true) },
-                onSelectMissing = viewModel::setMissingFilter,
+                onSelectGroup = { group ->
+                    dismissKeyboard()
+                    viewModel.setGroupFilter(group)
+                },
+                onSelectOwned = {
+                    dismissKeyboard()
+                    viewModel.setOwnedFilter(true)
+                },
+                onSelectMissing = {
+                    dismissKeyboard()
+                    viewModel.setMissingFilter()
+                },
             )
         }
         if (!album.isLoaded) {
@@ -131,7 +149,7 @@ private fun AlbumCollectionContent(
             items(searchResults, key = { it.team.teamId }) { progress ->
                 AlbumTeamCard(
                     progress = progress,
-                    onClick = { onTeamClick(progress.team.teamId) },
+                    onClick = { openTeam(progress.team.teamId) },
                 )
             }
         } else {
@@ -146,7 +164,7 @@ private fun AlbumCollectionContent(
                 items(filtered, key = { it.team.teamId }) { progress ->
                     AlbumTeamCard(
                         progress = progress,
-                        onClick = { onTeamClick(progress.team.teamId) },
+                        onClick = { openTeam(progress.team.teamId) },
                     )
                 }
             }

@@ -65,7 +65,6 @@ fun AlbumTeamCard(
             team = team,
             palette = palette,
             size = 46.dp,
-            showGlow = true,
         )
 
         Column(
