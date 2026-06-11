@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.functions.FirebaseFunctionsException
 import com.techmomentum.wc2026.data.model.CallableResult
+import com.techmomentum.wc2026.data.model.EmailAvailabilityResult
 import com.techmomentum.wc2026.data.model.LeaderboardEntry
 import com.techmomentum.wc2026.data.model.LeaderboardResult
 import com.techmomentum.wc2026.data.model.PackOpenResult
@@ -22,6 +23,14 @@ class CloudFunctionsClient @Inject constructor(
     private val auth: FirebaseAuth,
     private val connectionRepository: FirebaseConnectionRepository,
 ) {
+    suspend fun checkEmailAvailable(email: String): EmailAvailabilityResult {
+        val data = invokePublic("checkEmailAvailable", mapOf("email" to email))
+        return EmailAvailabilityResult(
+            available = data["available"] as? Boolean ?: false,
+            message = data["message"] as? String ?: "",
+        )
+    }
+
     suspend fun ensureUserProfile(): CallableResult = call("ensureUserProfile")
 
     suspend fun openStickerPack(): PackOpenResult {
@@ -133,6 +142,13 @@ class CloudFunctionsClient @Inject constructor(
     private suspend fun invoke(name: String, payload: Map<String, Any?> = emptyMap()): Map<String, Any?> {
         requireSignedIn()
         refreshAuthToken()
+        return invokeCallable(name, payload)
+    }
+
+    private suspend fun invokePublic(name: String, payload: Map<String, Any?> = emptyMap()): Map<String, Any?> =
+        invokeCallable(name, payload)
+
+    private suspend fun invokeCallable(name: String, payload: Map<String, Any?>): Map<String, Any?> {
         connectionRepository.refreshConfigState()
         return try {
             @Suppress("UNCHECKED_CAST")

@@ -61,7 +61,7 @@ fun AuthScreen(
                 LoginWelcomeOverlay(
                     title = if (welcomeSignUp) "Welcome, collector!" else "Welcome back!",
                     subtitle = if (welcomeSignUp) {
-                        "Verify your email, then start collecting."
+                        "Complete your profile and start collecting."
                     } else {
                         "Your sticker album is ready."
                     },

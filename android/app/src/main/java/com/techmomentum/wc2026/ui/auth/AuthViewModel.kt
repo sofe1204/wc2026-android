@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.config.ProjectConfig
 import com.techmomentum.wc2026.data.auth.GoogleAuthClient
+import com.techmomentum.wc2026.data.firebase.CloudFunctionsClient
 import com.techmomentum.wc2026.data.firebase.FirebaseConfigState
 import com.techmomentum.wc2026.data.firebase.FirebaseConnectionRepository
 import com.techmomentum.wc2026.data.repository.AuthRepository
@@ -40,6 +41,7 @@ data class AuthUiState(
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val authRepository: AuthRepository,
+    private val cloudFunctionsClient: CloudFunctionsClient,
     private val rewardsRepository: RewardsRepository,
     private val userRepository: UserRepository,
     private val determineSignedInGate: DetermineSignedInGateUseCase,
@@ -97,13 +99,13 @@ class AuthViewModel @Inject constructor(
 
     fun submit() {
         val state = _uiState.value
-        val email = state.email.trim()
+        val email = state.email.trim().lowercase()
         if (email.isBlank() || !email.contains("@") || state.password.length < 6) {
             _uiState.update { it.copy(error = "Enter a valid email and password (6+ characters)") }
             return
         }
         if (state.isSignUp) {
-            if (state.confirmEmail.trim() != email) {
+            if (state.confirmEmail.trim().lowercase() != email) {
                 _uiState.update { it.copy(error = "Email addresses do not match.") }
                 return
             }
@@ -114,6 +116,22 @@ class AuthViewModel @Inject constructor(
         }
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true, error = null) }
+            if (state.isSignUp) {
+                val availability = runCatching { cloudFunctionsClient.checkEmailAvailable(email) }
+                if (availability.isFailure) {
+                    showError(availability.exceptionOrNull()?.message)
+                    return@launch
+                }
+                val emailCheck = availability.getOrThrow()
+                if (!emailCheck.available) {
+                    showError(
+                        emailCheck.message.ifBlank {
+                            "This email is already registered. Try Sign in instead."
+                        },
+                    )
+                    return@launch
+                }
+            }
             val authResult = if (state.isSignUp) {
                 authRepository.signUp(
                     email,

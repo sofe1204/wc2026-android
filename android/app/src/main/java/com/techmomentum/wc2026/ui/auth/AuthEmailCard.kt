@@ -79,7 +79,11 @@ fun AuthEmailCard(
             color = AlbumPageStyle.headerAccent.darken(0.1f),
         )
         Text(
-            text = "Use email and password for a regular account.",
+            text = if (isSignUp) {
+                "One account per email. If you already signed up, use Sign in below."
+            } else {
+                "Use email and password for a regular account."
+            },
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Medium,
             color = AlbumPageStyle.bottomNavUnselectedIcon,

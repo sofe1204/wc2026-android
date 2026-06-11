@@ -424,6 +424,29 @@ export const seedStickers = onCall(async (request) => {
   return { success: true, message: `Seeded ${n} stickers.` };
 });
 
+/** Pre-sign-up check: whether an email is already registered in Firebase Auth. */
+export const checkEmailAvailable = onCall(async (request) => {
+  const email = String((request.data as { email?: string })?.email ?? "")
+    .trim()
+    .toLowerCase();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    throw new HttpsError("invalid-argument", "Enter a valid email address.");
+  }
+  try {
+    await admin.auth().getUserByEmail(email);
+    return {
+      available: false,
+      message: "This email is already registered. Try Sign in instead.",
+    };
+  } catch (e: unknown) {
+    const code = (e as { code?: string }).code;
+    if (code === "auth/user-not-found") {
+      return { available: true, message: "" };
+    }
+    throw new HttpsError("internal", "Could not check email. Try again.");
+  }
+});
+
 export const registerFcmToken = onCall(async (request) => {
   const uid = requireAuth(request);
   const token = String((request.data as { token?: string })?.token ?? "").trim();
