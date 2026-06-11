@@ -1,6 +1,8 @@
 package com.techmomentum.wc2026.ui.settings
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -31,6 +33,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
@@ -39,9 +42,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.techmomentum.wc2026.config.LegalUrls
 import com.techmomentum.wc2026.ui.components.CollectorPanel
 import com.techmomentum.wc2026.ui.components.CollectorSectionTitle
 import com.techmomentum.wc2026.ui.components.CollectorSoftDivider
+import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
 import com.techmomentum.wc2026.ui.layout.AlbumPageScreen
 import com.techmomentum.wc2026.ui.theme.AlbumPageStyle
 
@@ -51,6 +56,7 @@ fun SettingsScreen(
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
 
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
@@ -106,6 +112,20 @@ fun SettingsScreen(
                 color = AlbumPageStyle.bottomNavUnselectedIcon,
                 modifier = Modifier.padding(horizontal = 4.dp),
             )
+
+            CollectorPanel {
+                CollectorSectionTitle(title = "Legal")
+                PixarSecondaryButton(
+                    text = "Privacy Policy",
+                    onClick = {
+                        context.startActivity(
+                            Intent(Intent.ACTION_VIEW, Uri.parse(LegalUrls.PRIVACY_POLICY)),
+                        )
+                    },
+                    accentBorder = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
         }
     }
 }

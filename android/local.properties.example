@@ -14,3 +14,6 @@ sdk.dir=/Users/YOUR_USER/Library/Android/sdk
 # admob.rewarded.unit.id=ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ
 # Debug: ./gradlew installDebug  → test ads
 # Release: ./gradlew assembleRelease → real ads above
+
+# Release signing — copy android/keystore.properties.example → keystore.properties
+# and set storeFile + passwords. Then: ./gradlew bundleRelease

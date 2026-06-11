@@ -18,6 +18,13 @@ val localProperties = Properties().apply {
         file.inputStream().use { load(it) }
     }
 }
+val keystoreProperties = Properties().apply {
+    val file = rootProject.file("keystore.properties")
+    if (file.exists()) {
+        file.inputStream().use { load(it) }
+    }
+}
+val releaseKeystorePath = keystoreProperties.getProperty("storeFile")
 val useFirebaseEmulators = localProperties.getProperty("firebase.emulators", "false") == "true"
 
 // Google official test AdMob IDs by default — override in local.properties for production.
@@ -107,8 +114,22 @@ android {
         )
     }
 
+    signingConfigs {
+        create("release") {
+            if (releaseKeystorePath != null) {
+                storeFile = rootProject.file(releaseKeystorePath)
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (releaseKeystorePath != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = false
             buildConfigField("boolean", "DEBUG", "false")
             // Production ad unit IDs from local.properties (AdMobConfig.useTestAds = false).
