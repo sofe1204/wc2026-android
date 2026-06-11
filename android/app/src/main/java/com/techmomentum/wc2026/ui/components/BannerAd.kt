@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -24,17 +25,24 @@ fun BannerAd(modifier: Modifier = Modifier) {
         val adWidthDp = maxWidth.value.toInt().coerceAtLeast(320)
         val context = LocalContext.current
         val lifecycleOwner = LocalLifecycleOwner.current
-        val adView = remember(adWidthDp) {
+        val adSize = remember(adWidthDp, context) {
+            AdSize.getLargeAnchoredAdaptiveBannerAdSize(context, adWidthDp)
+                .takeUnless { it == AdSize.INVALID }
+                ?: AdSize.getInlineAdaptiveBannerAdSize(adWidthDp, 90)
+        }
+        val adView = remember {
             AdView(context).apply {
-                // Anchored adaptive caps at 728dp on tablets; inline adaptive uses full width.
-                setAdSize(AdSize.getInlineAdaptiveBannerAdSize(adWidthDp, 90))
                 adUnitId = AdMobConfig.bannerUnitId
                 layoutParams = FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                 )
-                loadAd(AdRequest.Builder().build())
             }
+        }
+
+        LaunchedEffect(adSize) {
+            adView.setAdSize(adSize)
+            adView.loadAd(AdRequest.Builder().build())
         }
 
         DisposableEffect(lifecycleOwner, adView) {
