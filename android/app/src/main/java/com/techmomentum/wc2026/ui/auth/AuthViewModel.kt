@@ -136,17 +136,15 @@ class AuthViewModel @Inject constructor(
             showError(profile.message.ifBlank { "Could not set up your profile. Try again." })
             return
         }
-        val route = resolvePostAuthRoute(createNewAccount)
+        val route = resolvePostAuthRoute()
         _uiState.update {
             it.copy(loading = false, success = true, destinationRoute = route, error = null)
         }
     }
 
-    private suspend fun resolvePostAuthRoute(createNewAccount: Boolean): String {
-        if (createNewAccount) return Routes.VERIFY_EMAIL
+    private suspend fun resolvePostAuthRoute(): String {
         val userProfile = userRepository.observeUserProfile().first()
         return when (determineSignedInGate(userProfile)) {
-            SignedInGate.NeedsEmailVerification -> Routes.VERIFY_EMAIL
             SignedInGate.NeedsProfileCompletion -> Routes.COMPLETE_PROFILE
             SignedInGate.Ready -> Routes.HOME
         }

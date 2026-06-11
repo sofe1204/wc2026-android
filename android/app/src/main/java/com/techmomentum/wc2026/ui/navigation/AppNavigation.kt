@@ -23,7 +23,6 @@ import com.techmomentum.wc2026.data.repository.AuthRepository
 import com.techmomentum.wc2026.ui.album.AlbumScreen
 import com.techmomentum.wc2026.ui.auth.AuthScreen
 import com.techmomentum.wc2026.ui.auth.CompleteProfileScreen
-import com.techmomentum.wc2026.ui.auth.VerifyEmailScreen
 import com.techmomentum.wc2026.ui.leaderboard.LeaderboardScreen
 import com.techmomentum.wc2026.ui.bootstrap.BootstrapState
 import com.techmomentum.wc2026.ui.bootstrap.SessionBootstrapViewModel
@@ -154,15 +153,6 @@ fun AppNavigation(
                     onAuthenticated = { route ->
                         navController.navigate(route) {
                             popUpTo(Routes.AUTH) { inclusive = true }
-                        }
-                    },
-                )
-            }
-            composable(Routes.VERIFY_EMAIL) {
-                VerifyEmailScreen(
-                    onContinue = { route ->
-                        navController.navigate(route) {
-                            popUpTo(Routes.VERIFY_EMAIL) { inclusive = true }
                         }
                     },
                 )

@@ -58,13 +58,7 @@ class AuthRepository @Inject constructor(
                 .setDisplayName(displayName)
                 .build()
             result.user?.updateProfile(profile)?.await()
-            result.user?.sendEmailVerification()?.await()
         })
-
-    suspend fun sendEmailVerification(): Result<Unit> = runCatching {
-        val user = auth.currentUser ?: error("Not signed in.")
-        user.sendEmailVerification().await()
-    }
 
     suspend fun reloadAuthUser(): Result<Unit> = runCatching {
         val user = auth.currentUser ?: error("Not signed in.")

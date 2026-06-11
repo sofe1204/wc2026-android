@@ -231,16 +231,6 @@ export const updateUserProfile = onCall(async (request) => {
 
   const userRef = await getUserRef(uid);
   const emailVerified = request.auth?.token?.email_verified === true;
-  const provider = String(
-    (request.auth?.token as { firebase?: { sign_in_provider?: string } })?.firebase
-      ?.sign_in_provider ?? ""
-  );
-  if (provider === "password" && !emailVerified) {
-    throw new HttpsError(
-      "failed-precondition",
-      "Verify your email before completing your profile."
-    );
-  }
 
   const albumStats = await countAlbumStatsFromStickers(uid);
 

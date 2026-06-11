@@ -8,7 +8,6 @@ object Routes {
     const val SLOT = "slot"
     const val PROFILE = "profile"
     const val LEADERBOARD = "leaderboard"
-    const val VERIFY_EMAIL = "verify_email"
     const val COMPLETE_PROFILE = "complete_profile"
     const val SETTINGS = "settings"
     const val TEAM = "team/{teamId}"

@@ -54,7 +54,6 @@ class SessionBootstrapViewModel @Inject constructor(
                             if (profile.success) {
                                 val userProfile = userRepository.observeUserProfile().first()
                                 val route = when (determineSignedInGate(userProfile)) {
-                                    SignedInGate.NeedsEmailVerification -> Routes.VERIFY_EMAIL
                                     SignedInGate.NeedsProfileCompletion -> Routes.COMPLETE_PROFILE
                                     SignedInGate.Ready -> Routes.HOME
                                 }
