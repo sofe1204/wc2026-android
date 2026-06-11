@@ -6,6 +6,9 @@ android/local.properties
 *.iml
 .idea/
 
+# Dependencies
+node_modules/
+
 # Firebase
 functions/node_modules/
 functions/lib/

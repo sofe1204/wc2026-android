@@ -85,14 +85,12 @@ fun AuthScreen(
 
             AuthEmailCard(
                 isSignUp = state.isSignUp,
-                displayName = state.displayName,
                 email = state.email,
                 confirmEmail = state.confirmEmail,
                 password = state.password,
                 confirmPassword = state.confirmPassword,
                 error = state.error,
                 loading = state.loading,
-                onDisplayNameChange = viewModel::onDisplayNameChange,
                 onEmailChange = viewModel::onEmailChange,
                 onConfirmEmailChange = viewModel::onConfirmEmailChange,
                 onPasswordChange = viewModel::onPasswordChange,

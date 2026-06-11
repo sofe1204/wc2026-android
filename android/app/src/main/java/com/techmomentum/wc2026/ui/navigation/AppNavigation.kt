@@ -83,9 +83,12 @@ fun AppNavigation(
         onPendingNavRouteConsumed()
     }
 
-    if (!isLoggedIn && currentRoute != Routes.AUTH && currentRoute != Routes.LOADING) {
-        androidx.compose.runtime.LaunchedEffect(Unit) {
-            navController.navigate(Routes.AUTH) { popUpTo(0) { inclusive = true } }
+    LaunchedEffect(isLoggedIn, currentRoute) {
+        if (!isLoggedIn && currentRoute != Routes.AUTH && currentRoute != Routes.LOADING) {
+            navController.navigate(Routes.LOADING) {
+                popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
+                launchSingleTop = true
+            }
         }
     }
 
@@ -192,9 +195,6 @@ fun AppNavigation(
             }
             composable(Routes.PROFILE) {
                 ProfileScreen(
-                    onSignedOut = {
-                        navController.navigate(Routes.AUTH) { popUpTo(0) { inclusive = true } }
-                    },
                     onSettings = { navController.navigate(Routes.SETTINGS) },
                 )
             }

@@ -25,7 +25,8 @@ class UserRepository @Inject constructor(
         val reg = firestore.collection("users").document(uid)
             .addSnapshotListener { snap, error ->
                 if (error != null) {
-                    close(error)
+                    // Sign-out revokes access; don't close the flow with an exception.
+                    trySend(null)
                     return@addSnapshotListener
                 }
                 trySend(snap?.toUserProfile())

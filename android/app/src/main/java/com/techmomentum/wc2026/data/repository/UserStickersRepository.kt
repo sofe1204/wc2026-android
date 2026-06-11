@@ -27,7 +27,8 @@ class UserStickersRepository @Inject constructor(
             .collection("items")
             .addSnapshotListener { snap, error ->
                 if (error != null) {
-                    close(error)
+                    // Sign-out revokes access; don't close the flow with an exception.
+                    trySend(emptyMap())
                     return@addSnapshotListener
                 }
                 val map = snap?.documents?.associate { doc ->

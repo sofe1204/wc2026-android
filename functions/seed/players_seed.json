@@ -1756,7 +1756,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/7273/30.png"
   },
   {
@@ -1820,7 +1820,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": ""
   },
   {
@@ -2044,7 +2044,7 @@
       "positioning": 80
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": ""
   },
   {
@@ -2108,7 +2108,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": ""
   },
   {
@@ -2140,7 +2140,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/5664/30.png"
   },
   {
@@ -2172,7 +2172,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/3339/30.png"
   },
   {
@@ -2204,7 +2204,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/26/30.png"
   },
   {
@@ -2300,7 +2300,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/53/30.png"
   },
   {
@@ -2428,7 +2428,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": ""
   },
   {
@@ -2460,7 +2460,7 @@
       "positioning": 0
     },
     "ratingsComplete": true,
-    "isActive": true,
+    "isActive": false,
     "clubLogoUrl": "https://cdn.sofifa.net/meta/team/30/30.png"
   },
   {

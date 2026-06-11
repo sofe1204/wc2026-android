@@ -27,7 +27,6 @@ data class AuthUiState(
     val confirmEmail: String = "",
     val password: String = "",
     val confirmPassword: String = "",
-    val displayName: String = "",
     val isSignUp: Boolean = false,
     val loading: Boolean = false,
     val error: String? = null,
@@ -74,7 +73,6 @@ class AuthViewModel @Inject constructor(
     fun onConfirmEmailChange(v: String) = _uiState.update { it.copy(confirmEmail = v) }
     fun onPasswordChange(v: String) = _uiState.update { it.copy(password = v) }
     fun onConfirmPasswordChange(v: String) = _uiState.update { it.copy(confirmPassword = v) }
-    fun onDisplayNameChange(v: String) = _uiState.update { it.copy(displayName = v) }
     fun toggleMode() = _uiState.update {
         it.copy(isSignUp = !it.isSignUp, error = null, confirmEmail = "", confirmPassword = "")
     }
@@ -120,7 +118,7 @@ class AuthViewModel @Inject constructor(
                 authRepository.signUp(
                     email,
                     state.password,
-                    state.displayName.trim().ifBlank { email.substringBefore("@") },
+                    email.substringBefore("@"),
                 )
             } else {
                 authRepository.signIn(email, state.password)

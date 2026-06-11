@@ -36,14 +36,12 @@ import com.techmomentum.wc2026.ui.theme.darken
 @Composable
 fun AuthEmailCard(
     isSignUp: Boolean,
-    displayName: String,
     email: String,
     confirmEmail: String,
     password: String,
     confirmPassword: String,
     error: String?,
     loading: Boolean,
-    onDisplayNameChange: (String) -> Unit,
     onEmailChange: (String) -> Unit,
     onConfirmEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
@@ -87,14 +85,6 @@ fun AuthEmailCard(
             color = AlbumPageStyle.bottomNavUnselectedIcon,
             modifier = Modifier.padding(bottom = 4.dp),
         )
-        if (isSignUp) {
-            PixarOutlinedTextField(
-                value = displayName,
-                onValueChange = onDisplayNameChange,
-                label = "Display name",
-                modifier = Modifier.fillMaxWidth(),
-            )
-        }
         PixarOutlinedTextField(
             value = email,
             onValueChange = onEmailChange,

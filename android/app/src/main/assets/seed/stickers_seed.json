@@ -635,7 +635,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_lee_gi_hyuk.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-004",
@@ -657,7 +657,7 @@
     "group": "Group A",
     "rarity": "rare",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_kim_tae_hyeon.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-006",
@@ -734,7 +734,7 @@
     "group": "Group A",
     "rarity": "rare",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_song_bum_keun.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-013",
@@ -756,7 +756,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_cho_wi_je.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-015",
@@ -767,7 +767,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_kim_moon_hwan.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-016",
@@ -778,7 +778,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_park_jin_seob.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-017",
@@ -789,7 +789,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_bae_jun_ho.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-018",
@@ -822,7 +822,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_yang_hyun_jun.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-021",
@@ -866,7 +866,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_kim_jin_gyu.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-025",
@@ -877,7 +877,7 @@
     "group": "Group A",
     "rarity": "common",
     "imageUrl": "https://storage.googleapis.com/wc-2026-3110f.firebasestorage.app/stickers/players/south_korea_eom_ji_sung.jpg",
-    "isActive": true
+    "isActive": false
   },
   {
     "stickerId": "KOR-026",

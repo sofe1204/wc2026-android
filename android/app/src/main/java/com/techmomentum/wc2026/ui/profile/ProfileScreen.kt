@@ -26,7 +26,6 @@ import com.techmomentum.wc2026.ui.layout.AlbumPageScreen
 
 @Composable
 fun ProfileScreen(
-    onSignedOut: () -> Unit,
     onSettings: () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
@@ -82,10 +81,7 @@ fun ProfileScreen(
                 )
                 PixarSecondaryButton(
                     text = "Sign out",
-                    onClick = {
-                        viewModel.signOut()
-                        onSignedOut()
-                    },
+                    onClick = { viewModel.signOut() },
                     modifier = Modifier.fillMaxWidth(),
                 )
             }
