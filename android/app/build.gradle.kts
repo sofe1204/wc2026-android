@@ -79,8 +79,8 @@ android {
         applicationId = firebase["androidPackage"] as String
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders["admobAppId"] = admobAppId
         buildConfigField("String", "ADMOB_APP_ID", quote(admobAppId))
