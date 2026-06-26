@@ -27,11 +27,19 @@ Both use the same Firebase project and call `ensureUserProfile` after login.
 
 ## 2. Add SHA-1 (required for Android)
 
-Debug keystore (local development):
+**Debug** (local development):
 
 ```bash
-keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android 2>/dev/null | grep SHA1
+./scripts/android_debug_sha.sh
 ```
+
+**Release / Play Store builds** (required if you test signed release or upload AAB):
+
+```bash
+./scripts/android_release_sha.sh
+```
+
+Add **both** fingerprints if you use debug and release builds.
 
 1. Firebase Console → **Project settings** → your Android app **World Cup 2026**
 2. **Add fingerprint** → paste SHA-1 → Save
@@ -62,6 +70,7 @@ cd android && ./gradlew assembleDebug
 | Symptom | Fix |
 |---------|-----|
 | No Google button / setup hint shown | Re-download `google-services.json` with `oauth_client` populated |
-| Error code 10 | Enable Google provider + add SHA-1 + fresh json |
+| Error code 10 | Add the SHA-1 for the **build type you are running** (debug: `android_debug_sha.sh`, release: `android_release_sha.sh`), re-download json, rebuild |
 | `operation not allowed` | Enable Google (and Email/Password if using both) in Sign-in method |
 | Logcat `DEVELOPER_ERROR` + `RecaptchaCallWrapper` network error on **email** sign-in | Add SHA-1 (`./scripts/android_debug_sha.sh`), re-download json (needs `client_type": 1`), Google Play AVD + cold boot — see [`android/ANDROID_STUDIO.md`](../android/ANDROID_STUDIO.md) |
+| Debug builds | Filter Logcat by tag **`WC2026_GoogleAuth`** on the auth screen for step-by-step Google Sign-In logs |

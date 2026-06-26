@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "424696015515",
+    "project_id": "wc-2026-3110f",
+    "storage_bucket": "wc-2026-3110f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424696015515:android:b9b209cc92d4849df9343e",
+        "android_client_info": {
+          "package_name": "com.techmomentum.wc2026"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424696015515-c0btfundk7em0o7g1do6hj409n5ujlti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmomentum.wc2026",
+            "certificate_hash": "57c0bb1c6a7f0476a145a59099f89ac2d6485b2f"
+          }
+        },
+        {
+          "client_id": "424696015515-j6t99kltacg20vcbob0u0hk9sqfq72md.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmomentum.wc2026",
+            "certificate_hash": "6a0c52e7b2ca7da28a9543a3673df55b7b56982c"
+          }
+        },
+        {
+          "client_id": "424696015515-6ijtj4fv324l9b5nvndjkohl7f5jvep5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJpiIwmm3lYXm7AWOnYZnGZ3uFaqYbGy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424696015515-6ijtj4fv324l9b5nvndjkohl7f5jvep5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

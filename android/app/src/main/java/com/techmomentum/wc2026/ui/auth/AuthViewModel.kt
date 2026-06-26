@@ -1,10 +1,12 @@
 package com.techmomentum.wc2026.ui.auth
 
+import android.app.Activity
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.techmomentum.wc2026.config.ProjectConfig
 import com.techmomentum.wc2026.data.auth.GoogleAuthClient
+import com.techmomentum.wc2026.data.auth.GoogleSignInDiagnostics
 import com.techmomentum.wc2026.data.firebase.CloudFunctionsClient
 import com.techmomentum.wc2026.data.firebase.FirebaseConfigState
 import com.techmomentum.wc2026.data.firebase.FirebaseConnectionRepository
@@ -36,6 +38,7 @@ data class AuthUiState(
     val firebaseHint: String? = null,
     val googleSignInAvailable: Boolean = false,
     val googleSetupHint: String? = null,
+    val googleDebugLines: List<String> = emptyList(),
 )
 
 @HiltViewModel
@@ -52,11 +55,13 @@ class AuthViewModel @Inject constructor(
         AuthUiState(
             googleSignInAvailable = googleAuthClient.isConfigured,
             googleSetupHint = googleSetupMessage(),
+            googleDebugLines = GoogleSignInDiagnostics.debugPanelLines(),
         ),
     )
     val uiState: StateFlow<AuthUiState> = _uiState.asStateFlow()
 
     init {
+        GoogleSignInDiagnostics.logConfiguration()
         viewModelScope.launch {
             connectionRepository.configState.collect { config ->
                 val hint = when (config) {
@@ -79,17 +84,48 @@ class AuthViewModel @Inject constructor(
         it.copy(isSignUp = !it.isSignUp, error = null, confirmEmail = "", confirmPassword = "")
     }
 
-    fun getGoogleSignInIntent(): Intent? = googleAuthClient.getSignInIntent()
+    fun beginGoogleSignIn(): Intent? {
+        val unavailableReason = googleAuthClient.signInUnavailableReason()
+        if (unavailableReason != null) {
+            val message = if (unavailableReason.contains("Google Play services")) {
+                "Google sign-in is unavailable on this device. Update Google Play services and try again."
+            } else {
+                googleSetupMessage() ?: unavailableReason
+            }
+            showError(message)
+            return null
+        }
 
-    fun onGoogleSignInResult(data: Intent?) {
+        return googleAuthClient.getSignInIntent() ?: run {
+            showError(googleSetupMessage() ?: "Google sign-in is currently unavailable. Try email sign-in.")
+            null
+        }
+    }
+
+    fun onGoogleSignInResult(resultCode: Int, data: Intent?) {
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true, error = null) }
+            if (resultCode != Activity.RESULT_OK) {
+                val message = if (resultCode == Activity.RESULT_CANCELED) {
+                    "Google sign-in was cancelled."
+                } else {
+                    "Google sign-in failed (result code $resultCode)."
+                }
+                GoogleSignInDiagnostics.logStep("onGoogleSignInResult", message)
+                showError(message)
+                return@launch
+            }
+            GoogleSignInDiagnostics.logStep("onGoogleSignInResult", "RESULT_OK — parsing ID token")
             val tokenResult = googleAuthClient.idTokenFromResult(data)
             tokenResult.fold(
                 onSuccess = { token ->
+                    GoogleSignInDiagnostics.logStep("onGoogleSignInResult", "Firebase signInWithCredential")
                     authRepository.signInWithGoogle(token).fold(
                         onSuccess = { finishProfileSetup(createNewAccount = false) },
-                        onFailure = { e -> showError(e.message) },
+                        onFailure = { e ->
+                            GoogleSignInDiagnostics.logError("Firebase Google sign-in failed", e)
+                            showError(e.message)
+                        },
                     )
                 },
                 onFailure = { e -> showError(e.message) },

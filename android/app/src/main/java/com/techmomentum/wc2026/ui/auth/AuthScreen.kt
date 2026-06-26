@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.techmomentum.wc2026.BuildConfig
 import com.techmomentum.wc2026.ui.album.AlbumOverviewBackground
 import com.techmomentum.wc2026.ui.album.AlbumPageFrame
 import com.techmomentum.wc2026.ui.components.PixarSecondaryButton
@@ -45,7 +46,9 @@ fun AuthScreen(
     val dismissKeyboard = rememberDismissKeyboardAction()
     val googleLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult(),
-    ) { result -> viewModel.onGoogleSignInResult(result.data) }
+    ) { result ->
+        viewModel.onGoogleSignInResult(result.resultCode, result.data)
+    }
 
     LaunchedEffect(state.success, state.destinationRoute) {
         if (state.success && !showWelcome) {
@@ -105,7 +108,7 @@ fun AuthScreen(
                     text = "Continue with Google",
                     onClick = {
                         dismissKeyboard()
-                        viewModel.getGoogleSignInIntent()?.let { googleLauncher.launch(it) }
+                        viewModel.beginGoogleSignIn()?.let { googleLauncher.launch(it) }
                     },
                     enabled = !state.loading,
                 )
@@ -122,6 +125,30 @@ fun AuthScreen(
             state.firebaseHint?.let { hint ->
                 AuthHintText(hint, modifier = Modifier.padding(top = 4.dp))
             }
+
+            if (BuildConfig.DEBUG && state.googleDebugLines.isNotEmpty()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                ) {
+                    Text(
+                        text = "Google Sign-In debug",
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = AlbumPageStyle.bottomNavUnselectedLabel,
+                    )
+                    state.googleDebugLines.forEach { line ->
+                        Text(
+                            text = line,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = AlbumPageStyle.bottomNavUnselectedIcon,
+                        )
+                    }
+                }
+            }
+
             AuthHintText(
                 "Sign in with email or Google to save your album progress in the cloud.",
             )
